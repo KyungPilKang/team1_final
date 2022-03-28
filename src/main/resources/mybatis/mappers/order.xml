@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+			"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.finalproject.OrderDAO">
+
+</mapper>
+
+
+
+<!--
+CREATE TABLE `order` (
+  `order_num` int NOT NULL,
+  `username` varchar(1000) DEFAULT NULL,
+  `order_date` datetime DEFAULT NULL,
+  `order_book_list` varchar(1000) DEFAULT NULL,
+  `order_method` varchar(1000) DEFAULT NULL,
+  `order_deli` varchar(1000) DEFAULT NULL,
+  `order_state` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`order_num`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+-->
