@@ -3,11 +3,11 @@ package com.finalproject.dto;
 import java.sql.Date;
 
 public class Answer {
-    int answer_num;
-    int request_num;
-    String answer_subject;
-    String answer_content;
-    Date answer_date;
+    private int answer_num;
+    private int request_num;
+    private String answer_subject;
+    private String answer_content;
+    private Date answer_date;
 
     public int getAnswer_num() {
         return answer_num;

@@ -5,3 +5,21 @@
 <mapper namespace="com.finalproject.BookDAO">
 
 </mapper>
+
+
+<!--
+CREATE TABLE `book` (
+  `book_num` int NOT NULL,
+  `book_price` int DEFAULT NULL,
+  `book_cat` varchar(1000) DEFAULT NULL,
+  `book_subject` varchar(1000) DEFAULT NULL,
+  `book_content` varchar(1000) DEFAULT NULL,
+  `book_img` varchar(1000) DEFAULT NULL,
+  `book_date` datetime DEFAULT NULL,
+  `book_modDate` datetime DEFAULT NULL,
+  `book_count` int DEFAULT NULL,
+  `book_sales` int DEFAULT NULL,
+  `book_heart` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`book_num`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+-->

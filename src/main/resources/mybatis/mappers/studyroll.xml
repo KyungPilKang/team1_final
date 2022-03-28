@@ -9,4 +9,13 @@
 <!-- studyRoll 출석명단 insert -->
 <!-- studyRoll 출석명단 select -->
 </mapper>
+<!-- 
+CREATE TABLE `studyRoll` (
+	`study_no`	int NOT NULL AUTO_INCREMENT,
+	`roll_attend`	varchar(1000)	NULL,
+	`roll_date`	Date	NULL,
+	`roll_book`	boolean	NULL,
+	primary key(`study_no`)
+);
 
+ -->
