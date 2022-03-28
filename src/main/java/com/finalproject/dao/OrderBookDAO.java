@@ -5,8 +5,6 @@ import org.springframework.stereotype.Repository;
 
 @Mapper
 @Repository
-public interface RequestDAO {
+public interface OrderBookDAO {
 
 }
-
-

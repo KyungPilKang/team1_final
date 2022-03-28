@@ -1,10 +1,10 @@
 package com.finalproject.dto;
 
 public class Cart {
-    int cart_num;
-    String username;
-    String cart_bookNum;
-    int cart_count;
+    private int cart_num;
+    private String username;
+    private String cart_bookNum;
+    private int cart_count;
 
     public int getCart_num() {
         return cart_num;

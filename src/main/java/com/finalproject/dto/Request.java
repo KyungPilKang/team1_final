@@ -3,15 +3,14 @@ package com.finalproject.dto;
 import java.sql.Date;
 
 public class Request {
-    int request_num;
-    String username;
-    String request_client;
-    String request_type;
-    String request_subject;
-    String request_content;
-    Date request_date;
-    String request_state;
-
+    private int request_num;
+    private String username;
+    private String request_client;
+    private String request_type;
+    private String request_subject;
+    private String request_content;
+    private Date request_date;
+    private String request_state;
 
     public int getRequest_num() {
         return request_num;

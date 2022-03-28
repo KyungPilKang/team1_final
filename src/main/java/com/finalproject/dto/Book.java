@@ -3,19 +3,18 @@ package com.finalproject.dto;
 import java.sql.Date;
 
 public class Book {
-    int book_num;
-    int book_price;
-    String book_cat;
-    String book_subject;
-    String book_content;
-    String book_img;
-    Date book_date;
-    Date book_modDate;
-    int book_count;
-    int book_sales;
-    String book_heart;
-    String book_heartState; // heart 눌렀는지
-
+    private int book_num;
+    private int book_price;
+    private String book_cat;
+    private String book_subject;
+    private String book_content;
+    private String book_img;
+    private Date book_date;
+    private Date book_modDate;
+    private int book_count;
+    private int book_sales;
+    private String book_heart;
+    private String book_heartState; // heart 눌렀는지
 
     public int getBook_num() {
         return book_num;
