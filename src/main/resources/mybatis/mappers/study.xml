@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+			"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.finalproject.StudyDAO">
+<!-- study 전체게시물 조회 -->
+	
+<!-- study 등록 -->
+
+<!-- study 검색 -->
+
+<!-- study 참여/참여취소 -->
+
+</mapper>
+
