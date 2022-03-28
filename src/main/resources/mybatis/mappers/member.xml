@@ -2,6 +2,33 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.finalproject.MemberDAO">
+<mapper namespace="com.team1.dao.MemberDAO">
 
+
+	
 </mapper>
+
+<!--
+CREATE TABLE `member` (
+  `no` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(1000) DEFAULT 'null',
+  `password` varchar(1000) DEFAULT NULL,
+  `name` varchar(1000) DEFAULT NULL,
+  `nickname` varchar(1000) DEFAULT NULL,
+  `email` varchar(1000) DEFAULT NULL,
+  `birth` date DEFAULT NULL,
+  `age` varchar(1000) DEFAULT NULL,
+  `gender` varchar(1000) DEFAULT NULL,
+  `phone` varchar(1000) DEFAULT NULL,
+  `zipcode` varchar(1000) DEFAULT NULL,
+  `doro_juso` varchar(1000) DEFAULT NULL,
+  `sangse_juso` varchar(1000) DEFAULT NULL,
+  `role` varchar(1000) DEFAULT 'ROLE_USER',
+  `provider` varchar(1000) DEFAULT NULL,
+  `provider_id` varchar(1000) DEFAULT NULL,
+  `withdraw_status` tinyint(4) DEFAULT NULL,
+  `withdraw_type` varchar(1000) DEFAULT NULL,
+  `withdraw_contents` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`no`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+ -->
