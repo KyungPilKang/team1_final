@@ -4,31 +4,31 @@
 
 <mapper namespace="com.team1.dao.MemberDAO">
 
-
-	
 </mapper>
 
-<!--
-CREATE TABLE `member` (
-  `no` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(1000) DEFAULT 'null',
-  `password` varchar(1000) DEFAULT NULL,
-  `name` varchar(1000) DEFAULT NULL,
-  `nickname` varchar(1000) DEFAULT NULL,
-  `email` varchar(1000) DEFAULT NULL,
-  `birth` date DEFAULT NULL,
-  `age` varchar(1000) DEFAULT NULL,
-  `gender` varchar(1000) DEFAULT NULL,
-  `phone` varchar(1000) DEFAULT NULL,
-  `zipcode` varchar(1000) DEFAULT NULL,
-  `doro_juso` varchar(1000) DEFAULT NULL,
-  `sangse_juso` varchar(1000) DEFAULT NULL,
-  `role` varchar(1000) DEFAULT 'ROLE_USER',
-  `provider` varchar(1000) DEFAULT NULL,
-  `provider_id` varchar(1000) DEFAULT NULL,
-  `withdraw_status` tinyint(4) DEFAULT NULL,
-  `withdraw_type` varchar(1000) DEFAULT NULL,
-  `withdraw_contents` varchar(1000) DEFAULT NULL,
-  PRIMARY KEY (`no`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+<!-- 
+CREATE TABLE IF NOT EXISTS `final`.`member` (
+  `no` INT(11) NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(1000) NULL DEFAULT 'null',
+  `password` VARCHAR(1000) NULL DEFAULT NULL,
+  `name` VARCHAR(1000) NULL DEFAULT NULL,
+  `nickname` VARCHAR(1000) NULL DEFAULT NULL,
+  `email` VARCHAR(1000) NULL DEFAULT NULL,
+  `birth` DATE NULL DEFAULT NULL,
+  `age` VARCHAR(1000) NULL DEFAULT NULL,
+  `gender` VARCHAR(1000) NULL DEFAULT NULL,
+  `phone` VARCHAR(1000) NULL DEFAULT NULL,
+  `zipcode` VARCHAR(1000) NULL DEFAULT NULL,
+  `doro_juso` VARCHAR(1000) NULL DEFAULT NULL,
+  `sangse_juso` VARCHAR(1000) NULL DEFAULT NULL,
+  `role` VARCHAR(1000) NULL DEFAULT 'ROLE_USER',
+  `provider` VARCHAR(1000) NULL DEFAULT NULL,
+  `provider_id` VARCHAR(1000) NULL DEFAULT NULL,
+  `withdraw_status` TINYINT(4) NULL DEFAULT NULL,
+  `withdraw_type` VARCHAR(1000) NULL DEFAULT NULL,
+  `withdraw_contents` VARCHAR(1000) NULL DEFAULT NULL,
+  PRIMARY KEY (`no`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci
  -->
