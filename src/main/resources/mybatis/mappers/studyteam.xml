@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+			"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.finalproject.StudyTeamDAO">
+<!-- studyTeam 수정 -->
+	
+<!-- studyTeam 삭제  -->
+
+<!-- studyTeam 참여자탈락 -->
+
+<!-- studyTeam 참여자 수락/수락취소 -->
+
+<!-- studyTeam 참여자목록 가져오기 -->
+
+</mapper>
+
