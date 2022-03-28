@@ -29,6 +29,7 @@ dependencies {
 	implementation 'com.googlecode.json-simple:json-simple:1.1.1'
 	implementation 'org.springframework.boot:spring-boot-starter-mail'
 	implementation 'org.jsoup:jsoup:1.13.1'
+	
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security'
 }
 

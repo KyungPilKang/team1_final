@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-			"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
 
-<mapper namespace="com.finalproject.memberDAO">
+<configuration>
+	<mappers>
+		<mapper resource="mybatis/mappers/member.xml"/>
+	</mappers>
+</configuration>
 
-</mapper>
+<!-- 
+CREATE DATABASE `final` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+ -->
