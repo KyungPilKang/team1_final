@@ -171,7 +171,13 @@ $('#class_type_8').click(function(){
 //프리랜서(강의제작) 학력
 $('#nextbtn_class3').click(function(){
    	$('#regform_class3').css("display", "none");
-	$('#regform_class4').css("display", "block");
+	if($('input[name="labor_type"]:checked').val()=="1"){
+		$('#regform5-1').css("display", "block");
+	} else if($('input[name="labor_type"]:checked').val()=="2"){
+		$('#regform5-2').css("display", "block");
+	} else{
+		$('#regform5-3').css("display", "block");
+	}
    	window.location="#containerform";
    	return false;
 });
@@ -239,4 +245,33 @@ $("#certification_file").on('change', function () {
 	}
     let fileName = $("#certification_file").val();
     $("#upload-name").val(fileName);
+});
+
+//프리랜서 계약 금액
+$('#nextbtn5-1').click(function(){
+   	$('#regform5-1').css("display", "none");
+	$('#regform6').css("display", "block");
+   	window.location="#containerform";
+   	return false;
+});
+$('#nextbtn5-2').click(function(){
+   	$('#regform5-2').css("display", "none");
+	$('#regform6').css("display", "block");
+   	window.location="#containerform";
+   	return false;
+});
+$('#nextbtn5-3').click(function(){
+   	$('#regform5-3').css("display", "none");
+	$('#regform6').css("display", "block");
+   	window.location="#containerform";
+   	return false;
+});
+$("#month_pay").on('change', function () {
+	$('#nextbtn5-1').attr('disabled', false);
+});
+$("#week_pay").on('change', function () {
+	$('#nextbtn5-2').attr('disabled', false);
+});
+$("#case_pay").on('change', function () {
+	$('#nextbtn5-3').attr('disabled', false);
 });

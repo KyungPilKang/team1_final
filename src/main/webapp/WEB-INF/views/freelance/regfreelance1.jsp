@@ -47,7 +47,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="/freereg1" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>NEESFULL</h2>
+            <h1 class="m-0 text-primary"><i class="fa fa-book me-3"></i>NEESFULL</h1>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -304,6 +304,101 @@
                                 </div>
                              	<div class="col-12 mt-5">
                                     <button id="nextbtn_class3" class="btn btn-primary w-100 py-3" disabled>다음</button>
+                             	</div>
+                             </div>
+                         </div>
+                	</div>
+                	<div id="regform5-1" style="display: none;">
+                        <h5 class="section-title bg-white text-center text-primary px-3">계약 금액</h5>
+                        <h1 class="mb-5 mt-2">당신의 서비스는 월 계약금이 어떻게 되나요?</h1>
+                        <div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float:none; margin:0 auto;">
+                            <div class="row g-3">                           
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                    <input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" type="text" class="form-control" id="month_pay" name="month_pay" placeholder="숫자만 입력해주세요">
+                                    <label for="month_pay">숫자만 입력해주세요</label>
+                                	</div>
+                                    <br><br>
+                                </div>
+                                <div class="col-12 mt-5">
+                                    <button id="nextbtn5-1" class="btn btn-primary w-100 py-3" disabled>다음</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="regform5-2" style="display: none;">
+                        <h5 class="section-title bg-white text-center text-primary px-3">계약 금액</h5>
+                        <h1 class="mb-5 mt-2">당신의 서비스는 주 계약금이 어떻게 되나요?</h1>
+                        <div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float:none; margin:0 auto;">
+                            <div class="row g-3">                           
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                    <input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" type="number" class="form-control" id="week_pay" name="week_pay" placeholder="숫자만 입력해주세요">
+                                    <label for="week_pay">숫자만 입력해주세요</label>
+                                	</div>
+                                    <br><br>
+                                </div>
+                                <div class="col-12 mt-5">
+                                    <button id="nextbtn5-2" class="btn btn-primary w-100 py-3" disabled>다음</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="regform5-3" style="display: none;">
+                        <h5 class="section-title bg-white text-center text-primary px-3">계약 금액</h5>
+                        <h1 class="mb-5 mt-2">당신의 서비스는 건당 계약금이 어떻게 되나요?</h1>
+                        <div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float:none; margin:0 auto;">
+                            <div class="row g-3">                           
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                    <input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" type="text" class="form-control" id="case_pay" name="case_pay" placeholder="숫자만 입력해주세요">
+                                    <label for="case_pay">숫자만 입력해주세요</label>
+                                	</div>
+                                    <br><br>
+                                </div>
+                                <div class="col-12 mt-5">
+                                    <button id="nextbtn5-3" class="btn btn-primary w-100 py-3" disabled>다음</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="regform6" style="display: none;">
+                        <h5 class="section-title bg-white text-center text-primary px-3">소개</h5>
+                        <h1 class="mb-5 mt-2">마지막으로 자유롭게 당신을 소개해주세요</h1>
+                        <div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float:none; margin:0 auto;">
+                            <div class="row g-3">                           
+                                <div class="col-12">
+                                 	<input id="education_1" type="radio" class="btn-check" name="education" value="1"/>
+                                    <label for="education_1" class="btn btn-outline-primary w-100 py-3">전문학사</label>
+                                    <br><br>
+                                    <input id="education_2" type="radio" class="btn-check" name="education" value="2"/>
+                                    <label for="education_2" class="btn btn-outline-primary w-100 py-3">학사</label>
+                                    <br><br>
+                                    <input id="education_3" type="radio" class="btn-check" name="education" value="3"/>
+                                    <label for="education_3" class="btn btn-outline-primary w-100 py-3">석사</label>
+                                    <br><br>
+                                    <input id="education_4" type="radio" class="btn-check" name="education" value="4"/>
+                                    <label for="education_4" class="btn btn-outline-primary w-100 py-3">박사</label>
+                                    <br><br>
+                                    <div id="univform" class="form-floating" style="display:none;">
+                                    <input type="text" class="form-control" id="univ" name="univ" placeholder="졸업한 학교">
+                                    <label for="major">졸업한 학교를 입력해주세요</label>
+                                	</div>
+                                	<br>
+                                	<div id="majorform" class="form-floating" style="display:none;">
+                                    <input type="text" class="form-control" id="major" name="major" placeholder="전공">
+                                    <label for="major">전공을 입력해주세요</label>
+                                	</div>
+                                	<br>
+                                	<div id="certifileform" style="display:none;">
+	                                	<input id="certification_file" type="file" class="btn-check" name="certification_file"/>
+	                                    <label for="certification_file" class="btn btn-outline-primary w-100 py-3">증빙서류 첨부하기</label>
+	                                	<br><br>
+	                                	<input type="text" class="form-control" id="upload-name" readOnly/>
+                                	</div>
+                                </div>
+                             	<div class="col-12 mt-5">
+                                    <button id="nextbtn6" class="btn btn-primary w-100 py-3" disabled>다음</button>
                              	</div>
                              </div>
                          </div>
