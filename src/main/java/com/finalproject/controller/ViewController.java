@@ -18,4 +18,6 @@ public class ViewController {
 	public @ResponseBody String home() {
 		return "test home";
 	}
+
+
 }
