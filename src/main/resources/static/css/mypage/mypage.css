@@ -1,6 +1,11 @@
 :root {
-    --main-background-color:black;
+    --main-color:#06BBCC;
+    --sub-color:#F0FBFC;
+    --black-color:#181d38;
 }
-div {
-    background-color: var(--main-background-color);
+body {
+    margin: 0px;
+}
+.main {
+    background-color: var(--main-color);
 }
