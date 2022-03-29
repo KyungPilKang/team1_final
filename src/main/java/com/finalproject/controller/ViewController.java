@@ -18,4 +18,9 @@ public class ViewController {
 	public @ResponseBody String home() {
 		return "test home";
 	}
+	
+	@RequestMapping("/")
+	public @ResponseBody String main() {
+		return "test main입니다";
+	}
 }
