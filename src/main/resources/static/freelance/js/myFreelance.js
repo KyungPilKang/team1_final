@@ -275,3 +275,37 @@ $("#week_pay").on('change', function () {
 $("#case_pay").on('change', function () {
 	$('#nextbtn5-3').attr('disabled', false);
 });
+
+//프리랜서 마지막 소개
+$("#introduce_title").on('change', function () {
+	if($('#introduce_title').val()==""||$('#introduce_contents').val()==""||$('#promotion_video_file').val()==""||$('#banner_image_file').val()==""){
+		$('#nextbtn6').attr('disabled', true);
+	} else{
+		$('#nextbtn6').attr('disabled', false);
+	}
+});
+$("#introduce_contents").on('change', function () {
+	if($('#introduce_title').val()==""||$('#introduce_contents').val()==""||$('#promotion_video_file').val()==""||$('#banner_image_file').val()==""){
+		$('#nextbtn6').attr('disabled', true);
+	} else{
+		$('#nextbtn6').attr('disabled', false);
+	}
+});
+$("#promotion_video_file").on('change', function () {
+    let fileName = $("#promotion_video_file").val();
+    $("#promotion_video_upload-name").val(fileName);
+    if($('#introduce_title').val()==""||$('#introduce_contents').val()==""||$('#promotion_video_file').val()==""||$('#banner_image_file').val()==""){
+		$('#nextbtn6').attr('disabled', true);
+	} else{
+		$('#nextbtn6').attr('disabled', false);
+	}
+});
+$("#banner_image_file").on('change', function () {
+    let fileName = $("#banner_image_file").val();
+    $("#banner_image_upload-name").val(fileName);
+    if($('#introduce_title').val()==""||$('#introduce_contents').val()==""||$('#promotion_video_file').val()==""||$('#banner_image_file').val()==""){
+		$('#nextbtn6').attr('disabled', true);
+	} else{
+		$('#nextbtn6').attr('disabled', false);
+	}
+});
