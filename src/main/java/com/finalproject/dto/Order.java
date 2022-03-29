@@ -3,13 +3,13 @@ package com.finalproject.dto;
 import java.sql.Date;
 
 public class Order {
-    int order_num;
-    String username;
-    Date order_date;
-    String order_book_list;
-    String order_method;
-    String order_deli;
-    String order_state;
+    private int order_num;
+    private String username;
+    private Date order_date;
+    private String order_book_list;
+    private String order_method;
+    private String order_deli;
+    private String order_state;
 
     public int getOrder_num() {
         return order_num;

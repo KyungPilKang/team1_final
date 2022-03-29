@@ -5,3 +5,14 @@
 <mapper namespace="com.finalproject.AnswerDAO">
 
 </mapper>
+
+<!--
+CREATE TABLE `answer` (
+  `answer_num` int NOT NULL,
+  `request_num` int DEFAULT NULL,
+  `answer_subject` varchar(1000) DEFAULT NULL,
+  `answer_content` varchar(1000) DEFAULT NULL,
+  `answer_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`answer_num`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+-->

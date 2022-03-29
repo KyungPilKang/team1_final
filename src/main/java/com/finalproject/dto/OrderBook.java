@@ -1,10 +1,10 @@
 package com.finalproject.dto;
 
 public class OrderBook {
-    int order_book_num;
-    String username;
-    String order_book_bookNum;
-    int order_book_count;
+    private int order_book_num;
+    private String username;
+    private String order_book_bookNum;
+    private int order_book_count;
 
     public int getOrder_book_num() {
         return order_book_num;

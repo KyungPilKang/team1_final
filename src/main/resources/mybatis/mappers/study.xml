@@ -13,3 +13,33 @@
 
 </mapper>
 
+ 
+<!-- 
+
+CREATE TABLE `study` (
+	`study_no`	int AUTO_INCREMENT NOT NULL,
+	`maker`	varchar(1000) not null,
+	`study_sname`	varchar(1000),
+	`study_grade`	varchar(1000),
+	`study_subject`	varchar(1000),
+	`study_type_mid` varchar(1000),
+	`study_city`	varchar(1000),
+	`study_gu`	varchar(1000),
+    `study_option`	varchar(1000),
+	`study_target`	varchar(1000),
+	`study_type_element`	varchar(1000),
+	`study_target_level`	varchar(1000),
+	`study_title`	varchar(1000),
+	`study_fdate`	date,
+	`study_edate`	date,
+	`study_ftime`	time,
+	`study_etime`	time,
+	`study_gather`	varchar(1000),
+	`study_contents`mediumtext,
+	`study_kakao`	varchar(1000),
+	`study_regdate`	datetime DEFAULT CURRENT_TIMESTAMP,
+    primary key(`study_no`)
+); 
+
+
+-->

@@ -15,3 +15,12 @@
 
 </mapper>
 
+<!-- 
+CREATE TABLE `studyTeam` (
+	`study_no`	int NOT NULL AUTO_INCREMENT,
+	`team_apply`	varchar(1000)	NULL,
+	`team_accept`	varchar(1000)	NULL,
+	`team_reject`	varchar(1000)	NULL,
+	primary key(`study_no`)
+);
+ -->
