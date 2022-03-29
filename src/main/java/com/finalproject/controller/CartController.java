@@ -1,4 +1,4 @@
-package com.finalproject.controller.bookstore;
+package com.finalproject.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

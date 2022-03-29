@@ -1,4 +1,4 @@
-package com.finalproject.controller.servicecenter;
+package com.finalproject.controller;
 
 import org.springframework.stereotype.Controller;
 
