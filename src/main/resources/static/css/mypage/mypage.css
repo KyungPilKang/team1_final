@@ -1,0 +1,6 @@
+:root {
+    --main-background-color:black;
+}
+div {
+    background-color: var(--main-background-color);
+}
