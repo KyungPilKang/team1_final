@@ -19,10 +19,10 @@ public class ViewController {
 		return "test home";
 	}
 	
-	@RequestMapping("/freereg1")
-	public String freeReg1() {
-		return "freelance/regfreelance1";
-	}
+//	@RequestMapping("/freereg1")
+//	public String freeReg1() {
+//		return "freelance/regfreelance1";
+//	}
 	
 //	@RequestMapping("/freereg2")
 //	public String freeReg2() {

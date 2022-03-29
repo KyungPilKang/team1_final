@@ -16,6 +16,7 @@ $('#canclebtn').click(function() {
 		confirmButtonText: "아니오",
 		cancelButtonText: "네",
 		cancelButtonColor: '#d33',
+		allowOutsideClick: false,
 		customClass: {
 			content: "swal_text",
 			confirmButton: "swal_confirm",

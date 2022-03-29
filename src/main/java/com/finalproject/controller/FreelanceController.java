@@ -7,8 +7,10 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.finalproject.dto.Freelance;
@@ -21,13 +23,15 @@ public class FreelanceController {
 	
 	@Autowired
     private HttpSession session;
+	
+	@GetMapping("/freereg1")
+	public String freeReg1() {
+		return "freelance/regfreelance1";
+	}
 
-	@PostMapping("regfreeconfirm")
+	@PostMapping("/regfreeconfirm")
 	public ModelAndView regfree(@ModelAttribute Freelance inputFree) {
 		ModelAndView mav=new ModelAndView();
-		System.out.println(inputFree.getFreelance_type());
-		System.out.println(inputFree.getLabor_type());
-		System.out.println(inputFree.getBanner_image_file().getOriginalFilename());
 		try {
 			if(!inputFree.getCertification_file().isEmpty()) {
 				String path = servletContext.getRealPath("/freelance_upload/certify_pdf/");
@@ -53,5 +57,10 @@ public class FreelanceController {
 			e.printStackTrace();
 		}
 		return mav;
+	}
+	
+	@PostMapping("/regfree")
+	public ModelAndView regfree() {
+		return null;
 	}
 }
