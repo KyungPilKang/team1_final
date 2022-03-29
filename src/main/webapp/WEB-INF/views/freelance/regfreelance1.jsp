@@ -317,7 +317,7 @@
 							<div class="row g-3">
 								<div class="col-12">
 									<div class="form-floating">
-										<input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" type="text" class="form-control" id="month_pay" name="month_pay" placeholder="숫자만 입력해주세요">
+										<input koreanCurrency="true" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" type="text" class="form-control" id="month_pay" name="month_pay" placeholder="숫자만 입력해주세요">
 										<label for="month_pay">숫자만 입력해주세요</label>
 									</div>
 									<br>
@@ -336,7 +336,7 @@
 							<div class="row g-3">
 								<div class="col-12">
 									<div class="form-floating">
-										<input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" type="number" class="form-control" id="week_pay" name="week_pay" placeholder="숫자만 입력해주세요">
+										<input koreanCurrency="true" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" type="text" class="form-control" id="week_pay" name="week_pay" placeholder="숫자만 입력해주세요">
 										<label for="week_pay">숫자만 입력해주세요</label>
 									</div>
 									<br>
@@ -355,7 +355,7 @@
 							<div class="row g-3">
 								<div class="col-12">
 									<div class="form-floating">
-										<input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" type="text" class="form-control" id="case_pay" name="case_pay" placeholder="숫자만 입력해주세요">
+										<input koreanCurrency="true" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" type="text" class="form-control" id="case_pay" name="case_pay" placeholder="숫자만 입력해주세요">
 										<label for="case_pay">숫자만 입력해주세요</label>
 									</div>
 									<br>

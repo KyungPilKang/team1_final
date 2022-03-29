@@ -309,3 +309,16 @@ $("#banner_image_file").on('change', function () {
 		$('#nextbtn6').attr('disabled', false);
 	}
 });
+
+$(document).on("focusout", "input:text[koreanCurrency]", function()	{
+	$(this).val( $(this).val().replace(",","") );
+	$(this).val( $(this).val().replace(/[^-\.0-9]/gi,"") );
+	$(this).val( $(this).val().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );
+	if($(this).val() != '' ) {
+		$(this).val( $(this).val()+'원');
+	}		
+});
+
+$(document).on("focus", "input:text[koreanCurrency]", function()	{	
+	$(this).val( $(this).val().replace("원", ""));
+});
