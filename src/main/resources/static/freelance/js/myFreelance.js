@@ -177,15 +177,39 @@ $('#nextbtn_class3').click(function(){
 });
 $('#education_1').click(function(){
 	$('#univform').css('display', 'block');	
+	$('#majorform').css('display', 'none');
+	$('#certifileform').css('display', 'none');
+	$('#univ').val("");
+	$('#major').val("");
+	$('#certification_file').val("");
+	$('#upload-name').val("");		
 })
 $('#education_2').click(function(){
-	$('#univform').css('display', 'block');	
+	$('#univform').css('display', 'block');
+	$('#majorform').css('display', 'none');
+	$('#certifileform').css('display', 'none');
+	$('#univ').val("");
+	$('#major').val("");
+	$('#certification_file').val("");
+	$('#upload-name').val("");
 })
 $('#education_3').click(function(){
-	$('#univform').css('display', 'block');	
+	$('#univform').css('display', 'block');
+	$('#majorform').css('display', 'none');
+	$('#certifileform').css('display', 'none');
+	$('#univ').val("");
+	$('#major').val("");
+	$('#certification_file').val("");
+	$('#upload-name').val("");
 })
 $('#education_4').click(function(){
-	$('#univform').css('display', 'block');	
+	$('#univform').css('display', 'block');
+	$('#majorform').css('display', 'none');
+	$('#certifileform').css('display', 'none');
+	$('#univ').val("");
+	$('#major').val("");
+	$('#certification_file').val("");
+	$('#upload-name').val("");	
 })
 $("#univ").on('change', function () {
 	if($('#major').val()==""||$('#certification_file').val()==""||$('#univ').val()==""){
