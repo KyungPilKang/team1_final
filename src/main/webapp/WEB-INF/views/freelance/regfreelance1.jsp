@@ -16,6 +16,7 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Stylish&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
@@ -46,24 +47,30 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="/freereg1" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>NEESFULL</h2>
+            <h1 class="m-0 text-primary"><i class="fa fa-book me-3"></i>NEESFULL</h1>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="courses.html" class="nav-item nav-link">Courses</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <a href="#" class="nav-link" data-bs-toggle="dropdown">프리랜서</a>
                     <div class="dropdown-menu fade-down m-0">
-                        <a href=# class="dropdown-item">Our Team</a>
-                        <a href=# class="dropdown-item">Testimonial</a>
-                        <a href=# class="dropdown-item">404 Page</a>
+                        <a href=# class="dropdown-item">프리랜서 등록</a>
+                        <a href=# class="dropdown-item">프리랜서 조회</a>
                     </div>
                 </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link" data-bs-toggle="dropdown">강의</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href=# class="dropdown-item">강의 등록</a>
+                        <a href=# class="dropdown-item">강의 조회</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-item nav-link">마이페이지</a>
+                <a href="courses.html" class="nav-item nav-link">고객센터</a>
+                <a href=# class="nav-item nav-link">로그아웃</a>
             </div>
         </div>
     </nav>
@@ -71,7 +78,7 @@
 
 
     <!-- Header Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+    <div class="container-fluid bg-primary py-5 mb-5 page-header" id="containerform">
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
@@ -84,10 +91,10 @@
 
 
     <!-- Contact Start -->
-    <div class="container-xxl py-5" id="containerform"> 
+    <div class="container-xxl py-5" > 
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <form action="regfree" method="post">
+                <form action="regfreeconfirm" method="post" enctype="multipart/form-data">
                 	<!-- 프리랜서 타입 -->
                     <div id="regform1">
                         <h5 class="section-title bg-white text-center text-primary px-3">프리랜서 유형</h5>
@@ -137,7 +144,7 @@
                     <!-- 프리랜서 일일 작업 시간 -->
                     <div id="regform3" style="display: none;">
                         <h5 class="section-title bg-white text-center text-primary px-3">작업 시간</h5>
-                        <h1 class="mb-5 mt-2">하루에 가능한 업무시간은 몇시간 인가요?</h1>
+                        <h1 class="mb-5 mt-2">하루에 가능한 업무시간을 알려주세요</h1>
                         <div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float:none; margin:0 auto;">
                             <div class="row g-3">                           
                                 <div class="col-12">
@@ -194,8 +201,8 @@
                                     <input id="career_3" type="radio" class="btn-check" name="career" value="3"/>
                                     <label for="career_3" class="btn btn-outline-primary w-100 py-3">3년 이상 5년 미만</label>
                                     <br><br>
-                                    <input id="career_3" type="radio" class="btn-check" name="career" value="4"/>
-                                    <label for="career_3" class="btn btn-outline-primary w-100 py-3">5년 이상</label>
+                                    <input id="career_4" type="radio" class="btn-check" name="career" value="4"/>
+                                    <label for="career_4" class="btn btn-outline-primary w-100 py-3">5년 이상</label>
                                     <br><br>
                                 </div>
                                 <div class="col-12 mt-5">
@@ -204,6 +211,189 @@
                             </div>
                         </div>
                     </div>
+                    <div id="regform_class1" style="display: none;">
+                        <h5 class="section-title bg-white text-center text-primary px-3">대상 학년</h5>
+                        <h1 class="mb-5 mt-2">제작하시는 강의의 대상 학년을 알려주세요</h1>
+                        <div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float:none; margin:0 auto;">
+                            <div class="row g-3">                           
+                                <div class="col-12">
+                                    <input id="grade_1" type="radio" class="btn-check" name="grade" value="1"/>
+                                    <label for="grade_1" class="btn btn-outline-primary w-100 py-3">초등</label>
+                                    <br><br>
+                                    <input id="grade_2" type="radio" class="btn-check" name="grade" value="2"/>
+                                    <label for="grade_2" class="btn btn-outline-primary w-100 py-3">중등</label>
+                                    <br><br>
+                                </div>
+                                <div class="col-12 mt-5">
+                                    <button id="nextbtn_class1" class="btn btn-primary w-100 py-3" disabled>다음</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="regform_class2" style="display: none;">
+                        <h5 class="section-title bg-white text-center text-primary px-3">대상 과목</h5>
+                        <h1 class="mb-5 mt-2">제작하시는 강의는 무슨 과목인가요?</h1>
+                        <div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float:none; margin:0 auto;">
+                            <div class="row g-3">                           
+                                <div class="col-12">
+                                    <input id="class_type_1" type="radio" class="btn-check" name="class_type" value="1"/>
+                                    <label for="class_type_1" class="btn btn-outline-primary w-100 py-3">국어</label>
+                                    <br><br>
+                                    <input id="class_type_2" type="radio" class="btn-check" name="class_type" value="2"/>
+                                    <label for="class_type_2" class="btn btn-outline-primary w-100 py-3">수학</label>
+                                    <br><br>
+                                    <input id="class_type_3" type="radio" class="btn-check" name="class_type" value="3"/>
+                                    <label for="class_type_3" class="btn btn-outline-primary w-100 py-3">영어</label>
+                                    <br><br>
+                                    <input id="class_type_4" type="radio" class="btn-check" name="class_type" value="4"/>
+                                    <label for="class_type_4" class="btn btn-outline-primary w-100 py-3">사회</label>
+                                    <br><br>
+                                    <input id="class_type_5" type="radio" class="btn-check" name="class_type" value="5"/>
+                                    <label for="class_type_5" class="btn btn-outline-primary w-100 py-3">과학</label>
+                                    <br><br>
+                                    <input id="class_type_6" type="radio" class="btn-check" name="class_type" value="6"/>
+                                    <label for="class_type_6" class="btn btn-outline-primary w-100 py-3">비교과</label>
+                                    <br><br><input id="class_type_7" type="radio" class="btn-check" name="class_type" value="7"/>
+                                    <label for="class_type_7" class="btn btn-outline-primary w-100 py-3">기타</label>
+                                    <br><br>
+                                    <div id="class_type_etc" class="form-floating" style="display:none;">
+                                    <input type="text" class="form-control" id="class_type_8" name="class_type_etc" placeholder="직접 입력해주세요">
+                                    <label for="class_type_8">직접 입력해주세요</label>
+                                	</div>
+                                </div>
+                                <div class="col-12 mt-5">
+                                    <button id="nextbtn_class2" class="btn btn-primary w-100 py-3" disabled>다음</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="regform_class3" style="display: none;">
+                        <h5 class="section-title bg-white text-center text-primary px-3">학력</h5>
+                        <h1 class="mb-5 mt-2">당신의 학력을 알고싶어요</h1>
+                        <div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float:none; margin:0 auto;">
+                            <div class="row g-3">                           
+                                <div class="col-12">
+                                 	<input id="education_1" type="radio" class="btn-check" name="education" value="1"/>
+                                    <label for="education_1" class="btn btn-outline-primary w-100 py-3">전문학사</label>
+                                    <br><br>
+                                    <input id="education_2" type="radio" class="btn-check" name="education" value="2"/>
+                                    <label for="education_2" class="btn btn-outline-primary w-100 py-3">학사</label>
+                                    <br><br>
+                                    <input id="education_3" type="radio" class="btn-check" name="education" value="3"/>
+                                    <label for="education_3" class="btn btn-outline-primary w-100 py-3">석사</label>
+                                    <br><br>
+                                    <input id="education_4" type="radio" class="btn-check" name="education" value="4"/>
+                                    <label for="education_4" class="btn btn-outline-primary w-100 py-3">박사</label>
+                                    <br><br>
+                                    <div id="univform" class="form-floating" style="display:none;">
+                                    <input type="text" class="form-control" id="univ" name="univ" placeholder="졸업한 학교">
+                                    <label for="major">졸업한 학교를 입력해주세요</label>
+                                	</div>
+                                	<br>
+                                	<div id="majorform" class="form-floating" style="display:none;">
+                                    <input type="text" class="form-control" id="major" name="major" placeholder="전공">
+                                    <label for="major">전공을 입력해주세요</label>
+                                	</div>
+                                	<br>
+                                	<div id="certifileform" style="display:none;">
+	                                	<input id="certification_file" type="file" class="btn-check" name="certification_file" accept=".pdf"/>
+	                                    <label for="certification_file" class="btn btn-outline-primary w-100 py-3">증빙서류 첨부하기</label>
+	                                	<br><br>
+	                                	<input type="text" class="form-control" id="upload-name" readOnly/>
+                                	</div>
+                                </div>
+                             	<div class="col-12 mt-5">
+                                    <button id="nextbtn_class3" class="btn btn-primary w-100 py-3" disabled>다음</button>
+                             	</div>
+                             </div>
+                         </div>
+                	</div>
+                	<div id="regform5-1" style="display: none;">
+                        <h5 class="section-title bg-white text-center text-primary px-3">계약 금액</h5>
+                        <h1 class="mb-5 mt-2">당신의 서비스는 월 계약금이 어떻게 되나요?</h1>
+                        <div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float:none; margin:0 auto;">
+                            <div class="row g-3">                           
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                    <input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" type="text" class="form-control" id="month_pay" name="month_pay" placeholder="숫자만 입력해주세요">
+                                    <label for="month_pay">숫자만 입력해주세요</label>
+                                	</div>
+                                    <br><br>
+                                </div>
+                                <div class="col-12 mt-5">
+                                    <button id="nextbtn5-1" class="btn btn-primary w-100 py-3" disabled>다음</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="regform5-2" style="display: none;">
+                        <h5 class="section-title bg-white text-center text-primary px-3">계약 금액</h5>
+                        <h1 class="mb-5 mt-2">당신의 서비스는 주 계약금이 어떻게 되나요?</h1>
+                        <div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float:none; margin:0 auto;">
+                            <div class="row g-3">                           
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                    <input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" type="number" class="form-control" id="week_pay" name="week_pay" placeholder="숫자만 입력해주세요">
+                                    <label for="week_pay">숫자만 입력해주세요</label>
+                                	</div>
+                                    <br><br>
+                                </div>
+                                <div class="col-12 mt-5">
+                                    <button id="nextbtn5-2" class="btn btn-primary w-100 py-3" disabled>다음</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="regform5-3" style="display: none;">
+                        <h5 class="section-title bg-white text-center text-primary px-3">계약 금액</h5>
+                        <h1 class="mb-5 mt-2">당신의 서비스는 건당 계약금이 어떻게 되나요?</h1>
+                        <div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float:none; margin:0 auto;">
+                            <div class="row g-3">                           
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                    <input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" type="text" class="form-control" id="case_pay" name="case_pay" placeholder="숫자만 입력해주세요">
+                                    <label for="case_pay">숫자만 입력해주세요</label>
+                                	</div>
+                                    <br><br>
+                                </div>
+                                <div class="col-12 mt-5">
+                                    <button id="nextbtn5-3" class="btn btn-primary w-100 py-3" disabled>다음</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="regform6" style="display: none;">
+                        <h5 class="section-title bg-white text-center text-primary px-3">소개</h5>
+                        <h1 class="mb-5 mt-2">마지막으로 자유롭게 당신을 소개해주세요</h1>
+                        <div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float:none; margin:0 auto;">
+                            <div class="row g-3">                           
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                    	<h5>검색에 노출될 제목을 입력해주세요</h5>
+                                    	<input type="text" class="form-control" id="introduce_title" name="introduce_title">
+                                	</div>
+                                	<br><br>
+                                	<div class="form-floating">
+                                		<h5>본인의 서비스를 설명해주세요(200자 제한)</h5>
+                                    	<textarea class="form-control" id="introduce_contents" name="introduce_contents" style="height:200px"></textarea>
+                                	</div>
+                                	<br><br>
+	                                <input id="promotion_video_file" type="file" class="btn-check" name="promotion_video_file" accept="video/mp4, video/mkv, video/avi"/>
+	                                <label for="promotion_video_file" class="btn btn-outline-primary w-100 py-3">홍보 영상 업로드하기</label>
+	                               	<br><br>
+	                                <input type="text" class="form-control" id="promotion_video_upload-name" readOnly/>
+                                	<br><br>
+	                                <input id="banner_image_file" type="file" class="btn-check" name="banner_image_file" accept="image/jpg, image/png, image/jpeg"/>
+	                                <label for="banner_image_file" class="btn btn-outline-primary w-100 py-3">배너 이미지 설정하기</label>
+	                                <br><br>
+	                                <input type="text" class="form-control" id="banner_image_upload-name" readOnly/>
+                                </div>
+                             	<div class="col-12 mt-5">
+                                    <button type="submit" id="nextbtn6" class="btn btn-primary w-100 py-3" disabled>다음</button>
+                             	</div>
+                             </div>
+                         </div>
+                	</div>
                 </form>
             </div>
         </div>

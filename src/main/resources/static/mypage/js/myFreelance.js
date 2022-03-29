@@ -171,60 +171,15 @@ $('#class_type_8').click(function(){
 //프리랜서(강의제작) 학력
 $('#nextbtn_class3').click(function(){
    	$('#regform_class3').css("display", "none");
-	if($('input[name="labor_type"]:checked').val()=="1"){
-		$('#regform5-1').css("display", "block");
-	} else if($('input[name="labor_type"]:checked').val()=="2"){
-		$('#regform5-2').css("display", "block");
-	} else{
-		$('#regform5-3').css("display", "block");
-	}
+	$('#regform_class4').css("display", "block");
    	window.location="#containerform";
    	return false;
 });
-$('#education_1').click(function(){
-	$('#univform').css('display', 'block');	
-	$('#majorform').css('display', 'none');
-	$('#certifileform').css('display', 'none');
-	$('#univ').val("");
-	$('#major').val("");
-	$('#certification_file').val("");
-	$('#upload-name').val("");		
-})
-$('#education_2').click(function(){
-	$('#univform').css('display', 'block');
-	$('#majorform').css('display', 'none');
-	$('#certifileform').css('display', 'none');
-	$('#univ').val("");
-	$('#major').val("");
-	$('#certification_file').val("");
-	$('#upload-name').val("");
-})
-$('#education_3').click(function(){
-	$('#univform').css('display', 'block');
-	$('#majorform').css('display', 'none');
-	$('#certifileform').css('display', 'none');
-	$('#univ').val("");
-	$('#major').val("");
-	$('#certification_file').val("");
-	$('#upload-name').val("");
-})
-$('#education_4').click(function(){
-	$('#univform').css('display', 'block');
-	$('#majorform').css('display', 'none');
-	$('#certifileform').css('display', 'none');
-	$('#univ').val("");
-	$('#major').val("");
-	$('#certification_file').val("");
-	$('#upload-name').val("");	
-})
 $("#univ").on('change', function () {
 	if($('#major').val()==""||$('#certification_file').val()==""||$('#univ').val()==""){
 		$('#nextbtn_class3').attr('disabled', true);
 	} else{
 		$('#nextbtn_class3').attr('disabled', false);
-	}
-	if($('#univ').val()!=""){
-		$('#majorform').css('display', 'block');	
 	}
 });
 $("#major").on('change', function () {
@@ -232,9 +187,6 @@ $("#major").on('change', function () {
 		$('#nextbtn_class3').attr('disabled', true);
 	} else{
 		$('#nextbtn_class3').attr('disabled', false);
-	}
-	if($('#major').val()!=""){
-		$('#certifileform').css('display', 'block');	
 	}
 });
 $("#certification_file").on('change', function () {
@@ -245,67 +197,4 @@ $("#certification_file").on('change', function () {
 	}
     let fileName = $("#certification_file").val();
     $("#upload-name").val(fileName);
-});
-
-//프리랜서 계약 금액
-$('#nextbtn5-1').click(function(){
-   	$('#regform5-1').css("display", "none");
-	$('#regform6').css("display", "block");
-   	window.location="#containerform";
-   	return false;
-});
-$('#nextbtn5-2').click(function(){
-   	$('#regform5-2').css("display", "none");
-	$('#regform6').css("display", "block");
-   	window.location="#containerform";
-   	return false;
-});
-$('#nextbtn5-3').click(function(){
-   	$('#regform5-3').css("display", "none");
-	$('#regform6').css("display", "block");
-   	window.location="#containerform";
-   	return false;
-});
-$("#month_pay").on('change', function () {
-	$('#nextbtn5-1').attr('disabled', false);
-});
-$("#week_pay").on('change', function () {
-	$('#nextbtn5-2').attr('disabled', false);
-});
-$("#case_pay").on('change', function () {
-	$('#nextbtn5-3').attr('disabled', false);
-});
-
-//프리랜서 마지막 소개
-$("#introduce_title").on('change', function () {
-	if($('#introduce_title').val()==""||$('#introduce_contents').val()==""||$('#promotion_video_file').val()==""||$('#banner_image_file').val()==""){
-		$('#nextbtn6').attr('disabled', true);
-	} else{
-		$('#nextbtn6').attr('disabled', false);
-	}
-});
-$("#introduce_contents").on('change', function () {
-	if($('#introduce_title').val()==""||$('#introduce_contents').val()==""||$('#promotion_video_file').val()==""||$('#banner_image_file').val()==""){
-		$('#nextbtn6').attr('disabled', true);
-	} else{
-		$('#nextbtn6').attr('disabled', false);
-	}
-});
-$("#promotion_video_file").on('change', function () {
-    let fileName = $("#promotion_video_file").val();
-    $("#promotion_video_upload-name").val(fileName);
-    if($('#introduce_title').val()==""||$('#introduce_contents').val()==""||$('#promotion_video_file').val()==""||$('#banner_image_file').val()==""){
-		$('#nextbtn6').attr('disabled', true);
-	} else{
-		$('#nextbtn6').attr('disabled', false);
-	}
-});
-$("#banner_image_file").on('change', function () {
-    let fileName = $("#banner_image_file").val();
-    $("#banner_image_upload-name").val(fileName);
-    if($('#introduce_title').val()==""||$('#introduce_contents').val()==""||$('#promotion_video_file').val()==""||$('#banner_image_file').val()==""){
-		$('#nextbtn6').attr('disabled', true);
-	} else{
-		$('#nextbtn6').attr('disabled', false);
-	}
 });
