@@ -16,6 +16,7 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Stylish&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
@@ -53,17 +54,23 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="courses.html" class="nav-item nav-link">Courses</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <a href="#" class="nav-link" data-bs-toggle="dropdown">프리랜서</a>
                     <div class="dropdown-menu fade-down m-0">
-                        <a href=# class="dropdown-item">Our Team</a>
-                        <a href=# class="dropdown-item">Testimonial</a>
-                        <a href=# class="dropdown-item">404 Page</a>
+                        <a href=# class="dropdown-item">프리랜서 등록</a>
+                        <a href=# class="dropdown-item">프리랜서 조회</a>
                     </div>
                 </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link" data-bs-toggle="dropdown">강의</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href=# class="dropdown-item">강의 등록</a>
+                        <a href=# class="dropdown-item">강의 조회</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-item nav-link">마이페이지</a>
+                <a href="courses.html" class="nav-item nav-link">고객센터</a>
+                <a href=# class="nav-item nav-link">로그아웃</a>
             </div>
         </div>
     </nav>
@@ -261,25 +268,39 @@
                         </div>
                     </div>
                     <div id="regform_class3" style="display: none;">
-                        <h5 class="section-title bg-white text-center text-primary px-3">학력&전공</h5>
-                        <h1 class="mb-5 mt-2">당신의 학력을 알려주세요</h1>
+                        <h5 class="section-title bg-white text-center text-primary px-3">학력</h5>
+                        <h1 class="mb-5 mt-2">당신의 학력을 알고싶어요</h1>
                         <div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float:none; margin:0 auto;">
                             <div class="row g-3">                           
                                 <div class="col-12">
-                                    <div class="form-floating">
-                                    <input type="text" class="form-control" id="univ" name="univ" placeholder="최종 학력(학교)">
-                                    <label for="major">최종 학력(학교)</label>
+                                 	<input id="education_1" type="radio" class="btn-check" name="education" value="1"/>
+                                    <label for="education_1" class="btn btn-outline-primary w-100 py-3">전문학사</label>
+                                    <br><br>
+                                    <input id="education_2" type="radio" class="btn-check" name="education" value="2"/>
+                                    <label for="education_2" class="btn btn-outline-primary w-100 py-3">학사</label>
+                                    <br><br>
+                                    <input id="education_3" type="radio" class="btn-check" name="education" value="3"/>
+                                    <label for="education_3" class="btn btn-outline-primary w-100 py-3">석사</label>
+                                    <br><br>
+                                    <input id="education_4" type="radio" class="btn-check" name="education" value="4"/>
+                                    <label for="education_4" class="btn btn-outline-primary w-100 py-3">박사</label>
+                                    <br><br>
+                                    <div id="univform" class="form-floating" style="display:none;">
+                                    <input type="text" class="form-control" id="univ" name="univ" placeholder="졸업한 학교">
+                                    <label for="major">졸업한 학교</label>
                                 	</div>
                                 	<br><br>
-                                	<div class="form-floating">
+                                	<div id="majorform" class="form-floating" style="display:none;">
                                     <input type="text" class="form-control" id="major" name="major" placeholder="전공">
                                     <label for="major">전공</label>
                                 	</div>
                                 	<br><br>
-                                	<input id="certification_file" type="file" class="btn-check" name="certification_file"/>
-                                    <label for="certification_file" class="btn btn-outline-primary w-100 py-3">증빙서류 첨부하기</label>
-                                	<br><br>
-                                	<input type="text" class="form-control" id="upload-name" readOnly/>
+                                	<div id="certifileform" style="display:none;">
+	                                	<input id="certification_file" type="file" class="btn-check" name="certification_file"/>
+	                                    <label for="certification_file" class="btn btn-outline-primary w-100 py-3">증빙서류 첨부하기</label>
+	                                	<br><br>
+	                                	<input type="text" class="form-control" id="upload-name" readOnly/>
+                                	</div>
                                 </div>
                              	<div class="col-12 mt-5">
                                     <button id="nextbtn_class3" class="btn btn-primary w-100 py-3" disabled>다음</button>

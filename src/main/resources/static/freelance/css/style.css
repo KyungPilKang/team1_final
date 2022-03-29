@@ -39,7 +39,8 @@
 
 /*** Button ***/
 .btn {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Stylish', sans-serif;
+    font-size: 1.5em;
     font-weight: 600;
     transition: .5s;
 }
@@ -80,7 +81,7 @@
 .navbar .dropdown-toggle::after {
     border: none;
     content: "\f107";
-    font-family: "Font Awesome 5 Free";
+    font-family: 'Stylish', sans-serif;
     font-weight: 900;
     vertical-align: middle;
     margin-left: 8px;
@@ -401,7 +402,7 @@
 .footer .btn.btn-link::before {
     position: relative;
     content: "\f105";
-    font-family: "Font Awesome 5 Free";
+    font-family: 'Stylish', sans-serif;
     font-weight: 900;
     margin-right: 10px;
 }
@@ -431,4 +432,32 @@
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+
+h1{
+	font-family: 'Stylish', sans-serif;
+}
+
+h2{
+	font-family: 'Stylish', sans-serif;
+}
+
+h3{
+	font-family: 'Stylish', sans-serif;
+}
+
+h4{
+	font-family: 'Stylish', sans-serif;
+}
+
+h5{
+	font-family: 'Stylish', sans-serif;
+}
+
+h6{
+	font-family: 'Stylish', sans-serif;
+}
+
+a{
+	font-family: 'Stylish', sans-serif;
 }

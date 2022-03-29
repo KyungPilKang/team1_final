@@ -168,7 +168,7 @@ $('#class_type_8').click(function(){
 	$('#nextbtn_class2').attr('disabled', false);
 });
 
-//프리랜서(강의제작) 과목
+//프리랜서(강의제작) 학력
 $('#nextbtn_class3').click(function(){
    	$('#regform_class3').css("display", "none");
 	$('#regform_class4').css("display", "block");
