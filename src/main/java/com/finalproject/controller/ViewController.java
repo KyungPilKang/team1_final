@@ -18,6 +18,10 @@ public class ViewController {
 	public @ResponseBody String home() {
 		return "test home";
 	}
-
+	
+	@RequestMapping("/freereg1")
+	public String freeReg1() {
+		return "freelance/regfreelance1";
+	}
 
 }
