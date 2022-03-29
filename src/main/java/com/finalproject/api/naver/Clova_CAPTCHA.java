@@ -25,14 +25,6 @@ public class Clova_CAPTCHA {
     // 메소드에서 공통으로 사용되는 key 값 초기화
     String key;
     
-    // localhost:8090/captchaform 로 이동했을 때, captcha_img.jsp 페이지가 나타나도록 한다.
-    @GetMapping("/captchaform")
-    public String CaptchaForm() {
-    	return "/login/captcha_img";
-    }
-    
-    // captcha_img.jsp에 있는 <img src="/captcha">에서 이미지를 불러올 수 있도록 한다.
-    
     @GetMapping("/captcha")
     public void reqCaptcha(HttpServletResponse res) {
     	try {

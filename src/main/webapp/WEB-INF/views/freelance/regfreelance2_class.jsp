@@ -93,7 +93,7 @@
 
 	<!-- Contact Start -->
 	<div class="container-xxl py-5">
-		<form>
+		<form action="regfree" method="post">
 			<div class="container">
 				<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
 					<h5 class="section-title bg-white text-center text-primary px-3">등록 정보</h5>
@@ -220,13 +220,13 @@
 									<h3>계약금액</h3>
 									<c:choose>
 										<c:when test="${not empty regfree.month_pay }">
-											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="${regfree.month_pay } 원/월" readOnly>
+											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="${regfree.month_pay }/월" readOnly>
 										</c:when>
 										<c:when test="${not empty regfree.week_pay }">
-											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="${regfree.week_pay } 원/주" readOnly>
+											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="${regfree.week_pay }/주" readOnly>
 										</c:when>
 										<c:otherwise>
-											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="${regfree.case_pay } 원/건 당" readOnly>
+											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="${regfree.case_pay }/건당" readOnly>
 										</c:otherwise>
 									</c:choose>
 								</div>

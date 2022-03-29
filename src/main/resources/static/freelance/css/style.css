@@ -473,3 +473,15 @@ input{
 textarea{
 	font-family: 'Stylish', sans-serif;
 }
+
+.swal_text{
+	font-family: 'Stylish', sans-serif;
+}
+
+.swal_confirm{
+	font-family: 'Stylish', sans-serif;
+}
+
+.swal_cancle{
+	font-family: 'Stylish', sans-serif;
+}

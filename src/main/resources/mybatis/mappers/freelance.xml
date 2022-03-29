@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+			"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.team1.dao.FreelanceDAO">
+
+</mapper>
+
+<!-- 
+CREATE TABLE `freelance` (
+  `no` int NOT NULL AUTO_INCREMENT,
+  `member_no` varchar(100) default null,
+  `name` varchar(100) default null,
+  `region` varchar(100) default null,
+  `gender` varchar(100) default null,
+  `age` varchar(100) default null,
+  `age_section` varchar(100) default null,
+  `email` varchar(100) default null,
+  `phone` varchar(100) default null,
+  `freelance_type` varchar(100) default null,
+  `labor_type` varchar(100) default null,
+  `labor_time` varchar(100) default null,
+  `career` varchar(100) default null,
+  `grade` varchar(100) default null,
+  `class_type` varchar(100) default null,
+  `class_type_etc` varchar(100) default null,
+  `education` varchar(100) default null,
+  `univ` varchar(100) default null,
+  `major` varchar(100) default null,
+  `certification_file_name` varchar(1000) default null,
+  `camera` varchar(100) default null,
+  `camera_etc` varchar(100) default null,
+  `lecture_video` varchar(100) default null,
+  `lecture_video_etc` varchar(100) default null,
+  `lecture_video_format` varchar(100) default null,
+  `editor_tool` varchar(100) default null,
+  `editor_tool_etc` varchar(100) default null,
+  `lecture_edit` varchar(100) default null,
+  `lecture_edit_etc` varchar(100) default null,
+  `lecture_edit_format` varchar(100) default null,
+  `introduce_title` varchar(1000) default null,
+  `introduce_contents` mediumtext default null,
+  `promotion_video_file_name` varchar(1000) default null,
+  `banner_image_file_name` varchar(1000) default null,
+  `month_pay` varchar(100) default null,
+  `week_pay` varchar(100) default null,
+  `case_pay` varchar(100) default null,
+  PRIMARY KEY (`no`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+ -->
