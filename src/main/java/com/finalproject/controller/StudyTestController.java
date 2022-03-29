@@ -1,8 +1,16 @@
 package com.finalproject.controller;
 
+import java.io.File;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.finalproject.dto.Freelance;
+import com.finalproject.dto.Study;
 
 @Controller
 public class StudyTestController {
@@ -63,6 +71,12 @@ public class StudyTestController {
 		return "testfile/testpage";
 	}
 	
+	@PostMapping("studyregform")
+	public ModelAndView regfree(@ModelAttribute Study inputstudy) {
+		ModelAndView mav=new ModelAndView();
+		System.out.println(inputstudy.getStudy_subject());
+		mav.setViewName("studyReg");
+		return mav; 
+	}
 	
-	
-}
+	}

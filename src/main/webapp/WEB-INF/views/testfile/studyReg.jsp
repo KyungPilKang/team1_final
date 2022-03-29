@@ -9,32 +9,40 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
-
-
-
-    <!-- Favicon -->
-    <link href="${pageContext.request.contextPath}/resources/freelance/img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="${pageContext.request.contextPath}/resources/freelance/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/resources/freelance/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="${pageContext.request.contextPath}/resources/freelance/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="${pageContext.request.contextPath}/resources/freelance/css/style.css" rel="stylesheet">
-
+<!--timepicker-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
  
+<!-- datepicker-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+
+<!-- Favicon -->
+<link href="${pageContext.request.contextPath}/resources/freelance/img/favicon.ico" rel="icon">
+
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Stylish&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+<!-- Icon Font Stylesheet -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- Libraries Stylesheet -->
+<link href="${pageContext.request.contextPath}/resources/freelance/lib/animate/animate.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/freelance/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+<!-- Customized Bootstrap Stylesheet -->
+<link href="${pageContext.request.contextPath}/resources/freelance/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Template Stylesheet -->
+<link href="${pageContext.request.contextPath}/resources/freelance/css/style.css" rel="stylesheet">
+
 </head>
 <body>
     <!-- Spinner Start -->
@@ -87,11 +95,12 @@
     <div class="container-xxl py-5" id="containerform"> 
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                
+            <form action="studyregform" method="post">
+				
                 <!-- 초/중등 타입 -->
                  <div id="regstudyform1">
                        <!--  <h5 class="section-title bg-white text-center text-primary px-3">학교유형</h5> -->
-                        <h1 class="mb-5 mt-2">?</h1>
+                        <h1 class="mb-5 mt-2">나에게 맞는 스터디 개설해볼까요?</h1>
                         <div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float:none; margin:0 auto">
                             <div class="row g-3">                           
                                 <div class="col-12">
@@ -99,11 +108,11 @@
                                         <label for="study_sname_1" class="btn btn-outline-primary w-100 py-3">초등학생</label>
                                         <br><br>
                                         <input id="study_sname_2" type="radio" class="btn-check" name="study_sname" value="2"/>
-                                        <label for="study_sname_2" class="btn btn-outline-primary w-100 py-3">중학생</label>
+                                        <label for="c" class="btn btn-outline-primary w-100 py-3">중학생</label>
                                         <br><br>
                                 </div>
                                 <div class="col-12 mt-5">
-                                    <button id="nextstudybtn1" class="btn btn-primary w-100 py-3">다음</button>
+                                    <button id="nextstudybtn1" class="btn btn-primary w-100 py-3" disabled>다음</button>
                                  </div>
                             </div>
                         </div>
@@ -111,16 +120,19 @@
                     
                  <!-- 초등학생 타입 -->                 
                   <div id="regstudyform2" style="display: none;">
-				    <h5 class="section-title bg-white text-center text-primary px-3">초등 학생</h5>
+				    <h5 class="section-title bg-white text-center text-primary px-3">스터디개설</h5>
 				    <div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float:none; margin:0 auto;">
 				        <div class="row g-3">                           
 				            <div class="col-12">
 				                <h3 class="section-title bg-white text-center text-primary px-3">학년</h3>
 				                   <div style="align-items:center; margin-top:20px;">
 				                    <select id="study_grade" onchange="getSelectEGradeValue()">
-				                    <option value="4학년">4학년</option> 
-				                    <option value="5학년">5학년</option> 
-				                    <option value="6학년">6학년</option> 
+				                    <option value="1"  id="study_grade_1">1학년</option> 
+				                    <option value="2"  id="study_grade_2">2학년</option> 
+				                    <option value="3"  id="study_grade_3">3학년</option> 
+				                    <option value="4"  id="study_grade_4">4학년</option> 
+				                    <option value="5"  id="study_grade_5">5학년</option> 
+				                    <option value="6"  id="study_grade_6">6학년</option> 
 				                    </select>
 				                   </div>
 				                <br><br>
@@ -129,11 +141,11 @@
 				               <h3 class="section-title bg-white text-center text-primary px-3">과목</h3>
 				                 <div style="align-items:center; margin-top:20px;">
 				                    <select id="study_subject" onchange="getSelectESubjectValue()">
-				                        <option value="국어">국어</option> 
-				                        <option value="영어">영어</option> 
-				                        <option value="수학">수학</option> 
-				                        <option value="사회">사회</option> 
-				                        <option value="과학">과학</option> 
+				                        <option value="1" id="study_subject_kr">국어</option> 
+				                        <option value="2" id="study_subject_en">영어</option> 
+				                        <option value="3" id="study_subject_ma">수학</option> 
+				                        <option value="4" id="study_subject_so">사회</option> 
+				                        <option value="5" id="study_subject_sc">과학</option> 
 				                    </select>
 				                </div>
 				                <br><br>
@@ -141,11 +153,11 @@
 				
 				                 <h3 class="section-title bg-white text-center text-primary px-3">유형</h3>
 				                  <div style="align-items:center; margin-top:20px;">
-				                    <select id="study_type_element" onchange="getSelectETypeValue()">
-				                        <input type="checkbox" name="내신" > 내신 
-				                        <input type="checkbox" name="시험" > 시험 
-				                        <input type="checkbox" name="경시대회준비" > 경시대회준비
-				                        <input type="checkbox" name="북클럽" > 북클럽
+				                    <select id="study_type" onchange="getSelectETypeValue()" hidden>
+				                        <input type="checkbox" value="1" id="study_type_1"> 내신 </input>
+				                        <input type="checkbox" value="2" id="study_type_2"> 시험 </input>
+				                        <input type="checkbox" value="3" id="study_type_3"> 경시대회준비 </input>
+				                        <input type="checkbox" value="4" id="study_type_4"> 북클럽 </input>
 				                    </select>
 				                 </div>
 				                <br><br>
@@ -153,10 +165,10 @@
 				                 <h3 class="section-title bg-white text-center text-primary px-3">목표레벨</h3>
 				                  <div style="align-items:center; margin-top:20px;">
 				                    <select id="study_target_level" onchange="getSelectETargetValue()">
-				                        <option value="초상">초상</option> 
-				                        <option value="상">상</option> 
-				                        <option value="중상">중상</option> 
-				                        <option value="중">중</option>
+				                        <option value="1" id="study_target_level1">초상</option> 
+				                        <option value="2" id="study_target_level2">상</option> 
+				                        <option value="3" id="study_target_level3">중상</option> 
+				                        <option value="4" id="study_target_level4">중</option>
 				                    </select>
 				                </div>
 				                <br><br>
@@ -164,14 +176,14 @@
 				            </div>
 				
 				            <div class="col-12 mt-5">
-				                <button id="nextstudybtn2" class="btn btn-primary w-100 py-3" >다음</button>
+				                <button id="nextstudybtn2" class="btn btn-primary w-100 py-3" disabled >다음</button>
 				            </div>
 					        </div>
 					    </div>
 					</div>
 				
 				  <!-- 중학생 타입 -->                 
-                  <div id="regstudyform3" style="display: none;">
+       <!--          <div id="regstudyform3" style="display: none;">
 				    <h5 class="section-title bg-white text-center text-primary px-3">중학생</h5>
 				    <div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float:none; margin:0 auto;">
 				        <div class="row g-3">                           
@@ -179,9 +191,9 @@
 				                <h3 class="section-title bg-white text-center text-primary px-3">학년</h3>
 				                  <div style="align-items:center; margin-top:20px;">
 				                    <select id="study_grade" onchange="getSelectMGradeValue()">
-				                    <option value="1학년">1학년</option> 
-				                    <option value="2학년">2학년</option> 
-				                    <option value="3학년">3학년</option> 
+				                    <option value="1"  name="study_grade_1">1학년</option> 
+				                    <option value="2"  name="study_grade_2">2학년</option> 
+				                    <option value="3"  name="study_grade_3">3학년</option> 
 				                    </select>
 				                </div>
 				                <br><br>
@@ -190,11 +202,11 @@
 				                 <h3 class="section-title bg-white text-center text-primary px-3">과목</h3>
 				                  <div style="align-items:center; margin-top:20px;">
 				                    <select id="study_subject" onchange="getSelectMSubjectValue()">
-				                        <option value="국어">국어</option> 
-				                        <option value="영어">영어</option> 
-				                        <option value="수학">수학</option> 
-				                        <option value="사회">사회</option> 
-				                        <option value="과학">과학</option> 
+				                        <option value="1" name="study_subject_kr">국어</option> 
+				                        <option value="2" name="study_subject_en">영어</option> 
+				                        <option value="3" name="study_subject_ma">수학</option> 
+				                        <option value="4" name="study_subject_so">사회</option> 
+				                        <option value="5" name="study_subject_sc">과학</option> 
 				                    </select>
 				                </div>
 				                <br><br>
@@ -219,21 +231,20 @@
 				                    </select>
 				                </div>
 				                <br><br>
-				                
-				                
+
 				            </div>
 				
 				            
 				            <div class="col-12 mt-5">
-				                <button id="nextstudybtn3" class="btn btn-primary w-100 py-3" >다음</button>
+				                <button id="nextstudybtn3" class="btn btn-primary w-100 py-3" disabled>다음</button>
 				            </div>
 				      	  </div>
 					    </div>
-					</div>      
+					</div>      --> 
 					
 					 <!-- 타이틀/날짜/시간 -->  
-					<div id="regstudyform4" style="display: none;">
-					   <!--  <h5 class="section-title bg-white text-center text-primary px-3">스터디개설</h5> -->
+					<div id="regstudyform3" style="display: none;">
+					   <h5 class="section-title bg-white text-center text-primary px-3">스터디개설</h5>
 					    <div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 40%; float:none; margin:0 auto;">
 					        <div class="row g-3">                           
 					            <div class="col-12">   
@@ -266,49 +277,48 @@
 				                   </div>
 			                    
 			                     	<div class="col-12 mt-5">
-							                <button id="nextstudybtn4" class="btn btn-primary w-100 py-3" >다음</button>
+							                <button id="nextstudybtn3" class="btn btn-primary w-100 py-3" disabled>다음</button>
 							        </div>
 							     </div>
 						    </div>
 						</div> 
                       
                 <!-- 상세내용/오픈카톡-->  
-					<div id="regstudyform5" style="display: none;">
-					   <!--  <h5 class="section-title bg-white text-center text-primary px-3">상세내용</h5> -->
+					<div id="regstudyform4" style="display: none;">
+					    <h5 class="section-title bg-white text-center text-primary px-3">스터디개설</h5> 
 					    <div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float:none; margin:0 auto;">
 					        <div class="row g-3">                           
 					            <div class="col-12">   
-								   <h3 class="section-title bg-white text-center text-primary px-3">상세내용</h3> 
-								 	  <textarea rows="10" cols="40" name="study_contents" /></textarea>  
+								   <h3 class="section-title bg-white text-center text-primary px-3">상세내용</h3>
+								   <div style="align-items:center; margin-top:20px;">  
+								 	  <textarea rows="10" cols="40" id="study_contents" name="study_contents" /></textarea>  
+								   </div>
 								   <br><br>
 								   
 								            
-				                   <h3 class="section-title bg-white text-center text-primary px-3">오픈카톡링크</h3>  
+				                   <h3 class="section-title bg-white text-center text-primary px-3">오픈카톡링크</h3> 
+				                    <div style="align-items:center; margin-top:20px;"> 
 					                    <input type="text" name="study_kakao" id="study_kakao" value="오픈카톡링크를 입력하세요" style="border:0 solid black;">  
+									</div>
 									<br><br>
 									
 				                   </div>
 			                    
 			                     	<div class="col-12 mt-5">
-							                <button id="nextstudybtn5" class="btn btn-primary w-100 py-3" >다음</button>
+							                <button id="nextstudybtn4" class="btn btn-primary w-100 py-3" disabled>다음</button>
 							        </div>
 							     </div>
 						    </div>
 						</div> 
 	                      
                         
-
+				</form>
             </div>
         </div>
     </div>
    
      <!-- Contact End -->
-     
-                     <!-- 폼태그시작 -->
-                <form action="regfree" method="post">
 
-                </form>
-     
          <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
@@ -352,52 +362,10 @@
     
     <!-- DIY -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="${pageContext.request.contextPath}/resources/freelance/js/myFreelance.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/freelance/js/mystudy1.js"></script>
 	<script>
-	  $(function(){
-
-		  $("#nextstudybtn1").click(function() {
-			  $("#regstudyform1").hide();
-			  var sname = $("input[name='study_sname']:checked").val();
-				  if( sname==="1"){
-					  $("#regstudyform2").show();
-					  $("#regstudyform3").hide();
-				  }else if(sname ==="2"){
-					  $("#regstudyform2").hide();
-					  $("#regstudyform3").show();
-				  }
-				
-		  });
-		  
-/* 		  $("#nextstudybtn2").click(function() {
-			  var grade = $("#study_grade").val();
-			  //등록확인의 grade 값 넣기 (reg_grade)
-			  $("#reg_grade").val(grade);
-		  }); */
-
-		  
-		  $("#nextstudybtn2").click(function() {
-			  $("#regstudyform1").hide();
-			  $("#regstudyform2").hide();
-			  $("#regstudyform3").hide();
-			  $("#regstudyform4").show();
-		  });
-		  
-		  $("#nextstudybtn3").click(function() {
-			  $("#regstudyform1").hide();
-			  $("#regstudyform2").hide();
-			  $("#regstudyform3").hide();
-			  $("#regstudyform4").show();
-		  });
-		  
-		  $("#nextstudybtn4").click(function() {
-			  $("#regstudyform1").hide();
-			  $("#regstudyform2").hide();
-			  $("#regstudyform3").hide();
-			  $("#regstudyform4").hide();
-			  $("#regstudyform5").show();
-		  });
-		  
+ 	  $(function(){  
+	  
 		  $('.datepicker').datepicker({
 	        	format :"yyyy-mm-dd", //달력에서 클릭시 표시할 값 형식 
 	        	todayHighlight: true,
@@ -447,11 +415,59 @@
 	        
 	      });
 	    
-
+	     
+	  //초중학교 선택
+/* 		  $("#nextstudybtn1").click(function() {
+		  $("#regstudyform1").hide();
+		  var sname = $("input[name='study_sname']:checked").val();
+			  if( sname==="1"){
+				  $("#regstudyform2").show();
+				  $("#regstudyform3").hide();
+			  }else if(sname ==="2"){
+				  $("#regstudyform2").hide();
+				  $("#regstudyform3").show();
+			  }
+			
+	  });
 	  
+	  //초등학교 입력값 
+	  $("#nextstudybtn2").click(function() {
+		  $("#regstudyform1").hide();
+		  $("#regstudyform2").hide();
+		  $("#regstudyform3").hide();
+		  $("#regstudyform4").show();
+	  });
+	  
+	  //중학교 입력값
+	  $("#nextstudybtn3").click(function() {
+		  $("#regstudyform1").hide();
+		  $("#regstudyform2").hide();
+		  $("#regstudyform3").hide();
+		  $("#regstudyform4").show();
+	  });
+	  
+	  //
+	  $("#nextstudybtn4").click(function() {
+		  $("#regstudyform1").hide();
+		  $("#regstudyform2").hide();
+		  $("#regstudyform3").hide();
+		  $("#regstudyform4").hide();
+		  $("#regstudyform5").show();
+	  });
+	  
+	  
+	  */
+	  
+  
+	    
+/* 		  $("#nextstudybtn2").click(function() {
+		  var grade = $("#study_grade").val();
+		  //등록확인의 grade 값 넣기 (reg_grade)
+		  $("#reg_grade").val(grade);
+	  }); */
+
 	</script>
-
-
-
 </body>
 </html>
+
+
