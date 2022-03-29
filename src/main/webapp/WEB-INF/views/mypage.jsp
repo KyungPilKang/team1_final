@@ -12,6 +12,7 @@
 
     <!-- Favicon -->
     <link href="${pageContext.request.contextPath}/resources/mypage/img/favicon.ico" rel="icon">
+    <link href="${pageContext.request.contextPath}/resources/css/mypage/mypage.css" rel="stylesheet">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -91,8 +92,25 @@
 
 
 <!-- Contact Start -->
-<div>
-adfadf
+<div class="main">
+    <div class="my-image"><a href="#">이미지</a> </div>
+    <div class="subject"><h1>프리랜서</h1></div>
+    <div class="defult">
+        <div class="subnavbar">
+            <div>홈</div>
+            <div>홈</div>
+            <div>제작한 강의 목록</div>
+            <div>리뷰 목록</div>
+        </div>
+        <div class="intro"><ul>자기소개
+        <li>이름</li>
+        <li>분야</li>
+        <li>경력</li>
+        <li>평점</li>
+        <li>자기소개</li>
+        </ul></div>
+        <div class="sub"><h1>강의문의</h1></div>
+    </div>
 </div>
 <!-- Contact End -->
 

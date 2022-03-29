@@ -1,11 +1,15 @@
 :root {
-    --main-color:#06BBCC;
-    --sub-color:#F0FBFC;
-    --black-color:#181d38;
+    --main-color: #06BBCC;
+    --sub-color: #F0FBFC;
+    --black-color: #181d38;
 }
-body {
-    margin: 0px;
-}
+
 .main {
     background-color: var(--main-color);
+    border: 5px solid red;
+    border-radius: 5px;
+}
+
+.my-image {
+    border: 5px solid red;
 }
