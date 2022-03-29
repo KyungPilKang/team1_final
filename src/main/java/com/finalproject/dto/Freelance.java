@@ -15,7 +15,7 @@ public class Freelance {
 	private String freelance_type;
 	private String labor_type;
 	private String labor_time;
-	private String carrer;
+	private String career;
 	private String grade;
 	private String class_type;
 	private String class_type_etc;
@@ -141,12 +141,12 @@ public class Freelance {
 		this.labor_time = labor_time;
 	}
 
-	public String getCarrer() {
-		return carrer;
+	public String getCareer() {
+		return career;
 	}
 
-	public void setCarrer(String carrer) {
-		this.carrer = carrer;
+	public void setCareer(String carrer) {
+		this.career = career;
 	}
 
 	public String getGrade() {

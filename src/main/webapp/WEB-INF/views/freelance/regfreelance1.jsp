@@ -75,14 +75,7 @@
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Contact</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
-                        </ol>
-                    </nav>
+                    <h1 class="display-3 text-white animated slideInDown">프리랜서 등록</h1>
                 </div>
             </div>
         </div>
@@ -91,13 +84,14 @@
 
 
     <!-- Contact Start -->
-    <div class="container-xxl py-5"> 
+    <div class="container-xxl py-5" id="containerform"> 
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <form action="regfree" method="post">
+                	<!-- 프리랜서 타입 -->
                     <div id="regform1">
-                        <h5 class="section-title bg-white text-center text-primary px-3">프리랜서 타입</h5>
-                        <h1 class="mb-5 mt-2">등록할 프리랜서 타입을 선택하세요</h1>
+                        <h5 class="section-title bg-white text-center text-primary px-3">프리랜서 유형</h5>
+                        <h1 class="mb-5 mt-2">당신은 어떤 유형의 프리랜서 인가요?</h1>
                         <div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float:none; margin:0 auto">
                             <div class="row g-3">                           
                                 <div class="col-12">
@@ -112,14 +106,15 @@
                                         <br><br>
                                 </div>
                                 <div class="col-12 mt-5">
-                                    <button id="nextbtn1" class="btn btn-primary w-100 py-3" >다음</button>
+                                    <button id="nextbtn1" class="btn btn-primary w-100 py-3" disabled>다음</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- 프리랜서 계약 형태 -->
                     <div id="regform2" style="display: none;">
                         <h5 class="section-title bg-white text-center text-primary px-3">계약 형태</h5>
-                        <h1 class="mb-5 mt-2">프리랜서 계약 형태를 선택하세요</h1>
+                        <h1 class="mb-5 mt-2">어떤 계약 형태를 원하시나요?</h1>
                         <div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float:none; margin:0 auto;">
                             <div class="row g-3">                           
                                 <div class="col-12">
@@ -128,13 +123,83 @@
                                     <br><br>
                                     <input id="labor_type_2" type="radio" class="btn-check" name="labor_type" value="2"/>
                                     <label for="labor_type_2" class="btn btn-outline-primary w-100 py-3">주 단위 계약</label>
-                                        <br><br>
-                                        <input id="labor_type_3" type="radio" class="btn-check" name="labor_type" value="3"/>
-                                        <label for="labor_type_3" class="btn btn-outline-primary w-100 py-3">강의 단위 계약</label>
-                                        <br><br>
-                                    </div>
+                                    <br><br>
+                                    <input id="labor_type_3" type="radio" class="btn-check" name="labor_type" value="3"/>
+                                    <label for="labor_type_3" class="btn btn-outline-primary w-100 py-3">강의 단위 계약</label>
+                                    <br><br>
+                                </div>
                                 <div class="col-12 mt-5">
-                                    <input type="submit" class="btn btn-primary w-100 py-3" value="등록 하기">
+                                    <button id="nextbtn2" class="btn btn-primary w-100 py-3" disabled>다음</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 프리랜서 일일 작업 시간 -->
+                    <div id="regform3" style="display: none;">
+                        <h5 class="section-title bg-white text-center text-primary px-3">작업 시간</h5>
+                        <h1 class="mb-5 mt-2">하루에 가능한 업무시간은 몇시간 인가요?</h1>
+                        <div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float:none; margin:0 auto;">
+                            <div class="row g-3">                           
+                                <div class="col-12">
+                                    <input id="labor_time_1" type="radio" class="btn-check" name="labor_time" value="1"/>
+                                    <label for="labor_time_1" class="btn btn-outline-primary w-100 py-3">1시간</label>
+                                    <br><br>
+                                    <input id="labor_time_2" type="radio" class="btn-check" name="labor_time" value="2"/>
+                                    <label for="labor_time_2" class="btn btn-outline-primary w-100 py-3">2시간</label>
+                                    <br><br>
+                                    <input id="labor_time_3" type="radio" class="btn-check" name="labor_time" value="3"/>
+                                    <label for="labor_time_3" class="btn btn-outline-primary w-100 py-3">3시간</label>
+                                    <br><br>
+                                    <input id="labor_time_4" type="radio" class="btn-check" name="labor_time" value="4"/>
+                                    <label for="labor_time_4" class="btn btn-outline-primary w-100 py-3">4시간</label>
+                                    <br><br>
+                                    <input id="labor_time_5" type="radio" class="btn-check" name="labor_time" value="5"/>
+                                    <label for="labor_time_5" class="btn btn-outline-primary w-100 py-3">5시간</label>
+                                    <br><br>
+                                    <input id="labor_time_6" type="radio" class="btn-check" name="labor_time" value="6"/>
+                                    <label for="labor_time_6" class="btn btn-outline-primary w-100 py-3">6시간</label>
+                                    <br><br>
+                                    <input id="labor_time_7" type="radio" class="btn-check" name="labor_time" value="7"/>
+                                    <label for="labor_time_7" class="btn btn-outline-primary w-100 py-3">7시간</label>
+                                    <br><br>
+                                    <input id="labor_time_8" type="radio" class="btn-check" name="labor_time" value="8"/>
+                                    <label for="labor_time_8" class="btn btn-outline-primary w-100 py-3">8시간</label>
+                                    <br><br>
+                                    <input id="labor_time_9" type="radio" class="btn-check" name="labor_time" value="9"/>
+                                    <label for="labor_time_9" class="btn btn-outline-primary w-100 py-3">9시간</label>
+                                    <br><br>
+                                    <input id="labor_time_10" type="radio" class="btn-check" name="labor_time" value="10"/>
+                                    <label for="labor_time_10" class="btn btn-outline-primary w-100 py-3">9시간 초과</label>
+                                    <br><br>
+                                </div>
+                                <div class="col-12 mt-5">
+                                    <button id="nextbtn3" class="btn btn-primary w-100 py-3" disabled>다음</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 프리랜서 경력 -->
+                    <div id="regform4" style="display: none;">
+                        <h5 class="section-title bg-white text-center text-primary px-3">경력</h5>
+                        <h1 class="mb-5 mt-2">해당 직종의 경력은 어떻게 되세요?</h1>
+                        <div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float:none; margin:0 auto;">
+                            <div class="row g-3">                           
+                                <div class="col-12">
+                                    <input id="career_1" type="radio" class="btn-check" name="career" value="1"/>
+                                    <label for="career_1" class="btn btn-outline-primary w-100 py-3">1년 미만</label>
+                                    <br><br>
+                                    <input id="career_2" type="radio" class="btn-check" name="career" value="2"/>
+                                    <label for="career_2" class="btn btn-outline-primary w-100 py-3">1년 이상 3년 미만</label>
+                                    <br><br>
+                                    <input id="career_3" type="radio" class="btn-check" name="career" value="3"/>
+                                    <label for="career_3" class="btn btn-outline-primary w-100 py-3">3년 이상 5년 미만</label>
+                                    <br><br>
+                                    <input id="career_3" type="radio" class="btn-check" name="career" value="4"/>
+                                    <label for="career_3" class="btn btn-outline-primary w-100 py-3">5년 이상</label>
+                                    <br><br>
+                                </div>
+                                <div class="col-12 mt-5">
+                                    <button id="nextbtn4" class="btn btn-primary w-100 py-3" disabled>다음</button>
                                 </div>
                             </div>
                         </div>
@@ -187,15 +252,9 @@
 
     <!-- Template Javascript -->
     <script src="${pageContext.request.contextPath}/resources/freelance/js/main.js"></script>
-    <script>
-    	if(performance.navigation.type==1){
-    		window.location="/freereg1";
-    	}
-        $('#nextbtn1').click(function(){
-            $('#regform1').css("display", "none");
-            $('#regform2').css("display", "block");
-            return false;
-        });
-    </script>
+    
+    <!-- DIY -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="${pageContext.request.contextPath}/resources/freelance/js/myFreelance.js"></script>
 </body>
 </html>
