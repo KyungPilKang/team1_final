@@ -226,7 +226,7 @@
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="${regfree.week_pay }/주" readOnly>
 										</c:when>
 										<c:otherwise>
-											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="${regfree.case_pay }/건 당" readOnly>
+											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="${regfree.case_pay }/건당" readOnly>
 										</c:otherwise>
 									</c:choose>
 								</div>
