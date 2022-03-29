@@ -91,7 +91,7 @@
     margin-right: 30px;
     padding: 25px 0;
     color: #FFFFFF;
-    font-size: 22px;
+    font-size: 15px;
     text-transform: uppercase;
     outline: none;
 }
@@ -459,13 +459,5 @@ h6{
 }
 
 a{
-	font-family: 'Stylish', sans-serif;
-}
-
-label{
-	font-family: 'Stylish', sans-serif;
-}
-
-input{
 	font-family: 'Stylish', sans-serif;
 }

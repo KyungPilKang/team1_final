@@ -19,6 +19,7 @@ public class Freelance {
 	private String grade;
 	private String class_type;
 	private String class_type_etc;
+	private String education;
 	private String univ;
 	private String major;
 	private File certification_file;
@@ -355,5 +356,14 @@ public class Freelance {
 
 	public void setCase_pay(String case_pay) {
 		this.case_pay = case_pay;
+	}
+
+	public String getEducation() {
+		return education;
+	}
+
+	public void setEducation(String education) {
+		this.education = education;
 	};
+	
 }
