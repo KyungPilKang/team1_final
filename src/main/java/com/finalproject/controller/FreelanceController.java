@@ -3,6 +3,7 @@ package com.finalproject.controller;
 import java.io.File;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,9 @@ public class FreelanceController {
 	
 	@Autowired
     private ServletContext servletContext;
+	
+	@Autowired
+    private HttpSession session;
 
 	@PostMapping("regfreeconfirm")
 	public ModelAndView regfree(@ModelAttribute Freelance inputFree) {
@@ -43,6 +47,8 @@ public class FreelanceController {
 				inputFree.setBanner_image_file_name(inputFree.getBanner_image_file().getOriginalFilename());
 				inputFree.getBanner_image_file().transferTo(destFile);
 			}
+			session.setAttribute("regfree", inputFree);
+			mav.setViewName("freelance/regfreelance2_class");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

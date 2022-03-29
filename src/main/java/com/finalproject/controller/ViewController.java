@@ -23,5 +23,10 @@ public class ViewController {
 	public String freeReg1() {
 		return "freelance/regfreelance1";
 	}
+	
+//	@RequestMapping("/freereg2")
+//	public String freeReg2() {
+//		return "freelance/regfreelance2_class";
+//	}
 
 }
