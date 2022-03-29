@@ -44,6 +44,7 @@ public class MemberController {
 	
 	  @GetMapping("loginForm")
 	    public String login(){
+
 	        return "/loginJoin/loginForm";
 	    }
 	
