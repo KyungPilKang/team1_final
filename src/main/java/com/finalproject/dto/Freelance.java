@@ -1,6 +1,6 @@
 package com.finalproject.dto;
 
-import java.io.File;
+import org.springframework.web.multipart.MultipartFile;
 
 public class Freelance {
 	private int no;
@@ -15,13 +15,14 @@ public class Freelance {
 	private String freelance_type;
 	private String labor_type;
 	private String labor_time;
-	private String carrer;
+	private String career;
 	private String grade;
 	private String class_type;
 	private String class_type_etc;
+	private String education;
 	private String univ;
 	private String major;
-	private File certification_file;
+	private MultipartFile certification_file;
 	private String certification_file_name;
 	private String camera;
 	private String camera_etc;
@@ -35,9 +36,9 @@ public class Freelance {
 	private String lecture_edit_format;
 	private String introduce_title;
 	private String introduce_contents;
-	private File promotion_video_file;
+	private MultipartFile promotion_video_file;
 	private String promotion_video_file_name;
-	private File banner_image_file;
+	private MultipartFile banner_image_file;
 	private String banner_image_file_name;
 	private String month_pay;
 	private String week_pay;
@@ -141,12 +142,12 @@ public class Freelance {
 		this.labor_time = labor_time;
 	}
 
-	public String getCarrer() {
-		return carrer;
+	public String getCareer() {
+		return career;
 	}
 
-	public void setCarrer(String carrer) {
-		this.carrer = carrer;
+	public void setCareer(String career) {
+		this.career = career;
 	}
 
 	public String getGrade() {
@@ -173,6 +174,14 @@ public class Freelance {
 		this.class_type_etc = class_type_etc;
 	}
 
+	public String getEducation() {
+		return education;
+	}
+
+	public void setEducation(String education) {
+		this.education = education;
+	}
+
 	public String getUniv() {
 		return univ;
 	}
@@ -189,11 +198,11 @@ public class Freelance {
 		this.major = major;
 	}
 
-	public File getCertification_file() {
+	public MultipartFile getCertification_file() {
 		return certification_file;
 	}
 
-	public void setCertification_file(File certification_file) {
+	public void setCertification_file(MultipartFile certification_file) {
 		this.certification_file = certification_file;
 	}
 
@@ -301,11 +310,11 @@ public class Freelance {
 		this.introduce_contents = introduce_contents;
 	}
 
-	public File getPromotion_video_file() {
+	public MultipartFile getPromotion_video_file() {
 		return promotion_video_file;
 	}
 
-	public void setPromotion_video_file(File promotion_video_file) {
+	public void setPromotion_video_file(MultipartFile promotion_video_file) {
 		this.promotion_video_file = promotion_video_file;
 	}
 
@@ -317,11 +326,11 @@ public class Freelance {
 		this.promotion_video_file_name = promotion_video_file_name;
 	}
 
-	public File getBanner_image_file() {
+	public MultipartFile getBanner_image_file() {
 		return banner_image_file;
 	}
 
-	public void setBanner_image_file(File banner_image_file) {
+	public void setBanner_image_file(MultipartFile banner_image_file) {
 		this.banner_image_file = banner_image_file;
 	}
 
@@ -355,5 +364,6 @@ public class Freelance {
 
 	public void setCase_pay(String case_pay) {
 		this.case_pay = case_pay;
-	};
+	}
+	
 }

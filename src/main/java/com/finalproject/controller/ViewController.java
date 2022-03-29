@@ -19,8 +19,14 @@ public class ViewController {
 		return "test home";
 	}
 	
-	@RequestMapping("/")
-	public @ResponseBody String main() {
-		return "test main입니다";
-	}
+//	@RequestMapping("/freereg1")
+//	public String freeReg1() {
+//		return "freelance/regfreelance1";
+//	}
+	
+//	@RequestMapping("/freereg2")
+//	public String freeReg2() {
+//		return "freelance/regfreelance2_class";
+//	}
+
 }
