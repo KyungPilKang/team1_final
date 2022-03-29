@@ -175,11 +175,26 @@ $('#nextbtn_class3').click(function(){
    	window.location="#containerform";
    	return false;
 });
+$('#education_1').click(function(){
+	$('#univform').css('display', 'block');	
+})
+$('#education_2').click(function(){
+	$('#univform').css('display', 'block');	
+})
+$('#education_3').click(function(){
+	$('#univform').css('display', 'block');	
+})
+$('#education_4').click(function(){
+	$('#univform').css('display', 'block');	
+})
 $("#univ").on('change', function () {
 	if($('#major').val()==""||$('#certification_file').val()==""||$('#univ').val()==""){
 		$('#nextbtn_class3').attr('disabled', true);
 	} else{
 		$('#nextbtn_class3').attr('disabled', false);
+	}
+	if($('#univ').val()!=""){
+		$('#majorform').css('display', 'block');	
 	}
 });
 $("#major").on('change', function () {
@@ -187,6 +202,9 @@ $("#major").on('change', function () {
 		$('#nextbtn_class3').attr('disabled', true);
 	} else{
 		$('#nextbtn_class3').attr('disabled', false);
+	}
+	if($('#major').val()!=""){
+		$('#certifileform').css('display', 'block');	
 	}
 });
 $("#certification_file").on('change', function () {

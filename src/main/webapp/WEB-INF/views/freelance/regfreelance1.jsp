@@ -287,14 +287,14 @@
                                     <br><br>
                                     <div id="univform" class="form-floating" style="display:none;">
                                     <input type="text" class="form-control" id="univ" name="univ" placeholder="졸업한 학교">
-                                    <label for="major">졸업한 학교</label>
+                                    <label for="major">졸업한 학교를 입력해주세요</label>
                                 	</div>
-                                	<br><br>
+                                	<br>
                                 	<div id="majorform" class="form-floating" style="display:none;">
                                     <input type="text" class="form-control" id="major" name="major" placeholder="전공">
-                                    <label for="major">전공</label>
+                                    <label for="major">전공을 입력해주세요</label>
                                 	</div>
-                                	<br><br>
+                                	<br>
                                 	<div id="certifileform" style="display:none;">
 	                                	<input id="certification_file" type="file" class="btn-check" name="certification_file"/>
 	                                    <label for="certification_file" class="btn btn-outline-primary w-100 py-3">증빙서류 첨부하기</label>
