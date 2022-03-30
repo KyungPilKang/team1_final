@@ -84,7 +84,7 @@
 		<div class="container py-5">
 			<div class="row justify-content-center">
 				<div class="col-lg-10 text-center">
-					<h1 class="display-3 text-white animated slideInDown">프리랜서 조회</h1>
+					<h1 class="display-3 text-white animated slideInDown">프리랜서 매칭</h1>
 				</div>
 			</div>
 		</div>
@@ -95,7 +95,7 @@
 	<div class="container-xxl py-5">
 		<div class="container">
 			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-				<h5 class="section-title bg-white text-center text-primary px-3">조회 결과</h5>
+				<h5 class="section-title bg-white text-center text-primary px-3">매칭 완료</h5>
 				<h1 class="mb-5 mt-2">다음의 프리랜서들이 매칭되었습니다</h1>
 			</div>
 			<div class="row g-4 justify-content-center wow fadeInUp">
