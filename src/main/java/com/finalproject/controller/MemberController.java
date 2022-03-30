@@ -17,6 +17,7 @@ import com.finalproject.service.MemberServiceImpl;
 
 
 
+
 @Controller
 public class MemberController {
 	
@@ -31,10 +32,12 @@ public class MemberController {
 
 	        return "/loginJoin/loginForm";
 	    }
-	
-	
-	
-	
+	  
+	  @RequestMapping("termsagree")
+	  public String termsagree() {
+		  return "/loginJoin/termsagree";
+	  }
+
 	@PostMapping("/join")
 	public ModelAndView join(@ModelAttribute Member member) {
 		ModelAndView mav = new ModelAndView();
