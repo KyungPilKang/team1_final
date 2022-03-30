@@ -119,69 +119,31 @@
 						</div>
 					</div>
 
-					<!-- 초등학생 타입 -->
+					<!-- 입력2 : 학년 -->
 					<div id="regstudyform2" style="display: none;">
-						<h5 class="section-title bg-white text-center text-primary px-3">스터디개설</h5>
 						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 							<div class="row g-3">
 								<div class="col-12">
 									<h3 class="section-title bg-white text-center text-primary px-3">학년</h3>
 									<div style="align-items: center; margin-top: 20px;">
-										<select id="study_grade">
-											<option value="1" id="study_grade_1">1학년</option>
-											<option value="2" id="study_grade_2">2학년</option>
-											<option value="3" id="study_grade_3">3학년</option>
-											<option value="4" id="study_grade_4">4학년</option>
-											<option value="5" id="study_grade_5">5학년</option>
-											<option value="6" id="study_grade_6">6학년</option>
-										</select>
-									</div>
-									<br>
-									<br>
-
-
-									<h3 class="section-title bg-white text-center text-primary px-3">과목</h3>
-									<div style="align-items: center; margin-top: 20px;">
-										<select id="study_subject" onchange="getSelectESubjectValue()">
-											<option value="1" id="study_subject_kr">국어</option>
-											<option value="2" id="study_subject_en">영어</option>
-											<option value="3" id="study_subject_ma">수학</option>
-											<option value="4" id="study_subject_so">사회</option>
-											<option value="5" id="study_subject_sc">과학</option>
-										</select>
-									</div>
-									<br>
-									<br>
-
-
-									<h3 class="section-title bg-white text-center text-primary px-3">유형</h3>
-									<div style="align-items: center; margin-top: 20px;">
-										<select id="study_type" onchange="getSelectETypeValue()" hidden>
-											<input type="checkbox" value="1" id="study_type_1">
-											내신
-											</input>
-											<input type="checkbox" value="2" id="study_type_2">
-											시험
-											</input>
-											<input type="checkbox" value="3" id="study_type_3">
-											경시대회준비
-											</input>
-											<input type="checkbox" value="4" id="study_type_4">
-											북클럽
-											</input>
-										</select>
-									</div>
-									<br>
-									<br>
-
-									<h3 class="section-title bg-white text-center text-primary px-3">목표레벨</h3>
-									<div style="align-items: center; margin-top: 20px;">
-										<select id="study_target_level" onchange="getSelectETargetValue()">
-											<option value="1" id="study_target_level1">초상</option>
-											<option value="2" id="study_target_level2">상</option>
-											<option value="3" id="study_target_level3">중상</option>
-											<option value="4" id="study_target_level4">중</option>
-										</select>
+										<input id="study_grade_1" type="radio" class="btn-check" name="study_grade" value="1" />
+										<label for="study_grade_1" class="btn btn-outline-primary w-100 py-3">1학년</label> <br>
+										<br>
+										<input id="study_grade_2" type="radio" class="btn-check" name="study_grade" value="2" />
+										<label for="study_grade_2" class="btn btn-outline-primary w-100 py-3">2학년</label> <br>
+										<br>
+										<input id="study_grade_3" type="radio" class="btn-check" name="study_grade" value="3" />
+										<label for="study_grade_3" class="btn btn-outline-primary w-100 py-3">3학년</label> <br>
+										<br>
+										<input id="study_grade_4" type="radio" class="btn-check" name="study_grade" value="4" />
+										<label for="study_grade_4" class="btn btn-outline-primary w-100 py-3">4학년</label> <br>
+										<br>
+										<input id="study_grade_5" type="radio" class="btn-check" name="study_grade" value="5" />
+										<label for="study_grade_5" class="btn btn-outline-primary w-100 py-3">5학년</label> <br>
+										<br>
+										<input id="study_grade_6" type="radio" class="btn-check" name="study_grade" value="6" />
+										<label for="study_grade_6" class="btn btn-outline-primary w-100 py-3">6학년</label> <br>
+										<br>
 									</div>
 									<br>
 									<br>
@@ -194,71 +156,110 @@
 							</div>
 						</div>
 					</div>
-
-					<!-- 중학생 타입 -->
-					<!--          <div id="regstudyform3" style="display: none;">
-				    <h5 class="section-title bg-white text-center text-primary px-3">중학생</h5>
-				    <div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float:none; margin:0 auto;">
-				        <div class="row g-3">                           
-				            <div class="col-12">
-				                <h3 class="section-title bg-white text-center text-primary px-3">학년</h3>
-				                  <div style="align-items:center; margin-top:20px;">
-				                    <select id="study_grade" onchange="getSelectMGradeValue()">
-				                    <option value="1"  name="study_grade_1">1학년</option> 
-				                    <option value="2"  name="study_grade_2">2학년</option> 
-				                    <option value="3"  name="study_grade_3">3학년</option> 
-				                    </select>
-				                </div>
-				                <br><br>
-				
-				
-				                 <h3 class="section-title bg-white text-center text-primary px-3">과목</h3>
-				                  <div style="align-items:center; margin-top:20px;">
-				                    <select id="study_subject" onchange="getSelectMSubjectValue()">
-				                        <option value="1" name="study_subject_kr">국어</option> 
-				                        <option value="2" name="study_subject_en">영어</option> 
-				                        <option value="3" name="study_subject_ma">수학</option> 
-				                        <option value="4" name="study_subject_so">사회</option> 
-				                        <option value="5" name="study_subject_sc">과학</option> 
-				                    </select>
-				                </div>
-				                <br><br>
-				
-				
-				                 <h3 class="section-title bg-white text-center text-primary px-3">유형</h3>
-				                  <div style="align-items:center; margin-top:20px;">
-				                    <select id="study_type_mid" onchange="getSelectMTypeValue()">
-				                        <input type="checkbox" name="내신" > 내신 
-				                        <input type="checkbox" name="모의고사" > 모의고사
-				                    </select>
-				                 </div>
-				                <br><br>
-				                
-				                 <h3 class="section-title bg-white text-center text-primary px-3">목표점수</h3>
-				                  <div style="align-items:center; margin-top:20px;">
-				                    <select id="study_target" onchange="getSelectMTargetValue()">
-				                        <option value="초상">초상</option> 
-				                        <option value="상">상</option> 
-				                        <option value="중상">중상</option> 
-				                        <option value="중">중</option>
-				                    </select>
-				                </div>
-				                <br><br>
-
-				            </div>
-				
-				            
-				            <div class="col-12 mt-5">
-				                <button id="nextstudybtn3" class="btn btn-primary w-100 py-3" disabled>다음</button>
-				            </div>
-				      	  </div>
-					    </div>
-					</div>      -->
-
-					<!-- 타이틀/날짜/시간 -->
+					
+					<!-- 입력3 : 과목 -->
 					<div id="regstudyform3" style="display: none;">
-						<h5 class="section-title bg-white text-center text-primary px-3">스터디개설</h5>
-						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 40%; float: none; margin: 0 auto;">
+						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
+							<div class="row g-3">
+								<div class="col-12">
+									<h3 class="section-title bg-white text-center text-primary px-3">과목</h3>
+									<div style="align-items: center; margin-top: 20px;">
+										<input id="study_subject_kr" type="radio" class="btn-check" name="study_subject_kr" value="1" />
+										<label for="study_subject_kr" class="btn btn-outline-primary w-100 py-3">국어</label> <br>
+										<br>
+										<input id="study_subject_en" type="radio" class="btn-check" name="study_subject_en" value="2" />
+										<label for="study_subject_en" class="btn btn-outline-primary w-100 py-3">영어</label> <br>
+										<br>
+										<input id="study_subject_ma" type="radio" class="btn-check" name="study_subject_ma" value="3" />
+										<label for="study_subject_ma" class="btn btn-outline-primary w-100 py-3">수학</label> <br>
+										<br>
+										<input id="study_subject_so" type="radio" class="btn-check" name="study_subject_so" value="4" />
+										<label for="study_subject_so" class="btn btn-outline-primary w-100 py-3">사회</label> <br>
+										<br>
+										<input id="study_subject_sc" type="radio" class="btn-check" name="study_subject_sc" value="5" />
+										<label for="study_subject_sc" class="btn btn-outline-primary w-100 py-3">과학</label> <br>
+										<br>
+										<input id="study_grade_6" type="radio" class="btn-check" name="study_grade" value="6" />
+										<label for="study_grade_6" class="btn btn-outline-primary w-100 py-3">6학년</label> <br>
+										<br>
+									</div>
+									<br>
+									<br>
+								</div>
+
+								<div class="col-12 mt-5">
+									<button id="nextstudybtn3" class="btn btn-primary w-100 py-3" disabled>다음</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
+					<!-- 입력4 : 유형 -->
+					<div id="regstudyform4" style="display: none;">
+						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
+							<div class="row g-3">
+								<div class="col-12">
+									<h3 class="section-title bg-white text-center text-primary px-3">유형</h3>
+									<div style="align-items: center; margin-top: 20px;">
+										<input id="study_type_1" type="radio" class="btn-check" name="study_type_1" value="1" />
+										<label for="study_type_1" class="btn btn-outline-primary w-100 py-3">내신</label> <br>
+										<br>
+										<input id="study_type_2" type="radio" class="btn-check" name="study_type_2" value="2" />
+										<label for="study_type_2" class="btn btn-outline-primary w-100 py-3">시험</label> <br>
+										<br>
+										<input id="study_type_3" type="radio" class="btn-check" name="study_type_3" value="3" />
+										<label for="study_type_3" class="btn btn-outline-primary w-100 py-3">경시대회준비</label> <br>
+										<br>
+										<input id="study_type_4" type="radio" class="btn-check" name="study_type_4" value="4" />
+										<label for="study_type_4" class="btn btn-outline-primary w-100 py-3">북클럽</label> <br>
+										<br>
+									</div>
+									<br>
+									<br>
+								</div>
+
+								<div class="col-12 mt-5">
+									<button id="nextstudybtn4" class="btn btn-primary w-100 py-3" disabled>다음</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- 입력5 : 목표레벨 -->
+					<div id="regstudyform5" style="display: none;">
+						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
+							<div class="row g-3">
+								<div class="col-12">
+									<h3 class="section-title bg-white text-center text-primary px-3">목표레벨</h3>
+									<div style="align-items: center; margin-top: 20px;">
+										<input id="study_target_level1" type="radio" class="btn-check" name="study_target_level1" value="1" />
+										<label for="study_target_level1" class="btn btn-outline-primary w-100 py-3">최상</label> <br>
+										<br>
+										<input id="study_target_level2" type="radio" class="btn-check" name="study_target_level2" value="2" />
+										<label for="study_target_level2" class="btn btn-outline-primary w-100 py-3">상</label> <br>
+										<br>
+										<input id="study_target_level3" type="radio" class="btn-check" name="study_target_level3" value="3" />
+										<label for="study_target_level3" class="btn btn-outline-primary w-100 py-3">중상</label> <br>
+										<br>
+										<input id="study_target_level4" type="radio" class="btn-check" name="study_target_level4" value="4" />
+										<label for="study_target_level4" class="btn btn-outline-primary w-100 py-3">중</label> <br>
+										<br>
+									</div>
+									<br>
+									<br>
+								</div>
+									
+								<div class="col-12 mt-5">
+									<button id="nextstudybtn5" class="btn btn-primary w-100 py-3" disabled>다음</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- 입력6 : 타이틀 -->
+					<div id="regstudyform6" style="display: none;">
+						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 							<div class="row g-3">
 								<div class="col-12">
 									<h3 class="section-title bg-white text-center text-primary px-3">스터디타이틀</h3>
@@ -267,8 +268,20 @@
 									</div>
 									<br>
 									<br>
-
-
+								</div>
+									
+								<div class="col-12 mt-5">
+									<button id="nextstudybtn6" class="btn btn-primary w-100 py-3" disabled>다음</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- 입력7 : 시작/마무리 날짜-->
+					<div id="regstudyform7" style="display: none;">
+						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
+							<div class="row g-3">
+								<div class="col-12">
 									<h3 class="section-title bg-white text-center text-primary px-3">날짜</h3>
 									<div style="align-items: center; margin-top: 20px;">
 										<span style="align-items: left; margin-left: 10px;">From</span>
@@ -278,8 +291,20 @@
 									</div>
 									<br>
 									<br>
-
-
+								</div>
+									
+								<div class="col-12 mt-5">
+									<button id="nextstudybtn7" class="btn btn-primary w-100 py-3" disabled>다음</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- 입력8 : 시작/마무리 시간 -->
+					<div id="regstudyform8" style="display: none;">
+						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
+							<div class="row g-3">
+								<div class="col-12">
 									<h3 class="section-title bg-white text-center text-primary px-3">시간</h3>
 									<div style="align-items: center; margin-top: 20px;">
 										<span style="align-items: left; margin-left: 10px;">From</span>
@@ -289,19 +314,17 @@
 									</div>
 									<br>
 									<br>
-
 								</div>
-
+									
 								<div class="col-12 mt-5">
-									<button id="nextstudybtn3" class="btn btn-primary w-100 py-3" disabled>다음</button>
+									<button id="nextstudybtn8" class="btn btn-primary w-100 py-3" disabled>다음</button>
 								</div>
 							</div>
 						</div>
 					</div>
-
-					<!-- 상세내용/오픈카톡-->
-					<div id="regstudyform4" style="display: none;">
-						<h5 class="section-title bg-white text-center text-primary px-3">스터디개설</h5>
+					
+					<!-- 입력9 : 상세내용 -->
+					<div id="regstudyform9" style="display: none;">
 						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 							<div class="row g-3">
 								<div class="col-12">
@@ -311,23 +334,36 @@
 									</div>
 									<br>
 									<br>
-
-
+								</div>
+									
+								<div class="col-12 mt-5">
+									<button id="nextstudybtn9" class="btn btn-primary w-100 py-3" disabled>다음</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- 입력10 : 카톡링크 -->
+					<div id="regstudyform10" style="display: none;">
+						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
+							<div class="row g-3">
+								<div class="col-12">
 									<h3 class="section-title bg-white text-center text-primary px-3">오픈카톡링크</h3>
 									<div style="align-items: center; margin-top: 20px;">
 										<input type="text" name="study_kakao" id="study_kakao" value="오픈카톡링크를 입력하세요" style="border: 0 solid black;">
 									</div>
 									<br>
 									<br>
-
 								</div>
-
+								</div>
+									
 								<div class="col-12 mt-5">
-									<button id="nextstudybtn4" class="btn btn-primary w-100 py-3" disabled>다음</button>
+									<button id="nextstudybtn10" class="btn btn-primary w-100 py-3" disabled>다음</button>
 								</div>
-							</div>
 						</div>
 					</div>
+					
+
 
 
 				</form>
@@ -460,35 +496,9 @@
 		
 		 });
 		
-		 //초등학교 입력값 
-		 $("#nextstudybtn2").click(function() {
-		 $("#regstudyform1").hide();
-		 $("#regstudyform2").hide();
-		 $("#regstudyform3").hide();
-		 $("#regstudyform4").show();
-		 });
-		
-		 //중학교 입력값
-		 $("#nextstudybtn3").click(function() {
-		 $("#regstudyform1").hide();
-		 $("#regstudyform2").hide();
-		 $("#regstudyform3").hide();
-		 $("#regstudyform4").show();
-		 });
-		
-		 //
-		 $("#nextstudybtn4").click(function() {
-		 $("#regstudyform1").hide();
-		 $("#regstudyform2").hide();
-		 $("#regstudyform3").hide();
-		 $("#regstudyform4").hide();
-		 $("#regstudyform5").show();
-		 });
-		
-		
-		 */
 
-		/* 		  $("#nextstudybtn2").click(function() {
+		
+		 $("#nextstudybtn2").click(function() {
 		 var grade = $("#study_grade").val();
 		 //등록확인의 grade 값 넣기 (reg_grade)
 		 $("#reg_grade").val(grade);
