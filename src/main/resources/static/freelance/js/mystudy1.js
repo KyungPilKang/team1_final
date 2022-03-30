@@ -8,7 +8,7 @@ let sweetalert=(icon,title,contents)=>{
     };
 //F5 새로고침 제어
 if(performance.navigation.type==1){
-	window.location="/studyReg";
+	window.location="/freereg1";
 };
 
 //초중등 선택
