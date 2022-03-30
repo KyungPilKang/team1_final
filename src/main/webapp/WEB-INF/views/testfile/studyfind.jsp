@@ -96,7 +96,7 @@
 	<div class="container-xxl py-5" id="containerform">
 		<div class="container">
 			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-				<form action="studyregform" method="post">
+				<form action="studyfindform" method="post">
 
 					<!-- 초/중등 학교 study_sname -->
 					<div id="regstudyform1">
@@ -191,7 +191,6 @@
 						</div>
 					</div>
 					
-					
 					<!-- 입력4 : 유형 -->
 					<div id="regstudyform4" style="display: none;">
 						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
@@ -254,117 +253,12 @@
 						</div>
 					</div>
 
-					<!-- 입력6 : 타이틀 -->
-					<div id="regstudyform6" style="display: none;">
-						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
-							<div class="row g-3">
-								<div class="col-12">
-									<h3 class="section-title bg-white text-center text-primary px-3">스터디타이틀</h3>
-									<div style="align-items: center; margin-top: 20px;">
-										<input type="text" name="study_title" id="study_title" placeholder ="스터디명을 입력하세요" style="border: 0 solid black">
-									</div>
-									<br>
-									<br>
-								</div>
-									
-								<div class="col-12 mt-5">
-									<button id="nextstudybtn6" class="btn btn-primary w-100 py-3" disabled>다음</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- 입력7 : 시작/마무리 날짜-->
-					<div id="regstudyform7" style="display: none;">
-						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
-							<div class="row g-3">
-								<div class="col-12">
-									<h3 class="section-title bg-white text-center text-primary px-3">날짜</h3>
-									<div style="align-items: center; margin-top: 20px;">
-										<span style="align-items: left; margin-left: 10px;">From</span>
-										<input class="datepicker" id="study_fdate" name="study_fdate" style="width: 100px; border: 0 solid black" autocomplete="off">
-										<span style="align-items: left; margin-left: 8px;">To</span>
-										<input class="datepicker" id="study_edate" name="study_edate" style="width: 100px; border: 0 solid black" autocomplete="off">
-									</div>
-									<br>
-									<br>
-								</div>
-									
-								<div class="col-12 mt-5">
-									<button id="nextstudybtn7" class="btn btn-primary w-100 py-3" disabled>다음</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- 입력8 : 시작/마무리 시간 -->
-					<div id="regstudyform8" style="display: none;">
-						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
-							<div class="row g-3">
-								<div class="col-12">
-									<h3 class="section-title bg-white text-center text-primary px-3">시간</h3>
-									<div style="align-items: center; margin-top: 20px;">
-										<span style="align-items: left; margin-left: 10px;">From</span>
-										<input type="text" id="study_ftime" name="study_ftime" style="width: 100px; border: 0 solid black">
-										<span style="align-items: left; margin-left: 8px;">To</span>
-										<input type="text" id="study_etime" name="study_etime" style="width: 100px; border: 0 solid black">
-									</div>
-									<br>
-									<br>
-								</div>
-									
-								<div class="col-12 mt-5">
-									<button id="nextstudybtn8" class="btn btn-primary w-100 py-3" disabled>다음</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- 입력9 : 상세내용 -->
-					<div id="regstudyform9" style="display: none;">
-						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
-							<div class="row g-3">
-								<div class="col-12">
-									<h3 class="section-title bg-white text-center text-primary px-3">상세내용</h3>
-									<div style="align-items: center; margin-top: 20px;">
-										<textarea rows="10" cols="40" id="study_contents" name="study_contents" /></textarea>
-									</div>
-									<br>
-									<br>
-								</div>
-									
-								<div class="col-12 mt-5">
-									<button id="nextstudybtn9" class="btn btn-primary w-100 py-3" disabled>다음</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- 입력10 : 카톡링크 -->
-					<div id="regstudyform10" style="display: none;">
-						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
-							<div class="row g-3">
-								<div class="col-12">
-									<h3 class="section-title bg-white text-center text-primary px-3">오픈카톡링크</h3>
-									<div style="align-items: center; margin-top: 20px;">
-										<input type="text" name="study_kakao" id="study_kakao" placeholder="오픈카톡링크를 입력하세요" style="border: 0 solid black;">
-									</div>
-									<br>
-									<br>
-								</div>
-								</div>
-									
-								<div class="col-12 mt-5">
-									<button id="nextstudybtn10" class="btn btn-primary w-100 py-3" disabled>다음</button>
-								</div>
-						</div>
-					</div>
 					
 				<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 					<div class="row g-3">
 						<div class="col-12">
-						<div class="col-12 mt-5" id="regstudySubmitform" style="display: none;">
-							<button type="submit" class="btn btn-primary w-100 py-3">내용확인</button>
+						<div class="col-12 mt-5" id="studyfindSubmitform" style="display: none;">
+							<button type="submit" class="btn btn-primary w-100 py-3">검색</button>
 						</div>
 						</div>
 					</div>
@@ -427,7 +321,7 @@
 
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-	<script src="${pageContext.request.contextPath}/resources/study/js/mystudy1.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/study/js/mystudyfind.js"></script>
 
 	<!--timepicker-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
