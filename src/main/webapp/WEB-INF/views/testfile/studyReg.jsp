@@ -387,7 +387,7 @@
 
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-	<script src="${pageContext.request.contextPath}/resources/freelance/js/mystudy1.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/study/js/mystudy1.js"></script>
 
 	<!--timepicker-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
