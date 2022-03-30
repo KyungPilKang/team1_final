@@ -74,7 +74,8 @@ public class StudyTestController {
 	@PostMapping("studyregform")
 	public ModelAndView regfree(@ModelAttribute Study inputstudy) {
 		ModelAndView mav=new ModelAndView();
-		System.out.println(inputstudy.getStudy_subject());
+		System.out.println(inputstudy.toString());
+		mav.addObject("selectedOptions", inputstudy);
 		mav.setViewName("studyReg");
 		return mav; 
 	}
