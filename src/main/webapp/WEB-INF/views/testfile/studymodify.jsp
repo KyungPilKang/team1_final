@@ -96,7 +96,7 @@
 	<div class="container-xxl py-5" id="containerform">
 		<div class="container">
 			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-				<form action="studyregform" method="post">
+				<form action="studymodiform" method="post">
 
 					<!-- 초/중등 학교 study_sname -->
 					<div id="regstudyform1">
@@ -363,7 +363,7 @@
 				<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 					<div class="row g-3">
 						<div class="col-12">
-						<div class="col-12 mt-5" id="regstudySubmitform" style="display: none;">
+						<div class="col-12 mt-5" id="modistudySubmitform" style="display: none;">
 							<button type="submit" class="btn btn-primary w-100 py-3">내용확인</button>
 						</div>
 						</div>
@@ -427,7 +427,7 @@
 
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-	<script src="${pageContext.request.contextPath}/resources/study/js/mystudy1.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/study/js/mystudymodify.js"></script>
 
 	<!--timepicker-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>

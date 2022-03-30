@@ -73,39 +73,106 @@ public class StudyTestController {
 		return "testfile/modaltest";
 	}
 
-	@RequestMapping("/studyReg")
-	public String studyReg() {
-		return "testfile/studyReg";
-	}
+
 	
 	@GetMapping("testpage")
 	public String testpage() {
 		return "testfile/testpage";
 	}
 	
-	@PostMapping("studyregform")
-	public ModelAndView studyregform(@ModelAttribute Study inputstudy) {
+	//스터디메인
+	@GetMapping("studymain")
+	public String studymain() {
+		return "testfile/studymain";
+	}
+	
+	//등록페이지전환
+	@RequestMapping("/studyReg")
+	public String studyReg() {
+		return "testfile/studyReg";
+	}
+	
+	//검색페이지전환
+	@RequestMapping("/studyfind")
+	public String studyfind() {
+		return "testfile/studyfind";
+	}
+	
+	//검색버튼
+	@PostMapping("studyfindform")
+	public ModelAndView studyfindform(@ModelAttribute Study inputstudy) {
 		ModelAndView mav=new ModelAndView();
+		System.out.println("검색버튼클릭"+inputstudy.toString());
+		mav.setViewName("testfile/studyfindresult");
+		return mav; 
+	}
+	
+	@GetMapping("0330")
+	public ModelAndView test() {
+		ModelAndView mav=new ModelAndView();
+		mav.setViewName("testfile/studyfindresult");
+		return mav; 
+	}
+	
+	
+	//수정버튼
+	@PostMapping("studymodify")
+	public ModelAndView studymodify(@ModelAttribute Study inputstudy) {
+		ModelAndView mav=new ModelAndView("testfile/studymodify");
 		System.out.println(inputstudy.toString());
+		return mav; 
+	}
+	
+	//(1)수정확인요청
+	@PostMapping("studymodiform")
+	public ModelAndView studymodiform(@ModelAttribute Study inputstudy) {
+		ModelAndView mav=new ModelAndView();
+		System.out.println("수정확인요청:"+ inputstudy.toString());
 		try {
-		mav.addObject("regstudy", inputstudy);
-		mav.setViewName("testfile/studyRegCheck");
+		session.setAttribute("modistudy", inputstudy);
+		mav.setViewName("testfile/studymodiCheck");
 		}  catch(Exception e){
 			e.printStackTrace();
 		}
 		return mav; 
 	}
 	
-	
-	@PostMapping("studyreg")
-	public ModelAndView regstudy(@ModelAttribute Study cnfstudy) {
+	//(2)수정확인후 수정요청
+	@PostMapping("studymodi")
+	public ModelAndView studymodi(@ModelAttribute Study cnfstudy) {
 		ModelAndView mav=new ModelAndView();
-		System.out.println(cnfstudy.toString());
+		//Study cnfstudy = (Study) session.getAttribute("이름");
+		//System.out.println("수정확인후 수정요청:"+cnfstudy.toString());
 		return mav;
 	}
 	
-	@GetMapping("studymain")
-	public String studymain() {
-		return "testfile/studymain";
+	//(1)등록확인요청
+	@PostMapping("studyregform")
+	public ModelAndView studyregform(@ModelAttribute Study inputstudy) {
+		ModelAndView mav=new ModelAndView();
+		System.out.println("등록확인요청:"+inputstudy.toString());
+		try {
+		session.setAttribute("regstudy", inputstudy);
+		mav.setViewName("testfile/studyRegCheck");
+		}  catch(Exception e){
+			e.printStackTrace();
+		}
+		return mav; 
 	}
+	//(2)등록확인후 등록요청
+	@PostMapping("studyreg")
+	public ModelAndView regstudy() {
+		ModelAndView mav=new ModelAndView();
+		//Study cnfstudy = (Study) session.getAttribute("이름");
+		//System.out.println("등록확인후 등록요청:"+cnfstudy.toString());
+		return mav;
+	}
+	
+	//검색결과페이지
+	@PostMapping("studyfindresult")
+	public ModelAndView studyfindresult(@ModelAttribute Study inputstudy) {
+		ModelAndView mav=new ModelAndView("testfile/studyfindresult");
+		return mav; 
+	}
+		
 }
