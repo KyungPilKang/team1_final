@@ -3,13 +3,73 @@
     --sub-color: #F0FBFC;
     --black-color: #181d38;
 }
+.box {
+    display: flex;
+    justify-content: center;
+}
 
 .main {
-    background-color: var(--main-color);
+    background-color: var(--sub-color);
     border: 5px solid red;
     border-radius: 5px;
+    width: 1800px;
 }
 
 .my-image {
     border: 5px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.default {
+    display: flex;
+}
+
+.subject {
+    border: 5px solid white;
+    width: 800px;
+    height: 80px;
+    text-align: center;
+    padding: 10px;
+}
+
+.subnavbar {
+    border: 5px solid green;
+}
+
+.navbar-main {
+    text-align: center;
+}
+
+.navbar-bt {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.subnavbar div {
+    border: 5px solid yellowgreen;
+    font-size: 30px;
+    padding: 40px;
+}
+
+.default-intro {
+    border: 5px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 180px;
+}
+
+.intro {
+    border: 5px solid white;
+    height: 300px;
+    width: 1000px;
+}
+
+.intro ul li {
+    font-size: 20px;
 }

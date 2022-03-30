@@ -85,7 +85,7 @@
 		<div class="container py-5">
 			<div class="row justify-content-center">
 				<div class="col-lg-10 text-center">
-					<h1 class="display-3 text-white animated slideInDown">스터디 만들기</h1>
+					<h1 class="display-3 text-white animated slideInDown">스터디 매칭</h1>
 				</div>
 			</div>
 		</div>
@@ -98,7 +98,7 @@
 			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
 				<form action="studyregform" method="post">
 
-					<!-- 초/중등 타입 -->
+					<!-- 초/중등 학교 study_sname -->
 					<div id="regstudyform1">
 						<!--  <h5 class="section-title bg-white text-center text-primary px-3">학교유형</h5> -->
 						<h1 class="mb-5 mt-2">나에게 맞는 스터디 개설해볼까요?</h1>
@@ -164,23 +164,20 @@
 								<div class="col-12">
 									<h3 class="section-title bg-white text-center text-primary px-3">과목</h3>
 									<div style="align-items: center; margin-top: 20px;">
-										<input id="study_subject_kr" type="radio" class="btn-check" name="study_subject_kr" value="1" />
+										<input id="study_subject_kr" type="radio" class="btn-check" name="study_subject" value="1" />
 										<label for="study_subject_kr" class="btn btn-outline-primary w-100 py-3">국어</label> <br>
 										<br>
-										<input id="study_subject_en" type="radio" class="btn-check" name="study_subject_en" value="2" />
+										<input id="study_subject_en" type="radio" class="btn-check" name="study_subject" value="2" />
 										<label for="study_subject_en" class="btn btn-outline-primary w-100 py-3">영어</label> <br>
 										<br>
-										<input id="study_subject_ma" type="radio" class="btn-check" name="study_subject_ma" value="3" />
+										<input id="study_subject_ma" type="radio" class="btn-check" name="study_subject" value="3" />
 										<label for="study_subject_ma" class="btn btn-outline-primary w-100 py-3">수학</label> <br>
 										<br>
-										<input id="study_subject_so" type="radio" class="btn-check" name="study_subject_so" value="4" />
+										<input id="study_subject_so" type="radio" class="btn-check" name="study_subject" value="4" />
 										<label for="study_subject_so" class="btn btn-outline-primary w-100 py-3">사회</label> <br>
 										<br>
-										<input id="study_subject_sc" type="radio" class="btn-check" name="study_subject_sc" value="5" />
+										<input id="study_subject_sc" type="radio" class="btn-check" name="study_subject" value="5" />
 										<label for="study_subject_sc" class="btn btn-outline-primary w-100 py-3">과학</label> <br>
-										<br>
-										<input id="study_grade_6" type="radio" class="btn-check" name="study_grade" value="6" />
-										<label for="study_grade_6" class="btn btn-outline-primary w-100 py-3">6학년</label> <br>
 										<br>
 									</div>
 									<br>
@@ -202,16 +199,16 @@
 								<div class="col-12">
 									<h3 class="section-title bg-white text-center text-primary px-3">유형</h3>
 									<div style="align-items: center; margin-top: 20px;">
-										<input id="study_type_1" type="radio" class="btn-check" name="study_type_1" value="1" />
+										<input id="study_type_1" type="radio" class="btn-check" name="study_type" value="1" />
 										<label for="study_type_1" class="btn btn-outline-primary w-100 py-3">내신</label> <br>
 										<br>
-										<input id="study_type_2" type="radio" class="btn-check" name="study_type_2" value="2" />
+										<input id="study_type_2" type="radio" class="btn-check" name="study_type" value="2" />
 										<label for="study_type_2" class="btn btn-outline-primary w-100 py-3">시험</label> <br>
 										<br>
-										<input id="study_type_3" type="radio" class="btn-check" name="study_type_3" value="3" />
+										<input id="study_type_3" type="radio" class="btn-check" name="study_type" value="3" />
 										<label for="study_type_3" class="btn btn-outline-primary w-100 py-3">경시대회준비</label> <br>
 										<br>
-										<input id="study_type_4" type="radio" class="btn-check" name="study_type_4" value="4" />
+										<input id="study_type_4" type="radio" class="btn-check" name="study_type" value="4" />
 										<label for="study_type_4" class="btn btn-outline-primary w-100 py-3">북클럽</label> <br>
 										<br>
 									</div>
@@ -233,16 +230,16 @@
 								<div class="col-12">
 									<h3 class="section-title bg-white text-center text-primary px-3">목표레벨</h3>
 									<div style="align-items: center; margin-top: 20px;">
-										<input id="study_target_level1" type="radio" class="btn-check" name="study_target_level1" value="1" />
+										<input id="study_target_level1" type="radio" class="btn-check" name="study_target_level" value="1" />
 										<label for="study_target_level1" class="btn btn-outline-primary w-100 py-3">최상</label> <br>
 										<br>
-										<input id="study_target_level2" type="radio" class="btn-check" name="study_target_level2" value="2" />
+										<input id="study_target_level2" type="radio" class="btn-check" name="study_target_level" value="2" />
 										<label for="study_target_level2" class="btn btn-outline-primary w-100 py-3">상</label> <br>
 										<br>
-										<input id="study_target_level3" type="radio" class="btn-check" name="study_target_level3" value="3" />
+										<input id="study_target_level3" type="radio" class="btn-check" name="study_target_level" value="3" />
 										<label for="study_target_level3" class="btn btn-outline-primary w-100 py-3">중상</label> <br>
 										<br>
-										<input id="study_target_level4" type="radio" class="btn-check" name="study_target_level4" value="4" />
+										<input id="study_target_level4" type="radio" class="btn-check" name="study_target_level" value="4" />
 										<label for="study_target_level4" class="btn btn-outline-primary w-100 py-3">중</label> <br>
 										<br>
 									</div>
@@ -285,9 +282,9 @@
 									<h3 class="section-title bg-white text-center text-primary px-3">날짜</h3>
 									<div style="align-items: center; margin-top: 20px;">
 										<span style="align-items: left; margin-left: 10px;">From</span>
-										<input class="datepicker" id="study_fdate" style="width: 100px; border: 0 solid black">
+										<input class="datepicker" id="study_fdate" name="study_fdate" style="width: 100px; border: 0 solid black" autocomplete="off">
 										<span style="align-items: left; margin-left: 8px;">To</span>
-										<input class="datepicker" id="study_edate" style="width: 100px; border: 0 solid black">
+										<input class="datepicker" id="study_edate" name="study_edate" style="width: 100px; border: 0 solid black" autocomplete="off">
 									</div>
 									<br>
 									<br>
@@ -363,8 +360,15 @@
 						</div>
 					</div>
 					
-
-
+				<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
+					<div class="row g-3">
+						<div class="col-12">
+						<div class="col-12 mt-5" id="regstudySubmitform" style="display: none;">
+							<button type="submit" class="btn btn-primary w-100 py-3">내용확인</button>
+						</div>
+						</div>
+					</div>
+				</div>
 
 				</form>
 			</div>
@@ -437,6 +441,7 @@
 				format : "yyyy-mm-dd", //달력에서 클릭시 표시할 값 형식 
 				todayHighlight : true,
 			});
+			  
 
 			//영어달력에서 한글달력으로 설정 변경
 			$.datepicker.setDefaults({
@@ -502,7 +507,18 @@
 		 var grade = $("#study_grade").val();
 		 //등록확인의 grade 값 넣기 (reg_grade)
 		 $("#reg_grade").val(grade);
-		 }); */
+		 }); 
+		 
+		 
+		 
+		 <js 에서 추가 처리해야할 부분> 
+		 1. 초등/중등 학년 분리해서 받기 
+		 2. 마지막날짜가 시작날짜를 앞서지 않기 
+		 3. 마지막시간이 시작날짜를 앞서지 않기 
+		 4. 스터디제목/오픈링크/상세내용에서 엔터키 먹히지 않게 하기 
+
+		 
+		 */
 	</script>
 </body>
 </html>

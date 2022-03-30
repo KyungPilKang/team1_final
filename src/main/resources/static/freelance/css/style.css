@@ -5,6 +5,10 @@
     --dark: #181d38;
 }
 
+.btn-primary:hover{
+    color:rgb(0, 0, 0) !important;
+};
+
 .fw-medium {
     font-weight: 600 !important;
 }

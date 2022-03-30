@@ -31,7 +31,6 @@
 
 <!-- Template Stylesheet -->
 <link href="${pageContext.request.contextPath}/resources/freelance/css/style.css" rel="stylesheet">
-</head>
 
 <body>
 	<!-- Spinner Start -->
@@ -104,14 +103,11 @@
 							<div class="row g-3">
 								<div class="col-12">
 									<input id="freelance_type_1" type="radio" class="btn-check" name="freelance_type" value="1" />
-									<label for="freelance_type_1" class="btn btn-outline-primary w-100 py-3">강의 제작</label> <br>
-									<br>
+									<label for="freelance_type_1" class="btn btn-outline-primary w-100 py-3">강의 제작</label> <br> <br>
 									<input id="freelance_type_2" type="radio" class="btn-check" name="freelance_type" value="2" />
-									<label for="freelance_type_2" class="btn btn-outline-primary w-100 py-3">강의 촬영</label> <br>
-									<br>
+									<label for="freelance_type_2" class="btn btn-outline-primary w-100 py-3">강의 촬영</label> <br> <br>
 									<input id="freelance_type_3" type="radio" class="btn-check" name="freelance_type" value="3" />
-									<label for="freelance_type_3" class="btn btn-outline-primary w-100 py-3">강의 편집</label> <br>
-									<br>
+									<label for="freelance_type_3" class="btn btn-outline-primary w-100 py-3">강의 편집</label> <br> <br>
 								</div>
 								<div class="col-12 mt-5">
 									<button id="nextbtn1" class="btn btn-primary w-100 py-3" disabled>다음</button>
@@ -127,14 +123,11 @@
 							<div class="row g-3">
 								<div class="col-12">
 									<input id="labor_type_1" type="radio" class="btn-check" name="labor_type" value="1" />
-									<label for="labor_type_1" class="btn btn-outline-primary w-100 py-3">월 단위 계약</label> <br>
-									<br>
+									<label for="labor_type_1" class="btn btn-outline-primary w-100 py-3">월 단위 계약</label> <br> <br>
 									<input id="labor_type_2" type="radio" class="btn-check" name="labor_type" value="2" />
-									<label for="labor_type_2" class="btn btn-outline-primary w-100 py-3">주 단위 계약</label> <br>
-									<br>
+									<label for="labor_type_2" class="btn btn-outline-primary w-100 py-3">주 단위 계약</label> <br> <br>
 									<input id="labor_type_3" type="radio" class="btn-check" name="labor_type" value="3" />
-									<label for="labor_type_3" class="btn btn-outline-primary w-100 py-3">강의 단위 계약</label> <br>
-									<br>
+									<label for="labor_type_3" class="btn btn-outline-primary w-100 py-3">강의 단위 계약</label> <br> <br>
 								</div>
 								<div class="col-12 mt-5">
 									<button id="nextbtn2" class="btn btn-primary w-100 py-3" disabled>다음</button>
@@ -150,35 +143,25 @@
 							<div class="row g-3">
 								<div class="col-12">
 									<input id="labor_time_1" type="radio" class="btn-check" name="labor_time" value="1" />
-									<label for="labor_time_1" class="btn btn-outline-primary w-100 py-3">1시간</label> <br>
-									<br>
+									<label for="labor_time_1" class="btn btn-outline-primary w-100 py-3">1시간</label> <br> <br>
 									<input id="labor_time_2" type="radio" class="btn-check" name="labor_time" value="2" />
-									<label for="labor_time_2" class="btn btn-outline-primary w-100 py-3">2시간</label> <br>
-									<br>
+									<label for="labor_time_2" class="btn btn-outline-primary w-100 py-3">2시간</label> <br> <br>
 									<input id="labor_time_3" type="radio" class="btn-check" name="labor_time" value="3" />
-									<label for="labor_time_3" class="btn btn-outline-primary w-100 py-3">3시간</label> <br>
-									<br>
+									<label for="labor_time_3" class="btn btn-outline-primary w-100 py-3">3시간</label> <br> <br>
 									<input id="labor_time_4" type="radio" class="btn-check" name="labor_time" value="4" />
-									<label for="labor_time_4" class="btn btn-outline-primary w-100 py-3">4시간</label> <br>
-									<br>
+									<label for="labor_time_4" class="btn btn-outline-primary w-100 py-3">4시간</label> <br> <br>
 									<input id="labor_time_5" type="radio" class="btn-check" name="labor_time" value="5" />
-									<label for="labor_time_5" class="btn btn-outline-primary w-100 py-3">5시간</label> <br>
-									<br>
+									<label for="labor_time_5" class="btn btn-outline-primary w-100 py-3">5시간</label> <br> <br>
 									<input id="labor_time_6" type="radio" class="btn-check" name="labor_time" value="6" />
-									<label for="labor_time_6" class="btn btn-outline-primary w-100 py-3">6시간</label> <br>
-									<br>
+									<label for="labor_time_6" class="btn btn-outline-primary w-100 py-3">6시간</label> <br> <br>
 									<input id="labor_time_7" type="radio" class="btn-check" name="labor_time" value="7" />
-									<label for="labor_time_7" class="btn btn-outline-primary w-100 py-3">7시간</label> <br>
-									<br>
+									<label for="labor_time_7" class="btn btn-outline-primary w-100 py-3">7시간</label> <br> <br>
 									<input id="labor_time_8" type="radio" class="btn-check" name="labor_time" value="8" />
-									<label for="labor_time_8" class="btn btn-outline-primary w-100 py-3">8시간</label> <br>
-									<br>
+									<label for="labor_time_8" class="btn btn-outline-primary w-100 py-3">8시간</label> <br> <br>
 									<input id="labor_time_9" type="radio" class="btn-check" name="labor_time" value="9" />
-									<label for="labor_time_9" class="btn btn-outline-primary w-100 py-3">9시간</label> <br>
-									<br>
+									<label for="labor_time_9" class="btn btn-outline-primary w-100 py-3">9시간</label> <br> <br>
 									<input id="labor_time_10" type="radio" class="btn-check" name="labor_time" value="10" />
-									<label for="labor_time_10" class="btn btn-outline-primary w-100 py-3">9시간 초과</label> <br>
-									<br>
+									<label for="labor_time_10" class="btn btn-outline-primary w-100 py-3">9시간 초과</label> <br> <br>
 								</div>
 								<div class="col-12 mt-5">
 									<button id="nextbtn3" class="btn btn-primary w-100 py-3" disabled>다음</button>
@@ -194,17 +177,13 @@
 							<div class="row g-3">
 								<div class="col-12">
 									<input id="career_1" type="radio" class="btn-check" name="career" value="1" />
-									<label for="career_1" class="btn btn-outline-primary w-100 py-3">1년 미만</label> <br>
-									<br>
+									<label for="career_1" class="btn btn-outline-primary w-100 py-3">1년 미만</label> <br> <br>
 									<input id="career_2" type="radio" class="btn-check" name="career" value="2" />
-									<label for="career_2" class="btn btn-outline-primary w-100 py-3">1년 이상 3년 미만</label> <br>
-									<br>
+									<label for="career_2" class="btn btn-outline-primary w-100 py-3">1년 이상 3년 미만</label> <br> <br>
 									<input id="career_3" type="radio" class="btn-check" name="career" value="3" />
-									<label for="career_3" class="btn btn-outline-primary w-100 py-3">3년 이상 5년 미만</label> <br>
-									<br>
+									<label for="career_3" class="btn btn-outline-primary w-100 py-3">3년 이상 5년 미만</label> <br> <br>
 									<input id="career_4" type="radio" class="btn-check" name="career" value="4" />
-									<label for="career_4" class="btn btn-outline-primary w-100 py-3">5년 이상</label> <br>
-									<br>
+									<label for="career_4" class="btn btn-outline-primary w-100 py-3">5년 이상</label> <br> <br>
 								</div>
 								<div class="col-12 mt-5">
 									<button id="nextbtn4" class="btn btn-primary w-100 py-3" disabled>다음</button>
@@ -219,11 +198,9 @@
 							<div class="row g-3">
 								<div class="col-12">
 									<input id="grade_1" type="radio" class="btn-check" name="grade" value="1" />
-									<label for="grade_1" class="btn btn-outline-primary w-100 py-3">초등</label> <br>
-									<br>
+									<label for="grade_1" class="btn btn-outline-primary w-100 py-3">초등</label> <br> <br>
 									<input id="grade_2" type="radio" class="btn-check" name="grade" value="2" />
-									<label for="grade_2" class="btn btn-outline-primary w-100 py-3">중등</label> <br>
-									<br>
+									<label for="grade_2" class="btn btn-outline-primary w-100 py-3">중등</label> <br> <br>
 								</div>
 								<div class="col-12 mt-5">
 									<button id="nextbtn_class1" class="btn btn-primary w-100 py-3" disabled>다음</button>
@@ -238,26 +215,19 @@
 							<div class="row g-3">
 								<div class="col-12">
 									<input id="class_type_1" type="radio" class="btn-check" name="class_type" value="1" />
-									<label for="class_type_1" class="btn btn-outline-primary w-100 py-3">국어</label> <br>
-									<br>
+									<label for="class_type_1" class="btn btn-outline-primary w-100 py-3">국어</label> <br> <br>
 									<input id="class_type_2" type="radio" class="btn-check" name="class_type" value="2" />
-									<label for="class_type_2" class="btn btn-outline-primary w-100 py-3">수학</label> <br>
-									<br>
+									<label for="class_type_2" class="btn btn-outline-primary w-100 py-3">수학</label> <br> <br>
 									<input id="class_type_3" type="radio" class="btn-check" name="class_type" value="3" />
-									<label for="class_type_3" class="btn btn-outline-primary w-100 py-3">영어</label> <br>
-									<br>
+									<label for="class_type_3" class="btn btn-outline-primary w-100 py-3">영어</label> <br> <br>
 									<input id="class_type_4" type="radio" class="btn-check" name="class_type" value="4" />
-									<label for="class_type_4" class="btn btn-outline-primary w-100 py-3">사회</label> <br>
-									<br>
+									<label for="class_type_4" class="btn btn-outline-primary w-100 py-3">사회</label> <br> <br>
 									<input id="class_type_5" type="radio" class="btn-check" name="class_type" value="5" />
-									<label for="class_type_5" class="btn btn-outline-primary w-100 py-3">과학</label> <br>
-									<br>
+									<label for="class_type_5" class="btn btn-outline-primary w-100 py-3">과학</label> <br> <br>
 									<input id="class_type_6" type="radio" class="btn-check" name="class_type" value="6" />
-									<label for="class_type_6" class="btn btn-outline-primary w-100 py-3">비교과</label> <br>
-									<br>
+									<label for="class_type_6" class="btn btn-outline-primary w-100 py-3">비교과</label> <br> <br>
 									<input id="class_type_7" type="radio" class="btn-check" name="class_type" value="7" />
-									<label for="class_type_7" class="btn btn-outline-primary w-100 py-3">기타</label> <br>
-									<br>
+									<label for="class_type_7" class="btn btn-outline-primary w-100 py-3">기타</label> <br> <br>
 									<div id="class_type_etc" class="form-floating" style="display: none;">
 										<input type="text" class="form-control" id="class_type_8" name="class_type_etc" placeholder="직접 입력해주세요">
 										<label for="class_type_8">직접 입력해주세요</label>
@@ -276,17 +246,13 @@
 							<div class="row g-3">
 								<div class="col-12">
 									<input id="education_1" type="radio" class="btn-check" name="education" value="1" />
-									<label for="education_1" class="btn btn-outline-primary w-100 py-3">전문학사</label> <br>
-									<br>
+									<label for="education_1" class="btn btn-outline-primary w-100 py-3">전문학사</label> <br> <br>
 									<input id="education_2" type="radio" class="btn-check" name="education" value="2" />
-									<label for="education_2" class="btn btn-outline-primary w-100 py-3">학사</label> <br>
-									<br>
+									<label for="education_2" class="btn btn-outline-primary w-100 py-3">학사</label> <br> <br>
 									<input id="education_3" type="radio" class="btn-check" name="education" value="3" />
-									<label for="education_3" class="btn btn-outline-primary w-100 py-3">석사</label> <br>
-									<br>
+									<label for="education_3" class="btn btn-outline-primary w-100 py-3">석사</label> <br> <br>
 									<input id="education_4" type="radio" class="btn-check" name="education" value="4" />
-									<label for="education_4" class="btn btn-outline-primary w-100 py-3">박사</label> <br>
-									<br>
+									<label for="education_4" class="btn btn-outline-primary w-100 py-3">박사</label> <br> <br>
 									<div id="univform" class="form-floating" style="display: none;">
 										<input style="font-size: 1.5em" type="text" class="form-control" id="univ" name="univ" placeholder="졸업한 학교">
 										<label for="major">졸업한 학교를 입력해주세요</label>
@@ -299,8 +265,7 @@
 									<br>
 									<div id="certifileform" style="display: none;">
 										<input id="certification_file" type="file" class="btn-check" name="certification_file" accept=".pdf" />
-										<label for="certification_file" class="btn btn-outline-primary w-100 py-3">증빙서류 첨부하기</label> <br>
-										<br>
+										<label for="certification_file" class="btn btn-outline-primary w-100 py-3">증빙서류 첨부하기</label> <br> <br>
 										<input type="text" class="form-control" id="upload-name" readOnly />
 									</div>
 								</div>
@@ -320,8 +285,7 @@
 										<input style="font-size: 1.5em" koreanCurrency="true" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" type="text" class="form-control" id="month_pay" name="month_pay" placeholder="숫자만 입력해주세요">
 										<label for="month_pay">숫자만 입력해주세요</label>
 									</div>
-									<br>
-									<br>
+									<br> <br>
 								</div>
 								<div class="col-12 mt-5">
 									<button id="nextbtn5-1" class="btn btn-primary w-100 py-3" disabled>다음</button>
@@ -339,8 +303,7 @@
 										<input style="font-size: 1.5em" koreanCurrency="true" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" type="text" class="form-control" id="week_pay" name="week_pay" placeholder="숫자만 입력해주세요">
 										<label for="week_pay">숫자만 입력해주세요</label>
 									</div>
-									<br>
-									<br>
+									<br> <br>
 								</div>
 								<div class="col-12 mt-5">
 									<button id="nextbtn5-2" class="btn btn-primary w-100 py-3" disabled>다음</button>
@@ -358,8 +321,7 @@
 										<input style="font-size: 1.5em" koreanCurrency="true" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" type="text" class="form-control" id="case_pay" name="case_pay" placeholder="숫자만 입력해주세요">
 										<label for="case_pay">숫자만 입력해주세요</label>
 									</div>
-									<br>
-									<br>
+									<br> <br>
 								</div>
 								<div class="col-12 mt-5">
 									<button id="nextbtn5-3" class="btn btn-primary w-100 py-3" disabled>다음</button>
@@ -377,23 +339,18 @@
 										<h5>검색에 노출될 제목을 입력해주세요</h5>
 										<input style="font-size: 1.5em" type="text" class="form-control" id="introduce_title" name="introduce_title">
 									</div>
-									<br>
-									<br>
+									<br> <br>
 									<div class="form-floating">
 										<h5>본인의 서비스를 설명해주세요(200자 제한)</h5>
 										<textarea class="form-control" id="introduce_contents" name="introduce_contents" style="height: 200px"></textarea>
 									</div>
-									<br>
-									<br>
+									<br> <br>
 									<input id="promotion_video_file" type="file" class="btn-check" name="promotion_video_file" accept="video/mp4, video/mkv, video/avi" />
-									<label for="promotion_video_file" class="btn btn-outline-primary w-100 py-3">홍보 영상 업로드하기</label> <br>
-									<br>
+									<label for="promotion_video_file" class="btn btn-outline-primary w-100 py-3">홍보 영상 업로드하기</label> <br> <br>
 									<input type="text" class="form-control" id="promotion_video_upload-name" readOnly />
-									<br>
-									<br>
+									<br> <br>
 									<input id="banner_image_file" type="file" class="btn-check" name="banner_image_file" accept="image/jpg, image/png, image/jpeg" />
-									<label for="banner_image_file" class="btn btn-outline-primary w-100 py-3">배너 이미지 설정하기</label> <br>
-									<br>
+									<label for="banner_image_file" class="btn btn-outline-primary w-100 py-3">배너 이미지 설정하기</label> <br> <br>
 									<input type="text" class="form-control" id="banner_image_upload-name" readOnly />
 								</div>
 								<div class="col-12 mt-5">
@@ -422,8 +379,7 @@
 						<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
 						Designed By
 						<a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-						<br>
-						<br> Distributed By
+						<br> <br> Distributed By
 						<a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
 					</div>
 					<!-- <div class="col-md-6 text-center text-md-end">

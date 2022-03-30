@@ -183,10 +183,12 @@ $('#study_contents').click(function(){
 //regstudyform4, study_contents,study_kakao, nextstudybtn4
 $('#nextstudybtn10').click(function(){
    	$('#regstudyform10').css("display", "none");
+   	$('#regstudySubmitform').css("display", "block");
    	window.location="#containerform";
    	return false;
 });
 
 $('#study_kakao').click(function(){
    	$('#nextstudybtn10').attr('disabled', false);
+   	
 });

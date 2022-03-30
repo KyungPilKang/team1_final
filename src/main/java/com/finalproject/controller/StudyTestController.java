@@ -1,7 +1,9 @@
 package com.finalproject.controller;
 
-import java.io.File;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -9,11 +11,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.finalproject.dto.Freelance;
 import com.finalproject.dto.Study;
+import com.finalproject.service.FreelanceService;
+import com.finalproject.service.MemberService;
 
 @Controller
 public class StudyTestController {
+	@Autowired
+    private ServletContext servletContext;
+	
+	@Autowired
+    private HttpSession session;
+		
+	@Autowired
+	private MemberService memberService;
+	
 	
 	@GetMapping("datepickertest")
 	public String datepickertest() {
@@ -72,11 +84,28 @@ public class StudyTestController {
 	}
 	
 	@PostMapping("studyregform")
-	public ModelAndView regfree(@ModelAttribute Study inputstudy) {
+	public ModelAndView studyregform(@ModelAttribute Study inputstudy) {
 		ModelAndView mav=new ModelAndView();
-		System.out.println(inputstudy.getStudy_subject());
-		mav.setViewName("studyReg");
+		System.out.println(inputstudy.toString());
+		try {
+		mav.addObject("regstudy", inputstudy);
+		mav.setViewName("testfile/studyRegCheck");
+		}  catch(Exception e){
+			e.printStackTrace();
+		}
 		return mav; 
 	}
 	
+	
+	@PostMapping("studyreg")
+	public ModelAndView regstudy(@ModelAttribute Study cnfstudy) {
+		ModelAndView mav=new ModelAndView();
+		System.out.println(cnfstudy.toString());
+		return mav;
 	}
+	
+	@GetMapping("studymain")
+	public String studymain() {
+		return "testfile/studymain";
+	}
+}
