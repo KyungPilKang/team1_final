@@ -1,5 +1,7 @@
 package com.finalproject.service;
 
+import org.springframework.stereotype.Service;
+
 import com.finalproject.dto.Member;
 
 public interface MemberService {

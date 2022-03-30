@@ -29,4 +29,13 @@ public class ViewController {
 //		return "freelance/regfreelance2_class";
 //	}
 
+	@GetMapping("/iamportTest")
+	public String iamport() {
+		return "iamport";
+	}
+	
+	@GetMapping("/resfreeform")
+	public String resfreeform() {
+		return "freelance/resfreelance";
+	}
 }

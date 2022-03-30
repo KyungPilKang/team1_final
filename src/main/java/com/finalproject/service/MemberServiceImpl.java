@@ -3,10 +3,12 @@ package com.finalproject.service;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import com.finalproject.dao.MemberDAO;
 import com.finalproject.dto.Member;
 
+@Service
 public class MemberServiceImpl implements MemberService {
 
 	@Autowired

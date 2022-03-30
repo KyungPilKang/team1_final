@@ -1,4 +1,23 @@
 /********** Template CSS **********/
+.btn-primary:hover{
+    color:rgb(0, 0, 0) !important;
+};
+
+.dropdown-menu{
+    text-align: center;
+}
+
+.dropdown-item{
+    width: 150px !important;
+    text-align: center;
+}
+
+.dropdown-item:hover{
+    background-color: #06BBCC;
+    color: white;
+}
+
+/********** Template CSS **********/
 :root {
     --primary: #06BBCC;
     --light: #F0FBFC;
@@ -91,7 +110,7 @@
     margin-right: 30px;
     padding: 25px 0;
     color: #FFFFFF;
-    font-size: 22px;
+    font-size: 25px;
     text-transform: uppercase;
     outline: none;
 }
@@ -462,26 +481,14 @@ a{
 	font-family: 'Stylish', sans-serif;
 }
 
-label{
+small{
 	font-family: 'Stylish', sans-serif;
 }
-
-input{
+span{
 	font-family: 'Stylish', sans-serif;
+	font-weight: bold;
 }
-
-textarea{
-	font-family: 'Stylish', sans-serif;
-}
-
-.swal_text{
-	font-family: 'Stylish', sans-serif;
-}
-
-.swal_confirm{
-	font-family: 'Stylish', sans-serif;
-}
-
-.swal_cancle{
-	font-family: 'Stylish', sans-serif;
+.resfreespan{
+	font-size: 20px;
+	font-weight: bold;
 }
