@@ -13,7 +13,8 @@ public class SmsController {
 		public  @ResponseBody String smssend(@RequestParam("phone") String phone) {
 			String numStr= "";
 			try { 
-				numStr = sms.sendsms(phone.replaceAll("-", ""));  // -삭제하는 작업
+				numStr = Sms.sendsms(phone.replaceAll("-", ""));
+				System.out.println(numStr);
 			} catch(Exception e){
 				e.printStackTrace();
 			}

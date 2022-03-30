@@ -5,10 +5,10 @@ import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
 import com.twilio.type.PhoneNumber;
 
-public class sms {
+public class Sms {
   // Find your Account Sid and Token at twilio.com/user/account
   public static final String ACCOUNT_SID = "AC1aeff7c8bc5adc9f7a107bfa0db62045";
-  public static final String AUTH_TOKEN = "1f32d19e904a58449cc6ac3968d51a54";
+  public static final String AUTH_TOKEN = "62eba0c9786deab44b8d34d82bb82e45";
  
   
 	public static String sendsms(String number) {

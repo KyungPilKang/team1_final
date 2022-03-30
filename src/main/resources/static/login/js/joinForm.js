@@ -1,3 +1,79 @@
+//휴대폰 인증
+    var resnum = "";
+    	$(function() {
+    		$("#reqnum").click(function() {
+			if($("#phone").val()==''||$("#phone").val().length<11 || $("#phone").val().length>11){
+				Swal.fire({
+    			        icon: 'error',
+    			        title: '입력 오류',
+    			        text: '휴대폰 번호를 정확하게 입력하세요',
+    			        confirmButtonText: "확인"
+    			    })
+			} 		$.ajax({
+    				type:"post",
+    				dataType:"text",
+    				data:{phone:$("#phone").val()},
+    				url:"http://localhost:8090/sendsms",
+    				success: function(data, textStatus) {
+    					Swal.fire({
+    		    	        icon: 'success',
+    		    	        title: '인증번호 발송 성공',
+    		    	        text: '휴대폰을 확인하세요',
+    		    	        confirmButtonText: "확인"
+    		    	    })
+    					console.log(data);
+    					resnum = data;
+    				}
+    			});
+    		});
+  
+
+    		$("#connum").click(function() {
+			if($("#phone").val()==''){
+				Swal.fire({
+					icon: 'warning',
+    			    title: '입력 오류',
+    			    text: '휴대폰 번호를 입력하세요.',
+    			    confirmButtonText: "확인"
+    			    })
+			}else if($("#inputnum").val()==''){
+					Swal.fire({
+					icon: 'warning',
+    			    title: '입력 오류',
+    			    text: '인증번호를 입력해 주세요.',
+    			    confirmButtonText: "확인"
+    			    })
+				}else if($("#inputnum").val()===resnum) {
+    				Swal.fire({
+    	    	        icon: 'success',
+    	    	        title: '인증 성공',
+    	    	        text: '인증이 완료되었습니다.',
+    	    	        confirmButtonText: "확인"
+    	    	    })
+    	    	    $("#confirm").css("display","none");
+    			}else{
+    				Swal.fire({
+    			        icon: 'warning',
+    			        title: '인증번호가 일치하지 않습니다.',
+    			        text: '인증번호를 재요청 하시겠습니까?',
+    			        showCancelButton: true, // cancel버튼 보이기. 기본은 원래 없음
+    					confirmButtonColor: '#3085d6', // confrim 버튼 색깔 지정
+   						cancelButtonColor: '#d33', // cancel 버튼 색깔 지정
+    					confirmButtonText: '확인', // confirm 버튼 텍스트 지정
+   						cancelButtonText: '취소', // cancel 버튼 텍스트 지정
+    					reverseButtons: true // 버튼 순서 거꾸로
+    			    }).then(result =>{
+						if (result.isConfirmed){
+						$("#reqnum").click();
+						Swal.fire('인증번호 재발송 성공', '휴대폰을 확인하세요', 'success')
+						}
+	
+						})
+    				}	
+    			resnum="";
+    		});
+    	});
+   
 //이메일 셀렉트박스 제어 함수
  function selectEmail(ele){ 
         var $ele = $(ele); 
@@ -25,45 +101,5 @@
 		document.form.sangsejuso2.value = addrDetail;
 		document.form.zipcode.value = zipNo;
 }
-//휴대폰 인증
-	var resnum = "";
-	$(function() {
-		$("#reqnum").click(function() {
-			$.ajax({
-				type:"post",
-				dataType:"text",
-				data:{phone:$("#phone").val()},
-				url:"${pageContext.request.contextPath}/sendsms",
-				success: function(data, textStatus) {
-					Swal.fire({
-		    	        icon: 'success',
-		    	        title: '인증번호 발송 성공',
-		    	        text: '휴대폰을 확인하세요',
-		    	        confirmButtonText: "확인"
-		    	    })
-					console.log(data);
-					resnum = data;
-				}
-			});
-		});
+
 	
-		$("#connum").click(function() {
-			if($("#inputnum").val()===resnum) {
-				Swal.fire({
-	    	        icon: 'success',
-	    	        title: '인증 성공',
-	    	        text: '인증이 완료되었습니다.',
-	    	        confirmButtonText: "확인"
-	    	    })
-	    	    $("#confirm").css("display","none");
-			} else {
-				Swal.fire({
-			        icon: 'error',
-			        title: '입력 오류',
-			        text: '정확한 숫자를 입력하세요',
-			        confirmButtonText: "확인"
-			    })
-			}
-			resnum="";
-		});
-	});

@@ -32,16 +32,7 @@
 
 	<!-- Template Stylesheet -->
 	<link href="${pageContext.request.contextPath}/resources/login/css/style.css" rel="stylesheet">
-	<style>
-		.table#table1 .trborder th, .table#table1 .trborder td{
-			border-top: 1px solid #dee2e6;
-		}
-
-		th {
-			text-align: left;
-		}
-
-	</style>
+	<link href="${pageContext.request.contextPath}/resources/login/css/joinForm.css" rel="stylesheet">
 
 </head>
 
@@ -93,8 +84,13 @@
                               	<span class="star">*</span>
                             	</th>
                             	<td>
-                             		<div class="col-12">
-                              			<input type="text" id="username" name="username" placeholder="6~12자리 영문,숫자만 가능합니다." class="form-control">
+                            		<div class="row">
+                             			<div class="col-lg-6">
+                              				<input type="text" id="username" name="username" placeholder="6~12자리 영문,숫자" class="form-control">
+                             			</div>
+                             			<div class="col-lg-3">
+                             				<button type="button" id="usernamechk" class="btn btn-primary pl-1 pr-1 w-80">중복확인</button>
+                             			</div>
                              		</div>
                             	</td>
                             	
@@ -106,7 +102,7 @@
                             	</th>
                             	<td>
                              		<div class="col-12">
-                              			<input type="password" id="password" name="password" placeholder="8~16자리 영문/숫자/특수문자 중 2가지 이상 조합." class="form-control">
+                              			<input type="password" id="password1" name="password" placeholder="8~16자리 영문/숫자/특수문자 중 2가지 이상 조합." class="form-control">
                              		</div>
                             	</td>
                            </tr>
@@ -117,7 +113,7 @@
                             	</th>
                             	<td>
                              		<div class="col-12">
-                              			<input type="password" id="password" name="password" placeholder="다시한번 입력해 주세요." class="form-control">
+                              			<input type="password" id="password2" placeholder="다시한번 입력해 주세요." class="form-control">
                              		</div>
                             	</td>
                            </tr>
@@ -134,24 +130,97 @@
                            </tr>
                            <tr>
                            		<th>
+                           		생년월일
+                           		<span class="star">*</span>
+                           		</th>
+                           		<td>
+                					<div class="col-4">
+                    					<input type="date" id="birth" name="birth" class="form-control">
+                					</div>
+                           		</td>
+                           </tr>
+                           <tr>
+                           		<th>
+                           		성별
+                           		<span class="star">*</span>
+                           		</th>
+                           		<td>
+                           			<div class="row">
+                        				<div class="col-lg-3">
+                            				<label class="radio">
+                                				<input type="radio" id="female" name="gender" value="F">여자
+                            				</label>
+                        				</div>
+                        				<div class="col-lg-3">
+                            				<label class="radio">
+                                				<input type="radio" id="male" name="gender" value="M">남자
+                            				</label>
+                        				</div>
+                					</div>
+                           		</td>
+                           </tr>
+                           <tr>
+                            	<th>
+                             	닉네임
+                              	<span class="star">*</span>
+                            	</th>
+                            	<td>
+                            		<div class="row">
+                             			<div class="col-lg-6">
+                              				<input type="text" id="nickname" name="nickname" placeholder="한글/영문/숫자 사용 2~10자." class="form-control">
+                             			</div>
+                             			<div class="col-lg-3">
+                             				<button type="button" id="nickchk" class="btn btn-primary w-80">중복확인</button>
+                             			</div>
+                             		</div>
+                            	</td>
+                           </tr>
+                           <tr>
+                            	<th>
+                             	이메일
+                              	<span class="star">*</span>
+                            	</th>
+                            	<td>
+                            		<div class="row">
+                             			<div class="col-lg 5">
+                             				<input type="email" id="email1" name="email" class="form-control">
+                             			</div>
+                              			<div class="col-lg 4 input-group g-0">
+                              				<span class="input-group-text">@</span>
+                              				<input type="email" id="email2" name="email2" class="form-control">
+                              			</div>
+                              			<div class="col-lg 3 g-0">                  			
+                              				<select class="form-select" aria-label=".form-select-sm example" onchange="selectEmail(this)">
+                              				<option value="=============">=============</option>
+                              				<option value="naver.com">naver.com</option>
+                              				<option value="daum.net">daum.net</option>
+                              				<option value="gmail.com">gmail.com</option>
+                              				<option value="1">직접입력</option>
+                              			</select>
+                              			</div>
+                              		</div>
+                            	</td>
+                           </tr>
+                           <tr>
+                           		<th>
                            		휴대전화
                            		<span class="star">*</span>
                            		</th>
                            		<td>
                            			<div class="row">
 										<div class="col-lg-7">
-											<input type="text" id="phone" name="phone" maxlength="11" size="11" class="form-control">
+											<input type="text" id="phone" name="phone" maxlength="11" size="11" placeholder="숫자만 입력하세요."class="form-control">
 										</div>	
-										<div class="col-lg-5">
-											<button type="button" id="reqnum" class="btn btn-primary w-100">인증번호 요청</button>
+										<div class="col-lg-4">
+											<button type="button" id="reqnum" class="btn btn-primary w-90">인증번호 요청</button>
 										</div>
 									</div>
                     				<div class="row" id="confirm" >
                     					<div class="col-lg-7 pt-2">
                     						<input type="text" id="inputnum" name="inputnum" maxlength="6" class="form-control">
                     					</div>
-                    					<div class="col-lg-5 pt-2">
-                    						<button type="button" id="connum" class="btn btn-primary w-100" style="display:inline;">인증번호 확인</button>
+                    					<div class="col-lg-4 pt-2">
+                    						<button type="button" id="connum" class="btn btn-primary w-90" style="display:inline;">인증번호 확인</button>
                     					</div>
 									</div>
                            		</td>
@@ -166,8 +235,8 @@
     									<div class="col-lg-8">
         									<input type="text" id="zipcode" name="zipcode" maxlength="6" readonly="" class="form-control">
         								</div>
-        								<div class="col-lg-4">
-        									<button type="button" onclick="goPopup()" class="btn btn-primary w-100">주소검색</button>
+        								<div class="col-lg-3">
+        									<button type="button" onclick="goPopup()" class="btn btn-primary w-90">주소검색</button>
          								</div>
          								<div class="col-lg-12 pt-2">
         									<input type="text" id="dorojuso"name="dorojuso" readonly="" class="form-control">
@@ -184,74 +253,6 @@
 									</div>
                            		</td>
                            </tr>
-                           <tr>
-                           		<th>
-                           		생년월일
-                           		<span class="star">*</span>
-                           		</th>
-                           		<td>
-                					<div class="col-12">
-                    					<input type="date" id="birthDate" name="birth" class="form-control">
-                					</div>
-                           		</td>
-                           </tr>
-                           <tr>
-                            	<th>
-                             	닉네임
-                              	<span class="star">*</span>
-                            	</th>
-                            	<td>
-                             		<div class="col-12">
-                              			<input type="text" id="nickname" name="nickname" placeholder="한글/영문/숫자 사용 2~10자." class="form-control">
-                             		</div>
-                            	</td>
-                           </tr>
-                           <tr>
-                            	<th>
-                             	이메일
-                              	<span class="star">*</span>
-                            	</th>
-                            	<td>
-                            		<div class="row">
-                             			<div class="col-lg 5 g-0">
-                             				<input type="email" id="email" name="email" class="form-control">
-                             			</div>
-                              			<div class="col-lg 4 input-group g-0">
-                              				<span class="input-group-text">@</span>
-                              				<input type="email" id="email" name="email2" class="form-control">
-                              			</div>
-                              			<div class="col-lg 3">                  			
-                              				<select class="form-select" aria-label=".form-select-sm example" onchange="selectEmail(this)">
-                              				<option value="=============">=============</option>
-                              				<option value="naver.com">naver.com</option>
-                              				<option value="daum.net">daum.net</option>
-                              				<option value="gmail.com">gmail.com</option>
-                              				<option value="1">직접입력</option>
-                              			</select>
-                              			</div>
-                              		</div>
-                            	</td>
-                           </tr>
-                           <tr>
-                           		<th>
-                           		성별
-                           		<span class="star">*</span>
-                           		</th>
-                           		<td>
-                           			<div class="row">
-                        				<div class="col-lg-3">
-                            				<label class="radio-inline">
-                                				<input type="radio" id="femaleRadio" name="gender" value="F">여자
-                            				</label>
-                        				</div>
-                        				<div class="col-lg-3">
-                            				<label class="radio-inline">
-                                				<input type="radio" id="maleRadio" name="gender" value="M">남자
-                            				</label>
-                        				</div>
-                				</div>
-                           		</td>
-                           </tr>
                           </tbody>
                          </table>                           
                     	 </div>
@@ -259,7 +260,7 @@
               		<div class="row pt-3 ">
               		<div class="col-1"></div>
               			<div class="col-5 ">
-                    		<button class="btn btn-primary w-100 py-3" type="submit">회원가입</button>
+                    		<button id="join" class="btn btn-primary w-100 py-3" type="submit">회원가입</button>
                     	</div>
                     	<div class="col-5 ">               
                         	<a href="home" class="btn border w-100 py-3">취소하기</a>  
@@ -283,8 +284,8 @@
     <!-- Template Javascript -->
     <script src="${pageContext.request.contextPath}/resources/login/js/main.js"></script>
     <script src="${pageContext.request.contextPath}/resources/login/js/joinForm.js"></script>
-  
-    
+ 
+ 
 
 
     

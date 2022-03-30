@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.table#table1 .trborder th, .table#table1 .trborder td{
+			border-top: 1px solid #dee2e6;
+		}
+
+		th {
+			text-align: left;
+		}
