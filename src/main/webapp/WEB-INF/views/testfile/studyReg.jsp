@@ -98,7 +98,7 @@
 			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
 				<form action="studyregform" method="post">
 
-					<!-- 초/중등 타입 -->
+					<!-- 초/중등 학교 study_sname -->
 					<div id="regstudyform1">
 						<!--  <h5 class="section-title bg-white text-center text-primary px-3">학교유형</h5> -->
 						<h1 class="mb-5 mt-2">나에게 맞는 스터디 개설해볼까요?</h1>
@@ -360,10 +360,15 @@
 						</div>
 					</div>
 					
-
-					<div id="regstudySubmitform" style="display: none;">
-						<input type="submit" value="제출하기">
+				<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
+					<div class="row g-3">
+						<div class="col-12">
+						<div class="col-12 mt-5" id="regstudySubmitform" style="display: none;">
+							<button type="submit" class="btn btn-primary w-100 py-3">내용확인</button>
+						</div>
+						</div>
 					</div>
+				</div>
 
 				</form>
 			</div>
@@ -502,7 +507,18 @@
 		 var grade = $("#study_grade").val();
 		 //등록확인의 grade 값 넣기 (reg_grade)
 		 $("#reg_grade").val(grade);
-		 }); */
+		 }); 
+		 
+		 
+		 
+		 <js 에서 추가 처리해야할 부분> 
+		 1. 초등/중등 학년 분리해서 받기 
+		 2. 마지막날짜가 시작날짜를 앞서지 않기 
+		 3. 마지막시간이 시작날짜를 앞서지 않기 
+		 4. 스터디제목/오픈링크/상세내용에서 엔터키 먹히지 않게 하기 
+
+		 
+		 */
 	</script>
 </body>
 </html>
