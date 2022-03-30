@@ -38,7 +38,7 @@
 	<!-- Spinner Start -->
 	<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
 		<div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-			<span class="sr-only">Loading...</span>
+			<span class="resfreespan sr-only">Loading...</span>
 		</div>
 	</div>
 	<!-- Spinner End -->
@@ -52,7 +52,7 @@
 			</h1>
 		</a>
 		<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-			<span class="navbar-toggler-icon"></span>
+			<span class="resfreespan navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<div class="navbar-nav ms-auto p-4 p-lg-0">
@@ -103,86 +103,141 @@
 					<div id="tab-1" class="tab-pane fade show p-0 active">
 						<div class="job-item p-4 mb-4">
 							<div class="row g-4">
-								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left:100px;">
+								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
 									<img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
 									<div class="text-start ps-4">
-										<h5 class="mb-3">프리랜서 등록 제목</h5>
-										<span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-primary me-2"></i>지역</span> <span class="text-truncate me-3"><i class="far fa-clock text-primary me-2"></i>계약 형태(작업시간)</span> <span class="text-truncate me-0"><i class="far fa-money-bill-alt text-primary me-2"></i>계약 금액</span>
+										<h3 class="mb-3">프리랜서 등록 제목</h3>
+										<span class="resfreespan text-truncate me-3">
+											<i class="fa fa-map-marker-alt text-primary me-2"></i>지역
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="far fa-clock text-primary me-2"></i>계약 형태(작업시간)
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="far fa-money-bill-alt text-primary me-2"></i>계약 금액
+										</span>
+										<span class="resfreespan text-truncate me-0">
+											<i class="fa fa-regular fa-toolbox text-primary me-2"></i>사용 툴
+										</span>
 									</div>
 								</div>
 								<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
 									<div class="d-flex mb-3">
 										<a class="btn btn-primary" href="">상세보기</a>
 									</div>
-									<small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>등록 일자</small>
+									<span class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>등록 일자</span>
 								</div>
 							</div>
 						</div>
 						<div class="job-item p-4 mb-4">
 							<div class="row g-4">
-								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left:100px;">
+								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
 									<img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
 									<div class="text-start ps-4">
-										<h5 class="mb-3">프리랜서 등록 제목</h5>
-										<span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-primary me-2"></i>지역</span> <span class="text-truncate me-3"><i class="far fa-clock text-primary me-2"></i>계약 형태(작업시간)</span> <span class="text-truncate me-0"><i class="far fa-money-bill-alt text-primary me-2"></i>계약 금액</span>
+										<h3 class="mb-3">프리랜서 등록 제목</h3>
+										<span class="resfreespan text-truncate me-3">
+											<i class="fa fa-map-marker-alt text-primary me-2"></i>지역
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="far fa-clock text-primary me-2"></i>계약 형태(작업시간)
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="far fa-money-bill-alt text-primary me-2"></i>계약 금액
+										</span>
+										<span class="resfreespan text-truncate me-0">
+											<i class="fa fa-regular fa-toolbox text-primary me-2"></i>사용 툴
+										</span>
 									</div>
 								</div>
 								<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
 									<div class="d-flex mb-3">
 										<a class="btn btn-primary" href="">상세보기</a>
 									</div>
-									<small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>등록 일자</small>
+									<span class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>등록 일자</span>
 								</div>
 							</div>
 						</div>
 						<div class="job-item p-4 mb-4">
 							<div class="row g-4">
-								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left:100px;">
+								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
 									<img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
 									<div class="text-start ps-4">
-										<h5 class="mb-3">프리랜서 등록 제목</h5>
-										<span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-primary me-2"></i>지역</span> <span class="text-truncate me-3"><i class="far fa-clock text-primary me-2"></i>계약 형태(작업시간)</span> <span class="text-truncate me-0"><i class="far fa-money-bill-alt text-primary me-2"></i>계약 금액</span>
+										<h3 class="mb-3">프리랜서 등록 제목</h3>
+										<span class="resfreespan text-truncate me-3">
+											<i class="fa fa-map-marker-alt text-primary me-2"></i>지역
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="far fa-clock text-primary me-2"></i>계약 형태(작업시간)
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="far fa-money-bill-alt text-primary me-2"></i>계약 금액
+										</span>
+										<span class="resfreespan text-truncate me-0">
+											<i class="fa fa-regular fa-toolbox text-primary me-2"></i>사용 툴
+										</span>
 									</div>
 								</div>
 								<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
 									<div class="d-flex mb-3">
 										<a class="btn btn-primary" href="">상세보기</a>
 									</div>
-									<small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>등록 일자</small>
+									<span class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>등록 일자</span>
 								</div>
 							</div>
 						</div>
 						<div class="job-item p-4 mb-4">
 							<div class="row g-4">
-								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left:100px;">
+								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
 									<img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
 									<div class="text-start ps-4">
-										<h5 class="mb-3">프리랜서 등록 제목</h5>
-										<span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-primary me-2"></i>지역</span> <span class="text-truncate me-3"><i class="far fa-clock text-primary me-2"></i>계약 형태(작업시간)</span> <span class="text-truncate me-0"><i class="far fa-money-bill-alt text-primary me-2"></i>계약 금액</span>
+										<h3 class="mb-3">프리랜서 등록 제목</h3>
+										<span class="resfreespan text-truncate me-3">
+											<i class="fa fa-map-marker-alt text-primary me-2"></i>지역
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="far fa-clock text-primary me-2"></i>계약 형태(작업시간)
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="far fa-money-bill-alt text-primary me-2"></i>계약 금액
+										</span>
+										<span class="resfreespan text-truncate me-0">
+											<i class="fa fa-regular fa-toolbox text-primary me-2"></i>사용 툴
+										</span>
 									</div>
 								</div>
 								<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
 									<div class="d-flex mb-3">
 										<a class="btn btn-primary" href="">상세보기</a>
 									</div>
-									<small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>등록 일자</small>
+									<span class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>등록 일자</span>
 								</div>
 							</div>
 						</div>
 						<div class="job-item p-4 mb-4">
 							<div class="row g-4">
-								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left:100px;">
+								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
 									<img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
 									<div class="text-start ps-4">
-										<h5 class="mb-3">프리랜서 등록 제목</h5>
-										<span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-primary me-2"></i>지역</span> <span class="text-truncate me-3"><i class="far fa-clock text-primary me-2"></i>계약 형태(작업시간)</span> <span class="text-truncate me-0"><i class="far fa-money-bill-alt text-primary me-2"></i>계약 금액</span>
+										<h3 class="mb-3">프리랜서 등록 제목</h3>
+										<span class="resfreespan text-truncate me-3">
+											<i class="fa fa-map-marker-alt text-primary me-2"></i>지역
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="far fa-clock text-primary me-2"></i>계약 형태(작업시간)
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="far fa-money-bill-alt text-primary me-2"></i>계약 금액
+										</span>
+										<span class="resfreespan text-truncate me-0">
+											<i class="fa fa-regular fa-toolbox text-primary me-2"></i>사용 툴
+										</span>
 									</div>
 								</div>
 								<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
 									<div class="d-flex mb-3">
 										<a class="btn btn-primary" href="">상세보기</a>
 									</div>
-									<small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>등록 일자</small>
+									<span class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>등록 일자</span>
 								</div>
 							</div>
 						</div>
@@ -205,7 +260,7 @@
 							<div class="col-12 mt-4">
 								<button type="submit" class="btn btn-primary w-100 py-3 dropdown-toggle" data-bs-toggle="dropdown">페이지 이동하기</button>
 								<ul class="dropdown-menu dropdown-menu-end">
-									<li style="text-align: center;">1 페이지(현재)</li>
+									<li style="font-weight:bold; font-family: 'Stylish', sans-serif; text-align: center;">1 페이지(현재)</li>
 									<li><hr class="dropdown-divider"></li>
 									<li><a class="dropdown-item" href="#">Link 1</a></li>
 									<li><a class="dropdown-item" href="#">Link 2</a></li>
@@ -261,7 +316,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- Footer End -->		
+	<!-- Footer End -->
 
 
 	<!-- Back to Top -->

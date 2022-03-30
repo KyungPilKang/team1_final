@@ -486,4 +486,9 @@ small{
 }
 span{
 	font-family: 'Stylish', sans-serif;
+	font-weight: bold;
+}
+.resfreespan{
+	font-size: 20px;
+	font-weight: bold;
 }
