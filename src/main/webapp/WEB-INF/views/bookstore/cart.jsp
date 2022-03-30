@@ -115,12 +115,12 @@
                     </div>
 
                     <div class="total-amount">
-                        <h3>총 금액 : 100만원</h3>
+                        <h3>총 금액 : 100원</h3>
                     </div>
 
                     <div class="cart-btn">
-                        <a class="btn btn-primary py-3 px-5" href="">쇼핑 계속하기</a>
-                        <a class="btn btn-primary py-3 px-5" href="">전체 상품 구매하기</a>
+                        <a class="btn btn-primary py-3 px-5" href="/book-store">쇼핑 계속하기</a>
+                        <a class="btn btn-primary py-3 px-5" href="/book-store/payment">전체 상품 구매하기</a>
                     </div>
                 </div>
             </div>

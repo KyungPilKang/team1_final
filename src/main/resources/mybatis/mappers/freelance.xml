@@ -5,23 +5,23 @@
 <mapper namespace="com.finalproject.dao.FreelanceDAO">
 	<insert id="regFreelance_freeType1" parameterType="Freelance">
 		<![CDATA[
-			insert into freelance values (#{no}, #{member_no}, #{name}, #{region}, #{gender}, #{age}, #{age_section}, 
-			#{email}, #{phone}, #{freelance_type}, #{labor_type}, #{labor_time}, #{career}, #{grade}, #{class_type}, 
+			insert into freelance values (#{no}, #{member_no}, #{name}, #{region}, #{gender}, #{age}, #{age_section},
+			#{email}, #{phone}, #{freelance_type}, #{labor_type}, #{labor_time}, #{career}, #{grade}, #{class_type},
 			#{class_type_etc}, #{education}, #{univ}, #{major}, #{certification_file_name}, #{camera}, #{camera_etc},
 			#{lecture_video}, #{lecture_video_etc}, #{lecture_video_format}, #{editor_tool}, #{editor_tool_etc},
 			#{lecture_edit}, #{lecture_edit_etc}, #{lecture_edit_format}, #{introduce_title}, #{introduce_contents},
-			#{promotion_video_file_name}, #{banner_image_file_name}, #{month_pay}, #{week_pay}, #{case_pay}) 
+			#{promotion_video_file_name}, #{banner_image_file_name}, #{month_pay}, #{week_pay}, #{case_pay})
         ]]>
 	</insert>
 </mapper>
 
-<!-- 
+<!--
 insert into freelance (no, member_no, name, region, gender, age, age_section, email, phone,
 			freelance_type, labor_type, labor_time, career, grade, class_type, class_type_etc, education,
 			univ, major, certification_file_name, introduce_title, introduce_contents, promotion_video_file_name,
 			banner_image_file_name, ) values ()
  -->
-<!-- 
+<!--
 CREATE TABLE `freelance` (
   `no` int NOT NULL AUTO_INCREMENT,
   `member_no` varchar(100) default null,

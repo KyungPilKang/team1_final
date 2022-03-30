@@ -2,16 +2,18 @@ package com.finalproject.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping(value = "/book-store/payment")
 public class PaymentController {
 
-    @GetMapping("/book-store/payment")
+    @GetMapping("")
     public String payment() {
         return "/bookstore/payment";
     }
 
-    @GetMapping("book-store/payment/finished")
+    @GetMapping("/finished")
     public String finished() {
         return "/bookstore/paymentFinished";
     }
