@@ -75,13 +75,31 @@
                 <a href="#">#키워드</a>&nbsp;
                 <a href="#">#키워드</a>&nbsp;
             </div>
+
+
             <div class="sort_box">
-                <button class="btn btn-sm btn-primary px-3">판매량</button>
-                <button class="btn btn-sm btn-primary px-3">최신</button>
-                <button class="btn btn-sm btn-primary px-3">상품명</button>
+                <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
+                    <li class="nav-item">
+                        <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#">
+                            <h6 class="mt-n1 mb-0">판매량</h6>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="#">
+                            <h6 class="mt-n1 mb-0">최신순</h6>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="#">
+                            <h6 class="mt-n1 mb-0">상품명</h6>
+                        </a>
+                    </li>
+                </ul>
             </div>
+
+
+
         </div>
-        <br>
 
         <%-- 1 --%>
         <div class="row g-4 justify-content-center">
