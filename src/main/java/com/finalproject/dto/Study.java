@@ -159,6 +159,16 @@ public class Study {
 	public void setStudy_regdate(String study_regdate) {
 		this.study_regdate = study_regdate;
 	}
+
+	@Override
+	public String toString() {
+		return "Study [study_no=" + study_no + ", maker=" + maker + ", study_sname=" + study_sname + ", study_grade="
+				+ study_grade + ", study_subject=" + study_subject + ", study_type=" + study_type
+				+ ", study_target_level=" + study_target_level + ", study_title=" + study_title + ", study_fdate="
+				+ study_fdate + ", study_edate=" + study_edate + ", study_ftime=" + study_ftime + ", study_etime="
+				+ study_etime + ", study_contents=" + study_contents + ", study_kakao=" + study_kakao
+				+ ", study_regdate=" + study_regdate + "]";
+	}
 	
 	
 	
