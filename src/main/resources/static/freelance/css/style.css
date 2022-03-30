@@ -1,13 +1,28 @@
 /********** Template CSS **********/
-:root {
-    --primary: #4d4d4d;
-    --light: #F0FBFC;
-    --dark: #181d38;
-}
-
 .btn-primary:hover{
     color:rgb(0, 0, 0) !important;
 };
+
+.dropdown-menu{
+    text-align: center;
+}
+
+.dropdown-item{
+    width: 150px !important;
+    text-align: center;
+}
+
+.dropdown-item:hover{
+    background-color: #06BBCC;
+    color: white;
+}
+
+/********** Template CSS **********/
+:root {
+    --primary: #06BBCC;
+    --light: #F0FBFC;
+    --dark: #181d38;
+}
 
 .fw-medium {
     font-weight: 600 !important;
@@ -24,6 +39,7 @@
     bottom: 45px;
     z-index: 99;
 }
+
 
 /*** Spinner ***/
 #spinner {
@@ -94,7 +110,7 @@
     margin-right: 30px;
     padding: 25px 0;
     color: #FFFFFF;
-    font-size: 22px;
+    font-size: 25px;
     text-transform: uppercase;
     outline: none;
 }
@@ -465,26 +481,9 @@ a{
 	font-family: 'Stylish', sans-serif;
 }
 
-label{
+small{
 	font-family: 'Stylish', sans-serif;
 }
-
-input{
-	font-family: 'Stylish', sans-serif;
-}
-
-textarea{
-	font-family: 'Stylish', sans-serif;
-}
-
-.swal_text{
-	font-family: 'Stylish', sans-serif;
-}
-
-.swal_confirm{
-	font-family: 'Stylish', sans-serif;
-}
-
-.swal_cancle{
+span{
 	font-family: 'Stylish', sans-serif;
 }

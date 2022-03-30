@@ -33,4 +33,9 @@ public class ViewController {
 	public String iamport() {
 		return "iamport";
 	}
+	
+	@GetMapping("/resfreeform")
+	public String resfreeform() {
+		return "freelance/resfreelance";
+	}
 }
