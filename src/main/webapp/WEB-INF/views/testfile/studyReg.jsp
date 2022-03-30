@@ -126,7 +126,7 @@
 				            <div class="col-12">
 				                <h3 class="section-title bg-white text-center text-primary px-3">학년</h3>
 				                   <div style="align-items:center; margin-top:20px;">
-				                    <select id="study_grade" onchange="getSelectEGradeValue()">
+				                    <select id="study_grade" >
 				                    <option value="1"  id="study_grade_1">1학년</option> 
 				                    <option value="2"  id="study_grade_2">2학년</option> 
 				                    <option value="3"  id="study_grade_3">3학년</option> 
