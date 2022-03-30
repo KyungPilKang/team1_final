@@ -1,7 +1,7 @@
 /********** Template CSS **********/
 .btn-primary:hover{
     color:rgb(0, 0, 0) !important;
-};
+}
 
 .dropdown-menu{
     text-align: center;
@@ -491,4 +491,16 @@ span{
 .resfreespan{
 	font-size: 20px;
 	font-weight: bold;
+}
+
+input{
+	font-family: 'Stylish', sans-serif;
+}
+
+label{
+	font-family: 'Stylish', sans-serif;
+}
+
+textarea{
+	font-family: 'Stylish', sans-serif;
 }

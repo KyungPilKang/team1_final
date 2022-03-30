@@ -69,7 +69,6 @@ public class FreelanceController {
 	
 	@PostMapping("/regfree")
 	public ModelAndView regfree() {
-		System.out.println("성공");
 		ModelAndView mav=new ModelAndView();
 		//멤버 가라 데이터 설정
 		Member mem=new Member();

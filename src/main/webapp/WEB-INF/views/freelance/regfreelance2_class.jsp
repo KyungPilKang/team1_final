@@ -244,7 +244,7 @@
 								<br> <br>
 								<div class="form-floating">
 									<h3>서비스 소개</h3>
-									<textarea style="background: rgba(6, 187, 204, 0.3); height: 354px; font-size: 2.0em" class="form-control text-center" readOnly>${regfree.introduce_contents }</textarea>
+									<textarea style="background: rgba(6, 187, 204, 0.3); height: 354px; font-size: 1.5em" class="form-control text-center" readOnly>${regfree.introduce_contents }</textarea>
 								</div>
 								<br> <br>
 							</div>
