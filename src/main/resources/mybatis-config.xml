@@ -5,6 +5,12 @@
 <configuration>
 	<mappers>
 		<mapper resource="mybatis/mappers/member.xml"/>
+		<mapper resource="mybatis/mappers/freelance.xml"/>
+		<mapper resource="mybatis/mappers/order.xml"/>
+		<mapper resource="mybatis/mappers/cart.xml"/>
+		<mapper resource="mybatis/mappers/book.xml"/>
+		<mapper resource="mybatis/mappers/request.xml"/>
+		<mapper resource="mybatis/mappers/answer.xml"/>
 	</mappers>
 </configuration>
 
