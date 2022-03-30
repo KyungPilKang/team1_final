@@ -3,27 +3,22 @@
     --sub-color: #F0FBFC;
     --black-color: #181d38;
 }
+
 .box {
     display: flex;
     justify-content: center;
 }
 
 .main {
-    background-color: var(--sub-color);
-    border: 5px solid red;
+    background-color: white;
     border-radius: 5px;
     width: 1800px;
 }
 
-.my-image {
-    border: 5px solid red;
+.my-subject {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.default {
-    display: flex;
 }
 
 .subject {
@@ -34,12 +29,27 @@
     padding: 10px;
 }
 
+.default {
+    display: flex;
+}
+
 .subnavbar {
-    border: 5px solid green;
+    background-color: var(--main-color);
+    border-radius: 10px;
 }
 
 .navbar-main {
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-name {
+    border: 5px solid white;
+    border-radius: 10px;
+    width: 350px;
+    background-color: rgba(0,0,0,0.1);
 }
 
 .navbar-bt {
@@ -50,14 +60,33 @@
     align-items: center;
 }
 
+.navbar-bt div {
+    border: 5px solid white;
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px;
+    width: 350px;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.navbar-bt div:hover {
+    color: var(--sub-color);
+    background-color: var(--main-color);
+    border: 5px solid var(--sub-color);
+    border-radius: 10px;
+}
+
 .subnavbar div {
-    border: 5px solid yellowgreen;
-    font-size: 30px;
+    font-size: 40px;
     padding: 40px;
+    font-family: 'Stylish', sans-serif;
+    color: var(--black-color);
 }
 
 .default-intro {
-    border: 5px solid black;
+    border: 5px solid var(--main-color);
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,11 +94,38 @@
 }
 
 .intro {
-    border: 5px solid white;
+    border-bottom: 5px solid var(--main-color);
     height: 300px;
     width: 1000px;
+    display: flex;
+    position: relative;
 }
 
 .intro ul li {
     font-size: 20px;
+    width: 850px;
+}
+
+.intro-bt {
+    font-size: 25px;
+    width: 100px;
+    height: 60px;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: var(--sub-color);
+    background-color: var(--main-color);
+    border: 5px solid var(--main-color);
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.intro-bt:hover {
+    color: var(--main-color);
+    background-color: var(--sub-color);
+    border: 5px solid var(--main-color);
+    border-radius: 10px;
 }
