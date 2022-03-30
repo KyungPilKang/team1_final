@@ -32,47 +32,11 @@
 
     <!-- Template Stylesheet -->
     <link href="${pageContext.request.contextPath}/resources/login/css/style.css" rel="stylesheet">
-    <style>
-  .table#table1 .trborder th, .table#table1 .trborder td{
-  	border-top: 1px solid #dee2e6;
-  }
-	
-	th {
-		text-align: left;
-	}
-	
-    </style>
-    
+
 </head>
 
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <!-- Spinner End -->
 
-
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="home" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>eLEARNING</h2>
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-            </div>
-            <a href="home" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Home<i class="fa fa-arrow-right ms-3"></i></a>
-        </div>
-    </nav>
-    <!-- Navbar End -->
-
-    <!-- Header Start -->
-    <!-- Header End -->
 
     <!-- Contact Start -->
     <div class="container-xxl py-10 mt-5">
@@ -97,7 +61,7 @@
                               			<input type="text" id="username" name="username" placeholder="6~12자리 영문,숫자만 가능합니다." class="form-control">
                              		</div>
                             	</td>
-                            	
+
                            </tr>
                            <tr>
                             	<th>
@@ -141,7 +105,7 @@
                            			<div class="row">
 										<div class="col-lg-8">
 											<input type="text" name="phone" maxlength="11" size="11" class="form-control">
-										</div>	
+										</div>
 										<div class="col-lg-4">
 											<a href="" onclick="" >인증번호발송</a>
 										</div>
@@ -151,7 +115,7 @@
                     						<input type="text" name="confirmnumber" maxlength="6" class="form-control">
                     					</div>
                     					<div class="col-lg-6 pt-2">
-                    					
+
                     					</div>
 									</div>
                            		</td>
@@ -277,13 +241,13 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/login/lib/wow/wow.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/login/lib/easing/easing.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/login/lib/waypoints/waypoints.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/login/lib/owlcarousel/owl.carousel.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<%--    <script src="${pageContext.request.contextPath}/resources/login/lib/wow/wow.min.js"></script>--%>
+<%--    <script src="${pageContext.request.contextPath}/resources/login/lib/easing/easing.min.js"></script>--%>
+<%--    <script src="${pageContext.request.contextPath}/resources/login/lib/waypoints/waypoints.min.js"></script>--%>
+<%--    <script src="${pageContext.request.contextPath}/resources/login/lib/owlcarousel/owl.carousel.min.js"></script>--%>
+<%--	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>--%>
     <!-- Template Javascript -->
-    <script src="${pageContext.request.contextPath}/resources/login/js/main.js"></script>
+<%--    <script src="${pageContext.request.contextPath}/resources/login/js/main.js"></script>--%>
     <script>
     function selectEmail(ele){ 
         var $ele = $(ele); 
