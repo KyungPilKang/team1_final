@@ -96,11 +96,16 @@ public class StudyTestController {
 		return mav; 
 	}
 	
-	//regstudy
+	
 	@PostMapping("studyreg")
 	public ModelAndView regstudy(@ModelAttribute Study cnfstudy) {
 		ModelAndView mav=new ModelAndView();
 		System.out.println(cnfstudy.toString());
 		return mav;
+	}
+	
+	@GetMapping("studymain")
+	public String studymain() {
+		return "testfile/studymain";
 	}
 }
