@@ -12,4 +12,20 @@
 
 .my-image {
     border: 5px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-image a {
+    color: black;
+}
+
+
+.subject {
+    border: 5px solid white;
+    width: 500px;
+    height: 80px;
+    text-align: center;
+    padding: 10px;
 }
