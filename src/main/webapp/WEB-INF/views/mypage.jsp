@@ -95,34 +95,47 @@
 
 
 <!-- Contact Start -->
-<div class="main">
-    <div class="my-image"><a href="#">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-             style="width: 90px; height: 90px;">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-        </svg>
-    </a>
-        <div class="subject"><h1>프리랜서</h1></div>
-    </div>
+<div class="box">
+    <div class="main">
+        <div class="my-image">
+            <div class="subject"><h1>프리랜서</h1></div>
+        </div>
 
-    <div class="defult">
-        <div class="subnavbar">
-            <div>홈</div>
-            <div>홈</div>
-            <div>제작한 강의 목록</div>
-            <div>리뷰 목록</div>
+        <div class="default">
+            <div class="subnavbar">
+                <div class="navbar-main">홈</div>
+                <div class="navbar-bt">
+                    <div>홈</div>
+                    <div>제작한 강의 목록</div>
+                    <div>리뷰 목록</div>
+                </div>
+            </div>
+            <div class="default-intro">
+                <div class="intro">
+                    <ul>
+                        <a href="#">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 style="width: 90px; height: 90px;">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </a>
+                        <li>이름</li>
+                        <li>분야</li>
+                        <li>경력</li>
+                        <li>평점</li>
+                        <li>자기소개</li>
+                    </ul>
+                    <div class="intro-bt">버튼</div>
+                </div>
+                <div class="sub">
+                    <h1>강의문의</h1>
+                    <div class="sub-content">문의내용
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="intro">
-            <ul>자기소개
-                <li>이름</li>
-                <li>분야</li>
-                <li>경력</li>
-                <li>평점</li>
-                <li>자기소개</li>
-            </ul>
-        </div>
-        <div class="sub"><h1>강의문의</h1></div>
     </div>
 </div>
 <!-- Contact End -->
