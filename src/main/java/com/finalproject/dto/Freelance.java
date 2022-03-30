@@ -1,5 +1,7 @@
 package com.finalproject.dto;
 
+import java.util.Date;
+
 import org.springframework.web.multipart.MultipartFile;
 
 public class Freelance {
@@ -43,6 +45,7 @@ public class Freelance {
 	private String month_pay;
 	private String week_pay;
 	private String case_pay;
+	private Date reg_time;
 	
 	public Freelance() {}
 
@@ -365,5 +368,14 @@ public class Freelance {
 	public void setCase_pay(String case_pay) {
 		this.case_pay = case_pay;
 	}
+
+	public Date getReg_time() {
+		return reg_time;
+	}
+
+	public void setReg_time(Date reg_time) {
+		this.reg_time = reg_time;
+	}
+
 	
 }

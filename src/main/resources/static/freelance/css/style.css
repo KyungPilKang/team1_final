@@ -492,3 +492,15 @@ span{
 	font-size: 20px;
 	font-weight: bold;
 }
+
+input{
+	font-family: 'Stylish', sans-serif;
+}
+
+label{
+	font-family: 'Stylish', sans-serif;
+}
+
+textarea{
+	font-family: 'Stylish', sans-serif;
+}

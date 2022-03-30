@@ -10,7 +10,7 @@
 			#{class_type_etc}, #{education}, #{univ}, #{major}, #{certification_file_name}, #{camera}, #{camera_etc},
 			#{lecture_video}, #{lecture_video_etc}, #{lecture_video_format}, #{editor_tool}, #{editor_tool_etc},
 			#{lecture_edit}, #{lecture_edit_etc}, #{lecture_edit_format}, #{introduce_title}, #{introduce_contents},
-			#{promotion_video_file_name}, #{banner_image_file_name}, #{month_pay}, #{week_pay}, #{case_pay}) 
+			#{promotion_video_file_name}, #{banner_image_file_name}, #{month_pay}, #{week_pay}, #{case_pay}, now()) 
         ]]>
 	</insert>
 </mapper>
@@ -60,6 +60,7 @@ CREATE TABLE `freelance` (
   `month_pay` varchar(100) default null,
   `week_pay` varchar(100) default null,
   `case_pay` varchar(100) default null,
+  `reg_time datetime default null,
   PRIMARY KEY (`no`)
 ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
  -->
