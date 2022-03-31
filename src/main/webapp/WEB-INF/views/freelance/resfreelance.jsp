@@ -11,7 +11,7 @@
 <meta content="" name="description">
 
 <!-- Favicon -->
-<link href="img/favicon.ico" rel="icon">
+<link href="${pageContext.request.contextPath}/resources/asset/needsfull.ico" rel="icon">
 
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
 <!-- Libraries Stylesheet -->
@@ -32,6 +32,8 @@
 
 <!-- Template Stylesheet -->
 <link href="${pageContext.request.contextPath}/resources/freelance/css/style.css" rel="stylesheet">
+
+<link href="${pageContext.request.contextPath}/resources/freelance/css/myStyle.css" rel="stylesheet">
 </head>
 
 <body>
@@ -104,7 +106,7 @@
 						<div class="job-item p-4 mb-4">
 							<div class="row g-4">
 								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
-									<img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
+									<img class="flex-shrink-0 img-fluid border rounded" src="#" alt="" style="width: 80px; height: 80px;">
 									<div class="text-start ps-4">
 										<h3 class="mb-3">프리랜서 등록 제목</h3>
 										<span class="resfreespan text-truncate me-3">
@@ -117,7 +119,35 @@
 											<i class="far fa-money-bill-alt text-primary me-2"></i>계약 금액
 										</span>
 										<span class="resfreespan text-truncate me-0">
-											<i class="fa fa-regular fa-toolbox text-primary me-2"></i>사용 툴
+											<i class="fa-solid fa-chalkboard-user text-primary me-2"></i>강의 정보
+										</span>
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+									<div class="d-flex mb-3">
+										<a class="btn btn-primary" href="/detailfree">상세보기</a>
+									</div>
+									<span class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>등록 일자</span>
+								</div>
+							</div>
+						</div>
+						<div class="job-item p-4 mb-4">
+							<div class="row g-4">
+								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
+									<img class="flex-shrink-0 img-fluid border rounded" src="#" alt="" style="width: 80px; height: 80px;">
+									<div class="text-start ps-4">
+										<h3 class="mb-3">프리랜서 등록 제목</h3>
+										<span class="resfreespan text-truncate me-3">
+											<i class="fa fa-map-marker-alt text-primary me-2"></i>지역
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="far fa-clock text-primary me-2"></i>계약 형태(작업시간)
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="far fa-money-bill-alt text-primary me-2"></i>계약 금액
+										</span>
+										<span class="resfreespan text-truncate me-0">
+											<i class="fa-solid fa-chalkboard-user text-primary me-2"></i>강의 정보
 										</span>
 									</div>
 								</div>
@@ -132,7 +162,7 @@
 						<div class="job-item p-4 mb-4">
 							<div class="row g-4">
 								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
-									<img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
+									<img class="flex-shrink-0 img-fluid border rounded" src="#" alt="" style="width: 80px; height: 80px;">
 									<div class="text-start ps-4">
 										<h3 class="mb-3">프리랜서 등록 제목</h3>
 										<span class="resfreespan text-truncate me-3">
@@ -145,7 +175,7 @@
 											<i class="far fa-money-bill-alt text-primary me-2"></i>계약 금액
 										</span>
 										<span class="resfreespan text-truncate me-0">
-											<i class="fa fa-regular fa-toolbox text-primary me-2"></i>사용 툴
+											<i class="fa-solid fa-chalkboard-user text-primary me-2"></i>강의 정보
 										</span>
 									</div>
 								</div>
@@ -160,7 +190,7 @@
 						<div class="job-item p-4 mb-4">
 							<div class="row g-4">
 								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
-									<img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
+									<img class="flex-shrink-0 img-fluid border rounded" src="#" alt="" style="width: 80px; height: 80px;">
 									<div class="text-start ps-4">
 										<h3 class="mb-3">프리랜서 등록 제목</h3>
 										<span class="resfreespan text-truncate me-3">
@@ -173,7 +203,7 @@
 											<i class="far fa-money-bill-alt text-primary me-2"></i>계약 금액
 										</span>
 										<span class="resfreespan text-truncate me-0">
-											<i class="fa fa-regular fa-toolbox text-primary me-2"></i>사용 툴
+											<i class="fa-solid fa-chalkboard-user text-primary me-2"></i>강의 정보
 										</span>
 									</div>
 								</div>
@@ -188,7 +218,7 @@
 						<div class="job-item p-4 mb-4">
 							<div class="row g-4">
 								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
-									<img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
+									<img class="flex-shrink-0 img-fluid border rounded" src="#" alt="" style="width: 80px; height: 80px;">
 									<div class="text-start ps-4">
 										<h3 class="mb-3">프리랜서 등록 제목</h3>
 										<span class="resfreespan text-truncate me-3">
@@ -201,35 +231,7 @@
 											<i class="far fa-money-bill-alt text-primary me-2"></i>계약 금액
 										</span>
 										<span class="resfreespan text-truncate me-0">
-											<i class="fa fa-regular fa-toolbox text-primary me-2"></i>사용 툴
-										</span>
-									</div>
-								</div>
-								<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-									<div class="d-flex mb-3">
-										<a class="btn btn-primary" href="">상세보기</a>
-									</div>
-									<span class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>등록 일자</span>
-								</div>
-							</div>
-						</div>
-						<div class="job-item p-4 mb-4">
-							<div class="row g-4">
-								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
-									<img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
-									<div class="text-start ps-4">
-										<h3 class="mb-3">프리랜서 등록 제목</h3>
-										<span class="resfreespan text-truncate me-3">
-											<i class="fa fa-map-marker-alt text-primary me-2"></i>지역
-										</span>
-										<span class="resfreespan text-truncate me-3">
-											<i class="far fa-clock text-primary me-2"></i>계약 형태(작업시간)
-										</span>
-										<span class="resfreespan text-truncate me-3">
-											<i class="far fa-money-bill-alt text-primary me-2"></i>계약 금액
-										</span>
-										<span class="resfreespan text-truncate me-0">
-											<i class="fa fa-regular fa-toolbox text-primary me-2"></i>사용 툴
+											<i class="fa-solid fa-chalkboard-user text-primary me-2"></i>강의 정보
 										</span>
 									</div>
 								</div>

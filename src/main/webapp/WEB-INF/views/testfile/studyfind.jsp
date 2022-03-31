@@ -81,7 +81,7 @@
 	<!-- Navbar End -->
 
 	<!-- Header Start -->
-	<div class="container-fluid bg-primary py-5 mb-5 page-header">
+	<div class="container-fluid bg-primary py-5 mb-5 page-header" id="containerform">
 		<div class="container py-5">
 			<div class="row justify-content-center">
 				<div class="col-lg-10 text-center">
@@ -93,15 +93,14 @@
 	<!-- Header End -->
 
 	<!-- Contact Start -->
-	<div class="container-xxl py-5" id="containerform">
-		<div class="container">
+	<div class="container-xxl py-5">
 			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
 				<form action="studyfindform" method="post">
 
-					<!-- 초/중등 학교 study_sname -->
+	<!-- 초/중등 학교 study_sname -->
 					<div id="regstudyform1">
-						<!--  <h5 class="section-title bg-white text-center text-primary px-3">학교유형</h5> -->
-						<h1 class="mb-5 mt-2">나에게 맞는 스터디 개설해볼까요?</h1>
+						<h5 class="section-title bg-white text-center text-primary px-3">학교선택</h5>
+						<h1 class="mb-5 mt-2">나에게 맞는 스터디 매칭해볼까요?</h1>
 						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto">
 							<div class="row g-3">
 								<div class="col-12">
@@ -124,7 +123,8 @@
 						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 							<div class="row g-3">
 								<div class="col-12">
-									<h3 class="section-title bg-white text-center text-primary px-3">학년</h3>
+									<h5 class="section-title bg-white text-center text-primary px-3">학년</h5>
+									<h1 class="mb-5 mt-2">몇학년의 스터디로 찾아볼까요?</h1>
 									<div style="align-items: center; margin-top: 20px;">
 										<input id="study_grade_1" type="radio" class="btn-check" name="study_grade" value="1" />
 										<label for="study_grade_1" class="btn btn-outline-primary w-100 py-3">1학년</label> <br>
@@ -162,7 +162,8 @@
 						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 							<div class="row g-3">
 								<div class="col-12">
-									<h3 class="section-title bg-white text-center text-primary px-3">과목</h3>
+									<h5 class="section-title bg-white text-center text-primary px-3">과목</h5>
+									<h1 class="mb-5 mt-2">어떤과목의 스터디가 필요해요?</h1>
 									<div style="align-items: center; margin-top: 20px;">
 										<input id="study_subject_kr" type="radio" class="btn-check" name="study_subject" value="1" />
 										<label for="study_subject_kr" class="btn btn-outline-primary w-100 py-3">국어</label> <br>
@@ -191,12 +192,14 @@
 						</div>
 					</div>
 					
+					
 					<!-- 입력4 : 유형 -->
 					<div id="regstudyform4" style="display: none;">
 						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 							<div class="row g-3">
 								<div class="col-12">
-									<h3 class="section-title bg-white text-center text-primary px-3">유형</h3>
+									<h5 class="section-title bg-white text-center text-primary px-3">유형</h5>
+									<h1 class="mb-5 mt-2">어떤 준비를 하는지 알려주시겠어요?</h1>
 									<div style="align-items: center; margin-top: 20px;">
 										<input id="study_type_1" type="radio" class="btn-check" name="study_type" value="1" />
 										<label for="study_type_1" class="btn btn-outline-primary w-100 py-3">내신</label> <br>
@@ -227,7 +230,8 @@
 						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 							<div class="row g-3">
 								<div class="col-12">
-									<h3 class="section-title bg-white text-center text-primary px-3">목표레벨</h3>
+									<h5 class="section-title bg-white text-center text-primary px-3">목표레벨</h5>
+									<h1 class="mb-5 mt-2">목표를 설정해 주시겠어요?</h1>
 									<div style="align-items: center; margin-top: 20px;">
 										<input id="study_target_level1" type="radio" class="btn-check" name="study_target_level" value="1" />
 										<label for="study_target_level1" class="btn btn-outline-primary w-100 py-3">최상</label> <br>
@@ -246,15 +250,14 @@
 									<br>
 								</div>
 									
-								<div class="col-12 mt-5">
-									<button id="nextstudybtn5" class="btn btn-primary w-100 py-3" disabled>다음</button>
+								<div class="col-12 mt-5"  id="studyfindSubmitform">
+									<button type="submit" id="nextstudybtn5" class="btn btn-primary w-100 py-3" disabled>다음</button>
 								</div>
 							</div>
 						</div>
-					</div>
 
 					
-				<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
+<!-- 				<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 					<div class="row g-3">
 						<div class="col-12">
 						<div class="col-12 mt-5" id="studyfindSubmitform" style="display: none;">
@@ -262,7 +265,7 @@
 						</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 
 				</form>
 			</div>

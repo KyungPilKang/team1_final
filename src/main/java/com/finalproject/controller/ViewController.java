@@ -38,4 +38,9 @@ public class ViewController {
 	public String resfreeform() {
 		return "freelance/resfreelance";
 	}
+	
+	@GetMapping("detailfree")
+	public String detailfree() {
+		return "freelance/detailfreelance_1";
+	}
 }

@@ -80,6 +80,11 @@ public class StudyTestController {
 		return "testfile/testpage";
 	}
 	
+	@GetMapping("studymakermain")
+	public String studymakermain() {
+		return "testfile/studymakermain";
+	}
+	
 	//스터디메인
 	@GetMapping("studymain")
 	public String studymain() {
@@ -92,20 +97,43 @@ public class StudyTestController {
 		return "testfile/studyReg";
 	}
 	
-	//검색페이지전환
+	//(1)검색페이지전환
 	@RequestMapping("/studyfind")
 	public String studyfind() {
 		return "testfile/studyfind";
 	}
 	
-	//검색버튼
+	//(2)검색 다음버튼
 	@PostMapping("studyfindform")
 	public ModelAndView studyfindform(@ModelAttribute Study inputstudy) {
+		ModelAndView mav=new ModelAndView();
+		System.out.println("매칭확인요청:"+ inputstudy.toString());
+		try {
+		session.setAttribute("findstudy", inputstudy);
+		mav.setViewName("testfile/studyfindCheck");
+		}  catch(Exception e){
+			e.printStackTrace();
+		}
+		return mav; 
+	}
+	
+
+	//(3)검색값 확인후 result페이지 반환
+	@PostMapping("studyfindcnf")
+	public ModelAndView studyfindcnf(@ModelAttribute Study inputstudy) {	
 		ModelAndView mav=new ModelAndView();
 		System.out.println("검색버튼클릭"+inputstudy.toString());
 		mav.setViewName("testfile/studyfindresult");
 		return mav; 
 	}
+	
+	//(4)검색결과페이지
+	@PostMapping("studyfindresult")
+	public ModelAndView studyfindresult(@ModelAttribute Study inputstudy) {
+		ModelAndView mav=new ModelAndView("testfile/studyfindresult");
+		return mav; 
+	}
+	
 	
 	@GetMapping("0330")
 	public ModelAndView test() {
@@ -115,7 +143,7 @@ public class StudyTestController {
 	}
 	
 	
-	//수정버튼
+	//(1)수정 다음버튼
 	@PostMapping("studymodify")
 	public ModelAndView studymodify(@ModelAttribute Study inputstudy) {
 		ModelAndView mav=new ModelAndView("testfile/studymodify");
@@ -123,7 +151,7 @@ public class StudyTestController {
 		return mav; 
 	}
 	
-	//(1)수정확인요청
+	//(2)수정확인요청
 	@PostMapping("studymodiform")
 	public ModelAndView studymodiform(@ModelAttribute Study inputstudy) {
 		ModelAndView mav=new ModelAndView();
@@ -137,8 +165,8 @@ public class StudyTestController {
 		return mav; 
 	}
 	
-	//(2)수정확인후 수정요청
-	@PostMapping("studymodi")
+	//(3)수정확인후 수정요청 db
+	@PostMapping("studymodicnf")
 	public ModelAndView studymodi(@ModelAttribute Study cnfstudy) {
 		ModelAndView mav=new ModelAndView();
 		//Study cnfstudy = (Study) session.getAttribute("이름");
@@ -168,11 +196,6 @@ public class StudyTestController {
 		return mav;
 	}
 	
-	//검색결과페이지
-	@PostMapping("studyfindresult")
-	public ModelAndView studyfindresult(@ModelAttribute Study inputstudy) {
-		ModelAndView mav=new ModelAndView("testfile/studyfindresult");
-		return mav; 
-	}
+
 		
 }

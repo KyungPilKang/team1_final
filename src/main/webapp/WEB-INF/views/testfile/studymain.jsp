@@ -158,22 +158,23 @@
 				<div class="parent">
 					<div class="first mt-5 mb-5">
 					    <form action="studyReg" method="post">
-						<button type="submit" class="btn btn-primary w-100 py-3">스터디등록</button>
+						<button type="submit" class="btn btn-primary w-100 py-3" >스터디등록</button>
 					    </form>
 					</div>
 					<div class="second mt-5 mb-5">
 					    <form action="studyfind" method="post">
-						<button type="submit" class="btn btn-primary w-100 py-3">스터디매칭</button>
+						<button type="submit" class="btn btn-primary w-100 py-3" >스터디매칭</button>
 						</form>
 					</div>
+					
 					<div class="third mt-5 mb-5">
 					    <form action="studyclass" method="post">
-						<button type="submit" class="btn btn-primary w-100 py-3">스터디등교</button>
+						<button type="submit" class="btn btn-primary w-100 py-3" >스터디등교</button>
 						</form>
 					</div>
 					<div class="fourth mt-5 mb-5">
 					    <form action="studymakermain" method="post">
-						<button type="submit" class="btn btn-primary w-100 py-3">개설자관리</button>
+						<button type="submit" class="btn btn-primary w-100 py-3" >개설자관리</button>
 						</form>
 					</div>
 				</div>

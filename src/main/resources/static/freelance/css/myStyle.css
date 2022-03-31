@@ -1,0 +1,16 @@
+p {
+	font-family: 'Stylish', sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.resfreespan {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+/* 동영상 재생 버튼 위치 제어 */
+.vjs-big-play-button {
+  margin-left: 300px;
+  margin-top: 155px;
+}	
