@@ -81,24 +81,291 @@
 		<div class="container py-5">
 			<div class="row justify-content-center">
 				<div class="col-lg-10 text-center">
-					<h1 class="display-3 text-white animated slideInDown">스터디 매칭</h1>
+					<h1 class="display-3 text-white animated slideInDown">스터디 개설자</h1>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- Header End -->
 	
+
+		
+		
+     <!-- 내가 개설한 스터디 슬라이드 start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="text-center">
+                <h5 class="section-title bg-white text-center text-primary px-3">개설자관리</h5>
+                <h1 class="mb-5">내가 개설한 스터디</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel position-relative">
+                <div class="testimonial-item text-center">
+                    <div class="p-2 mx-auto mb-3" style="width: 400px; height: 130px; text-overflow: ellipsis; background: rgba(6, 187, 204, 0.1); font-size: 1.0em; font-family:Stylish">
+					<span> 초등학교 ${study.study_sname}</span><span> 5학년 ${study.study_grade}</span><br>
+                    <span> 기간 : 2022.03.06~2022.04.05 ${study.study_fdate}${study.study_fdate}</span><br>
+                    <span> 시간 : 08:00 ~ 09:00 ${study.study_ftime}${study.study_etime}</span><br>
+                    <span> 유형 : 내신${study.study_type}</span><br>
+                    <span> 목표 : 최상${study.study_target_level}</span>
+                    </div>
+                    <i class="bi bi-book-fill"><h5>니즈풀스터디${study.study_title}</h5></i>
+                    <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0" style="text-overflow: ellipsis; font-size: 1.0em; font-family:Stylish">이 스터디는 이번 1학기 중간고사를 목표로 개설되었습니다! 최상에 도전하는 친구들이 매주 2번 모여 문제풀이를 같이 할까요. 교재는 천재교육 --문제집 혹은 메가스터디 --교재 입니다. 추후 스터디 모집 완료후 오픈카톡으로 이야기 나누어 보아요.${study.study_contents}</p>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <div class="p-2 mx-auto mb-3" style="width: 400px; height: 130px; text-overflow: ellipsis; background: rgba(6, 187, 204, 0.1); font-size: 1.0em; font-family:Stylish">
+					<span> 초등학교 ${study.study_sname}</span><span> 5학년 ${study.study_grade}</span><br>
+                    <span> 기간 : 2022.03.06~2022.04.05 ${study.study_fdate}${study.study_fdate}</span><br>
+                    <span> 시간 : 08:00 ~ 09:00 ${study.study_ftime}${study.study_etime}</span><br>
+                    <span> 유형 : 내신${study.study_type}</span><br>
+                    <span> 목표 : 최상${study.study_target_level}</span>
+                    </div>
+                    <i class="bi bi-book-fill"><h5>니즈풀스터디${study.study_title}</h5></i>
+                    <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0" style="text-overflow: ellipsis; font-size: 1.0em; font-family:Stylish">이 스터디는 이번 1학기 중간고사를 목표로 개설되었습니다! 최상에 도전하는 친구들이 매주 2번 모여 문제풀이를 같이 할까요. 교재는 천재교육 --문제집 혹은 메가스터디 --교재 입니다. 추후 스터디 모집 완료후 오픈카톡으로 이야기 나누어 보아요.${study.study_contents}</p>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <div class="p-2 mx-auto mb-3" style="width: 400px; height: 130px; text-overflow: ellipsis; background: rgba(6, 187, 204, 0.1); font-size: 1.0em; font-family:Stylish">
+					<span> 초등학교 ${study.study_sname}</span><span> 5학년 ${study.study_grade}</span><br>
+                    <span> 기간 : 2022.03.06~2022.04.05 ${study.study_fdate}${study.study_fdate}</span><br>
+                    <span> 시간 : 08:00 ~ 09:00 ${study.study_ftime}${study.study_etime}</span><br>
+                    <span> 유형 : 내신${study.study_type}</span><br>
+                    <span> 목표 : 최상${study.study_target_level}</span>
+                    </div>
+                     <i class="bi bi-book-fill"><h5>니즈풀스터디${study.study_title}</h5></i>
+                    <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0" style="text-overflow: ellipsis; font-size: 1.0em; font-family:Stylish">이 스터디는 이번 1학기 중간고사를 목표로 개설되었습니다! 최상에 도전하는 친구들이 매주 2번 모여 문제풀이를 같이 할까요. 교재는 천재교육 --문제집 혹은 메가스터디 --교재 입니다. 추후 스터디 모집 완료후 오픈카톡으로 이야기 나누어 보아요.${study.study_contents}</p>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <div class="p-2 mx-auto mb-3" style="width: 400px; height: 130px; text-overflow: ellipsis; background: rgba(6, 187, 204, 0.1); font-size: 1.0em; font-family:Stylish">
+					<span> 초등학교 ${study.study_sname}</span><span> 5학년 ${study.study_grade}</span><br>
+                    <span> 기간 : 2022.03.06~2022.04.05 ${study.study_fdate}${study.study_fdate}</span><br>
+                    <span> 시간 : 08:00 ~ 09:00 ${study.study_ftime}${study.study_etime}</span><br>
+                    <span> 유형 : 내신${study.study_type}</span><br>
+                    <span> 목표 : 최상${study.study_target_level}</span>
+                    </div>
+                     <i class="bi bi-book-fill"><h5>니즈풀스터디${study.study_title}</h5></i>
+                    <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0" style="text-overflow: ellipsis; font-size: 1.0em; font-family:Stylish">이 스터디는 이번 1학기 중간고사를 목표로 개설되었습니다! 최상에 도전하는 친구들이 매주 2번 모여 문제풀이를 같이 할까요. 교재는 천재교육 --문제집 혹은 메가스터디 --교재 입니다. 추후 스터디 모집 완료후 오픈카톡으로 이야기 나누어 보아요.${study.study_contents}</p>
+                    </div>
+                </div>
+                
+                
+	      <!--           
+	            <c:forEach var="study" items="${studylist}">
+	                <div class="testimonial-item text-center">
+	                    <div class="p-2 mx-auto mb-3" style="width: 400px; height: 130px; text-overflow: ellipsis; background: rgba(6, 187, 204, 0.1); font-size: 1.0em; font-family:Stylish">
+						<span> 초등학교 ${study.study_sname}</span><span> 5학년 ${study.study_grade}</span><br>
+	                    <span> 기간 : 2022.03.06~2022.04.05 ${study.study_fdate}${study.study_fdate}</span><br>
+	                    <span> 시간 : 08:00 ~ 09:00 ${study.study_ftime}${study.study_etime}</span><br>
+	                    <span> 유형 : 내신${study.study_type}</span><br>
+	                    <span> 목표 : 최상${study.study_target_level}</span>
+	                    </div>
+	                     <i class="bi bi-book-fill"><h5>니즈풀스터디${study.study_title}</h5></i>
+	                    <div class="testimonial-text bg-light text-center p-4">
+	                    <p class="mb-0" style="text-overflow: ellipsis; font-size: 1.0em; font-family:Stylish">이 스터디는 이번 1학기 중간고사를 목표로 개설되었습니다! 최상에 도전하는 친구들이 매주 2번 모여 문제풀이를 같이 할까요. 교재는 천재교육 --문제집 혹은 메가스터디 --교재 입니다. 추후 스터디 모집 완료후 오픈카톡으로 이야기 나누어 보아요.${study.study_contents}</p>
+	                    </div>
+	                </div>
+				</c:forEach>
+            -->     
+            </div>
+        </div>
+    </div>
+    <!-- 내가 개설한 스터디 슬라이드 End -->
+	
+	
 	<!-- 내용 Start -->
 		<div class="container-xxl py-5">
 		<div class="container">
 			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-				<h5 class="section-title bg-white text-center text-primary px-3">매칭 완료</h5>
-				<h1 class="mb-5 mt-2">다음의 스터디들이 매칭되었습니다</h1>
+				<h5 class="section-title bg-white text-center text-primary px-3">스터디 개설 목록</h5>
+				<h1 class="mb-5 mt-2">{${study.user_id} 니즈풀}님의 개설 스터디 입니다.</h1>
 			</div>
-			
-			
+			<div class="row g-4 justify-content-center wow fadeInUp">
+				<div class="tab-content">
+					<div id="tab-1" class="tab-pane fade show p-0 active">
+						<div class="job-item p-4 mb-4">
+							<div class="row g-4">
+								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
+									<img class="flex-shrink-0 img-fluid border rounded" src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt="" style="width: 80px; height: 80px;">
+									<div class="text-start ps-4">
+										<h3 class="mb-3">스터디 등록 제목</h3>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-eyeglasses text-primary me-2"></i>학년
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜 
+										</span>
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+									<div class="d-flex mb-3">
+										<a class="btn btn-primary" href="">상세보기</a>
+									</div>
+									<span class="text-truncate"><i class="bi bi-cart-plus text-primary me-2"></i>참여여부</span>
+								</div>
+							</div>
+						</div>
+						<div class="job-item p-4 mb-4">
+							<div class="row g-4">
+								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
+									<img class="flex-shrink-0 img-fluid border rounded" src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt="" style="width: 80px; height: 80px;">
+									<div class="text-start ps-4">
+										<h3 class="mb-3">스터디 등록 제목</h3>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-eyeglasses text-primary me-2"></i>학년
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜 
+										</span>
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+									<div class="d-flex mb-3">
+										<a class="btn btn-primary" href="">상세보기</a>
+									</div>
+									<span class="text-truncate"><i class="bi bi-cart-plus text-primary me-2"></i>참여여부</span>
+								</div>
+							</div>
+						</div>
+						<div class="job-item p-4 mb-4">
+							<div class="row g-4">
+								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
+									<img class="flex-shrink-0 img-fluid border rounded" src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt="" style="width: 80px; height: 80px;">
+									<div class="text-start ps-4">
+										<h3 class="mb-3">스터디 등록 제목</h3>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-eyeglasses text-primary me-2"></i>학년
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜 
+										</span>
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+									<div class="d-flex mb-3">
+										<a class="btn btn-primary" href="">상세보기</a>
+									</div>
+									<span class="text-truncate"><i class="bi bi-cart-plus text-primary me-2"></i>참여여부</span>
+								</div>
+							</div>
+						</div>
+						<div class="job-item p-4 mb-4">
+							<div class="row g-4">
+								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
+									<img class="flex-shrink-0 img-fluid border rounded" src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt="" style="width: 80px; height: 80px;">
+									<div class="text-start ps-4">
+										<h3 class="mb-3">스터디 등록 제목</h3>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-eyeglasses text-primary me-2"></i>학년
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜 
+										</span>
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+									<div class="d-flex mb-3">
+										<a class="btn btn-primary" href="">상세보기</a>
+									</div>
+									<span class="text-truncate"><i class="bi bi-cart-plus text-primary me-2"></i>참여여부</span>
+								</div>
+							</div>
+						</div>
+						
+				 <!--           
+			            <c:forEach var="study" items="${studylist}" start 0-3 ?>	
+								
+								<div class="job-item p-4 mb-4">
+									<div class="row g-4">
+										<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
+											<img class="flex-shrink-0 img-fluid border rounded" src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt="" style="width: 80px; height: 80px;">
+											<div class="text-start ps-4">
+												<h3 class="mb-3">스터디 등록 제목</h3>
+												<span class="resfreespan text-truncate me-3">
+													<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등
+												</span>
+												<span class="resfreespan text-truncate me-3">
+													<i class="bi bi-eyeglasses text-primary me-2"></i>학년
+												</span>
+												<span class="resfreespan text-truncate me-3">
+													<i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜 
+												</span>
+											</div>
+										</div>
+										<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+											<div class="d-flex mb-3">
+												<a class="btn btn-primary" href="">상세보기</a>
+											</div>
+											<span class="text-truncate"><i class="bi bi-cart-plus text-primary me-2"></i>참여여부</span>
+										</div>
+									</div>
+								</div>
+					   </c:forEach>
+		            -->     
+						
+					</div>
+				</div>
+			</div>
+			<div class="row g-4">
+				<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s" style="width: 30%; float: none; margin-left: 100px;">
+					<div class="row g-3">
+						<div class="col-12">
+							<div class="col-12 mt-4">
+								<button id="canclebtn" class="btn btn-outline-primary w-50 py-3">이전 목록</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s" style="width: 25%; float: none;">
+					<div class="row g-3">
+						<div class="col-12">
+							<div class="col-12 mt-4">
+								<button type="submit" class="btn btn-primary w-100 py-3 dropdown-toggle" data-bs-toggle="dropdown">페이지 이동하기</button>
+								<ul class="dropdown-menu dropdown-menu-end">
+									<li style="font-weight:bold; font-family: 'Stylish', sans-serif; text-align: center;">1 페이지(현재)</li>
+									<li><hr class="dropdown-divider"></li>
+									<li><a class="dropdown-item" href="#">Page 1</a></li>
+									<li><a class="dropdown-item" href="#">Page 2</a></li>
+									<li><a class="dropdown-item" href="#">Page 3</a></li>
+									<li><a class="dropdown-item" href="#">Page 4</a></li>
+									<li><a class="dropdown-item" href="#">Page 5</a></li>
+									<li><a class="dropdown-item" href="#">Page 6</a></li>
+									<li><a class="dropdown-item" href="#">Page 7</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s" style="width: 30%; float: none;">
+					<div class="row g-3">
+						<div class="col-12">
+							<div class="col-12 mt-4">
+								<button type="submit" class="btn btn-outline-primary w-50 py-3">다음 목록</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		</div>
+	</div>
+	
+	<!-- 내용 End -->
+	
 		
 	<!-- 내용 End -->
 	<!-- Footer Start -->
