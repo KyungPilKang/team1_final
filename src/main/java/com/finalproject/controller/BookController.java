@@ -23,4 +23,9 @@ public class BookController {
         return "/loginJoin/juso";
     }
 
+    @RequestMapping("/delivery")
+    public String delivery() {
+        return "/bookstore/delivery";
+    }
+
 }
