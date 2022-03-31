@@ -8,16 +8,6 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="" name="keywords">
 <meta content="" name="description">
-<!--timepicker-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
-
-<!-- datepicker-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 
 <!-- Favicon -->
 <link href="${pageContext.request.contextPath}/resources/freelance/img/favicon.ico" rel="icon">
@@ -41,41 +31,6 @@
 
 <!-- Template Stylesheet -->
 <link href="${pageContext.request.contextPath}/resources/freelance/css/style.css" rel="stylesheet">
-
-<style>
-.parent{
-    width: 70%;
-    margin: 10px auto;
-    display: flex;
-}
-
-.first {
-    flex:1;
-     margin: 0px 5%;
-    width:20%;
-    box-sizing: border-box;
-}
-
-.second{
-    flex:1;
-    margin: 0px 5%;
-    width:20%;
-    box-sizing: border-box;
-}
-
-.third{
-    flex:1;
-    margin: 0px 5%;
-    width:20%;
-    box-sizing: border-box;
-}
-.fourth{
-    flex:1;
-    margin: 0px 5%;
-    width:20%;
-    box-sizing: border-box;
-}
-</style>
 </head>
 <body>
 <!-- Spinner Start -->
@@ -127,63 +82,72 @@
 	<!-- Header End -->
 	
 	
-	
 	<!-- Content Start -->
-		<div class="container-xxl py-5">
-			<div class="container">
-                 			
-				<div class="text-center">
-					<h1 class="section-title bg-white text-center text-primary px-3">온라인 스터디 매칭</h1>
-				</div>
-				
-				<div class="row text-center col-lg-4 col-md-12" style="width: 40%; float: none; margin: 0 auto;">
-					<div class="row g-3">
-						<div class="col-12 mt-5 mb-5">
-							<div class="form-floating">
-								<h3>스터디 안내사항</h3>
-								<p style="text-align:center; background: rgba(6, 187, 204, 0.1); font-size: 1.0em; font-family:Stylish">
-								1)각자 목표에 맞게 설정하여 신청해주세요.<br>
-								2)참여 신청후 시작전날까지 취소 가능합니다.<br>
-								3)참여 시작일부터는 참여취소, 수정, 삭제가 불가능합니다. <br>
-								4)참여 신청 승인후 오픈카톡링크 열람이 가능합니다. <br>
-								5)성실히 스터디를 수행하기로 약속합니다. <br>
-								</p>
-							</div>
-							<br> <br>
-						</div>
-					</div>
-				</div>
-					
-		
-				<div class="parent">
-					<div class="first mt-5 mb-5">
-					    <form action="studyReg" method="post">
-						<button type="submit" class="btn btn-primary w-100 py-3">스터디등록</button>
-					    </form>
-					</div>
-					<div class="second mt-5 mb-5">
-					    <form action="studyfind" method="post">
-						<button type="submit" class="btn btn-primary w-100 py-3">스터디매칭</button>
-						</form>
-					</div>
-					<div class="third mt-5 mb-5">
-					    <form action="studyclass" method="post">
-						<button type="submit" class="btn btn-primary w-100 py-3">스터디등교</button>
-						</form>
-					</div>
-					<div class="fourth mt-5 mb-5">
-					    <form action="studymakermain" method="post">
-						<button type="submit" class="btn btn-primary w-100 py-3">개설자관리</button>
-						</form>
-					</div>
-				</div>
-						
-
-		</div>		
-	</div>
+	
+	
+	
+	
+		<div class="container">
+		<p>검색결과페이지</p>
+		<div class="row g-4">
+	<%-- <c:forEach var="study" items="${studylist}"> --%>
+			<div class="col-lg-4 col-md-6 wow fadeInUp">
+        		$[study.name0]
+        	</div>
+        	
+        	<div class="col-lg-4 col-md-6 wow fadeInUp">
+        		$[study.name1]
+        	</div>
+        	
+        	<div class="col-lg-4 col-md-6 wow fadeInUp">
+        		$[study.name2]
+        	</div>
+    <%-- </c:forEach> --%>
+    	</div>
+    	
+    	<div class="row g-4">
+	<%-- <c:forEach var="study" items="${studylist}"> --%>
+        	<div class="col-lg-4 col-md-6 wow fadeInUp">
+        		$[study.name3]
+        	</div>
+        	
+        	<div class="col-lg-4 col-md-6 wow fadeInUp">
+        		$[study.name4]
+        	</div>
+        	
+        	<div class="col-lg-4 col-md-6 wow fadeInUp">
+        		$[study.name5]
+        	</div>
+    <%-- </c:forEach> --%>
+    	</div>
+    	
+    	<div class="row g-4">
+	<%-- <c:forEach var="study" items="${studylist}"> --%>
+        	<div class="col-lg-4 col-md-6 wow fadeInUp">
+        		$[study.name6]
+        	</div>
+        	
+        	<div class="col-lg-4 col-md-6 wow fadeInUp">
+        		$[study.name7]
+        	</div>
+        	
+        	<div class="col-lg-4 col-md-6 wow fadeInUp">
+        		$[study.name8]
+        	</div>
+    <%-- </c:forEach> --%>
+    	</div>
+    	</div>
+ 
+    
+        
+	
+	
+	
+	
 	
 	<!-- Content End -->
-<!-- Footer Start -->
+	
+	<!-- Footer Start -->
 	<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
 		<div class="container">
 			<div class="copyright">
@@ -234,6 +198,7 @@
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<script src="${pageContext.request.contextPath}/resources/study/js/mystudy1.js"></script>
+	
 
 </body>
 </html>
