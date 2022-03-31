@@ -1,20 +1,27 @@
 /********** Template CSS **********/
+.btn-primary:hover{
+    color:rgb(0, 0, 0) !important;
+}
+
+.dropdown-menu{
+    text-align: center;
+}
+
+.dropdown-item{
+    width: 150px !important;
+    text-align: center;
+}
+
+.dropdown-item:hover{
+    background-color: #06BBCC;
+    color: white;
+}
+
+/********** Template CSS **********/
 :root {
     --primary: #06BBCC;
     --light: #F0FBFC;
     --dark: #181d38;
-}
-
-* {
-  font-family: 'Stylish', sans-serif !important;
-}
-
-.star{
-	color:red;
-}
-
-#warning{
-	color:red;
 }
 
 .fw-medium {
@@ -52,6 +59,7 @@
 /*** Button ***/
 .btn {
     font-family: 'Stylish', sans-serif;
+    font-size: 1.0em;
     font-weight: 600;
     transition: .5s;
 }
@@ -102,7 +110,7 @@
     margin-right: 30px;
     padding: 25px 0;
     color: #FFFFFF;
-    font-size: 15px;
+    font-size: 25px;
     text-transform: uppercase;
     outline: none;
 }

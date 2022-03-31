@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +10,7 @@
 <meta content="" name="description">
 
 <!-- Favicon -->
-<link href="${pageContext.request.contextPath}/resources/freelance/img/favicon.ico" rel="icon">
+<link href="img/favicon.ico" rel="icon">
 
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,150 +31,248 @@
 
 <!-- Template Stylesheet -->
 <link href="${pageContext.request.contextPath}/resources/freelance/css/style.css" rel="stylesheet">
-<style>
-.parent{
-    width: 70%;
-    margin: 10px auto;
-    display: flex;
-}
-
-.first {
-    border: 1px solid red;
-    flex:1;
-    width:30%;
-    box-sizing: border-box;
-}
-
-.second{
-    border: 1px solid green;
-    flex:1;
-    margin: 0px 5%;
-    width:30%;
-    box-sizing: border-box;
-}
-
-.third{
-    border: 1px solid blue;
-    flex:1;
-    width:30%;
-    box-sizing: border-box;
-}
-</style>
 </head>
+
 <body>
 <!-- Spinner Start -->
 	<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
 		<div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-			<span class="sr-only">Loading...</span>
+			<span class="resfreespan sr-only">Loading...</span>
 		</div>
 	</div>
 	<!-- Spinner End -->
-
 	<!-- Navbar Start -->
 	<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-		<a href="/freereg1" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-			<h2 class="m-0 text-primary">
-				<i class="fa fa-book me-3"></i>NEESFULL
-			</h2>
+		<a href="/resfreeform" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+			<h1 class="m-0 text-primary">
+				<i class="fa fa-book me-3"></i>NEEDSFULL
+			</h1>
 		</a>
 		<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-			<span class="navbar-toggler-icon"></span>
+			<span class="resfreespan navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<div class="navbar-nav ms-auto p-4 p-lg-0">
-				<a href="index.html" class="nav-item nav-link">Home</a>
-				<a href="about.html" class="nav-item nav-link">About</a>
-				<a href="courses.html" class="nav-item nav-link">Courses</a>
 				<div class="nav-item dropdown">
-					<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+					<a href="#" class="nav-link" data-bs-toggle="dropdown">프리랜서</a>
 					<div class="dropdown-menu fade-down m-0">
-						<a href=# class="dropdown-item">Our Team</a>
-						<a href=# class="dropdown-item">Testimonial</a>
-						<a href=# class="dropdown-item">404 Page</a>
+						<a href=# class="dropdown-item">프리랜서 등록</a>
+						<a href=# class="dropdown-item">프리랜서 조회</a>
 					</div>
 				</div>
+				<div class="nav-item dropdown">
+					<a href="#" class="nav-link" data-bs-toggle="dropdown">강의</a>
+					<div class="dropdown-menu fade-down m-0">
+						<a href=# class="dropdown-item">강의 등록</a>
+						<a href=# class="dropdown-item">강의 조회</a>
+					</div>
+				</div>
+				<a href="about.html" class="nav-item nav-link">마이페이지</a>
+				<a href="courses.html" class="nav-item nav-link">고객센터</a>
+				<a href=# class="nav-item nav-link">로그아웃</a>
 			</div>
 		</div>
 	</nav>
 	<!-- Navbar End -->
-	
+
+
 	<!-- Header Start -->
 	<div class="container-fluid bg-primary py-5 mb-5 page-header">
 		<div class="container py-5">
 			<div class="row justify-content-center">
 				<div class="col-lg-10 text-center">
-					<h1 class="display-3 text-white animated slideInDown">스터디 매칭</h1>
+					<h1 class="display-3 text-white animated slideInDown">프리랜서 매칭</h1>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- Header End -->
 	
-	
-	<!-- Content Start -->
-	
-	
-	
-	
+	<!-- 내용 Start -->
+		<div class="container-xxl py-5">
 		<div class="container">
-		<p>검색결과페이지</p>
-		<div class="row g-4">
-	<%-- <c:forEach var="study" items="${studylist}"> --%>
-			<div class="col-lg-4 col-md-6 wow fadeInUp">
-        		$[study.name0]
-        	</div>
-        	
-        	<div class="col-lg-4 col-md-6 wow fadeInUp">
-        		$[study.name1]
-        	</div>
-        	
-        	<div class="col-lg-4 col-md-6 wow fadeInUp">
-        		$[study.name2]
-        	</div>
-    <%-- </c:forEach> --%>
-    	</div>
-    	
-    	<div class="row g-4">
-	<%-- <c:forEach var="study" items="${studylist}"> --%>
-        	<div class="col-lg-4 col-md-6 wow fadeInUp">
-        		$[study.name3]
-        	</div>
-        	
-        	<div class="col-lg-4 col-md-6 wow fadeInUp">
-        		$[study.name4]
-        	</div>
-        	
-        	<div class="col-lg-4 col-md-6 wow fadeInUp">
-        		$[study.name5]
-        	</div>
-    <%-- </c:forEach> --%>
-    	</div>
-    	
-    	<div class="row g-4">
-	<%-- <c:forEach var="study" items="${studylist}"> --%>
-        	<div class="col-lg-4 col-md-6 wow fadeInUp">
-        		$[study.name6]
-        	</div>
-        	
-        	<div class="col-lg-4 col-md-6 wow fadeInUp">
-        		$[study.name7]
-        	</div>
-        	
-        	<div class="col-lg-4 col-md-6 wow fadeInUp">
-        		$[study.name8]
-        	</div>
-    <%-- </c:forEach> --%>
-    	</div>
-    	</div>
- 
-    
-        
+			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+				<h5 class="section-title bg-white text-center text-primary px-3">매칭 완료</h5>
+				<h1 class="mb-5 mt-2">다음의 스터디들이 매칭되었습니다</h1>
+			</div>
+			<div class="row g-4 justify-content-center wow fadeInUp">
+				<div class="tab-content">
+					<div id="tab-1" class="tab-pane fade show p-0 active">
+						<div class="job-item p-4 mb-4">
+							<div class="row g-4">
+								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
+									<img class="flex-shrink-0 img-fluid border rounded" src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt="" style="width: 80px; height: 80px;">
+									<div class="text-start ps-4">
+										<h3 class="mb-3">스터디 등록 제목</h3>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-eyeglasses text-primary me-2"></i>학년
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜 
+										</span>
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+									<div class="d-flex mb-3">
+										<a class="btn btn-primary" href="">상세보기</a>
+									</div>
+									<span class="text-truncate"><i class="bi bi-cart-plus text-primary me-2"></i>참여여부</span>
+								</div>
+							</div>
+						</div>
+						<div class="job-item p-4 mb-4">
+							<div class="row g-4">
+								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
+									<img class="flex-shrink-0 img-fluid border rounded" src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt="" style="width: 80px; height: 80px;">
+									<div class="text-start ps-4">
+										<h3 class="mb-3">스터디 등록 제목</h3>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-eyeglasses text-primary me-2"></i>학년
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜 
+										</span>
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+									<div class="d-flex mb-3">
+										<a class="btn btn-primary" href="">상세보기</a>
+									</div>
+									<span class="text-truncate"><i class="bi bi-cart-plus text-primary me-2"></i>참여여부</span>
+								</div>
+							</div>
+						</div>
+						<div class="job-item p-4 mb-4">
+							<div class="row g-4">
+								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
+									<img class="flex-shrink-0 img-fluid border rounded" src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt="" style="width: 80px; height: 80px;">
+									<div class="text-start ps-4">
+										<h3 class="mb-3">스터디 등록 제목</h3>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-eyeglasses text-primary me-2"></i>학년
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜 
+										</span>
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+									<div class="d-flex mb-3">
+										<a class="btn btn-primary" href="">상세보기</a>
+									</div>
+									<span class="text-truncate"><i class="bi bi-cart-plus text-primary me-2"></i>참여여부</span>
+								</div>
+							</div>
+						</div>
+												<div class="job-item p-4 mb-4">
+							<div class="row g-4">
+								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
+									<img class="flex-shrink-0 img-fluid border rounded" src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt="" style="width: 80px; height: 80px;">
+									<div class="text-start ps-4">
+										<h3 class="mb-3">스터디 등록 제목</h3>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-eyeglasses text-primary me-2"></i>학년
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜 
+										</span>
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+									<div class="d-flex mb-3">
+										<a class="btn btn-primary" href="">상세보기</a>
+									</div>
+									<span class="text-truncate"><i class="bi bi-cart-plus text-primary me-2"></i>참여여부</span>
+								</div>
+							</div>
+						</div>
+						<div class="job-item p-4 mb-4">
+							<div class="row g-4">
+								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
+									<img class="flex-shrink-0 img-fluid border rounded" src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt="" style="width: 80px; height: 80px;">
+									<div class="text-start ps-4">
+										<h3 class="mb-3">스터디 등록 제목</h3>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-eyeglasses text-primary me-2"></i>학년
+										</span>
+										<span class="resfreespan text-truncate me-3">
+											<i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜 
+										</span>
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+									<div class="d-flex mb-3">
+										<a class="btn btn-primary" href="">상세보기</a>
+									</div>
+									<span class="text-truncate"><i class="bi bi-cart-plus text-primary me-2"></i>참여여부</span>
+								</div>
+							</div>
+						</div>
+						
+						
+					</div>
+				</div>
+			</div>
+			<div class="row g-4">
+				<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s" style="width: 30%; float: none; margin-left: 100px;">
+					<div class="row g-3">
+						<div class="col-12">
+							<div class="col-12 mt-4">
+								<button id="canclebtn" class="btn btn-outline-primary w-50 py-3">이전 목록</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s" style="width: 25%; float: none;">
+					<div class="row g-3">
+						<div class="col-12">
+							<div class="col-12 mt-4">
+								<button type="submit" class="btn btn-primary w-100 py-3 dropdown-toggle" data-bs-toggle="dropdown">페이지 이동하기</button>
+								<ul class="dropdown-menu dropdown-menu-end">
+									<li style="font-weight:bold; font-family: 'Stylish', sans-serif; text-align: center;">1 페이지(현재)</li>
+									<li><hr class="dropdown-divider"></li>
+									<li><a class="dropdown-item" href="#">Page 1</a></li>
+									<li><a class="dropdown-item" href="#">Page 2</a></li>
+									<li><a class="dropdown-item" href="#">Page 3</a></li>
+									<li><a class="dropdown-item" href="#">Page 4</a></li>
+									<li><a class="dropdown-item" href="#">Page 5</a></li>
+									<li><a class="dropdown-item" href="#">Page 6</a></li>
+									<li><a class="dropdown-item" href="#">Page 7</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s" style="width: 30%; float: none;">
+					<div class="row g-3">
+						<div class="col-12">
+							<div class="col-12 mt-4">
+								<button type="submit" class="btn btn-outline-primary w-50 py-3">다음 목록</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	
+	<!-- 내용 End -->
 	
-	
-	
-	
-	<!-- Content End -->
 	
 	<!-- Footer Start -->
 	<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -189,8 +287,7 @@
 						<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
 						Designed By
 						<a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-						<br>
-						<br> Distributed By
+						<br> <br> Distributed By
 						<a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
 					</div>
 					<!-- <div class="col-md-6 text-center text-md-end">
@@ -206,6 +303,7 @@
 		</div>
 	</div>
 	<!-- Footer End -->
+
 
 	<!-- Back to Top -->
 	<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
@@ -226,8 +324,7 @@
 
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-	<script src="${pageContext.request.contextPath}/resources/study/js/mystudy1.js"></script>
 	
-
+	
 </body>
 </html>
