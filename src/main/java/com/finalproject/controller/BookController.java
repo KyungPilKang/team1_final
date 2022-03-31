@@ -13,6 +13,11 @@ public class BookController {
         return "/bookstore/bookStore";
     }
 
+    @GetMapping("/regform")
+    public String regform() {
+        return "/bookstore/registerForm";
+    }
+
     @RequestMapping("/juso")
     public String jusoCallBacks() {
         return "/loginJoin/juso";

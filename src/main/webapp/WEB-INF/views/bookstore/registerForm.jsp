@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>문의 등록완료</title>
+    <title>문의하기</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -35,7 +35,7 @@
 
     <!-- Stylesheet -->
     <link href="${pageContext.request.contextPath}/resources/bookstore/css/style.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/resources/bookstore/css/bookStore.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/bookstore/css/bookstore.css" rel="stylesheet">
 </head>
 
 <body>
@@ -43,13 +43,42 @@
 <jsp:include page="/WEB-INF/views/bookstore/header.jsp"/>
 
 
-<div class="container-xxl py-5">
-    <div class="container">
-        <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">문의가 등록되었습니다.</h1>
-    </div>
-<a class="btn btn-primary py-3 px-5" href="/request/my">내 문의내역 확인</a>
-</div>
+<!-- Textbook Register Start -->
+<div class="container-xxl">
+    <div class="container" id="write_container">
+        <h4 class="mb-4">교재 등록</h4>
+        <form>
+            <div class="row g-3">
+                <div class="col-sm-12">
+                    <label for="book_cat"></label>
+                    <select name="book_cat" id="book_cat" class="col-sm-12">
+                        <option value="none">== 카테고리 ==</option>
+                        <option value="none">교재1</option>
+                        <option value="none">교재2</option>
+                        <option value="none">교재3</option>
+                    </select>
+                </div>
+                <div class="col-12 col-sm-12">
+                    <input type="file" class="form-control bg-white">
+                </div>
+                <div class="col-12 col-sm-12">
+                    <input type="email" class="form-control" placeholder="제목">
+                </div>
+                <div class="col-12 col-sm-12">
+                    <input type="text" class="form-control" placeholder="키워드 등록 (#JAVA #수학 #영어)">
+                </div>
+                <div class="col-12">
+                    <textarea id="write_text" class="form-control" rows="20" placeholder="내용"></textarea>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary w-100" type="submit">등 록</button>
+                </div>
+            </div>
+        </form>
 
+    </div>
+</div>
+<!-- Textbook Register End -->
 
 <jsp:include page="/WEB-INF/views/bookstore/footer.jsp"/>
 
