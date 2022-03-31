@@ -90,6 +90,7 @@ public class FreelanceController {
 			} else {
 				freelanceService.regFreelance_freeType3(free);
 			}
+			session.removeAttribute("regfree");
 			mav.setViewName("freelance/regfreelance1");
 		} catch(Exception e) {
 			e.printStackTrace();
