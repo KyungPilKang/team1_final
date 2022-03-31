@@ -20,7 +20,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
 <!-- Libraries Stylesheet -->
@@ -32,6 +32,8 @@
 
 <!-- Template Stylesheet -->
 <link href="${pageContext.request.contextPath}/resources/freelance/css/style.css" rel="stylesheet">
+
+<link href="${pageContext.request.contextPath}/resources/freelance/css/myStyle.css" rel="stylesheet">
 </head>
 
 <body>
@@ -117,7 +119,7 @@
 											<i class="far fa-money-bill-alt text-primary me-2"></i>계약 금액
 										</span>
 										<span class="resfreespan text-truncate me-0">
-											<i class="fa fa-regular fa-toolbox text-primary me-2"></i>사용 툴
+											<i class="fa-solid fa-chalkboard-user text-primary me-2"></i>강의 정보
 										</span>
 									</div>
 								</div>
@@ -145,7 +147,7 @@
 											<i class="far fa-money-bill-alt text-primary me-2"></i>계약 금액
 										</span>
 										<span class="resfreespan text-truncate me-0">
-											<i class="fa fa-regular fa-toolbox text-primary me-2"></i>사용 툴
+											<i class="fa-solid fa-chalkboard-user text-primary me-2"></i>강의 정보
 										</span>
 									</div>
 								</div>
@@ -173,7 +175,7 @@
 											<i class="far fa-money-bill-alt text-primary me-2"></i>계약 금액
 										</span>
 										<span class="resfreespan text-truncate me-0">
-											<i class="fa fa-regular fa-toolbox text-primary me-2"></i>사용 툴
+											<i class="fa-solid fa-chalkboard-user text-primary me-2"></i>강의 정보
 										</span>
 									</div>
 								</div>
@@ -201,7 +203,7 @@
 											<i class="far fa-money-bill-alt text-primary me-2"></i>계약 금액
 										</span>
 										<span class="resfreespan text-truncate me-0">
-											<i class="fa fa-regular fa-toolbox text-primary me-2"></i>사용 툴
+											<i class="fa-solid fa-chalkboard-user text-primary me-2"></i>강의 정보
 										</span>
 									</div>
 								</div>
@@ -229,7 +231,7 @@
 											<i class="far fa-money-bill-alt text-primary me-2"></i>계약 금액
 										</span>
 										<span class="resfreespan text-truncate me-0">
-											<i class="fa fa-regular fa-toolbox text-primary me-2"></i>사용 툴
+											<i class="fa-solid fa-chalkboard-user text-primary me-2"></i>강의 정보
 										</span>
 									</div>
 								</div>
