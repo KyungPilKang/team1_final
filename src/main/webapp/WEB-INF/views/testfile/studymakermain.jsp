@@ -95,7 +95,7 @@
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="text-center">
-                <h5 class="section-title bg-white text-center text-primary px-3">개설자관리</h5>
+                <h5 class="section-title bg-white text-center text-primary px-3">개설리스트보기</h5>
                 <h1 class="mb-5">내가 개설한 스터디</h1>
             </div>
             <div class="owl-carousel testimonial-carousel position-relative">
@@ -180,7 +180,7 @@
 		<div class="container-xxl py-5">
 		<div class="container">
 			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-				<h5 class="section-title bg-white text-center text-primary px-3">스터디 개설 목록</h5>
+				<h5 class="section-title bg-white text-center text-primary px-3">스터디 개설 관리</h5>
 				<h1 class="mb-5 mt-2">{${study.user_id} 니즈풀}님의 개설 스터디 입니다.</h1>
 			</div>
 			<div class="row g-4 justify-content-center wow fadeInUp">
@@ -238,7 +238,7 @@
 						</div>
 						<div class="job-item p-4 mb-4">
 							<div class="row g-4">
-								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
+								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; 	float: none; margin-left: 100px;">
 									<img class="flex-shrink-0 img-fluid border rounded" src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt="" style="width: 80px; height: 80px;">
 									<div class="text-start ps-4">
 										<h3 class="mb-3">스터디 등록 제목</h3>
@@ -367,7 +367,6 @@
 	<!-- 내용 End -->
 	
 		
-	<!-- 내용 End -->
 	<!-- Footer Start -->
 	<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
 		<div class="container">

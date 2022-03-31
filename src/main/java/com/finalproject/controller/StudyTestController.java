@@ -1,6 +1,7 @@
 package com.finalproject.controller;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +10,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.finalproject.dto.Study;
-import com.finalproject.service.FreelanceService;
 import com.finalproject.service.MemberService;
 
 @Controller
@@ -80,7 +82,29 @@ public class StudyTestController {
 		return "testfile/testpage";
 	}
 	
-	@GetMapping("studymakermain")
+	@GetMapping("studyclass")
+	public String studyclass() {
+		return "testfile/studyclass";
+	}
+	
+	//참여 기능
+	@ResponseBody
+	@PostMapping("/attends")
+	public boolean Likecheck(@RequestParam(value="no")int study_no,HttpServletRequest request){
+		boolean isattends = false;
+		try {
+			HttpSession session = request.getSession();
+			String user_id = (String) session.getAttribute("id");
+			//isattends= studyService.checkattends(user_id, study_no);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return isattends;
+	}
+	
+	
+	
+	@PostMapping("studymakermain")
 	public String studymakermain() {
 		return "testfile/studymakermain";
 	}

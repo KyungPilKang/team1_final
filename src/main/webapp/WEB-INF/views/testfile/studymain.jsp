@@ -168,7 +168,7 @@
 					</div>
 					
 					<div class="third mt-5 mb-5">
-					    <form action="studyclass" method="post">
+					    <form action="studyclass" method="get">
 						<button type="submit" class="btn btn-primary w-100 py-3" >스터디등교</button>
 						</form>
 					</div>
