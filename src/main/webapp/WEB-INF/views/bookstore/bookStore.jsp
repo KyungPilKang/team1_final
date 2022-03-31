@@ -22,7 +22,7 @@
           rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
@@ -41,6 +41,12 @@
 
 <jsp:include page="/WEB-INF/views/bookstore/header.jsp"/>
 
+<div style="float:right; margin-right:100px; cursor: pointer; " class="btn btn-primary" onclick="location.href='/book-store/cart'">
+    <i class="fa-solid fa-cart-shopping"></i>
+</div>
+<div style="float:right; margin-right:-43px; margin-top:8px;">
+    <div style="background: red; width: 12px; height: 12px; font-size: 10px; color:white; display: flex; justify-content: center; align-items: center; border-radius: 100px;">0</div>
+</div>
 <!-- Book List Start -->
 <div class="bookstore_container container-xxl py-5">
     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
