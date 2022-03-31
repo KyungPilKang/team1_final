@@ -12,7 +12,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="#${pageContext.request.contextPath}/resources/login/img/favicon.ico" rel="icon">
+    <link href="${pageContext.request.contextPath}/resources/asset/needsfull.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

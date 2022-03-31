@@ -38,16 +38,9 @@ public class MemberController {
 		  return "/loginJoin/termsagree";
 	  }
 
-	@PostMapping("/join")
-	public ModelAndView join(@ModelAttribute Member member) {
-		ModelAndView mav = new ModelAndView();
-		try {
-			memberService.insertMember(member);
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		mav.setViewName("loginForm");
-		return mav;
+	@RequestMapping("withdrawal")
+	public String withdrawal() {
+		return "/loginJoin/withdrawalForm";
 	}
 	
 	@RequestMapping("joinForm")

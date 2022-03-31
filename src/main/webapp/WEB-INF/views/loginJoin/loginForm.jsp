@@ -11,7 +11,7 @@
 <meta content="" name="description">
 
 <!-- Favicon -->
-<link href="#${pageContext.request.contextPath}/resources/login/img/favicon.ico" rel="icon">
+<link href="${pageContext.request.contextPath}/resources/asset/needsfull.ico" rel="icon">
 
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,6 +32,8 @@
 
 <!-- Template Stylesheet -->
 <link href="${pageContext.request.contextPath}/resources/login/css/style.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/login/css/loginForm.css" rel="stylesheet">\
+
 </head>
 
 <body>
@@ -96,18 +98,24 @@
 								<input class="btn btn-success" type="button" onclick="caprefesh()" value="새로고침">
 								<input class="btn btn-success" type="button" id="captchavalid" value="확인하기">
 							</div>
-
-							<div class="col-12">
-								<a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=94fc26e459f927ce79257dc6c17527a7&redirect_uri=http://localhost:8090/auth/kakao/callback">
-									<img src="${pageContext.request.contextPath}/resources/login/kakao2.png" style="height: 58px;" class="w-100">
-								</a>
-							</div>
-							<div class="col-12">
-								<a href="https://nid.naver.com/oauth2.0/authorize?client_id=24OF3VzEePL0jwU_gwRz&response_type=code&redirect_uri=http://localhost:8090/auth/naver/callback&state=oauth_state">
-									<img src="${pageContext.request.contextPath}/resources/login/naver2.png" style="height: 58px;" class="w-100">
-								</a>
-							</div>
-
+							
+							
+								<div class="col-12">
+									<a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=94fc26e459f927ce79257dc6c17527a7&redirect_uri=http://localhost:8090/auth/kakao/callback"
+										onclick="window.open(this.href, '_blank', 'width=800, height=600'); return false;">
+										<img src="${pageContext.request.contextPath}/resources/login/kakao2.png" style="width:100%; height:58px;">
+									</a>
+								</div>
+							
+							
+								<div class="col-12" style="max-height:58px;">
+									<a href="https://nid.naver.com/oauth2.0/authorize?client_id=24OF3VzEePL0jwU_gwRz&response_type=code&redirect_uri=http://localhost:8090/auth/naver/callback&state=oauth_state"
+									onclick="window.open(this.href, '_blank', 'width=800, height=600'); return false;">
+									<span id="naver" class="btn w-100">N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;네이버 로그인</span>
+									</a>
+								</div>
+							
+					
 							<div class="col-12">
 								<button class="btn btn-primary w-100 py-3" type="submit">로그인 하기</button>
 							</div>
