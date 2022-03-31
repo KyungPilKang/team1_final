@@ -12,7 +12,7 @@ if(performance.navigation.type==1){
 };
 
 //초중등 선택
-//regstudyform1, study_sname_1, study_sname_2, nextstudybtn1
+//regstudyform1, study_sname_1, study_sname_ㄴ2, nextstudybtn1
 $('#nextstudybtn1').click(function(){
  	$('#regstudyform1').css("display", "none");
    	$('#regstudyform2').css("display", "block");
@@ -183,9 +183,6 @@ $('#study_contents').click(function(){
 //regstudyform4, study_contents,study_kakao, nextstudybtn4
 $('#nextstudybtn10').click(function(){
    	$('#regstudyform10').css("display", "none");
-   	$('#modistudySubmitform').css("display", "block");
-   	window.location="#containerform";
-   	return false;
 });
 
 $('#study_kakao').click(function(){

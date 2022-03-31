@@ -98,9 +98,22 @@ public class StudyTestController {
 		return "testfile/studyfind";
 	}
 	
-	//검색버튼
+	//검색 다음버튼
 	@PostMapping("studyfindform")
 	public ModelAndView studyfindform(@ModelAttribute Study inputstudy) {
+		ModelAndView mav=new ModelAndView();
+		System.out.println("매칭확인요청:"+ inputstudy.toString());
+		try {
+		session.setAttribute("findstudy", inputstudy);
+		mav.setViewName("testfile/studyfindCheck");
+		}  catch(Exception e){
+			e.printStackTrace();
+		}
+		return mav; 
+	}
+	
+	@PostMapping("studyfindcnf")
+	public ModelAndView studyfindcnf(@ModelAttribute Study inputstudy) {	
 		ModelAndView mav=new ModelAndView();
 		System.out.println("검색버튼클릭"+inputstudy.toString());
 		mav.setViewName("testfile/studyfindresult");
@@ -115,7 +128,7 @@ public class StudyTestController {
 	}
 	
 	
-	//수정버튼
+	//수정 다음버튼
 	@PostMapping("studymodify")
 	public ModelAndView studymodify(@ModelAttribute Study inputstudy) {
 		ModelAndView mav=new ModelAndView("testfile/studymodify");
@@ -137,8 +150,8 @@ public class StudyTestController {
 		return mav; 
 	}
 	
-	//(2)수정확인후 수정요청
-	@PostMapping("studymodi")
+	//(2)수정확인후 수정요청 db
+	@PostMapping("studymodicnf")
 	public ModelAndView studymodi(@ModelAttribute Study cnfstudy) {
 		ModelAndView mav=new ModelAndView();
 		//Study cnfstudy = (Study) session.getAttribute("이름");
