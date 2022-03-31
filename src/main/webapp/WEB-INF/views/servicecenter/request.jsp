@@ -11,6 +11,9 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
 
+    <!-- Favicon -->
+    <link href="${pageContext.request.contextPath}/resources/asset/needsfull.ico" rel="icon">
+
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,11 +39,16 @@
 <jsp:include page="/WEB-INF/views/bookstore/header.jsp"/>
 
 
-<button onclick="chatPopup()" class="btn btn-lg btn-primary">챗봇Test</button>
+<button class="btn btn-primary" onclick="location.href='/request/write'" style="float:right">문의하기 임시</button><br><br><br>
+<div class="container">
+    <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">고객센터 메인화면 아코디언으로 자주묻는 질문 같은거 작성하면 된다.</h1>
+    <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">챗봇은 우측 하단에 만든 후 클릭하면 팝업 형태로 나타난다</h1>
+</div>
+<button onclick="chatPopup()" class="btn btn-lg btn-primary" style="float:right">챗봇Test</button>
 
 
-<!-- Book List End -->
 
+<br>
 <jsp:include page="/WEB-INF/views/bookstore/footer.jsp"/>
 
 <!-- Back to Top -->

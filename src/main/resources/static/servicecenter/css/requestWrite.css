@@ -1,0 +1,7 @@
+#write_container{
+    width: 50vw;
+}
+
+#write_text{
+    overflow-y: scroll;
+}

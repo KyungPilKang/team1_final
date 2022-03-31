@@ -146,3 +146,13 @@
 .book_list .detail .dc_rate {color:#5e6b9f;font-weight:normal;}
 .book_list .book_add{float:right;width:118px;line-height:18px;}
 .book_list .book_add a{display:block;margin-bottom:3px;padding-left:3px;padding-right:3px;}
+
+
+
+#write_container{
+    width: 50vw;
+}
+
+#write_text{
+    overflow-y: scroll;
+}

@@ -10,10 +10,13 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="${pageContext.request.contextPath}/resources/asset/needsfull.ico" rel="icon">
+
     <%-- chatbot css --%>
     <link href="${pageContext.request.contextPath}/resources/servicecenter/css/chatbot.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
-
 
 
 </head>
@@ -21,7 +24,7 @@
 <!-- chat header -->
 <div id="chat-header">
     <div class="header">
-<%--        <img src="${pageContext.request.contextPath}/resources/servicecenter/img/logo.png" style="margin-top: 15px" alt="챗봇">--%>
+        <%--        <img src="${pageContext.request.contextPath}/resources/servicecenter/img/logo.png" style="margin-top: 15px" alt="챗봇">--%>
     </div>
 </div>
 
@@ -66,10 +69,6 @@
     </a>
 </div>
 <div id="dimm" style="display:none;"></div>
-
-
-
-
 
 
 </body>
