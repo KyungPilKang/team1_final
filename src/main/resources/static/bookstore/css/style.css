@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: rgb(71, 146, 154);
+    --primary: #06BBCC;
     --light: #F0FBFC;
     --dark: #181d38;
 }
@@ -321,14 +321,12 @@
 @media (min-width: 768px) {
     .testimonial-carousel::before,
     .testimonial-carousel::after {
-        width: 200px;
     }
 }
 
 @media (min-width: 992px) {
     .testimonial-carousel::before,
     .testimonial-carousel::after {
-        width: 300px;
     }
 }
 
