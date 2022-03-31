@@ -14,4 +14,10 @@ public class CartController {
     }
 
 
+    // 임시
+    @GetMapping("/order/detail")
+    public String detail() {
+        return "/bookstore/orderDetail";
+    }
+
 }
