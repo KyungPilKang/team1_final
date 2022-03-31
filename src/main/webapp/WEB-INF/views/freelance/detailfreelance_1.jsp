@@ -115,7 +115,7 @@
 					<div class="mb-5">
 						<h3 class="mb-3">홍보 영상</h3>
 						<br>
-						<video id="myVideo" class="video-js vjs-default-skin" style="margin-left: 150px;">
+						<video id="myVideo" class="video-js vjs-default-skin"	>
 						</video>
 						<br> <br>
 						<h3 class="mb-3">프리랜서 소개</h3>
@@ -251,39 +251,31 @@
 		$(document).ready(function() {
 			let options = {
 				sources : [ {
-					src : "/video/play",
+					src : "${pageContext.request.contextPath}/resources/test.mp4",
 					type : "video/mp4"
 				} ],
 				playbackRates : [ .5, .75, 1, 1.25, 1.5 ],
-				poster : "[이미지 주소 등록]",
+				/* poster: , */
 				controls : true,
 				preload : "auto",
-				width : 540,
-				height : 320,
+				width : 720,
+				height : 380,
 				controlBar : {
-					playToggle : false,
-					pictureInPictureToggle : false,
+					playToggle : true,
+					pictureInPictureToggle : true,
 					remainingTimeDisplay : true,
-					progressControl : false,
+					progressControl : true,
 					qualitySelector : true,
 				}
 			};
 
 			var player = videojs('myVideo', options);
 			player.src([ {
-				src : '/video/play/720',
+				src : "${pageContext.request.contextPath}/resources/test.mp4",
 				type : 'video/mp4',
-				label : '720P',
-			}, {
-				src : '/video/play/480',
-				type : 'video/mp4',
-				label : '480P',
+				label : '1080P',
 				selected : true,
-			}, {
-				src : '/video/play/360',
-				type : 'video/mp4',
-				label : '360P',
-			}, ]);
+			}]);
 		})
 	</script>
 </body>
