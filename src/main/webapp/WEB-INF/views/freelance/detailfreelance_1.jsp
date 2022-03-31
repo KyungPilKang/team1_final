@@ -11,7 +11,7 @@
 <meta content="" name="description">
 
 <!-- Favicon -->
-<link href="img/favicon.ico" rel="icon">
+<link href="${pageContext.request.contextPath}/resources/asset/needsfull.ico" rel="icon">
 
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -105,7 +105,7 @@
 			<div class="row gy-5 gx-4">
 				<div class="col-lg-8">
 					<div class="d-flex align-items-center mb-5">
-						<img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-2.jpg" alt="" style="width: 80px; height: 80px;">
+						<img class="flex-shrink-0 img-fluid border rounded" src="#" alt="" style="width: 80px; height: 80px;">
 						<div class="text-start ps-4">
 							<h2 class="mb-3">프리랜서 등록 제목</h2>
 							<span class="resfreespan text-truncate me-3"><i class="fa fa-map-marker-alt text-primary me-2"></i>지역</span> <span class="resfreespan text-truncate me-3"><i class="far fa-clock text-primary me-2"></i>계약 형태(작업시간)</span> <span class="resfreespan text-truncate me-3"><i class="far fa-money-bill-alt text-primary me-2"></i>계약 금액</span> <span class="resfreespan text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>등록 일자</span>
@@ -115,7 +115,7 @@
 					<div class="mb-5">
 						<h3 class="mb-3">홍보 영상</h3>
 						<br>
-						<video id="myVideo" class="video-js vjs-default-skin"	>
+						<video id="myVideo" class="video-js bg-light rounded">
 						</video>
 						<br> <br>
 						<h3 class="mb-3">프리랜서 소개</h3>
@@ -169,7 +169,7 @@
 				<div class="row g-3">
 					<div class="col-12">
 						<div class="col-12 mt-4">
-							<button id="canclebtn" class="btn btn-outline-primary w-50 py-3">목록 으로</button>
+							<button id="canclebtn" class="btn btn-outline-primary w-50 py-3" onclick="window.location='/resfreeform'">목록 으로</button>
 						</div>
 					</div>
 				</div>
