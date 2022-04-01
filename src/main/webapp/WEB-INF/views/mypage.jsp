@@ -11,7 +11,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="${pageContext.request.contextPath}/resources/mypage/img/favicon.ico" rel="icon">
+    <link href="${pageContext.request.contextPath}/resources/asset/needsfull.ico" rel="icon">
     <link href="${pageContext.request.contextPath}/resources/css/mypage/mypage.css" rel="stylesheet">
 
     <!-- Google Web Fonts -->

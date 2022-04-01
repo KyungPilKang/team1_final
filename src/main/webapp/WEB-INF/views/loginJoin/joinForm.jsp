@@ -11,7 +11,7 @@
 <meta content="" name="description">
 
 <!-- Favicon -->
-<link href="#${pageContext.request.contextPath}/resources/login/img/favicon.ico" rel="icon">
+<link href="${pageContext.request.contextPath}/resources/asset/needsfull.ico" rel="icon">
 
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -181,8 +181,8 @@
 										<th>이메일 <span class="star">*</span>
 										</th>
 										<td>
-											<div class="row">
-												<div class="col-lg 5">
+											<div class="row g-0">
+												<div class="col-lg 5 g-0">
 													<input type="email" id="email1" name="email" class="form-control">
 												</div>
 												<div class="col-lg 4 input-group g-0">

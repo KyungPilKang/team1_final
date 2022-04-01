@@ -22,7 +22,6 @@
           rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
-    <link href="${pageContext.request.contextPath}/resources/bookstore/img/favicon.ico" rel="icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
@@ -36,6 +35,11 @@
     <!-- Stylesheet -->
     <link href="${pageContext.request.contextPath}/resources/bookstore/css/style.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/servicecenter/css/requestWrite.css" rel="stylesheet">
+
+    <%-- toast --%>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"/>
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"/>
+
 </head>
 
 <body>
@@ -49,31 +53,35 @@
         <h4 class="mb-4">문의하기</h4>
         <form>
             <div class="row g-3">
-                <div class="col-sm-12">
-                    <label for="request_cat"></label>
-                    <select name="request_cat" id="request_cat" class="col-sm-12">
-                        <option value="none">== 카테고리 ==</option>
+                <%-- 문의유형 request_type --%>
+                <div class="col-sm-10" >
+                    <label for="request_type"></label>
+                    <select name="request_type" id="request_type" class="col-sm-12" style="border: 1px solid #d5d5d5; height:38px; padding-left:10px;">
+                        <option value="none">== 문의유형 ==</option>
                         <option value="none">문의타입1</option>
                         <option value="none">문의타입2</option>
                         <option value="none">문의타입3</option>
                     </select>
                 </div>
-                <div class="col-12 col-sm-12">
-                    <input type="email" class="form-control" placeholder="제목">
-                </div>
-                <div class="col-12 col-sm-6">
-                    <input type="text" class="form-control" placeholder="사이트 링크">
-                </div>
-                <div class="col-12 col-sm-6">
+                    <%-- 문의파일 request_file --%>
+                <div class="col-12 col-sm-10">
                     <input type="file" class="form-control bg-white">
                 </div>
-                <div class="col-12">
-                    <textarea id="write_text" class="form-control" rows="20" placeholder="내용"></textarea>
+                    <%-- 문의제목 request_subject --%>
+                <div class="col-12 col-sm-10">
+                    <input type="text" class="form-control" placeholder="제목">
+                </div>
+                <%-- 문의내용 request_content --%>
+                <div class="col-10">
+                    <input type="hidden" id="request_content" name="request_content"/>
                 </div>
             </div>
         </form>
 
-        <div class="col-12">
+        <%-- toastui editor --%>
+        <div id="editor" class="p-1"  style="width:41vw; margin-left:-4px;"></div>
+
+        <div class="col-10">
             <button class="btn btn-primary w-100" type="submit" onclick="location.href='/request/complete'">등 록</button>
         </div>
 
@@ -92,6 +100,11 @@
 
 <!-- Template Javascript -->
 <script src="${pageContext.request.contextPath}/resources/bookstore/js/main.js"></script>
+
+<%-- toastui editor --%>
+<script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/bookstore/js/toastui.js"></script>
+
 
 
 </body>

@@ -1,6 +1,7 @@
 package com.finalproject.controller;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,11 +9,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.finalproject.dto.Freelance;
 import com.finalproject.dto.Study;
-import com.finalproject.service.FreelanceService;
 import com.finalproject.service.MemberService;
 
 @Controller
@@ -26,82 +31,63 @@ public class StudyTestController {
 	@Autowired
 	private MemberService memberService;
 	
-	
-	@GetMapping("datepickertest")
-	public String datepickertest() {
-		return "testfile/datepickertest";
-	}
-		
-	@GetMapping("timepicker")
-	public String timepicker() {
-		return "testfile/timepicker";
-		
-	}
-	
-	@GetMapping("checkboxtest")
-	public String checkboxtest() {
-		return "testfile/checkboxtest";
-		
-	}
-	
-	@GetMapping("datalist")
-	public String datalist() {
-		System.out.println("값 넘어옴");
-		return "testfile/checkboxtest";
-		
-	}
-	
-	@GetMapping("dropdowntest")
-	public String dropdowntest() {
-		return "testfile/dropdowntest";
-		
-	}
-	@GetMapping("dropdownlist")
-	public String dropdownlist() {
-		System.out.println("값 넘어옴");
-		return "testfile/dropdowntest";
-		
-	}
-	
-	@GetMapping("aligntest")
-	public String aligntest() {
-		return "testfile/aligntest";
-	}
-	
-	@GetMapping("modaltest")
-	public String modaltest() {
-		return "testfile/modaltest";
-	}
 
-
-	
-	@GetMapping("testpage")
-	public String testpage() {
-		return "testfile/testpage";
-	}
-	
-	@GetMapping("studymakermain")
-	public String studymakermain() {
-		return "testfile/studymakermain";
-	}
-	
 	//스터디메인
 	@GetMapping("studymain")
 	public String studymain() {
 		return "testfile/studymain";
 	}
 	
-	//등록페이지전환
-	@RequestMapping("/studyReg")
-	public String studyReg() {
-		return "testfile/studyReg";
+	//스터디등교
+	@GetMapping("studyclass")
+	public String studyclass() {
+		return "testfile/studyclass";
 	}
+	
+	@ResponseBody
+	@PostMapping("studyclass")
+	public String studyabc(@RequestParam("status") String status) {
+		String result = null;
+		switch (status) {
+		case "team_accept":
+			result = "DB에서 신청 완료된 데이터리스트 반환";
+			break;
+		case "team_apply":
+			result = "DB에서 신청 중인 데이터리스트 반환";
+			break;
+		case "team_reject":
+			result = "DB에서 신청 거부된 데이터리스트 반환";
+			break;
+		}
+		return result;
+	}
+	
+	//스터디상세페이지 (검색 조회후 게시글선택시, 등교페이지에서 게시글보기연결)
+	@GetMapping("studydetail")
+	public String studydetail() {
+		return "testfile/studydetail";
+	}
+	
+
+	//(1)개설자메인 페이지
+	@PostMapping("studymakermain")
+	public String studymakermain() {
+		return "testfile/studymakermain";
+	}
+	
+	//(2)개설자가 상세글보기 클릭시 보여지는 페이지
+	@GetMapping("studymakerdetail")
+	public String studymakerdetail() {
+		return "testfile/studymakerdetail";
+	}
+
 	
 	//(1)검색페이지전환
 	@RequestMapping("/studyfind")
 	public String studyfind() {
 		return "testfile/studyfind";
 	}
+	
 	
 	//(2)검색 다음버튼
 	@PostMapping("studyfindform")
@@ -122,19 +108,27 @@ public class StudyTestController {
 	@PostMapping("studyfindcnf")
 	public ModelAndView studyfindcnf(@ModelAttribute Study inputstudy) {	
 		ModelAndView mav=new ModelAndView();
-		System.out.println("검색버튼클릭"+inputstudy.toString());
+		//검색값 등록
+		try {
+		Study findstudycnf=(Study)session.getAttribute("findstudy");
+		System.out.println("매칭cnf 요청:"+findstudycnf.toString());
+		session.removeAttribute("findstudy");
 		mav.setViewName("testfile/studyfindresult");
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 		return mav; 
 	}
 	
 	//(4)검색결과페이지
-	@PostMapping("studyfindresult")
+	@RequestMapping(value="/studyfindresult", method= {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView studyfindresult(@ModelAttribute Study inputstudy) {
 		ModelAndView mav=new ModelAndView("testfile/studyfindresult");
+		
 		return mav; 
 	}
 	
-	
+
 	@GetMapping("0330")
 	public ModelAndView test() {
 		ModelAndView mav=new ModelAndView();
@@ -169,12 +163,24 @@ public class StudyTestController {
 	@PostMapping("studymodicnf")
 	public ModelAndView studymodi(@ModelAttribute Study cnfstudy) {
 		ModelAndView mav=new ModelAndView();
-		//Study cnfstudy = (Study) session.getAttribute("이름");
-		//System.out.println("수정확인후 수정요청:"+cnfstudy.toString());
+		try {
+		Study studymodicnf=(Study)session.getAttribute("modistudy");
+		System.out.println("수정확인후 수정 cnf :"+studymodicnf.toString());
+		mav.setViewName("testfile/studymakermain");
+		}  catch(Exception e){
+			e.printStackTrace();
+		}
 		return mav;
 	}
 	
-	//(1)등록확인요청
+	
+	//(1)등록페이지전환
+	@RequestMapping("/studyReg")
+	public String studyReg() {
+		return "testfile/studyReg";
+	}
+	
+	//(2)등록확인요청 - 확인
 	@PostMapping("studyregform")
 	public ModelAndView studyregform(@ModelAttribute Study inputstudy) {
 		ModelAndView mav=new ModelAndView();
@@ -187,15 +193,33 @@ public class StudyTestController {
 		}
 		return mav; 
 	}
-	//(2)등록확인후 등록요청
+	//(3)등록확인후 등록요청 - 확인
 	@PostMapping("studyreg")
 	public ModelAndView regstudy() {
 		ModelAndView mav=new ModelAndView();
-		//Study cnfstudy = (Study) session.getAttribute("이름");
-		//System.out.println("등록확인후 등록요청:"+cnfstudy.toString());
+		Study cnfstudy=(Study)session.getAttribute("regstudy");
+		session.removeAttribute("regstudy");
+		System.out.println("등록확인후 등록요청:"+cnfstudy.toString());
+		mav.setViewName("testfile/studymakermain");
 		return mav;
 	}
 	
+	//참여 기능
+	@ResponseBody
+	@PostMapping("/attend")
+	public boolean attendcheck(@RequestParam(value="no")boolean study_no,HttpServletRequest request){
+		boolean isattends = study_no;
+		try {
+			HttpSession session = request.getSession();
+			String user_id = (String) session.getAttribute("id");
+			//isattends= studyService.checkattends(user_id, study_no);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return isattends;
+	}
+	
 
+	
 		
 }

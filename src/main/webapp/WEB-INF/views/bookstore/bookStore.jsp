@@ -22,13 +22,12 @@
           rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
-    <link href="${pageContext.request.contextPath}/resources/bookstore/img/favicon.ico" rel="icon">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <%--    <link href="${pageContext.request.contextPath}/resources/bookstore/lib/animate/animate.min.css" rel="stylesheet">--%>
-    <%--    <link href="${pageContext.request.contextPath}/resources/bookstore/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">--%>
+        <link href="${pageContext.request.contextPath}/resources/bookstore/lib/animate/animate.min.css" rel="stylesheet">
+        <link href="${pageContext.request.contextPath}/resources/bookstore/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="${pageContext.request.contextPath}/resources/bookstore/css/bootstrap.min.css" rel="stylesheet">
@@ -42,9 +41,16 @@
 
 <jsp:include page="/WEB-INF/views/bookstore/header.jsp"/>
 
+
+<div style="float:right; margin-right:100px; cursor: pointer; " class="btn btn-primary" onclick="location.href='/book-store/cart'">
+    <i class="fa-solid fa-cart-shopping"></i>
+</div>
+<div style="float:right; margin-right:-43px; margin-top:8px;">
+    <div style="background: red; width: 12px; height: 12px; font-size: 10px; color:white; display: flex; justify-content: center; align-items: center; border-radius: 100px;">0</div>
+</div>
 <!-- Book List Start -->
 <div class="bookstore_container container-xxl py-5">
-    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+    <div class="text-center">
         <label>
             <select class="btn-sm btn btn-primary select_cat" name="">
                 <option value="book">도서명</option>
@@ -101,81 +107,61 @@
 
     </div>
 
-    <%--================================================================--%>
-    <%-- 1안 --%>
-    <%--================================================================--%>
-    <div class="list_box row g-4 justify-content-center">
 
 
-        <%-- 1 --%>
-        <div class="col-lg-4 col-md-6 wow fadeInUp">
-            <div class="course-item bg-light">
-                <div class="position-relative overflow-hidden">
-                    <img class="img-fluid"
-                         src="https://image.aladin.co.kr/product/19965/94/cover500/k642635843_1.jpg" alt="">
-                </div>
-                <div class="text-center p-4 pb-0">
-                    <h5 class="mb-4">HTML5 웹프로그래밍 입문 3판</h5>
-                    <h3 class="mb-0">26,000원</h3>
-                    <br>
-                </div>
-                <%--                    <div class="d-flex border-top">--%>
-                <%--                        <small class="flex-fill text-center border-end py-2"> <a href="#" class="px-3">--%>
-                <%--                            <div class="modal">--%>
-                <%--                                <div class="modal_body">--%>
+    <div class="list_box row justify-content-center">
 
-                <%--                                    <input type='button'--%>
-                <%--                                           onclick='count("plus")'--%>
-                <%--                                           value='+'/>--%>
-                <%--                                    <div id='result'>0</div>--%>
-                <%--                                    <input type='button'--%>
-                <%--                                           onclick='count("minus")'--%>
-                <%--                                           value='-'/>--%>
-                <%--                                    <br>--%>
-                <%--                                    <button class="close-area">취소</button>--%>
-                <%--                                    <button>담기</button>--%>
-                <%--                                </div>--%>
-                <%--                            </div>--%>
-                <%--                            <button class="btn-open-popup">장바구니</button>--%>
-                <%--                        </a></small>--%>
-                <%--                        <small class="flex-fill text-center border-end py-2"><a href="#" class="px-3">구매</a></small>--%>
-                <%--                        <div class="flex-fill heart-flex">--%>
-                <%--                            <i class="fa fa-solid fa-heart"></i>--%>
-                <%--                        </div>--%>
-                <%--                    </div>--%>
-            </div>
-        </div>
+        <!-- Slide Testimonial Start -->
+        <div class="container-xxl py-2" style="margin-right:8vw;">
+            <div class="container">
+                <div class="owl-carousel testimonial-carousel" style="display: flex; flex-direction: column; justify-content: center; width: 56vw;">
 
-        <%-- 2 --%>
-        <div class="col-lg-4 col-md-6 wow fadeInUp">
-            <div class="course-item bg-light">
-                <div class="position-relative overflow-hidden">
-                    <img class="img-fluid"
-                         src="https://image.aladin.co.kr/product/29009/25/cover500/k452836425_1.jpg" alt="">
-                </div>
-                <div class="text-center p-4 pb-0">
-                    <h5 class="mb-4">Power JAVA 3판</h5>
-                    <h3 class="mb-0">35,000원</h3>
-                    <br>
+                    <div class="testimonial-item rounded p-3">
+                            <img class="img-fluid flex-shrink-0 rounded" src="https://image.aladin.co.kr/product/19965/94/cover500/k642635843_1.jpg" alt="">
+                        <div class="d-flex align-items-center" style="flex-direction: column">
+                                <br>
+                                <h5 class="mb-1">HTML5 웹프로그래밍 입문 3판</h5>
+                                <h3 class="mb-1">26,000원</h3>
+                        </div>
+                    </div>
+
+
+                    <div class="testimonial-item rounded p-3">
+                        <img class="img-fluid flex-shrink-0 rounded" src="https://image.aladin.co.kr/product/29009/25/cover500/k452836425_1.jpg" alt="">
+                        <div class="d-flex align-items-center" style="flex-direction: column">
+                            <br>
+                            <h5 class="mb-1">HTML5 웹프로그래밍 입문 3판</h5>
+                            <h3 class="mb-1">26,000원</h3>
+                        </div>
+                    </div>
+
+
+                    <div class="testimonial-item rounded p-3">
+                        <img class="img-fluid flex-shrink-0 rounded" src="https://image.aladin.co.kr/product/19965/94/cover500/k642635843_1.jpg" alt="">
+                        <div class="d-flex align-items-center" style="flex-direction: column">
+                            <br>
+                            <h5 class="mb-1">HTML5 웹프로그래밍 입문 3판</h5>
+                            <h3 class="mb-1">26,000원</h3>
+                        </div>
+                    </div>
+
+
+                    <div class="testimonial-item rounded p-3">
+                        <img class="img-fluid flex-shrink-0 rounded" src="https://image.aladin.co.kr/product/29009/25/cover500/k452836425_1.jpg" alt="">
+                        <div class="d-flex align-items-center" style="flex-direction: column">
+                            <br>
+                            <h5 class="mb-1">HTML5 웹프로그래밍 입문 3판</h5>
+                            <h3 class="mb-1">26,000원</h3>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </div>
+        <!-- Slide Testimonial End -->
 
 
-        <%-- 3 --%>
-        <div class="col-lg-4 col-md-6 wow fadeInUp">
-            <div class="course-item bg-light">
-                <div class="position-relative overflow-hidden">
-                    <img class="img-fluid"
-                         src="https://image.aladin.co.kr/product/29009/25/cover500/k452836425_1.jpg" alt="">
-                </div>
-                <div class="text-center p-4 pb-0">
-                    <h5 class="mb-4">Power JAVA 3판</h5>
-                    <h3 class="mb-0">35,000원</h3>
-                    <br>
-                </div>
-            </div>
-        </div>
 
 
         <%--================================================================--%>
@@ -315,6 +301,10 @@
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/bookstore/lib/wow/wow.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/bookstore/lib/easing/easing.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/bookstore/lib/waypoints/waypoints.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/bookstore/lib/owlcarousel/owl.carousel.min.js"></script>
 
 <!-- Template Javascript -->
 <script src="${pageContext.request.contextPath}/resources/bookstore/js/main.js"></script>
