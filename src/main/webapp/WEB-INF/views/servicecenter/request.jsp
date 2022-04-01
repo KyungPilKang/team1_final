@@ -40,10 +40,51 @@
 
 <button class="btn btn-primary" onclick="location.href='/request/write'" style="float:right">문의하기 임시</button><br><br><br>
 <div class="container">
-    <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">고객센터 메인화면 아코디언으로 자주묻는 질문 같은거 작성하면 된다.</h1>
-    <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">챗봇은 우측 하단에 만든 후 클릭하면 팝업 형태로 나타난다</h1>
+
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Accordion Item #1
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Accordion Item #2
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Accordion Item #3
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
-<button onclick="chatPopup()" class="btn btn-lg btn-primary" style="float:right">챗봇Test</button>
+
+
+<button onclick="chatbotPop()" class="btn btn-lg btn-primary" style="float:right">챗봇Test</button>
 
 
 
@@ -61,8 +102,8 @@
 <script src="${pageContext.request.contextPath}/resources/bookstore/js/main.js"></script>
 
 <script>
-    function chatPopup() {
-        window.open("/request/chatbot", "pop", "width=410,height=677, scrollbars=yes, resizable=yes");
+    function chatbotPop() {
+        window.open("/request/chatbot", "chatbotPop", "width=410,height=677, scrollbars=yes, resizable=yes");
     }
 </script>
 
