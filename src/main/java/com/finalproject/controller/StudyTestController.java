@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -75,7 +76,7 @@ public class StudyTestController {
 		return "testfile/modaltest";
 	}
 
-
+	
 	
 	@GetMapping("testpage")
 	public String testpage() {
@@ -87,9 +88,20 @@ public class StudyTestController {
 		return "testfile/studyclass";
 	}
 	
+	@GetMapping("studydetail")
+	public String studydetail() {
+		return "testfile/studydetail";
+	}
+	
+	@GetMapping("studymakerdetail")
+	public String studymakerdetail() {
+		return "testfile/studymakerdetail";
+	}
+
+	
 	//참여 기능
 	@ResponseBody
-	@PostMapping("/attends")
+	@PostMapping("/attend")
 	public boolean Likecheck(@RequestParam(value="no")int study_no,HttpServletRequest request){
 		boolean isattends = false;
 		try {
@@ -101,8 +113,6 @@ public class StudyTestController {
 		}
 		return isattends;
 	}
-	
-	
 	
 	@PostMapping("studymakermain")
 	public String studymakermain() {
@@ -126,6 +136,7 @@ public class StudyTestController {
 	public String studyfind() {
 		return "testfile/studyfind";
 	}
+	
 	
 	//(2)검색 다음버튼
 	@PostMapping("studyfindform")
@@ -152,12 +163,19 @@ public class StudyTestController {
 	}
 	
 	//(4)검색결과페이지
-	@PostMapping("studyfindresult")
-	public ModelAndView studyfindresult(@ModelAttribute Study inputstudy) {
+	@RequestMapping(value="/studyfindresult", method= {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView studyfindresult(@ModelAttribute Study inputstudy, @RequestParam("study_no") int study_no) {
 		ModelAndView mav=new ModelAndView("testfile/studyfindresult");
 		return mav; 
 	}
 	
+	/*
+	 * //상세게시글
+	 * 
+	 * @RequestMapping(value="/studydetail", method= {RequestMethod.GET,
+	 * RequestMethod.POST}) public String studydetail(@RequestParam("study_no") int
+	 * study_no) { return "testfile/studydetail"; }
+	 */
 	
 	@GetMapping("0330")
 	public ModelAndView test() {
