@@ -130,17 +130,43 @@
 										</th>
 										<td>
 											<div class="row">
-												<div class="col-lg-1">
-													<h5>${nickname}</h5>
+												<div class="col-lg-3">
+													<input type="text" id="nickname" name="nickname" value="${nickname }" style="background-color:transparent; border:none;" class="form-control" readonly>
 												</div>
-												<div class="col-lg-3"></div>
+												
 												<div class="col-lg-2">
-													<button type="button" id="nickchk" class="btn btn-primary w-100">수정</button>
-												</div>
-												<div class="col-lg-5 ml-0 pl-0">
-													<span style="color:red;" class="input-group-addon text-left">*한글/영문/숫자 사용 2~10자</span>
+													<button type="button" id="nickchk" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#nickmodify">수정</button>
 												</div>
 											</div>
+											
+										<!-- Modal -->
+										<div class="modal fade" id="nickmodify" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+										  <div class="modal-dialog">
+										    <div class="modal-content">
+										      <div class="modal-header">
+										        <h5 class="modal-title" id="exampleModalLabel">닉네임 수정</h5>
+										        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										      </div>
+										      <div class="modal-body">
+										        <div class="row">
+										        	<div class="col-lg-12">
+										        		<h5>사용할 닉네임을 입력해 주세요.(2~10자 사용가능)</h5>
+										        	</div>
+										        	<div class="col-lg-6">
+														<input type="text" id="nickname" name="nickname" placeholder="한글/영문/숫자 사용 2~10자." class="form-control">
+													</div>
+													<div class="col-lg-3">
+														<button type="button" id="nickchk" class="btn btn-primary w-80">중복확인</button>
+													</div>
+										        </div>
+										      </div>
+										      <div class="modal-footer d-flex justify-content-center">
+        										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+        										<button type="button" id="modifyemail"  data-bs-dismiss="modal" class="btn btn-primary">수정하기</button>
+      										</div>
+										    </div>
+										  </div>
+										</div>
 										</td>
 									</tr>
 									<tr>
@@ -148,14 +174,55 @@
 										</th>
 										<td>
 											<div class="row">
-												<div class="col-lg-1">
-													<h5>${email}@${email2}</h5>
+												<div class="col-lg-6">
+													<input type="text" id="email" name="email" value="${email1 }@${email2 }" style="background-color:transparent; border:none;" class="form-control" readonly>
 												</div>
-												<div class="col-lg-3"></div>
+												
 												<div class="col-lg-2">
-													<button type="button" id="nickchk" class="btn btn-primary w-100">수정</button>
+													<button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#emailmodify">수정</button>
 												</div>
 											</div>
+														<!-- Modal -->
+												<div class="modal fade" id="emailmodify" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  													<div class="modal-dialog">
+    													<div class="modal-content">
+      														<div class="modal-header">
+        														<h5 class="modal-title" id="exampleModalLabel">이메일 수정</h5>
+        														<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      														</div>
+      														<div class="modal-body">
+      															<div class="row g-0">
+      																<div class="col-lg-8">
+       																	<h5>수정할 이메일 주소를 입력해 주세요.</h5>
+       																</div>
+       																<div class="col-lg-4 mb-3">
+        																<button type="button" id="newemailchk" class="btn btn-primary">중복 확인</button>
+       																</div>
+																	<div class="col-lg 5 g-0">
+																		<input type="email" id="newemail1"  class="form-control">
+																	</div>
+																	<div class="col-lg 4 input-group g-0">
+																		<span class="input-group-text">@</span>
+																		<input type="email" id="newemail2" name="email2" class="form-control">
+																	</div>
+																	<div class="col-lg 3 g-0">
+																		<select class="form-select" aria-label=".form-select-sm example" onchange="selectEmail(this)">
+																			<option value="=============">=============</option>
+																			<option value="naver.com">naver.com</option>
+																			<option value="daum.net">daum.net</option>
+																			<option value="gmail.com">gmail.com</option>
+																			<option value="1">직접입력</option>
+																		</select>
+																	</div>
+																</div>
+      														</div>
+     													 	<div class="modal-footer d-flex justify-content-center">
+        														<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+        														<button type="button" id="modifyemail"  data-bs-dismiss="modal" class="btn btn-primary">수정하기</button>
+      														</div>
+												    </div>
+												  </div>
+												</div>
 										</td>
 									</tr>
 									<tr>
@@ -163,14 +230,50 @@
 										</th>
 										<td>
 											<div class="row">
-												<div class="col-lg-1">
-													<h5>${phone}</h5>
+												<div class="col-lg-3">
+													<input type="text" id="phone" name="phone" maxlength="11" size="11" value="${phone }" style="background-color:transparent; border:none;" class="form-control old" readonly>
 												</div>
-												<div class="col-lg-3"></div>
+												
 												<div class="col-lg-2">
-													<button type="button" id="nickchk" class="btn btn-primary w-100">수정</button>
+													<button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#phonemodify">수정</button>
+												</div>
+													<!-- Modal -->
+												<div class="modal fade" id="phonemodify" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  													<div class="modal-dialog">
+    													<div class="modal-content">
+      														<div class="modal-header">
+        														<h5 class="modal-title">휴대폰 수정하기</h5>
+        														<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      														</div>
+      														<div class="modal-body">
+      															<div class="row">
+      																<div class="col-lg-8">
+      																	<h5 class="modal-title">수정할 휴대전화 번호를 입력해 주세요.</h5>
+      																</div>
+																	<div class="col-lg-7">
+																		<input type="text" id="newphone" maxlength="11" size="11" placeholder="숫자만 입력하세요." class="form-control">
+																	</div>
+																	<div class="col-lg-4">
+																		<button type="button" id="reqnum" class="btn btn-primary w-90">인증번호 요청</button>
+																	</div>
+																</div>
+																<div class="row" id="confirm">
+																	<div class="col-lg-7 pt-2">
+																		<input type="text" id="inputnum" name="inputnum" maxlength="6" class="form-control">
+																	</div>
+																	<div class="col-lg-4 pt-2">
+																		<button type="button" id="connum" class="btn btn-primary w-90" style="display: inline;">인증번호 확인</button>
+																	</div>
+      															</div>
+      														</div>
+      													<div class="modal-footer d-flex justify-content-center">
+        															<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+        															<button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="modifyphone">수정</button>
+      													</div>
+  													</div>
 												</div>
 											</div>
+										 </div>
 										</td>
 									</tr>
 									<tr>
@@ -233,6 +336,22 @@
 
 
 
+<script>
+$(function() {
+	$("#modifyphone").click(function() {
+		console.log($("#phone").val());
+		$("#phone").val($("#newphone").val()); 
+		console.log($("#phone").val());
+	});
+	
+	$("#modifyemail").click(function(){
+		var email1 = $("#newemail1").val();
+		var email2 = $("#newemail2").val();
+		var email = email1+"@"+email2;
+		$("#email").val(email);
+	});
+	})
+</script>
 
 
 </body>

@@ -56,7 +56,7 @@ public class MemberController {
 		model.addAttribute("name", "TESTNAME192992929222222222222222222222222");
 		model.addAttribute("username", "testid");
 		model.addAttribute("nickname","12345678");
-		model.addAttribute("email", "team1");
+		model.addAttribute("email1", "lim22222222222");
 		model.addAttribute("email2", "naver.com");
 		model.addAttribute("phone", "01012341234");
 		model.addAttribute("zipcode", "11111");
