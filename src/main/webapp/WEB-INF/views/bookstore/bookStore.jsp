@@ -50,7 +50,7 @@
 </div>
 <!-- Book List Start -->
 <div class="bookstore_container container-xxl py-5">
-    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+    <div class="text-center">
         <label>
             <select class="btn-sm btn btn-primary select_cat" name="">
                 <option value="book">도서명</option>

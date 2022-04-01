@@ -2,24 +2,32 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.finalproject.BookDAO">
+<mapper namespace="com.finalproject.dao.BookDAO">
+
+	<insert id="insertBook" parameterType="book">
+		<![CDATA[
+		insert into book
+		values (#{book_num}, #{book_price}, #{book_cat}, #{book_subject}, #{book_content}, #{book_img},
+				now(), #{book_modDate}, #{book_count}, #{book_sales}, #{book_keyword})
+		]]>
+	</insert>
 
 </mapper>
 
 
 <!--
 CREATE TABLE `book` (
-  `book_num` int NOT NULL,
+  `book_num` int NOT NULL AUTO_INCREMENT,
   `book_price` int DEFAULT NULL,
   `book_cat` varchar(1000) DEFAULT NULL,
   `book_subject` varchar(1000) DEFAULT NULL,
-  `book_content` varchar(1000) DEFAULT NULL,
+  `book_content` mediumtext DEFAULT NULL,
   `book_img` varchar(1000) DEFAULT NULL,
   `book_date` datetime DEFAULT NULL,
   `book_modDate` datetime DEFAULT NULL,
   `book_count` int DEFAULT NULL,
   `book_sales` int DEFAULT NULL,
-  `book_heart` varchar(1000) DEFAULT NULL,
+  `book_keyword` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`book_num`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 -->

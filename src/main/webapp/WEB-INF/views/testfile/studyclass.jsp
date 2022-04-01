@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -98,16 +97,15 @@
                 <h5 class="section-title bg-white text-center text-primary px-3">스터디등교하기</h5>
                 <h1 class="mb-5">나의 스터디 현황</h1>
 		       <label>
-		            <select id="studyStatus" class="btn-sm btn btn-primary select_cat" name="" style="float:left; height:55px; margin-bottom:30px;">
-		                <option value="ing">신청중</option>
-		                <option value="complete">신청완료</option>
-		                <option value="next">다음기회..</option>
+		            <select id="studyStatus" class="btn-sm btn btn-primary select_cat"  style="float:left; height:55px; margin-bottom:30px;">
+		                <option value="team_apply">신청중</option>
+		                <option value="team_accept">신청완료</option>
+		                <option value="team_reject">다음기회..</option>
 		            </select>
 		        </label>
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp text-center" data-wow-delay="0.3s" style="margin-top:20px; margin-bottom:30px;">
-                  
 		                <div class="p-2 mx-auto mb-3" style="width: 400px; height: 130px; text-overflow: ellipsis; background: rgba(6, 187, 204, 0.1); font-size: 1.0em; font-family:Stylish">
 							<input name="sudy_no" id="sudy_no" type="hidden" value='${study.sudy_no}'>
 							<span> 초등학교 ${study.study_sname}</span><span> 5학년 ${study.study_grade}</span><br>
@@ -115,23 +113,21 @@
 		                    <span> 시간 : 08:00 ~ 09:00 ${study.study_ftime}${study.study_etime}</span><br>
 		                    <span> 유형 : 내신${study.study_type}</span><br>
 		                    <span> 목표 : 최상${study.study_target_level}</span>
-                		
-
-						
 		                </div>
 		                    <i class="bi bi-book-fill"><h5>니즈풀스터디${study.study_title}</h5></i>
 		                <div class="testimonial-text bg-light text-center p-4">
 		                    <p class="mb-0" style="text-overflow: ellipsis; font-size: 1.0em; font-family:Stylish">이 스터디는 이번 1학기 중간고사를 목표로 개설되었습니다! 최상에 도전하는 친구들이 매주 2번 모여 문제풀이를 같이 할까요. 교재는 천재교육 --문제집 혹은 메가스터디 --교재 입니다. 추후 스터디 모집 완료후 오픈카톡으로 이야기 나누어 보아요.${study.study_contents}</p>     
 		                </div>
-		                
-		                <form><button id="attends" class="btn btn-primary w-30 py-3" onclick=attends() style="float:right; margin-left:3px;font-size: 1.0em; ">참여</button></form>
-		                <form><button id="attends" class="btn btn-primary w-30 py-3" onclick=attends() style="float:right; margin-left:3px;font-size: 1.0em; ">게시글보기</button></form>
-						
+		                <!-- 뒤에 데이터 번호 붙는것 잊지 말것 -->
+		               <a href="/studydetail/">
+		               	<button id="showdetail" class="btn btn-outline-primary w-30 py-3" style="float:right; margin-left:3px;font-size: 1.0em; height:50px;">게시글보기</button>
+		               </a>
+		               <button id="attend" class="btn btn-outline-primary w-30 py-3" style="float:right; margin-left:3px;font-size: 1.0em; height:50px; ">참여</button>
+
 					</div>
 		           
                
 				<div class="col-lg-4 col-md-6 wow fadeInUp text-center" data-wow-delay="0.3s">
-	                  <form>
 			                <div class="p-2 mx-auto mb-3" style="width: 400px; height: 130px; text-overflow: ellipsis; background: rgba(6, 187, 204, 0.1); font-size: 1.0em; font-family:Stylish">
 								<span> 초등학교 ${study.study_sname}</span><span> 5학년 ${study.study_grade}</span><br>
 			                    <span> 기간 : 2022.03.06~2022.04.05 ${study.study_fdate}${study.study_fdate}</span><br>
@@ -143,10 +139,8 @@
 			                <div class="testimonial-text bg-light text-center p-4">
 			                    <p class="mb-0" style="text-overflow: ellipsis; font-size: 1.0em; font-family:Stylish">이 스터디는 이번 1학기 중간고사를 목표로 개설되었습니다! 최상에 도전하는 친구들이 매주 2번 모여 문제풀이를 같이 할까요. 교재는 천재교육 --문제집 혹은 메가스터디 --교재 입니다. 추후 스터디 모집 완료후 오픈카톡으로 이야기 나누어 보아요.${study.study_contents}</p>     
 			                </div>
-			           </form>
 	              </div>
 				<div class="col-lg-4 col-md-6 wow fadeInUp text-center" data-wow-delay="0.3s">
-	                  <form>
 			                <div class="p-2 mx-auto mb-3" style="width: 400px; height: 130px; text-overflow: ellipsis; background: rgba(6, 187, 204, 0.1); font-size: 1.0em; font-family:Stylish">
 								<span> 초등학교 ${study.study_sname}</span><span> 5학년 ${study.study_grade}</span><br>
 			                    <span> 기간 : 2022.03.06~2022.04.05 ${study.study_fdate}${study.study_fdate}</span><br>
@@ -158,10 +152,8 @@
 			                <div class="testimonial-text bg-light text-center p-4">
 			                    <p class="mb-0" style="text-overflow: ellipsis; font-size: 1.0em; font-family:Stylish">이 스터디는 이번 1학기 중간고사를 목표로 개설되었습니다! 최상에 도전하는 친구들이 매주 2번 모여 문제풀이를 같이 할까요. 교재는 천재교육 --문제집 혹은 메가스터디 --교재 입니다. 추후 스터디 모집 완료후 오픈카톡으로 이야기 나누어 보아요.${study.study_contents}</p>     
 			                </div>
-			           </form>
 	              </div>
    				<div class="col-lg-4 col-md-6 wow fadeInUp text-center" data-wow-delay="0.3s">
-	                  <form>
 			                <div class="p-2 mx-auto mb-3" style="width: 400px; height: 130px; text-overflow: ellipsis; background: rgba(6, 187, 204, 0.1); font-size: 1.0em; font-family:Stylish">
 								<span> 초등학교 ${study.study_sname}</span><span> 5학년 ${study.study_grade}</span><br>
 			                    <span> 기간 : 2022.03.06~2022.04.05 ${study.study_fdate}${study.study_fdate}</span><br>
@@ -173,9 +165,7 @@
 			                <div class="testimonial-text bg-light text-center p-4">
 			                    <p class="mb-0" style="text-overflow: ellipsis; font-size: 1.0em; font-family:Stylish">이 스터디는 이번 1학기 중간고사를 목표로 개설되었습니다! 최상에 도전하는 친구들이 매주 2번 모여 문제풀이를 같이 할까요. 교재는 천재교육 --문제집 혹은 메가스터디 --교재 입니다. 추후 스터디 모집 완료후 오픈카톡으로 이야기 나누어 보아요.${study.study_contents}</p>     
 			                </div>
-			           </form>
 	              </div>
-
                 
             </div>
         </div>
@@ -236,32 +226,52 @@
     
     
    <script>
-
-/*    $.ajax({
-		type:"post",
-		url:"http://localhost:8090/attends",
-		/* data: {"user_id": $("#user_id").val(), "board_type" : "today", "board_no": ${todayselect.today_articleNo}}, */
-		dataType:"text",
-		success:function(data){
-			if(data=="true"){
-				$("#attends").html("참여취소");
-			} else {
-				$("#attends").html("참여");
-			}
-		},
-		error:function(data, textStatus){
-			alert("실패");
-		}
-	});  */	
-
    $(document).ready(function () {
 	   $('#studyStatus').on('change',function(e) {
 		   let status = e.currentTarget.value;
-		   $.ajax
+		   alert(status);
+		   $.ajax({
+			  type:"POST",
+			  url:"http://localhost:8090/studyclass",
+			  async: false, 
+			  data: {"status":status},
+			  dataType: "text",
+			  success:function(data){
+				 console.log(data);
+				 selectvalue = "<option vlaue='team_apply'>신청중</option>";
+				 $('#team_apply').remove(); 
+			  }
+		   })
 	   });
+	   
+	   $('#attend').on('click',function(e){
+		   let no = 0; // 0이면 미참여 상태
+		   if ($('#attend').text() == "참여취소") {
+			   no = 1;
+		   }
+			$.ajax({
+		    	type:"post",
+		        dataType:"text",
+		        async:false,
+		        url:"http://localhost:8090/attend",
+		        data:{"no": no},
+		        success: function(data, textStatus){
+		        	console.log("1");
+		        	if(data=='false') {
+		        		alert("참여가 완료되었습니다.");
+		        		$("#attend").html("참여취소");
+		        	} else{
+		        		alert("참여가 취소되었습니다.");
+		        		$("#attend").html("참여");
+		        	}
+		        },
+		        error:function(data, textStatus){
+		        	alert("실패");
+		        }
+	        });
+		});
 
    });
-   
    
 
 

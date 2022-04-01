@@ -20,8 +20,8 @@
 
 
 <!-- Favicon -->
-<%-- <link href="${pageContext.request.contextPath}/resources/freelance/img/favicon.ico" rel="icon">
- --%>
+<link href="${pageContext.request.contextPath}/resources/freelance/img/favicon.ico" rel="icon">
+
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,43 +42,9 @@
 <!-- Template Stylesheet -->
 <link href="${pageContext.request.contextPath}/resources/freelance/css/style.css" rel="stylesheet">
 
-<style>
-.parent{
-    width: 70%;
-    margin: 10px auto;
-    display: flex;
-}
-
-.first {
-    flex:1;
-     margin: 0px 5%;
-    width:20%;
-    box-sizing: border-box;
-}
-
-.second{
-    flex:1;
-    margin: 0px 5%;
-    width:20%;
-    box-sizing: border-box;
-}
-
-.third{
-    flex:1;
-    margin: 0px 5%;
-    width:20%;
-    box-sizing: border-box;
-}
-.fourth{
-    flex:1;
-    margin: 0px 5%;
-    width:20%;
-    box-sizing: border-box;
-}
-</style>
 </head>
 <body>
-<!-- Spinner Start -->
+	<!-- Spinner Start -->
 	<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
 		<div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
 			<span class="sr-only">Loading...</span>
@@ -113,78 +79,88 @@
 		</div>
 	</nav>
 	<!-- Navbar End -->
-	
+
 	<!-- Header Start -->
 	<div class="container-fluid bg-primary py-5 mb-5 page-header">
 		<div class="container py-5">
 			<div class="row justify-content-center">
 				<div class="col-lg-10 text-center">
-					<h1 class="display-3 text-white animated slideInDown">스터디 매칭</h1>
+					<h1 class="display-3 text-white animated slideInDown">스터디 등록</h1>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- Header End -->
 	
-	
-	
-	<!-- Content Start -->
-		<div class="container-xxl py-5">
-			<div class="container">
-                 			
-				<div class="text-center">
-					<h1 class="section-title bg-white text-center text-primary px-3">온라인 스터디 매칭</h1>
-				</div>
-				
-				<div class="row text-center col-lg-4 col-md-12" style="width: 40%; float: none; margin: 0 auto;">
-					<div class="row g-3">
-						<div class="col-12 mt-5 mb-5">
-							<div class="form-floating">
-								<h3>스터디 안내사항</h3>
-								<p style="text-align:center; background: rgba(6, 187, 204, 0.1); font-size: 1.0em; font-family:Stylish">
-								1)각자 목표에 맞게 설정하여 신청해주세요.<br>
-								2)참여 신청후 시작전날까지 취소 가능합니다.<br>
-								3)참여 시작일부터는 참여취소, 수정, 삭제가 불가능합니다. <br>
-								4)참여 신청 승인후 오픈카톡링크 열람이 가능합니다. <br>
-								5)성실히 스터디를 수행하기로 약속합니다. <br>
-								</p>
+		<!-- Contact Start -->
+	<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+		<div class="container">
+			<div class="row gy-6 gx-6">
+				<div class="col-lg-12">
+					<div class="d-flex align-items-center mb-5">
+						<img class="flex-shrink-0 img-fluid border rounded" src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt="" style="width: 80px; height: 80px;">
+							<div class="text-start ps-4">
+								<h3 class="mb-3">스터디 등록 제목</h3>
+								<span class="resfreespan text-truncate me-3">
+									<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등
+								</span>
+								<span class="resfreespan text-truncate me-3">
+									<i class="bi bi-eyeglasses text-primary me-2"></i>학년
+								</span>
+								<span class="resfreespan text-truncate me-3">
+									<i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜 
+								</span>
 							</div>
-							<br> <br>
+					</div>
+
+					<div class="mb-5">
+						<h3 class="mb-3">스터디 정보</h3>
+						<br>
+						<input name="sudy_no" id="sudy_no" type="hidden" value='${study.sudy_no}'>
+						<p><i class="fa fa-angle-right text-primary me-2"></i>학교 : 초등학교 ${study.study_sname}</p>
+						<p><i class="fa fa-angle-right text-primary me-2"></i>학년 : 6학년 ${study.study_grade}</p>
+						<p><i class="fa fa-angle-right text-primary me-2"></i>과목 : 수학 ${study.study_subject}</p>
+						<p><i class="fa fa-angle-right text-primary me-2"></i>유형 : 시험 ${study.study_type}</p>
+						<p><i class="fa fa-angle-right text-primary me-2"></i>목표레벨 : 최상 ${study.study_target_level}</p>
+						<p><i class="fa fa-angle-right text-primary me-2"></i>스터디타이틀 : 니즈풀스터디 ${study.study_title}</p>
+						<p><i class="fa fa-angle-right text-primary me-2"></i>스터디기간  : ${study.study_fdate}2022.03.01~ ${study.study_edate}2022.03.15</p>
+						<p><i class="fa fa-angle-right text-primary me-2"></i>스터디시간 : ${study.study_ftime}8:00am ~ ${study.study_etime}9:00am</p>
+						<p><i class="fa fa-angle-right text-primary me-2"></i>오픈카톡링크 : ${study.study_kakao}</p>
+						<br> <br>
+						<h3 class="mb-5">스터디상세내용</h3>
+						<p> ${study.study_contents}  이 스터디는 이번 1학기 중간고사를 목표로 개설되었습니다! 최상에 도전하는 친구들이 매주 2번 모여 문제풀이를 같이 할까요. 교재는 천재교육 --문제집 혹은 메가스터디 --교재 입니다. 추후 스터디 모집 완료후 오픈카톡으로 이야기 나누어 보아요.</p>
+					</div>
+				</div>
+			  </div>
+			</div>
+		</div>
+
+					
+		<div class="row g-3">
+			<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s" style="width: 30%; float: none; margin-left: 430px;">
+				<div class="row g-3">
+					<div class="col-12">
+						<div class="col-12 mt-4">
+							<button id="listbtn" class="btn btn-outline-primary w-50 py-3" onclick="window.location='/studyfindresult'">목록 으로</button>
 						</div>
 					</div>
 				</div>
-					
-		
-				<div class="parent">
-					<div class="first mt-5 mb-5">
-					    <form action="studyReg" method="post">
-						<button type="submit" class="btn btn-primary w-100 py-3" >스터디등록</button>
-					    </form>
-					</div>
-					<div class="second mt-5 mb-5">
-					    <form action="studyfind" method="post">
-						<button type="submit" class="btn btn-primary w-100 py-3" >스터디매칭</button>
-						</form>
-					</div>
-					
-					<div class="third mt-5 mb-5">
-					    <form action="studyclass" method="get">
-						<button type="submit" class="btn btn-primary w-100 py-3" >스터디등교</button>
-						</form>
-					</div>
-					<div class="fourth mt-5 mb-5">
-					    <form action="studymakermain" method="post">
-						<button type="submit" class="btn btn-primary w-100 py-3" >개설자관리</button>
-						</form>
+			</div>
+			<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s" style="width: 30%; float: none;">
+				<div class="row g-3">
+					<div class="col-12">
+						<div class="col-12 mt-4">
+							<button id="attend" class="btn btn-outline-primary w-50 py-3">참여 하기</button>
+						</div>
 					</div>
 				</div>
-						
-
-		</div>		
-	</div>
+			</div>
+		</div>
 	
-	<!-- Content End -->
-<!-- Footer Start -->
+	<!-- Contact End -->
+	
+	
+	<!-- Footer Start -->
 	<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
 		<div class="container">
 			<div class="copyright">
@@ -234,6 +210,33 @@
 
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-	
+	<script>
+	$('#attend').on('click',function(e){
+		   let no = 0; // 0이면 미참여 상태
+		   if ($('#attend').text() == "참여취소") {
+			   no = 1;
+		   }
+			$.ajax({
+		    	type:"post",
+		        dataType:"text",
+		        async:false,
+		        url:"http://localhost:8090/attend",
+		        data:{"no": no},
+		        success: function(data, textStatus){
+		        	console.log("1");
+		        	if(data=='false') {
+		        		alert("참여가 완료되었습니다.");
+		        		$("#attend").html("참여취소");
+		        	} else{
+		        		alert("참여가 취소되었습니다.");
+		        		$("#attend").html("참여");
+		        	}
+		        },
+		        error:function(data, textStatus){
+		        	alert("실패");
+		        }
+	        });
+		});
+	</script>
 </body>
 </html>
