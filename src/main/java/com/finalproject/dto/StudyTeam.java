@@ -1,19 +1,52 @@
 package com.finalproject.dto;
 
 public class StudyTeam {
-	public int study_no; 
-	private String team_apply;
-	private String team_accept;
-	private String team_reject;
+	public int studyteam_no; 
+	private String team_status;
+	private String user_id;
+	private int study_no;
 
 	public StudyTeam() {}
 
-	public StudyTeam(int study_no, String team_apply, String team_accept, String team_reject) {
+	
+	public StudyTeam(int studyteam_no, String team_status, String user_id, int study_no) {
 		super();
+		this.studyteam_no = studyteam_no;
+		this.team_status = team_status;
+		this.user_id = user_id;
 		this.study_no = study_no;
-		this.team_apply = team_apply;
-		this.team_accept = team_accept;
-		this.team_reject = team_reject;
+	}
+
+
+	@Override
+	public String toString() {
+		return "StudyTeam [studyteam_no=" + studyteam_no + ", team_status=" + team_status + ", user_id=" + user_id
+				+ ", study_no=" + study_no + "]";
+	}
+
+
+	public int getStudyteam_no() {
+		return studyteam_no;
+	}
+
+	public void setStudyteam_no(int studyteam_no) {
+		this.studyteam_no = studyteam_no;
+	}
+
+	public String getTeam_status() {
+		return team_status;
+	}
+
+	public void setTeam_status(String team_status) {
+		this.team_status = team_status;
+	}
+
+	public String getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
 
 	public int getStudy_no() {
@@ -24,30 +57,6 @@ public class StudyTeam {
 		this.study_no = study_no;
 	}
 
-	public String getTeam_apply() {
-		return team_apply;
-	}
 
-	public void setTeam_apply(String team_apply) {
-		this.team_apply = team_apply;
-	}
-
-	public String getTeam_accept() {
-		return team_accept;
-	}
-
-	public void setTeam_accept(String team_accept) {
-		this.team_accept = team_accept;
-	}
-
-	public String getTeam_reject() {
-		return team_reject;
-	}
-
-	public void setTeam_reject(String team_reject) {
-		this.team_reject = team_reject;
-	}
-	
-	
 
 }

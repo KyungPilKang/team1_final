@@ -146,29 +146,38 @@
 		</div>
 
 		<div class="parent" style="margin-bottom:150px;">	
-		<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s" style="width: 20%; margin-left:250px; ">
+		<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s" style="width: 20%; margin-left:200px; ">
 				<div class="row g-3">
 					<div class="col-12">
 						<div class="col-12 mt-4">
-							<button id="canclebtn" class="btn btn-outline-primary w-50 py-3" onclick="window.location='/studymakermain'">목록 으로</button>
+							<button id="canclebtn" class="btn btn-outline-primary w-35 py-3" onclick="window.location='/studymakermain'">목록 으로</button>
 						</div>
 					</div>
 				</div> 
 			</div>
-			<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s" style="width: 20%; margin-left:120px; ">
+			<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s" style="width: 20%;  ">
 				<div class="row g-3">
 					<div class="col-12">
 						<div class="col-12 mt-4">
-							<button id="contractbtn" class="btn btn-outline-primary w-50 py-3">수정 하기</button>
+							<button id="contractbtn" class="btn btn-outline-primary w-35 py-3">수정 하기</button>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s" style="width: 20%; margin-left:150px; ">
+			<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s" style="width: 20%;   ">
+				<div class="row g-3">
+					<div class="col-12">
+						<div class="col-12 mt-4">
+							<button id="contractbtn" class="btn btn-outline-primary w-35 py-3">삭제 하기</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s" style="width: 20%; margin-left:30px; ">
 				<div class="row g-3">
 					<div class="col-12">
 					    <div class="col-12 mt-4">											
-							 <select id="attendlist" class="btn btn-outline-primary w-50 py-3"  style="float:left; height:70px;">
+							 <select id="attendlist" class="btn btn-outline-primary w-35 py-3"  style="float:left; height:70px;">
 				                <option value="${study.study_user_id}">아이디1</option>
 				                <option value="${study.study_user_id}">아이디2</option>
 				                <option value="${study.study_user_id}">아이디3</option>
@@ -176,7 +185,7 @@
 			           	</div>	           		
 						<div class="col-12 mt-4">
 							
-								<select id="attendlist" class="btn btn-outline-primary w-50 py-3"  style="float:left; height:70px;">
+								<select id="attendlist" class="btn btn-outline-primary w-35 py-3"  style="float:left; height:70px;">
 									<option value="team_accept">참여수락</option>
 					                <option value="team_apply">참여취소</option>
 					                <option value="team_reject">탈락</option>

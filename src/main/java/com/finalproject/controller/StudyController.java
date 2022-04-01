@@ -1,5 +1,7 @@
 package com.finalproject.controller;
 
+import java.util.List;
+
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -9,19 +11,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.finalproject.dto.Freelance;
 import com.finalproject.dto.Study;
+import com.finalproject.dto.StudyTeam;
 import com.finalproject.service.MemberService;
+import com.finalproject.service.StudyService;
 
 @Controller
-public class StudyTestController {
+public class StudyController {
 	@Autowired
     private ServletContext servletContext;
 	
@@ -31,33 +33,35 @@ public class StudyTestController {
 	@Autowired
 	private MemberService memberService;
 	
+	@Autowired 
+	private StudyService studyservice;
 
 	//스터디메인
 	@GetMapping("studymain")
 	public String studymain() {
-		return "testfile/studymain";
+		return "study/studymain";
 	}
 	
 	//스터디등교
 	@GetMapping("studyclass")
 	public String studyclass() {
-		return "testfile/studyclass";
+		return "study/studyclass";
 	}
 	
+	//스터디등교
 	@ResponseBody
 	@PostMapping("studyclass")
 	public String studyabc(@RequestParam("status") String status) {
 		String result = null;
-		switch (status) {
-		case "team_accept":
-			result = "DB에서 신청 완료된 데이터리스트 반환";
-			break;
-		case "team_apply":
-			result = "DB에서 신청 중인 데이터리스트 반환";
-			break;
-		case "team_reject":
-			result = "DB에서 신청 거부된 데이터리스트 반환";
-			break;
+		String user_id = (String) session.getAttribute("id");
+		try {
+			List<Study> studyList = studyservice.searchStudyByStatus(user_id, status);
+			//서비스 만들고 db 값 가져오는지 확인해보기
+			for (Study s : studyList) {
+				System.out.println(s.getStudy_contents());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return result;
 	}
@@ -65,27 +69,27 @@ public class StudyTestController {
 	//스터디상세페이지 (검색 조회후 게시글선택시, 등교페이지에서 게시글보기연결)
 	@GetMapping("studydetail")
 	public String studydetail() {
-		return "testfile/studydetail";
+		return "study/studydetail";
 	}
 	
 
 	//(1)개설자메인 페이지
 	@PostMapping("studymakermain")
 	public String studymakermain() {
-		return "testfile/studymakermain";
+		return "study/studymakermain";
 	}
 	
 	//(2)개설자가 상세글보기 클릭시 보여지는 페이지
 	@GetMapping("studymakerdetail")
 	public String studymakerdetail() {
-		return "testfile/studymakerdetail";
+		return "study/studymakerdetail";
 	}
 
 	
 	//(1)검색페이지전환
 	@RequestMapping("/studyfind")
 	public String studyfind() {
-		return "testfile/studyfind";
+		return "study/studyfind";
 	}
 	
 	
@@ -96,7 +100,7 @@ public class StudyTestController {
 		System.out.println("매칭확인요청:"+ inputstudy.toString());
 		try {
 		session.setAttribute("findstudy", inputstudy);
-		mav.setViewName("testfile/studyfindCheck");
+		mav.setViewName("study/studyfindCheck");
 		}  catch(Exception e){
 			e.printStackTrace();
 		}
@@ -113,7 +117,7 @@ public class StudyTestController {
 		Study findstudycnf=(Study)session.getAttribute("findstudy");
 		System.out.println("매칭cnf 요청:"+findstudycnf.toString());
 		session.removeAttribute("findstudy");
-		mav.setViewName("testfile/studyfindresult");
+		mav.setViewName("study/studyfindresult");
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -123,7 +127,7 @@ public class StudyTestController {
 	//(4)검색결과페이지
 	@RequestMapping(value="/studyfindresult", method= {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView studyfindresult(@ModelAttribute Study inputstudy) {
-		ModelAndView mav=new ModelAndView("testfile/studyfindresult");
+		ModelAndView mav=new ModelAndView("study/studyfindresult");
 		
 		return mav; 
 	}
@@ -132,7 +136,7 @@ public class StudyTestController {
 	@GetMapping("0330")
 	public ModelAndView test() {
 		ModelAndView mav=new ModelAndView();
-		mav.setViewName("testfile/studyfindresult");
+		mav.setViewName("study/studyfindresult");
 		return mav; 
 	}
 	
@@ -140,7 +144,7 @@ public class StudyTestController {
 	//(1)수정 다음버튼
 	@PostMapping("studymodify")
 	public ModelAndView studymodify(@ModelAttribute Study inputstudy) {
-		ModelAndView mav=new ModelAndView("testfile/studymodify");
+		ModelAndView mav=new ModelAndView("study/studymodify");
 		System.out.println(inputstudy.toString());
 		return mav; 
 	}
@@ -152,7 +156,7 @@ public class StudyTestController {
 		System.out.println("수정확인요청:"+ inputstudy.toString());
 		try {
 		session.setAttribute("modistudy", inputstudy);
-		mav.setViewName("testfile/studymodiCheck");
+		mav.setViewName("study/studymodiCheck");
 		}  catch(Exception e){
 			e.printStackTrace();
 		}
@@ -166,7 +170,7 @@ public class StudyTestController {
 		try {
 		Study studymodicnf=(Study)session.getAttribute("modistudy");
 		System.out.println("수정확인후 수정 cnf :"+studymodicnf.toString());
-		mav.setViewName("testfile/studymakermain");
+		mav.setViewName("study/studymakermain");
 		}  catch(Exception e){
 			e.printStackTrace();
 		}
@@ -177,7 +181,7 @@ public class StudyTestController {
 	//(1)등록페이지전환
 	@RequestMapping("/studyReg")
 	public String studyReg() {
-		return "testfile/studyReg";
+		return "study/studyReg";
 	}
 	
 	//(2)등록확인요청 - 확인
@@ -187,7 +191,7 @@ public class StudyTestController {
 		System.out.println("등록확인요청:"+inputstudy.toString());
 		try {
 		session.setAttribute("regstudy", inputstudy);
-		mav.setViewName("testfile/studyRegCheck");
+		mav.setViewName("study/studyRegCheck");
 		}  catch(Exception e){
 			e.printStackTrace();
 		}
@@ -200,7 +204,7 @@ public class StudyTestController {
 		Study cnfstudy=(Study)session.getAttribute("regstudy");
 		session.removeAttribute("regstudy");
 		System.out.println("등록확인후 등록요청:"+cnfstudy.toString());
-		mav.setViewName("testfile/studymakermain");
+		mav.setViewName("study/studymakermain");
 		return mav;
 	}
 	
