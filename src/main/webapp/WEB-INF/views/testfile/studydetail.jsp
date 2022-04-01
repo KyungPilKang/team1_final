@@ -150,7 +150,7 @@
 				<div class="row g-3">
 					<div class="col-12">
 						<div class="col-12 mt-4">
-							<button id="contractbtn" class="btn btn-outline-primary w-50 py-3">참여 하기</button>
+							<button id="attend" class="btn btn-outline-primary w-50 py-3">참여 하기</button>
 						</div>
 					</div>
 				</div>
@@ -210,5 +210,33 @@
 
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<script>
+	$('#attend').on('click',function(e){
+		   let no = 0; // 0이면 미참여 상태
+		   if ($('#attend').text() == "참여취소") {
+			   no = 1;
+		   }
+			$.ajax({
+		    	type:"post",
+		        dataType:"text",
+		        async:false,
+		        url:"http://localhost:8090/attend",
+		        data:{"no": no},
+		        success: function(data, textStatus){
+		        	console.log("1");
+		        	if(data=='false') {
+		        		alert("참여가 완료되었습니다.");
+		        		$("#attend").html("참여취소");
+		        	} else{
+		        		alert("참여가 취소되었습니다.");
+		        		$("#attend").html("참여");
+		        	}
+		        },
+		        error:function(data, textStatus){
+		        	alert("실패");
+		        }
+	        });
+		});
+	</script>
 </body>
 </html>

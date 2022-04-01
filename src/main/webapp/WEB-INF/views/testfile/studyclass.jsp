@@ -97,7 +97,7 @@
                 <h5 class="section-title bg-white text-center text-primary px-3">스터디등교하기</h5>
                 <h1 class="mb-5">나의 스터디 현황</h1>
 		       <label>
-		            <select id="studyStatus" class="btn-sm btn btn-primary select_cat" name="" style="float:left; height:55px; margin-bottom:30px;">
+		            <select id="studyStatus" class="btn-sm btn btn-primary select_cat"  style="float:left; height:55px; margin-bottom:30px;">
 		                <option value="team_apply">신청중</option>
 		                <option value="team_accept">신청완료</option>
 		                <option value="team_reject">다음기회..</option>
@@ -118,10 +118,12 @@
 		                <div class="testimonial-text bg-light text-center p-4">
 		                    <p class="mb-0" style="text-overflow: ellipsis; font-size: 1.0em; font-family:Stylish">이 스터디는 이번 1학기 중간고사를 목표로 개설되었습니다! 최상에 도전하는 친구들이 매주 2번 모여 문제풀이를 같이 할까요. 교재는 천재교육 --문제집 혹은 메가스터디 --교재 입니다. 추후 스터디 모집 완료후 오픈카톡으로 이야기 나누어 보아요.${study.study_contents}</p>     
 		                </div>
-		                
-		                <form><button id="attend" class="btn btn-outline-primary w-30 py-3" onclick=attend() style="float:right; margin-left:3px;font-size: 1.0em; height:50px; ">참여</button></form>
-		                <form><button id="attend" class="btn btn-outline-primary w-30 py-3" onclick=attend() style="float:right; margin-left:3px;font-size: 1.0em; height:50px;">게시글보기</button></form>
-						
+		                <!-- 뒤에 데이터 번호 붙는것 잊지 말것 -->
+		               <a href="/studydetail/">
+		               	<button id="showdetail" class="btn btn-outline-primary w-30 py-3" style="float:right; margin-left:3px;font-size: 1.0em; height:50px;">게시글보기</button>
+		               </a>
+		               <button id="attend" class="btn btn-outline-primary w-30 py-3" style="float:right; margin-left:3px;font-size: 1.0em; height:50px; ">참여</button>
+
 					</div>
 		           
                
@@ -228,8 +230,46 @@
 	   $('#studyStatus').on('change',function(e) {
 		   let status = e.currentTarget.value;
 		   alert(status);
-		   $.ajax
+		   $.ajax({
+			  type:"POST",
+			  url:"http://localhost:8090/studyclass",
+			  async: false, 
+			  data: {"status":status},
+			  dataType: "text",
+			  success:function(data){
+				 console.log(data);
+				 selectvalue = "<option vlaue='team_apply'>신청중</option>";
+				 $('#team_apply').remove(); 
+			  }
+		   })
 	   });
+	   
+	   $('#attend').on('click',function(e){
+		   let no = 0; // 0이면 미참여 상태
+		   if ($('#attend').text() == "참여취소") {
+			   no = 1;
+		   }
+			$.ajax({
+		    	type:"post",
+		        dataType:"text",
+		        async:false,
+		        url:"http://localhost:8090/attend",
+		        data:{"no": no},
+		        success: function(data, textStatus){
+		        	console.log("1");
+		        	if(data=='false') {
+		        		alert("참여가 완료되었습니다.");
+		        		$("#attend").html("참여취소");
+		        	} else{
+		        		alert("참여가 취소되었습니다.");
+		        		$("#attend").html("참여");
+		        	}
+		        },
+		        error:function(data, textStatus){
+		        	alert("실패");
+		        }
+	        });
+		});
 
    });
    
