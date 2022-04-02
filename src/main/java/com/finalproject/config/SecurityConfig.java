@@ -39,15 +39,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
              .logoutUrl("/logout")
              .logoutSuccessUrl("/");
 	}
-	
-	 @Override //임시 아이디 만듬
-	    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-	        auth
-	                .inMemoryAuthentication()
-	                .withUser("admin").password(passwordEncoder().encode("1234")).roles("ADMIN")
-	                .and()
-	                .withUser("user").password(passwordEncoder().encode("1234")).roles("USER")
-	                .and()
-	                .withUser("manager").password(passwordEncoder().encode("1234")).roles("MANAGER","ADMIN");
-	    }
+
 }

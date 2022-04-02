@@ -3,7 +3,34 @@
 			"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.finalproject.dao.MemberDAO">
+		<insert id="insertMember" parameterType="Member">
+		<![CDATA[
+			insert into final.member(username,password,name,nickname,email,birth,age,gender,phone,zipcode,doro_juso,sangse_juso,role,provider,
+			provider_id,withdraw_status,withdraw_type,withdraw_contents,login_count)values(#{username},#{password},#{name},#{nickname},#{email},
+			#{birth},#{age},#{gender},#{phone},#{zipcode},#{doro_juso},#{sangse_juso},#{role},#{provider},#{provider_id},#{withdraw_status},#{withdraw_type},
+			#{withdraw_contents},#{login_count})
+		]]>
+		</insert>
 		
+		<select id="selectMemberByEmail" resultType="Member" parameterType="String">
+		<![CDATA[
+			select * from final.member where email=#{email}
+		]]>
+		</select>
+		
+		<select id="selectMemberByUsername" resultType="Member" parameterType="String">
+		<![CDATA[
+			select * from final.member where username=#{username}
+		]]>
+		</select>
+		
+		<select id="selectMemberByNickname" resultType="Member" parameterType="String">
+		<![CDATA[
+			select * from final.member where nickname=#{nickname}
+		]]>
+		</select>
+		
+	
 </mapper>
 
 <!-- 
