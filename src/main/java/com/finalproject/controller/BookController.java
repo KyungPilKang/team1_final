@@ -23,10 +23,10 @@ public class BookController {
     private ServletContext servletContext;
 
 
-    @GetMapping("")
-    public String mainpage() {
-        return "/bookstore/bookStore";
-    }
+//    @GetMapping("")
+//    public String mainpage() {
+//        return "/bookstore/bookStore";
+//    }
 
 
     @RequestMapping("/juso")
@@ -40,7 +40,7 @@ public class BookController {
     }
 
 
-    @RequestMapping(value = "/booklist", method = {RequestMethod.GET, RequestMethod.POST})
+    @RequestMapping(value = "", method = {RequestMethod.GET, RequestMethod.POST})
     public ModelAndView boardlist(@RequestParam(value = "page", defaultValue = "1") int page) {
         ModelAndView mv = new ModelAndView();
         PageInfo pageInfo = new PageInfo();

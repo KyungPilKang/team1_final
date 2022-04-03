@@ -17,9 +17,11 @@ public class Book {
     private int book_count;
     private int book_sales;
     private String book_keyword;
+    private String book_author;
+    private String book_publisher;
+    private int book_discount;
 
     public Book(){}
-
 
     public int getBook_num() {
         return book_num;
@@ -115,6 +117,30 @@ public class Book {
 
     public void setBook_keyword(String book_keyword) {
         this.book_keyword = book_keyword;
+    }
+
+    public String getBook_author() {
+        return book_author;
+    }
+
+    public void setBook_author(String book_author) {
+        this.book_author = book_author;
+    }
+
+    public String getBook_publisher() {
+        return book_publisher;
+    }
+
+    public void setBook_publisher(String book_publisher) {
+        this.book_publisher = book_publisher;
+    }
+
+    public int getBook_discount() {
+        return book_discount;
+    }
+
+    public void setBook_discount(int book_discount) {
+        this.book_discount = book_discount;
     }
 }
 

@@ -18,6 +18,7 @@
 
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a href="/book-store/regform" class="nav-item nav-link" style="color:red">교재등록(관리자)</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link" data-bs-toggle="dropdown">프리랜서</a>
                 <div class="dropdown-menu fade-down m-0">

@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 
 <!DOCTYPE html>
 <html>
@@ -26,8 +28,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-        <link href="${pageContext.request.contextPath}/resources/bookstore/lib/animate/animate.min.css" rel="stylesheet">
-        <link href="${pageContext.request.contextPath}/resources/bookstore/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/bookstore/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/bookstore/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="${pageContext.request.contextPath}/resources/bookstore/css/bootstrap.min.css" rel="stylesheet">
@@ -38,6 +40,7 @@
 </head>
 
 <body>
+
 
 <jsp:include page="/WEB-INF/views/bookstore/header.jsp"/>
 
@@ -107,8 +110,6 @@
 
     </div>
 
-
-
     <div class="list_box row justify-content-center">
 
         <!-- Slide Testimonial Start -->
@@ -116,45 +117,16 @@
             <div class="container">
                 <div class="owl-carousel testimonial-carousel" style="display: flex; flex-direction: column; justify-content: center; width: 56vw;">
 
-                    <div class="testimonial-item rounded p-3">
-                            <img class="img-fluid flex-shrink-0 rounded" src="https://image.aladin.co.kr/product/19965/94/cover500/k642635843_1.jpg" alt="">
-                        <div class="d-flex align-items-center" style="flex-direction: column">
+                    <c:forEach var="book" items="${bookList}">
+                        <div class="testimonial-item rounded p-3">
+                            <img class="img-fluid flex-shrink-0 rounded" src="../../book_upload/image/${book.book_img}" alt="${book.book_img}란 이미지를 찾을 수 없습니다">
+                            <div class="d-flex align-items-center" style="flex-direction: column">
                                 <br>
-                                <h5 class="mb-1">HTML5 웹프로그래밍 입문 3판</h5>
-                                <h3 class="mb-1">26,000원</h3>
+                                <h5 class="mb-1">${book.book_subject}</h5>
+                                <h3 class="mb-1"><fmt:formatNumber value="${book.book_price}" pattern="#,###" />원</h3>
+                            </div>
                         </div>
-                    </div>
-
-
-                    <div class="testimonial-item rounded p-3">
-                        <img class="img-fluid flex-shrink-0 rounded" src="https://image.aladin.co.kr/product/29009/25/cover500/k452836425_1.jpg" alt="">
-                        <div class="d-flex align-items-center" style="flex-direction: column">
-                            <br>
-                            <h5 class="mb-1">HTML5 웹프로그래밍 입문 3판</h5>
-                            <h3 class="mb-1">26,000원</h3>
-                        </div>
-                    </div>
-
-
-                    <div class="testimonial-item rounded p-3">
-                        <img class="img-fluid flex-shrink-0 rounded" src="https://image.aladin.co.kr/product/19965/94/cover500/k642635843_1.jpg" alt="">
-                        <div class="d-flex align-items-center" style="flex-direction: column">
-                            <br>
-                            <h5 class="mb-1">HTML5 웹프로그래밍 입문 3판</h5>
-                            <h3 class="mb-1">26,000원</h3>
-                        </div>
-                    </div>
-
-
-                    <div class="testimonial-item rounded p-3">
-                        <img class="img-fluid flex-shrink-0 rounded" src="https://image.aladin.co.kr/product/29009/25/cover500/k452836425_1.jpg" alt="">
-                        <div class="d-flex align-items-center" style="flex-direction: column">
-                            <br>
-                            <h5 class="mb-1">HTML5 웹프로그래밍 입문 3판</h5>
-                            <h3 class="mb-1">26,000원</h3>
-                        </div>
-                    </div>
-
+                    </c:forEach>
 
                 </div>
             </div>
@@ -162,131 +134,228 @@
         <!-- Slide Testimonial End -->
 
 
+        <!-- Slide Testimonial Start -->
+        <%--        <div class="container-xxl py-2" style="margin-right:8vw;">--%>
+        <%--            <div class="container">--%>
+        <%--                <div class="owl-carousel testimonial-carousel" style="display: flex; flex-direction: column; justify-content: center; width: 56vw;">--%>
+
+        <%--                    <div class="testimonial-item rounded p-3">--%>
+        <%--                            <img class="img-fluid flex-shrink-0 rounded" src="https://image.aladin.co.kr/product/19965/94/cover500/k642635843_1.jpg" alt="">--%>
+        <%--                        <div class="d-flex align-items-center" style="flex-direction: column">--%>
+        <%--                                <br>--%>
+        <%--                                <h5 class="mb-1">HTML5 웹프로그래밍 입문 3판</h5>--%>
+        <%--                                <h3 class="mb-1">26,000원</h3>--%>
+        <%--                        </div>--%>
+        <%--                    </div>--%>
+
+
+        <%--                    <div class="testimonial-item rounded p-3">--%>
+        <%--                        <img class="img-fluid flex-shrink-0 rounded" src="https://image.aladin.co.kr/product/29009/25/cover500/k452836425_1.jpg" alt="">--%>
+        <%--                        <div class="d-flex align-items-center" style="flex-direction: column">--%>
+        <%--                            <br>--%>
+        <%--                            <h5 class="mb-1">HTML5 웹프로그래밍 입문 3판</h5>--%>
+        <%--                            <h3 class="mb-1">26,000원</h3>--%>
+        <%--                        </div>--%>
+        <%--                    </div>--%>
+
+
+        <%--                    <div class="testimonial-item rounded p-3">--%>
+        <%--                        <img class="img-fluid flex-shrink-0 rounded" src="https://image.aladin.co.kr/product/19965/94/cover500/k642635843_1.jpg" alt="">--%>
+        <%--                        <div class="d-flex align-items-center" style="flex-direction: column">--%>
+        <%--                            <br>--%>
+        <%--                            <h5 class="mb-1">HTML5 웹프로그래밍 입문 3판</h5>--%>
+        <%--                            <h3 class="mb-1">26,000원</h3>--%>
+        <%--                        </div>--%>
+        <%--                    </div>--%>
+
+
+        <%--                    <div class="testimonial-item rounded p-3">--%>
+        <%--                        <img class="img-fluid flex-shrink-0 rounded" src="https://image.aladin.co.kr/product/29009/25/cover500/k452836425_1.jpg" alt="">--%>
+        <%--                        <div class="d-flex align-items-center" style="flex-direction: column">--%>
+        <%--                            <br>--%>
+        <%--                            <h5 class="mb-1">HTML5 웹프로그래밍 입문 3판</h5>--%>
+        <%--                            <h3 class="mb-1">26,000원</h3>--%>
+        <%--                        </div>--%>
+        <%--                    </div>--%>
+        <%--                    --%>
+        <%--                </div>--%>
+        <%--            </div>--%>
+        <%--        </div>--%>
+        <!-- Slide Testimonial End -->
+
+        <c:choose>
+            <c:when test="${bookList!=null &&  pageInfo.listCount>0}">
+                <ul class="book_list">
+                    <c:forEach var="book" items="${bookList}">
+                        <li>
+                            <div class="cover">
+                                <a href="#">
+                                    <img src="/book_upload/image/${book.book_img}" alt="${book.book_img}란 이미지를 찾을 수 없습니다"/>
+                                </a>
+                            </div>
+                            <div class="detail">
+                                <div class="title">
+                                    <a href="#"><strong>${book.book_subject}</strong>
+                                    </a>
+                                </div>
+
+                                <div class="author">
+                                        ${book.book_author}
+                                    <span class="line">|</span>
+                                        ${book.book_publisher}
+                                    <span class="line">|</span>
+                                        ${book.book_date}
+                                </div>
+
+                                <div class="info">
+                                <span class="org_price"
+                                      style="text-decoration: line-through;"><fmt:formatNumber value="${book.book_price}" pattern="#,###" />원</span> → <strong class="sell_price"><fmt:formatNumber value="${book.book_price}" pattern="#,###" />원</strong>
+                                    <span class="dc_rate">[<strong>${book.book_discount}</strong>%↓]</span>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="button">
+                                    <a href="#" class="btn-sm btn-primary">
+                                        상세보기
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="book_add">
+                                <a class="btn-sm btn-primary">장바구니 담기</a>
+                                <a class="btn-sm btn-primary">바로 구매하기</a>
+                            </div>
+                        </li>
+                    </c:forEach>
+
+
+                </ul>
+            </c:when>
+        </c:choose>
 
 
         <%--================================================================--%>
         <%-- 2안 --%>
         <%--================================================================--%>
-        <ul class="book_list">
+        <%--        <ul class="book_list">--%>
 
-            <li>
-                <div class="cover">
-                    <a href="#">
-                        <img src="https://image.aladin.co.kr/product/19965/94/cover500/k642635843_1.jpg"
-                             alt="HTML5 웹프로그래밍 입문 3판">
-                    </a>
-                </div>
-                <div class="detail">
-                    <div class="title">
-                        <a href="#"><strong>HTML5 웹프로그래밍 입문 3판</strong>
-                        </a>
-                    </div>
+        <%--            <li>--%>
+        <%--                <div class="cover">--%>
+        <%--                    <a href="#">--%>
+        <%--                        <img src="https://image.aladin.co.kr/product/19965/94/cover500/k642635843_1.jpg"--%>
+        <%--                             alt="HTML5 웹프로그래밍 입문 3판">--%>
+        <%--                    </a>--%>
+        <%--                </div>--%>
+        <%--                <div class="detail">--%>
+        <%--                    <div class="title">--%>
+        <%--                        <a href="#"><strong>HTML5 웹프로그래밍 입문 3판</strong>--%>
+        <%--                        </a>--%>
+        <%--                    </div>--%>
 
-                    <div class="author">
-                        윤인성(지은이)
-                        <span class="line">|</span>
-                        한빛아카데미(출판사)
-                        <span class="line">|</span>
-                        2019년 7월
-                    </div>
+        <%--                    <div class="author">--%>
+        <%--                        윤인성(지은이)--%>
+        <%--                        <span class="line">|</span>--%>
+        <%--                        한빛아카데미(출판사)--%>
+        <%--                        <span class="line">|</span>--%>
+        <%--                        2019년 7월--%>
+        <%--                    </div>--%>
 
-                    <div class="info">
-                        <strike class="org_price">26,000원</strike> → <strong class="sell_price">26,000원</strong>
-                        <span class="dc_rate">[<strong>0</strong>%↓]</span>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="button">
-                        <a href="#" class="btn-sm btn-primary">
-                            상세보기
-                        </a>
-                    </div>
-                </div>
-                <div class="book_add">
-                    <a class="btn-sm btn-primary">장바구니 담기</a>
-                    <a class="btn-sm btn-primary">바로 구매하기</a>
-                </div>
-            </li>
+        <%--                    <div class="info">--%>
+        <%--                        <strike class="org_price">26,000원</strike> → <strong class="sell_price">26,000원</strong>--%>
+        <%--                        <span class="dc_rate">[<strong>0</strong>%↓]</span>--%>
+        <%--                    </div>--%>
+        <%--                    <br>--%>
+        <%--                    <br>--%>
+        <%--                    <div class="button">--%>
+        <%--                        <a href="#" class="btn-sm btn-primary">--%>
+        <%--                            상세보기--%>
+        <%--                        </a>--%>
+        <%--                    </div>--%>
+        <%--                </div>--%>
+        <%--                <div class="book_add">--%>
+        <%--                    <a class="btn-sm btn-primary">장바구니 담기</a>--%>
+        <%--                    <a class="btn-sm btn-primary">바로 구매하기</a>--%>
+        <%--                </div>--%>
+        <%--            </li>--%>
 
 
-            <li>
-                <div class="cover">
-                    <a href="#">
-                        <img src="https://image.aladin.co.kr/product/29009/25/cover500/k452836425_1.jpg"
-                             alt="Power JAVA 3판">
-                    </a>
-                </div>
-                <div class="detail">
-                    <div class="title">
-                        <a href="#"><strong>Power JAVA (3판)</strong>
-                        </a>
-                    </div>
+        <%--            <li>--%>
+        <%--                <div class="cover">--%>
+        <%--                    <a href="#">--%>
+        <%--                        <img src="https://image.aladin.co.kr/product/29009/25/cover500/k452836425_1.jpg"--%>
+        <%--                             alt="Power JAVA 3판">--%>
+        <%--                    </a>--%>
+        <%--                </div>--%>
+        <%--                <div class="detail">--%>
+        <%--                    <div class="title">--%>
+        <%--                        <a href="#"><strong>Power JAVA (3판)</strong>--%>
+        <%--                        </a>--%>
+        <%--                    </div>--%>
 
-                    <div class="author">
-                        천인국(지은이)
-                        <span class="line">|</span>
-                        인피니티북스(출판사)
-                        <span class="line">|</span>
-                        2022년 2월
-                    </div>
+        <%--                    <div class="author">--%>
+        <%--                        천인국(지은이)--%>
+        <%--                        <span class="line">|</span>--%>
+        <%--                        인피니티북스(출판사)--%>
+        <%--                        <span class="line">|</span>--%>
+        <%--                        2022년 2월--%>
+        <%--                    </div>--%>
 
-                    <div class="info">
-                        <strike class="org_price">40,000원</strike> → <strong class="sell_price">36,000원</strong>
-                        <span class="dc_rate">[<strong>10</strong>%↓]</span>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="button">
-                        <a href="#" class="btn-sm btn-primary">
-                            상세보기
-                        </a>
-                    </div>
-                </div>
-                <div class="book_add">
-                    <a class="btn-sm btn-primary">장바구니 담기</a>
-                    <a class="btn-sm btn-primary">바로 구매하기</a>
-                </div>
-            </li>
+        <%--                    <div class="info">--%>
+        <%--                        <strike class="org_price">40,000원</strike> → <strong class="sell_price">36,000원</strong>--%>
+        <%--                        <span class="dc_rate">[<strong>10</strong>%↓]</span>--%>
+        <%--                    </div>--%>
+        <%--                    <br>--%>
+        <%--                    <br>--%>
+        <%--                    <div class="button">--%>
+        <%--                        <a href="#" class="btn-sm btn-primary">--%>
+        <%--                            상세보기--%>
+        <%--                        </a>--%>
+        <%--                    </div>--%>
+        <%--                </div>--%>
+        <%--                <div class="book_add">--%>
+        <%--                    <a class="btn-sm btn-primary">장바구니 담기</a>--%>
+        <%--                    <a class="btn-sm btn-primary">바로 구매하기</a>--%>
+        <%--                </div>--%>
+        <%--            </li>--%>
 
-            <li>
-                <div class="cover">
-                    <a href="#">
-                        <img src="https://image.aladin.co.kr/product/29009/25/cover500/k452836425_1.jpg"
-                             alt="Power JAVA 3판">
-                    </a>
-                </div>
-                <div class="detail">
-                    <div class="title">
-                        <a href="#"><strong>Power JAVA (3판)</strong>
-                        </a>
-                    </div>
+        <%--            <li>--%>
+        <%--                <div class="cover">--%>
+        <%--                    <a href="#">--%>
+        <%--                        <img src="https://image.aladin.co.kr/product/29009/25/cover500/k452836425_1.jpg"--%>
+        <%--                             alt="Power JAVA 3판">--%>
+        <%--                    </a>--%>
+        <%--                </div>--%>
+        <%--                <div class="detail">--%>
+        <%--                    <div class="title">--%>
+        <%--                        <a href="#"><strong>Power JAVA (3판)</strong>--%>
+        <%--                        </a>--%>
+        <%--                    </div>--%>
 
-                    <div class="author">
-                        천인국(지은이)
-                        <span class="line">|</span>
-                        인피니티북스(출판사)
-                        <span class="line">|</span>
-                        2022년 2월
-                    </div>
+        <%--                    <div class="author">--%>
+        <%--                        천인국(지은이)--%>
+        <%--                        <span class="line">|</span>--%>
+        <%--                        인피니티북스(출판사)--%>
+        <%--                        <span class="line">|</span>--%>
+        <%--                        2022년 2월--%>
+        <%--                    </div>--%>
 
-                    <div class="info">
-                        <strike class="org_price">40,000원</strike> → <strong class="sell_price">36,000원</strong>
-                        <span class="dc_rate">[<strong>10</strong>%↓]</span>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="button">
-                        <a href="#" class="btn-sm btn-primary">
-                            상세보기
-                        </a>
-                    </div>
-                </div>
-                <div class="book_add">
-                    <a class="btn-sm btn-primary">장바구니 담기</a>
-                    <a class="btn-sm btn-primary">바로 구매하기</a>
-                </div>
-            </li>
-        </ul>
+        <%--                    <div class="info">--%>
+        <%--                        <strike class="org_price">40,000원</strike> → <strong class="sell_price">36,000원</strong>--%>
+        <%--                        <span class="dc_rate">[<strong>10</strong>%↓]</span>--%>
+        <%--                    </div>--%>
+        <%--                    <br>--%>
+        <%--                    <br>--%>
+        <%--                    <div class="button">--%>
+        <%--                        <a href="#" class="btn-sm btn-primary">--%>
+        <%--                            상세보기--%>
+        <%--                        </a>--%>
+        <%--                    </div>--%>
+        <%--                </div>--%>
+        <%--                <div class="book_add">--%>
+        <%--                    <a class="btn-sm btn-primary">장바구니 담기</a>--%>
+        <%--                    <a class="btn-sm btn-primary">바로 구매하기</a>--%>
+        <%--                </div>--%>
+        <%--            </li>--%>
+        <%--        </ul>--%>
 
 
     </div>
