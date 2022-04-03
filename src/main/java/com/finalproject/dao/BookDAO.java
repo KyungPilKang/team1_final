@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BookDAO {
-    void insertBook(Book book) throws Exception;
+    public void insertBook(Book book) throws Exception;
 
 }

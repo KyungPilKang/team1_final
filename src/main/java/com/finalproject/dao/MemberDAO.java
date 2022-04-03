@@ -9,9 +9,10 @@ import com.finalproject.dto.Member;
 @Repository
 public interface MemberDAO {
 	
-
+	
 	public void insertMember(Member member) throws Exception;
 	public Member selectMemberByEmail(String email) throws Exception;
 	public Member selectMemberByUsername(String username) throws Exception;
 	public Member selectMemberByNickname(String nickname) throws Exception;
+	
 }

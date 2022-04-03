@@ -89,7 +89,7 @@
 			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
 				<h1 class="mt-2 mb-3">회원 가입</h1>
 				<div class="row text-center col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 60%; float: none; margin: 0 auto">
-					<form name="form"  action="join" method="post">
+					<form name="form"  action="join" method="post" novalidate>
 						<div class="row g-3">
 							<table id="table1" class="table">
 								<colgroup>
@@ -143,9 +143,14 @@
 										<th>이름 <span class="star">*</span>
 										</th>
 										<td>
+										<div class="row">
 											<div class="col-5">
-												<input type="text" id="name" name="name" placeholder="한글 이름을 입력하세요." class="form-control">
+												<input type="text" id="name" name="name" placeholder="한글 이름을 입력하세요."  class="form-control" required oninput = "namecheck()">
 											</div>
+											<div class="col-5">
+												<input type="text" id="namec"  class="form-control" style="background-color:transparent; border:none;" disabled>
+											</div>
+										</div>
 										</td>
 									</tr>
 									<tr>
@@ -163,11 +168,11 @@
 										<td>
 											<div class="row">
 												<div class="col-lg-3">
-													<label class="radio"> <input type="radio" id="female" name="gender" value="F">여자
+													<label class="radio"> <input type="radio" id="gender" name="gender" value="F">여자
 													</label>
 												</div>
 												<div class="col-lg-3">
-													<label class="radio"> <input type="radio" id="male" name="gender" value="M">남자
+													<label class="radio"> <input type="radio" id="gender" name="gender" value="M">남자
 													</label>
 												</div>
 											</div>
@@ -251,7 +256,7 @@
 													<button type="button" onclick="goPopup()" class="btn btn-primary">주소검색</button>
 												</div>
 												<div class="col-lg-8 pt-2">
-													<input type="text" id="dorojuso" name="dorojuso" readonly="" class="form-control">
+													<input type="text" id="doro_juso" name="doro_juso" readonly="" class="form-control">
 												</div>
 												<div class="col-lg-4"></div>
 												<div class="col-lg-4 pt-2">
@@ -263,23 +268,23 @@
 												<div id=warning class="col-lg-8 pt-2">
 													<span id=warning class="input-group-addon text-left">* 주소는 상세주소까지 정확하게 입력해주세요.주소가 정확하지 않을 경우, 배송이 원활하지 않을 수 있습니다.</span>
 												</div>
-												<input type="hidden" name="sangsejuso" id="sangsejuso">
+												<input type="hidden" name="sangse_juso" id="sangse_juso">
 											</div>
 										</td>
 									</tr>
 								</tbody>
 							</table>
 						</div>
-					
+					</form>
 					<div class="row pt-3 d-flex justify-content-center ">
 						<div class="col-3">
-							<button id="join" class="btn btn-primary w-100 py-3" type="submit">회원가입</button>
+							<button class="btn btn-primary w-100 py-3" onclick="join()">회원가입</button>
 						</div>
 						<div class="col-3">
 							<a href="home" class="btn border w-100 py-3">취소하기</a>
 						</div>
 					</div>
-					</form>
+					
 				</div>
 			</div>
 		</div>

@@ -75,17 +75,17 @@
 				<h6 class="section-title bg-white text-center text-primary px-3">LOG IN</h6>
 				<h1 class="mt-5 mb-5">회원/소셜 로그인</h1>
 				<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto">
-					<form>
+					<form method="post" action="/login">
 						<div class="row g-3">
 							<div class="col-12">
 								<div class="form-floating">
-									<input type="text" class="form-control" id="id" placeholder="id">
+									<input type="text" class="form-control" name="username" id="username" placeholder="id">
 									<label for="id">ID</label>
 								</div>
 							</div>
 							<div class="col-12">
 								<div class="form-floating">
-									<input type="text" class="form-control" id="password" placeholder="password">
+									<input type="text" class="form-control" name="username" id="password" placeholder="password">
 									<label for="password">PASSWORD</label>
 								</div>
 							</div>
@@ -109,9 +109,9 @@
 							
 							
 								<div class="col-12" style="max-height:58px;">
-									<a href="https://nid.naver.com/oauth2.0/authorize?client_id=24OF3VzEePL0jwU_gwRz&response_type=code&redirect_uri=http://localhost:8090/auth/naver/callback&state=oauth_state"
+									<a id="naverlogin" href="https://nid.naver.com/oauth2.0/authorize?client_id=24OF3VzEePL0jwU_gwRz&response_type=code&redirect_uri=http://localhost:8090/auth/naver/callback&state=oauth_state"
 									onclick="window.open(this.href, '_blank', 'width=800, height=600'); return false;">
-									<span id="naver" class="btn w-100">N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;네이버 로그인</span>
+									<span id="naver" class="btn w-100">N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;네이버 로그인</span>
 									</a>
 								</div>
 							
