@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,8 +33,8 @@ public class StudyController {
 		
 	@Autowired
 	private MemberService memberService;
-	
-	@Autowired (required=false)
+
+	@Autowired
 	private StudyService studyservice;
 
 	//스터디메인
