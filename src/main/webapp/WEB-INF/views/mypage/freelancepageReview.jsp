@@ -106,41 +106,62 @@
         <div class="default">
             <div class="subnavbar">
                 <div class="navbar-main">
-                    <div class="navbar-name">- 홈 -</div>
+                    <div class="navbar-name">- 리뷰 목록 -</div>
                 </div>
                 <div class="navbar-bt">
-                    <div>홈</div>
-                    <div>제작한 강의 목록</div>
-                    <div>리뷰 목록</div>
+                    <div><a href="/mypage">홈</a></div>
+                    <div><a href="/freelancepagemakemove">제작 목록</a></div>
+                    <div><a href="/freelancepagereview">리뷰 목록</a></div>
                 </div>
             </div>
             <div class="default-intro">
-                <div class="intro">
-                    <ul>
-                        <li>이름</li>
-                        <li>분야</li>
-                        <li>경력</li>
-                        <li>평점</li>
-                        <li>자기소개</li>
-                    </ul>
-                    <a href="#">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                             xmlns="http://www.w3.org/2000/svg"
-                             style="width: 90px; height: 90px;">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </a>
-                    <div class="intro-bt">수정</div>
-                </div>
-                <div class="sub">
-                    <h1>강의문의</h1>
-                    <div class="sub-content">문의내용
+                <div class="intro move-list">
+                    <h1 class="move-list_subject">- 리뷰 목록 -</h1>
+                    <div class="make-movelist">
+                        <div class="move review-list">
+                            <ul>
+                                <li>이름<input type="text" placeholder="입력하세요!" style="height: 40px; width: 150px;"></li>
+                                <li>과목<input type="text" placeholder="입력하세요!" style="height: 40px; width: 150px;"></li>
+                                <li>제목<input type="text" placeholder="입력하세요!" style="height: 40px; width: 150px;"></li>
+                                <li>계시일<input type="text" placeholder="입력하세요!" style="height: 40px; width: 150px;"></li>
+                            </ul>
+                            <ul>
+                                <li>이름<input type="text" placeholder="입력하세요!" style="height: 40px; width: 150px;"></li>
+                                <li>과목<input type="text" placeholder="입력하세요!" style="height: 40px; width: 150px;"></li>
+                                <li>제목<input type="text" placeholder="입력하세요!" style="height: 40px; width: 150px;"></li>
+                                <li>계시일<input type="text" placeholder="입력하세요!" style="height: 40px; width: 150px;"></li>
+                            </ul>
+                            <ul>
+                                <li>이름<input type="text" placeholder="입력하세요!" style="height: 40px; width: 150px;"></li>
+                                <li>과목<input type="text" placeholder="입력하세요!" style="height: 40px; width: 150px;"></li>
+                                <li>제목<input type="text" placeholder="입력하세요!" style="height: 40px; width: 150px;"></li>
+                                <li>계시일<input type="text" placeholder="입력하세요!" style="height: 40px; width: 150px;"></li>
+                            </ul>
+                            <ul>
+                                <li>이름<input type="text" placeholder="입력하세요!" style="height: 40px; width: 150px;"></li>
+                                <li>과목<input type="text" placeholder="입력하세요!" style="height: 40px; width: 150px;"></li>
+                                <li>제목<input type="text" placeholder="입력하세요!" style="height: 40px; width: 150px;"></li>
+                                <li>계시일<input type="text" placeholder="입력하세요!" style="height: 40px; width: 150px;"></li>
+                            </ul>
+                            <ul>
+                                <li>이름<input type="text" placeholder="입력하세요!" style="height: 40px; width: 150px;"></li>
+                                <li>과목<input type="text" placeholder="입력하세요!" style="height: 40px; width: 150px;"></li>
+                                <li>제목<input type="text" placeholder="입력하세요!" style="height: 40px; width: 150px;"></li>
+                                <li>계시일<input type="text" placeholder="입력하세요!" style="height: 40px; width: 150px;"></li>
+                            </ul>
+                            <ul>
+                                <li>이름<input type="text" placeholder="입력하세요!" style="height: 40px; width: 150px;"></li>
+                                <li>과목<input type="text" placeholder="입력하세요!" style="height: 40px; width: 150px;"></li>
+                                <li>제목<input type="text" placeholder="입력하세요!" style="height: 40px; width: 150px;"></li>
+                                <li>계시일<input type="text" placeholder="입력하세요!" style="height: 40px; width: 150px;"></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 <!-- Contact End -->
 

@@ -1,3 +1,8 @@
+@import "freelacepageMakeMove.css";
+@import "freelancepageReview.css";
+@import "teachpageDefult.css";
+@import "teachpageRequest.css";
+@import "studentDefult.css";
 :root {
     --main-color: #06BBCC;
     --sub-color: #F0FBFC;
@@ -71,10 +76,21 @@
 }
 
 .navbar-bt div:hover {
-    color: var(--sub-color);
     background-color: var(--main-color);
     border: 5px solid var(--sub-color);
     border-radius: 10px;
+}
+
+.navbar-bt div a {
+    border: 50px solid white;
+    color: black;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.navbar-bt div a:hover {
+    color: var(--sub-color);
+    border: 50px solid var(--main-color);
 }
 
 .subnavbar div {
@@ -89,16 +105,15 @@
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin-left: 180px;
+    background: var(--main-color);
 }
 
 .intro {
     border-bottom: 5px solid var(--main-color);
-    height: 300px;
-    width: 1000px;
     display: flex;
     position: relative;
+    background-color: white;
 }
 
 .intro ul li {
@@ -128,4 +143,28 @@
     background-color: var(--sub-color);
     border: 5px solid var(--main-color);
     border-radius: 10px;
+}
+
+.sub h1 {
+    margin: 0 425px;
+}
+
+.sub-content {
+    background-color: var(--main-color);
+    padding: 20px;
+}
+
+.sub-request {
+    background-color: white;
+}
+
+.sub-request ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.sub-request ul li {
+    margin: 10px 20px;
 }
