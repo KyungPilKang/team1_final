@@ -87,10 +87,10 @@
 
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb text-uppercase">
-                        <li class="breadcrumb-item"><a href="#freelancer">강사</a></li>
-                        <li class="breadcrumb-item"><a href="#worker">교육업 종사자</a></li>
-                        <li class="breadcrumb-item"><a href="#student">학생</a></li>
-                        <li class="breadcrumb-item"><a href="#parents">학부모</a></li>
+                        <li class="breadcrumb-item"><a href="#freelancerQnaList">강사</a></li>
+                        <li class="breadcrumb-item"><a href="#workerQnaList">교육업 종사자</a></li>
+                        <li class="breadcrumb-item"><a href="#studentQnaList">학생</a></li>
+                        <li class="breadcrumb-item"><a href="#parentsQnaList">학부모</a></li>
                     </ol>
                 </nav>
 
@@ -100,7 +100,7 @@
 
 
         <!-- 강사 Start -->
-        <div class="container-xxl py-5" id="freelancer">
+        <div class="container-xxl py-5" id="freelancerQnaList">
             <div class="container">
                 <h1 class="text-center mb-4 wow fadeInUp" data-wow-delay="0.1s">강사 1:1문의 리스트</h1>
                 <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
@@ -122,16 +122,19 @@
                         </div>
                     </div>
                     
+                    
 
                     <div class="tab-content">
                         <div id="tab-1" class="tab-pane fade show p-0 active">
+                        
+                        
                             <div class="job-item p-4 mb-4">
                                 <div class="row g-4">
                                     <div class="col-sm-12 col-md-6 d-flex align-items-center">
                                         <div class="text-start ps-4">
-                                            <h5 class="mb-3">홈페이지 사용법이 어떻게 되나요?</h5>
-                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>사용자 ID</span>
-                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>문의일 2021.06.03</small>
+                                            <h5 class="mb-3">${request_subject}</h5>
+                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>${username}</span>
+                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>문의일 ${request_date}</small>
                                         </div>
                                     </div>
                                     <!-- - d-flex 는 왼쪽부터 쌓인다는 뜻임
@@ -139,41 +142,19 @@
                                     - align-items-center div틀에 가로로 중앙에 배치 -->
                                     <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
                                         <div class="text-start ps-4">
-                                            <h6 class="mb-3">홈페이지 문의</h6>
+                                            <h6 class="mb-3">${request_type}</h6>
                                         </div>
                                     </div>
                                     <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
                                         <div class="d-flex mb-3">
                                             <a class="btn btn-primary" href="">답변 대기</a>
                                         </div>
-                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>답변대기 2021.06.03</small>
+                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>답변대기 ${answer_date}</small>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="job-item p-4 mb-4">
-                                <div class="row g-4">
-                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h5 class="mb-3">홈페이지 사용법이 어떻게 되나요?</h5>
-                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>사용자 ID</span>
-                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>문의일 2021.06.03</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h6 class="mb-3">홈페이지 문의</h6>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="">답변 대기</a>
-                                        </div>
-                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>답변대기 2021.06.03</small>
-                                    </div>
-                                </div>
-                            </div>
-
+                            
+                            
                             <div class="job-item p-4 mb-4">
                                 <div class="row g-4">
                                     <div class="col-sm-12 col-md-6 d-flex align-items-center">
@@ -197,51 +178,7 @@
                                 </div>
                             </div>
 
-                            <div class="job-item p-4 mb-4">
-                                <div class="row g-4">
-                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h5 class="mb-3">홈페이지 사용법이 어떻게 되나요?</h5>
-                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>사용자 ID</span>
-                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>문의일 2021.06.03</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h6 class="mb-3">홈페이지 문의</h6>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="">답변 완료</a>
-                                        </div>
-                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>답변완료 2021.06.03</small>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="job-item p-4 mb-4">
-                                <div class="row g-4">
-                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h5 class="mb-3">홈페이지 사용법이 어떻게 되나요?</h5>
-                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>사용자 ID</span>
-                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>문의일 2021.06.03</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h6 class="mb-3">홈페이지 문의</h6>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="">답변 완료</a>
-                                        </div>
-                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>답변완료 2021.06.03</small>
-                                    </div>
-                                </div>
-                            </div>
+                           
                             <a class="btn btn-primary py-3 px-5" href="">More List</a>
                         </div>
                     </div>
@@ -252,7 +189,7 @@
         <!-- 강사 End -->
 
         <!-- 교육업 종사자 Start -->
-        <div class="container-xxl py-5" id="worker">
+        <div class="container-xxl py-5" id="workerQnaList">
             <div class="container">
                 <h1 class="text-center mb-4 wow fadeInUp" data-wow-delay="0.1s">교육업 종사자 1:1문의 리스트</h1>
                 <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
@@ -277,6 +214,32 @@
 
                     <div class="tab-content">
                         <div id="tab-2" class="tab-pane fade show p-0 active">
+                        
+                        
+                            <div class="job-item p-4 mb-4">
+                                <div class="row g-4">
+                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
+                                        <div class="text-start ps-4">
+                                            <h5 class="mb-3">홈페이지 사용법이 어떻게 되나요?</h5>
+                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>사용자 ID</span>
+                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>문의일 2021.06.03</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
+                                        <div class="text-start ps-4">
+                                            <h6 class="mb-3">홈페이지 문의</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+                                        <div class="d-flex mb-3">
+                                            <a class="btn btn-primary" href="">답변 대기</a>
+                                        </div>
+                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>답변완료 2021.06.03</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
                             <div class="job-item p-4 mb-4">
                                 <div class="row g-4">
                                     <div class="col-sm-12 col-md-6 d-flex align-items-center">
@@ -317,7 +280,7 @@
 
 
         <!-- 학생 Start -->
-        <div class="container-xxl py-5" id="student">
+        <div class="container-xxl py-5" id="studentQnaList">
             <div class="container">
                 <h1 class="text-center mb-4 wow fadeInUp" data-wow-delay="0.1s">학생 1:1문의 리스트</h1>
                 <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
@@ -388,74 +351,12 @@
                                 </div>
                             </div>
 
-                            <div class="job-item p-4 mb-4">
-                                <div class="row g-4">
-                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h5 class="mb-3">홈페이지 사용법이 어떻게 되나요?</h5>
-                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>사용자 ID</span>
-                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>문의일 2021.06.03</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h6 class="mb-3">홈페이지 문의</h6>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="">답변 대기</a>
-                                        </div>
-                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>답변완료 2021.06.03</small>
-                                    </div>
-                                </div>
-                            </div>
+           
 
-                            <div class="job-item p-4 mb-4">
-                                <div class="row g-4">
-                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h5 class="mb-3">홈페이지 사용법이 어떻게 되나요?</h5>
-                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>사용자 ID</span>
-                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>문의일 2021.06.03</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h6 class="mb-3">홈페이지 문의</h6>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="">답변 대기</a>
-                                        </div>
-                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>답변완료 2021.06.03</small>
-                                    </div>
-                                </div>
-                            </div>
+   
 
-                            <div class="job-item p-4 mb-4">
-                                <div class="row g-4">
-                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h5 class="mb-3">홈페이지 사용법이 어떻게 되나요?</h5>
-                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>사용자 ID</span>
-                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>문의일 2021.06.03</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h6 class="mb-3">홈페이지 문의</h6>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="">답변 대기</a>
-                                        </div>
-                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>답변완료 2021.06.03</small>
-                                    </div>
-                                </div>
-                            </div>
+          
+                            
                             <a class="btn btn-primary py-3 px-5" href="">More List</a>
                         </div>
                     </div>
@@ -466,7 +367,7 @@
         <!-- 학생 End -->
 
         <!-- 학부모 Start -->
-        <div class="container-xxl py-5" id="parents">
+        <div class="container-xxl py-5" id="parentsQnaList">
             <div class="container">
                 <h1 class="text-center mb-4 wow fadeInUp" data-wow-delay="0.1s">학부모 1:1문의 리스트</h1>
                 <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
@@ -537,74 +438,12 @@
                                 </div>
                             </div>
 
-                            <div class="job-item p-4 mb-4">
-                                <div class="row g-4">
-                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h5 class="mb-3">홈페이지 사용법이 어떻게 되나요?</h5>
-                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>사용자 ID</span>
-                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>문의일 2021.06.03</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h6 class="mb-3">홈페이지 문의</h6>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="">답변 대기</a>
-                                        </div>
-                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>답변완료 2021.06.03</small>
-                                    </div>
-                                </div>
-                            </div>
+   
 
-                            <div class="job-item p-4 mb-4">
-                                <div class="row g-4">
-                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h5 class="mb-3">홈페이지 사용법이 어떻게 되나요?</h5>
-                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>사용자 ID</span>
-                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>문의일 2021.06.03</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h6 class="mb-3">홈페이지 문의</h6>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="">답변 대기</a>
-                                        </div>
-                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>답변완료 2021.06.03</small>
-                                    </div>
-                                </div>
-                            </div>
+      
 
-                            <div class="job-item p-4 mb-4">
-                                <div class="row g-4">
-                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h5 class="mb-3">홈페이지 사용법이 어떻게 되나요?</h5>
-                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>사용자 ID</span>
-                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>문의일 2021.06.03</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h6 class="mb-3">홈페이지 문의</h6>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="">답변 대기</a>
-                                        </div>
-                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>답변완료 2021.06.03</small>
-                                    </div>
-                                </div>
-                            </div>
+          
+                            
                             <a class="btn btn-primary py-3 px-5" href="">More List</a>
                         </div>
                     </div>
