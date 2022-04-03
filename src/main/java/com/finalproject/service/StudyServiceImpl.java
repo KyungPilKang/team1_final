@@ -1,31 +1,44 @@
 package com.finalproject.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.finalproject.dao.StudyDAO;
+import com.finalproject.dao.StudyTeamDAO;
 import com.finalproject.dto.Study;
 import com.finalproject.dto.StudyTeam;
 
 @Service
 public class StudyServiceImpl implements StudyService {
-
+	@Autowired 
+	StudyDAO studyDAO;
+	
+	@Autowired 
+	StudyTeamDAO studyteamDAO;
+	
+	
 	@Override
-	public void regstudy(Study inputstud) throws Exception {
-		//1.스터디 등록
+	public void regstudy(Study study) throws Exception {
+		//스터디 등록
+		studyDAO.regStudy(study);
 		
 	}
 
 	@Override
-	public void updateStudy(int study_no) throws Exception {
-		// TODO Auto-generated method stub
+	public void updateStudy(Study study) throws Exception {
+		//스터디 수정 
+		studyDAO.updateStudy(study);
 		
 	}
 
 	@Override
 	public void removeStudy(int study_no) throws Exception {
-		// TODO Auto-generated method stub
-		
+		//스터디 삭제
+		studyDAO.removeStudy(study_no);	
 	}
 
 	@Override
@@ -73,8 +86,16 @@ public class StudyServiceImpl implements StudyService {
 
 	@Override
 	public List<Study> searchStudyByStatus(String user_id, String status) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	    Map<String, String> studybystatus = new HashMap<String, String>();
+	    studybystatus.put("user_id", user_id);
+	    studybystatus.put("status", status);
+		
+		return studyDAO.searchStudyByStatus(studybystatus);
+	}
+
+	@Override
+	public List<Study> regstudylist(Study study) throws Exception {
+		return studyDAO.regstudylist(study);
 	}
 
 }
