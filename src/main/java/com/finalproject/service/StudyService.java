@@ -5,7 +5,9 @@ import java.util.List;
 import com.finalproject.dto.Member;
 import com.finalproject.dto.Study;
 import com.finalproject.dto.StudyTeam;
+import org.springframework.stereotype.Service;
 
+@Service
 public interface StudyService {
 	//1.스터디 등록 
 	public void regstudy(Study inputstud) throws Exception;
