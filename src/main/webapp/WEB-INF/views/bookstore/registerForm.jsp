@@ -49,7 +49,7 @@
 <!-- Textbook Register Start -->
 <div class="container-xxl">
     <div class="container" id="write_container" style="margin-left:14vw;">
-        <h4 class="mb-4">교재 등록</h4>
+        <h4 class="mb-4" style="font-family: sans-serif">교재 등록</h4>
         <form id="book_form" action="" method="post" enctype="multipart/form-data">
             <div class="row g-3">
 
@@ -62,9 +62,10 @@
                          style="display: flex; flex-direction: column; justify-content: center; margin-left: 20px; width: 20vw;">
 
                         <%-- 카테고리 book_cat --%>
-                        <div class="btn">
+                        <div class="p-2">
                             <label for="book_cat"></label>
-                            <select name="book_cat" id="book_cat" class="col-sm-12" style="border: 1px solid #d5d5d5; width: 353px; height: 38px; padding-left:10px;">
+                            <select name="book_cat" id="book_cat"
+                                    style="border: 1px solid #d5d5d5; width: 10vw; height: 38px; padding-left:10px; margin-left: -5px;">
                                 <option value="none">== 카테고리 ==</option>
                                 <option value="1">교재1</option>
                                 <option value="2">교재2</option>
@@ -73,26 +74,71 @@
                         </div>
 
                         <%-- 교재 이미지 파일 book_img --%>
-                        <div class="col-sm-12 p-3">
-                            <input type="file" id="file" name="file" class="form-control bg-white" onchange="readURL(this);">
+                        <div class="col-sm-12 p-2">
+                            <input type="file" id="file" name="file" class="form-control bg-white" accept=".gif, .jpg, .png, .jpeg"
+                                   onchange="readURL(this);">
                         </div>
-                        <%-- 가격 --%>
-                        <div class="col-sm-12 p-3">
-                            <input type="text" id="book_price" name="book_price" class="form-control bg-white" placeholder="가격">
+
+                        <%-- 지은이 --%>
+                        <div class="col-sm-12 p-2">
+                            <input type="text" id="book_author" name="book_author" class="form-control bg-white"
+                                   placeholder="지은이">
                         </div>
-                        <%-- 수량 --%>
-                        <div class="col-sm-12 p-3">
-                            <input type="text" id="book_count" name="book_count" class="form-control bg-white" placeholder="수량">
+                        <%-- 출판사 --%>
+                        <div class="col-sm-12 p-2">
+                            <input type="text" id="book_publisher" name="book_publisher" class="form-control bg-white"
+                                   placeholder="출판사">
+                        </div>
+
+                        <div class="" style="display: flex">
+                            <%-- 가격 --%>
+                            <div class="col-sm-6 p-2">
+                                <input type="text" id="book_price" name="book_price" class="form-control bg-white"
+                                       placeholder="가격">
+                            </div>
+                            <%-- 재고 --%>
+                            <div class="col-sm-2 p-2"
+                                 style="display:flex; justify-content: flex-end; align-items: center">
+                                재고:
+                            </div>
+                            <div class="col-sm-4 p-2">
+                                <input class="form-control text-center" id="book_count" type="number" name="book_count"
+                                       value="1" min="1" placeholder="수량"/>
+                            </div>
+                        </div>
+
+                        <%-- 할인율 book_discount --%>
+                        <div class="" style="display: flex; justify-content: space-between">
+                            <div class="col-sm-5 p-2 discount_yon" style="display: flex; align-items: center; justify-content: space-between">
+                                <input type="radio" id="yes" name="yon" value="yes">
+                                <label for="yes">할인 O</label>
+                                <input type="radio" id="no" name="yon" value="no" checked>
+                                <label for="no">할인 X</label>
+                            </div>
+                            <div class="col-sm-3 p-2"
+                                 style="display:flex; justify-content: flex-end; align-items: center">
+                                할인율:
+                            </div>
+                            <div class="col-sm-4 p-2" style="display: flex">
+                                <input class="form-control text-center" id="book_discount" type="number" name="book_discount"
+                                       value="0" min="0" placeholder="할인율" disabled/>
+                                <div class="col-sm-1 p-2"
+                                     style="display:flex; justify-content: flex-start; align-items: center">
+                                    %
+                                </div>
+                            </div>
                         </div>
                         <%-- 키워드 book_keyword --%>
-                        <div class="col-sm-12 p-3">
-                            <input type="text" id="book_keyword" name="book_keyword" class="form-control" placeholder="키워드 등록 (#JAVA #수학 #영어)">
+                        <div class="col-sm-12 p-2">
+                            <input type="text" id="book_keyword" name="book_keyword" class="form-control"
+                                   placeholder="키워드 등록 (#JAVA #수학 #영어)">
                         </div>
+
                     </div>
                 </div>
 
                 <%-- 제목 book_subject --%>
-                <div class="col-12 col-sm-10" style="width: 41vw">
+                <div class="col-12 col-sm-10" style="width: 41.5vw">
                     <input type="text" id="book_subject" name="book_subject" class="form-control" placeholder="제목">
                 </div>
 
@@ -103,9 +149,9 @@
         </form>
 
         <%-- toastui editor --%>
-        <div id="editor" style="width:41vw"></div>
+        <div id="editor" style="width:41.5vw"></div>
 
-        <div class="col-10">
+        <div class="col-10" style="width:41.5vw">
             <button class="btn btn-primary w-100" onclick="register()" type="button">등 록</button>
         </div>
     </div>
@@ -135,6 +181,14 @@
 
 <%-- registerForm Javascript --%>
 <script src="${pageContext.request.contextPath}/resources/bookstore/js/registerForm.js"></script>
+
+
+<%--<script>--%>
+<%--    const el = document.getElementsByClassName("discount_yon")--%>
+<%--    el.addEventListener("click",함수명,false)--%>
+
+<%--</script>--%>
+
 
 </body>
 

@@ -110,6 +110,8 @@
 
     </div>
 
+<%--    <img src="/book">--%>
+
     <div class="list_box row justify-content-center">
 
         <!-- Slide Testimonial Start -->
@@ -119,7 +121,7 @@
 
                     <c:forEach var="book" items="${bookList}">
                         <div class="testimonial-item rounded p-3">
-                            <img class="img-fluid flex-shrink-0 rounded" src="../../book_upload/image/${book.book_img}" alt="${book.book_img}란 이미지를 찾을 수 없습니다">
+                            <img class="img-fluid flex-shrink-0 rounded" src="/book-store/book-img/${book.book_img}" alt="${book.book_img}란 이미지를 찾을 수 없습니다">
                             <div class="d-flex align-items-center" style="flex-direction: column">
                                 <br>
                                 <h5 class="mb-1">${book.book_subject}</h5>
@@ -190,7 +192,7 @@
                         <li>
                             <div class="cover">
                                 <a href="#">
-                                    <img src="/book_upload/image/${book.book_img}" alt="${book.book_img}란 이미지를 찾을 수 없습니다"/>
+                                    <img src="/book-store/book-img/${book.book_img}" alt="${book.book_img}란 이미지를 찾을 수 없습니다"/>
                                 </a>
                             </div>
                             <div class="detail">
