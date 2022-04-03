@@ -1,9 +1,9 @@
 package com.finalproject.controller;
 
-import com.finalproject.dto.Book;
-import com.finalproject.service.BookStoreService;
-import org.apache.tomcat.util.codec.binary.Base64;
-import org.jsoup.Jsoup;
+import java.io.File;
+
+import javax.servlet.ServletContext;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,10 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.ServletContext;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.List;
+import com.finalproject.dto.Book;
+import com.finalproject.service.BookStoreService;
 
 @Controller
 @RequestMapping(value = "/book-store")

@@ -2,9 +2,12 @@ package com.finalproject.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.finalproject.dto.Study;
 import com.finalproject.dto.StudyTeam;
 
+@Service
 public class StudyServiceImpl implements StudyService {
 
 	@Override
