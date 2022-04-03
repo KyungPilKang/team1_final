@@ -95,106 +95,107 @@
 
     
 
-    <!-- Courses Start -->
+    <!-- 문의정보폼 시작 -->
     <div class="container-xxl py-5">
         <div class="container">
-
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">강사 1:1문의 작성 </h6>
-            </div>
-            
-            <div class="col-lg-7 col-md-7 text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="pt-5 pb-0">사용자ID 문의내역</h6>
-            </div>
-
-            <div class="row g-1 justify-content-center">
-                <span class="col-lg-2 col-md-2 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item bg-light">
-                        <div class="d-flex border-top">
-                            <small class="flex-fill text-center py-2">작성일</small>
-                        </div>
-                    </div>
-                </span>
-                <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="d-flex border-top">
-                            <small class="flex-fill text-left py-2 px-2">2020.01.22</small>
-                        </div>
-                </span>
-            </div>
-            <div class="row g-1 justify-content-center">
-                <span class="col-lg-2 col-md-2 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item bg-light">
-                        <div class="d-flex border-top">
-                            <small class="flex-fill text-center py-2">문의 유형</small>
-                        </div>
-                    </div>
-                </span>
-                <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="d-flex border-top">
-                            <small class="flex-fill text-left py-2 px-2">회원 탈퇴</small>
-                        </div>
-                </span>
-            </div>
-            <div class="row g-1 justify-content-center">
-                <span class="col-lg-2 col-md-2 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item bg-light">
-                        <div class="d-flex border-top">
-                            <small class="flex-fill text-center py-2">문의 제목</small>
-                        </div>
-                    </div>
-                </span>
-                <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="d-flex border-top">
-                            <small class="flex-fill text-left py-2 px-2">회원 탈퇴 문의</small>
-                        </div>
-                </span>
-            </div>
-            <div class="row g-1 justify-content-center">
-                <span class="col-lg-2 col-md-2 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item bg-light">
-                        <div class="d-flex border-top border-bottom">
-                            <small class="flex-fill text-center py-2">문의 내용</small>
-                        </div>
-                    </div>
-                </span>
-                <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="d-flex border-top border-bottom">
-                            <small class="flex-fill text-left py-2 px-2">회원탈퇴를 하고 싶은데 어떻게 탈퇴를 하면 되나요? 회원 탈퇴 결로를 알려주세요.</small>
-                        </div>
-                </span>
-            </div>
-
-            <div class="col-lg-7 col-md-7 text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="pt-5 pb-0">답변작성</h6>
-            </div>
-            <div class="row g-1 justify-content-center">
-                <span class="col-lg-2 col-md-2 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item bg-light">
-                        <div class="d-flex border-top">
-                            <small class="flex-fill text-center py-2">답변일</small>
-                        </div>
-                    </div>
-                </span>
-                <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="d-flex border-top">
-                            <small class="flex-fill text-left py-2 px-2">2020.01.22</small>
-                        </div>
-                </span>
-            </div>
-            <div class="row g-1 justify-content-center">
-                <span class="col-lg-2 col-md-2 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item bg-light">
-                        <div class="d-flex border-top border-bottom">
-                            <small class="flex-fill text-center py-5">답글 내용</small>
-                        </div>
-                    </div>
-                </span>
-                <span class="col-lg-5 col-md-10 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="d-flex border-top border-bottom">
-                            <small class="flex-fill text-left py-5 px-2">회원탈퇴를 하고 싶은데 어떻게 탈퇴를 하면 되나요? 회원 탈퇴 결로를 알려주세요.</small>
-                        </div>
-                </span>
-            </div>
+			<table id="table">
+	            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+	                <h6 class="section-title bg-white text-center text-primary px-3">강사 1:1문의 작성 </h6>
+	            </div>
+	            
+	            <div class="col-lg-7 col-md-7 text-center wow fadeInUp" data-wow-delay="0.1s">
+	                <h6 class="pt-5 pb-0">${username} 문의내역</h6>
+	            </div>
+	
+	            <div class="row g-1 justify-content-center">
+	                <span class="col-lg-2 col-md-2 wow fadeInUp" data-wow-delay="0.1s">
+	                    <div class="course-item bg-light">
+	                        <div class="d-flex border-top">
+	                            <small class="flex-fill text-center py-2">작성일</small>
+	                        </div>
+	                    </div>
+	                </span>
+	                <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
+	                        <div class="d-flex border-top">
+	                            <small class="flex-fill text-left py-2 px-2">${request_date}</small>
+	                        </div>
+	                </span>
+	            </div>
+	            <div class="row g-1 justify-content-center">
+	                <span class="col-lg-2 col-md-2 wow fadeInUp" data-wow-delay="0.1s">
+	                    <div class="course-item bg-light">
+	                        <div class="d-flex border-top">
+	                            <small class="flex-fill text-center py-2">문의 유형</small>
+	                        </div>
+	                    </div>
+	                </span>
+	                <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
+	                        <div class="d-flex border-top">
+	                            <small class="flex-fill text-left py-2 px-2">${request_type}</small>
+	                        </div>
+	                </span>
+	            </div>
+	            <div class="row g-1 justify-content-center">
+	                <span class="col-lg-2 col-md-2 wow fadeInUp" data-wow-delay="0.1s">
+	                    <div class="course-item bg-light">
+	                        <div class="d-flex border-top">
+	                            <small class="flex-fill text-center py-2">문의 제목</small>
+	                        </div>
+	                    </div>
+	                </span>
+	                <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
+	                        <div class="d-flex border-top">
+	                            <small class="flex-fill text-left py-2 px-2">${request_subject}</small>
+	                        </div>
+	                </span>
+	            </div>
+	            <div class="row g-1 justify-content-center">
+	                <span class="col-lg-2 col-md-2 wow fadeInUp" data-wow-delay="0.1s">
+	                    <div class="course-item bg-light">
+	                        <div class="d-flex border-top border-bottom">
+	                            <small class="flex-fill text-center py-2">문의 내용</small>
+	                        </div>
+	                    </div>
+	                </span>
+	                <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
+	                        <div class="d-flex border-top border-bottom">
+	                            <small class="flex-fill text-left py-2 px-2">${request_content}</small>
+	                        </div>
+	                </span>
+	            </div>
+	
+	            <div class="col-lg-7 col-md-7 text-center wow fadeInUp" data-wow-delay="0.1s">
+	                <h6 class="pt-5 pb-0">답변작성</h6>
+	            </div>
+	            <div class="row g-1 justify-content-center">
+	                <span class="col-lg-2 col-md-2 wow fadeInUp" data-wow-delay="0.1s">
+	                    <div class="course-item bg-light">
+	                        <div class="d-flex border-top">
+	                            <small class="flex-fill text-center py-2">답변일</small>
+	                        </div>
+	                    </div>
+	                </span>
+	                <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
+	                        <div class="d-flex border-top">
+	                            <small class="flex-fill text-left py-2 px-2">${answer_date}</small>
+	                        </div>
+	                </span>
+	            </div>
+	            <div class="row g-1 justify-content-center">
+	                <span class="col-lg-2 col-md-2 wow fadeInUp" data-wow-delay="0.1s">
+	                    <div class="course-item bg-light">
+	                        <div class="d-flex border-top border-bottom">
+	                            <small class="flex-fill text-center py-5">답글 내용</small>
+	                        </div>
+	                    </div>
+	                </span>
+	                <span class="col-lg-5 col-md-10 wow fadeInUp" data-wow-delay="0.1s">
+	                        <div class="d-flex border-top border-bottom">
+	                            <small class="flex-fill text-left py-5 px-2">${answer_content}</small>
+	                        </div>
+	                </span>
+	            </div>
+            </table>
 
             <div class="row g-1 justify-content-center py-5">
                 <span class="col-lg-1 col-md-3">
@@ -207,7 +208,9 @@
 
         </div>
     </div>
-    <!-- Courses End -->
+    <!-- 문의정보폼 끝 -->
+    
+  
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
