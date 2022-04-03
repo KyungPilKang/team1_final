@@ -129,6 +129,8 @@
                             </div>
                         </div>
                         <%-- 키워드 book_keyword --%>
+                            <%-- 여기를 키워드가 아닌 할인적용된 금액으로 변경예정--%>
+                            <%-- onchange? keyup? 이벤트를 사용해서 할인이 자동 적용되어 표시되도록 js 제어 --%>
                         <div class="col-sm-12 p-2">
                             <input type="text" id="book_keyword" name="book_keyword" class="form-control"
                                    placeholder="키워드 등록 (#JAVA #수학 #영어)">
