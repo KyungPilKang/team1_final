@@ -29,7 +29,8 @@
 
     <!-- Libraries Stylesheet -->
     <link href="${pageContext.request.contextPath}/resources/bookstore/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/resources/bookstore/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/bookstore/lib/owlcarousel/assets/owl.carousel.min.css"
+          rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="${pageContext.request.contextPath}/resources/bookstore/css/bootstrap.min.css" rel="stylesheet">
@@ -45,11 +46,14 @@
 <jsp:include page="/WEB-INF/views/bookstore/header.jsp"/>
 
 
-<div style="float:right; margin-right:100px; cursor: pointer; " class="btn btn-primary" onclick="location.href='/book-store/cart'">
+<div style="float:right; margin-right:100px; cursor: pointer; " class="btn btn-primary"
+     onclick="location.href='/book-store/cart'">
     <i class="fa-solid fa-cart-shopping"></i>
 </div>
 <div style="float:right; margin-right:-43px; margin-top:8px;">
-    <div style="background: red; width: 12px; height: 12px; font-size: 10px; color:white; display: flex; justify-content: center; align-items: center; border-radius: 100px;">0</div>
+    <div style="background: red; width: 12px; height: 12px; font-size: 10px; color:white; display: flex; justify-content: center; align-items: center; border-radius: 100px;">
+        0
+    </div>
 </div>
 <!-- Book List Start -->
 <div class="bookstore_container container-xxl py-5">
@@ -106,26 +110,26 @@
                 </li>
             </ul>
         </div>
-
-
     </div>
 
-<%--    <img src="/book">--%>
 
+    <%-- Book List Pagination Start --%>
     <div class="list_box row justify-content-center">
 
-        <!-- Slide Testimonial Start -->
+        <%-- Slide Testimonial Start--%>
         <div class="container-xxl py-2" style="margin-right:8vw;">
             <div class="container">
-                <div class="owl-carousel testimonial-carousel" style="display: flex; flex-direction: column; justify-content: center; width: 56vw;">
+                <div class="owl-carousel testimonial-carousel"
+                     style="display: flex; flex-direction: column; justify-content: center; width: 56vw;">
 
-                    <c:forEach var="book" items="${bookList}">
+                    <c:forEach var="book" items="${bookList}"  begin="0" end="4">
                         <div class="testimonial-item rounded p-3">
-                            <img class="img-fluid flex-shrink-0 rounded" src="/book-store/book-img/${book.book_img}" alt="${book.book_img}란 이미지를 찾을 수 없습니다">
+                            <img class="img-fluid flex-shrink-0 rounded" src="/book-store/book-img/${book.book_img}"
+                                 alt="${book.book_img}란 이미지를 찾을 수 없습니다">
                             <div class="d-flex align-items-center" style="flex-direction: column">
                                 <br>
                                 <h5 class="mb-1">${book.book_subject}</h5>
-                                <h3 class="mb-1"><fmt:formatNumber value="${book.book_price}" pattern="#,###" />원</h3>
+                                <h3 class="mb-1"><fmt:formatNumber value="${book.book_price}" pattern="#,###"/>원</h3>
                             </div>
                         </div>
                     </c:forEach>
@@ -133,66 +137,22 @@
                 </div>
             </div>
         </div>
-        <!-- Slide Testimonial End -->
+        <%-- Slide Testimonial End--%>
 
 
-        <!-- Slide Testimonial Start -->
-        <%--        <div class="container-xxl py-2" style="margin-right:8vw;">--%>
-        <%--            <div class="container">--%>
-        <%--                <div class="owl-carousel testimonial-carousel" style="display: flex; flex-direction: column; justify-content: center; width: 56vw;">--%>
-
-        <%--                    <div class="testimonial-item rounded p-3">--%>
-        <%--                            <img class="img-fluid flex-shrink-0 rounded" src="https://image.aladin.co.kr/product/19965/94/cover500/k642635843_1.jpg" alt="">--%>
-        <%--                        <div class="d-flex align-items-center" style="flex-direction: column">--%>
-        <%--                                <br>--%>
-        <%--                                <h5 class="mb-1">HTML5 웹프로그래밍 입문 3판</h5>--%>
-        <%--                                <h3 class="mb-1">26,000원</h3>--%>
-        <%--                        </div>--%>
-        <%--                    </div>--%>
+            <span style="display: flex; margin-left:4vw;"><jsp:include page="/WEB-INF/views/bookstore/pageList.jsp"/></span>
 
 
-        <%--                    <div class="testimonial-item rounded p-3">--%>
-        <%--                        <img class="img-fluid flex-shrink-0 rounded" src="https://image.aladin.co.kr/product/29009/25/cover500/k452836425_1.jpg" alt="">--%>
-        <%--                        <div class="d-flex align-items-center" style="flex-direction: column">--%>
-        <%--                            <br>--%>
-        <%--                            <h5 class="mb-1">HTML5 웹프로그래밍 입문 3판</h5>--%>
-        <%--                            <h3 class="mb-1">26,000원</h3>--%>
-        <%--                        </div>--%>
-        <%--                    </div>--%>
 
-
-        <%--                    <div class="testimonial-item rounded p-3">--%>
-        <%--                        <img class="img-fluid flex-shrink-0 rounded" src="https://image.aladin.co.kr/product/19965/94/cover500/k642635843_1.jpg" alt="">--%>
-        <%--                        <div class="d-flex align-items-center" style="flex-direction: column">--%>
-        <%--                            <br>--%>
-        <%--                            <h5 class="mb-1">HTML5 웹프로그래밍 입문 3판</h5>--%>
-        <%--                            <h3 class="mb-1">26,000원</h3>--%>
-        <%--                        </div>--%>
-        <%--                    </div>--%>
-
-
-        <%--                    <div class="testimonial-item rounded p-3">--%>
-        <%--                        <img class="img-fluid flex-shrink-0 rounded" src="https://image.aladin.co.kr/product/29009/25/cover500/k452836425_1.jpg" alt="">--%>
-        <%--                        <div class="d-flex align-items-center" style="flex-direction: column">--%>
-        <%--                            <br>--%>
-        <%--                            <h5 class="mb-1">HTML5 웹프로그래밍 입문 3판</h5>--%>
-        <%--                            <h3 class="mb-1">26,000원</h3>--%>
-        <%--                        </div>--%>
-        <%--                    </div>--%>
-        <%--                    --%>
-        <%--                </div>--%>
-        <%--            </div>--%>
-        <%--        </div>--%>
-        <!-- Slide Testimonial End -->
-
-        <c:choose>
+            <c:choose>
             <c:when test="${bookList!=null &&  pageInfo.listCount>0}">
                 <ul class="book_list">
                     <c:forEach var="book" items="${bookList}">
                         <li>
                             <div class="cover">
                                 <a href="#">
-                                    <img src="/book-store/book-img/${book.book_img}" alt="${book.book_img}란 이미지를 찾을 수 없습니다"/>
+                                    <img src="/book-store/book-img/${book.book_img}"
+                                         alt="${book.book_img}란 이미지를 찾을 수 없습니다"/>
                                 </a>
                             </div>
                             <div class="detail">
@@ -211,7 +171,10 @@
 
                                 <div class="info">
                                 <span class="org_price"
-                                      style="text-decoration: line-through;"><fmt:formatNumber value="${book.book_price}" pattern="#,###" />원</span> → <strong class="sell_price"><fmt:formatNumber value="${book.book_price}" pattern="#,###" />원</strong>
+                                      style="text-decoration: line-through;"><fmt:formatNumber
+                                        value="${book.book_price}" pattern="#,###"/>원</span> → <strong
+                                        class="sell_price"><fmt:formatNumber value="${book.book_price}"
+                                                                             pattern="#,###"/>원</strong>
                                     <span class="dc_rate">[<strong>${book.book_discount}</strong>%↓]</span>
                                 </div>
                                 <br>
@@ -228,141 +191,47 @@
                             </div>
                         </li>
                     </c:forEach>
-
-
                 </ul>
             </c:when>
+            <c:otherwise>
+                <section id="emptyArea">등록된 책이 존재하지 않습니다.</section>
+            </c:otherwise>
         </c:choose>
 
+    <jsp:include page="/WEB-INF/views/bookstore/pageList.jsp"/>
 
-        <%--================================================================--%>
-        <%-- 2안 --%>
-        <%--================================================================--%>
-        <%--        <ul class="book_list">--%>
-
-        <%--            <li>--%>
-        <%--                <div class="cover">--%>
-        <%--                    <a href="#">--%>
-        <%--                        <img src="https://image.aladin.co.kr/product/19965/94/cover500/k642635843_1.jpg"--%>
-        <%--                             alt="HTML5 웹프로그래밍 입문 3판">--%>
-        <%--                    </a>--%>
-        <%--                </div>--%>
-        <%--                <div class="detail">--%>
-        <%--                    <div class="title">--%>
-        <%--                        <a href="#"><strong>HTML5 웹프로그래밍 입문 3판</strong>--%>
-        <%--                        </a>--%>
-        <%--                    </div>--%>
-
-        <%--                    <div class="author">--%>
-        <%--                        윤인성(지은이)--%>
-        <%--                        <span class="line">|</span>--%>
-        <%--                        한빛아카데미(출판사)--%>
-        <%--                        <span class="line">|</span>--%>
-        <%--                        2019년 7월--%>
-        <%--                    </div>--%>
-
-        <%--                    <div class="info">--%>
-        <%--                        <strike class="org_price">26,000원</strike> → <strong class="sell_price">26,000원</strong>--%>
-        <%--                        <span class="dc_rate">[<strong>0</strong>%↓]</span>--%>
-        <%--                    </div>--%>
-        <%--                    <br>--%>
-        <%--                    <br>--%>
-        <%--                    <div class="button">--%>
-        <%--                        <a href="#" class="btn-sm btn-primary">--%>
-        <%--                            상세보기--%>
-        <%--                        </a>--%>
-        <%--                    </div>--%>
-        <%--                </div>--%>
-        <%--                <div class="book_add">--%>
-        <%--                    <a class="btn-sm btn-primary">장바구니 담기</a>--%>
-        <%--                    <a class="btn-sm btn-primary">바로 구매하기</a>--%>
-        <%--                </div>--%>
-        <%--            </li>--%>
-
-
-        <%--            <li>--%>
-        <%--                <div class="cover">--%>
-        <%--                    <a href="#">--%>
-        <%--                        <img src="https://image.aladin.co.kr/product/29009/25/cover500/k452836425_1.jpg"--%>
-        <%--                             alt="Power JAVA 3판">--%>
-        <%--                    </a>--%>
-        <%--                </div>--%>
-        <%--                <div class="detail">--%>
-        <%--                    <div class="title">--%>
-        <%--                        <a href="#"><strong>Power JAVA (3판)</strong>--%>
-        <%--                        </a>--%>
-        <%--                    </div>--%>
-
-        <%--                    <div class="author">--%>
-        <%--                        천인국(지은이)--%>
-        <%--                        <span class="line">|</span>--%>
-        <%--                        인피니티북스(출판사)--%>
-        <%--                        <span class="line">|</span>--%>
-        <%--                        2022년 2월--%>
-        <%--                    </div>--%>
-
-        <%--                    <div class="info">--%>
-        <%--                        <strike class="org_price">40,000원</strike> → <strong class="sell_price">36,000원</strong>--%>
-        <%--                        <span class="dc_rate">[<strong>10</strong>%↓]</span>--%>
-        <%--                    </div>--%>
-        <%--                    <br>--%>
-        <%--                    <br>--%>
-        <%--                    <div class="button">--%>
-        <%--                        <a href="#" class="btn-sm btn-primary">--%>
-        <%--                            상세보기--%>
-        <%--                        </a>--%>
-        <%--                    </div>--%>
-        <%--                </div>--%>
-        <%--                <div class="book_add">--%>
-        <%--                    <a class="btn-sm btn-primary">장바구니 담기</a>--%>
-        <%--                    <a class="btn-sm btn-primary">바로 구매하기</a>--%>
-        <%--                </div>--%>
-        <%--            </li>--%>
-
-        <%--            <li>--%>
-        <%--                <div class="cover">--%>
-        <%--                    <a href="#">--%>
-        <%--                        <img src="https://image.aladin.co.kr/product/29009/25/cover500/k452836425_1.jpg"--%>
-        <%--                             alt="Power JAVA 3판">--%>
-        <%--                    </a>--%>
-        <%--                </div>--%>
-        <%--                <div class="detail">--%>
-        <%--                    <div class="title">--%>
-        <%--                        <a href="#"><strong>Power JAVA (3판)</strong>--%>
-        <%--                        </a>--%>
-        <%--                    </div>--%>
-
-        <%--                    <div class="author">--%>
-        <%--                        천인국(지은이)--%>
-        <%--                        <span class="line">|</span>--%>
-        <%--                        인피니티북스(출판사)--%>
-        <%--                        <span class="line">|</span>--%>
-        <%--                        2022년 2월--%>
-        <%--                    </div>--%>
-
-        <%--                    <div class="info">--%>
-        <%--                        <strike class="org_price">40,000원</strike> → <strong class="sell_price">36,000원</strong>--%>
-        <%--                        <span class="dc_rate">[<strong>10</strong>%↓]</span>--%>
-        <%--                    </div>--%>
-        <%--                    <br>--%>
-        <%--                    <br>--%>
-        <%--                    <div class="button">--%>
-        <%--                        <a href="#" class="btn-sm btn-primary">--%>
-        <%--                            상세보기--%>
-        <%--                        </a>--%>
-        <%--                    </div>--%>
-        <%--                </div>--%>
-        <%--                <div class="book_add">--%>
-        <%--                    <a class="btn-sm btn-primary">장바구니 담기</a>--%>
-        <%--                    <a class="btn-sm btn-primary">바로 구매하기</a>--%>
-        <%--                </div>--%>
-        <%--            </li>--%>
-        <%--        </ul>--%>
+<%--        <section id="pageList" style="display: flex; justify-content: center">--%>
+<%--            <c:choose>--%>
+<%--                <c:when test="${pageInfo.page<=1}">--%>
+<%--                    [이전]&nbsp;--%>
+<%--                </c:when>--%>
+<%--                <c:otherwise>--%>
+<%--                    <a href="/book-store?page=${pageInfo.page-1}">[이전]</a>&nbsp;--%>
+<%--                </c:otherwise>--%>
+<%--            </c:choose>--%>
+<%--            <c:forEach var="i" begin="${pageInfo.startPage }" end="${pageInfo.endPage }">--%>
+<%--                <c:choose>--%>
+<%--                    <c:when test="${pageInfo.page==i }">[${i }]</c:when>--%>
+<%--                    <c:otherwise>--%>
+<%--                        <a href="/book-store?page=${i}">[${i }]</a>--%>
+<%--                    </c:otherwise>--%>
+<%--                </c:choose>--%>
+<%--            </c:forEach>--%>
+<%--            <c:choose>--%>
+<%--                <c:when test="${pageInfo.page>=pageInfo.maxPage }">--%>
+<%--                    [다음]--%>
+<%--                </c:when>--%>
+<%--                <c:otherwise>--%>
+<%--                    <a href="/book-store?page=${pageInfo.page+1}">[다음]</a>--%>
+<%--                </c:otherwise>--%>
+<%--            </c:choose>--%>
+<%--        </section>--%>
 
 
     </div>
 </div>
-<!-- Book List End -->
+
+<!-- Book List Pagination End -->
 
 <jsp:include page="/WEB-INF/views/bookstore/footer.jsp"/>
 
@@ -380,25 +249,6 @@
 <!-- Template Javascript -->
 <script src="${pageContext.request.contextPath}/resources/bookstore/js/main.js"></script>
 
-<%-- modal JS --%>
-<%--        <script src="${pageContext.request.contextPath}/resources/bookstore/js/modal.js"></script>--%>
-
-
-<%-- 단위 표시 JS--%>
-<%--<script>--%>
-<%--    $(document).on("focusout", "input:text[koreanCurrency]", function()   {--%>
-<%--        $(this).val( $(this).val().replace(",","") );--%>
-<%--        $(this).val( $(this).val().replace(/[^-\.0-9]/gi,"") );--%>
-<%--        $(this).val( $(this).val().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") );--%>
-<%--        if($(this).val() != '' ) {--%>
-<%--            $(this).val( $(this).val()+'원');--%>
-<%--        }--%>
-<%--    });--%>
-
-<%--    $(document).on("focus", "input:text[koreanCurrency]", function()   {--%>
-<%--        $(this).val( $(this).val().replace("원", ""));--%>
-<%--    });--%>
-<%--</script>--%>
 
 </body>
 
