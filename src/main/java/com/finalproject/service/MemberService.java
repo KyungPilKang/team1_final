@@ -10,4 +10,5 @@ public interface MemberService {
 	public boolean emailCheck(String email) throws Exception;
 	public boolean usernameCheck(String username) throws Exception;
 	public boolean nicknameCheck(String nickname) throws Exception;
+	
 }

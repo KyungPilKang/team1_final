@@ -33,7 +33,7 @@ public class StudyController {
 	@Autowired
 	private MemberService memberService;
 	
-	@Autowired 
+	@Autowired (required=false)
 	private StudyService studyservice;
 
 	//스터디메인

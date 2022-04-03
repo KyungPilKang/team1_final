@@ -107,7 +107,7 @@ public class NaverController {
 				// email = naverInfo.Response().getEmail();
 				System.out.println("provider_id:"+naverInfo.getResponse().getId());
 				System.out.println("email:"+naverInfo.getResponse().getEmail());				
-			 return response2.getBody();
+			 return "ok";
 	}
 
 
