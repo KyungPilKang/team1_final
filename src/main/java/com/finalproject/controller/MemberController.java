@@ -99,16 +99,9 @@ public class MemberController {
 	return "/loginJoin/modifyPassword";	
 	}
 	
-	@PostMapping("modify")
-	public ModelAndView modify(@ModelAttribute Member member) {
-		ModelAndView mav = new ModelAndView();
-		try {
-			memberService.insertMember(member);
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		mav.setViewName("home");
-		return mav;
+	@GetMapping("modify")
+	public String modify() {
+		return "/loginJoin/modifyForm";
 	}
 	
 }
