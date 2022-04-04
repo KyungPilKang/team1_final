@@ -21,8 +21,20 @@ public class BookStoreServiceImpl implements BookStoreService{
 
     @Override
     public List<Book> getBookList(int page, PageInfo pageInfo) throws Exception {
-        return null;
+        int listCount = bookDAO.selectBookCount();
+        int maxPage = (int)Math.ceil((double)listCount/10);
+        int startPage=((int)((double)page/10+0.9)-1)*10+1;
+        int endPage=startPage+10-1;
+        if(endPage>maxPage) endPage=maxPage;
+        pageInfo.setStartPage(startPage);
+        pageInfo.setEndPage(endPage);
+        pageInfo.setMaxPage(maxPage);
+        pageInfo.setPage(page);
+        pageInfo.setListCount(listCount);
+        int startrow = (page-1)*10+1;
+        return bookDAO.selectBookList(startrow);
     }
+
 
 
 }

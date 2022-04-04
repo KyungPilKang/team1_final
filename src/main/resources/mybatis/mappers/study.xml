@@ -2,16 +2,34 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.finalproject.StudyDAO">
-<!-- study 전체게시물 조회 -->
-	
-<!-- study 등록 -->
 
+
+
+<mapper namespace="com.finalproject.StudyDAO">
+<!-- study 신청 상태값 -->
+	 <select id="searchStudyByStatus" resultType="String" parameterType="Map">
+		<![CDATA[
+			select * from study where #{study_no} in (SELECT #{study_no} from studyteam where user_id = #{user_id} and team_status=#{team_status});
+	  	]]>
+	 </select>
+<!-- 등록 -->
+	<insert id="regstudy" parameterType="Study">
+		<![CDATA[
+			insert into study values (#{maker},#{study_sname},#{study_grade},#{study_subject},#{study_type},#{study_target_level},#{study_title},#{study_fdate},#{study_edate},#{study_ftime},#{study_etime},#{study_contents},#{study_kakao},#{study_regdate}) 
+        ]]>
+	</insert>
+<!-- 전체게시글조회 -->	
+	<select id="regstudylist" resultType="study">
+    	<![CDATA[
+			select * from study order by study_regdate desc
+    	]]>
+	</select>
+</mapper>
 <!-- study 검색 -->
 
 <!-- study 참여/참여취소 -->
 
-</mapper>
+
 
  
 <!-- 
@@ -34,5 +52,25 @@ create table study(
     study_regdate DATETIME DEFAULT CURRENT_TIMESTAMP
 ); 
 
+
+select * from study where study_no in (SELECT study_no from studyteam where user_id = '김민정' and team_status='team_apply');
+insert into study (maker, study_sname, study_grade, study_subject, study_type, study_target_level, study_title, study_fdate, study_edate, study_ftime, study_etime, study_contents, study_kakao, study_regdate) values('김길동', '중학교','1학년','국어','모의고사','최상','비문학배우기','2022-04-01','2022-04-25','08:00', '10:00', '비문학뿌시기','http://alsdk','2022-04-01 16:00:00');
+update study set maker='홍길동', study_sname='초등학교',study_grade='1학년',study_subject='수학',study_type='모의고사',study_target_level='최상',study_title='비문학배우기',study_fdate='2022-04-01',study_edate='2022-04-25',study_ftime='08:00', study_etime='10:00', study_contents= '로그파헤치기',study_kakao='http://alsdk',study_regdate='2022-04-01 16:00:00' where study_no = 3;
+delete from study where study_no=3;
+
+	<update id="updateStudy" parameterType="study" >
+		<![CDATA[
+			update study set maker=#{maker}, study_sname=#{study_sname},study_grade=#{study_grade},study_subject=#{study_subject},study_type=#{study_type},,study_target_level=#{study_target_level},study_title=#{study_title},study_fdate=#{study_fdate},study_edate=#{study_edate},study_ftime=#{study_ftime}, study_etime=#{study_etime}, study_contents= #{study_contents},study_kakao=#{study_kakao} 
+			where study_no=#{study_no}
+		]]>
+	</update>
+	
+	<delete id="removeStudy" parameterType="int">
+		<![CDATA[
+			delete from study where study_no=#{study_no}
+		]]>
+	</delete>
+	
+	
 
 -->

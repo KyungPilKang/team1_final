@@ -5,11 +5,18 @@ import com.finalproject.dto.PageInfo;
 import com.finalproject.service.BookStoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.URLEncoder;
 import java.util.List;
 
 @Controller
@@ -23,10 +30,10 @@ public class BookController {
     private ServletContext servletContext;
 
 
-    @GetMapping("")
-    public String mainpage() {
-        return "/bookstore/bookStore";
-    }
+//    @GetMapping("")
+//    public String mainpage() {
+//        return "/bookstore/bookStore";
+//    }
 
 
     @RequestMapping("/juso")
@@ -40,7 +47,7 @@ public class BookController {
     }
 
 
-    @RequestMapping(value = "/booklist", method = {RequestMethod.GET, RequestMethod.POST})
+    @RequestMapping(value = "", method = {RequestMethod.GET, RequestMethod.POST})
     public ModelAndView boardlist(@RequestParam(value = "page", defaultValue = "1") int page) {
         ModelAndView mv = new ModelAndView();
         PageInfo pageInfo = new PageInfo();
@@ -78,6 +85,42 @@ public class BookController {
             mv.addObject("err", e.getMessage());
         }
         return mv;
+    }
+
+
+    @GetMapping(value = "/book-img/{filename}")
+    public void image(@PathVariable String filename, HttpServletRequest request, HttpServletResponse response) {
+        String path = servletContext.getRealPath("/book_upload/image/");
+        File file = new File(path + filename);
+        String sfilename = null;
+        FileInputStream fis = null;
+        try {
+            /* HttpServletRequest request */
+            if (request.getHeader("User-Agent").indexOf("MSIE") > -1) {
+                sfilename = URLEncoder.encode(file.getName(), "utf-8");
+            } else {
+                sfilename = new String(file.getName().getBytes("utf-8"), "ISO-8859-1");
+            }
+            /* HttpServletResponse response */
+            response.setCharacterEncoding("utf-8");
+            response.setContentType("application/octet-stream;charset=utf-8");
+            response.setHeader("Content-Disposition", "attachment; filename=" + sfilename);
+
+            OutputStream out = response.getOutputStream();
+            fis = new FileInputStream(file);
+            FileCopyUtils.copy(fis, out);
+            out.flush();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (fis != null) {
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
 

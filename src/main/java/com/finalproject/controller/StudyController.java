@@ -193,7 +193,7 @@ public class StudyController {
 		try {
 		session.setAttribute("regstudy", inputstudy);
 		mav.setViewName("study/studyRegCheck");
-		}  catch(Exception e){
+		}catch(Exception e){
 			e.printStackTrace();
 		}
 		return mav; 
@@ -202,10 +202,14 @@ public class StudyController {
 	@PostMapping("studyreg")
 	public ModelAndView regstudy() {
 		ModelAndView mav=new ModelAndView();
+		try {
 		Study cnfstudy=(Study)session.getAttribute("regstudy");
 		session.removeAttribute("regstudy");
 		System.out.println("등록확인후 등록요청:"+cnfstudy.toString());
-		mav.setViewName("study/studymakermain");
+		mav.setViewName("study/studymain");
+		}catch(Exception e){
+			e.printStackTrace();
+		}		
 		return mav;
 	}
 	
@@ -225,6 +229,8 @@ public class StudyController {
 	}
 	
 
+	    
+	
 	
 		
 }

@@ -464,7 +464,7 @@
 				interval : 10,
 				minTime : '8',
 				maxTime : '11:59pm',
-				defaultTime : '9',
+				defaultTime : '8',
 				startTime : '08:00',
 				dynamic : false,
 				dropdown : true,
@@ -477,7 +477,7 @@
 				interval : 10,
 				minTime : '8',
 				maxTime : '11:59pm',
-				defaultTime : '9',
+				defaultTime : '8',
 				startTime : '08:00',
 				dynamic : false,
 				dropdown : true,
@@ -513,9 +513,11 @@
 		 <js 에서 추가 처리해야할 부분> 
 		 1. 초등/중등 학년 분리해서 받기 
 		 2. 마지막날짜가 시작날짜를 앞서지 않기 
-		 3. 마지막시간이 시작날짜를 앞서지 않기 
-		 4. 스터디제목/오픈링크/상세내용에서 엔터키 먹히지 않게 하기 
-
+		 3. 마지막시간이 시작시간을 앞서지 않기 
+		 4. 스터디제목/오픈링크/상세내용에서 엔터키(키코드) 먹히지 않게 하기, preventdefault
+		 5. 스터디 개설이 없는 사람들의 경우, 해당 table에 session 이 null 일때, alert 로 "스터디를 개설해주세요" 알림
+		 6. 스터디등교에서 참여하지 않으면 등교 alert "스터디에 참여해보세요" 알림 
+		 
 		 
 		 */
 	</script>

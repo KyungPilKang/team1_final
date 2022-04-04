@@ -2,11 +2,34 @@
 function register() {
     let content = editor.getHTML();
     let cat = $('#book_cat').val();
+    let author = $('#book_author').val();
+    let publisher = $('#book_publisher').val();
     let subject = $('#book_subject').val();
     let price = $('#book_price').val();
     let count = $('#book_count').val();
+    let dcRate = $('#book_discount').val();
     $("#book_content").val(content);
     if (!(cat === "" || cat === "none")) {
+        if (author === "") {
+            Swal.fire({
+                title: "입력 오류",
+                text: "작가명을 입력하세요",
+                icon: "error",
+                confirmButtonText: "확인"
+            });
+            $('#book_author').focus()
+            return false;
+        }
+        if (publisher === "") {
+            Swal.fire({
+                title: "입력 오류",
+                text: "출판사명을 입력하세요",
+                icon: "error",
+                confirmButtonText: "확인"
+            });
+            $('#book_publisher').focus()
+            return false;
+        }
         if (price === "") {
             Swal.fire({
                 title: "입력 오류",
@@ -14,12 +37,13 @@ function register() {
                 icon: "error",
                 confirmButtonText: "확인"
             });
+            $('#book_price').focus()
             return false;
         }
-        if (count === "") {
+        if ($("input[name=yon]:checked").val() === "yes" && dcRate === "0") {
             Swal.fire({
                 title: "입력 오류",
-                text: "수량을 입력하세요",
+                text: "할인율을 설정하세요",
                 icon: "error",
                 confirmButtonText: "확인"
             });
@@ -70,3 +94,16 @@ function readURL(input) {
         document.getElementById('pv_img').src = "";
     }
 }
+
+
+// Discount Or Not
+let discount = $("#book_discount");
+$(document).ready(function () {
+    $("input:radio[name=yon]").click(function () {
+        if ($("input[name=yon]:checked").val() === "yes") {
+            $(discount).attr("disabled", false);
+        } else if ($("input[name=yon]:checked").val() === "no") {
+            $(discount).attr("disabled", true);
+        }
+    });
+});

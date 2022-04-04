@@ -96,10 +96,10 @@
 				<hr>
 				<div class="container mt-3">
 					<div class="row g-3">
-						<div class="col-8">
+						<div class="col-10">
 							<h5 style="color:red;">* 현재 비밀번호를 입력한 후, 새로 사용할 비밀번호를 입력하세요.</h5>
 						</div>
-						<div class="col-4"></div>
+						<div class="col-2"></div>
 						<div class="col-3">
 							<h5>현재 비밀번호</h5>
 						</div>
