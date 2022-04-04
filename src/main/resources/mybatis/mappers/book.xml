@@ -8,8 +8,8 @@
 		<![CDATA[
 		insert into book
 		values (#{book_num}, #{book_price}, #{book_cat}, #{book_subject}, #{book_content}, #{book_img},
-				now(), #{book_modDate}, #{book_count}, #{book_sales}, #{book_keyword}, #{book_author},
-				#{book_publisher}, #{book_discount})
+				now(), #{book_modDate}, #{book_count}, #{book_sales}, #{book_author},
+				#{book_publisher}, #{book_discount}, #{book_reprice})
 		]]>
 	</insert>
 
@@ -34,7 +34,7 @@
 
 
 		<!--
-        CREATE TABLE `book` (
+   		  CREATE TABLE `book` (
           `book_num` int NOT NULL AUTO_INCREMENT,
           `book_price` int DEFAULT NULL,
           `book_cat` varchar(1000) DEFAULT NULL,
@@ -45,10 +45,10 @@
           `book_modDate` datetime DEFAULT NULL,
           `book_count` int DEFAULT NULL,
           `book_sales` int DEFAULT NULL,
-          `book_keyword` varchar(1000) DEFAULT NULL,
           `book_author` varchar(1000) DEFAULT NULL,
           `book_publisher` varchar(1000) DEFAULT NULL,
           `book_discount` int DEFAULT NULL,
+          `book_reprice` int DEFAULT NULL,
           PRIMARY KEY (`book_num`)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
         -->
