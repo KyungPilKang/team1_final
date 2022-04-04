@@ -109,9 +109,15 @@
                     <div class="navbar-name">- 교재 목록 -</div>
                 </div>
                 <div class="navbar-bt">
-                    <div><a href="/studentpagedefult">홈</a></div>
-                    <div><a href="/studentpagequick">교재 목록</a></div>
-                    <div><a href="/studentpagestudy">스터디</a></div>
+                    <div>
+                        <button type="button" onclick="location.href='/studentpagedefult'">홈</button>
+                    </div>
+                    <div>
+                        <button type="button" onclick="location.href='/studentpagequick'">배송 목록</button>
+                    </div>
+                    <div>
+                        <button type="button" onclick="location.href='/studentpagestudy'">스터디</button>
+                    </div>
                 </div>
             </div>
             <div class="default-intro">

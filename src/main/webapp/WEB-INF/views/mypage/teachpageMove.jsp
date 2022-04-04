@@ -109,9 +109,15 @@
                     <div class="navbar-name">- 강의 목록 -</div>
                 </div>
                 <div class="navbar-bt">
-                    <div><a href="/teachpagedefult">홈</a></div>
-                    <div><a href="/teachpagemove">강의 목록</a></div>
-                    <div><a href="/teachpagerequest">요청 목록</a></div>
+                    <div>
+                        <button type="button" onclick="location.href='/teachpagedefult'">홈</button>
+                    </div>
+                    <div>
+                        <button type="button" onclick="location.href='/teachpagemove'">강의 목록</button>
+                    </div>
+                    <div>
+                        <button type="button" onclick="location.href='/teachpagerequest'">요청 목록</button>
+                    </div>
                 </div>
             </div>
             <div class="default-intro">

@@ -109,9 +109,9 @@
                     <div class="navbar-name">- 제작 목록 -</div>
                 </div>
                 <div class="navbar-bt">
-                    <div><a href="/mypage">홈</a></div>
-                    <div><a href="/freelancepagemakemove">제작 목록</a></div>
-                    <div><a href="/freelancepagereview">리뷰 목록</a></div>
+                    <div><button type="button" onclick="location.href='/freelancedefult'">홈</button></div>
+                    <div><button type="button" onclick="location.href='/freelancepagemakemove'">제작 목록</button></div>
+                    <div><button type="button" onclick="location.href='/freelancepagereview'">리뷰 목록</button></div>
                 </div>
             </div>
             <div class="default-intro">

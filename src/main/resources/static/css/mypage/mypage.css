@@ -65,32 +65,19 @@
     align-items: center;
 }
 
-.navbar-bt div {
+.navbar-bt div button {
     border: 5px solid white;
-    background-color: white;
     border-radius: 10px;
-    margin: 10px;
-    width: 350px;
-    transition: all 0.5s ease-in-out;
-    cursor: pointer;
-}
-
-.navbar-bt div:hover {
-    background-color: var(--main-color);
-    border: 5px solid var(--sub-color);
-    border-radius: 10px;
-}
-
-.navbar-bt div a {
-    border: 50px solid white;
+    height: 135px;
+    width: 350px ;
     color: black;
     transition: all 0.5s ease-in-out;
     cursor: pointer;
 }
 
-.navbar-bt div a:hover {
+.navbar-bt div button:hover {
     color: var(--sub-color);
-    border: 50px solid var(--main-color);
+    background-color: var(--main-color);
 }
 
 .subnavbar div {
