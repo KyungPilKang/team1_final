@@ -1,5 +1,13 @@
 package com.finalproject.service;
 
-public interface AdminService {
+import java.util.List;
 
+public interface AdminService {
+	
+	
+	
+//	List<Qnainfo> getQnaInfoList() throws Exception;
+	
+	
+	
 }
