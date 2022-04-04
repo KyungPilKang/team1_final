@@ -12,6 +12,7 @@
 		<mapper resource="mybatis/mappers/request.xml"/>
 		<mapper resource="mybatis/mappers/answer.xml"/>
 		<mapper resource="mybatis/mappers/study.xml"/>
+		<mapper resource="mybatis/mappers/studyteam.xml"/>
 	</mappers>
 </configuration>
 

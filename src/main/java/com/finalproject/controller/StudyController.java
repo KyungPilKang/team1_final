@@ -94,19 +94,20 @@ public class StudyController {
 	}
 
 	// (2)개설자가 상세글보기 클릭시 보여지는 페이지
+	//추후 post 변경 
 	@GetMapping("studymakerdetail")
 	public String studymakerdetail() {
 		return "study/studymakerdetail";
 	}
 
 	// (1)검색페이지전환
-	@RequestMapping("/studyfind")
+	@GetMapping("/studyfind")
 	public String studyfind() {
 		return "study/studyfind";
 	}
 
 	// (2)검색 다음버튼
-	@PostMapping("studyfindform")
+	@GetMapping("studyfindform")
 	public ModelAndView studyfindform(@ModelAttribute Study inputstudy) {
 		ModelAndView mav = new ModelAndView();
 		System.out.println("매칭확인요청:" + inputstudy.toString());
@@ -120,7 +121,7 @@ public class StudyController {
 	}
 
 	// (3)검색값 확인후 result페이지 반환
-	@PostMapping("studyfindcnf")
+	@GetMapping("studyfindcnf")
 	public ModelAndView studyfindcnf(@ModelAttribute Study inputstudy) {
 		ModelAndView mav = new ModelAndView();
 		// 검색값 등록
