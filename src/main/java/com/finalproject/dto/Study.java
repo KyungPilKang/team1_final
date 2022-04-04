@@ -1,5 +1,7 @@
 package com.finalproject.dto;
 
+import java.sql.Timestamp;
+
 public class Study {
 	public int study_no; 
 	private String maker; 
@@ -19,26 +21,26 @@ public class Study {
 	
 	public Study() {}
 
-	public Study(int study_no, String maker, String study_sname, String study_grade, String study_subject,
-			String study_type, String study_target_level, String study_title, String study_fdate, String study_edate,
-			String study_ftime, String study_etime, String study_contents, String study_kakao, String study_regdate) {
-		super();
-		this.study_no = study_no;
-		this.maker = maker;
-		this.study_sname = study_sname;
-		this.study_grade = study_grade;
-		this.study_subject = study_subject;
-		this.study_type = study_type;
-		this.study_target_level = study_target_level;
-		this.study_title = study_title;
-		this.study_fdate = study_fdate;
-		this.study_edate = study_edate;
-		this.study_ftime = study_ftime;
-		this.study_etime = study_etime;
-		this.study_contents = study_contents;
-		this.study_kakao = study_kakao;
-		this.study_regdate = study_regdate;
-	}
+//	public Study(int study_no, String maker, String study_sname, String study_grade, String study_subject,
+//			String study_type, String study_target_level, String study_title, String study_fdate, String study_edate,
+//			String study_ftime, String study_etime, String study_contents, String study_kakao, String study_regdate) {
+//		super();
+//		this.study_no = study_no;
+//		this.maker = maker;
+//		this.study_sname = study_sname;
+//		this.study_grade = study_grade;
+//		this.study_subject = study_subject;
+//		this.study_type = study_type;
+//		this.study_target_level = study_target_level;
+//		this.study_title = study_title;
+//		this.study_fdate = study_fdate;
+//		this.study_edate = study_edate;
+//		this.study_ftime = study_ftime;
+//		this.study_etime = study_etime;
+//		this.study_contents = study_contents;
+//		this.study_kakao = study_kakao;
+//		this.study_regdate = study_regdate;
+//	}
 
 	public int getStudy_no() {
 		return study_no;

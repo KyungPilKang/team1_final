@@ -104,10 +104,10 @@
 						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto">
 							<div class="row g-3">
 								<div class="col-12">
-									<input id="study_sname_1" type="radio" class="btn-check" name="study_sname" value="1" />
+									<input id="study_sname_1" type="radio" class="btn-check" name="study_sname" value="초등학생" />
 									<label for="study_sname_1" class="btn btn-outline-primary w-100 py-3">초등학생</label> <br>
 									<br>
-									<input id="study_sname_2" type="radio" class="btn-check" name="study_sname" value="2" />
+									<input id="study_sname_2" type="radio" class="btn-check" name="study_sname" value="중학생" />
 									<label for="study_sname_2" class="btn btn-outline-primary w-100 py-3">중학생</label> <br>
 									<br>
 								</div>
@@ -126,22 +126,22 @@
 									<h5 class="section-title bg-white text-center text-primary px-3">학년</h5>
 									<h1 class="mb-5 mt-2">몇학년의 스터디로 찾아볼까요?</h1>
 									<div style="align-items: center; margin-top: 20px;">
-										<input id="study_grade_1" type="radio" class="btn-check" name="study_grade" value="1" />
+										<input id="study_grade_1" type="radio" class="btn-check" name="study_grade" value="1학년" />
 										<label for="study_grade_1" class="btn btn-outline-primary w-100 py-3">1학년</label> <br>
 										<br>
-										<input id="study_grade_2" type="radio" class="btn-check" name="study_grade" value="2" />
+										<input id="study_grade_2" type="radio" class="btn-check" name="study_grade" value="2학년" />
 										<label for="study_grade_2" class="btn btn-outline-primary w-100 py-3">2학년</label> <br>
 										<br>
-										<input id="study_grade_3" type="radio" class="btn-check" name="study_grade" value="3" />
+										<input id="study_grade_3" type="radio" class="btn-check" name="study_grade" value="3학년" />
 										<label for="study_grade_3" class="btn btn-outline-primary w-100 py-3">3학년</label> <br>
 										<br>
-										<input id="study_grade_4" type="radio" class="btn-check" name="study_grade" value="4" />
+										<input id="study_grade_4" type="radio" class="btn-check" name="study_grade" value="4학년" />
 										<label for="study_grade_4" class="btn btn-outline-primary w-100 py-3">4학년</label> <br>
 										<br>
-										<input id="study_grade_5" type="radio" class="btn-check" name="study_grade" value="5" />
+										<input id="study_grade_5" type="radio" class="btn-check" name="study_grade" value="5학년" />
 										<label for="study_grade_5" class="btn btn-outline-primary w-100 py-3">5학년</label> <br>
 										<br>
-										<input id="study_grade_6" type="radio" class="btn-check" name="study_grade" value="6" />
+										<input id="study_grade_6" type="radio" class="btn-check" name="study_grade" value="6학년" />
 										<label for="study_grade_6" class="btn btn-outline-primary w-100 py-3">6학년</label> <br>
 										<br>
 									</div>
@@ -165,19 +165,19 @@
 									<h5 class="section-title bg-white text-center text-primary px-3">과목</h5>
 									<h1 class="mb-5 mt-2">어떤과목의 스터디가 필요해요?</h1>
 									<div style="align-items: center; margin-top: 20px;">
-										<input id="study_subject_kr" type="radio" class="btn-check" name="study_subject" value="1" />
+										<input id="study_subject_kr" type="radio" class="btn-check" name="study_subject" value="국어" />
 										<label for="study_subject_kr" class="btn btn-outline-primary w-100 py-3">국어</label> <br>
 										<br>
-										<input id="study_subject_en" type="radio" class="btn-check" name="study_subject" value="2" />
+										<input id="study_subject_en" type="radio" class="btn-check" name="study_subject" value="영어" />
 										<label for="study_subject_en" class="btn btn-outline-primary w-100 py-3">영어</label> <br>
 										<br>
-										<input id="study_subject_ma" type="radio" class="btn-check" name="study_subject" value="3" />
+										<input id="study_subject_ma" type="radio" class="btn-check" name="study_subject" value="수학" />
 										<label for="study_subject_ma" class="btn btn-outline-primary w-100 py-3">수학</label> <br>
 										<br>
-										<input id="study_subject_so" type="radio" class="btn-check" name="study_subject" value="4" />
+										<input id="study_subject_so" type="radio" class="btn-check" name="study_subject" value="사회" />
 										<label for="study_subject_so" class="btn btn-outline-primary w-100 py-3">사회</label> <br>
 										<br>
-										<input id="study_subject_sc" type="radio" class="btn-check" name="study_subject" value="5" />
+										<input id="study_subject_sc" type="radio" class="btn-check" name="study_subject" value="과학" />
 										<label for="study_subject_sc" class="btn btn-outline-primary w-100 py-3">과학</label> <br>
 										<br>
 									</div>
@@ -201,16 +201,16 @@
 									<h5 class="section-title bg-white text-center text-primary px-3">유형</h5>
 									<h1 class="mb-5 mt-2">어떤 준비를 하는지 알려주시겠어요?</h1>
 									<div style="align-items: center; margin-top: 20px;">
-										<input id="study_type_1" type="radio" class="btn-check" name="study_type" value="1" />
+										<input id="study_type_1" type="radio" class="btn-check" name="study_type" value="내신" />
 										<label for="study_type_1" class="btn btn-outline-primary w-100 py-3">내신</label> <br>
 										<br>
-										<input id="study_type_2" type="radio" class="btn-check" name="study_type" value="2" />
+										<input id="study_type_2" type="radio" class="btn-check" name="study_type" value="시험" />
 										<label for="study_type_2" class="btn btn-outline-primary w-100 py-3">시험</label> <br>
 										<br>
-										<input id="study_type_3" type="radio" class="btn-check" name="study_type" value="3" />
+										<input id="study_type_3" type="radio" class="btn-check" name="study_type" value="경시대회준비" />
 										<label for="study_type_3" class="btn btn-outline-primary w-100 py-3">경시대회준비</label> <br>
 										<br>
-										<input id="study_type_4" type="radio" class="btn-check" name="study_type" value="4" />
+										<input id="study_type_4" type="radio" class="btn-check" name="study_type" value="북클럽" />
 										<label for="study_type_4" class="btn btn-outline-primary w-100 py-3">북클럽</label> <br>
 										<br>
 									</div>
@@ -233,16 +233,16 @@
 									<h5 class="section-title bg-white text-center text-primary px-3">목표레벨</h5>
 									<h1 class="mb-5 mt-2">목표를 설정해 주시겠어요?</h1>
 									<div style="align-items: center; margin-top: 20px;">
-										<input id="study_target_level1" type="radio" class="btn-check" name="study_target_level" value="1" />
+										<input id="study_target_level1" type="radio" class="btn-check" name="study_target_level" value="최상" />
 										<label for="study_target_level1" class="btn btn-outline-primary w-100 py-3">최상</label> <br>
 										<br>
-										<input id="study_target_level2" type="radio" class="btn-check" name="study_target_level" value="2" />
+										<input id="study_target_level2" type="radio" class="btn-check" name="study_target_level" value="상" />
 										<label for="study_target_level2" class="btn btn-outline-primary w-100 py-3">상</label> <br>
 										<br>
-										<input id="study_target_level3" type="radio" class="btn-check" name="study_target_level" value="3" />
+										<input id="study_target_level3" type="radio" class="btn-check" name="study_target_level" value="중상" />
 										<label for="study_target_level3" class="btn btn-outline-primary w-100 py-3">중상</label> <br>
 										<br>
-										<input id="study_target_level4" type="radio" class="btn-check" name="study_target_level" value="4" />
+										<input id="study_target_level4" type="radio" class="btn-check" name="study_target_level" value="중" />
 										<label for="study_target_level4" class="btn btn-outline-primary w-100 py-3">중</label> <br>
 										<br>
 									</div>
@@ -331,92 +331,7 @@
 
 	<!-- datepicker-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script>
-		$(function() {
 
-			$('.datepicker').datepicker({
-				format : "yyyy-mm-dd", //달력에서 클릭시 표시할 값 형식 
-				todayHighlight : true,
-			});
-			  
-
-			//영어달력에서 한글달력으로 설정 변경
-			$.datepicker.setDefaults({
-				dateFormat : 'yy-mm-dd',
-				prevText : '이전 달',
-				nextText : '다음 달',
-				monthNames : [ '1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월',
-						'9월', '10월', '11월', '12월' ],
-				monthNamesShort : [ '1월', '2월', '3월', '4월', '5월', '6월', '7월',
-						'8월', '9월', '10월', '11월', '12월' ],
-				dayNames : [ '일', '월', '화', '수', '목', '금', '토' ],
-				dayNamesShort : [ '일', '월', '화', '수', '목', '금', '토' ],
-				dayNamesMin : [ '일', '월', '화', '수', '목', '금', '토' ],
-				showMonthAfterYear : true,
-				yearSuffix : '년'
-			});
-
-			//스터디시작시간 설정
-			$("#study_ftime").timepicker({
-				timeFormat : 'h:mm p',
-				interval : 10,
-				minTime : '8',
-				maxTime : '11:59pm',
-				defaultTime : '9',
-				startTime : '08:00',
-				dynamic : false,
-				dropdown : true,
-				scrollbar : true
-			});
-
-			//스터디마무리시간 설정
-			$("#study_etime").timepicker({
-				timeFormat : 'h:mm p',
-				interval : 10,
-				minTime : '8',
-				maxTime : '11:59pm',
-				defaultTime : '9',
-				startTime : '08:00',
-				dynamic : false,
-				dropdown : true,
-				scrollbar : true
-			});
-
-		});
-
-		//초중학교 선택
-		/* 		  $("#nextstudybtn1").click(function() {
-		 $("#regstudyform1").hide();
-		 var sname = $("input[name='study_sname']:checked").val();
-		 if( sname==="1"){
-		 $("#regstudyform2").show();
-		 $("#regstudyform3").hide();
-		 }else if(sname ==="2"){
-		 $("#regstudyform2").hide();
-		 $("#regstudyform3").show();
-		 }
-		
-		 });
-		
-
-		
-		 $("#nextstudybtn2").click(function() {
-		 var grade = $("#study_grade").val();
-		 //등록확인의 grade 값 넣기 (reg_grade)
-		 $("#reg_grade").val(grade);
-		 }); 
-		 
-		 
-		 
-		 <js 에서 추가 처리해야할 부분> 
-		 1. 초등/중등 학년 분리해서 받기 
-		 2. 마지막날짜가 시작날짜를 앞서지 않기 
-		 3. 마지막시간이 시작날짜를 앞서지 않기 
-		 4. 스터디제목/오픈링크/상세내용에서 엔터키 먹히지 않게 하기 
-
-		 
-		 */
-	</script>
 </body>
 </html>
 

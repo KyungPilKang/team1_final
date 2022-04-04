@@ -116,19 +116,21 @@
 					<div class="mb-5">
 						<h3 class="mb-3">스터디 정보</h3>
 						<br>
-						<input name="sudy_no" id="sudy_no" type="hidden" value='${study.sudy_no}'>
-						<p><i class="fa fa-angle-right text-primary me-2"></i>학교 : 초등학교 ${study.study_sname}</p>
-						<p><i class="fa fa-angle-right text-primary me-2"></i>학년 : 6학년 ${study.study_grade}</p>
-						<p><i class="fa fa-angle-right text-primary me-2"></i>과목 : 수학 ${study.study_subject}</p>
-						<p><i class="fa fa-angle-right text-primary me-2"></i>유형 : 시험 ${study.study_type}</p>
-						<p><i class="fa fa-angle-right text-primary me-2"></i>목표레벨 : 최상 ${study.study_target_level}</p>
-						<p><i class="fa fa-angle-right text-primary me-2"></i>스터디타이틀 : 니즈풀스터디 ${study.study_title}</p>
-						<p><i class="fa fa-angle-right text-primary me-2"></i>스터디기간  : ${study.study_fdate}2022.03.01~ ${study.study_edate}2022.03.15</p>
-						<p><i class="fa fa-angle-right text-primary me-2"></i>스터디시간 : ${study.study_ftime}8:00am ~ ${study.study_etime}9:00am</p>
-						<p><i class="fa fa-angle-right text-primary me-2"></i>오픈카톡링크 : ${study.study_kakao}</p>
+						<input name="sudy_no" id="sudy_no" type="hidden" value='${studyPosted.study_no}'>
+						<input type="hidden" id="sessionid" value="${id }"/>
+						
+						<p><i class="fa fa-angle-right text-primary me-2"></i>학교 : ${studyPosted.study_sname == 1 ? '초딩' : '중딩'}</p>
+						<p><i class="fa fa-angle-right text-primary me-2"></i>학년 : ${studyPosted.study_grade }학년</p>
+						<p><i class="fa fa-angle-right text-primary me-2"></i>과목 : ${studyPosted.study_subject}</p>
+						<p><i class="fa fa-angle-right text-primary me-2"></i>유형 :  ${studyPosted.study_type}</p>
+						<p><i class="fa fa-angle-right text-primary me-2"></i>목표레벨 :  ${studyPosted.study_target_level}</p>
+						<p><i class="fa fa-angle-right text-primary me-2"></i>스터디타이틀 :  ${studyPosted.study_title}</p>
+						<p><i class="fa fa-angle-right text-primary me-2"></i>스터디기간  : ${studyPosted.study_fdate}~ ${studyPosted.study_edate}</p>
+						<p><i class="fa fa-angle-right text-primary me-2"></i>스터디시간 : ${studyPosted.study_ftime} ~ ${studyPosted.study_etime}</p>
+						<p><i class="fa fa-angle-right text-primary me-2"></i>오픈카톡링크 : ${studyPosted.study_kakao}</p>
 						<br> <br>
 						<h3 class="mb-5">스터디상세내용</h3>
-						<p> ${study.study_contents}  이 스터디는 이번 1학기 중간고사를 목표로 개설되었습니다! 최상에 도전하는 친구들이 매주 2번 모여 문제풀이를 같이 할까요. 교재는 천재교육 --문제집 혹은 메가스터디 --교재 입니다. 추후 스터디 모집 완료후 오픈카톡으로 이야기 나누어 보아요.</p>
+						<p> ${studyPosted.study_contents}  </p>
 					</div>
 				</div>
 			  </div>

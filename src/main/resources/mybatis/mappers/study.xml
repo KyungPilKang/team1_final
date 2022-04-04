@@ -5,25 +5,31 @@
 
 
 
-<mapper namespace="com.finalproject.StudyDAO">
+<mapper namespace="com.finalproject.dao.StudyDAO">
 <!-- study 신청 상태값 -->
-	 <select id="searchStudyByStatus" resultType="String" parameterType="Map">
+ 	 <select id="searchStudyByStatus" resultType="Study" parameterType="Map">
 		<![CDATA[
-			select * from study where #{study_no} in (SELECT #{study_no} from studyteam where user_id = #{user_id} and team_status=#{team_status});
+			select * from study where study_no in (SELECT study_no from studyteam where user_id = #{user_id} and team_status=#{status})
 	  	]]>
-	 </select>
+	 </select> 
+
+	
 <!-- 등록 -->
-	<insert id="regstudy" parameterType="Study">
+	<insert id="regStudy" parameterType="Study">
 		<![CDATA[
-			insert into study values (#{maker},#{study_sname},#{study_grade},#{study_subject},#{study_type},#{study_target_level},#{study_title},#{study_fdate},#{study_edate},#{study_ftime},#{study_etime},#{study_contents},#{study_kakao},#{study_regdate}) 
+			insert into study (maker,study_sname,study_grade,study_subject,study_type,study_target_level,study_title,study_fdate,study_edate,study_ftime,study_etime,study_contents,study_kakao,study_regdate)
+			values (#{maker},#{study_sname},#{study_grade},#{study_subject},#{study_type},#{study_target_level},#{study_title},#{study_fdate},#{study_edate},#{study_ftime},#{study_etime},#{study_contents},#{study_kakao},#{study_regdate}) 
         ]]>
 	</insert>
-<!-- 전체게시글조회 -->	
-	<select id="regstudylist" resultType="study">
-    	<![CDATA[
-			select * from study order by study_regdate desc
-    	]]>
+
+<!--하나의 게시물 선택  -->
+	<select id="getStudydetail" resultType="Study" parameterType="int">
+		<![CDATA[
+			select * from study where study_no = #{study_no} 
+		 ]]>
 	</select>
+
+<!-- studymakerList -->
 </mapper>
 <!-- study 검색 -->
 
@@ -45,8 +51,8 @@ create table study(
     study_title varchar(1000),
     study_fdate date,
     study_edate date,
-    study_ftime TIME,
-    study_etime TIME,
+    study_ftime varchar(1000),
+    study_etime varchar(1000),
     study_contents MEDIUMTEXT,
     study_kakao varchar(1000),
     study_regdate DATETIME DEFAULT CURRENT_TIMESTAMP
@@ -71,6 +77,14 @@ delete from study where study_no=3;
 		]]>
 	</delete>
 	
+	전체게시글조회 
+	<select id="regstudylist" resultType="study">
+    	<![CDATA[
+			select * from study order by study_regdate desc
+    	]]>
+	</select>
 	
-
+select user_id from studyteam where study_no = '1' and team_status = 'team_apply';
+update studyteam set team_status= 'team_reject' where study_no = '1' and user_id = '김민정';
+update studyteam set team_status= 'team_accept' where study_no = '1' and user_id = '김민정';
 -->

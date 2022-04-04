@@ -94,7 +94,7 @@
 
 	<!-- Contact Start -->
 	<div class="container-xxl py-5">
-		<form action="studyreg" method="post">
+		<form action="studyregcnf" method="post">
 			<div class="container">
 				<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
 					<h5 class="section-title bg-white text-center text-primary px-3">등록 정보</h5>

@@ -11,6 +11,7 @@
 		<mapper resource="mybatis/mappers/book.xml"/>
 		<mapper resource="mybatis/mappers/request.xml"/>
 		<mapper resource="mybatis/mappers/answer.xml"/>
+		<mapper resource="mybatis/mappers/study.xml"/>
 	</mappers>
 </configuration>
 

@@ -22,7 +22,7 @@ public class StudyServiceImpl implements StudyService {
 	
 	
 	@Override
-	public void regstudy(Study study) throws Exception {
+	public void regStudy(Study study) throws Exception {
 		//스터디 등록
 		studyDAO.regStudy(study);
 		
@@ -90,12 +90,18 @@ public class StudyServiceImpl implements StudyService {
 	    studybystatus.put("user_id", user_id);
 	    studybystatus.put("status", status);
 		
+	    System.out.println(studybystatus.get("user_id"));
+	    System.out.println(studybystatus.get("status"));
+	    
 		return studyDAO.searchStudyByStatus(studybystatus);
 	}
 
+
+
 	@Override
-	public List<Study> regstudylist(Study study) throws Exception {
-		return studyDAO.regstudylist(study);
+	public Study getStudydetail(int study_no) throws Exception {
+		//하나의 게시글정보 가져오기
+		return studyDAO.getStudydetail(study_no);
 	}
 
 }
