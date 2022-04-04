@@ -16,12 +16,13 @@ public class Book {
     private Date book_modDate;
     private int book_count;
     private int book_sales;
-    private String book_keyword;
     private String book_author;
     private String book_publisher;
     private int book_discount;
+    private int book_reprice;
 
-    public Book(){}
+    public Book() {
+    }
 
     public int getBook_num() {
         return book_num;
@@ -111,14 +112,6 @@ public class Book {
         this.book_sales = book_sales;
     }
 
-    public String getBook_keyword() {
-        return book_keyword;
-    }
-
-    public void setBook_keyword(String book_keyword) {
-        this.book_keyword = book_keyword;
-    }
-
     public String getBook_author() {
         return book_author;
     }
@@ -141,6 +134,14 @@ public class Book {
 
     public void setBook_discount(int book_discount) {
         this.book_discount = book_discount;
+    }
+
+    public int getBook_reprice() {
+        return book_reprice;
+    }
+
+    public void setBook_reprice(int book_reprice) {
+        this.book_reprice = book_reprice;
     }
 }
 

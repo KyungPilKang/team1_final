@@ -75,7 +75,8 @@
 
                         <%-- 교재 이미지 파일 book_img --%>
                         <div class="col-sm-12 p-2">
-                            <input type="file" id="file" name="file" class="form-control bg-white" accept=".gif, .jpg, .png, .jpeg"
+                            <input type="file" id="file" name="file" class="form-control bg-white"
+                                   accept=".gif, .jpg, .png, .jpeg"
                                    onchange="readURL(this);">
                         </div>
 
@@ -99,17 +100,24 @@
                             <%-- 재고 --%>
                             <div class="col-sm-2 p-2"
                                  style="display:flex; justify-content: flex-end; align-items: center">
-                                재고:
+                                재고 :
                             </div>
-                            <div class="col-sm-4 p-2">
+                            <div class="col-sm-4 p-2" style="display: flex">
+
                                 <input class="form-control text-center" id="book_count" type="number" name="book_count"
                                        value="1" min="1" placeholder="수량"/>
+                                <div class="col-sm-1 p-2"
+                                     style="display:flex; justify-content: flex-start; align-items: center">
+                                    권
+                                </div>
                             </div>
+
                         </div>
 
                         <%-- 할인율 book_discount --%>
                         <div class="" style="display: flex; justify-content: space-between">
-                            <div class="col-sm-5 p-2 discount_yon" style="display: flex; align-items: center; justify-content: space-between">
+                            <div class="col-sm-5 p-2 discount_yon"
+                                 style="display: flex; align-items: center; justify-content: space-between">
                                 <input type="radio" id="yes" name="yon" value="yes">
                                 <label for="yes">할인 O</label>
                                 <input type="radio" id="no" name="yon" value="no" checked>
@@ -117,25 +125,30 @@
                             </div>
                             <div class="col-sm-3 p-2"
                                  style="display:flex; justify-content: flex-end; align-items: center">
-                                할인율:
+                                할인율 :
                             </div>
                             <div class="col-sm-4 p-2" style="display: flex">
-                                <input class="form-control text-center" id="book_discount" type="number" name="book_discount"
-                                       value="0" min="0" placeholder="할인율" disabled/>
+                                <input class="form-control text-center" id="book_discount" type="number"
+                                       name="book_discount"
+                                       value="0" min="0" max="100" placeholder="할인율" disabled/>
                                 <div class="col-sm-1 p-2"
                                      style="display:flex; justify-content: flex-start; align-items: center">
                                     %
                                 </div>
                             </div>
                         </div>
-                        <%-- 키워드 book_keyword --%>
-                            <%-- 여기를 키워드가 아닌 할인적용된 금액으로 변경예정--%>
-                            <%-- onchange? keyup? 이벤트를 사용해서 할인이 자동 적용되어 표시되도록 js 제어 --%>
-                        <div class="col-sm-12 p-2">
-                            <input type="text" id="book_keyword" name="book_keyword" class="form-control"
-                                   placeholder="키워드 등록 (#JAVA #수학 #영어)">
-                        </div>
 
+                        <%-- 할인 적용 금액 book_reprice --%>
+                        <div style="display: flex">
+                            <div class="col-sm-4 p-2"
+                                 style="display:flex; justify-content: center; align-items: center">
+                                실제 판매가 :
+                            </div>
+                            <div class="col-sm-8 p-2">
+                                <input type="text" id="book_reprice" name="book_reprice"
+                                       class="form-control col-sm-12 p-2">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -160,6 +173,7 @@
 
 </div>
 <!-- Textbook Register End -->
+
 
 <jsp:include page="/WEB-INF/views/bookstore/footer.jsp"/>
 

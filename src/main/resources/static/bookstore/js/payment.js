@@ -31,7 +31,7 @@ function payment() {
     IMP.init('imp59784293'); //가맹점 식별코드(프로젝트 공용아이디로 설정되어있음)
     IMP.request_pay({
         pg : "inicis", //PG사
-        pay_method : "tosspay", // card, vbank로 radio 선택에 따라 ${data}
+        pay_method : "card", // card, vbank로 radio 선택에 따라 ${data}
         merchant_uid : 'FL_' + new Date().getTime(), //주문 번호
         name : '결제테스트', //상품명
         amount : 200, //결제 가격

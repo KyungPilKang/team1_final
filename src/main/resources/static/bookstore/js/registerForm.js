@@ -81,7 +81,6 @@ function register() {
     $("#book_form").attr("action", "/book-store/regbook").submit();
 }
 
-
 // Preview
 function readURL(input) {
     if (input.files && input.files[0]) {
@@ -95,7 +94,6 @@ function readURL(input) {
     }
 }
 
-
 // Discount Or Not
 let discount = $("#book_discount");
 $(document).ready(function () {
@@ -107,3 +105,29 @@ $(document).ready(function () {
         }
     });
 });
+
+
+/* Auto Calc (가격,할인율 > 실제 판매가) JS */
+$('#book_price, #book_discount').on({
+    keyup: function () {
+        let inputPrice = $('#book_price').val();
+        let inputDiscount = $('#book_discount').val();
+        let result = Math.ceil(inputPrice * (1 - (inputDiscount / 100)));
+        $('#book_reprice').val(result);
+    },
+    click: function () {
+        let inputPrice = $('#book_price').val();
+        let inputDiscount = $('#book_discount').val();
+        let result = Math.ceil(inputPrice * (1 - (inputDiscount / 100)));
+        $('#book_reprice').val(result);
+    }
+})
+/* Auto Calc (실제 판매가 > 가격,할인율) JS */
+$('#book_reprice').on({
+    keyup: function () {
+        let inputPrice = $('#book_price').val();
+        let inputReprice = $('#book_reprice').val();
+        let disRate = Math.ceil(100-(inputReprice/inputPrice)*100);
+        $('#book_discount').val(disRate);
+    }
+})

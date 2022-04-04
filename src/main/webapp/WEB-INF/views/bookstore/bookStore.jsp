@@ -129,7 +129,16 @@
                             <div class="d-flex align-items-center" style="flex-direction: column">
                                 <br>
                                 <h5 class="mb-1">${book.book_subject}</h5>
-                                <h3 class="mb-1"><fmt:formatNumber value="${book.book_price}" pattern="#,###"/>원</h3>
+                                <div>
+                                <span class="" style="text-decoration: line-through;"><fmt:formatNumber
+                                        value="${book.book_price}" pattern="#,###"/>원</span>
+                                    → <strong
+                                        style="margin: 0 2px; font-weight: normal; color: #f54c4c;"><fmt:formatNumber
+                                        value="${book.book_reprice}" type="number"
+                                        pattern="#,###"/>원</strong>
+                                    <span class="dc_rate"
+                                          style="color: #5e6b9f; font-weight: normal;">[<strong>${book.book_discount}</strong>%↓]</span>
+                                </div>
                             </div>
                         </div>
                     </c:forEach>
@@ -140,6 +149,7 @@
         <%-- Slide Testimonial End--%>
 
 
+        <%-- 페이지 네비 상단 --%>
         <span style="display: flex; margin-left:4vw;"><jsp:include page="/WEB-INF/views/bookstore/pageList.jsp"/></span>
 
 
@@ -172,7 +182,9 @@
                                 <span class="org_price"
                                       style="text-decoration: line-through;"><fmt:formatNumber
                                         value="${book.book_price}" pattern="#,###"/>원</span> → <strong
-                                        class="sell_price"><fmt:formatNumber value="${book.book_price*(1-(book.book_discount/100))}" type="number" pattern="#,###"/>원</strong>
+                                        class="sell_price"><fmt:formatNumber
+                                        value="${book.book_reprice}" type="number"
+                                        pattern="#,###"/>원</strong>
                                     <span class="dc_rate">[<strong>${book.book_discount}</strong>%↓]</span>
                                 </div>
                                 <br>
@@ -196,34 +208,8 @@
             </c:otherwise>
         </c:choose>
 
+        <%-- 페이지 네비 하단 --%>
         <jsp:include page="/WEB-INF/views/bookstore/pageList.jsp"/>
-
-        <%--        <section id="pageList" style="display: flex; justify-content: center">--%>
-        <%--            <c:choose>--%>
-        <%--                <c:when test="${pageInfo.page<=1}">--%>
-        <%--                    [이전]&nbsp;--%>
-        <%--                </c:when>--%>
-        <%--                <c:otherwise>--%>
-        <%--                    <a href="/book-store?page=${pageInfo.page-1}">[이전]</a>&nbsp;--%>
-        <%--                </c:otherwise>--%>
-        <%--            </c:choose>--%>
-        <%--            <c:forEach var="i" begin="${pageInfo.startPage }" end="${pageInfo.endPage }">--%>
-        <%--                <c:choose>--%>
-        <%--                    <c:when test="${pageInfo.page==i }">[${i }]</c:when>--%>
-        <%--                    <c:otherwise>--%>
-        <%--                        <a href="/book-store?page=${i}">[${i }]</a>--%>
-        <%--                    </c:otherwise>--%>
-        <%--                </c:choose>--%>
-        <%--            </c:forEach>--%>
-        <%--            <c:choose>--%>
-        <%--                <c:when test="${pageInfo.page>=pageInfo.maxPage }">--%>
-        <%--                    [다음]--%>
-        <%--                </c:when>--%>
-        <%--                <c:otherwise>--%>
-        <%--                    <a href="/book-store?page=${pageInfo.page+1}">[다음]</a>--%>
-        <%--                </c:otherwise>--%>
-        <%--            </c:choose>--%>
-        <%--        </section>--%>
 
 
     </div>
