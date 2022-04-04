@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>NEEDSFULL - 1:1문의작성 폼</title>
+    <title>NEEDSFULL - 배송관리 폼(배송중, 운송장 입력)</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -79,7 +79,7 @@
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">1:1문의작성 관리</h1>
+                    <h1 class="display-3 text-white animated slideInDown">상품배송현황 관리</h1>
                 </div>
             </div>
         </div>
@@ -94,24 +94,70 @@
         <div class="container">
 
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">강사 1:1문의 작성 </h6>
+                <h6 class="section-title bg-white text-center text-primary px-3">학생 상품 주문내역 업데이트</h6>
             </div>
             
             <div class="col-lg-7 col-md-7 text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="pt-5 pb-0">사용자ID 문의내역</h6>
+                <h6 class="pt-5 pb-0">사용자ID 상품 배송현황</h6>
             </div>
 
             <div class="row g-1 justify-content-center">
                 <span class="col-lg-2 col-md-2 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="course-item bg-light">
+                        <div class="d-flex border-top border-bottom">
+                            <small class="flex-fill text-center py-2">운송장번호</small>
+                        </div>
+                    </div>
+                </span>
+
+                <span class="col-lg-5 col-md-5">
+                    <div class="d-flex">
+                        <input type="text" class="form-control" id="name" placeholder="Billing Number">
+                        <label for="name"></label>
+                    </div>
+                </span>
+
+            </div>
+
+
+
+
+            <div class="row justify-content-center py-5">
+                <span class="col-lg-2 col-md-3 text-center py-3"><i class="fa fa-2x fa-user text-primary me-2"></i>결제완료 ▶</span>
+ 
+                <span class="col-lg-2 col-md-3 text-center py-3"><i class="fa fa-2x fa-clock text-secondary me-2"></i>상품준비중 ▶</span>
+
+                <span class="col-lg-2 col-md-3 text-center text-primary py-3"><i class="fa fa-2x fa-map-marker-alt text-secondary me-2"></i>배송중 ▶</span>
+
+                <span class="col-lg-2 col-md-3 text-center py-3"><i class="fa fa-2x fa-home text-secondary mb-2"></i>배송완료</span>
+            </div>
+
+
+            
+
+
+
+                   <!-- 라인 -->
+            <div class="row justify-content-center">
+                <div class="col-lg-7 col-md-7 d-flex border-bottom">
+                </div>
+            </div>
+
+            <div class="col-lg-7 col-md-7 text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="pt-5 pb-0">상품 주문 정보</h6>
+            </div>
+            
+            <div class="row g-1 justify-content-center">
+                <span class="col-lg-2 col-md-2 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="course-item bg-light">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-center py-2">작성일</small>
+                            <small class="flex-fill text-center py-2">주문일</small>
                         </div>
                     </div>
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-left py-2 px-2">2020.01.22</small>
+                            <small class="flex-fill text-left py-2 px-2">2022.02.30</small>
                         </div>
                 </span>
             </div>
@@ -119,13 +165,13 @@
                 <span class="col-lg-2 col-md-2 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="course-item bg-light">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-center py-2">문의 유형</small>
+                            <small class="flex-fill text-center py-2">주문 번호</small>
                         </div>
                     </div>
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-left py-2 px-2">회원 탈퇴</small>
+                            <small class="flex-fill text-left py-2 px-2">A234A3</small>
                         </div>
                 </span>
             </div>
@@ -133,13 +179,27 @@
                 <span class="col-lg-2 col-md-2 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="course-item bg-light">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-center py-2">문의 제목</small>
+                            <small class="flex-fill text-center py-2">상품명</small>
                         </div>
                     </div>
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-left py-2 px-2">회원 탈퇴 문의</small>
+                            <small class="flex-fill text-left py-2 px-2">만능 데이터베이스 입문</small>
+                        </div>
+                </span>
+            </div>
+            <div class="row g-1 justify-content-center">
+                <span class="col-lg-2 col-md-2 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="course-item bg-light">
+                        <div class="d-flex border-top">
+                            <small class="flex-fill text-center py-2">수량</small>
+                        </div>
+                    </div>
+                </span>
+                <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="d-flex border-top">
+                            <small class="flex-fill text-left py-2 px-2">3 권</small>
                         </div>
                 </span>
             </div>
@@ -147,50 +207,26 @@
                 <span class="col-lg-2 col-md-2 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="course-item bg-light">
                         <div class="d-flex border-top border-bottom">
-                            <small class="flex-fill text-center py-2">문의 내용</small>
+                            <small class="flex-fill text-center py-2">총 가격</small>
                         </div>
                     </div>
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top border-bottom">
-                            <small class="flex-fill text-left py-2 px-2">회원탈퇴를 하고 싶은데 어떻게 탈퇴를 하면 되나요? 회원 탈퇴 결로를 알려주세요.</small>
+                            <small class="flex-fill text-left py-2 px-2">30,000 원</small>
                         </div>
                 </span>
             </div>
-
-            <div class="col-lg-7 col-md-7 text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="pt-5 pb-0">답변작성</h6>
-            </div>
-            
-            <!-- 라인 -->
-            <div class="row justify-content-center">
-                <div class="col-lg-7 col-md-7 d-flex border-bottom">
-                </div>
-            </div>
-
-            <!-- 답글창 -->
-            <div class="row justify-content-center py-2">
-                <div class="col-lg-6 col-md-6 text-center">
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
-                        <label for="message"></label>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 라인 -->
-            <div class="row justify-content-center">
-                <div class="col-lg-7 col-md-7 d-flex border-bottom">
-                </div>
-            </div>
-
 
             <div class="row g-1 justify-content-center py-5">
                 <span class="col-lg-1 col-md-3">
-                    <button class="btn btn-primary w-100 py-1" type="submit">취소</button>
+                    <button class="btn btn-primary w-100 py-1" type="submit">수정</button>
                 </span>
                 <span class="col-lg-1 col-md-3">
-                    <button class="btn btn-primary w-100 py-1" type="submit">답변등록</button>
+                    <button class="btn btn-primary w-100 py-1" type="submit">완료</button>
+                </span>
+                <span class="col-lg-1 col-md-3">
+                    <button class="btn btn-primary w-100 py-1" type="submit">목록으로</button>
                 </span>
             </div>
 
@@ -203,38 +239,38 @@
 
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy;
-                        <a class="border-bottom" href="#">Your Site Name</a>
-                        , All Right Reserved.
+	<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+		<div class="container">
+			<div class="copyright">
+				<div class="row">
+					<div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+						&copy;
+						<a class="border-bottom" href="#">Your Site Name</a>
+						, All Right Reserved.
 
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By
-                        <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-                        <br> <br> Distributed By
-                        <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <div class="footer-menu">
-                            <a href="">Home</a>
-                            <a href="">Cookies</a>
-                            <a href="">Help</a>
-                            <a href="">FQAs</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
-
-
+						<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+						Designed By
+						<a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+						<br> <br> Distributed By
+						<a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+					</div>
+					<div class="col-md-6 text-center text-md-end">
+						<div class="footer-menu">
+							<a href="">Home</a>
+							<a href="">Cookies</a>
+							<a href="">Help</a>
+							<a href="">FQAs</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Footer End -->
 
 
+
+    
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
