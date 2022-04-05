@@ -7,25 +7,29 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-
+import com.finalproject.service.AdminService;
 
 @Controller
 public class AdminController {
-//	@Autowired
-//	AdminService adminService;
+	@Autowired
+	AdminService adminService;
 	
-//	@GetMapping(value="/allaccountinfo")
-//	public ModelAndView allaccinfo() {
-//		ModelAndView mav=new ModelAndView("bankmain");
+	
+	
+//	@GetMapping(value="/qnainformationlist")
+//	public ModelAndView qnainfolist() {
+//		ModelAndView mav=new ModelAndView();
 //		try {
-//			List<Account> accs=accountService.allAccountInfo();
-//			mav.addObject("accs", accs);
-//			mav.addObject("cpage", "admin_qnaInfoForm");
+//			List<Qnainfo> qnaLists=adminService.getQnaInfoList();
+//			mav.addObject("qnaLists", qnaLists);
+//			mav.addObject("", "admin_qnaInfoForm");
 //		} catch(Exception e) {
 //			mav.addObject("err", e.getMessage());
-//			mav.addObject("cpage", "err");
+//			mav.addObject("", "err");
 //		}
 //		return mav;
 //	}
-
+	
+	
+	
 }
