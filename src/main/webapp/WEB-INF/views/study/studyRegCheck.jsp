@@ -121,6 +121,7 @@
 									<h3>대상 과목</h3>
 									<c:choose>
 										<c:when test="${regstudy.study_subject eq '1' }">
+										
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="국어" readOnly>
 										</c:when>
 										<c:when test="${regstudy.study_subject eq '2' }">
