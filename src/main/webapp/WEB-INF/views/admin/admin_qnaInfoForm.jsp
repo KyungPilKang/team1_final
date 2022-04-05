@@ -96,7 +96,7 @@
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h6 class="section-title bg-white text-center text-primary px-3">강사 1:1문의 작성 </h6>
                 </div>
-                <c:forEach items="${qnaLists}" var="qnaList">
+                <c:forEach items="${qnaList}" var="qnaList">
                 <div class="col-lg-7 col-md-7 text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h6 class="pt-5 pb-0">${qnaList.username} 문의내역</h6>
                 </div>
