@@ -101,13 +101,13 @@
             <div class="owl-carousel testimonial-carousel position-relative">
                 <div class="testimonial-item text-center">
                     <div class="p-2 mx-auto mb-3" style="width: 400px; height: 130px; text-overflow: ellipsis; background: rgba(6, 187, 204, 0.1); font-size: 1.0em; font-family:Stylish">
-					<span> 초등학교 ${study.study_sname}</span><span> 5학년 ${study.study_grade}</span><br>
-                    <span> 기간 : 2022.03.06~2022.04.05 ${study.study_fdate}${study.study_fdate}</span><br>
-                    <span> 시간 : 08:00 ~ 09:00 ${study.study_ftime}${study.study_etime}</span><br>
-                    <span> 유형 : 내신${study.study_type}</span><br>
-                    <span> 목표 : 최상${study.study_target_level}</span>
+					<span> 초등학교 ${studyList.study_sname}</span><span> 5학년 ${studyList.study_grade}</span><br>
+                    <span> 기간 : 2022.03.06~2022.04.05 ${studyList.study_fdate}${studyList.study_fdate}</span><br>
+                    <span> 시간 : 08:00 ~ 09:00 ${studyList.study_ftime}${studyList.study_etime}</span><br>
+                    <span> 유형 : 내신${studyList.study_type}</span><br>
+                    <span> 목표 : 최상${studyList.study_target_level}</span>
                     </div>
-                    <i class="bi bi-book-fill"><h5>니즈풀스터디${study.study_title}</h5></i>
+                    <i class="bi bi-book-fill"><h5>니즈풀스터디${studyList.study_title}</h5></i>
                     <div class="testimonial-text bg-light text-center p-4">
                     <p class="mb-0" style="text-overflow: ellipsis; font-size: 1.0em; font-family:Stylish">이 스터디는 이번 1학기 중간고사를 목표로 개설되었습니다! 최상에 도전하는 친구들이 매주 2번 모여 문제풀이를 같이 할까요. 교재는 천재교육 --문제집 혹은 메가스터디 --교재 입니다. 추후 스터디 모집 완료후 오픈카톡으로 이야기 나누어 보아요.${study.study_contents}</p>
                     </div>
@@ -193,7 +193,7 @@
 									<div class="text-start ps-4">
 										<h3 class="mb-3">스터디 등록 제목</h3>
 										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등
+											<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등 
 										</span>
 										<span class="resfreespan text-truncate me-3">
 											<i class="bi bi-eyeglasses text-primary me-2"></i>학년

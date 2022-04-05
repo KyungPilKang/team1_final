@@ -43,4 +43,9 @@ public class ViewController {
 	public String detailfree() {
 		return "freelance/detailfreelance_1";
 	}
+	
+	@GetMapping("test1")
+	public String test1() {
+		return "admin/admin_qnaInfoForm";
+	}
 }

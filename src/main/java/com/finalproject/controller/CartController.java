@@ -12,8 +12,7 @@ public class CartController {
     public String cart() {
         return "/bookstore/cart";
     }
-
-
+ 
     // 임시
     @GetMapping("/order/detail")
     public String detail() {

@@ -43,12 +43,12 @@ public class StudyController {
 		return "study/studymain";
 	}
 
-	// 스터디등교
+	
 	@GetMapping("studyclass")
 	public String studyclass() {
 		return "study/studyclass";
 	}
-
+	
 	// 스터디등교(완성)
 	// 뿌려지는거 확인하기
 	@ResponseBody
@@ -71,7 +71,27 @@ public class StudyController {
 		 
 		return mav;
 	}
-
+	// (1)개설자메인 페이지
+	@PostMapping("studymakermain")
+	public ModelAndView studymakermain() {
+		ModelAndView mav =new ModelAndView("study/studymakermain");
+		String result = null;
+		String user_id = (String) session.getAttribute("id");
+		String maker = "김민정";
+		try {
+			if(user_id == maker) {
+				List<Study> studyList = studyservice.studymakerList(maker);
+				System.out.println(studyList.size());
+				mav.addObject("studyList", studyList);
+				for (Study s : studyList) {
+					  System.out.println(s.getStudy_title()); 
+					} }
+			}catch (Exception e) {
+				  e.printStackTrace();
+			  }		
+		return mav;
+	}
+	
 	// 스터디상세페이지 (검색 조회후 게시글선택시, 등교페이지에서 게시글보기연결)
 	// 추후 get 방식에서 post 방식으로 변경 필요
 	@GetMapping("/studydetail/{study_no}")
@@ -87,11 +107,7 @@ public class StudyController {
 		return mav;
 	}
 
-	// (1)개설자메인 페이지
-	@PostMapping("studymakermain")
-	public String studymakermain() {
-		return "study/studymakermain";
-	}
+
 
 	// (2)개설자가 상세글보기 클릭시 보여지는 페이지
 	//추후 post 변경 
