@@ -1,15 +1,21 @@
 package com.finalproject.service;
 
+import com.finalproject.dao.BookDAO;
 import com.finalproject.dao.CartDAO;
+import com.finalproject.dto.Book;
 import com.finalproject.dto.Cart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
 public class CartServiceImpl implements CartService {
+
+    @Autowired
+    BookDAO bookDAO;
 
     @Autowired
     CartDAO cartDAO;
@@ -36,6 +42,12 @@ public class CartServiceImpl implements CartService {
     public int cartCount(String username) throws Exception {
         return cartDAO.cartCount(username);
     }
+
+    @Override
+    public List<Book> getCartList(String username) throws Exception {
+        return cartDAO.cartItems(username);
+    }
+
 
 
 }

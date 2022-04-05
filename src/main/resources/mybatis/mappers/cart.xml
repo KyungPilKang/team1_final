@@ -28,6 +28,13 @@
 	</select>
 
 
+	<select id="cartItems" resultType="Book" parameterType="String">
+	<![CDATA[
+		select * from book where book_num in (select cart_bookNum from cart where username = #{username})
+		]]>
+	</select>
+
+
 
 </mapper>
 

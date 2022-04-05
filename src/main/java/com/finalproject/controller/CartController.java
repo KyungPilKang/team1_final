@@ -1,5 +1,6 @@
 package com.finalproject.controller;
 
+import com.finalproject.dto.Book;
 import com.finalproject.service.CartService;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,9 +8,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -22,9 +25,28 @@ public class CartController {
     @Autowired
     CartService cartService;
 
-    @GetMapping("/cart")
-    public String cart() {
-        return "/bookstore/cart";
+//    @GetMapping("/cart")
+//    public String cart() {
+
+//        return "/bookstore/cart";
+//    }
+
+
+    @RequestMapping(value = "/cart", method = {RequestMethod.GET, RequestMethod.POST})
+    public ModelAndView cart() {
+        ModelAndView mv = new ModelAndView();
+        // 임시 세션
+        session.setAttribute("username", "jay");
+        String username = (String) session.getAttribute("username");
+        try {
+            List<Book> cartList = cartService.getCartList(username);
+            mv.addObject("cartList", cartList);
+            mv.setViewName("/bookstore/cart");
+        } catch (Exception e) {
+            e.printStackTrace();
+            mv.addObject("err", e.getMessage());
+        }
+        return mv;
     }
 
 
