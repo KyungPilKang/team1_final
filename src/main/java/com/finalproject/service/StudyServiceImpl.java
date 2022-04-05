@@ -79,9 +79,8 @@ public class StudyServiceImpl implements StudyService {
 	}
 
 	@Override
-	public List<Study> studymakerList(String id) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Study> studymakerList(String maker) throws Exception {
+		return studyDAO.studymakerList(maker);
 	}
 
 	@Override

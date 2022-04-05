@@ -19,7 +19,7 @@ public interface StudyDAO {
 	public List<Study> searchStudyByStatus(Map<String,String> studybystatus) throws Exception;
 	//스터디 상세게시글보기(일반) 
 	public Study getStudydetail(int study_no) throws Exception;
-	//스터디 상세게시글보기(개설자)------ ??
+	//스터디 게시글 리스트 반환(개설자)
 	public List<Study> studymakerList(String maker) throws Exception;
 }
 
