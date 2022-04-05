@@ -117,7 +117,7 @@
 						<h3 class="mb-3">스터디 정보</h3>
 						<br>
 						<input name="study_no" id="study_no" type="hidden" value='${studyPosted.study_no}'>
-						<input type="hidden" id="sessionid" value="${id }"/>
+						<input type="hidden" id="sessionid" value="${id}"/>
 						
 						<p><i class="fa fa-angle-right text-primary me-2"></i>학교 : ${studyPosted.study_sname}</p>
 						<p><i class="fa fa-angle-right text-primary me-2"></i>학년 : ${studyPosted.study_grade }학년</p>

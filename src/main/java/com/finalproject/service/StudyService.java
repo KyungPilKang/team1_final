@@ -19,7 +19,7 @@ public interface StudyService {
 	public Study getStudydetail(int study_no) throws Exception;
 	//team_accept(수락), team_apply(신청), team_reject(탈락) status 리스트 반환
 	List<Study> searchStudyByStatus(String user_id, String status) throws Exception; 
-	//스터디 상세게시글리스트 반환(개설자)------ ?? study_no 필요여부..
+	//스터디 상세게시글리스트 반환(개설자)
 	List<Study> studymakerList(String maker) throws Exception;
 	
 	

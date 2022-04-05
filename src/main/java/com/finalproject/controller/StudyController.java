@@ -154,6 +154,7 @@ public class StudyController {
 	}
 
 	// (1)수정 다음버튼
+	// study_no 가지고 넘어가야하는지 추후 확인 필요 ** 
 	@PostMapping("studymodify")
 	public ModelAndView studymodify(@ModelAttribute Study inputstudy) {
 		ModelAndView mav = new ModelAndView("study/studymodify");
@@ -188,7 +189,20 @@ public class StudyController {
 		}
 		return mav;
 	}
-
+	
+	//삭제
+	//study_no 을 가지고 못넘어가짐 , 개설자 상세페이지 구현후 다시 확인 
+	@ResponseBody
+	@PostMapping("/deletestudy")
+	public void deletestudy(@RequestParam(value="no")int study_no) {
+		try {
+			studyservice.removeStudy(study_no);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
 	// (1)등록페이지전환
 	@RequestMapping("/studyReg")
 	public String studyReg() {

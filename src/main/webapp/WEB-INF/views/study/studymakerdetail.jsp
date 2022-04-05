@@ -155,20 +155,27 @@
 					</div>
 				</div> 
 			</div>
+			
 			<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s" style="width: 20%;  ">
 				<div class="row g-3">
 					<div class="col-12">
 						<div class="col-12 mt-4">
-							<button id="contractbtn" class="btn btn-outline-primary w-35 py-3">수정 하기</button>
+							<form action="/studymodify" method="post">
+								<button id="contractbtn" class="btn btn-outline-primary w-35 py-3">수정 하기</button>
+							</form>
 						</div>
 					</div>
 				</div>
 			</div>
+			
 			<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s" style="width: 20%;   ">
 				<div class="row g-3">
 					<div class="col-12">
 						<div class="col-12 mt-4">
+						<form action="/deletestudy" method="post">
+						
 							<button id="contractbtn" class="btn btn-outline-primary w-35 py-3">삭제 하기</button>
+						</form>
 						</div>
 					</div>
 				</div>
@@ -252,5 +259,9 @@
 
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<script>
+
+	   
+	</script>
 </body>
 </html>
