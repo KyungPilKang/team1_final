@@ -43,74 +43,67 @@ public class StudyController {
 		return "study/studymain";
 	}
 
-	
 	@GetMapping("studyclass")
-	public String studyclass() {
-		return "study/studyclass";
-	}
-	
-	// 스터디등교(완성)
-	// 뿌려지는거 확인하기
-	@ResponseBody
-	@PostMapping("studyclass")
-	public ModelAndView studyclass(@RequestParam("status") String status) {
-		ModelAndView mav =new ModelAndView("study/studyclass");
-		String result = null;
+	public ModelAndView studyclassget(@RequestParam(value = "status", required = false) String status) {
+		
+		if (status == null) {
+			status = "team_apply";
+		}
+		ModelAndView mav = new ModelAndView("study/studyclass");
 		String user_id = (String) session.getAttribute("id");
-		 try { 
-			List<Study> studyList = studyservice.searchStudyByStatus("김민정", status); //서비스 만들고 db 값 가져오는지 확인해보기
+		try {
+			List<Study> studyList = studyservice.searchStudyByStatus("김민정", status); // 서비스 만들고 db 값 가져오는지 확인해보기
 			System.out.println(studyList.size());
 			mav.addObject("studyList", studyList);
-			mav.setViewName("study/studyclass");
-		 	for (Study s : studyList) {
-			  System.out.println(s.getStudy_title()); 
-			} 
-		  } catch (Exception e) {
-		  e.printStackTrace();
-		  }
-		 
+			mav.addObject("status", status);
+			for (Study s : studyList) {
+				System.out.println(s.getStudy_title());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
 		return mav;
 	}
+
 	// (1)개설자메인 페이지
 	@PostMapping("studymakermain")
 	public ModelAndView studymakermain() {
-		ModelAndView mav =new ModelAndView("study/studymakermain");
+		ModelAndView mav = new ModelAndView("study/studymakermain");
 		String result = null;
 		String user_id = (String) session.getAttribute("id");
 		String maker = "김민정";
 		try {
-			if(user_id == maker) {
+			if (user_id == maker) {
 				List<Study> studyList = studyservice.studymakerList(maker);
 				System.out.println(studyList.size());
 				mav.addObject("studyList", studyList);
 				for (Study s : studyList) {
-					  System.out.println(s.getStudy_title()); 
-					} }
-			}catch (Exception e) {
-				  e.printStackTrace();
-			  }		
-		return mav;
-	}
-	
-	// 스터디상세페이지 (검색 조회후 게시글선택시, 등교페이지에서 게시글보기연결)
-	// 추후 get 방식에서 post 방식으로 변경 필요
-	@GetMapping("/studydetail/{study_no}")
-	public ModelAndView studydetail(@PathVariable int study_no) {
-		ModelAndView mav =new ModelAndView("study/studydetail");
-		String user_id = (String) session.getAttribute("id");
-		try {
-			Study posted = studyservice.getStudydetail(study_no);
-			mav.addObject("studyPosted", posted);
-		}catch(Exception e) {
+					System.out.println(s.getStudy_title());
+				}
+			}
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return mav;
 	}
 
-
+	// 스터디상세페이지 (검색 조회후 게시글선택시, 등교페이지에서 게시글보기연결)
+	// 추후 get 방식에서 post 방식으로 변경 필요
+	@GetMapping("/studydetail/{study_no}")
+	public ModelAndView studydetail(@PathVariable int study_no) {
+		ModelAndView mav = new ModelAndView("study/studydetail");
+		String user_id = (String) session.getAttribute("id");
+		try {
+			Study posted = studyservice.getStudydetail(study_no);
+			mav.addObject("studyPosted", posted);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mav;
+	}
 
 	// (2)개설자가 상세글보기 클릭시 보여지는 페이지
-	//추후 post 변경 
+	// 추후 post 변경
 	@GetMapping("studymakerdetail")
 	public String studymakerdetail() {
 		return "study/studymakerdetail";
@@ -157,13 +150,6 @@ public class StudyController {
 	public ModelAndView studyfindresult(@ModelAttribute Study inputstudy) {
 		ModelAndView mav = new ModelAndView("study/studyfindresult");
 
-		return mav;
-	}
-
-	@GetMapping("0330")
-	public ModelAndView test() {
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("study/studyfindresult");
 		return mav;
 	}
 
@@ -244,16 +230,28 @@ public class StudyController {
 	// 참여 기능
 	@ResponseBody
 	@PostMapping("/attend")
-	public boolean attendcheck(@RequestParam(value = "no") boolean study_no, HttpServletRequest request) {
-		boolean isattends = study_no;
+	public boolean attendcheck(@RequestParam int study_no, @RequestParam(value = "status") boolean status, HttpServletRequest request) {
+		System.out.println(status);
+		String real_stat = "";
+		
 		try {
-			HttpSession session = request.getSession();
 			String user_id = (String) session.getAttribute("id");
-			// isattends= studyService.checkattends(user_id, study_no);
+			if (status == true) {
+				System.out.println("참여 상태(1)에서 누른거");
+				// 여기서는 status를 "team_applycancle"로 변경한다
+				real_stat = "team_applycancle";
+			} else {
+				System.out.println("미참여 상태(0)에서 누른거");
+				// 여기서는 status를 "team_apply"로 변경한다
+				real_stat = "team_apply";
+				
+			}
+				//studyservice.checkattends(user_id, study_no, real_stat);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return isattends;
+		return !status;
 	}
 
 }
