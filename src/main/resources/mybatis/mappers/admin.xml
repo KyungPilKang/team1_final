@@ -10,10 +10,16 @@
 		]]>
 	</select>
 	
-		<select id="qnaAnsList()" resultType="Answer">
+	<select id="qnaAnsList()" resultType="Answer">
 		<![CDATA[
 			select * from answer order by answer_num
 		]]>
 	</select>
+	
+	<insert id="insertAnswer" parameterType="Answer">
+		<![CDATA[
+			insert into answer values(#{answer_date},#{answer_content})
+		]]>
+	</insert>
 
 </mapper>

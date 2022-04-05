@@ -25,5 +25,9 @@ public class AdminServiceImpl implements AdminService {
 		return adminDAO.qnaAnsList();
 	}
 	
+	@Override
+	public void inputQna(Answer ans) throws Exception {
+		adminDAO.insertAnswer(ans);
+	}
 	
 }
