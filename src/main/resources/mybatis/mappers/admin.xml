@@ -2,18 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.finalproject.dao.AdminDAO">
+<mapper namespace="com.finalproject.AdminDAO">
 	
-	<select id="qnaReqList" resultType="Request">
+<!--
+	<select id="qnaInfoList" resultType="Qnainfo">
+	
+	&lt;!&ndash;실제로 받을 데이터는 배열형태이지만 Account로 마이바티스가 데이터를 내려보내면 List로 받을 수 있다.&ndash;&gt;
+	
 		<![CDATA[
-			select * from request order by request_num
+			select * from request order by id
+			select * from answer order by id
 		]]>
 	</select>
-	
-		<select id="qnaAnsList()" resultType="Answer">
-		<![CDATA[
-			select * from answer order by answer_num
-		]]>
-	</select>
+-->
 
 </mapper>
