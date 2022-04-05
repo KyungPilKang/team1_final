@@ -4,14 +4,14 @@
 
 <mapper namespace="com.finalproject.AdminDAO">
 	
-	<select id="qnaInfoList" resultType="Qnainfo">
+<!--	<select id="qnaInfoList" resultType="Qnainfo">
 	
-	<!--실제로 받을 데이터는 배열형태이지만 Account로 마이바티스가 데이터를 내려보내면 List로 받을 수 있다.-->
+	&lt;!&ndash;실제로 받을 데이터는 배열형태이지만 Account로 마이바티스가 데이터를 내려보내면 List로 받을 수 있다.&ndash;&gt;
 	
 		<![CDATA[
 			select * from request order by id
 			select * from answer order by id
 		]]>
-	</select>
+	</select>-->
 
 </mapper>

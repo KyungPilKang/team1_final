@@ -220,6 +220,13 @@
     </div>
 </div>
 <!-- Footer End -->
+<script>
+$(function() {
+$("div").on("click", function() {
+$("div").css("color", "red");
+});
+});
+</script>
 
 
 <!-- Back to Top -->
