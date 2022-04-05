@@ -116,10 +116,10 @@
 					<div class="mb-5">
 						<h3 class="mb-3">스터디 정보</h3>
 						<br>
-						<input name="sudy_no" id="sudy_no" type="hidden" value='${studyPosted.study_no}'>
+						<input name="study_no" id="study_no" type="hidden" value='${studyPosted.study_no}'>
 						<input type="hidden" id="sessionid" value="${id }"/>
 						
-						<p><i class="fa fa-angle-right text-primary me-2"></i>학교 : ${studyPosted.study_sname == 1 ? '초딩' : '중딩'}</p>
+						<p><i class="fa fa-angle-right text-primary me-2"></i>학교 : ${studyPosted.study_sname}</p>
 						<p><i class="fa fa-angle-right text-primary me-2"></i>학년 : ${studyPosted.study_grade }학년</p>
 						<p><i class="fa fa-angle-right text-primary me-2"></i>과목 : ${studyPosted.study_subject}</p>
 						<p><i class="fa fa-angle-right text-primary me-2"></i>유형 :  ${studyPosted.study_type}</p>
@@ -223,7 +223,7 @@
 		        dataType:"text",
 		        async:false,
 		        url:"http://localhost:8090/attend",
-		        data:{"no": no},
+		        data:{"no": no, "study_no":study_no},
 		        success: function(data, textStatus){
 		        	console.log("1");
 		        	if(data=='false') {
