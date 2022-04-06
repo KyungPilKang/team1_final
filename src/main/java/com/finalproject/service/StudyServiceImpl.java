@@ -41,12 +41,32 @@ public class StudyServiceImpl implements StudyService {
 		studyDAO.removeStudy(study_no);	
 	}
 
+
 	@Override
-	public List<Study> searchStudy(String study_sname, String study_grade, String study_subject, String study_type,
-			String study_target_level) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Study> makerList(String maker) throws Exception {
+		// 내가 쓴 글 :  스터디 게시글 리스트 반환(개설자)
+		//int listCount = studyDAO.makerListCount(maker);	
+		return studyDAO.makerList(maker);
 	}
+	
+	@Override
+	public List<Study> searchStudyByStatus(String user_id, String status) throws Exception {
+	    Map<String, String> studybystatus = new HashMap<String, String>();
+	    studybystatus.put("user_id", user_id);
+	    studybystatus.put("status", status);
+		
+	    System.out.println(studybystatus.get("user_id"));
+	    System.out.println(studybystatus.get("status"));
+	    
+		return studyDAO.searchStudyByStatus(studybystatus);
+	}
+
+	@Override
+	public Study getStudydetail(int study_no) throws Exception {
+		//하나의 게시글정보 가져오기
+		return studyDAO.getStudydetail(study_no);
+	}
+
 
 	@Override
 	public void attendCheck(int study_no) throws Exception {
@@ -77,30 +97,23 @@ public class StudyServiceImpl implements StudyService {
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 	@Override
-	public List<Study> studymakerList(String maker) throws Exception {
-		return studyDAO.studymakerList(maker);
+	public List<Study> searchStudy(String study_sname, String study_grade, String study_subject, String study_type,
+			String study_target_level) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public List<Study> searchStudyByStatus(String user_id, String status) throws Exception {
-	    Map<String, String> studybystatus = new HashMap<String, String>();
-	    studybystatus.put("user_id", user_id);
-	    studybystatus.put("status", status);
+	public void checkAttend(Map<String, String> attendbyCheck, String status1) throws Exception {
+		// 참여
 		
-	    System.out.println(studybystatus.get("user_id"));
-	    System.out.println(studybystatus.get("status"));
-	    
-		return studyDAO.searchStudyByStatus(studybystatus);
 	}
-
-
 
 	@Override
-	public Study getStudydetail(int study_no) throws Exception {
-		//하나의 게시글정보 가져오기
-		return studyDAO.getStudydetail(study_no);
+	public void cancleAttend(Map<String, String> canclebyCheck) throws Exception {
+		// 참여취소
+		
 	}
-
 }

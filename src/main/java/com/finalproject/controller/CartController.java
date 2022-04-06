@@ -1,6 +1,8 @@
 package com.finalproject.controller;
 
 import com.finalproject.dto.Book;
+import com.finalproject.dto.Cart;
+import com.finalproject.dto.PageInfo;
 import com.finalproject.service.CartService;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,6 +84,22 @@ public class CartController {
     // 장바구니 화면에서 수량을 선택 후 '전체 상품 구매하기'를 누르면
     // 카트의 정보를 전부 order_book에 복사하면서 수량(order_book_count)도 추가
     // 주문 완료시 카트 날림
+
+
+    @PostMapping("/delcart")
+    public void delcart(@RequestBody String json) {
+        // 임시 세션
+        session.setAttribute("username", "jay");
+        String username = (String) session.getAttribute("username");
+        System.out.println("username : " + username);
+        try{
+            JSONObject inJson = new JSONObject(json);
+            int book_num = inJson.getInt("book_num");
+            cartService.deleteCart(book_num,username);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
 
 
     // 임시

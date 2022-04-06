@@ -109,11 +109,11 @@
                 <div class="col-lg-4 col-md-6 wow fadeInUp text-center" data-wow-delay="0.3s" style="margin-top:20px; margin-bottom:30px;">
  				           <div class="p-2 mx-auto mb-3" style="width: 400px; height: 130px; text-overflow: ellipsis; background: rgba(6, 187, 204, 0.1); font-size: 1.0em; font-family:Stylish">
 							<input id="study_no" name="study_no" type="hidden" value='${study.study_no}'>
-									<span> ${study.study_sname}</span><span> 5학년 ${study.study_grade}</span><br>
-				                    <span> 기간 : 2022.03.06~2022.04.05 ${study.study_fdate}${study.study_fdate}</span><br>
-				                    <span> 시간 : 08:00 ~ 09:00 ${study.study_ftime}${study.study_etime}</span><br>
-				                    <span> 유형 : 내신${study.study_type}</span><br>
-				                    <span> 목표 : 최상${study.study_target_level}</span>
+									<span> ${study.study_sname}</span><span>${study.study_grade}</span><br>
+				                    <span> 기간 : ${study.study_fdate} ~ ${study.study_fdate}</span><br>
+				                    <span> 시간 : ${study.study_ftime} ~ ${study.study_etime}</span><br>
+				                    <span> 유형 : ${study.study_type}</span><br>
+				                    <span> 목표 : ${study.study_target_level}</span>
 			                </div>
 			                    <i class="bi bi-book-fill"><h5>니즈풀스터디${study.study_title}</h5></i>
 

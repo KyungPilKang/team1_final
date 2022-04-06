@@ -125,7 +125,7 @@
 					<div class="mb-5">
 						<h3 class="mb-3">스터디 정보</h3>
 						<br>
-						<input name="sudy_no" id="sudy_no" type="hidden" value='${study.sudy_no}'>
+						<input name="sudy_no" id="sudy_no" type="hidden" value='${study.study_no}'>
 						<p><i class="fa fa-angle-right text-primary me-2"></i>학교 : 초등학교 ${study.study_sname}</p>
 						<p><i class="fa fa-angle-right text-primary me-2"></i>학년 : 6학년 ${study.study_grade}</p>
 						<p><i class="fa fa-angle-right text-primary me-2"></i>과목 : 수학 ${study.study_subject}</p>

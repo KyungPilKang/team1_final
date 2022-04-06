@@ -14,6 +14,7 @@ import java.util.Map;
 public interface CartDAO {
 
     void insertCart(Map<String, Object> cartItem) throws Exception;
+    void deleteCart(Map<String, Object> cartItem) throws Exception;
     Cart selectItem(Map<String, Object> cartItem) throws Exception;
     int cartCount(String username) throws Exception;
     List<Book> cartItems(String username) throws Exception;

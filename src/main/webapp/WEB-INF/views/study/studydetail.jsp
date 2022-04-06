@@ -152,7 +152,16 @@
 				<div class="row g-3">
 					<div class="col-12">
 						<div class="col-12 mt-4">
-							<button id="attend" class="btn btn-outline-primary w-50 py-3">참여 하기</button>
+						<!-- 	<button id="attend" class="btn btn-outline-primary w-50 py-3">참여 하기</button> -->						
+						<button id="attend" class="btn btn-outline-primary w-50 py-3">참여 하기
+							<c:choose>
+								<c:when test="${id eq! study.user_id}">
+									<span id="attend"></span>
+								</c:when>
+								<c:when test="${attend eq true }"><span id="attend" style="float:right; padding-left:10px; cursor: pointer;">신고취소</span></c:when>
+								<c:when test="${attend eq false }"><span id="attend" style="float:right; padding-left:10px; cursor: pointer;">신고</span></c:when>
+							</c:choose>
+						</button>
 						</div>
 					</div>
 				</div>
@@ -213,17 +222,17 @@
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<script>
-	$('#attend').on('click',function(e){
-		   let no = 0; // 0이면 미참여 상태
+/* 	$('#attend').on('click',function(e){
+ 		   let present = 0; // 0이면 미참여 상태
 		   if ($('#attend').text() == "참여취소") {
-			   no = 1;
-		   }
+			   present = 1;
+		   } 
 			$.ajax({
 		    	type:"post",
 		        dataType:"text",
 		        async:false,
 		        url:"http://localhost:8090/attend",
-		        data:{"no": no, "study_no":study_no},
+		        data:{"eight": eight, "study_no":study_no},
 		        success: function(data, textStatus){
 		        	console.log("1");
 		        	if(data=='false') {
@@ -238,7 +247,43 @@
 		        	alert("실패");
 		        }
 	        });
-		});
+		}); */
+	
+	
+	$('#attend').on('click',function(e){
+		console.log("들어옴");
+		var attendCheck = "미참여";
+
+		if($("#attend").val() == "참여"){
+			 alert = confirm('스터디에 참여 하시겠습니까?');
+			 attendCheck ="team_apply";
+		}
+		else if($("#attend").val() == "참여취소"){
+			 alert = confirm('스터디에 참여를 취소 하시겠습니까?');
+			 attendCheck ="미참여";
+		}
+		
+		if(attend==true){
+			$.ajax({
+				type:"post",
+		        async:false,
+		        url:"http://localhost:8090/attend",
+				data: {"study_no": ${studyPosted.study_no}, "status": attendCheck},
+				dataType:"text",
+				success:function(data){
+					console.log("1");
+					if(data=="true"){
+						$("#attend").val("참여취소");
+					} else {
+						$("#attend").val("참여");
+					}
+				},
+				 error:function(data, textStatus){
+			        	alert("실패");
+				 }
+			});
+		}
+		
 	</script>
 </body>
 </html>

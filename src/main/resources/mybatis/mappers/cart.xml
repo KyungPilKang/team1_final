@@ -11,6 +11,12 @@
 		]]>
 	</insert>
 
+	<delete id="deleteCart" parameterType="Map">
+		<![CDATA[
+		delete from cart where username=#{username} and cart_bookNum=#{book_num}
+		]]>
+	</delete>
+
 
 	<select id="selectItem" resultType="Cart" parameterType="Map">
 	<![CDATA[
