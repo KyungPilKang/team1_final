@@ -1,6 +1,5 @@
 package com.finalproject.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -13,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.finalproject.dto.Answer;
+import com.finalproject.dto.Member;
 import com.finalproject.dto.Request;
 import com.finalproject.service.AdminService;
 
@@ -26,22 +26,39 @@ public class AdminController {
 	private HttpSession session;
 
 	
-	@GetMapping("qna1")
-	public String qna1() {
-		List<Request> reqList=adminService.getTeacherRequestList();
-		return "admin/admin_qnaList1";
-	}
-	@GetMapping("qna2")
-	public String qna2() {
-		return "admin/admin_qnaList2";
-	}
-	@GetMapping("qna3")
-	public String qna3() {
-		return "admin/admin_qnaList3";
+	@GetMapping("/qnalist")
+	public ModelAndView qnaListForm() {
+		ModelAndView mav=new ModelAndView();
+		Member mem = (Member) session.getAttribute("login");
+		String role = mem.getRole();
+		try {
+			List<Request> reqList=adminService.getRequestListByRole(role);
+			mav.addObject("reqList", reqList);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		switch(role) {
+		case "teacher":
+			mav.setViewName("admin/admin_qnaList1");
+			break;
+		case "fffffffffffdfff":
+			mav.setViewName("admin/admin_qnaList2");
+			break;
+		case "student":
+			mav.setViewName("admin/admin_qnaList3");
+			break;
+		case "학부모":
+			mav.setViewName("admin/admin_qnaList4");
+			break;
+		}
+		
+		return mav;
+		
 	}
 	
 	
-//	1:1 문의 목록 메서드
+	
 	@GetMapping(value="/adminqnainfo")
 	public ModelAndView adminqnainfo() {
 		ModelAndView mav=new ModelAndView();
