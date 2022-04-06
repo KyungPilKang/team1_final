@@ -104,4 +104,16 @@ public class StudyServiceImpl implements StudyService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public void checkAttend(Map<String, String> attendbyCheck, String status1) throws Exception {
+		// 참여
+		
+	}
+
+	@Override
+	public void cancleAttend(Map<String, String> canclebyCheck) throws Exception {
+		// 참여취소
+		
+	}
 }

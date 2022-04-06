@@ -1,6 +1,7 @@
 package com.finalproject.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -22,8 +23,9 @@ public interface StudyService {
 	//내가 쓴 글
 	List<Study> makerList(String maker) throws Exception;
 
-
-	
+	//참여 참여취소 
+	public void checkAttend(Map<String,String> attendbyCheck, String status1)throws Exception;
+	public void cancleAttend(Map<String,String> canclebyCheck) throws Exception;
 	
 	
 	//3-1. 스터디 조회,검색 

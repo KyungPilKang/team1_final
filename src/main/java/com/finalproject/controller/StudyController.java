@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -103,6 +104,25 @@ public class StudyController {
 		return mav;
 	}
 
+
+	// 스터디개설자 상세페이지 
+	// 추후 get 방식에서 post 방식으로 변경 필요
+	///studymakerdetail/3
+	/*
+	@PostMapping("/studymakerdetail/${study_no}")
+	public ModelAndView studymakerdetail(@PathVariable int study_no, @RequestParam(value="maker")String maker) {
+		ModelAndView mav = new ModelAndView("");
+		String user_id = (String) session.getAttribute("id");
+		try {
+			Study posted = studyservice.getStudydetail(study_no);
+			mav.addObject("studyPosted", posted);		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mav;
+	}
+*/
+	
 	// (2)개설자가 상세글보기 클릭시 보여지는 페이지
 	// 추후 post 변경
 	@GetMapping("studymakerdetail")
@@ -245,28 +265,21 @@ public class StudyController {
 	// 참여 기능
 	@ResponseBody
 	@PostMapping("/attend")
-	public boolean attendcheck(@RequestParam int study_no, @RequestParam(value = "status") boolean status, HttpServletRequest request) {
+	public String attendcheck(@RequestParam int study_no, @RequestParam(value = "status") String status,HttpServletRequest request) {
 		System.out.println(status);
-		String real_stat = "";
-		
+		String status1 ="";
+		String user_id = (String) session.getAttribute("id");
 		try {
-			String user_id = (String) session.getAttribute("id");
-			if (status == true) {
-				System.out.println("참여 상태(1)에서 누른거");
-				// 여기서는 status를 "team_applycancle"로 변경한다
-				real_stat = "team_applycancle";
+			if (status1 == "team_apply") {
+				//studyservice.checkAttend(user_id, study_no, status1);
 			} else {
-				System.out.println("미참여 상태(0)에서 누른거");
-				// 여기서는 status를 "team_apply"로 변경한다
-				real_stat = "team_apply";
-				
+				//studyservice.cancleAttend(user_id, study_no);
 			}
-				//studyservice.checkattends(user_id, study_no, real_stat);
-			
+						
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return !status;
+		return status1;
 	}
 
 }

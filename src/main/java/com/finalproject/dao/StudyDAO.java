@@ -24,5 +24,6 @@ public interface StudyDAO {
 	//public int makerListCount(String maker);
 	List<Study> makerList(String maker);
 	
+
 }
 
