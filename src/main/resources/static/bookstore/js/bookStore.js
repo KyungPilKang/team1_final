@@ -12,21 +12,20 @@ const putCart = function (bookNum) {
         .then(function (data) {
             console.log(data.exist)
             if (data.exist === "담기성공") {
-                Swal.fire({
+                swal({
                     title: data.exist,
                     text: "장바구니에" + bookNum + "번 상품이 담겼습니다.",
                     icon: "success",
-                    confirmButtonText: "확인"
+                    button: "확인"
                 }).then(() => {
                     location.reload()
                 })
             } else {
-                // alert("장바구니에 이미 존재하는 상품입니다.")
-                Swal.fire({
+                swal({
                     title: "중복",
                     text: "장바구니에 이미 존재하는 상품입니다.",
                     icon: "warning",
-                    confirmButtonText: "확인"
+                    button: "확인"
                 });
             }
         })

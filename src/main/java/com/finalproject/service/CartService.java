@@ -17,4 +17,7 @@ public interface CartService {
     //장바구니에 담긴 카트 아이템 list 가져오기
     List<Book> getCartList(String username) throws Exception;
 
+    //장바구니에 담긴 카트 아이템 삭제
+    void deleteCart(int book_num, String username) throws Exception;
+
 }
