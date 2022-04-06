@@ -4,25 +4,14 @@
 
 <mapper namespace="com.finalproject.dao.AdminDAO">
 	
-
-	<select id="qnaReqList" resultType="Request">
-		<![CDATA[
-			select * from request order by request_num
-		]]>
-	</select>
-
+	<!-- <select id="qnaInfoList" resultType="Qnainfo">
+	
+	실제로 받을 데이터는 배열형태이지만 Account로 마이바티스가 데이터를 내려보내면 List로 받을 수 있다.
 	
 	<select id="qnaAnsList" resultType="Answer">
 		<![CDATA[
-			select * from answer order by answer_num
+			select * answer answer order by answer_num
 		]]>
-	</select>
-	
-	<insert id="insertAnswer" parameterType="Answer">
-		<![CDATA[
-			insert into answer values(#{answer_date},#{answer_content})
-		]]>
-	</insert>
-
+	</select> -->
 
 </mapper>

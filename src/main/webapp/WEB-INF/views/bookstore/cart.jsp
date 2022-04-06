@@ -2,6 +2,11 @@
          pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Date" %>
+<% Date nowTime = new Date(); SimpleDateFormat simpleDateFormat = new SimpleDateFormat("M월 d일");%>
+
+
 
 
 <!DOCTYPE html>
@@ -78,7 +83,7 @@
                                     <h5 class="mb-3"
                                         style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 20vw">
                                             ${cart.book_subject}</h5>
-                                    <span class="text-truncate me-0">${cart.book_date} 출고 예상 (이거 날짜 책 등록일임, 출력 테스트용)</span>
+                                    <span class="text-truncate me-0"> 출고 예상일 : <%= simpleDateFormat.format(nowTime) %></span>
                                 </div>
                             </div>
                             <div class="col-md-1 d-flex align-items-center">
@@ -97,7 +102,7 @@
                                        onclick="calTotal()"/><br/>
                             </div>
                             <div class="col-md-1 d-flex align-items-center">
-                                <button>삭제</button>
+                                <button onclick="delCart(${cart.book_num})">삭제</button>
                             </div>
                         </div>
                     </div>
@@ -130,6 +135,9 @@
 
 <!-- Template Javascript -->
 <script src="${pageContext.request.contextPath}/resources/bookstore/js/main.js"></script>
+
+<%-- sweetalert --%>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <%-- cart Javascript --%>
 <script src="${pageContext.request.contextPath}/resources/bookstore/js/cart.js"></script>

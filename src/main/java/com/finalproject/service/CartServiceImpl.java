@@ -48,6 +48,13 @@ public class CartServiceImpl implements CartService {
         return cartDAO.cartItems(username);
     }
 
+    @Override
+    public void deleteCart(int book_num, String username) throws Exception {
+        Map<String, Object> cartItem = new HashMap<>();
+        cartItem.put("book_num", book_num);
+        cartItem.put("username", username);
+        cartDAO.deleteCart(cartItem);
+    }
 
 
 }

@@ -51,7 +51,6 @@
     <i class="fa-solid fa-cart-shopping"></i>
 </div>
 <div style="float:right; margin-right:-43px; margin-top:8px;">
-    <%-- 해당 유저가 갖고있는 장바구니 리스트의 갯수를 불러와서 출력하는게 맞다. --%>
     <div id="cartCount"
          style="background: red; width: 12px; height: 12px; font-size: 10px; color:white; display: flex; justify-content: center; align-items: center; border-radius: 100px;">
         ${cartCount}
@@ -232,14 +231,11 @@
 <script src="${pageContext.request.contextPath}/resources/bookstore/js/main.js"></script>
 
 <%-- sweetalert --%>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <%-- bookStore putCart Javascript --%>
 <script src="${pageContext.request.contextPath}/resources/bookstore/js/bookStore.js"></script>
 
-<script>
-
-</script>
 
 
 </body>
