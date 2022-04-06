@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -98,23 +99,27 @@
                 <h5 class="section-title bg-white text-center text-primary px-3">개설리스트보기</h5>
                 <h1 class="mb-5">내가 개설한 스터디</h1>
             </div>
+            
+            <c:forEach var="study" items="${studylist}">
             <div class="owl-carousel testimonial-carousel position-relative">
+            
                 <div class="testimonial-item text-center">
                     <div class="p-2 mx-auto mb-3" style="width: 400px; height: 130px; text-overflow: ellipsis; background: rgba(6, 187, 204, 0.1); font-size: 1.0em; font-family:Stylish">
-					<span> 초등학교 ${studyList.study_sname}</span><span> 5학년 ${studyList.study_grade}</span><br>
-                    <span> 기간 : 2022.03.06~2022.04.05 ${studyList.study_fdate}${studyList.study_fdate}</span><br>
-                    <span> 시간 : 08:00 ~ 09:00 ${studyList.study_ftime}${studyList.study_etime}</span><br>
-                    <span> 유형 : 내신${studyList.study_type}</span><br>
-                    <span> 목표 : 최상${studyList.study_target_level}</span>
+					<span> 1학교 : ${study.study_sname}</span><span> ${study.study_grade}</span><br>
+                    <span> 기간 : 2022.03.06~2022.04.05 ${study.study_fdate}${study.study_fdate}</span><br>
+                    <span> 시간 : 08:00 ~ 09:00 ${study.study_ftime}${study.study_etime}</span><br>
+                    <span> 유형 : 내신${study.study_type}</span><br>
+                    <span> 목표 : 최상${study.study_target_level}</span>
                     </div>
                     <i class="bi bi-book-fill"><h5>니즈풀스터디${studyList.study_title}</h5></i>
                     <div class="testimonial-text bg-light text-center p-4">
                     <p class="mb-0" style="text-overflow: ellipsis; font-size: 1.0em; font-family:Stylish">이 스터디는 이번 1학기 중간고사를 목표로 개설되었습니다! 최상에 도전하는 친구들이 매주 2번 모여 문제풀이를 같이 할까요. 교재는 천재교육 --문제집 혹은 메가스터디 --교재 입니다. 추후 스터디 모집 완료후 오픈카톡으로 이야기 나누어 보아요.${study.study_contents}</p>
                     </div>
                 </div>
-                <div class="testimonial-item text-center">
+              
+               <div class="testimonial-item text-center">
                     <div class="p-2 mx-auto mb-3" style="width: 400px; height: 130px; text-overflow: ellipsis; background: rgba(6, 187, 204, 0.1); font-size: 1.0em; font-family:Stylish">
-					<span> 초등학교 ${study.study_sname}</span><span> 5학년 ${study.study_grade}</span><br>
+					<span> 2초등학교 ${study.study_sname}</span><span> 5학년 ${study.study_grade}</span><br>
                     <span> 기간 : 2022.03.06~2022.04.05 ${study.study_fdate}${study.study_fdate}</span><br>
                     <span> 시간 : 08:00 ~ 09:00 ${study.study_ftime}${study.study_etime}</span><br>
                     <span> 유형 : 내신${study.study_type}</span><br>
@@ -127,7 +132,7 @@
                 </div>
                 <div class="testimonial-item text-center">
                     <div class="p-2 mx-auto mb-3" style="width: 400px; height: 130px; text-overflow: ellipsis; background: rgba(6, 187, 204, 0.1); font-size: 1.0em; font-family:Stylish">
-					<span> 초등학교 ${study.study_sname}</span><span> 5학년 ${study.study_grade}</span><br>
+					<span> 3초등학교 ${study.study_sname}</span><span> 5학년 ${study.study_grade}</span><br>
                     <span> 기간 : 2022.03.06~2022.04.05 ${study.study_fdate}${study.study_fdate}</span><br>
                     <span> 시간 : 08:00 ~ 09:00 ${study.study_ftime}${study.study_etime}</span><br>
                     <span> 유형 : 내신${study.study_type}</span><br>
@@ -140,7 +145,7 @@
                 </div>
                 <div class="testimonial-item text-center">
                     <div class="p-2 mx-auto mb-3" style="width: 400px; height: 130px; text-overflow: ellipsis; background: rgba(6, 187, 204, 0.1); font-size: 1.0em; font-family:Stylish">
-					<span> 초등학교 ${study.study_sname}</span><span> 5학년 ${study.study_grade}</span><br>
+					<span> 4초등학교 ${study.study_sname}</span><span> 5학년 ${study.study_grade}</span><br>
                     <span> 기간 : 2022.03.06~2022.04.05 ${study.study_fdate}${study.study_fdate}</span><br>
                     <span> 시간 : 08:00 ~ 09:00 ${study.study_ftime}${study.study_etime}</span><br>
                     <span> 유형 : 내신${study.study_type}</span><br>
@@ -150,27 +155,11 @@
                     <div class="testimonial-text bg-light text-center p-4">
                     <p class="mb-0" style="text-overflow: ellipsis; font-size: 1.0em; font-family:Stylish">이 스터디는 이번 1학기 중간고사를 목표로 개설되었습니다! 최상에 도전하는 친구들이 매주 2번 모여 문제풀이를 같이 할까요. 교재는 천재교육 --문제집 혹은 메가스터디 --교재 입니다. 추후 스터디 모집 완료후 오픈카톡으로 이야기 나누어 보아요.${study.study_contents}</p>
                     </div>
-                </div>
-                
-                
-	      <!--           
-	            <c:forEach var="study" items="${studylist}">
-	                <div class="testimonial-item text-center">
-	                    <div class="p-2 mx-auto mb-3" style="width: 400px; height: 130px; text-overflow: ellipsis; background: rgba(6, 187, 204, 0.1); font-size: 1.0em; font-family:Stylish">
-						<span> 초등학교 ${study.study_sname}</span><span> 5학년 ${study.study_grade}</span><br>
-	                    <span> 기간 : 2022.03.06~2022.04.05 ${study.study_fdate}${study.study_fdate}</span><br>
-	                    <span> 시간 : 08:00 ~ 09:00 ${study.study_ftime}${study.study_etime}</span><br>
-	                    <span> 유형 : 내신${study.study_type}</span><br>
-	                    <span> 목표 : 최상${study.study_target_level}</span>
-	                    </div>
-	                     <i class="bi bi-book-fill"><h5>니즈풀스터디${study.study_title}</h5></i>
-	                    <div class="testimonial-text bg-light text-center p-4">
-	                    <p class="mb-0" style="text-overflow: ellipsis; font-size: 1.0em; font-family:Stylish">이 스터디는 이번 1학기 중간고사를 목표로 개설되었습니다! 최상에 도전하는 친구들이 매주 2번 모여 문제풀이를 같이 할까요. 교재는 천재교육 --문제집 혹은 메가스터디 --교재 입니다. 추후 스터디 모집 완료후 오픈카톡으로 이야기 나누어 보아요.${study.study_contents}</p>
-	                    </div>
-	                </div>
-				</c:forEach>
-            -->     
-            </div>
+                  </div> 
+	        	</div>
+          		</c:forEach>
+           
+           
         </div>
     </div>
     <!-- 내가 개설한 스터디 슬라이드 End -->
@@ -287,36 +276,7 @@
 							</div>
 						</div>
 						
-				 <!--           
-			            <c:forEach var="study" items="${studylist}" start 0-3 ?>	
-								
-								<div class="job-item p-4 mb-4">
-									<div class="row g-4">
-										<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
-											<img class="flex-shrink-0 img-fluid border rounded" src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt="" style="width: 80px; height: 80px;">
-											<div class="text-start ps-4">
-												<h3 class="mb-3">스터디 등록 제목</h3>
-												<span class="resfreespan text-truncate me-3">
-													<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등
-												</span>
-												<span class="resfreespan text-truncate me-3">
-													<i class="bi bi-eyeglasses text-primary me-2"></i>학년
-												</span>
-												<span class="resfreespan text-truncate me-3">
-													<i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜 
-												</span>
-											</div>
-										</div>
-										<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-											<div class="d-flex mb-3">
-												<a class="btn btn-primary" href="">상세보기</a>
-											</div>
-											<span class="text-truncate"><i class="bi bi-cart-plus text-primary me-2"></i>참여여부</span>
-										</div>
-									</div>
-								</div>
-					   </c:forEach>
-		            -->     
+				 
 						
 					</div>
 				</div>
@@ -418,6 +378,25 @@
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	
-	
+		            
+		            
+		            	      <!--           
+	            <c:forEach var="study" items="${studylist}">
+	                <div class="testimonial-item text-center">
+	                    <div class="p-2 mx-auto mb-3" style="width: 400px; height: 130px; text-overflow: ellipsis; background: rgba(6, 187, 204, 0.1); font-size: 1.0em; font-family:Stylish">
+						<span> 초등학교 ${study.study_sname}</span><span> 5학년 ${study.study_grade}</span><br>
+	                    <span> 기간 : 2022.03.06~2022.04.05 ${study.study_fdate}${study.study_fdate}</span><br>
+	                    <span> 시간 : 08:00 ~ 09:00 ${study.study_ftime}${study.study_etime}</span><br>
+	                    <span> 유형 : 내신${study.study_type}</span><br>
+	                    <span> 목표 : 최상${study.study_target_level}</span>
+	                    </div>
+	                     <i class="bi bi-book-fill"><h5>니즈풀스터디${study.study_title}</h5></i>
+	                    <div class="testimonial-text bg-light text-center p-4">
+	                    <p class="mb-0" style="text-overflow: ellipsis; font-size: 1.0em; font-family:Stylish">이 스터디는 이번 1학기 중간고사를 목표로 개설되었습니다! 최상에 도전하는 친구들이 매주 2번 모여 문제풀이를 같이 할까요. 교재는 천재교육 --문제집 혹은 메가스터디 --교재 입니다. 추후 스터디 모집 완료후 오픈카톡으로 이야기 나누어 보아요.${study.study_contents}</p>
+	                    </div>
+	                </div>
+				</c:forEach>
+            -->     
+            
 </body>
 </html>

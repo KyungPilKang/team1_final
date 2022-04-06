@@ -8,7 +8,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -66,22 +65,24 @@ public class StudyController {
 	}
 
 	// (1)개설자메인 페이지
-	@PostMapping("studymakermain")
+	@RequestMapping(value="/studymakermain", method= {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView studymakermain() {
 		ModelAndView mav = new ModelAndView("study/studymakermain");
 		String result = null;
-		String user_id = (String) session.getAttribute("id");
+		//String user_id = (String) session.getAttribute("id");
+		String user_id = "김민정";
 		String maker = "김민정";
 		try {
 			if (user_id == maker) {
-				List<Study> studyList = studyservice.studymakerList(maker);
-				System.out.println(studyList.size());
+				List<Study> studyList = studyservice.makerList(maker);
+				System.out.println(studyList.size());				
 				mav.addObject("studyList", studyList);
 				for (Study s : studyList) {
 					System.out.println(s.getStudy_title());
 				}
 			}
 		} catch (Exception e) {
+			System.out.println("n");
 			e.printStackTrace();
 		}
 		return mav;

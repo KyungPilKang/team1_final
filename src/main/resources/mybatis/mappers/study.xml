@@ -36,19 +36,40 @@
 	  	]]>
 	 </select> 
 
-
+<!--개설자 수정-->
 	<update id="updateStudy" parameterType="study" >
 		<![CDATA[
 			update study set maker=#{maker}, study_sname=#{study_sname},study_grade=#{study_grade},study_subject=#{study_subject},study_type=#{study_type},,study_target_level=#{study_target_level},study_title=#{study_title},study_fdate=#{study_fdate},study_edate=#{study_edate},study_ftime=#{study_ftime}, study_etime=#{study_etime}, study_contents= #{study_contents},study_kakao=#{study_kakao} 
 			where study_no=#{study_no}
 		]]>
 	</update>
+	
+<!-- 개설자 삭제-->
 	<delete id="removeStudy" parameterType="int">
 		<![CDATA[
 			delete from study where study_no=#{study_no}
 		]]>
 	</delete>
 
+<!-- 내가 쓴 글 리스트 반환-->
+	<select id="makerListCount" parameterType="String" resultType="int" >
+ 		<![CDATA[
+ 			select count(*) from study where maker=#{maker}
+ 		]]>
+ 	</select>
+ 	
+	<select id="makerList"  parameterType="String"  resultType="Study">
+		<![CDATA[
+			select * from study where maker=#{maker} 
+		]]>
+	</select>
+
+<!-- 내가 쓴 글 "스터디팀" 리스트 반환-->
+	<select id="makerteamList" parameterType="MyStudy" resultType="Study">
+		<![CDATA[
+			select * from studyteam where study_no in (select study_no from study where maker='김민정');
+		]]>
+	</select>
 </mapper>
 <!-- study 검색 -->
 
