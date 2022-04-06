@@ -11,6 +11,7 @@ public interface AdminService {
 	
 	List<Request> getRequestList() throws Exception;
 	List<Answer> getAnswerList() throws Exception;
+	void inputQna(Answer ans) throws Exception;
 	
 	
 }

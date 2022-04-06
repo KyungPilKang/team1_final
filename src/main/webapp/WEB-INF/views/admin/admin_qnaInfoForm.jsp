@@ -94,7 +94,7 @@
         <div class="container">
             <table>
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="section-title bg-white text-center text-primary px-3">강사 1:1문의 작성 </h6>
+                    <h6 class="section-title bg-white text-center text-primary px-3">${request_client} 1:1문의 작성 </h6>
                 </div>
                 <c:forEach items="${qnaList}" var="qna">
 	                <div class="col-lg-7 col-md-7 text-center wow fadeInUp" data-wow-delay="0.1s">
