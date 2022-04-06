@@ -2,10 +2,10 @@ package com.finalproject.service;
 
 import java.util.List;
 
-import com.finalproject.dto.Member;
+import org.springframework.stereotype.Service;
+
 import com.finalproject.dto.Study;
 import com.finalproject.dto.StudyTeam;
-import org.springframework.stereotype.Service;
 
 @Service
 public interface StudyService {
@@ -19,13 +19,10 @@ public interface StudyService {
 	public Study getStudydetail(int study_no) throws Exception;
 	//team_accept(수락), team_apply(신청), team_reject(탈락) status 리스트 반환
 	List<Study> searchStudyByStatus(String user_id, String status) throws Exception; 
-	//스터디 상세게시글리스트 반환(개설자)------ ?? study_no 필요여부..
-	List<Study> studymakerList(String maker) throws Exception;
-	
-	
-	
-	
-	
+	//내가 쓴 글
+	List<Study> makerList(String maker) throws Exception;
+
+
 	
 	
 	
@@ -43,6 +40,7 @@ public interface StudyService {
 	//8. 참여자 대기중 리스트 (대기)
 	public void holdAttend(int study_no, String user_id) throws Exception;
 
-	
+	//스터디 상세게시글리스트 반환(개설자)
+	//List<Study> studymakerList(String maker) throws Exception;
 
 }

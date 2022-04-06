@@ -2,6 +2,7 @@ package com.finalproject.service;
 
 import com.finalproject.dto.Book;
 import com.finalproject.dto.PageInfo;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 

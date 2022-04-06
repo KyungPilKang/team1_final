@@ -51,8 +51,9 @@
     <i class="fa-solid fa-cart-shopping"></i>
 </div>
 <div style="float:right; margin-right:-43px; margin-top:8px;">
-    <div style="background: red; width: 12px; height: 12px; font-size: 10px; color:white; display: flex; justify-content: center; align-items: center; border-radius: 100px;">
-        0
+    <div id="cartCount"
+         style="background: red; width: 12px; height: 12px; font-size: 10px; color:white; display: flex; justify-content: center; align-items: center; border-radius: 100px;">
+        ${cartCount}
     </div>
 </div>
 <!-- Book List Start -->
@@ -129,16 +130,13 @@
                             <div class="d-flex align-items-center" style="flex-direction: column">
                                 <br>
                                 <h5 class="mb-1">${book.book_subject}</h5>
-                                <div>
-                                <span class="" style="text-decoration: line-through;"><fmt:formatNumber
-                                        value="${book.book_price}" pattern="#,###"/>원</span>
-                                    → <strong
-                                        style="margin: 0 2px; font-weight: normal; color: #f54c4c;"><fmt:formatNumber
-                                        value="${book.book_reprice}" type="number"
-                                        pattern="#,###"/>원</strong>
-                                    <span class="dc_rate"
-                                          style="color: #5e6b9f; font-weight: normal;">[<strong>${book.book_discount}</strong>%↓]</span>
-                                </div>
+                                <span class="mb-1"
+                                      style="text-decoration: line-through;"><fmt:formatNumber
+                                        value="${book.book_price}" pattern="#,###"/>원</span> → <strong
+                                    class="mb-1"><fmt:formatNumber
+                                    value="${book.book_reprice}" type="number"
+                                    pattern="#,###"/>원</strong>
+                                    <%--                                <h3 class="mb-1"><fmt:formatNumber value="${book.book_price}" pattern="#,###"/>원</h3>--%>
                             </div>
                         </div>
                     </c:forEach>
@@ -196,7 +194,7 @@
                                 </div>
                             </div>
                             <div class="book_add">
-                                <a class="btn-sm btn-primary">장바구니 담기</a>
+                                <a class="btn-sm btn-primary" onclick="putCart(${book.book_num})">장바구니 담기</a>
                                 <a class="btn-sm btn-primary">바로 구매하기</a>
                             </div>
                         </li>
@@ -211,11 +209,10 @@
         <%-- 페이지 네비 하단 --%>
         <jsp:include page="/WEB-INF/views/bookstore/pageList.jsp"/>
 
-
     </div>
 </div>
-
 <!-- Book List Pagination End -->
+
 
 <jsp:include page="/WEB-INF/views/bookstore/footer.jsp"/>
 
@@ -232,6 +229,13 @@
 
 <!-- Template Javascript -->
 <script src="${pageContext.request.contextPath}/resources/bookstore/js/main.js"></script>
+
+<%-- sweetalert --%>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<%-- bookStore putCart Javascript --%>
+<script src="${pageContext.request.contextPath}/resources/bookstore/js/bookStore.js"></script>
+
 
 
 </body>

@@ -105,7 +105,7 @@
 													<input type="text" id="username" name="username" placeholder="6~12자리 영문,숫자" class="form-control">
 												</div>
 												<div class="col-lg-3"> 
-													<button type="button"  onclick="usernameChk()"class="btn btn-primary pl-1 pr-1 w-80">중복확인</button>
+													<button type="button"  onclick="usernameChk()" class="btn btn-primary pl-1 pr-1 w-80">중복확인</button>
 												</div>
 											</div>
 										</td>

@@ -109,9 +109,19 @@
                     <div class="navbar-name">- 홈 -</div>
                 </div>
                 <div class="navbar-bt">
-                    <div><button type="button" onclick="location.href='/freelancedefult'">홈</button></div>
-                    <div><button type="button" onclick="location.href='/freelancepagemakemove'">제작 목록</button></div>
-                    <div><button type="button" onclick="location.href='/freelancepagereview'">리뷰 목록</button></div>
+                    <div>
+                        <button class="navbar-click" type="button" onclick="location.href='/freelancedefult'">홈</button>
+                    </div>
+                    <div>
+                        <button class="navbar-click" type="button" onclick="location.href='/freelancepagemakemove'">제작
+                            목록
+                        </button>
+                    </div>
+                    <div>
+                        <button class="navbar-click" type="button" onclick="location.href='/freelancepagereview'">리뷰
+                            목록
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="default-intro">
@@ -221,7 +231,6 @@
 </div>
 <!-- Footer End -->
 
-
 <!-- Back to Top -->
 <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
@@ -239,6 +248,6 @@
 
 <!-- DIY -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<script src="${pageContext.request.contextPath}/resources/mypage/js/mypage.js"></script>
+<script src="${pageContext.request.contextPath}/resources/mypage/js/myFreelance.js"></script>
 </body>
 </html>
