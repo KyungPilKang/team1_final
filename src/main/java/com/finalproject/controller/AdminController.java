@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -25,31 +26,33 @@ public class AdminController {
 	private HttpSession session;
 
 	
-//	답변등록 확인 컨트롤러
-	@PostMapping(value="/adminqnainfo")
+	@GetMapping("qna1")
+	public String qna1() {
+		List<Request> reqList=adminService.getTeacherRequestList();
+		return "admin/admin_qnaList1";
+	}
+	@GetMapping("qna2")
+	public String qna2() {
+		return "admin/admin_qnaList2";
+	}
+	@GetMapping("qna3")
+	public String qna3() {
+		return "admin/admin_qnaList3";
+	}
+	
+	
+//	1:1 문의 목록 메서드
+	@GetMapping(value="/adminqnainfo")
 	public ModelAndView adminqnainfo() {
 		ModelAndView mav=new ModelAndView();
 		
 		try {
 			List<Request> reqList=adminService.getRequestList();
-			List<Answer> ansList=adminService.getAnswerList();
+			/// List<Answer> ansList=adminService.getAnswerList();
 			
-			for(Request req: reqList) {
-				System.out.println(req.getRequest_content());
-			}
+			mav.addObject("reqList", reqList);
+// 			mav.addObject("ansList", ansList);
 			
-			for(Answer ans: ansList) {
-				System.out.println(ans.getAnswer_subject());
-			}
-			
-			List<Object> qnaList = new ArrayList<>();
-			qnaList.addAll(reqList);
-			qnaList.addAll(ansList);
-			
-			 mav.addObject("qnaList", qnaList);
-			
-//			mav.addObject("reqList", reqList);
-//			mav.addObject("ansList", ansList);
 			mav.setViewName("/admin/admin_qnaInfoForm");
 		} catch(Exception e) {
 			e.printStackTrace();
