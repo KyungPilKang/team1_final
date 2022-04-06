@@ -268,12 +268,16 @@ public class StudyController {
 	public String attendcheck(@RequestParam int study_no, @RequestParam(value = "status") String status,HttpServletRequest request) {
 		System.out.println(status);
 		String status1 ="";
-		String user_id = (String) session.getAttribute("id");
+		String user_id ="김민정";
 		try {
+			//HttpSession session = request.getSession();
+			//String user_id = (String) session.getAttribute("id");
 			if (status1 == "team_apply") {
-				//studyservice.checkAttend(user_id, study_no, status1);
+				System.out.println("1");
+				studyservice.checkAttend(user_id, study_no, status1);
 			} else {
-				//studyservice.cancleAttend(user_id, study_no);
+				System.out.println("2");
+				studyservice.cancleAttend(user_id, study_no);
 			}
 						
 		} catch (Exception e) {

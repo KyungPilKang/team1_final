@@ -106,14 +106,16 @@ public class StudyServiceImpl implements StudyService {
 	}
 
 	@Override
-	public void checkAttend(Map<String, String> attendbyCheck, String status1) throws Exception {
+	public void checkAttend(String user_id, int study_no, String status1) throws Exception {
 		// 참여
 		
 	}
 
 	@Override
-	public void cancleAttend(Map<String, String> canclebyCheck) throws Exception {
+	public void cancleAttend(String user_id, int study_no) throws Exception {
 		// 참여취소
 		
 	}
+
+
 }

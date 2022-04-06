@@ -65,17 +65,30 @@
 	</select>
 
 <!-- 내가 쓴 글 "스터디팀" 리스트 반환-->
-	<select id="makerteamList" parameterType="MyStudy" resultType="Study">
+	<select id="makerteamList" parameterType="Study" resultType="Studyteam">
 		<![CDATA[
 			select * from studyteam where study_no in (select study_no from study where maker='김민정');
 		]]>
 	</select>
+	
+<!-- 참여 -->
+	<insert id="checkAttend" parameterType="" >
+		<![CDATA[
+			 insert into studyteam (study_no, user_id, team_status) values(#{study_no},#{user_id},#{status})
+		]]>
+	</insert>
+<!-- cancleAttend -->
+	<delete id="cancleAttend" parameterType="">
+		<![CDATA[
+			delete from studyteam where user_id=#{user_id} and study_no=#{study_no}
+		]]>
+	</delete>
+
+
 </mapper>
 <!-- study 검색 -->
 
 <!-- study 참여/참여취소 -->
-
-
 
  
 <!-- 

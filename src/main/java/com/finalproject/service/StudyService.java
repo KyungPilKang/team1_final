@@ -24,8 +24,8 @@ public interface StudyService {
 	List<Study> makerList(String maker) throws Exception;
 
 	//참여 참여취소 
-	public void checkAttend(Map<String,String> attendbyCheck, String status1)throws Exception;
-	public void cancleAttend(Map<String,String> canclebyCheck) throws Exception;
+	public void checkAttend(String user_id, int study_no, String status1)throws Exception;
+	public void cancleAttend(String user_id,int study_no) throws Exception;
 	
 	
 	//3-1. 스터디 조회,검색 
