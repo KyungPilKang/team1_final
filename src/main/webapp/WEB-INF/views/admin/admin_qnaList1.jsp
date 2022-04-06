@@ -36,13 +36,7 @@
 </head>
 
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <!-- Spinner End -->
+
 
 
     <!-- Navbar Start -->
@@ -122,8 +116,36 @@
 
                     <div class="tab-content">
                         <div id="tab-1" class="tab-pane fade show p-0 active">
-                            
-                            <div class="job-item p-4 mb-4">
+                        
+                            <c:forEach items="${qnaList}" var="qna">
+	                            <div class="job-item p-4 mb-4">
+	                                <div class="row g-4">
+	                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
+	                                        <div class="text-start ps-4">
+	                                            <h5 class="mb-3">${qna.request_subject}</h5>
+	                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>${qna.username}</span>
+	                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>문의일 ${qna.request_date}</small>
+	                                        </div>
+	                                    </div>
+	                                    <!-- - d-flex 는 왼쪽부터 쌓인다는 뜻임
+	                                    - col-sm-12 col-md-2 12개의 컬럼 중 2개의 영역을 차기 div태그로 해서 위에서 부터 아래로 왼쪽에서 오른 쪽으로 쌓인다.
+	                                    - align-items-center div틀에 가로로 중앙에 배치 -->
+	                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
+	                                        <div class="text-start ps-4">
+	                                            <h6 class="mb-3">${qna.request_type}</h6>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+	                                        <div class="d-flex mb-3">
+	                                            <a class="btn btn-primary" href="">답변 대기</a>
+	                                        </div>
+	                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>응답일 ${qna.answer_date}</small>
+	                                    </div>
+	                                </div>
+	                            </div>
+							</c:forEach>
+							
+<!--                             <div class="job-item p-4 mb-4">
                                 <div class="row g-4">
                                     <div class="col-sm-12 col-md-6 d-flex align-items-center">
                                         <div class="text-start ps-4">
@@ -132,9 +154,6 @@
                                             <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>문의일 2021.06.03</small>
                                         </div>
                                     </div>
-                                    <!-- - d-flex 는 왼쪽부터 쌓인다는 뜻임
-                                    - col-sm-12 col-md-2 12개의 컬럼 중 2개의 영역을 차기 div태그로 해서 위에서 부터 아래로 왼쪽에서 오른 쪽으로 쌓인다.
-                                    - align-items-center div틀에 가로로 중앙에 배치 -->
                                     <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
                                         <div class="text-start ps-4">
                                             <h6 class="mb-3">홈페이지 문의</h6>
@@ -144,33 +163,10 @@
                                         <div class="d-flex mb-3">
                                             <a class="btn btn-primary" href="">답변 대기</a>
                                         </div>
-                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>답변대기 2021.06.03</small>
+                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>응답일 2021.06.03</small>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="job-item p-4 mb-4">
-                                <div class="row g-4">
-                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h5 class="mb-3">홈페이지 사용법이 어떻게 되나요?</h5>
-                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>사용자 ID</span>
-                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>문의일 2021.06.03</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h6 class="mb-3">홈페이지 문의</h6>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="">답변 대기</a>
-                                        </div>
-                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>답변대기 2021.06.03</small>
-                                    </div>
-                                </div>
-                            </div>
+                            </div> -->
 
                             <a class="btn btn-primary py-3 px-5" href="">More List</a>
                         </div>
@@ -179,6 +175,76 @@
             </div>
         </div>
         <!-- 강사 End -->
+
+
+
+
+
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		
+		<%-- 무한스크롤 --%>
+		<script>
+		    let currentPage = 1;
+		    let isLoading = false;
+		
+		    $(".board_body").scroll(function () {
+		        if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+		            return;
+		        }
+		        isLoading = true;
+		        $(".loading").show();
+		        setTimeout(loadNewPage, 1400);
+		    });
+		
+		    /* $(window).on("scroll", function () {
+		        let scrollTop = $(window).scrollTop();
+		        let windowHeight = $(window).height();
+		        let documentHeight = $(document).height();
+		        let isBottom = scrollTop + windowHeight + 10 >= documentHeight;
+		
+		        if (isBottom) {
+		            if (currentPage === ${pageInfo.maxPage } || isLoading) {
+		                return;
+		            }
+		            isLoading = true;
+		            $(".loading").show();
+		            setTimeout(loadNewPage, 1400);
+		        }
+		    }); */
+		
+		    function loadNewPage() {
+		        currentPage++;
+		        console.log("${sort_name}")
+		        if ("${sort_name}" === "boardlist") {
+		            getList(currentPage, "boardlist");
+		        } else if ("${sort_name}" === "viewssort") {
+		            getList(currentPage, "viewssort");
+		        } else if ("${sort_name}" === "replysort") {
+		            getList(currentPage, "replysort");
+		        } else if ("${sort_name}" === "likesort") {
+		            getList(currentPage, "likesort");
+		        }
+		    }
+		
+		    const getList = function (currentPage, sortType) {
+		        console.log("inGetList : " + currentPage);
+		        $.ajax({
+		            type: "post",
+		            async: false,
+		            url: "http://localhost:8090/boardForm_all_ajax",
+		            data: {
+		                page: currentPage,
+		                sort: sortType
+		            },
+		            success: function (data) {
+		                $('.attach_ajax_list').append(data);
+		                $(".loading").hide();
+		                isLoading = false;
+		            }
+		        })
+		    }
+		</script>
+		<%-- 끝 : 무한스크롤 --%>
 
 
 

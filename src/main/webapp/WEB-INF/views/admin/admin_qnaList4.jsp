@@ -122,8 +122,33 @@
 
                     <div class="tab-content">
                         <div id="tab-4" class="tab-pane fade show p-0 active">
-
-                            <div class="job-item p-4 mb-4">
+                        
+                            <c:forEach items="${qnaList}" var="qna">
+	                            <div class="job-item p-4 mb-4">
+	                                <div class="row g-4">
+	                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
+	                                        <div class="text-start ps-4">
+	                                            <h5 class="mb-3">${qna.request_subject}</h5>
+	                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>${qna.username}</span>
+	                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>문의일 ${qna.request_date}</small>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
+	                                        <div class="text-start ps-4">
+	                                            <h6 class="mb-3">${qna.request_type}</h6>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+	                                        <div class="d-flex mb-3">
+	                                            <a class="btn btn-primary" href="">답변 대기</a>
+	                                        </div>
+	                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>응답일 ${qna.answer_date}</small>
+	                                    </div>
+	                                </div>
+	                            </div>
+							</c:forEach>
+							
+<!--                             <div class="job-item p-4 mb-4">
                                 <div class="row g-4">
                                     <div class="col-sm-12 col-md-6 d-flex align-items-center">
                                         <div class="text-start ps-4">
@@ -141,33 +166,10 @@
                                         <div class="d-flex mb-3">
                                             <a class="btn btn-primary" href="">답변 대기</a>
                                         </div>
-                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>답변완료 2021.06.03</small>
+                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>응답일 2021.06.03</small>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="job-item p-4 mb-4">
-                                <div class="row g-4">
-                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h5 class="mb-3">홈페이지 사용법이 어떻게 되나요?</h5>
-                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>사용자 ID</span>
-                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>문의일 2021.06.03</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h6 class="mb-3">홈페이지 문의</h6>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="">답변 대기</a>
-                                        </div>
-                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>답변완료 2021.06.03</small>
-                                    </div>
-                                </div>
-                            </div>
+                            </div> -->
 
                             <a class="btn btn-primary py-3 px-5" href="">More List</a>
                         </div>

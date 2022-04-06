@@ -1,17 +1,18 @@
 package com.finalproject.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.finalproject.dto.Answer;
+import com.finalproject.dto.Member;
 import com.finalproject.dto.Request;
 import com.finalproject.service.AdminService;
 
@@ -25,31 +26,50 @@ public class AdminController {
 	private HttpSession session;
 
 	
-//	답변등록 확인 컨트롤러
-	@PostMapping(value="/adminqnainfo")
+	@GetMapping("/qnalist")
+	public ModelAndView qnaListForm() {
+		ModelAndView mav=new ModelAndView();
+		Member mem = (Member) session.getAttribute("login");
+		String role = mem.getRole();
+		try {
+			List<Request> reqList=adminService.getRequestListByRole(role);
+			mav.addObject("reqList", reqList);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		switch(role) {
+		case "teacher":
+			mav.setViewName("admin/admin_qnaList1");
+			break;
+		case "fffffffffffdfff":
+			mav.setViewName("admin/admin_qnaList2");
+			break;
+		case "student":
+			mav.setViewName("admin/admin_qnaList3");
+			break;
+		case "학부모":
+			mav.setViewName("admin/admin_qnaList4");
+			break;
+		}
+		
+		return mav;
+		
+	}
+	
+	
+	
+	@GetMapping(value="/adminqnainfo")
 	public ModelAndView adminqnainfo() {
 		ModelAndView mav=new ModelAndView();
 		
 		try {
 			List<Request> reqList=adminService.getRequestList();
-			List<Answer> ansList=adminService.getAnswerList();
+			/// List<Answer> ansList=adminService.getAnswerList();
 			
-			for(Request req: reqList) {
-				System.out.println(req.getRequest_content());
-			}
+			mav.addObject("reqList", reqList);
+// 			mav.addObject("ansList", ansList);
 			
-			for(Answer ans: ansList) {
-				System.out.println(ans.getAnswer_subject());
-			}
-			
-			List<Object> qnaList = new ArrayList<>();
-			qnaList.addAll(reqList);
-			qnaList.addAll(ansList);
-			
-			 mav.addObject("qnaList", qnaList);
-			
-//			mav.addObject("reqList", reqList);
-//			mav.addObject("ansList", ansList);
 			mav.setViewName("/admin/admin_qnaInfoForm");
 		} catch(Exception e) {
 			e.printStackTrace();
