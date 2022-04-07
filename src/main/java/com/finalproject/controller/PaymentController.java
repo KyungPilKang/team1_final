@@ -29,6 +29,10 @@ public class PaymentController {
         return "/bookstore/paymentFinished";
     }
 
+    @RequestMapping("/juso")
+    public String jusoCallBacks() {
+        return "/loginJoin/juso";
+    }
 
     // Cart > Payment
     @PostMapping(value = "/order")

@@ -44,10 +44,7 @@ public class BookController {
 //    }
 
 
-    @RequestMapping("/juso")
-    public String jusoCallBacks() {
-        return "/loginJoin/juso";
-    }
+
 
     @RequestMapping("/delivery")
     public String delivery() {

@@ -26,12 +26,34 @@ $('#previous').click(function(){
 });
 
 
+/* 결제 방법 선택 */
+const payMethod = function (event){
+    let pay_method = event.target.value;
+    if(pay_method === 'card'){
+        document.getElementById('btn_payment').setAttribute("onclick","payment('card')")
+    } else if(pay_method === 'vbank'){
+        document.getElementById('btn_payment').setAttribute("onclick","payment('vbank')")
+    }else if(pay_method === 'trans'){
+        document.getElementById('btn_payment').setAttribute("onclick","payment('trans')")
+    }else if(pay_method === 'phone'){
+        document.getElementById('btn_payment').setAttribute("onclick","payment('phone')")
+    }else if(pay_method === 'tosspay'){
+        document.getElementById('btn_payment').setAttribute("onclick","payment('tosspay')")
+    }else if(pay_method === 'samsung'){
+        document.getElementById('btn_payment').setAttribute("onclick","payment('samsung')")
+    }
+}
+
+/* 결제 성공시 배송정보를 db에 넣어주는 함수를 호출하도록 구현 */
+/* 결제 성공시 해당 username에 해당하는 order 테이블에 cart 테이블의 정보를 넘기도록 */
+/* 결제 성공시 해당 username에 해당하는 장바구니 db를 전부 제거하도록 구현 */
+
 /* 결제 */
-function payment() {
+function payment(payMethod) {
     IMP.init('imp59784293'); //가맹점 식별코드(프로젝트 공용아이디로 설정되어있음)
     IMP.request_pay({
         pg : "inicis", //PG사
-        pay_method : "card", // card, vbank로 radio 선택에 따라 ${data}
+        pay_method : payMethod, // card, vbank로 radio 선택에 따라 ${data}
         merchant_uid : 'FL_' + new Date().getTime(), //주문 번호
         name : '결제테스트', //상품명
         amount : 200, //결제 가격
