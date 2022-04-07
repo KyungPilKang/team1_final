@@ -5,12 +5,13 @@ import java.sql.Date;
 public class Request {
     private int request_num;
     private String username;
-    private String request_client;
     private String request_type;
     private String request_subject;
     private String request_content;
     private Date request_date;
     private String request_state;
+    private String role;
+    
     
     public Request() {};
 
@@ -28,14 +29,6 @@ public class Request {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getRequest_client() {
-        return request_client;
-    }
-
-    public void setRequest_client(String request_client) {
-        this.request_client = request_client;
     }
 
     public String getRequest_type() {
@@ -77,4 +70,12 @@ public class Request {
     public void setRequest_state(String request_state) {
         this.request_state = request_state;
     }
+    
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
 }

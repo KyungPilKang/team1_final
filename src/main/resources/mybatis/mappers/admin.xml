@@ -6,13 +6,13 @@
 	
 	<select id="qnaReqList" resultType="Request">
 		<![CDATA[
-			select * from request order by request_num
+			select * from request where role=#{role}
 		]]>
 	</select>
 	
 	<select id="qnaAnsList" resultType="Answer">
 		<![CDATA[
-			select * from answer order by answer_num
+			select * from answer where role=#{role}
 		]]>
 	</select>
 

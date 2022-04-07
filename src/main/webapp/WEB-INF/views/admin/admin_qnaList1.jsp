@@ -102,10 +102,10 @@
 
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb text-uppercase">
-					<li class="breadcrumb-item"><a href="#freelancer">강사</a></li>
-					<li class="breadcrumb-item"><a href="#worker">교육업 종사자</a></li>
-					<li class="breadcrumb-item"><a href="#student">학생</a></li>
-					<li class="breadcrumb-item"><a href="#parents">학부모</a></li>
+					<li class="breadcrumb-item"><a href="/qnalist?role=freelancer">강사</a></li>
+					<li class="breadcrumb-item"><a href="/qnalist?role=worker">교육업 종사자</a></li>
+					<li class="breadcrumb-item"><a href="/qnalist?role=worker">학생</a></li>
+					<li class="breadcrumb-item"><a href="/qnalist?role=worker">학부모</a></li>
 				</ol>
 			</nav>
 
@@ -156,9 +156,7 @@
 											<h5 class="mb-3">${req.request_subject}</h5>
 											<span class="text-truncate me-3"><i
 												class="fa fa-user-tie text-primary me-2"></i>${req.username}</span>
-											<small class="text-truncate"><i
-												class="far fa-calendar-alt text-primary me-2"></i>문의일
-												${req.request_date}</small>
+											<small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>문의일 ${req.request_date}</small>
 										</div>
 									</div>
 									<!-- - d-flex 는 왼쪽부터 쌓인다는 뜻임
@@ -173,11 +171,13 @@
 									<div
 										class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
 										<div class="d-flex mb-3">
-											<a class="btn btn-primary" href="">${req.request_state}</a>
+											<a class="btn btn-primary" href="">
+											<%-- ${req.request_state} --%>
+											${ansList[status.index].answer_content == null ? '답변대기' : ansList[status.index].answer_state}
+											</a>
 										</div>
-										<small class="text-truncate"><i
-											class="far fa-calendar-alt text-primary me-2"></i>
-											${ansList[status.index].answer_date == null ? '응답 대기' : ansList[status.index].answer_date}</small>
+										<small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>
+											${ansList[status.index].answer_date == null ? '답변대기' : ansList[status.index].answer_date}</small>
 									</div>
 								</div>
 							</div>

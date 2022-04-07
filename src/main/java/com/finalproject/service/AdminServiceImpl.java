@@ -17,12 +17,12 @@ public class AdminServiceImpl implements AdminService {
 	
 	@Override
 	public List<Request> getRequestListByRole(String role) throws Exception {
-		return adminDAO.qnaReqList();
+		return adminDAO.qnaReqList(role);
 	}
 		
 	@Override
 	public List<Answer> getAnswerListByRole(String role) throws Exception {
-		return adminDAO.qnaAnsList();
+		return adminDAO.qnaAnsList(role);
 	}
 	
 //	@Override

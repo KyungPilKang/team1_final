@@ -7,8 +7,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.finalproject.dto.Answer;
@@ -35,8 +33,9 @@ public class AdminController {
 		try {
 			List<Request> reqList=adminService.getRequestListByRole(role);
 			mav.addObject("reqList", reqList);
-			System.out.println(reqList.get(0).getRequest_client());
-			System.out.println(reqList.get(1).getRequest_client());
+			
+			System.out.println(reqList.get(0).getRequest_subject());
+			System.out.println(reqList.get(1).getRequest_subject());
 			
 			List<Answer> ansList=adminService.getAnswerListByRole(role);
 			mav.addObject("ansList", ansList);

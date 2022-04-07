@@ -5,9 +5,10 @@ import java.sql.Date;
 public class Answer {
     private int answer_num;
     private int request_num;
-    private String answer_subject;
     private String answer_content;
     private Date answer_date;
+    private String role;
+    private String answer_state;
     
     public Answer() {};
 
@@ -27,14 +28,6 @@ public class Answer {
         this.request_num = request_num;
     }
 
-    public String getAnswer_subject() {
-        return answer_subject;
-    }
-
-    public void setAnswer_subject(String answer_subject) {
-        this.answer_subject = answer_subject;
-    }
-
     public String getAnswer_content() {
         return answer_content;
     }
@@ -50,4 +43,21 @@ public class Answer {
     public void setAnswer_date(Date answer_date) {
         this.answer_date = answer_date;
     }
+    
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
+	public String getAnswer_state() {
+	    return answer_state;
+	}
+
+	public void setAnswer_state(String answer_state) {
+	    this.answer_state = answer_state;
+	}	
+	
 }

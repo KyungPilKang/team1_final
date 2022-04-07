@@ -11,8 +11,8 @@ import com.finalproject.dto.Request;
 @Mapper
 @Repository
 public interface AdminDAO {
-	public List<Request> qnaReqList() throws Exception;
-	public List<Answer> qnaAnsList() throws Exception;
+	public List<Request> qnaReqList(String role) throws Exception;
+	public List<Answer> qnaAnsList(String role) throws Exception;
 //	public void insertAnswer(Answer ans) throws Exception;
 	
 	
