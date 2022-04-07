@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import com.finalproject.dto.Study;
 import com.finalproject.dto.StudyTeam;
 
-@Service
 public interface StudyService {
 	//스터디 등록 
 	public void regStudy(Study study) throws Exception;
