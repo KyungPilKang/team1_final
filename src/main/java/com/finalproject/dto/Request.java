@@ -11,6 +11,8 @@ public class Request {
     private String request_content;
     private Date request_date;
     private String request_state;
+    
+    public Request() {};
 
     public int getRequest_num() {
         return request_num;

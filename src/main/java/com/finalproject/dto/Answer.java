@@ -8,6 +8,8 @@ public class Answer {
     private String answer_subject;
     private String answer_content;
     private Date answer_date;
+    
+    public Answer() {};
 
     public int getAnswer_num() {
         return answer_num;
