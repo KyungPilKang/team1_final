@@ -57,7 +57,8 @@ public class StudyServiceImpl implements StudyService {
 	
 	@Override
 	public List<Study> searchStudyByStatus(String user_id, String status) throws Exception {
-	    Map<String, String> studybystatus = new HashMap<String, String>();
+	    //옵션 선택 값에 따른 일반유저 게시물 반환 (studyclass 등교하기 페이지) 
+		Map<String, String> studybystatus = new HashMap<String, String>();
 	    studybystatus.put("user_id", user_id);
 	    studybystatus.put("status", status);
 		
@@ -98,19 +99,19 @@ public class StudyServiceImpl implements StudyService {
 	@Override
 	public void makeAttend(int study_no, String user_id) throws Exception {
 		//  참여수락
-		
+		studyDAO.makeAttend(study_no, user_id);
 	}
 
 	@Override
 	public void holdAttend(int study_no, String user_id) throws Exception {
 		// 참여수락 취소 
-		
+		studyDAO.holdAttend(study_no, user_id);
 	}
 	
 	@Override
 	public void rejectAttend(int study_no, String user_id) throws Exception {
 		// 참여 탈락
-		
+		studyDAO.rejectAttend(study_no, user_id);
 	}
 
 
