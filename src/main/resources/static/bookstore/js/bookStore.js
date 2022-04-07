@@ -30,3 +30,12 @@ const putCart = function (bookNum) {
             }
         })
 }
+
+
+/* 바로 구매하기 */
+const buyNow = function (bookNum,bookPrice) {
+    document.getElementById('book_num').setAttribute("value", bookNum)
+    document.getElementById('book_price').setAttribute("value", bookPrice)
+    document.getElementById('buyNow').setAttribute("action", "/book-store/payment/now")
+    document.getElementById('buyNow').submit()
+}

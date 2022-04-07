@@ -29,6 +29,12 @@
 		]]>
 	</select>
 
+	<select id="selectBook" resultType="Book" parameterType="int">
+		<![CDATA[
+		select * from book where book_num=#{book_num}
+		]]>
+	</select>
+
 
 </mapper>
 
