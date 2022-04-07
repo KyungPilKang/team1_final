@@ -12,6 +12,30 @@
 		]]>
 		</insert>
 		
+		<insert id="insertNaverMember" parameterType="Member">
+		<![CDATA[
+			insert into final.member(name,nickname,email,birth,age,gender,phone,zipcode,doro_juso,sangse_juso,role,provider,
+			provider_id,withdraw_status,withdraw_type,withdraw_contents,login_count)values(#{name},#{nickname},#{email},
+			#{birth},#{age},#{gender},#{phone},#{zipcode},#{doro_juso},#{sangse_juso},#{role},#{provider},#{provider_id},#{withdraw_status},#{withdraw_type},
+			#{withdraw_contents},#{login_count})
+		]]>
+		</insert>
+		
+		<insert id="insertKakaoMember" parameterType="Member">
+		<![CDATA[
+			insert into final.member(name,nickname,email,birth,age,gender,phone,zipcode,doro_juso,sangse_juso,role,provider,
+			provider_id,withdraw_status,withdraw_type,withdraw_contents,login_count)values(#{name},#{nickname},#{email},
+			#{birth},#{age},#{gender},#{phone},#{zipcode},#{doro_juso},#{sangse_juso},#{role},#{provider},#{provider_id},#{withdraw_status},#{withdraw_type},
+			#{withdraw_contents},#{login_count})
+		]]>
+		</insert>
+		
+		<select id="selectMemberByProvider_id" resultType="Member" parameterType="String">
+		<![CDATA[
+			select * from final.member where provider_id=#{provider_id}
+		]]>
+		</select>
+		
 		<select id="selectMemberByEmail" resultType="Member" parameterType="String">
 		<![CDATA[
 			select * from final.member where email=#{email}
@@ -30,6 +54,26 @@
 		]]>
 		</select>
 		
+		<!-- <select id="getMemberByUsername" resultType="CustomUserDetails" parameterType="String">
+		<![CDATA[
+			select * from final.member where username=#{username}
+		]]>
+		</select> -->
+
+		<update id="update_login_count" parameterType="Member">
+		<![CDATA[
+			update final.member set login_count=#{login_count} where username = #{username}
+		]]>
+		</update>
+		
+		<update id="modifyMember" parameterType="Member">
+		<![CDATA[
+			update final.member set nickname=#{nickname}, email=#{email}, phone=#{phone}, zipcode=#{zipcode},
+			doro_juso=#{doro_juso}, sangse_juso=#{sangse_juso} where username = #{username}
+		]]>
+		</update>
+		
+	
 		
 	
 </mapper>
