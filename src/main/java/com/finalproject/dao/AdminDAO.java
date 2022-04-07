@@ -9,13 +9,9 @@ import com.finalproject.dto.Answer;
 import com.finalproject.dto.Request;
 
 @Mapper
-@Repository("adminDAO")
+@Repository
 public interface AdminDAO {
-	
-	
 	public List<Request> qnaReqList() throws Exception;
 	public List<Answer> qnaAnsList() throws Exception;
 	public void insertAnswer(Answer ans) throws Exception;
-	
-	
 }
