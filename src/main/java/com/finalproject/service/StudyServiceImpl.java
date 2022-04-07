@@ -30,6 +30,7 @@ public class StudyServiceImpl implements StudyService {
 
 	@Override
 	public void updateStudy(Study study) throws Exception {
+		System.out.println("수정확인후 수정 cnf2 :" + study.toString());
 		//스터디 수정 
 		studyDAO.updateStudy(study);
 		
@@ -70,7 +71,6 @@ public class StudyServiceImpl implements StudyService {
 	
 	@Override
 	public void changeAttend(String user_id, int study_no, String status) throws Exception {
-		
 		// 참여, 참여취소
 		Map<String, Object> map = new HashMap<>();
 		map.put("user_id", user_id);

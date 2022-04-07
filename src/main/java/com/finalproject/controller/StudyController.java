@@ -186,7 +186,8 @@ public class StudyController {
 	@PostMapping("studymodify")
 	public ModelAndView studymodify(@ModelAttribute Study inputstudy) {
 		ModelAndView mav = new ModelAndView("study/studymodify");
-		System.out.println(inputstudy.toString());
+		mav.addObject("study_no", inputstudy.getStudy_no());
+		System.out.println("스터디수정버튼 처음"+inputstudy.toString());
 		return mav;
 	}
 
@@ -211,7 +212,8 @@ public class StudyController {
 		try {
 			Study studymodicnf = (Study) session.getAttribute("modistudy");
 			System.out.println("수정확인후 수정 cnf :" + studymodicnf.toString());
-			mav.setViewName("study/studymakermain");
+			studyservice.updateStudy(studymodicnf);
+			mav.setViewName("study/studymain");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -219,15 +221,15 @@ public class StudyController {
 	}
 	
 	//삭제
-	//study_no 을 가지고 못넘어가짐 , 개설자 상세페이지 구현후 다시 확인 
-	@ResponseBody
 	@PostMapping("/deletestudy")
-	public void deletestudy(@RequestParam(value="no")int study_no) {
+	public String deletestudy(@RequestParam(value="study_no")int study_no) {
 		try {
 			studyservice.removeStudy(study_no);
+			
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
+		return "study/studymain";
 	}
 	
 	
@@ -280,6 +282,8 @@ public class StudyController {
 			//HttpSession session = request.getSession();
 			//String user_id = (String) session.getAttribute("id");
 			studyservice.changeAttend(user_id, study_no, status);
+			System.out.println(study_no);
+			System.out.println(status);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

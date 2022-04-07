@@ -336,7 +336,6 @@
 		
 
 			if (attend==true) {
-				/* alert = confirm('스터디에 참여 하시겠습니까?'); */
 				Swal.fire({
 					title: "등록 확인",
 					text: "스터디에 참여 하시겠습니까?",
@@ -382,7 +381,6 @@
 				})
 				attendCheck = "team_apply";
 			} else {
-				/* alert = confirm('스터디에 참여를 취소 하시겠습니까?'); */
 				Swal.fire({
 					title: "등록 취소",
 					text: "스터디에 참여를 취소 하시겠습니까?",
@@ -428,27 +426,6 @@
 				})
 				attendCheck = "notattend";
 			}
-			/* $.ajax({
-				type : "post",
-				dataType : "text",
-				async : false,
-				url : "http://localhost:8090/attend",
-				data : {
-					"study_no" : $('#study_no').val(),
-					"status" : attendCheck
-				},
-				success : function(data) {
-					console.log("ajax 테스트");
-					if (data == "team_apply") {
-					 	attend=false;
-					} else {
-						attend=true;
-					}
-				},
-				error : function(data, textStatus) {
-					alert("실패");
-				}
-			}); */
 
 		});
 	</script>

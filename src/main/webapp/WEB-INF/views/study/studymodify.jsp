@@ -362,7 +362,7 @@
 									<br>
 								</div>
 								</div>
-
+									<input name="study_no" id="study_no" type="hidden" value='${study_no}'>
 								<div class="col-12 mt-5"  id="regstudySubmitform">
 									<button type="submit" id="nextstudybtn10" class="btn btn-primary w-100 py-3" disabled>다음</button>
 								</div>

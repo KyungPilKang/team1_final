@@ -125,7 +125,7 @@
 					<div class="mb-5">
 						<h3 class="mb-3">스터디 정보</h3>
 						<br>
-						<input name="study_no" id="study_no" type="hidden" value='${studyPosted.study_no}'>
+						
 						<p><i class="fa fa-angle-right text-primary me-2"></i>학교 : ${studyPosted.study_sname}</p>
 						<p><i class="fa fa-angle-right text-primary me-2"></i>학년 : ${studyPosted.study_grade}</p>
 						<p><i class="fa fa-angle-right text-primary me-2"></i>과목 : ${studyPosted.study_subject}</p>
@@ -161,6 +161,7 @@
 					<div class="col-12">
 						<div class="col-12 mt-4">
 							<form action="/studymodify" method="post">
+							<input name="study_no" id="study_no" type="hidden" value='${studyPosted.study_no}'>
 								<button id="contractbtn" class="btn btn-outline-primary w-35 py-3">수정 하기</button>
 							</form>
 						</div>
@@ -173,6 +174,7 @@
 					<div class="col-12">
 						<div class="col-12 mt-4">
 						<form action="/deletestudy" method="post">
+						<input name="study_no" id="study_no" type="hidden" value='${studyPosted.study_no}'>
 							<button id="contractbtn" class="btn btn-outline-primary w-35 py-3">삭제 하기</button>
 						</form>
 						</div>

@@ -16,8 +16,8 @@
 <!-- 등록 -->
 	<insert id="regStudy" parameterType="Study">
 		<![CDATA[
-			insert into study (maker,study_sname,study_grade,study_subject,study_type,study_target_level,study_title,study_fdate,study_edate,study_ftime,study_etime,study_contents,study_kakao,study_regdate)
-			values (#{maker},#{study_sname},#{study_grade},#{study_subject},#{study_type},#{study_target_level},#{study_title},#{study_fdate},#{study_edate},#{study_ftime},#{study_etime},#{study_contents},#{study_kakao},#{study_regdate}) 
+			insert into study (maker,study_sname,study_grade,study_subject,study_type,study_target_level,study_title,study_fdate,study_edate,study_ftime,study_etime,study_contents,study_kakao)
+			values (#{maker},#{study_sname},#{study_grade},#{study_subject},#{study_type},#{study_target_level},#{study_title},#{study_fdate},#{study_edate},#{study_ftime},#{study_etime},#{study_contents},#{study_kakao}) 
         ]]>
 	</insert>
 
@@ -38,7 +38,7 @@
 <!--개설자 수정-->
 	<update id="updateStudy" parameterType="study" >
 		<![CDATA[
-			update study set maker=#{maker}, study_sname=#{study_sname},study_grade=#{study_grade},study_subject=#{study_subject},study_type=#{study_type},,study_target_level=#{study_target_level},study_title=#{study_title},study_fdate=#{study_fdate},study_edate=#{study_edate},study_ftime=#{study_ftime}, study_etime=#{study_etime}, study_contents= #{study_contents},study_kakao=#{study_kakao} 
+			update study set maker=#{maker},study_sname=#{study_sname},study_grade=#{study_grade},study_subject=#{study_subject},study_type=#{study_type},study_target_level=#{study_target_level},study_title=#{study_title},study_fdate=#{study_fdate},study_edate=#{study_edate},study_ftime=#{study_ftime}, study_etime=#{study_etime}, study_contents= #{study_contents},study_kakao=#{study_kakao} 
 			where study_no=#{study_no}
 		]]>
 	</update>
