@@ -43,6 +43,7 @@ public class StudyController {
 		return "study/studymain";
 	}
 
+	//등교하기 페이지 
 	@GetMapping("studyclass")
 	public ModelAndView studyclassget(@RequestParam(value = "status", required = false) String status) {
 		
