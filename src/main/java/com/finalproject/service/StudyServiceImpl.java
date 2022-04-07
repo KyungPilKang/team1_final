@@ -50,6 +50,12 @@ public class StudyServiceImpl implements StudyService {
 	}
 	
 	@Override
+	public Study getStudydetail(int study_no) throws Exception {
+		//하나의 게시글정보 가져오기
+		return studyDAO.getStudydetail(study_no);
+	}
+	
+	@Override
 	public List<Study> searchStudyByStatus(String user_id, String status) throws Exception {
 	    Map<String, String> studybystatus = new HashMap<String, String>();
 	    studybystatus.put("user_id", user_id);
@@ -60,60 +66,52 @@ public class StudyServiceImpl implements StudyService {
 	    
 		return studyDAO.searchStudyByStatus(studybystatus);
 	}
-
+	
 	@Override
-	public Study getStudydetail(int study_no) throws Exception {
-		//하나의 게시글정보 가져오기
-		return studyDAO.getStudydetail(study_no);
+	public void checkAttend(String user_id, int study_no, String status1) throws Exception {
+		// 참여
+		Map<String,Object> map = new HashMap<>();
+		map.put("user_id", user_id);
+		map.put("study_no", study_no);
+		String team_status = status1;
+		//if(team_status==null||study_no==study.get_study_no&&!user_id.equals(ptp.getUser_id())) return false;
+		//return studyDAO.checkAttend(user_id, study_no, team_status);
 	}
 
-
 	@Override
-	public void attendCheck(int study_no) throws Exception {
-		// TODO Auto-generated method stub
-		
+	public void cancleAttend(String user_id, int study_no) throws Exception {
+		// 참여취소
+		Map<String,Object> map = new HashMap<>();
+		map.put("user_id", user_id);
+		map.put("study_no", study_no);
+		studyDAO.cancleAttend(map);
 	}
+	
+
 
 	@Override
 	public List<StudyTeam> attendInfo(int study_no) throws Exception {
-		// TODO Auto-generated method stub
+		//
 		return null;
 	}
 
 	@Override
 	public void makeAttend(int study_no, String user_id) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void deleteAttend(int study_no, String user_id) throws Exception {
-		// TODO Auto-generated method stub
+		//  참여수락
 		
 	}
 
 	@Override
 	public void holdAttend(int study_no, String user_id) throws Exception {
-		// TODO Auto-generated method stub
+		// 참여수락 취소 
 		
 	}
 	
 	@Override
-	public List<Study> searchStudy(String study_sname, String study_grade, String study_subject, String study_type,
-			String study_target_level) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void checkAttend(Map<String, String> attendbyCheck, String status1) throws Exception {
-		// 참여
+	public void rejectAttend(int study_no, String user_id) throws Exception {
+		// 참여 탈락
 		
 	}
 
-	@Override
-	public void cancleAttend(Map<String, String> canclebyCheck) throws Exception {
-		// 참여취소
-		
-	}
+
 }
