@@ -16,24 +16,18 @@ public class AdminServiceImpl implements AdminService {
 	
 	
 	@Override
-	public List<Request> getRequestList() throws Exception {
+	public List<Request> getRequestListByRole(String role) throws Exception {
 		return adminDAO.qnaReqList();
 	}
 		
 	@Override
-	public List<Answer> getAnswerList() throws Exception {
+	public List<Answer> getAnswerListByRole(String role) throws Exception {
 		return adminDAO.qnaAnsList();
 	}
 	
-	@Override
-	public void inputQna(Answer ans) throws Exception {
-		adminDAO.insertAnswer(ans);
-	}
-
-	@Override
-	public List<Request> getRequestListByRole(String role) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public void inputQna(Answer ans) throws Exception {
+//		adminDAO.insertAnswer(ans);
+//	}
 	
 }

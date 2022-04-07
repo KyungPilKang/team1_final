@@ -13,5 +13,7 @@ import com.finalproject.dto.Request;
 public interface AdminDAO {
 	public List<Request> qnaReqList() throws Exception;
 	public List<Answer> qnaAnsList() throws Exception;
-	public void insertAnswer(Answer ans) throws Exception;
+//	public void insertAnswer(Answer ans) throws Exception;
+	
+	
 }
