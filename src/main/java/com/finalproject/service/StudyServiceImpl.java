@@ -108,13 +108,21 @@ public class StudyServiceImpl implements StudyService {
 	@Override
 	public void checkAttend(String user_id, int study_no, String status1) throws Exception {
 		// 참여
-		
+		Map<String,Object> map = new HashMap<>();
+		map.put("user_id", user_id);
+		map.put("study_no", study_no);
+		String team_status = status1;
+		//if(team_status==null||study_no==study.get_study_no&&!user_id.equals(ptp.getUser_id())) return false;
+		//return studyDAO.checkAttend(user_id, study_no, team_status);
 	}
 
 	@Override
 	public void cancleAttend(String user_id, int study_no) throws Exception {
 		// 참여취소
-		
+		Map<String,Object> map = new HashMap<>();
+		map.put("user_id", user_id);
+		map.put("study_no", study_no);
+		studyDAO.cancleAttend(map);
 	}
 
 
