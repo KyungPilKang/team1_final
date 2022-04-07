@@ -1,19 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-			"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.finalproject.dao.CartDAO">
+
+	<insert id="insertCart" parameterType="Map">
+		<![CDATA[
+		insert into cart(username, cart_bookNum)
+		values(#{username}, #{book_num})
+		]]>
+	</insert>
+
+	<delete id="deleteCart" parameterType="Map">
+		<![CDATA[
+		delete from cart where username=#{username} and cart_bookNum=#{book_num}
+		]]>
+	</delete>
+
+
+	<select id="selectItem" resultType="Cart" parameterType="Map">
+	<![CDATA[
+		select username, cart_bookNum from cart where username=#{username} and cart_bookNum=#{book_num}
+		]]>
+	</select>
+
+
+	<select id="cartCount" resultType="int">
+		<![CDATA[
+		select count(*)
+		from cart
+		where username = #{username}
+		]]>
+	</select>
+
+
+	<select id="cartItems" resultType="Book" parameterType="String">
+	<![CDATA[
+		select * from book where book_num in (select cart_bookNum from cart where username = #{username})
+		]]>
+	</select>
+
+
 
 </mapper>
 
 
-<!--
-CREATE TABLE `cart` (
-  `cart_num` int NOT NULL,
-  `username` varchar(1000) DEFAULT NULL,
-  `cart_bookNum` varchar(1000) DEFAULT NULL,
-  `cart_count` int DEFAULT NULL,
-  PRIMARY KEY (`cart_num`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--->
+		<!--
+        CREATE TABLE `cart` (
+          `cart_num` int NOT NULL AUTO_INCREMENT,
+          `username` varchar(1000) DEFAULT NULL,
+          `cart_bookNum` varchar(1000) DEFAULT NULL,
+          PRIMARY KEY (`cart_num`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+        -->

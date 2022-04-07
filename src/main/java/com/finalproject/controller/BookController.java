@@ -3,6 +3,7 @@ package com.finalproject.controller;
 import com.finalproject.dto.Book;
 import com.finalproject.dto.PageInfo;
 import com.finalproject.service.BookStoreService;
+import com.finalproject.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
@@ -12,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -24,7 +26,13 @@ import java.util.List;
 public class BookController {
 
     @Autowired
+    private HttpSession session;
+
+    @Autowired
     private BookStoreService bookStoreService;
+
+    @Autowired
+    private CartService cartService;
 
     @Autowired
     private ServletContext servletContext;
@@ -36,10 +44,7 @@ public class BookController {
 //    }
 
 
-    @RequestMapping("/juso")
-    public String jusoCallBacks() {
-        return "/loginJoin/juso";
-    }
+
 
     @RequestMapping("/delivery")
     public String delivery() {
@@ -51,7 +56,13 @@ public class BookController {
     public ModelAndView boardlist(@RequestParam(value = "page", defaultValue = "1") int page) {
         ModelAndView mv = new ModelAndView();
         PageInfo pageInfo = new PageInfo();
+
+        // 임시 세션
+        session.setAttribute("username", "jay");
+        String username = (String) session.getAttribute("username");
         try {
+            int cartCount = cartService.cartCount(username);
+            mv.addObject("cartCount",cartCount);
             List<Book> bookList = bookStoreService.getBookList(page, pageInfo);
             mv.addObject("pageInfo", pageInfo);
             mv.addObject("bookList", bookList);

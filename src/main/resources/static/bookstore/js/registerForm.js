@@ -2,78 +2,88 @@
 function register() {
     let content = editor.getHTML();
     let cat = $('#book_cat').val();
+    let img = $('#file').val();
     let author = $('#book_author').val();
     let publisher = $('#book_publisher').val();
     let subject = $('#book_subject').val();
     let price = $('#book_price').val();
-    let count = $('#book_count').val();
     let dcRate = $('#book_discount').val();
     $("#book_content").val(content);
     if (!(cat === "" || cat === "none")) {
+        if (img === "") {
+            swal({
+                title: "입력 오류",
+                text: "책 이미지를 추가해주세요",
+                icon: "error",
+                button: "확인"
+            });
+            $('#book_author').focus()
+            return false;
+        }
         if (author === "") {
-            Swal.fire({
+            swal({
                 title: "입력 오류",
                 text: "작가명을 입력하세요",
                 icon: "error",
-                confirmButtonText: "확인"
+                button: "확인"
             });
             $('#book_author').focus()
             return false;
         }
         if (publisher === "") {
-            Swal.fire({
+            swal({
                 title: "입력 오류",
                 text: "출판사명을 입력하세요",
                 icon: "error",
-                confirmButtonText: "확인"
+                button: "확인"
             });
             $('#book_publisher').focus()
             return false;
         }
         if (price === "") {
-            Swal.fire({
+            swal({
                 title: "입력 오류",
                 text: "가격을 입력하세요",
                 icon: "error",
-                confirmButtonText: "확인"
+                button: "확인"
             });
             $('#book_price').focus()
             return false;
         }
         if ($("input[name=yon]:checked").val() === "yes" && dcRate === "0") {
-            Swal.fire({
+            swal({
                 title: "입력 오류",
                 text: "할인율을 설정하세요",
                 icon: "error",
-                confirmButtonText: "확인"
+                button: "확인"
             });
             return false;
         }
         if (subject === "") {
-            Swal.fire({
+            swal({
                 title: "입력 오류",
                 text: "제목을 입력하세요",
                 icon: "error",
-                confirmButtonText: "확인"
+                button: "확인"
             });
             $('#book_subject').focus()
             return false;
         }
         if (content === "<p><br></p>") {
-            Swal.fire({
+            swal({
                 title: "입력 오류",
                 text: "내용을 입력하세요",
                 icon: "error",
-                confirmButtonText: "확인"
+                button: "확인"
             });
             return false;
         }
     } else {
-        Swal.fire({
+        swal({
             title: "선택 오류",
             text: "카테고리를 선택하세요",
             icon: "error",
-            confirmButtonText: "확인"
+            button: "확인"
         });
         $('#book_cat').focus()
         return;

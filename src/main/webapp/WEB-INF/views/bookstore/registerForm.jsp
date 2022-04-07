@@ -79,18 +79,21 @@
                                    accept=".gif, .jpg, .png, .jpeg"
                                    onchange="readURL(this);">
                         </div>
-
-                        <%-- 지은이 --%>
-                        <div class="col-sm-12 p-2">
-                            <input type="text" id="book_author" name="book_author" class="form-control bg-white"
-                                   placeholder="지은이">
+                        <div style="display: flex;">
+                            <%-- 지은이 --%>
+                            <div class="col-sm-6 p-2">
+                                <input type="text" id="book_author" name="book_author" class="form-control bg-white"
+                                       placeholder="지은이">
+                            </div>
+                            <%-- 출판사 --%>
+                            <div class="col-sm-6 p-2">
+                                <input type="text" id="book_publisher" name="book_publisher" class="form-control bg-white"
+                                       placeholder="출판사">
+                            </div>
                         </div>
-                        <%-- 출판사 --%>
-                        <div class="col-sm-12 p-2">
-                            <input type="text" id="book_publisher" name="book_publisher" class="form-control bg-white"
-                                   placeholder="출판사">
+                        <div class="col-sm-12 p-2" style="display: flex;">
+                            <label for="book_date" style="width:10vw; display: flex; align-items: center; justify-content: center;">교재 출간일:</label><input type="date" id="book_date" name="book_date" class="form-control">
                         </div>
-
                         <div class="" style="display: flex">
                             <%-- 가격 --%>
                             <div class="col-sm-6 p-2">
@@ -193,17 +196,10 @@
 <script src="${pageContext.request.contextPath}/resources/bookstore/js/toastui.js"></script>
 
 <%-- sweetalert --%>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <%-- registerForm Javascript --%>
 <script src="${pageContext.request.contextPath}/resources/bookstore/js/registerForm.js"></script>
-
-
-<%--<script>--%>
-<%--    const el = document.getElementsByClassName("discount_yon")--%>
-<%--    el.addEventListener("click",함수명,false)--%>
-
-<%--</script>--%>
 
 
 </body>

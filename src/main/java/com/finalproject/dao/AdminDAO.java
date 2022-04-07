@@ -5,14 +5,15 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
+import com.finalproject.dto.Answer;
+import com.finalproject.dto.Request;
+
 @Mapper
-@Repository("adminDAO")
+@Repository
 public interface AdminDAO {
-	
-	
-	
-//	public List<Qnainfo> qnaInfoList() throws Exception;
-	
+	public List<Request> qnaReqList() throws Exception;
+	public List<Answer> qnaAnsList() throws Exception;
+//	public void insertAnswer(Answer ans) throws Exception;
 	
 	
 }

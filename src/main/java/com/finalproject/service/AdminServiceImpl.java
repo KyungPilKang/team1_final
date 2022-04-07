@@ -6,19 +6,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.finalproject.dao.AdminDAO;
+import com.finalproject.dto.Answer;
+import com.finalproject.dto.Request;
 
 @Service
 public class AdminServiceImpl implements AdminService {
 	@Autowired
-	AdminDAO adminDAO;
+	private AdminDAO adminDAO;
 	
 	
+	@Override
+	public List<Request> getRequestListByRole(String role) throws Exception {
+		return adminDAO.qnaReqList();
+	}
+		
+	@Override
+	public List<Answer> getAnswerListByRole(String role) throws Exception {
+		return adminDAO.qnaAnsList();
+	}
 	
 //	@Override
-//	public List<Qnainfo> getQnaInfoList() throws Exception {
-//		return adminDAO.qnaInfoList();
+//	public void inputQna(Answer ans) throws Exception {
+//		adminDAO.insertAnswer(ans);
 //	}
 	
-	
-
 }
