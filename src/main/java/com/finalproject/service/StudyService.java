@@ -22,25 +22,27 @@ public interface StudyService {
 	List<Study> searchStudyByStatus(String user_id, String status) throws Exception; 
 	//내가 쓴 글
 	List<Study> makerList(String maker) throws Exception;
-
 	//참여 참여취소 
 	public void checkAttend(String user_id, int study_no, String status1)throws Exception;
 	public void cancleAttend(String user_id,int study_no) throws Exception;
 	
 	
-	//3-1. 스터디 조회,검색 
-	List<Study> searchStudy(String study_sname, String study_grade, String study_subject, String study_type, String study_target_level) throws Exception;
-	//3-2. List <Study> 게시물 조회 반환 리스트
-	//4. 참여/미참여 
-	public void attendCheck(int study_no) throws Exception;
-	//5. 참여자조회
-	List<StudyTeam> attendInfo(int study_no) throws Exception;
-	//6. 참여자 리스트 추가
+	//step1 할일
+	//참여자 추가
 	public void makeAttend(int study_no, String user_id) throws Exception;
-	//7. 참여자 리스트에서 탈락(제거) 
-	public void deleteAttend(int study_no, String user_id) throws Exception; 
-	//8. 참여자 대기중 리스트 (대기)
+	//참여자 탈락
+	public void rejectAttend(int study_no, String user_id) throws Exception;
+	//참여자 추가 취소 (team_apply 로 update) 
 	public void holdAttend(int study_no, String user_id) throws Exception;
+	//참여자조회
+	List<StudyTeam> attendInfo(int study_no) throws Exception;
+
+	
+	
+	//step2 할일
+	//3-1. 스터디 조회,검색 
+	//List<Study> searchStudy(String study_sname, String study_grade, String study_subject, String study_type, String study_target_level) throws Exception;
+	//3-2. List <Study> 게시물 조회 반환 리스트
 
 	//스터디 상세게시글리스트 반환(개설자)
 	//List<Study> studymakerList(String maker) throws Exception;

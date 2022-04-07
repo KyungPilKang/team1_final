@@ -28,6 +28,12 @@ public interface StudyDAO {
 	public void checkAttend(Map map, String team_status)throws Exception;
 	public void cancleAttend(Map map) throws Exception;
 	
-	
+	//참여자 추가
+	public void makeAttend(int study_no, String user_id) throws Exception;
+	//참여자 탈락
+	public void rejectAttend(int study_no, String user_id) throws Exception;
+	//참여자 추가 취소 (team_apply 로 update) 
+	public void holdAttend(int study_no, String user_id) throws Exception;
+
 }
 

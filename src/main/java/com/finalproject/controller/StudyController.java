@@ -111,7 +111,7 @@ public class StudyController {
 	/*
 	@PostMapping("/studymakerdetail/${study_no}")
 	public ModelAndView studymakerdetail(@PathVariable int study_no, @RequestParam(value="maker")String maker) {
-		ModelAndView mav = new ModelAndView("");
+		ModelAndView mav = new ModelAndView("study/studymakerdetail");
 		String user_id = (String) session.getAttribute("id");
 		try {
 			Study posted = studyservice.getStudydetail(study_no);
