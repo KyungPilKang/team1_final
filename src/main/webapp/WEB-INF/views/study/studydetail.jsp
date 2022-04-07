@@ -222,7 +222,7 @@
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<script>
-/* 	$('#attend').on('click',function(e){
+	<%--	$('#attend').on('click',function(e){
  		   let present = 0; // 0이면 미참여 상태
 		   if ($('#attend').text() == "참여취소") {
 			   present = 1;
@@ -247,32 +247,37 @@
 		        	alert("실패");
 		        }
 	        });
-		}); */
+		}); 
+	--%>
 	
-	
-	$('#attend').on('click',function(e){
+			$('#attend').on('click',function(e){
 		console.log("들어옴");
-		var attendCheck = "미참여";
-
+		var attendCheck = "notattend";
+		var uid = '<%=(String) session.getAttribute("id")%>';
+		if(uid=='null'){
+    		alert("로그인이 필요한 서비스입니다.");
+    		return false;
+		} 
+		
 		if($("#attend").val() == "참여"){
 			 alert = confirm('스터디에 참여 하시겠습니까?');
 			 attendCheck ="team_apply";
 		}
 		else if($("#attend").val() == "참여취소"){
 			 alert = confirm('스터디에 참여를 취소 하시겠습니까?');
-			 attendCheck ="미참여";
+			 attendCheck ="notattend";
 		}
 		
 		if(attend==true){
 			$.ajax({
 				type:"post",
+				dataType:"text",
 		        async:false,
 		        url:"http://localhost:8090/attend",
-				data: {"study_no": ${studyPosted.study_no}, "status": attendCheck},
-				dataType:"text",
+				data: {"study_no":$('#study_no').val(), "status": attendCheck},
 				success:function(data){
-					console.log("1");
-					if(data=="true"){
+					console.log("들어옴");
+					if(data=="참여"){
 						$("#attend").val("참여취소");
 					} else {
 						$("#attend").val("참여");
