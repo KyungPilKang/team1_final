@@ -114,15 +114,14 @@ public class StudyController {
 		try {
 			Study posted = studyservice.getStudydetail(study_no);
 			List<StudyTeam> studentList = studyservice.getStudentList(study_no);
-			
 			for(StudyTeam st : studentList) {
 				System.out.println(st.getUser_id());
 				System.out.println(st.getTeam_status());
 			}
 			// 김민정 \n team_apply \n 홍길동 \n team_reject
-			
-			mav.addObject("studyPosted", posted);		
-	//		mav.addObject("studentList", studentList);		
+			mav.addObject("studyPosted", posted);	
+			//		mav.addObject("studentList", studentList);	
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
