@@ -10,6 +10,7 @@ const maxCount = function (maxNum, idNum) {
 
 /* 장바구니 아이템 삭제 */
 const delCart = function (bookNum) {
+    event.preventDefault();
     fetch("http://localhost:8090/book-store/delcart", {
         method: "POST",
         header: {
@@ -24,38 +25,10 @@ const delCart = function (bookNum) {
         })
 }
 
-
-// const delCart = function (bookNum) {
-//     swal({
-//         title: "장바구니에서 ",
-//         text: "Once deleted, you will not be able to recover this imaginary file!",
-//         icon: "warning",
-//         buttons: true,
-//         dangerMode: true,
-//     })
-//         .then((willDelete) => {
-//             if (willDelete) {
-//                 fetch("http://localhost:8090/book-store/delcart", {
-//                     method: "POST",
-//                     header: {
-//                         "Content-Type": "application/json",
-//                     },
-//                     body: JSON.stringify({
-//                         book_num: bookNum
-//                     }),
-//                 }).then((response) => response.json())
-//                     .then(function (data) {
-//                         swal("Poof! Your imaginary file has been deleted!", {
-//                             icon: "success",
-//                         }).then(() => {
-//                             location.reload()
-//                         })
-//                     });
-//             } else {
-//                 swal("Your imaginary file is safe!");
-//             }
-//         });
-// }
+/* 전체 상품 구매하기 click */
+const buyAll = function (){
+    document.getElementById('cartForm').submit()
+}
 
 
 

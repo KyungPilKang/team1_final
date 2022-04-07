@@ -57,9 +57,36 @@
             <span>결제완료</span>
         </div>
         <div class="item_box row text-center col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.5s"
-             style="width: 55%; float:none; margin:40px auto 0 auto">
-            아아아
+             style="width: 80%; float:none; margin:40px auto 0 auto; overflow-y:scroll">
+
+            <table style="height: 100px; width: 85%">
+                <tr>
+                    <td>제목</td>
+                    <td>가격</td>
+                </tr>
+
+                <c:forEach var="cart" items="${orderList}">
+                    <tr>
+                        <td>${cart.book_subject}</td>
+                        <td>${cart.book_price}</td>
+                    </tr>
+                </c:forEach>
+            </table>
+
+            <table style="width: 15%; height: 100px;">
+
+                <tr><td>수량</td></tr>
+                <c:forEach var="count" items="${qtyList}">
+                    <tr>
+                        <td>${count}</td>
+                    </tr>
+                </c:forEach>
+            </table>
+
         </div>
+        <h4 style="float:right;margin-right:130px; padding: 5px;">총 결제금액:${total_price}</h4>
+
+
         <div class="info_box row text-center col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.5s"
              style="width: 55%; float:none; margin:50px auto 30px auto">
             <form name="form" id="form_step1" method="post">
@@ -180,40 +207,40 @@
         </div>
         <div class="info_box row text-center col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.5s"
              style="width: 55%; float:none; margin:50px auto 30px auto">
-                <div class="row g-3">
-                    <table id="info_table_step2" class="info_table_step2">
-                        주문내역
-                        <tbody>
-                        <tr>
-                            <th>
-                                이메일
-                            </th>
-                            <td>
-                                책이름 1권 20,000원
-                            </td>
-                        </tr>
+            <div class="row g-3">
+                <table id="info_table_step2" class="info_table_step2">
+                    주문내역
+                    <tbody>
+                    <tr>
+                        <th>
+                            이메일
+                        </th>
+                        <td>
+                            책이름 1권 20,000원
+                        </td>
+                    </tr>
 
 
-                        <tr>
-                            <th>
-                                이메일
-                            </th>
-                            <td>
-                                책이름 1권 20,000원
-                            </td>
-                        </tr>
+                    <tr>
+                        <th>
+                            이메일
+                        </th>
+                        <td>
+                            책이름 1권 20,000원
+                        </td>
+                    </tr>
 
-                        <tr>
-                            <th>
-                                이메일
-                            </th>
-                            <td>
-                                책이름 1권 20,000원
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
+                    <tr>
+                        <th>
+                            이메일
+                        </th>
+                        <td>
+                            책이름 1권 20,000원
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <div class="button_box">
@@ -221,7 +248,7 @@
                 <button id="previous" class="btn btn-outline-info w-100 py-3" type="">이전단계</button>
             </div>
             <div class="col-5 ">
-<%--                <button onclick="location.href='payment/finished'" class="btn btn-primary w-100 py-3" type="submit">결제</button>--%>
+                <%--                <button onclick="location.href='payment/finished'" class="btn btn-primary w-100 py-3" type="submit">결제</button>--%>
                 <button onclick="payment()" class="btn btn-primary w-100 py-3" type="submit">결제</button>
             </div>
         </div>

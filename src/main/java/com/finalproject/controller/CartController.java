@@ -87,7 +87,7 @@ public class CartController {
 
 
     @PostMapping("/delcart")
-    public void delcart(@RequestBody String json) {
+    public void delCart(@RequestBody String json) {
         // 임시 세션
         session.setAttribute("username", "jay");
         String username = (String) session.getAttribute("username");

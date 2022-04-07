@@ -136,7 +136,6 @@
                                     class="mb-1"><fmt:formatNumber
                                     value="${book.book_reprice}" type="number"
                                     pattern="#,###"/>원</strong>
-                                    <%--                                <h3 class="mb-1"><fmt:formatNumber value="${book.book_price}" pattern="#,###"/>원</h3>--%>
                             </div>
                         </div>
                     </c:forEach>
@@ -195,7 +194,11 @@
                             </div>
                             <div class="book_add">
                                 <a class="btn-sm btn-primary" onclick="putCart(${book.book_num})">장바구니 담기</a>
-                                <a class="btn-sm btn-primary">바로 구매하기</a>
+                                <a class="btn-sm btn-primary" onclick="buyNow(${book.book_num},${book.book_reprice})">바로 구매하기</a>
+                                <form id="buyNow" method="post">
+                                    <input type="hidden" id="book_num" name="book_num"/>
+                                    <input type="hidden" id="book_price" name="book_price"/>
+                                </form>
                             </div>
                         </li>
                     </c:forEach>
@@ -235,7 +238,6 @@
 
 <%-- bookStore putCart Javascript --%>
 <script src="${pageContext.request.contextPath}/resources/bookstore/js/bookStore.js"></script>
-
 
 
 </body>
