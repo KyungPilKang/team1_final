@@ -25,8 +25,8 @@ public interface StudyDAO {
 	List<Study> makerList(String maker);
 	
 	//참여, 참여취소
-	public void checkAttend(Map map, String team_status)throws Exception;
-	public void cancleAttend(Map map) throws Exception;
+	public void checkAttend(Map map)throws Exception;
+	public void cancelAttend(Map map) throws Exception;
 	
 	//참여자 추가
 	public void makeAttend(int study_no, String user_id) throws Exception;

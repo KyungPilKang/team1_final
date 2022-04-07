@@ -72,36 +72,36 @@
 	</select>
 	
 <!-- 참여 -->
-	<insert id="checkAttend" parameterType="" >
+	<insert id="checkAttend" parameterType="Map" >
 		<![CDATA[
 			 insert into studyteam (study_no, user_id, team_status) values(#{study_no},#{user_id},#{status})
 		]]>
 	</insert>
 	
 <!-- 참여취소 -->
-	<delete id="cancleAttend" parameterType="Map">
+	<delete id="cancelAttend" parameterType="Map">
 		<![CDATA[
 			delete from studyteam where user_id=#{user_id} and study_no=#{study_no}
 		]]>
 	</delete>
 <!-- 개설자 참여 수락 버튼 -->
-	<update id="updateStudy" parameterType="Map" >
+<!-- 	<update id="updateStudy" parameterType="Map" >
 		<![CDATA[
 			update studyteam set team_status= 'team_accept' where study_no = #{study_no} and user_id = #{user_id};
 		]]>
-	</update>
+	</update> -->
 <!-- 개설자 참여 수락 취소 버튼 -->
-	<update id="updateStudy" parameterType="Map" >
+<!-- 	<update id="updateStudy" parameterType="Map" >
 		<![CDATA[
 			update studyteam set team_status= 'team_apply' where study_no = #{study_no} and user_id = #{user_id};
 		]]>
-	</update>
+	</update> -->
 <!-- 개설자 참여 탈락-->
-	<update id="updateStudy" parameterType="Map" >
+<!-- 	<update id="updateStudy" parameterType="Map" >
 		<![CDATA[
 			update studyteam set team_status= 'team_reject' where study_no = #{study_no} and user_id = #{user_id};
 		]]>
-	</update>
+	</update> -->
 	
 	
 </mapper>

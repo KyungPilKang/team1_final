@@ -23,9 +23,7 @@ public interface StudyService {
 	//내가 쓴 글
 	List<Study> makerList(String maker) throws Exception;
 	//참여 참여취소 
-	public void checkAttend(String user_id, int study_no, String status1)throws Exception;
-	public void cancleAttend(String user_id,int study_no) throws Exception;
-	
+	public void changeAttend(String user_id, int study_no, String status)throws Exception;
 	
 	//step1 할일
 	//참여자 추가
