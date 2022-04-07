@@ -1,7 +1,6 @@
 package com.finalproject.service;
 
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -24,6 +23,9 @@ public interface StudyService {
 	List<Study> makerList(String maker) throws Exception;
 	//참여 참여취소 
 	public void changeAttend(String user_id, int study_no, String status)throws Exception;
+	//참여자정보리스트 가져오기 
+	List<StudyTeam> getStudentList(int study_no) throws Exception;
+	
 	
 	//step1 할일
 	//참여자 추가

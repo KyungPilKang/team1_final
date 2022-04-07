@@ -17,9 +17,9 @@ public class StudyServiceImpl implements StudyService {
 	@Autowired 
 	StudyDAO studyDAO;
 	
-	@Autowired 
-	StudyTeamDAO studyteamDAO;
-	
+	/*
+	 * @Autowired StudyTeamDAO studyteamDAO;
+	 */
 	
 	@Override
 	public void regStudy(Study study) throws Exception {
@@ -71,7 +71,7 @@ public class StudyServiceImpl implements StudyService {
 	@Override
 	public void changeAttend(String user_id, int study_no, String status) throws Exception {
 		
-		// 참여
+		// 참여, 참여취소
 		Map<String, Object> map = new HashMap<>();
 		map.put("user_id", user_id);
 		map.put("study_no", study_no);
@@ -106,6 +106,13 @@ public class StudyServiceImpl implements StudyService {
 		// 참여 탈락
 		studyDAO.rejectAttend(study_no, user_id);
 	}
+
+	@Override
+	public List<StudyTeam> getStudentList(int study_no) throws Exception {
+		//참여자정보리스트 가져오기 
+		return studyDAO.getStudentList(study_no);
+	}
+
 
 
 }

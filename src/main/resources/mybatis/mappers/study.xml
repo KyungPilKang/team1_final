@@ -64,9 +64,9 @@
 	</select>
 
 <!-- 내가 쓴 글 "스터디팀" 리스트 반환-->
-	<select id="makerteamList" parameterType="Study" resultType="Studyteam">
+	<select id="getStudentList" parameterType="int" resultType="Studyteam">
 		<![CDATA[
-			select * from studyteam where study_no in (select study_no from study where maker='김민정')
+			select * from studyteam where study_no=#{study_no}
 		]]>
 	</select>
 	
