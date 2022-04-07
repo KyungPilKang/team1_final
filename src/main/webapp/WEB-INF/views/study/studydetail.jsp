@@ -91,86 +91,104 @@
 		</div>
 	</div>
 	<!-- Header End -->
-	
-		<!-- Contact Start -->
+
+	<!-- Contact Start -->
 	<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
 		<div class="container">
 			<div class="row gy-6 gx-6">
 				<div class="col-lg-12">
 					<div class="d-flex align-items-center mb-5">
 						<img class="flex-shrink-0 img-fluid border rounded" src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt="" style="width: 80px; height: 80px;">
-							<div class="text-start ps-4">
-								<h3 class="mb-3">스터디 등록 제목</h3>
-								<span class="resfreespan text-truncate me-3">
-									<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등
-								</span>
-								<span class="resfreespan text-truncate me-3">
-									<i class="bi bi-eyeglasses text-primary me-2"></i>학년
-								</span>
-								<span class="resfreespan text-truncate me-3">
-									<i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜 
-								</span>
-							</div>
+						<div class="text-start ps-4">
+							<h3 class="mb-3">스터디 등록 제목</h3>
+							<span class="resfreespan text-truncate me-3"> <i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등
+							</span> <span class="resfreespan text-truncate me-3"> <i class="bi bi-eyeglasses text-primary me-2"></i>학년
+							</span> <span class="resfreespan text-truncate me-3"> <i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜
+							</span>
+						</div>
 					</div>
 
 					<div class="mb-5">
 						<h3 class="mb-3">스터디 정보</h3>
 						<br>
 						<input name="study_no" id="study_no" type="hidden" value='${studyPosted.study_no}'>
-						<input type="hidden" id="sessionid" value="${id}"/>
-						
-						<p><i class="fa fa-angle-right text-primary me-2"></i>학교 : ${studyPosted.study_sname}</p>
-						<p><i class="fa fa-angle-right text-primary me-2"></i>학년 : ${studyPosted.study_grade }학년</p>
-						<p><i class="fa fa-angle-right text-primary me-2"></i>과목 : ${studyPosted.study_subject}</p>
-						<p><i class="fa fa-angle-right text-primary me-2"></i>유형 :  ${studyPosted.study_type}</p>
-						<p><i class="fa fa-angle-right text-primary me-2"></i>목표레벨 :  ${studyPosted.study_target_level}</p>
-						<p><i class="fa fa-angle-right text-primary me-2"></i>스터디타이틀 :  ${studyPosted.study_title}</p>
-						<p><i class="fa fa-angle-right text-primary me-2"></i>스터디기간  : ${studyPosted.study_fdate}~ ${studyPosted.study_edate}</p>
-						<p><i class="fa fa-angle-right text-primary me-2"></i>스터디시간 : ${studyPosted.study_ftime} ~ ${studyPosted.study_etime}</p>
-						<p><i class="fa fa-angle-right text-primary me-2"></i>오픈카톡링크 : ${studyPosted.study_kakao}</p>
+						<input type="hidden" id="sessionid" value="${id}" />
+
+						<p>
+							<i class="fa fa-angle-right text-primary me-2"></i>학교 : ${studyPosted.study_sname}
+						</p>
+						<p>
+							<i class="fa fa-angle-right text-primary me-2"></i>학년 : ${studyPosted.study_grade }학년
+						</p>
+						<p>
+							<i class="fa fa-angle-right text-primary me-2"></i>과목 : ${studyPosted.study_subject}
+						</p>
+						<p>
+							<i class="fa fa-angle-right text-primary me-2"></i>유형 : ${studyPosted.study_type}
+						</p>
+						<p>
+							<i class="fa fa-angle-right text-primary me-2"></i>목표레벨 : ${studyPosted.study_target_level}
+						</p>
+						<p>
+							<i class="fa fa-angle-right text-primary me-2"></i>스터디타이틀 : ${studyPosted.study_title}
+						</p>
+						<p>
+							<i class="fa fa-angle-right text-primary me-2"></i>스터디기간 : ${studyPosted.study_fdate}~ ${studyPosted.study_edate}
+						</p>
+						<p>
+							<i class="fa fa-angle-right text-primary me-2"></i>스터디시간 : ${studyPosted.study_ftime} ~ ${studyPosted.study_etime}
+						</p>
+						<p>
+							<i class="fa fa-angle-right text-primary me-2"></i>오픈카톡링크 : ${studyPosted.study_kakao}
+						</p>
 						<br> <br>
 						<h3 class="mb-5">스터디상세내용</h3>
-						<p> ${studyPosted.study_contents}  </p>
+						<p>${studyPosted.study_contents}</p>
 					</div>
 				</div>
-			  </div>
 			</div>
 		</div>
+	</div>
 
-					
-		<div class="row g-3">
-			<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s" style="width: 30%; float: none; margin-left: 430px;">
-				<div class="row g-3">
-					<div class="col-12">
-						<div class="col-12 mt-4">
-							<button id="listbtn" class="btn btn-outline-primary w-50 py-3" onclick="window.location='/studyfindresult'">목록 으로</button>
-						</div>
+
+	<div class="row g-3">
+		<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s" style="width: 30%; float: none; margin-left: 430px;">
+			<div class="row g-3">
+				<div class="col-12">
+					<div class="col-12 mt-4">
+						<button id="listbtn" class="btn btn-outline-primary w-50 py-3" onclick="window.location='/studyfindresult'">목록 으로</button>
 					</div>
 				</div>
 			</div>
-			<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s" style="width: 30%; float: none;">
-				<div class="row g-3">
-					<div class="col-12">
-						<div class="col-12 mt-4">
-						<!-- 	<button id="attend" class="btn btn-outline-primary w-50 py-3">참여 하기</button> -->						
-						<button id="attend" class="btn btn-outline-primary w-50 py-3">참여 하기
+		</div>
+		<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s" style="width: 30%; float: none;">
+			<div class="row g-3">
+				<div class="col-12">
+					<div class="col-12 mt-4">
+						<!-- 	<button id="attend" class="btn btn-outline-primary w-50 py-3">참여 하기</button> -->
+						<button id="attend" class="btn btn-outline-primary w-50 py-3">
+							참여 하기
 							<c:choose>
 								<c:when test="${id eq! study.user_id}">
 									<span id="attend"></span>
 								</c:when>
-								<c:when test="${attend eq true }"><span id="attend" style="float:right; padding-left:10px; cursor: pointer;">신고취소</span></c:when>
-								<c:when test="${attend eq false }"><span id="attend" style="float:right; padding-left:10px; cursor: pointer;">신고</span></c:when>
+								<c:when test="${attend eq true }">
+									<span id="attend" style="float: right; padding-left: 10px; cursor: pointer;">신고취소</span>
+								</c:when>
+								<c:when test="${attend eq false }">
+									<span id="attend" style="float: right; padding-left: 10px; cursor: pointer;">신고</span>
+								</c:when>
 							</c:choose>
 						</button>
-						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	
+	</div>
+
 	<!-- Contact End -->
-	
-	
+
+
 	<!-- Footer Start -->
 	<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
 		<div class="container">
@@ -184,8 +202,7 @@
 						<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
 						Designed By
 						<a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-						<br>
-						<br> Distributed By
+						<br> <br> Distributed By
 						<a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
 					</div>
 					<!-- <div class="col-md-6 text-center text-md-end">
@@ -288,7 +305,7 @@
 				 }
 			});
 		}
-		
+			
 	</script>
 </body>
 </html>
