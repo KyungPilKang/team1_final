@@ -17,9 +17,9 @@ public class StudyServiceImpl implements StudyService {
 	@Autowired 
 	StudyDAO studyDAO;
 	
-	@Autowired 
-	StudyTeamDAO studyteamDAO;
-	
+	/*
+	 * @Autowired StudyTeamDAO studyteamDAO;
+	 */
 	
 	@Override
 	public void regStudy(Study study) throws Exception {
@@ -30,6 +30,7 @@ public class StudyServiceImpl implements StudyService {
 
 	@Override
 	public void updateStudy(Study study) throws Exception {
+		System.out.println("수정확인후 수정 cnf2 :" + study.toString());
 		//스터디 수정 
 		studyDAO.updateStudy(study);
 		
@@ -69,26 +70,21 @@ public class StudyServiceImpl implements StudyService {
 	}
 	
 	@Override
-	public void checkAttend(String user_id, int study_no, String status1) throws Exception {
-		// 참여
-		Map<String,Object> map = new HashMap<>();
+	public void changeAttend(String user_id, int study_no, String status) throws Exception {
+		// 참여, 참여취소
+		System.out.println("ServiceImple 성공");
+		System.out.println(user_id);
+		
+		Map<String, Object> map = new HashMap<>();
 		map.put("user_id", user_id);
 		map.put("study_no", study_no);
-		String team_status = status1;
-		//if(team_status==null||study_no==study.get_study_no&&!user_id.equals(ptp.getUser_id())) return false;
-		//return studyDAO.checkAttend(user_id, study_no, team_status);
+		if (status == "team_apply") {
+			map.put("status", status);
+			studyDAO.checkAttend(map);
+		} else {
+			studyDAO.cancelAttend(map);
+		}
 	}
-
-	@Override
-	public void cancleAttend(String user_id, int study_no) throws Exception {
-		// 참여취소
-		Map<String,Object> map = new HashMap<>();
-		map.put("user_id", user_id);
-		map.put("study_no", study_no);
-		studyDAO.cancleAttend(map);
-	}
-	
-
 
 	@Override
 	public List<StudyTeam> attendInfo(int study_no) throws Exception {
@@ -113,6 +109,14 @@ public class StudyServiceImpl implements StudyService {
 		// 참여 탈락
 		studyDAO.rejectAttend(study_no, user_id);
 	}
+
+	@Override
+	public List<StudyTeam> getStudentList(int study_no) throws Exception {
+		//참여자정보리스트 가져오기 
+		return studyDAO.getStudentList(study_no);
+		
+	}
+
 
 
 }

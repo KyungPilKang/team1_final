@@ -161,6 +161,7 @@
 					<div class="col-12">
 						<div class="col-12 mt-4">
 							<form action="/studymodify" method="post">
+							<input name="study_no" id="study_no" type="hidden" value='${studyPosted.study_no}'>
 								<button id="contractbtn" class="btn btn-outline-primary w-35 py-3">수정 하기</button>
 							</form>
 						</div>
@@ -173,6 +174,7 @@
 					<div class="col-12">
 						<div class="col-12 mt-4">
 						<form action="/deletestudy" method="post">
+						<input name="study_no" id="study_no" type="hidden" value='${studyPosted.study_no}'>
 							<button id="contractbtn" class="btn btn-outline-primary w-35 py-3">삭제 하기</button>
 						</form>
 						</div>
@@ -184,9 +186,9 @@
 					<div class="col-12">
 					    <div class="col-12 mt-4">											
 							 <select id="attendList" class="btn btn-outline-primary w-35 py-3"  style="float:left; height:70px;">
-				                <option value="${studyPosted.study_user_id}">아이디1</option>
-				                <option value="${studyPosted.study_user_id}">아이디2</option>
-				                <option value="${studyPosted.study_user_id}">아이디3</option>
+				                <option value="${studyPosted.maker}">아이디1</option>
+				                <option value="${studyPosted.maker}">아이디2</option>
+				                <option value="${studyPosted.maker}">아이디3</option>
 			           		 </select>	
 			           	</div>	           		
 						<div class="col-12 mt-4">
@@ -259,7 +261,7 @@
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<script>
-	 $(document).ready(function () {
+	<%-- $(document).ready(function () {
 		//attendList(아이디)
 	   $("#attendList").val(`${isattend}`);
 	   $('#attendList').on('change',function(e) {
@@ -275,7 +277,7 @@
 		   alert(isresult);
 		   window.location.href="/studymakerdetail?attendResult="+isresult;
 	   });
-	 });
+	 }); --%>
 	   
 	</script>
 </body>

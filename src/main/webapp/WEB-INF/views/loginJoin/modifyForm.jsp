@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,6 +38,16 @@
 </head>
 
 <body>
+<%
+String username = (String)session.getAttribute("username"); 
+String name = (String)session.getAttribute("name");
+String nickname = (String)session.getAttribute("nickname");
+String email = (String)session.getAttribute("email");
+String phone = (String)session.getAttribute("phone");
+String zipcode = (String)session.getAttribute("zipcode");
+String doro_juso = (String)session.getAttribute("doro_juso");
+String sangse_juso = (String)session.getAttribute("sangse_juso");
+%>
 	<!-- Spinner Start -->
 	<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
 		<div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -86,7 +97,7 @@
 			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
 				<h1 class="mt-2 mb-3">회원 정보 수정</h1>
 				<div class="row text-center col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 55%; float: none; margin: 0 auto">
-					<form name="form" id="form" method="post">
+					<form name="form" id="form" action="updateMember" method="post" novalidate>
 						<div class="row g-3">
 							<table id="table1" class="table">
 								<colgroup>
@@ -99,7 +110,7 @@
 										<td>
 											<div class="row">
 												<div class="col-lg-1">
-													<h5>${username}</h5>
+													<h5><%=username %></h5>
 												</div>												
 											</div>
 										</td>
@@ -119,8 +130,8 @@
 										</th>
 										<td>
 											<div class="row">
-												<div class="col-lg-1">
-													<h5>${name}</h5>
+												<div class="col-lg-2">
+													<h5><%=name %></h5>
 												</div>												
 											</div>
 										</td>
@@ -131,7 +142,7 @@
 										<td>
 											<div class="row">
 												<div class="col-lg-3">
-													<input type="text" id="nickname" name="nickname" value="${nickname }" style="background-color:transparent; border:none;" class="form-control" readonly>
+													<input type="text" id="nickname1" name="nickname1" value="<%=nickname %>" style="background-color:transparent; border:none;" class="form-control" readonly>
 												</div>
 												
 												<div class="col-lg-2">
@@ -156,7 +167,7 @@
 														<input type="text" id="nickname" name="nickname" placeholder="한글/영문/숫자 사용 2~10자." class="form-control">
 													</div>
 													<div class="col-lg-3">
-														<button type="button" id="nickchk" class="btn btn-primary w-80">중복확인</button>
+														<button type="button" id="nickchk" onclick="nickcheck()" class="btn btn-primary w-80">중복확인</button>
 													</div>
 										        </div>
 										      </div>
@@ -175,7 +186,7 @@
 										<td>
 											<div class="row">
 												<div class="col-lg-6">
-													<input type="text" id="email" name="email" value="${email1 }@${email2 }" style="background-color:transparent; border:none;" class="form-control" readonly>
+													<input type="text" id="email" name="email" value="<%=email %>" style="background-color:transparent; border:none;" class="form-control" readonly>
 												</div>
 												
 												<div class="col-lg-2">
@@ -196,14 +207,14 @@
        																	<h5>수정할 이메일 주소를 입력해 주세요.</h5>
        																</div>
        																<div class="col-lg-4 mb-3">
-        																<button type="button" id="newemailchk" class="btn btn-primary">중복 확인</button>
+        																<button type="button" id="newemailchk" onclick="emailChk()" class="btn btn-primary">중복 확인</button>
        																</div>
 																	<div class="col-lg 5 g-0">
-																		<input type="email" id="newemail1"  class="form-control">
+																		<input type="email" id="email1"  class="form-control">
 																	</div>
 																	<div class="col-lg 4 input-group g-0">
 																		<span class="input-group-text">@</span>
-																		<input type="email" id="newemail2" name="email2" class="form-control">
+																		<input type="email" id="email2" name="email2" class="form-control">
 																	</div>
 																	<div class="col-lg 3 g-0">
 																		<select class="form-select" aria-label=".form-select-sm example" onchange="selectEmail(this)">
@@ -230,8 +241,8 @@
 										</th>
 										<td>
 											<div class="row">
-												<div class="col-lg-3">
-													<input type="text" id="phone" name="phone" maxlength="11" size="11" value="${phone }" style="background-color:transparent; border:none;" class="form-control old" readonly>
+												<div class="col-lg-4">
+													<input type="text" id="phone" name="phone" maxlength="11" size="11" value="<%=phone %>" style="background-color:transparent; border:none;" class="form-control old" readonly>
 												</div>
 												
 												<div class="col-lg-2">
@@ -281,24 +292,26 @@
 										</th>
 										<td>
 											<div class="row">
-												<div class="col-lg-8">
-													<input type="text" id="zipcode" name="zipcode" maxlength="6" value="${zipcode }" readonly class="form-control">
+												<div class="col-lg-7">
+													<input type="text" id="zipcode" name="zipcode" value="<%=zipcode %>" maxlength="6" readonly="" class="form-control">
 												</div>
 												<div class="col-lg-3">
-													<button type="button" onclick="goPopup()" class="btn btn-primary w-90">주소검색</button>
+													<button type="button" onclick="goPopup()" class="btn btn-primary">주소검색</button>
 												</div>
-												<div class="col-lg-12 pt-2">
-													<input type="text" id="dorojuso" name="dorojuso" readonly value="${dorojuso }" class="form-control">
+												<div class="col-lg-10 pt-2">
+													<input type="text" id="doro_juso" name="doro_juso" value="<%=doro_juso %>" readonly="" class="form-control">
+												</div>
+												<div class="col-lg-2"></div>
+												<div class="col-lg-6 pt-2">
+													<input type="text" id="sangsejuso1" name="sangsejuso1" value="<%=sangse_juso %>" readonly="" class="form-control">
 												</div>
 												<div class="col-lg-6 pt-2">
-													<input type="text" id="sangsejuso1" name="sangsejuso1" readonly value="${sangsejuso1 }" class="form-control">
+													<input type="text" id="sangsejuso2" name="sangsejuso2" value="" class="form-control">
 												</div>
-												<div class="col-lg-6 pt-2">
-													<input type="text" id="sangsejuso2" name="sangsejuso2" value="${sangsejuso2 }" class="form-control">
-												</div>
-												<div id=warning class="col-lg 6 pt-2">
+												<div id=warning class="col-lg-10 pt-2">
 													<span id=warning class="input-group-addon text-left">* 주소는 상세주소까지 정확하게 입력해주세요.주소가 정확하지 않을 경우, 배송이 원활하지 않을 수 있습니다.</span>
 												</div>
+												<input type="hidden" name="sangse_juso" id="sangse_juso">
 											</div>
 										</td>
 									</tr>
@@ -309,7 +322,7 @@
 					<div class="row pt-3 ">
 						<div class="col-1"></div>
 						<div class="col-5 ">
-							<button id="join" class="btn btn-primary w-100 py-3" type="submit">수정하기</button>
+							<button id="modify" onclick="modify()" class="btn btn-primary w-100 py-3" type="submit">수정하기</button>
 						</div>
 						<div class="col-5 ">
 							<a href="home" class="btn border w-100 py-3">취소하기</a>
@@ -332,26 +345,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<!-- Template Javascript -->
 	<script src="${pageContext.request.contextPath}/resources/login/js/main.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/login/js/joinForm.js"></script>
-
-
-
-<script>
-$(function() {
-	$("#modifyphone").click(function() {
-		console.log($("#phone").val());
-		$("#phone").val($("#newphone").val()); 
-		console.log($("#phone").val());
-	});
-	
-	$("#modifyemail").click(function(){
-		var email1 = $("#newemail1").val();
-		var email2 = $("#newemail2").val();
-		var email = email1+"@"+email2;
-		$("#email").val(email);
-	});
-	})
-</script>
+	<script src="${pageContext.request.contextPath}/resources/login/js/modifyForm.js"></script>
 
 
 </body>

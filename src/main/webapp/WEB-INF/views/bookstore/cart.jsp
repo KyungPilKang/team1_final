@@ -4,9 +4,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Date" %>
-<% Date nowTime = new Date(); SimpleDateFormat simpleDateFormat = new SimpleDateFormat("M월 d일");%>
-
-
+<% Date nowTime = new Date();
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("M월 d일");%>
 
 
 <!DOCTYPE html>
@@ -71,43 +70,46 @@
 
             <div class="item_container"
                  style="overflow-y: scroll;height: 50vh;">
-
-                <c:forEach var="cart" items="${cartList}">
-                    <div class="cart-item p-4 mb-4">
-                        <div class="row g-4">
-                            <div class="col-md-8 d-flex align-items-center">
-                                <img class="flex-shrink-0 img-fluid border rounded"
-                                     src="/book-store/book-img/${cart.book_img}" alt=""
-                                     style="width: 90px; height: 120px;">
-                                <div class="text-start ps-4">
-                                    <h5 class="mb-3"
-                                        style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 20vw">
-                                            ${cart.book_subject}</h5>
-                                    <span class="text-truncate me-0"> 출고 예상일 : <%= simpleDateFormat.format(nowTime) %></span>
+                <form id="cartForm" action="/book-store/payment/order" method="post">
+                    <c:forEach var="cart" items="${cartList}">
+                        <div class="cart-item p-4 mb-4">
+                            <div class="row g-4">
+                                <div class="col-md-8 d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid border rounded"
+                                         src="/book-store/book-img/${cart.book_img}" alt=""
+                                         style="width: 90px; height: 120px;">
+                                    <div class="text-start ps-4">
+                                        <h5 class="mb-3"
+                                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 20vw">
+                                                ${cart.book_subject}</h5>
+                                        <span class="text-truncate me-0"> 출고 예상일 : <%= simpleDateFormat.format(nowTime) %></span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-1 d-flex align-items-center">
+                                <div class="col-md-1 d-flex align-items-center">
                                         <span class="text-truncate me-0" style="text-align: center;"
                                               id="price${cart.book_num}"><fmt:formatNumber
                                                 value="${cart.book_reprice}" pattern="#,###"/></span>원
-                            </div>
-                            <input type="hidden" value="${cart.book_reprice}" id="hidePrice${cart.book_num}"/>
-                            <div class="col-md-2"
-                                 style="display: flex; justify-content:center; align-items: center">
-                                <input class="form-control text-center me-3 order_qty" id="order_qty${cart.book_num}"
-                                       type="number"
-                                       name="order_qty"
-                                       value="1" min="1" max="${cart.book_count}" style="max-width: 6rem"
-                                       onkeyup="maxCount(${cart.book_count},${cart.book_num}); calTotal()"
-                                       onclick="calTotal()"/><br/>
-                            </div>
-                            <div class="col-md-1 d-flex align-items-center">
-                                <button onclick="delCart(${cart.book_num})">삭제</button>
+                                </div>
+                                <input type="hidden" value="${cart.book_num}" name="order_book_num"/>
+                                <input type="hidden" value="${cart.book_reprice}" id="hidePrice${cart.book_num}"/>
+                                <div class="col-md-2"
+                                     style="display: flex; justify-content:center; align-items: center">
+                                    <input class="form-control text-center me-3 order_qty"
+                                           id="order_qty${cart.book_num}"
+                                           type="number"
+                                           name="order_qty"
+                                           value="1" min="1" max="${cart.book_count}" style="max-width: 6rem"
+                                           onkeyup="maxCount(${cart.book_count},${cart.book_num}); calTotal()"
+                                           onclick="calTotal()"/><br/>
+                                </div>
+                                <div class="col-md-1 d-flex align-items-center">
+                                    <button onclick="delCart(${cart.book_num})">삭제</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </c:forEach>
-
+                    </c:forEach>
+                    <input type="hidden" id="total_price" name="total_price"/>
+                </form>
             </div>
 
             <div class="total-amount" style="display:flex; justify-content: flex-end; padding: 15px 5px">
@@ -116,7 +118,7 @@
 
             <div class="cart-btn" style="display:flex; justify-content: flex-end;">
                 <a class="btn btn-primary py-3" href="/book-store" style="width: 14vw; margin-right:10px;">쇼핑 계속하기</a>
-                <a class="btn btn-primary py-3" href="/book-store/payment" style="width: 14vw">전체 상품 구매하기</a>
+                <a class="btn btn-primary py-3" onclick="buyAll()" style="width: 14vw">전체 상품 구매하기</a>
             </div>
         </div>
     </div>
@@ -144,7 +146,7 @@
 
 
 <script>
-    /* 총 금액 계산 (JSTL 때문에 분리 불가) */
+    /* 총 금액 계산 (JSTL 때문에 cart.js로 분리 불가) */
     let numList = []
     /* 기본수량 총액 */
     window.onload = () => {
@@ -155,6 +157,7 @@
         </c:forEach>
         const total = String(sum)
         document.getElementById('total').textContent = total.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+        document.getElementById('total_price').value = sum;
     }
     /* 수량 변경에 따른 총 금액 계산 */
     const calTotal = function () {
@@ -166,9 +169,8 @@
         }
         const total = String(totalPrice)
         document.getElementById('total').textContent = total.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+        document.getElementById('total_price').value = totalPrice;
     }
-
-
 </script>
 
 

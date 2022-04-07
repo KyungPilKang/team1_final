@@ -1,9 +1,10 @@
 package com.finalproject.config;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -15,12 +16,22 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @EnableGlobalMethodSecurity(securedEnabled=true, prePostEnabled=true) // secured 어노테이션 활성화, preAuthorize,postAuthorize 어노테이션 활성화
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
+//	@Autowired(required=false)
+//	private CustomUserDetailsService customUserDetailsService;
 		
 		
 	  @Bean
-	  public BCryptPasswordEncoder passwordEncoder() {
+	  public BCryptPasswordEncoder bCryptPasswordEncoder() {
 	    return new BCryptPasswordEncoder();
 	  }
+//	
+//	  @Override
+//		protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//			auth.userDetailsService(customUserDetailsService).passwordEncoder(bCryptPasswordEncoder());		
+//		}
+//		
+//	 
+	  
 
 	  
 	  
@@ -37,10 +48,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         .and()
         .formLogin() // 하위에 내가 직접 구현한 로그인 폼, 로그인 성공시 이동 경로 설정 가능. , 로그인 폼의 아이디,패스워드는 username, password로 맞춰야 함
         .loginPage("/loginForm") // customloginform
-        
+        .failureUrl("/fail")
         //로그인 성공할 경우@AuthenticationPrincipal CustomUserDetails details
-        .defaultSuccessUrl("/") // 로그인 성공 시 이동할 경로.
-        
+        .defaultSuccessUrl("/") // 로그인 성공 시 이동할.
          .and()
          .logout()
              .permitAll()

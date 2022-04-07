@@ -89,7 +89,7 @@
 			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
 				<h1 class="mt-2 mb-3">회원 가입</h1>
 				<div class="row text-center col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 60%; float: none; margin: 0 auto">
-					<form name="form"  action="join" method="post" novalidate>
+					<form name="form"  action="joinKakao" method="post" novalidate>
 						<div class="row g-3">
 							<table id="table1" class="table">
 								<colgroup>
@@ -97,59 +97,17 @@
 								</colgroup>
 								<tbody>
 									<tr class="trborder">
-										<th>아이디 <span class="star">*</span>
-										</th>
-										<td>
-											<div class="row">
-												<div class="col-lg-4">
-													<input type="text" id="username" name="username" placeholder="6~12자리 영문,숫자" class="form-control">
-												</div>
-												<div class="col-lg-3"> 
-													<button type="button"  onclick="usernameChk()" class="btn btn-primary pl-1 pr-1 w-80">중복확인</button>
-												</div>
-											</div>
-										</td>
-
-									</tr>
-									<tr>
-										<th>비밀번호 <span class="star">*</span>
-										</th>
-										<td>
-										<div class="row g-0">
-											<div class="col-6 g-0">
-												<input type="password" id="password1" name="password" placeholder="8~16자리 영문/숫자/특수문자 중 2가지" class="form-control" required oninput = "pwcheck()">
-											</div>
-											<div class="col-6 g-0">
-												<input type="text" id="pw_ok" class="form-control" style="background-color:transparent; border:none;" disabled>
-											</div>
-										</div>
-										</td>
-									</tr>
-									<tr>
-										<th>비밀번호 확인 <span class="star">*</span>
-										</th>
-										<td>
-										<div class="row g-0">
-											<div class="col-6 g-0">
-												<input type="password" id="password2" placeholder="다시한번 입력해 주세요." class="form-control" required oninput = "pwcheck2()">
-											</div>
-											<div class="col-6 g-0">
-												<input type="text" id="pw_ok2"  class="form-control" style="background-color:transparent; border:none;" disabled>
-											</div>
-										</div>
-										</td>
-									</tr>
-									<tr>
 										<th>이름 <span class="star">*</span>
 										</th>
 										<td>
-										<div class="row">
+										<div class="row"> 
 											<div class="col-5">
-												<input type="text" id="name" name="name" placeholder="한글 이름을 입력하세요."  class="form-control" required oninput = "namecheck()">
+												<input type="text" id="name" name="name" placeholder="한글 이름을 입력하세요."   class="form-control" required oninput = "namecheck()">
 											</div>
 											<div class="col-5">
 												<input type="text" id="namec"  class="form-control" style="background-color:transparent; border:none;" disabled>
 											</div>
+										
 										</div>
 										</td>
 									</tr>
@@ -191,37 +149,7 @@
 												</div>
 											</div>
 										</td>
-									</tr>
-									<tr>
-										<th>이메일 <span class="star">*</span>
-										</th>
-										<td>
-											<div class="row g-0">
-												<div class="col-lg-3 g-0">
-													<input type="text" id="email1" name="email1" class="form-control">
-												</div>
-												<div class="col-lg-1 mr-0 pr-0 g-0">
-												<span class="input-group-text">@</span>
-												</div>
-												<div class="col-lg-3 ml-0 pl-0 g-0">
-													<input type="text" id="email2" name="email2" readonly class="form-control">
-												</div>
-												<div class="col-lg-3 g-0">
-													<select class="form-select" aria-label=".form-select-sm example" onchange="selectEmail(this)">
-														<option value="=============">=============</option>
-														<option value="naver.com">naver.com</option>
-														<option value="daum.net">daum.net</option>
-														<option value="gmail.com">gmail.com</option>
-														<option value="1">직접입력</option>
-													</select>
-												</div>
-												<div class="col-lg-2" >
-													<button type="button" id="emailchk" onclick="emailChk()" class="btn btn-primary w-80">중복확인</button>
-												</div>
-											</div>
-											<input type="hidden"name="email" id="email">
-										</td>
-									</tr>
+									</tr>	
 									<tr>
 										<th>휴대전화 <span class="star">*</span>
 										</th>
@@ -275,6 +203,8 @@
 								</tbody>
 							</table>
 						</div>
+						<input type="hidden" value="${provider_id }" name="provider_id" id="provider_id">
+						<input type="hidden" value="${email }" name="email" id="email">
 					</form>
 					<div class="row pt-3 d-flex justify-content-center ">
 						<div class="col-3">
@@ -289,7 +219,7 @@
 			</div>
 		</div>
 	</div>
-
+	
 	<!-- Contact End -->
 
 	<!-- JavaScript Libraries -->
@@ -302,7 +232,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<!-- Template Javascript -->
 	<script src="${pageContext.request.contextPath}/resources/login/js/main.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/login/js/joinForm.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/login/js/joinFormNaver.js"></script>
 
 
 

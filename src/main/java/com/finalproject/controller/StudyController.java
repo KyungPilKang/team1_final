@@ -8,7 +8,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.finalproject.dto.Study;
+import com.finalproject.dto.StudyTeam;
 import com.finalproject.service.MemberService;
 import com.finalproject.service.StudyService;
 
@@ -108,21 +108,26 @@ public class StudyController {
 
 	// 스터디개설자 상세페이지 
 	// 추후 get 방식에서 post 방식으로 변경 필요
-	///studymakerdetail/3
-	/*
-	@PostMapping("/studymakerdetail/${study_no}")
-	public ModelAndView studymakerdetail(@PathVariable int study_no, @RequestParam(value="maker")String maker) {
+	@GetMapping("/studymakerdetail/{study_no}")
+	public ModelAndView studymakerdetail(@PathVariable int study_no) {
 		ModelAndView mav = new ModelAndView("study/studymakerdetail");
-		String user_id = (String) session.getAttribute("id");
 		try {
 			Study posted = studyservice.getStudydetail(study_no);
-			mav.addObject("studyPosted", posted);		
+			List<StudyTeam> studentList = studyservice.getStudentList(study_no);
+			for(StudyTeam st : studentList) {
+				System.out.println(st.getUser_id());
+				System.out.println(st.getTeam_status());
+			}
+			// 김민정 \n team_apply \n 홍길동 \n team_reject
+			mav.addObject("studyPosted", posted);	
+			//		mav.addObject("studentList", studentList);	
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return mav;
 	}
-*/
+
 	
 	// (2)개설자가 상세글보기 클릭시 보여지는 페이지
 	// 추후 post 변경
@@ -180,7 +185,8 @@ public class StudyController {
 	@PostMapping("studymodify")
 	public ModelAndView studymodify(@ModelAttribute Study inputstudy) {
 		ModelAndView mav = new ModelAndView("study/studymodify");
-		System.out.println(inputstudy.toString());
+		mav.addObject("study_no", inputstudy.getStudy_no());
+		System.out.println("스터디수정버튼 처음"+inputstudy.toString());
 		return mav;
 	}
 
@@ -205,7 +211,8 @@ public class StudyController {
 		try {
 			Study studymodicnf = (Study) session.getAttribute("modistudy");
 			System.out.println("수정확인후 수정 cnf :" + studymodicnf.toString());
-			mav.setViewName("study/studymakermain");
+			studyservice.updateStudy(studymodicnf);
+			mav.setViewName("study/studymain");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -213,15 +220,15 @@ public class StudyController {
 	}
 	
 	//삭제
-	//study_no 을 가지고 못넘어가짐 , 개설자 상세페이지 구현후 다시 확인 
-	@ResponseBody
 	@PostMapping("/deletestudy")
-	public void deletestudy(@RequestParam(value="no")int study_no) {
+	public String deletestudy(@RequestParam(value="study_no")int study_no) {
 		try {
 			studyservice.removeStudy(study_no);
+			
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
+		return "study/studymain";
 	}
 	
 	
@@ -267,24 +274,19 @@ public class StudyController {
 	@ResponseBody
 	@PostMapping("/attend")
 	public String attendcheck(@RequestParam int study_no, @RequestParam(value = "status") String status,HttpServletRequest request) {
+		System.out.println("서버 테스트");
 		System.out.println(status);
-		String status1 ="";
 		String user_id ="김민정";
 		try {
 			//HttpSession session = request.getSession();
 			//String user_id = (String) session.getAttribute("id");
-			if (status1 == "team_apply") {
-				System.out.println("1");
-				studyservice.checkAttend(user_id, study_no, status1);
-			} else {
-				System.out.println("2");
-				studyservice.cancleAttend(user_id, study_no);
-			}
-						
+			studyservice.changeAttend(user_id, study_no, status);
+			System.out.println(study_no);
+			System.out.println(status);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return status1;
+		return status;
 	}
 
 }

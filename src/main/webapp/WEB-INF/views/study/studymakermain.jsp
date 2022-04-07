@@ -102,6 +102,7 @@
             
            
             <div class="owl-carousel testimonial-carousel position-relative">
+             <!--포이치가 안되네  -->
              <c:forEach var="study" items="${studyList}">
                 <div class="testimonial-item text-center">
                     <div class="p-2 mx-auto mb-3" style="width: 400px; height: 130px; text-overflow: ellipsis; background: rgba(6, 187, 204, 0.1); font-size: 1.0em; font-family:Stylish">
@@ -111,12 +112,12 @@
                     <span> 유형 : ${study.study_type}</span><br>
                     <span> 목표 : ${study.study_target_level}</span>
                     </div>
-                    <i class="bi bi-book-fill"><h5>니즈풀스터디${study.study_title}</h5></i>
+                    <i class="bi bi-book-fill"><h5>${study.study_title}</h5></i>
 
                 </div>
-                </c:forEach>
+               </c:forEach>
 	        	</div> 
-          	
+          	 
            
            
         </div>
@@ -146,13 +147,13 @@
 									<div class="text-start ps-4">
 										<h3 class="mb-3">스터디 등록 제목</h3>
 										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등 
+											<i class="bi bi-brightness-high-fill text-primary me-2"></i>${study.study_sname}
 										</span>
 										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-eyeglasses text-primary me-2"></i>학년
+											<i class="bi bi-eyeglasses text-primary me-2"></i>${study.study_grade}
 										</span>
 										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜 
+											<i class="bi bi-calendar2-date text-primary me-2"></i>${study.study_fdate}
 										</span>
 									</div>
 								</div>

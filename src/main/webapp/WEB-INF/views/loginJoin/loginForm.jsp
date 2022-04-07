@@ -75,7 +75,7 @@
 				<h6 class="section-title bg-white text-center text-primary px-3">LOG IN</h6>
 				<h1 class="mt-5 mb-5">회원/소셜 로그인</h1>
 				<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto">
-					<form method="post" action="/login">
+				<!-- 	<form method="post" action="/login"> -->
 						<div class="row g-3">
 							<div class="col-12">
 								<div class="form-floating">
@@ -85,7 +85,7 @@
 							</div>
 							<div class="col-12">
 								<div class="form-floating">
-									<input type="text" class="form-control" name="username" id="password" placeholder="password">
+									<input type="password" class="form-control" name="username" id="password" placeholder="password">
 									<label for="password">PASSWORD</label>
 								</div>
 							</div>
@@ -117,18 +117,24 @@
 							
 					
 							<div class="col-12">
-								<button class="btn btn-primary w-100 py-3" type="submit">로그인 하기</button>
+								<button class="btn btn-primary w-100 py-3" onclick="login()" type="button">로그인 하기</button>
 							</div>
 							<div class="col-12">
 								<a href="joinForm" class="btn btn-primary w-100 py-3">회원가입하기</a>
 
 							</div>
 						</div>
-					</form>
+					<!-- </form> -->
 				</div>
 			</div>
 		</div>
 	</div>
+	
+<form name="form" method="POST" action="http://localhost:8090/joinFormKakao">
+	<input type="hidden" name="provider_id" id="provider_id">
+	<input type="hidden" name="email" id="email">
+</form>
+	
 	<!-- Contact End -->
 
 	<!-- JavaScript Libraries -->
@@ -144,5 +150,11 @@
 	<script src="${pageContext.request.contextPath}/resources/login/js/loginForm.js"></script>
 
 </body>
-
+<script>
+function join(provider_id, email) {
+	$("#provider_id").val(provider_id);
+	$("#email").val(email); 	
+	document.form.submit();
+}
+</script>
 </html>

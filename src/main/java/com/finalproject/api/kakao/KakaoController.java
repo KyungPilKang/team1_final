@@ -1,26 +1,42 @@
 package com.finalproject.api.kakao;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.finalproject.dto.Member;
+import com.finalproject.service.MemberServiceImpl;
 
 @Controller
 public class KakaoController {
 	
-	//로그인 화면에서 버튼 클릭시 연결되는 주소, 로그인 code요청->발급, 토큰발급요청->발급, 정보요청->응답 하여 카카오id(번호)와, email정보 받음
+	@Autowired(required=false)
+	MemberServiceImpl memberService;
+	
+	//로그인 화면에서 버튼 클릭시 연결되는 주소, 로그인 code요청->발급, 토큰발급요청->발급, 정보요청->응답 하여 카카오id(번호)와, email정보 받
 	@GetMapping("auth/kakao/callback") 
-	public @ResponseBody String kakaoCallback(String code) { //Data를 리턴주는 컨트롤러 함수
+	public String kakaoCallback(String code, Model model) { //Data를 리턴주는 컨트롤러 함수
 		
 		RestTemplate rt = new RestTemplate();
 		
@@ -95,10 +111,59 @@ public class KakaoController {
 				
 				//provider_id = kakaoInfo.getId();
 				// email = kakaoInfo.getKakao_account().getEmail();
-				System.out.println("provider_id:"+kakaoInfo.getId());
-				System.out.println("email:"+kakaoInfo.getKakao_account().getEmail());
+//				System.out.println("provider_id:"+kakaoInfo.getId());
+//				System.out.println("email:"+kakaoInfo.getKakao_account().getEmail());
+				String kakaoId = String.valueOf(kakaoInfo.getId());
+//				System.out.println(kakaoId);
 				
-				return response2.getBody();
+				try {
+					boolean check = false;
+					if(check=memberService.kakaoCheck(kakaoId)){ //회원가입창으로 이동 true인 경우
+						model.addAttribute("provider", "kakao");
+						model.addAttribute("email",kakaoInfo.getKakao_account().getEmail());
+						model.addAttribute("provider_id", kakaoInfo.getId());
+						return "/loginJoin/kakao";
+					}else {
+						return "loginJoin/okkakao";
+					}
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
+				return kakaoId;		
+	}
+	@ResponseBody
+	@RequestMapping("/joinFormKakaoTemp")
+	public ResponseEntity<Map<String,String>> joinformKakaoTemp(@RequestParam(value="provider_id",required=false)String provider_id,
+			@RequestParam(value="email",required=false)String email) {
+		Map<String, String> res = new HashMap<String, String>();
+		res.put("provider_id", provider_id);
+		res.put("email", email);
+		System.out.println("joinFormKakaoTemp:"+provider_id);
+		System.out.println("joinFormKakaoTemp:"+email);
+		return new ResponseEntity<Map<String,String>>(res, HttpStatus.OK);
+	}
+	
+	@RequestMapping("/joinFormKakao")
+	public String joinformKakao(@RequestParam(value="provider_id",required=false)String provider_id,
+			@RequestParam(value="email",required=false)String email, Model model) {
+		System.out.println("joinFormKakao:"+provider_id);
+		System.out.println("joinFormKakao:"+email);
+		model.addAttribute("email", email);
+		model.addAttribute("provider_id", provider_id);
+		return "/loginJoin/joinFormKakao";
+	}
+	
+	@PostMapping("joinKakao")
+	public ModelAndView joinKakao(@ModelAttribute Member member) {
+		ModelAndView mav = new ModelAndView();
+		try {
+			
+			memberService.insertKakaoMember(member);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		mav.setViewName("home");
+		return mav;
 	}
 
 }

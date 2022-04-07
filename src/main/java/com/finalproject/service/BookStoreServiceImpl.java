@@ -35,6 +35,10 @@ public class BookStoreServiceImpl implements BookStoreService{
         return bookDAO.selectBookList(startrow);
     }
 
+    @Override
+    public Book selectBook(int book_num) throws Exception {
+        return bookDAO.selectBook(book_num);
+    }
 
 
 }

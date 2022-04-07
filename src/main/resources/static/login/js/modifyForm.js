@@ -110,58 +110,14 @@ function jusoCallBack(roadFullAddr, roadAddrPart1, addrDetail, roadAddrPart2, en
 	document.form.zipcode.value = zipNo;
 	document.form.sangse_juso.value = roadAddrPart2 + addrDetail;
 }
-//username db중복 체크
-let usernameok = false;
-function usernameChk() {
 
-	var username = $('#username').val(); //id값이 "username"인 입력란의 값을 저장
-
-	if (username == '') {
-		usernameok = false;
-		Swal.fire({
-			icon: 'warning',
-			title: '입력 오류',
-			text: '아이디를 입력해주세요.',
-			confirmButtonText: "확인"
-		})
-	} else {
-		$.ajax({
-			url: "http://localhost:8090/usernameCheck", //Controller에서 인식할 주소
-			type: 'post', //POST 방식으로 전달
-
-			data: { username: username },
-			success: function(data) { //컨트롤러에서 넘어온 data값을 받는다 
-				if (data == "true") { //true인 경우 사용불가
-					usernameok = false;
-					Swal.fire({
-						icon: 'warning',
-						title: '아이디 중복',
-						text: '다른 아이디를 입력해주세요.',
-						confirmButtonText: "확인"
-					})
-				} else { // 사용가능
-					usernameok = true;
-					Swal.fire({
-						icon: 'success',
-						title: '사용 가능',
-						text: '사용 가능한 아이디 입니다.',
-						confirmButtonText: "확인"
-					})
-				}
-			}
-		});
-	}
-}
 
 //이메일 db중복 체크
 let emailok = false;
 function emailChk() {
 	var email1 = $("#email1").val();
 	var email2 = $("#email2").val();
-	var Remail = email1 + "@" + email2;
-	$("#email").val(Remail);
-	var email = $('#email').val(); //id값이 "email"인 입력란의 값을 저장
-	console.log(email);
+	var newemail = email1 + "@" + email2;
 	if (email1 == '') {
 		emailok = false;
 		Swal.fire({
@@ -175,7 +131,7 @@ function emailChk() {
 			url: "http://localhost:8090/emailCheck", //Controller에서 인식할 주소
 			type: 'post', //POST 방식으로 전달
 
-			data: { email: email },
+			data: { email: newemail },
 			success: function(data) { //컨트롤러에서 넘어온 data값을 받는다 
 				if (data == "true") { //true인 경우 사용불가
 					emailok = false;
@@ -193,27 +149,14 @@ function emailChk() {
 						text: '사용 가능한 이메일 주소 입니다.',
 						confirmButtonText: "확인"
 					})
+					$("#email").val(newemail);
 				}
 			}
 		});
 	}
 }
 
-//이름 한글 입력 체크
-let nameok = false;
-function namecheck() {
-	var name = $('#name').val();
-	var eng = /[a-zA-Z]/;
-	if (eng.test(name)) {
-		$('#namec').val("한글만 입력하세요");
-		$('#namec').css("color", "orangered");
-		nameok = false;
-	} else {
-		nameok = true;
-		$('#namec').val("");
-	}
 
-}
 //닉네임 db중복 체크
 let nickok = false;
 function nickcheck() {
@@ -265,131 +208,31 @@ function nickcheck() {
 						text: '사용 가능한 닉네임 입니다.',
 						confirmButtonText: "확인"
 					})
+					$("#nickname1").val(nickname);
 				}
 			}
 		});
 	}
 
 }
+$(function() {
+	$("#modifyphone").click(function() {
+		console.log($("#phone").val());
+		$("#phone").val($("#newphone").val()); 
+		console.log($("#phone").val());
+	});
+	
+	$("#modifyemail").click(function(){
+		var email1 = $("#newemail1").val();
+		var email2 = $("#newemail2").val();
+		var email = email1+"@"+email2;
+		$("#email").val(email);
+	});
+	})
 
 
-// 비밀번호 유효성 체크
-let pw1ok = false;
-let pw2ok = false;
-function pwcheck() {
-	var pw1 = $("#password1").val();
-	var num = pw1.search(/[0-9]/g);
-	var eng = pw1.search(/[a-z]/ig);
-	var spe = pw1.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
-
-	if (pw1 == '') {
-		pw1ok = false;
-		$('#pw_ok').val("비밀번호를 입력하세요");
-		$('#pw_ok').css("color", "orangered");
-	} else if (pw1.length < 8 || pw1.length > 16) {
-		pw1ok = false;
-		$('#pw_ok').val("8자리 ~ 16자리 이내로 입력해주세요.");
-		$('#pw_ok').css("color", "orangered");
-	} else if (pw1.search(/\s/) != -1) {
-		pw1ok = false;
-		$('#pw_ok').val("비밀번호는 공백 없이 입력해주세요.");
-		$('#pw_ok').css("color", "orangered");
-	} else if ((num < 0 && eng < 0) || (eng < 0 && spe < 0) || (spe < 0 && num < 0)) {
-		pw1ok = false;
-		$('#pw_ok').val("영문,숫자, 특수문자 중 2가지 이상을 혼합하여 입력해주세요.");
-		$('#pw_ok').css("color", "orangered");
-	} else {
-		pw1ok = true;
-		$('#pw_ok').val("사용 가능합니다");
-		$('#pw_ok').css("color", "green");
-	}
-}
-
-function pwcheck2() {
-	var pw1 = $("#password1").val();
-	var pw2 = $("#password2").val();
-	if (pw1 !== pw2) {
-		pw2ok = false;
-		$('#pw_ok2').val("비밀번호가 일치하지 않습니다");
-		$('#pw_ok2').css("color", "orangered");
-	} else {
-		pw2ok = true;
-		$('#pw_ok2').val("비밀번호가 일치합니다");
-		$('#pw_ok2').css("color", "green");
-	}
-}
-//회원가입 버튼 클릭시
-function join() {
-	if (usernameok == false) {
-		$("#username").focus();
-		Swal.fire({
-			icon: 'warning',
-			title: '입력 오류',
-			text: '아이디를 확인하세요.',
-			confirmButtonText: "확인"
-		})
-	} else if (pw1ok == false || pw2ok == false) {
-		$("#password1").focus();
-		Swal.fire({
-			icon: 'warning',
-			title: '입력 오류',
-			text: '비밀번호를 확인하세요.',
-			confirmButtonText: "확인"
-		})
-	} else if (nameok == false) {
-		$("#name").focus();
-		Swal.fire({
-			icon: 'warning',
-			title: '입력 오류',
-			text: '이름을 확인하세요.',
-			confirmButtonText: "확인"
-		})
-	} else if ($("#birth").val() == '') {
-		Swal.fire({
-			icon: 'warning',
-			title: '입력 오류',
-			text: '생년월일을 입력하세요.',
-			confirmButtonText: "확인"
-		})
-	} else if ($('input:radio[name=gender]').is(':checked') == false) {
-		Swal.fire({
-			icon: 'warning',
-			title: '선택 오류',
-			text: '성별을 선택하세요.',
-			confirmButtonText: "확인"
-		})
-	} else if (nickok == false) {
-		$("#nickname").focus();
-		Swal.fire({
-			icon: 'warning',
-			title: '입력 오류',
-			text: '닉네임을 확인하세요.',
-			confirmButtonText: "확인"
-		})
-	} else if (emailok == false) {
-		$("#email1").focus();
-		Swal.fire({
-			icon: 'warning',
-			title: '입력 오류',
-			text: '이메일주소를 확인하세요.',
-			confirmButtonText: "확인"
-		})
-	} else if (phoneok1 == false || phoneok2 == false) {
-		$("#phone").focus();
-		Swal.fire({
-			icon: 'warning',
-			title: '입력 오류',
-			text: '휴대폰번호를 확인하세요.',
-			confirmButtonText: "확인"
-		})
-	} else if ($("#zipcode").val() == '') {
-		Swal.fire({
-			icon: 'warning',
-			title: '입력 오류',
-			text: '주소를 입력하세요.',
-			confirmButtonText: "확인"
-		})
-	} else {
+//수정버튼 버튼 클릭시
+function modify() {
+	 
 		$("form[name=form]").submit();
 	}
-}

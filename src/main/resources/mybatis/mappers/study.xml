@@ -5,7 +5,6 @@
 
 
 <mapper namespace="com.finalproject.dao.StudyDAO">
-
 <!-- study 신청 상태(옵션에따른) 리스트 반환-->
  	 <select id="searchStudyByStatus" resultType="Study" parameterType="Map">
 		<![CDATA[
@@ -17,8 +16,8 @@
 <!-- 등록 -->
 	<insert id="regStudy" parameterType="Study">
 		<![CDATA[
-			insert into study (maker,study_sname,study_grade,study_subject,study_type,study_target_level,study_title,study_fdate,study_edate,study_ftime,study_etime,study_contents,study_kakao,study_regdate)
-			values (#{maker},#{study_sname},#{study_grade},#{study_subject},#{study_type},#{study_target_level},#{study_title},#{study_fdate},#{study_edate},#{study_ftime},#{study_etime},#{study_contents},#{study_kakao},#{study_regdate}) 
+			insert into study (maker,study_sname,study_grade,study_subject,study_type,study_target_level,study_title,study_fdate,study_edate,study_ftime,study_etime,study_contents,study_kakao)
+			values (#{maker},#{study_sname},#{study_grade},#{study_subject},#{study_type},#{study_target_level},#{study_title},#{study_fdate},#{study_edate},#{study_ftime},#{study_etime},#{study_contents},#{study_kakao}) 
         ]]>
 	</insert>
 
@@ -39,7 +38,7 @@
 <!--개설자 수정-->
 	<update id="updateStudy" parameterType="study" >
 		<![CDATA[
-			update study set maker=#{maker}, study_sname=#{study_sname},study_grade=#{study_grade},study_subject=#{study_subject},study_type=#{study_type},,study_target_level=#{study_target_level},study_title=#{study_title},study_fdate=#{study_fdate},study_edate=#{study_edate},study_ftime=#{study_ftime}, study_etime=#{study_etime}, study_contents= #{study_contents},study_kakao=#{study_kakao} 
+			update study set maker=#{maker},study_sname=#{study_sname},study_grade=#{study_grade},study_subject=#{study_subject},study_type=#{study_type},study_target_level=#{study_target_level},study_title=#{study_title},study_fdate=#{study_fdate},study_edate=#{study_edate},study_ftime=#{study_ftime}, study_etime=#{study_etime}, study_contents= #{study_contents},study_kakao=#{study_kakao} 
 			where study_no=#{study_no}
 		]]>
 	</update>
@@ -65,31 +64,48 @@
 	</select>
 
 <!-- 내가 쓴 글 "스터디팀" 리스트 반환-->
-	<select id="makerteamList" parameterType="Study" resultType="Studyteam">
+	<select id="getStudentList" parameterType="int" resultType="Studyteam">
 		<![CDATA[
-			select * from studyteam where study_no in (select study_no from study where maker='김민정')
+			select * from studyteam where study_no=#{study_no}
 		]]>
 	</select>
 	
 <!-- 참여 -->
-	<!-- <insert id="checkAttend" parameterType="" >
+	<insert id="checkAttend" parameterType="Map" >
 		<![CDATA[
 			 insert into studyteam (study_no, user_id, team_status) values(#{study_no},#{user_id},#{status})
 		]]>
-	</insert> -->
+	</insert>
 	
 <!-- 참여취소 -->
-	<delete id="cancleAttend" parameterType="Map">
+	<delete id="cancelAttend" parameterType="Map">
 		<![CDATA[
 			delete from studyteam where user_id=#{user_id} and study_no=#{study_no}
 		]]>
 	</delete>
 <!-- 개설자 참여 수락 버튼 -->
+<!-- 	<update id="updateStudy" parameterType="Map" >
+		<![CDATA[
+			update studyteam set team_status= 'team_accept' where study_no = #{study_no} and user_id = #{user_id};
+		]]>
+	</update> -->
 
 <!-- 개설자 참여 수락 취소 버튼 -->
+<!-- 	<update id="updateStudy" parameterType="Map" >
+		<![CDATA[
+			update studyteam set team_status= 'team_apply' where study_no = #{study_no} and user_id = #{user_id};
+		]]>
+	</update> -->
+
 	
+
 <!-- 개설자 참여 탈락-->
-	
+<!-- 	<update id="updateStudy" parameterType="Map" >
+		<![CDATA[
+			update studyteam set team_status= 'team_reject' where study_no = #{study_no} and user_id = #{user_id};
+		]]>
+	</update> -->
+
 	
 </mapper>
 	

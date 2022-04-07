@@ -1,13 +1,13 @@
 package com.finalproject.service;
 
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
 import com.finalproject.dto.Study;
 import com.finalproject.dto.StudyTeam;
 
+@Service
 public interface StudyService {
 	//스터디 등록 
 	public void regStudy(Study study) throws Exception;
@@ -22,8 +22,9 @@ public interface StudyService {
 	//내가 쓴 글
 	List<Study> makerList(String maker) throws Exception;
 	//참여 참여취소 
-	public void checkAttend(String user_id, int study_no, String status1)throws Exception;
-	public void cancleAttend(String user_id,int study_no) throws Exception;
+	public void changeAttend(String user_id, int study_no, String status)throws Exception;
+	//참여자정보리스트 가져오기 
+	List<StudyTeam> getStudentList(int study_no) throws Exception;
 	
 	
 	//step1 할일
