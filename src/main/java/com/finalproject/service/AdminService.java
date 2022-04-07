@@ -9,10 +9,10 @@ import com.finalproject.dto.Request;
 public interface AdminService {
 	
 	
-	List<Request> getRequestList() throws Exception;
-	List<Answer> getAnswerList() throws Exception;
-	void inputQna(Answer ans) throws Exception;
-	List<Request> getRequestListByRole(String role);
+	List<Request> getRequestListByRole(String role) throws Exception;
+	List<Answer> getAnswerListByRole(String role) throws Exception;
+//	void inputQna(Answer ans) throws Exception;
+//	List<Request> getRequestListByRole(String role);	
 	
 	
 }
