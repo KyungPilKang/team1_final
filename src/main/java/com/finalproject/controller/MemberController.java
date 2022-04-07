@@ -2,9 +2,14 @@ package com.finalproject.controller;
 
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,8 +20,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.finalproject.service.MemberServiceImpl;
 import com.finalproject.dto.Member;
+import com.finalproject.service.MemberServiceImpl;
 
 @Controller
 public class MemberController {
@@ -40,6 +45,18 @@ public class MemberController {
 		return mav;
 	}
 	
+	@PostMapping("updateMember")
+	public ModelAndView updateMember(@ModelAttribute Member member) {
+		ModelAndView mav = new ModelAndView();
+		try {
+			
+			memberService.infoUpdateMember(member);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		mav.setViewName("home");
+		return mav;
+	}
 	
 	@ResponseBody
 	@PostMapping("emailCheck")
@@ -74,8 +91,44 @@ public class MemberController {
 		return String.valueOf(overlap);
 	}
 	
+	@ResponseBody
+	@PostMapping("/loginCheck")
+	public String loginCheck(@RequestParam(value="username", required=false) String username, @RequestParam(value="password",required=false) String password) {
+		String result = "";
+		System.out.println(username);
+		System.out.println(password);
+		try {
+			result = memberService.loginCheck(username,password);
+			if(result.equals("ok")) {
+				Member login = memberService.selectMemberByUsername(username);
+				session.setAttribute("no", login.getNo());
+				session.setAttribute("username", login.getUsername());
+				session.setAttribute("name", login.getName());
+				session.setAttribute("nickname", login.getNickname());
+				session.setAttribute("email", login.getEmail());
+				session.setAttribute("phone", login.getPhone());
+				session.setAttribute("zipcode", login.getZipcode());
+				session.setAttribute("doro_juso", login.getDoro_juso());
+				session.setAttribute("sangse_juso", login.getSangse_juso());
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println(result);
+		return result;
+	}
+	
+	@RequestMapping("joinForm")
+	public String joinform() {
+		return "/loginJoin/joinForm";
+	}
+	
+	
+	
+	
+
 	  @GetMapping("loginForm")
-	    public String login(){
+	    public String loginForm(){
 	        return "/loginJoin/loginForm";
 	    }
 	  
@@ -87,12 +140,7 @@ public class MemberController {
 	@RequestMapping("withdrawal")
 	public String withdrawal() {
 		return "/loginJoin/withdrawalForm";
-	}
-	
-	@RequestMapping("joinForm")
-	public String joinform() {
-		return "/loginJoin/joinForm";
-	}
+	}	
 	
 	@RequestMapping("password")
 	public String modifyPassword() {
@@ -101,7 +149,15 @@ public class MemberController {
 	
 	@GetMapping("modify")
 	public String modify() {
+		Object logData = session.getAttribute("login");
+		String loginData = (String)logData;
+		System.out.println(loginData);
 		return "/loginJoin/modifyForm";
+	}
+	
+	@RequestMapping("fail")
+	public @ResponseBody String fail() {
+		return "fail";
 	}
 	
 }
