@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `final`.`member` (
   `role` VARCHAR(1000) NULL DEFAULT 'ROLE_USER',
   `provider` VARCHAR(1000) NULL DEFAULT NULL,
   `provider_id` VARCHAR(1000) NULL DEFAULT NULL,
-  `withdraw_status` TINYINT(4) NULL DEFAULT NULL,
+  `withdraw_status` varchar(100) DEFAULT NULL,
   `withdraw_type` VARCHAR(1000) NULL DEFAULT NULL,
   `withdraw_contents` VARCHAR(1000) NULL DEFAULT NULL,
   `login_count` int(11) DEFAULT '0',
