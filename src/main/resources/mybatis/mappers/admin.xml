@@ -15,5 +15,11 @@
 			select * from answer where role=#{role}
 		]]>
 	</select>
+	
+	<select id="withdrawMemList" resultType="Member">
+		<![CDATA[
+			select * from member where role=#{role}
+		]]>
+	</select>
 
 </mapper>

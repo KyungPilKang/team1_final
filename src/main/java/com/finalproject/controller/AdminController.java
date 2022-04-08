@@ -25,7 +25,7 @@ public class AdminController {
 
 	
 	@GetMapping("/qnalist")
-	public ModelAndView qnaListForm() {
+	public ModelAndView qnaList() {
 		ModelAndView mav=new ModelAndView();
 		Member mem = (Member) session.getAttribute("login");
 		// String role = mem.getRole();
@@ -59,6 +59,50 @@ public class AdminController {
 			break;
 		case "parents":
 			mav.setViewName("admin/admin_qnaList4");
+			break;
+		}
+		
+		return mav;
+		
+	}
+	
+	
+	
+	
+	
+	@GetMapping("/withdrawmemlist")
+	public ModelAndView withdrawMemList() {
+		ModelAndView mav=new ModelAndView();
+		Member mem = (Member) session.getAttribute("login");
+		// String role = mem.getRole();
+		String role= "freelancer";
+		try {
+			List<Member> memList=adminService.getMemberListByRole(role);
+			mav.addObject("memList", memList);
+			
+			System.out.println(memList.get(0).getAge());
+			System.out.println(memList.get(1).getAge());
+			
+			
+			mav.setViewName("/admin/admin_WithdrawMemList1");
+		} catch (Exception e) {
+			e.printStackTrace();
+			mav.addObject("err", e.getMessage());
+			mav.addObject("/admin/err");
+		}
+		
+		switch(role) {
+		case "freelancer":
+			mav.setViewName("admin/admin_WithdrawMemList1");
+			break;
+		case "worker":
+			mav.setViewName("admin/admin_WithdrawMemList2");
+			break;
+		case "student":
+			mav.setViewName("admin/admin_WithdrawMemList3");
+			break;
+		case "parents":
+			mav.setViewName("admin/admin_WithdrawMemList4");
 			break;
 		}
 		
