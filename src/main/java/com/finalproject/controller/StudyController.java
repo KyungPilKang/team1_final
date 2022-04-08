@@ -182,7 +182,6 @@ public class StudyController {
 	}
 
 	// (1)수정 다음버튼
-	// study_no 가지고 넘어가야하는지 추후 확인 필요 ** 
 	@PostMapping("studymodify")
 	public ModelAndView studymodify(@ModelAttribute Study inputstudy) {
 		ModelAndView mav = new ModelAndView("study/studymodify");
