@@ -107,20 +107,21 @@ public class StudyController {
 
 
 	// 스터디개설자 상세페이지 
+	// 참여자 리스트 가져오기
 	// 추후 get 방식에서 post 방식으로 변경 필요
 	@GetMapping("/studymakerdetail/{study_no}")
 	public ModelAndView studymakerdetail(@PathVariable int study_no) {
 		ModelAndView mav = new ModelAndView("study/studymakerdetail");
 		try {
 			Study posted = studyservice.getStudydetail(study_no);
-			List<StudyTeam> studentList = studyservice.getStudentList(study_no);
+			List<StudyTeam> studentList = studyservice.getStudentApplyList(study_no);
 			for(StudyTeam st : studentList) {
 				System.out.println(st.getUser_id());
 				System.out.println(st.getTeam_status());
 			}
 			// 김민정 \n team_apply \n 홍길동 \n team_reject
 			mav.addObject("studyPosted", posted);	
-			//		mav.addObject("studentList", studentList);	
+			mav.addObject("studentList", studentList);	
 
 		} catch (Exception e) {
 			e.printStackTrace();

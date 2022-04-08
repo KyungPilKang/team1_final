@@ -78,7 +78,16 @@ public class StudyServiceImpl implements StudyService {
 		Map<String, Object> map = new HashMap<>();
 		map.put("user_id", user_id);
 		map.put("study_no", study_no);
-		if (status == "team_apply") {
+		
+		System.out.println("a "+study_no);
+		System.out.println("a "+user_id);
+		System.out.println("a "+status);
+		
+		if (status.equals("team_apply")) {
+			System.out.println("b "+study_no);
+			System.out.println("b "+user_id);
+			System.out.println("b "+status);
+			
 			map.put("status", status);
 			studyDAO.checkAttend(map);
 		} else {
@@ -111,9 +120,9 @@ public class StudyServiceImpl implements StudyService {
 	}
 
 	@Override
-	public List<StudyTeam> getStudentList(int study_no) throws Exception {
+	public List<StudyTeam> getStudentApplyList(int study_no) throws Exception {
 		//참여자정보리스트 가져오기 
-		return studyDAO.getStudentList(study_no);
+		return studyDAO.selectStudentApplyList(study_no);
 		
 	}
 
