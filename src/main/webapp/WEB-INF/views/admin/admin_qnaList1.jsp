@@ -56,8 +56,6 @@
 
 <body>
 
-
-
 	<!-- Navbar Start -->
 	<nav
 		class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
@@ -120,8 +118,7 @@
 	<!-- 강사 Start -->
 	<div class="container-xxl py-5" id="freelancer">
 		<div class="container">
-			<h1 class="text-center mb-4 wow fadeInUp" data-wow-delay="0.1s">강사
-				1:1문의 리스트</h1>
+			<h1 class="text-center mb-4 wow fadeInUp" data-wow-delay="0.1s">강사 1:1문의 리스트</h1>
 			<div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
 
 

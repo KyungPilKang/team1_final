@@ -36,14 +36,6 @@
 </head>
 
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <!-- Spinner End -->
-
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
@@ -122,33 +114,32 @@
 
                     <div class="tab-content">
                         <div id="tab-1" class="tab-pane fade show p-0 active">
-
+							
+							<c:forEach items="${memList}" var="mem" varStatus="status">
                             <div class="job-item p-4 mb-4">
                                 <div class="row g-4">
                                     <div class="col-sm-12 col-md-6 d-flex align-items-center">
                                         <div class="text-start ps-4">
-                                            <h6 class="mb-3">답변이 너무 느리고 서비스가 별로예요, 답변이 너무 느리고 서비스가 별로예요, 답변이 너무 느리고 서비스가 별로예요, 답변이 너무 느리고 서비스가 별로예요.</h6>
-                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>사용자 ID | 남자 | 34</span>
+                                            <h6 class="mb-3">${mem.withdraw_contents}</h6>
+                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>${mem.username} | ${mem.gender} | ${mem.age}</span>
                                         </div>
                                     </div>
-                                    <!-- - d-flex 는 왼쪽부터 쌓인다는 뜻임
-                                    - col-sm-12 col-md-2 12개의 컬럼 중 2개의 영역을 차기 div태그로 해서 위에서 부터 아래로 왼쪽에서 오른 쪽으로 쌓인다.
-                                    - align-items-center div틀에 가로로 중앙에 배치 -->
                                     <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
                                         <div class="text-start ps-4">
-                                            <h6 class="mb-3">타 서비스와의 차별성 부족</h6>
+                                            <h6 class="mb-3">${mem.withdraw_type}</h6>
                                         </div>
                                     </div>
                                     <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
                                         <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="">탈퇴 완료</a>
+                                            <a class="btn btn-primary" href="">${mem.withdraw_status}</a>
                                         </div>
-                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>탈퇴일 2021.06.03</small>
+                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>탈퇴일 ${mem.withdraw_date}</small>
                                     </div>
                                 </div>
                             </div>
+                            </c:forEach>
 
-                            <div class="job-item p-4 mb-4">
+                            <!-- <div class="job-item p-4 mb-4">
                                 <div class="row g-4">
                                     <div class="col-sm-12 col-md-6 d-flex align-items-center">
                                         <div class="text-start ps-4">
@@ -168,7 +159,7 @@
                                         <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>탈퇴일 2021.06.03</small>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <a class="btn btn-primary py-3 px-5" href="">More List</a>
                         </div>

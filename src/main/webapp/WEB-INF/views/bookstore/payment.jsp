@@ -75,7 +75,9 @@
 
             <table style="width: 15%; height: 100px;">
 
-                <tr><td>수량</td></tr>
+                <tr>
+                    <td>수량</td>
+                </tr>
                 <c:forEach var="count" items="${qtyList}">
                     <tr>
                         <td>${count}</td>
@@ -178,7 +180,7 @@
 
         <div class="button_box">
             <div class="col-5 ">
-                <button id="return" onclick="location.href='cart'" class="btn btn-outline-info w-100 py-3">돌아가기</button>
+                <button id="return" onclick="location.href='/book-store/cart'" class="btn btn-outline-info w-100 py-3">돌아가기</button>
             </div>
             <div class="col-5 ">
                 <button id="next" class="btn btn-primary w-100 py-3">다음단계</button>
@@ -198,17 +200,23 @@
         </div>
         <div class="row text-center col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.5s"
              style="width: 55%; float:none; margin:40px auto 0 auto; padding:20px;">
-            <input id="paymentMethod_card" type="radio" class="btn-check" name="paymentMethod" value="card" onclick="payMethod(event)"/>
+            <input id="paymentMethod_card" type="radio" class="btn-check" name="paymentMethod" value="card"
+                   onclick="payMethod(event)"/>
             <label for="paymentMethod_card" class="btn btn-outline-primary w-100 py-3">카드</label>
-            <input id="paymentMethod_vbank" type="radio" class="btn-check" name="paymentMethod" value="vbank" onclick="payMethod(event)"/>
+            <input id="paymentMethod_vbank" type="radio" class="btn-check" name="paymentMethod" value="vbank"
+                   onclick="payMethod(event)"/>
             <label for="paymentMethod_vbank" class="btn btn-outline-primary w-100 py-3">가상계좌</label>
-            <input id="paymentMethod_trans" type="radio" class="btn-check" name="paymentMethod" value="trans" onclick="payMethod(event)"/>
+            <input id="paymentMethod_trans" type="radio" class="btn-check" name="paymentMethod" value="trans"
+                   onclick="payMethod(event)"/>
             <label for="paymentMethod_trans" class="btn btn-outline-primary w-100 py-3">실시간계좌이체</label>
-            <input id="paymentMethod_phone" type="radio" class="btn-check" name="paymentMethod" value="phone" onclick="payMethod(event)"/>
+            <input id="paymentMethod_phone" type="radio" class="btn-check" name="paymentMethod" value="phone"
+                   onclick="payMethod(event)"/>
             <label for="paymentMethod_phone" class="btn btn-outline-primary w-100 py-3">휴대폰소액결제</label>
-            <input id="paymentMethod_tosspay" type="radio" class="btn-check" name="paymentMethod" value="tosspay" onclick="payMethod(event)"/>
+            <input id="paymentMethod_tosspay" type="radio" class="btn-check" name="paymentMethod" value="tosspay"
+                   onclick="payMethod(event)"/>
             <label for="paymentMethod_tosspay" class="btn btn-outline-primary w-100 py-3">토스페이</label>
-            <input id="paymentMethod_samsung" type="radio" class="btn-check" name="paymentMethod" value="samsung" onclick="payMethod(event)"/>
+            <input id="paymentMethod_samsung" type="radio" class="btn-check" name="paymentMethod" value="samsung"
+                   onclick="payMethod(event)"/>
             <label for="paymentMethod_samsung" class="btn btn-outline-primary w-100 py-3">삼성페이</label>
         </div>
 
@@ -241,6 +249,28 @@
 <script src="${pageContext.request.contextPath}/resources/bookstore/js/payment.js"></script>
 <!-- iamport.payment.js -->
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+
+
+<script>
+    /* 결제 방법 선택 */
+    const payMethod = function (event) {
+        let pay_method = event.target.value;
+        if (pay_method === 'card') {
+            document.getElementById('btn_payment').setAttribute("onclick", "payment('card',${total_price})")
+        } else if (pay_method === 'vbank') {
+            document.getElementById('btn_payment').setAttribute("onclick", "payment('vbank',${total_price})")
+        } else if (pay_method === 'trans') {
+            document.getElementById('btn_payment').setAttribute("onclick", "payment('trans',${total_price})")
+        } else if (pay_method === 'phone') {
+            document.getElementById('btn_payment').setAttribute("onclick", "payment('phone',${total_price})")
+        } else if (pay_method === 'tosspay') {
+            document.getElementById('btn_payment').setAttribute("onclick", "payment('tosspay',${total_price})")
+        } else if (pay_method === 'samsung') {
+            document.getElementById('btn_payment').setAttribute("onclick", "payment('samsung',${total_price})")
+        }
+    }
+</script>
+
 
 </body>
 

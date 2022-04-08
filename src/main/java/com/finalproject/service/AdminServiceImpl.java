@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.finalproject.dao.AdminDAO;
 import com.finalproject.dto.Answer;
+import com.finalproject.dto.Member;
 import com.finalproject.dto.Request;
 
 @Service
@@ -23,6 +24,11 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public List<Answer> getAnswerListByRole(String role) throws Exception {
 		return adminDAO.qnaAnsList(role);
+	}
+	
+	@Override
+	public List<Member> getMemberListByRole(String role) throws Exception {
+		return adminDAO.withdrawMemList(role);
 	}
 	
 //	@Override
