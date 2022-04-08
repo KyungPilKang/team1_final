@@ -1,6 +1,7 @@
 package com.finalproject.service;
 
 import com.finalproject.dto.Book;
+import com.finalproject.dto.Cart;
 
 import java.util.List;
 
@@ -14,10 +15,15 @@ public interface CartService {
     //장바구니에 담긴 상품수
     int cartCount(String username) throws Exception;
 
-    //장바구니에 담긴 카트 아이템 list 가져오기
+    //장바구니에 담긴 카트 아이템 list 가져오기 (book객체)
     List<Book> getCartList(String username) throws Exception;
 
     //장바구니에 담긴 카트 아이템 삭제
     void deleteCart(int book_num, String username) throws Exception;
+
+    //장바구니에 담긴 카트 객체들 가져오기
+    List<Cart> getCarts(String username) throws Exception;
+
+    void updateQty(String book_num, Object cart_count) throws Exception;
 
 }
