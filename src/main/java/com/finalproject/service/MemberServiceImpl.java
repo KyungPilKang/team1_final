@@ -66,8 +66,9 @@ public class MemberServiceImpl implements MemberService {
 	
 	@Override
 	public void infoUpdateMember(Member member) throws Exception {
-		Member updatemember = memberDAO.selectMemberByNo(member.getNo());
-		memberDAO.modifyMember(updatemember);
+		
+		System.out.println(member.getNo());
+		memberDAO.modifyMember(member);
 		
 	}
 	

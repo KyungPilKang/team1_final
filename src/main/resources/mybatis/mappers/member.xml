@@ -75,7 +75,7 @@
 		<update id="modifyMember" parameterType="Member">
 		<![CDATA[
 			update final.member set nickname=#{nickname}, email=#{email}, phone=#{phone}, zipcode=#{zipcode},
-			doro_juso=#{doro_juso}, sangse_juso=#{sangse_juso} where username = #{username}
+			doro_juso=#{doro_juso}, sangse_juso=#{sangse_juso} where no = #{no}
 		]]>
 		</update>
 		
