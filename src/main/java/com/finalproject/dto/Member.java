@@ -1,5 +1,6 @@
 package com.finalproject.dto;
 
+import java.sql.Date;
 
 public class Member {
 	
@@ -23,6 +24,7 @@ public class Member {
 	private String withdraw_type;
 	private String withdraw_contents;
 	private int login_count;
+	private Date withdraw_date;
 	
 	@Override
 	public String toString() {
@@ -268,7 +270,13 @@ public class Member {
 		this.login_count = login_count;
 	}
 
+	public Date getWithdraw_date() {
+	    return withdraw_date;
+	}
 
+	public void setWithdraw_date(Date withdraw_date) {
+	    this.withdraw_date = withdraw_date;
+	}
 
 
 	

@@ -100,6 +100,7 @@ CREATE TABLE IF NOT EXISTS `final`.`member` (
   `withdraw_type` VARCHAR(1000) NULL DEFAULT NULL,
   `withdraw_contents` VARCHAR(1000) NULL DEFAULT NULL,
   `login_count` int(11) DEFAULT '0',
+  `withdraw_date` datetime DEFAULT NULL,
   PRIMARY KEY (`no`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
