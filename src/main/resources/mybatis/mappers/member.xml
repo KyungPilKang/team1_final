@@ -36,6 +36,12 @@
 		]]>
 		</select>
 		
+		<select id="selectMemberByNo" resultType="Member" parameterType="int">
+		<![CDATA[
+			select * from final.member where no=#{no}
+		]]>
+		</select>
+		
 		<select id="selectMemberByEmail" resultType="Member" parameterType="String">
 		<![CDATA[
 			select * from final.member where email=#{email}
@@ -81,7 +87,7 @@
 <!-- 
 CREATE TABLE IF NOT EXISTS `final`.`member` (
   `no` INT(11) NOT NULL AUTO_INCREMENT,
-  `username` VARCHAR(1000) NULL DEFAULT 'null',
+  `username` VARCHAR(1000) NULL DEFAULT 'NULL',
   `password` VARCHAR(1000) NULL DEFAULT NULL,
   `name` VARCHAR(1000) NULL DEFAULT NULL,
   `nickname` VARCHAR(1000) NULL DEFAULT NULL,
@@ -96,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `final`.`member` (
   `role` VARCHAR(1000) NULL DEFAULT 'ROLE_USER',
   `provider` VARCHAR(1000) NULL DEFAULT NULL,
   `provider_id` VARCHAR(1000) NULL DEFAULT NULL,
-  `withdraw_status` TINYINT(4) NULL DEFAULT NULL,
+  `withdraw_status` varchar(100) DEFAULT NULL,
   `withdraw_type` VARCHAR(1000) NULL DEFAULT NULL,
   `withdraw_contents` VARCHAR(1000) NULL DEFAULT NULL,
   `login_count` int(11) DEFAULT '0',
