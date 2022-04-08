@@ -27,7 +27,7 @@ public interface StudyDAO {
 	public void checkAttend(Map map)throws Exception;
 	public void cancelAttend(Map map) throws Exception;
 	//참여자정보리스트 가져오기 
-	List<StudyTeam> getStudentList(int study_no) throws Exception;
+	List<StudyTeam> selectStudentApplyList(int study_no) throws Exception;
 	
 	
 	//참여자 추가

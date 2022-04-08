@@ -186,17 +186,16 @@
 					<div class="col-12">
 					    <div class="col-12 mt-4">											
 							 <select id="attendList" class="btn btn-outline-primary w-35 py-3"  style="float:left; height:70px;">
-				                <option value="${studyPosted.maker}">아이디1</option>
-				                <option value="${studyPosted.maker}">아이디2</option>
-				                <option value="${studyPosted.maker}">아이디3</option>
+							 	<c:forEach items="${studentList }" var="student">
+							 		<option value="${student.user_id}">${student.user_id}</option>
+							 	</c:forEach>
 			           		 </select>	
 			           	</div>	           		
 						<div class="col-12 mt-4">
 							
 								<select id="attendResult" class="btn btn-outline-primary w-35 py-3"  style="float:left; height:70px;">
 									<option value="team_accept">참여수락</option>
-					                <option value="team_apply">참여취소</option>
-					                <option value="team_reject">탈락</option>
+					                <option value="team_reject">참여취소</option>					                
 				                </select>
 						</div>
 				
@@ -261,8 +260,25 @@
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<script>
-	<%-- $(document).ready(function () {
-		//attendList(아이디)
+	$(document).ready(function () {
+		$('#attendResult').on('change', function(e) {
+			let studentName = $('#attendList').val();
+			let studentStatus = $("#attendResult option:selected").val();			
+			let studentStatusText = $("#attendResult option:selected").text();			
+			var result = confirm(studentName + '님의 상태를 ' + studentStatusText + '으로 변경하시겠습니까?');
+			if(result){
+			    $.ajax({
+			 		url: ,
+			 		type: ,
+			 		data: {},
+			 		success: function(data) {
+			 			
+			 		}
+			    })
+			}
+		})
+	});
+		/* //attendList(아이디)
 	   $("#attendList").val(`${isattend}`);
 	   $('#attendList').on('change',function(e) {
 		   let isattend = e.currentTarget.value;
@@ -276,8 +292,8 @@
 		   let isresult = e.currentTarget.value;
 		   alert(isresult);
 		   window.location.href="/studymakerdetail?attendResult="+isresult;
-	   });
-	 }); --%>
+	   }); */
+	 
 	   
 	</script>
 </body>

@@ -24,7 +24,7 @@ public interface StudyService {
 	//참여 참여취소 
 	public void changeAttend(String user_id, int study_no, String status)throws Exception;
 	//참여자정보리스트 가져오기 
-	List<StudyTeam> getStudentList(int study_no) throws Exception;
+	List<StudyTeam> getStudentApplyList(int study_no) throws Exception;
 	
 	
 	//step1 할일

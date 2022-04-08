@@ -334,7 +334,7 @@
 		let attendCheck=null;
 		$('#attend').on('click', function(e) {
 		
-
+			
 			if (attend==true) {
 				Swal.fire({
 					title: "등록 확인",
@@ -351,7 +351,8 @@
 						cancelButton: "swal_cancle"
 					}
 				}).then((result) => {
-					if(!result.isConfirmed){
+					if(!result.isConfirmed){ //  스터디에 참여 하시겠습니까? yes 상황
+						attendCheck = "team_apply";
 						$.ajax({
 							type : "post",
 							dataType : "text",
@@ -375,11 +376,10 @@
 								alert("실패");
 							}
 						});
-					} else {
+					} else { // no 상황
 						return false;
 					}
 				})
-				attendCheck = "team_apply";
 			} else {
 				Swal.fire({
 					title: "등록 취소",
@@ -396,7 +396,8 @@
 						cancelButton: "swal_cancle"
 					}
 				}).then((result) => {
-					if(!result.isConfirmed){
+					if(!result.isConfirmed){  //  스터디에 참여를 취소 하시겠습니까? yes 상황
+						attendCheck = "notattend";
 						$.ajax({
 							type : "post",
 							dataType : "text",
@@ -420,11 +421,10 @@
 								alert("실패");
 							}
 						});
-					} else {
+					} else { // no 상황
 						return false;
 					}
 				})
-				attendCheck = "notattend";
 			}
 
 		});
