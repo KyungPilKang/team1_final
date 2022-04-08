@@ -120,7 +120,7 @@
 								<button class="btn btn-primary w-100 py-3" onclick="login()" type="button">로그인 하기</button>
 							</div>
 							<div class="col-12">
-								<a href="joinForm" class="btn btn-primary w-100 py-3">회원가입하기</a>
+								<a href="termsagree" class="btn btn-primary w-100 py-3">회원가입하기</a>
 
 							</div>
 						</div>

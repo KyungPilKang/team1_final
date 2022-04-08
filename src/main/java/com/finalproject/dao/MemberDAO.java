@@ -14,6 +14,7 @@ public interface MemberDAO {
 	public void insertMember(Member member) throws Exception;
 	public Member selectMemberByProvider_id(String provider_id) throws Exception;
 	public Member selectMemberByEmail(String email) throws Exception;
+	public Member selectMemberByNo(int no) throws Exception;
 	public Member selectMemberByUsername(String username) throws Exception;
 	public Member selectMemberByNickname(String nickname) throws Exception;
 	public void update_login_count(Member member);
