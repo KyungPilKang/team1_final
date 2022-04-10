@@ -41,9 +41,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.csrf().disable();
 		http
         .authorizeRequests() // 해당 메소드 아래는 각 경로에 따른 권한을 지정할 수 있다.
-        .antMatchers("/user/**").authenticated() //로그인 사용자만 이용 가능
-		.antMatchers("/manager/**").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_MANAGER')")
-		.antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
+//        .antMatchers("/user/**").authenticated() //로그인 사용자만 이용 가능
+//		.antMatchers("/manager/**").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_MANAGER')")
+//		.antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
 		.anyRequest().permitAll()
         .and()
         .formLogin() // 하위에 내가 직접 구현한 로그인 폼, 로그인 성공시 이동 경로 설정 가능. , 로그인 폼의 아이디,패스워드는 username, password로 맞춰야 함

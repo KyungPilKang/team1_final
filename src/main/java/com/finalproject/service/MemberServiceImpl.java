@@ -29,6 +29,7 @@ public class MemberServiceImpl implements MemberService {
 		member.setAge(age);
 		member.setLogin_count(0);
 		member.setProvider("NAVER");
+		member.setRole("ROLE_USER");
 		memberDAO.insertNaverMember(member);
 	}
 	
@@ -45,10 +46,22 @@ public class MemberServiceImpl implements MemberService {
 				member.setAge(age);
 				member.setLogin_count(0);
 				member.setProvider("KAKAO");
+				member.setRole("ROLE_USER");
 				memberDAO.insertKakaoMember(member);
 		
 	}
 
+	@Override
+	public void createAdmin(Member member) throws Exception {
+		String  encodedPassword = bCryptPasswordEncoder.encode("admin");
+		member.setUsername("admin");
+		member.setPassword(encodedPassword);
+		member.setRole("ROLE_ADMIN");
+		member.setName("관리자");
+		memberDAO.insertMember(member);
+	}
+
+	
 	@Override
 	public void insertMember(Member member) throws Exception {
 		//date를 통하여 나이 추출 
@@ -61,12 +74,14 @@ public class MemberServiceImpl implements MemberService {
 		member.setPassword(encodedPassword);
 		member.setAge(age);
 		member.setLogin_count(0);
+		member.setRole("ROLE_USER");
 		memberDAO.insertMember(member);
 	}
 	
 	@Override
 	public void infoUpdateMember(Member member) throws Exception {
 		
+		System.out.println(member.getNo());
 		memberDAO.modifyMember(member);
 		
 	}
@@ -91,12 +106,30 @@ public class MemberServiceImpl implements MemberService {
 				res="overfail";
 			}else {res="passfail";}
 			}
-		return res;
-	
+		return res;		
+	}
+	@Override
+	public boolean passwordCheck(int no, String password) throws Exception {
 		
-		
+		Member check = memberDAO.selectMemberByNo(no);
+		System.out.println(check.getPassword());
+		System.out.println(password);
+		System.out.println(bCryptPasswordEncoder.matches(password, check.getPassword()));
+		if (bCryptPasswordEncoder.matches(password, check.getPassword())) {
+			
+			return true;
+		}
+		return false;
 	}
 	
+	
+	@Override
+	public void passwordChange(int no, String password) throws Exception {
+		Member pass = memberDAO.selectMemberByNo(no);
+		String encodedPassword = bCryptPasswordEncoder.encode(password);
+		pass.setPassword(encodedPassword);
+		memberDAO.update_password(pass);
+	}
 
 	@Override
 	public boolean emailCheck(String email) throws Exception {
@@ -154,6 +187,8 @@ public class MemberServiceImpl implements MemberService {
 		return member;
 	}
 
+
+	
 
 
 

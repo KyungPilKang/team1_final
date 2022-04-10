@@ -39,6 +39,7 @@
 
 <body>
 <%
+int no = (Integer)session.getAttribute("no");
 String username = (String)session.getAttribute("username"); 
 String name = (String)session.getAttribute("name");
 String nickname = (String)session.getAttribute("nickname");
@@ -98,6 +99,7 @@ String sangse_juso = (String)session.getAttribute("sangse_juso");
 				<h1 class="mt-2 mb-3">회원 정보 수정</h1>
 				<div class="row text-center col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 55%; float: none; margin: 0 auto">
 					<form name="form" id="form" action="updateMember" method="post" novalidate>
+					<input type="hidden" value="<%=no %>" name="no">
 						<div class="row g-3">
 							<table id="table1" class="table">
 								<colgroup>
@@ -322,7 +324,7 @@ String sangse_juso = (String)session.getAttribute("sangse_juso");
 					<div class="row pt-3 ">
 						<div class="col-1"></div>
 						<div class="col-5 ">
-							<button id="modify" onclick="modify()" class="btn btn-primary w-100 py-3" type="submit">수정하기</button>
+							<button id="modify" onclick="modify()" class="btn btn-primary w-100 py-3" type="button">수정하기</button>
 						</div>
 						<div class="col-5 ">
 							<a href="home" class="btn border w-100 py-3">취소하기</a>

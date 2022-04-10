@@ -1,25 +1,25 @@
 package com.finalproject.controller;
 
+import com.finalproject.dto.PageInfo;
+import com.finalproject.service.FreelanceService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class MypageController {
 
-    @GetMapping("/freelancedefult")
-    public String freelancedefult() {
-        return "/mypage/freelanceDefult";
-    }
+    @Autowired
+    private HttpSession session;
 
-    @GetMapping("/freelancepagemakemove")
-    public String freelancepagemakemove() {
-        return "/mypage/freelancepageMakeMove";
-    }
-
-    @GetMapping("/freelancepagereview")
-    public String freelancepagereview() {
-        return "/mypage/freelancepageReview";
-    }
+    @Autowired
+    private FreelanceService freelanceService;
 
     @GetMapping("/teachpagedefult")
     public String teachpagedefult() {
@@ -50,5 +50,11 @@ public class MypageController {
     public String studentpagestudy() {
         return "/mypage/studentpageStudy";
     }
+
+    @GetMapping("/studentmovedetail")
+    public String studentmovedetail() {
+        return "/mypage/studentMovedetail";
+    }
+
 
 }

@@ -102,29 +102,35 @@ public class StudyServiceImpl implements StudyService {
 	}
 
 	@Override
-	public void makeAttend(int study_no, String user_id) throws Exception {
-		//  참여수락
-		studyDAO.makeAttend(study_no, user_id);
-	}
-
-	@Override
-	public void holdAttend(int study_no, String user_id) throws Exception {
-		// 참여수락 취소 
-		studyDAO.holdAttend(study_no, user_id);
+	public void changeApplyAceept(int study_no, String user_id, String team_status) throws Exception {
+		//참여수락, 수락취소 
+		Map<String,Object> map = new HashMap<>();
+		
+		map.put("study_no", study_no);
+		map.put("student_name", user_id);
+		if(team_status.equals("team_accept")) {
+			System.out.println("b "+study_no);
+			System.out.println("b "+user_id);
+			System.out.println("b "+team_status);
+			
+			map.put("status", team_status);
+			studyDAO.changeApplyAceept(map);
+		}else {
+			team_status = "team_reject";
+			map.put("team_status", team_status);
+			studyDAO.changeApplyAceept(map);
+		}
+		
 	}
 	
-	@Override
-	public void rejectAttend(int study_no, String user_id) throws Exception {
-		// 참여 탈락
-		studyDAO.rejectAttend(study_no, user_id);
-	}
-
-	@Override
+	@Override 
 	public List<StudyTeam> getStudentApplyList(int study_no) throws Exception {
 		//참여자정보리스트 가져오기 
 		return studyDAO.selectStudentApplyList(study_no);
 		
 	}
+
+
 
 
 

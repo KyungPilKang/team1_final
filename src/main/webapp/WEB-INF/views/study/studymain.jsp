@@ -162,7 +162,7 @@
 					    </form>
 					</div>
 					<div class="second mt-5 mb-5">
-					    <form action="studyfind" method="post">
+					    <form action="studyfind" method="get">
 						<button type="submit" class="btn btn-primary w-100 py-3" >스터디매칭</button>
 						</form>
 					</div>
