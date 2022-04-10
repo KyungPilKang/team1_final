@@ -16,4 +16,7 @@ public interface MemberService {
 	public boolean nicknameCheck(String nickname) throws Exception;
 	public String loginCheck(String username, String password) throws Exception;
 	public Member selectMemberByUsername(String username) throws Exception;
+	public boolean passwordCheck(int no, String password) throws Exception;
+	public void passwordChange(int no, String password) throws Exception;
+	public void createAdmin(Member member)throws Exception;
 }

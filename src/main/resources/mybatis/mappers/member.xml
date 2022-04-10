@@ -36,6 +36,12 @@
 		]]>
 		</select>
 		
+		<select id="selectMemberByNo" resultType="Member" parameterType="int">
+		<![CDATA[
+			select * from final.member where no=#{no}
+		]]>
+		</select>
+		
 		<select id="selectMemberByEmail" resultType="Member" parameterType="String">
 		<![CDATA[
 			select * from final.member where email=#{email}
@@ -69,7 +75,13 @@
 		<update id="modifyMember" parameterType="Member">
 		<![CDATA[
 			update final.member set nickname=#{nickname}, email=#{email}, phone=#{phone}, zipcode=#{zipcode},
-			doro_juso=#{doro_juso}, sangse_juso=#{sangse_juso} where username = #{username}
+			doro_juso=#{doro_juso}, sangse_juso=#{sangse_juso} where no = #{no}
+		]]>
+		</update>
+		
+		<update id="update_password" parameterType="Member">
+		<![CDATA[
+			update final.member set password=#{password} where no = #{no}
 		]]>
 		</update>
 		
@@ -81,7 +93,7 @@
 <!-- 
 CREATE TABLE IF NOT EXISTS `final`.`member` (
   `no` INT(11) NOT NULL AUTO_INCREMENT,
-  `username` VARCHAR(1000) NULL DEFAULT 'null',
+  `username` VARCHAR(1000) NULL DEFAULT 'NULL',
   `password` VARCHAR(1000) NULL DEFAULT NULL,
   `name` VARCHAR(1000) NULL DEFAULT NULL,
   `nickname` VARCHAR(1000) NULL DEFAULT NULL,

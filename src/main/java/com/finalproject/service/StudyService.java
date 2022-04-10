@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import com.finalproject.dto.Study;
 import com.finalproject.dto.StudyTeam;
 
-@Service
+
 public interface StudyService {
 	//스터디 등록 
 	public void regStudy(Study study) throws Exception;
@@ -22,18 +22,17 @@ public interface StudyService {
 	//내가 쓴 글
 	List<Study> makerList(String maker) throws Exception;
 	//참여 참여취소 
-	public void changeAttend(String user_id, int study_no, String status)throws Exception;
+	public void changeAttend(String user_id, int study_no, String status) throws Exception;
 	//참여자정보리스트 가져오기 
 	List<StudyTeam> getStudentApplyList(int study_no) throws Exception;
 	
 	
 	//step1 할일
 	//참여자 추가
-	public void makeAttend(int study_no, String user_id) throws Exception;
-	//참여자 탈락
-	public void rejectAttend(int study_no, String user_id) throws Exception;
-	//참여자 추가 취소 (team_apply 로 update) 
-	public void holdAttend(int study_no, String user_id) throws Exception;
+	public void changeApplyAceept(int study_no, String student_name, String team_status ) throws Exception;
+	//참여자 추가 제거
+	//public void rejectAttend(int study_no, String user_id) throws Exception;
+
 	//참여자조회
 	List<StudyTeam> attendInfo(int study_no) throws Exception;
 

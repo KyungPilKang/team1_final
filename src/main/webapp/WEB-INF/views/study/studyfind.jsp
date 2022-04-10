@@ -95,7 +95,7 @@
 	<!-- Contact Start -->
 	<div class="container-xxl py-5">
 			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-				<form action="studyfindform" method="post">
+				<form action="studyfindform" method="get">
 
 	<!-- 초/중등 학교 study_sname -->
 					<div id="regstudyform1">
