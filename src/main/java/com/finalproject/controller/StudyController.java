@@ -110,7 +110,7 @@ public class StudyController {
 	// 참여자 리스트 가져오기
 	// 추후 get 방식에서 post 방식으로 변경 필요
 	@GetMapping("/studymakerdetail/{study_no}")
-	public ModelAndView studymakerdetail(@PathVariable int study_no) {
+	public ModelAndView studymakerdetail(@PathVariable int study_no, @RequestParam(value = "studentStatus") String team_status,@RequestParam(value = "studentName") String user_id) {
 		ModelAndView mav = new ModelAndView("study/studymakerdetail");
 		try {
 			Study posted = studyservice.getStudydetail(study_no);
@@ -122,6 +122,8 @@ public class StudyController {
 			// 김민정 \n team_apply \n 홍길동 \n team_reject
 			mav.addObject("studyPosted", posted);	
 			mav.addObject("studentList", studentList);	
+			studyservice.changeApplyAceept(study_no, user_id, team_status);
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
