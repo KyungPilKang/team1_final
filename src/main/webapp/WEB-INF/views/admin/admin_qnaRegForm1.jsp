@@ -48,8 +48,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.html" class="nav-item nav-link">강사</a>
-                <a href="about.html" class="nav-item nav-link">교육업 종사자</a>
-                <a href="courses.html" class="nav-item nav-link active">학생/학부모</a>
+                <a href="courses.html" class="nav-item nav-link active">학생</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
@@ -85,12 +84,15 @@
     <div class="container-xxl py-5">
         <div class="container">
 
+
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">${request_client} 1:1문의 작성 </h6>
+                <h6 class="section-title bg-white text-center text-primary px-3">${role} 1:1문의 작성 </h6>
             </div>
-            <c:forEach items="${reqList}" var="req">
+ 
+ 
+ 
 	            <div class="col-lg-7 col-md-7 text-center wow fadeInUp" data-wow-delay="0.1s">
-	                <h6 class="pt-5 pb-0">${req.username} 문의내역</h6>
+	                <h6 class="pt-5 pb-0">${username} 문의내역</h6>
 	            </div>
 	
 	            <div class="row g-1 justify-content-center">
@@ -103,7 +105,7 @@
 	                </span>
 	                <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
 	                        <div class="d-flex border-top">
-	                            <small class="flex-fill text-left py-2 px-2">${req.request_date}</small>
+	                            <small class="flex-fill text-left py-2 px-2">${request_date}</small>
 	                        </div>
 	                </span>
 	            </div>
@@ -117,7 +119,7 @@
 	                </span>
 	                <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
 	                        <div class="d-flex border-top">
-	                            <small class="flex-fill text-left py-2 px-2">${req.request_type}</small>
+	                            <small class="flex-fill text-left py-2 px-2">${request_type}</small>
 	                        </div>
 	                </span>
 	            </div>
@@ -131,7 +133,7 @@
 	                </span>
 	                <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
 	                        <div class="d-flex border-top">
-	                            <small class="flex-fill text-left py-2 px-2">${req.request_subject}</small>
+	                            <small class="flex-fill text-left py-2 px-2">${request_subject}</small>
 	                        </div>
 	                </span>
 	            </div>
@@ -145,11 +147,13 @@
 	                </span>
 	                <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
 	                        <div class="d-flex border-top border-bottom">
-	                            <small class="flex-fill text-left py-2 px-2">${req.request_content}</small>
+	                            <small class="flex-fill text-left py-2 px-2">${request_content}</small>
 	                        </div>
 	                </span>
 	            </div>
-			</c:forEach>
+
+
+
 			
 			<form id='form' action="qnareg" method="post">
 	            <div class="col-lg-7 col-md-7 text-center wow fadeInUp" data-wow-delay="0.1s">

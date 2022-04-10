@@ -31,6 +31,20 @@ public class AdminServiceImpl implements AdminService {
 		return adminDAO.withdrawMemList(role);
 	}
 	
+	@Override
+	public Request getRequestInfoByRole(String role) throws Exception {
+		Request reqInfo=adminDAO.queryReqInfo(role);
+		if(reqInfo==null) throw new Exception("오류");
+		return reqInfo;
+	}
+	
+	@Override
+	public Answer getAnswerInfoByRole(String role) throws Exception {
+		Answer ansInfo=adminDAO.queryAnsInfo(role);
+		if(ansInfo==null) throw new Exception("오류");
+		return ansInfo;
+	}
+	
 //	@Override
 //	public void inputQna(Answer ans) throws Exception {
 //		adminDAO.insertAnswer(ans);

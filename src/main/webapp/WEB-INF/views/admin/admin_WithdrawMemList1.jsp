@@ -48,8 +48,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.html" class="nav-item nav-link">강사</a>
-                <a href="about.html" class="nav-item nav-link">교육업 종사자</a>
-                <a href="courses.html" class="nav-item nav-link active">학생/학부모</a>
+                <a href="courses.html" class="nav-item nav-link active">학생</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
@@ -74,9 +73,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb text-uppercase">
                         <li class="breadcrumb-item"><a href="#freelancer">강사</a></li>
-                        <li class="breadcrumb-item"><a href="#worker">교육업 종사자</a></li>
-                        <li class="breadcrumb-item"><a href="#student">학생</a></li>
-                        <li class="breadcrumb-item"><a href="#parents">학부모</a></li>
+                        <li class="breadcrumb-item"><a href="#worker">학생</a></li>
                     </ol>
                 </nav>
 
@@ -139,27 +136,7 @@
                             </div>
                             </c:forEach>
 
-                            <!-- <div class="job-item p-4 mb-4">
-                                <div class="row g-4">
-                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h6 class="mb-3">답변이 너무 느리고 서비스가 별로예요, 답변이 너무 느리고 서비스가 별로예요, 답변이 너무 느리고 서비스가 별로예요, 답변이 너무 느리고 서비스가 별로예요.</h6>
-                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>사용자 ID | 남자 | 34</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h6 class="mb-3">단순변심</h6>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="">탈퇴 완료</a>
-                                        </div>
-                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>탈퇴일 2021.06.03</small>
-                                    </div>
-                                </div>
-                            </div> -->
+
 
                             <a class="btn btn-primary py-3 px-5" href="">More List</a>
                         </div>

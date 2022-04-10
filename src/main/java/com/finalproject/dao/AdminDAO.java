@@ -15,6 +15,8 @@ public interface AdminDAO {
 	public List<Request> qnaReqList(String role) throws Exception;
 	public List<Answer> qnaAnsList(String role) throws Exception;
 	public List<Member> withdrawMemList(String role) throws Exception;
+	public Request queryReqInfo(String role) throws Exception;
+	public Answer queryAnsInfo(String role) throws Exception;
 	
 //	public void insertAnswer(Answer ans) throws Exception;
 	

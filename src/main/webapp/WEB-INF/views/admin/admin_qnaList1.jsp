@@ -72,8 +72,7 @@
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<div class="navbar-nav ms-auto p-4 p-lg-0">
 				<a href="index.html" class="nav-item nav-link">강사</a> <a
-					href="about.html" class="nav-item nav-link">교육업 종사자</a> <a
-					href="courses.html" class="nav-item nav-link active">학생/학부모</a>
+					href="courses.html" class="nav-item nav-link active">학생</a>
 				<div class="nav-item dropdown">
 					<a href="#" class="nav-link dropdown-toggle"
 						data-bs-toggle="dropdown">Pages</a>
@@ -101,15 +100,14 @@
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb text-uppercase">
 					<li class="breadcrumb-item"><a href="/qnalist?role=freelancer">강사</a></li>
-					<li class="breadcrumb-item"><a href="/qnalist?role=worker">교육업 종사자</a></li>
 					<li class="breadcrumb-item"><a href="/qnalist?role=worker">학생</a></li>
-					<li class="breadcrumb-item"><a href="/qnalist?role=worker">학부모</a></li>
 				</ol>
 			</nav>
 
 		</div>
 	</div>
 	<!-- Header End -->
+
 
 
 
@@ -122,7 +120,11 @@
 			<div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
 
 
-				<div class="container-fluid bg-dark">
+
+
+
+
+  				<div class="container-fluid bg-dark">
 					<div class="row">
 						<div class="col-sm-12 col-md-7 align-items-center">
 							<h6 class="text-white my-4">내용</h6>
@@ -137,10 +139,10 @@
 							<h6 class="text-white my-4">상태</h6>
 						</div>
 					</div>
-				</div>
-
-
-
+				</div> 
+				
+				
+		
 
 				<div class="tab-content">
 					<div id="tab-1" class="tab-pane fade show p-0 active">
@@ -151,25 +153,18 @@
 									<div class="col-sm-12 col-md-6 d-flex align-items-center">
 										<div class="text-start ps-4">
 											<h5 class="mb-3">${req.request_subject}</h5>
-											<span class="text-truncate me-3"><i
-												class="fa fa-user-tie text-primary me-2"></i>${req.username}</span>
+											<span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>${req.username}</span>
 											<small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>문의일 ${req.request_date}</small>
 										</div>
 									</div>
-									<!-- - d-flex 는 왼쪽부터 쌓인다는 뜻임
-	                                    - col-sm-12 col-md-2 12개의 컬럼 중 2개의 영역을 차기 div태그로 해서 위에서 부터 아래로 왼쪽에서 오른 쪽으로 쌓인다.
-	                                    - align-items-center div틀에 가로로 중앙에 배치 -->
-									<div
-										class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
+									<div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
 										<div class="text-start ps-4">
 											<h6 class="mb-3">${req.request_type}</h6>
 										</div>
 									</div>
-									<div
-										class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+									<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
 										<div class="d-flex mb-3">
 											<a class="btn btn-primary" href="">
-											<%-- ${req.request_state} --%>
 											${ansList[status.index].answer_content == null ? '답변대기' : ansList[status.index].answer_state}
 											</a>
 										</div>
@@ -182,41 +177,24 @@
 
 					</div>
 				</div>
+				
 
-				<!--                             <div class="job-item p-4 mb-4">
-                                <div class="row g-4">
-                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h5 class="mb-3">홈페이지 사용법이 어떻게 되나요?</h5>
-                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>사용자 ID</span>
-                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>문의일 2021.06.03</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h6 class="mb-3">홈페이지 문의</h6>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="">답변 대기</a>
-                                        </div>
-                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>응답일 2021.06.03</small>
-                                    </div>
-                                </div>
-                            </div> -->
 
-				<a class="btn btn-primary py-3 px-5" href="">More List</a>
+				<a class="btn btn-primary py-3 px-5" id="more_btn_a" href="">More List</a>
+
+				
 			</div>
 		</div>
 	</div>
+
+
+
 	<!-- 강사 End -->
-
-
-
-
-
-
+	
+	
+	
+	
+	
 
 
 

@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>NEEDSFULL - 1:1문의리스트 폼(교육업 종사자)</title>
+    <title>NEEDSFULL - 1:1문의리스트 폼(학생)</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -48,8 +48,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.html" class="nav-item nav-link">강사</a>
-                <a href="about.html" class="nav-item nav-link">교육업 종사자</a>
-                <a href="courses.html" class="nav-item nav-link active">학생/학부모</a>
+                <a href="courses.html" class="nav-item nav-link active">학생</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
@@ -74,9 +73,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb text-uppercase">
                         <li class="breadcrumb-item"><a href="#freelancer">강사</a></li>
-                        <li class="breadcrumb-item"><a href="#worker">교육업 종사자</a></li>
                         <li class="breadcrumb-item"><a href="#student">학생</a></li>
-                        <li class="breadcrumb-item"><a href="#parents">학부모</a></li>
                     </ol>
                 </nav>
 
@@ -88,10 +85,10 @@
 
 
 
-        <!-- 교육업 종사자 Start -->
+        <!-- 학생 Start -->
         <div class="container-xxl py-5" id="worker">
             <div class="container">
-                <h1 class="text-center mb-4 wow fadeInUp" data-wow-delay="0.1s">교육업 종사자 1:1문의 리스트</h1>
+                <h1 class="text-center mb-4 wow fadeInUp" data-wow-delay="0.1s">학생 1:1문의 리스트</h1>
                 <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
 
 
@@ -140,28 +137,7 @@
 	                            </div>
 							</c:forEach>
 							
-<!--                             <div class="job-item p-4 mb-4">
-                                <div class="row g-4">
-                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h5 class="mb-3">홈페이지 사용법이 어떻게 되나요?</h5>
-                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>사용자 ID</span>
-                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>문의일 2021.06.03</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h6 class="mb-3">홈페이지 문의</h6>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="">답변 대기</a>
-                                        </div>
-                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>응답일 2021.06.03</small>
-                                    </div>
-                                </div>
-                            </div> -->
+
 
                             <a class="btn btn-primary py-3 px-5" href="">More List</a>
                         </div>
@@ -169,7 +145,7 @@
                 </div>
             </div>
         </div>
-        <!-- 교육업 종사자 End -->
+        <!-- 학생 End -->
 
 
 

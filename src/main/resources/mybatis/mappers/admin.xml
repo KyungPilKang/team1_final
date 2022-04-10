@@ -4,21 +4,33 @@
 
 <mapper namespace="com.finalproject.dao.AdminDAO">
 	
-	<select id="qnaReqList" resultType="Request">
+	<select id="qnaReqList" resultType="Request" parameterType="String">
 		<![CDATA[
 			select * from request where role=#{role}
 		]]>
 	</select>
 	
-	<select id="qnaAnsList" resultType="Answer">
+	<select id="qnaAnsList" resultType="Answer" parameterType="String">
 		<![CDATA[
 			select * from answer where role=#{role}
 		]]>
 	</select>
 	
-	<select id="withdrawMemList" resultType="Member">
+	<select id="withdrawMemList" resultType="Member" parameterType="String">
 		<![CDATA[
 			select * from member where role=#{role}
+		]]>
+	</select>
+	
+		<select id="queryReqInfo" resultType="Request" parameterType="String">
+		<![CDATA[
+			select * from request where role=#{role}
+		]]>
+	</select>
+	
+	<select id="queryAnsInfo" resultType="Answer" parameterType="String">
+		<![CDATA[
+			select * from answer where role=#{role}
 		]]>
 	</select>
 

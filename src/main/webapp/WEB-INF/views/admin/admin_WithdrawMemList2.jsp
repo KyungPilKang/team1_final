@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>NEEDSFULL - 탈퇴회원관리 폼(교육업 종사자)</title>
+    <title>NEEDSFULL - 탈퇴회원관리 폼(학생)</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -48,8 +48,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.html" class="nav-item nav-link">강사</a>
-                <a href="about.html" class="nav-item nav-link">교육업 종사자</a>
-                <a href="courses.html" class="nav-item nav-link active">학생/학부모</a>
+                <a href="courses.html" class="nav-item nav-link active">학생</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
@@ -74,9 +73,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb text-uppercase">
                         <li class="breadcrumb-item"><a href="#freelancer">강사</a></li>
-                        <li class="breadcrumb-item"><a href="#worker">교육업 종사자</a></li>
                         <li class="breadcrumb-item"><a href="#student">학생</a></li>
-                        <li class="breadcrumb-item"><a href="#parents">학부모</a></li>
                     </ol>
                 </nav>
 
@@ -89,10 +86,10 @@
 
 
 
-        <!-- 교육업 종사자 Start -->
+        <!-- 학생 Start -->
         <div class="container-xxl py-5" id="worker">
             <div class="container">
-                <h1 class="text-center mb-4 wow fadeInUp" data-wow-delay="0.1s">교육업 종사자 탈퇴회원 리스트</h1>
+                <h1 class="text-center mb-4 wow fadeInUp" data-wow-delay="0.1s">강사 탈퇴회원 리스트</h1>
                 <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
 
 
@@ -166,7 +163,7 @@
                 </div>
             </div>
         </div>
-        <!-- 교육업 종사자 End -->
+        <!-- 학생 End -->
 
  
        
