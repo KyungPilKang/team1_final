@@ -268,11 +268,21 @@
 			var result = confirm(studentName + '님의 상태를 ' + studentStatusText + '으로 변경하시겠습니까?');
 			if(result){
 			    $.ajax({
-			 		url: ,
-			 		type: ,
-			 		data: {},
+			 		url: "http://localhost:8090//studymakerdetail/{study_no}",
+			 		type: "get" ,
+			 		data: {
+			 			"study_no" : $('#study_no').val(),
+						"studentStatus" : studentStatus,
+						"studentName" : studentName
+			 		},
 			 		success: function(data) {
-			 			
+			 			// study_no, studentName, studentStatus
+			 			if (data == "team_accept") {
+						 	$('#attendResult').html("참여 취소");
+						} else {
+							attend=true;
+							$('#attendResult').html("참여 수락");
+						}
 			 		}
 			    })
 			}

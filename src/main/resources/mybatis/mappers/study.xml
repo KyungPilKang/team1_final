@@ -84,27 +84,12 @@
 		]]>
 	</delete>
 <!-- 개설자 참여 수락 버튼 -->
-<!-- 	<update id="updateStudy" parameterType="Map" >
+	<update id="changeApplyAceept" parameterType="Map" >
 		<![CDATA[
 			update studyteam set team_status= 'team_accept' where study_no = #{study_no} and user_id = #{user_id};
 		]]>
-	</update> -->
+	</update> 
 
-<!-- 개설자 참여 수락 취소 버튼 -->
-<!-- 	<update id="updateStudy" parameterType="Map" >
-		<![CDATA[
-			update studyteam set team_status= 'team_apply' where study_no = #{study_no} and user_id = #{user_id};
-		]]>
-	</update> -->
-
-	
-
-<!-- 개설자 참여 탈락-->
-<!-- 	<update id="updateStudy" parameterType="Map" >
-		<![CDATA[
-			update studyteam set team_status= 'team_reject' where study_no = #{study_no} and user_id = #{user_id};
-		]]>
-	</update> -->
 
 	
 </mapper>

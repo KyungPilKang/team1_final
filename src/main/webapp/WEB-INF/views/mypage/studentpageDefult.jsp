@@ -35,6 +35,12 @@
 
     <!-- Template Stylesheet -->
     <link href="${pageContext.request.contextPath}/resources/mypage/css/style.css" rel="stylesheet">
+
+    <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
+    <script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
+    <link href="https://unpkg.com/@silvermine/videojs-quality-selector/dist/css/quality-selector.css" rel="stylesheet">
+    <script src="https://unpkg.com/@silvermine/videojs-quality-selector/dist/js/silvermine-videojs-quality-selector.min.js"></script>
+
 </head>
 
 <body>
@@ -143,7 +149,8 @@
                     <div class="sub-content student-content">
 
                         <div class="student-move">
-                            <img src="#" class="student-move_name"><br>
+                            <video id="myVideo" class="video-js bg-light rounded">
+                            </video><br>
                             <span class="student-move_subject">JAVA의 정석 /</span>
                             <span class="student-move_producer">&nbsp김길동</span>
                             <div class="student-move_starpoint">★★★★★</div>
@@ -156,7 +163,8 @@
                             </form>
                         </div>
                         <div class="student-move">
-                            <img src="#" class="student-move_name"><br>
+                            <video id="myVideo1" class="video-js bg-light rounded">
+                            </video><br>
                             <span class="student-move_subject">JAVA의 정석 /</span>
                             <span class="student-move_producer">&nbsp김길동</span>
                             <div class="student-move_starpoint">★★★★★</div>
@@ -169,7 +177,8 @@
                             </form>
                         </div>
                         <div class="student-move">
-                            <img src="#" class="student-move_name"><br>
+                            <video id="myVideo2" class="video-js bg-light rounded">
+                            </video><br>
                             <span class="student-move_subject">JAVA의 정석 /</span>
                             <span class="student-move_producer">&nbsp김길동</span>
                             <div class="student-move_starpoint">★★★★★</div>
@@ -235,6 +244,40 @@
 
 <!-- DIY -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<script src="${pageContext.request.contextPath}/resources/mypage/js/mypage.js"></script>
+<script src="${pageContext.request.contextPath}/resources/mypage/js/myFage.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script>
+    $(document).ready(function() {
+        let options = {
+            sources : [ {
+                src : "${pageContext.request.contextPath}/resources/test.mp4",
+                type : "video/mp4"
+            } ],
+            playbackRates : [ .5, .75, 1, 1.25, 1.5 ],
+            /* poster: , */
+            controls : true,
+            preload : "auto",
+            width : 300,
+            height : 300,
+            controlBar : {
+                playToggle : true,
+                pictureInPictureToggle : true,
+                remainingTimeDisplay : true,
+                progressControl : true,
+                qualitySelector : true,
+            }
+        };
+
+        var player = videojs('myVideo', options);
+        player.src([ {
+            src : "${pageContext.request.contextPath}/resources/test.mp4",
+            type : 'video/mp4',
+            label : '1080P',
+            selected : true,
+        }]);
+    })
+</script>
+
 </body>
 </html>
