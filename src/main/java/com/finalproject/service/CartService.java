@@ -26,4 +26,6 @@ public interface CartService {
 
     void updateQty(String book_num, Object cart_count) throws Exception;
 
+    void deleteCartByUser(String username) throws Exception;
+
 }

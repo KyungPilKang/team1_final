@@ -53,6 +53,12 @@
 		]]>
 	</update>
 
+	<delete id="deleteCartByUser" parameterType="String">
+		<![CDATA[
+		delete from cart where username=#{username}
+		]]>
+	</delete>
+
 
 </mapper>
 

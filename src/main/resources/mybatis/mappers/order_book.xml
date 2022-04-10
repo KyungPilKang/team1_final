@@ -4,6 +4,13 @@
 
 <mapper namespace="com.finalproject.dao.OrderBookDAO">
 
+	<insert id="insertOrderBook">
+		<![CDATA[
+		insert into order_book
+		values (0,#{order_num}, #{order_book_bookNum}, #{order_book_count})
+		]]>
+	</insert>
+
 </mapper>
 
 

@@ -49,8 +49,8 @@ public class PaymentController {
             System.out.println("total_price : " + total_price);
 
             List<Book> cartList = cartService.getCartList(username);
-            for(int i=0;i<order_book_num.length;i++){
-                cartService.updateQty(order_book_num[i],order_qty[i]);
+            for (int i = 0; i < order_book_num.length; i++) {
+                cartService.updateQty(order_book_num[i], order_qty[i]);
             }
 
             mv.addObject("orderList", cartList);
@@ -118,12 +118,15 @@ public class PaymentController {
             // cart 객체를 가져와서
             List<Cart> carts = cartService.getCarts(username);
             // 각각 요소들을 order_book에 넣고, 주문번호도 추가로 넣어준다
-            for(Cart cart : carts){
-                System.out.println(cart.getCart_bookNum()); // 출력을 넣는걸로 바꿔주면 된다.
-                System.out.println(cart.getCart_count()); // 슈퍼 다녀와서 수정하자.
+            for (Cart cart : carts) {
+                String orderNum = order.getOrder_num();
+                String bookNum = cart.getCart_bookNum();
+                int BookCount = cart.getCart_count();
+                // order_book을 테이블에 insert
+                paymentService.insertOrderBook(orderNum, bookNum, BookCount);
             }
-            // order_book을 테이블에 insert
             // 3. 마지막으로 username에 해당하는 cart DB를 전부 제거한다
+            cartService.deleteCartByUser(username);
 
             mv.setViewName("/bookstore/paymentFinished");
         } catch (Exception e) {

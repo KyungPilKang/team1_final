@@ -69,5 +69,10 @@ public class CartServiceImpl implements CartService {
         cartDAO.updateQty(cartMap);
     }
 
+    @Override
+    public void deleteCartByUser(String username) throws Exception {
+        cartDAO.deleteCartByUser(username);
+    }
+
 
 }
