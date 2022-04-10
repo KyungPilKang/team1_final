@@ -79,6 +79,12 @@
 		]]>
 		</update>
 		
+		<update id="update_password" parameterType="Member">
+		<![CDATA[
+			update final.member set password=#{password} where no = #{no}
+		]]>
+		</update>
+		
 	
 		
 	

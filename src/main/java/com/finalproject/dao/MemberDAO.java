@@ -18,7 +18,6 @@ public interface MemberDAO {
 	public Member selectMemberByUsername(String username) throws Exception;
 	public Member selectMemberByNickname(String nickname) throws Exception;
 	public void update_login_count(Member member);
+	public void update_password(Member member);
 	public void modifyMember(Member member);
-	public Member findByUsernameAndPassword(String username, String Password)throws Exception;
-
 }

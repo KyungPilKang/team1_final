@@ -37,6 +37,10 @@
 </head>
 
 <body>
+<%
+int no = (Integer)session.getAttribute("no");
+%>
+<input type="hidden" value="<%=no %>" id="no" name="no">
 	<!-- Spinner Start -->
 	<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
 		<div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -114,16 +118,20 @@
 							<h5>새 비밀번호 입력</h5>
 						</div>
 						<div class="col-4">
-							<input type="password" id="newpassword1" name="newpassword1" class="form-control">
+							<input type="password" id="password1" name="password" class="form-control" required oninput = "pwcheck()">
 						</div>
-						<div class="col-5"></div>
+						<div class="col-5">
+						<input type="text" id="pw_ok" class="form-control" style="background-color:transparent; border:none;" disabled>
+						</div>
 						<div class="col-3">
 							<h5>새 비밀번호 확인</h5>
 						</div>
 						<div class="col-4">
-							<input type="password" id="newpassword2" name="newpassword2" class="form-control">
+							<input type="password" id="password2" name="password2" class="form-control" required oninput = "pwcheck2()">
 						</div>
-						<div class="col-5"></div>
+						<div class="col-5">
+							<input type="text" id="pw_ok2"  class="form-control" style="background-color:transparent; border:none;" disabled>
+						</div>
 					</div>
 				</div>	
 					
@@ -132,7 +140,7 @@
 					<div class="row pt-3">
 						<div class="col-3"></div>
 						<div class="col-3">
-							<button id="withdrawal" class="btn btn-primary w-100 py-3" type="button">비밀번호 변경하기</button>
+							<button id="modifyPassword" onclick="modify()" class="btn btn-primary w-100 py-3" type="button">비밀번호 변경하기</button>
 						</div>
 						<div class="col-3">
 							<a href="home" class="btn border w-100 py-3">다음에 변경하기</a>
@@ -156,7 +164,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<!-- Template Javascript -->
 	<script src="${pageContext.request.contextPath}/resources/login/js/main.js"></script>
-	
+	<script src="${pageContext.request.contextPath}/resources/login/js/modifyPassword.js"></script>
 
 
 
