@@ -68,7 +68,7 @@
                 <c:forEach var="cart" items="${orderList}">
                     <tr>
                         <td>${cart.book_subject}</td>
-                        <td>${cart.book_price}</td>
+                        <td>${cart.book_reprice}</td>
                     </tr>
                 </c:forEach>
             </table>
@@ -91,7 +91,7 @@
 
         <div class="info_box row text-center col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.5s"
              style="width: 55%; float:none; margin:50px auto 30px auto">
-            <form name="form" id="form_step1" method="post">
+            <form name="form" id="form_step1" action="/book-store/payment/finished" method="post">
                 <div class="row g-3">
                     <table id="info_table_step1" class="info_table_step1">
                         <tbody>
@@ -101,7 +101,7 @@
                             </th>
                             <td>
                                 <div class="col-5">
-                                    <input type="text" id="address_name" name="address_name" class="form-control">
+                                    <input type="text" id="deli_address" name="deli_address" class="form-control">
                                 </div>
                             </td>
                         </tr>
@@ -113,7 +113,7 @@
                             </th>
                             <td>
                                 <div class="col-5">
-                                    <input type="text" id="name" name="name" class="form-control">
+                                    <input type="text" id="deli_name" name="deli_name" class="form-control">
                                 </div>
                             </td>
                         </tr>
@@ -135,7 +135,7 @@
                                     </div>
                                     <div class="col-lg-8"></div>
                                     <div class="col-lg-8 pt-2">
-                                        <input type="text" id="dorojuso" name="dorojuso" value="" readonly=""
+                                        <input type="text" id="dorojuso" name="doro_juso" value="" readonly=""
                                                class="form-control">
                                     </div>
                                     <div class="col-lg-4 pt-2">
@@ -146,6 +146,10 @@
                                         <input type="text" id="sangsejuso2" name="sangsejuso2" value=""
                                                class="form-control">
                                     </div>
+                                    <input type="hidden" name="sangse_juso" id="sangse_juso">
+                                    <input type="hidden" name="order_method" id="order_method">
+                                    <input type="hidden" name="order_num" id="order_num">
+                                    <input type="hidden" name="total_price" id="total_price">
                                 </div>
                             </td>
                         </tr>
@@ -252,21 +256,23 @@
 
 
 <script>
+
+
     /* 결제 방법 선택 */
     const payMethod = function (event) {
         let pay_method = event.target.value;
         if (pay_method === 'card') {
-            document.getElementById('btn_payment').setAttribute("onclick", "payment('card',${total_price})")
+            document.getElementById('btn_payment').setAttribute("onclick", "payment('card',${total_price},email)")
         } else if (pay_method === 'vbank') {
-            document.getElementById('btn_payment').setAttribute("onclick", "payment('vbank',${total_price})")
+            document.getElementById('btn_payment').setAttribute("onclick", "payment('vbank',${total_price},email)")
         } else if (pay_method === 'trans') {
-            document.getElementById('btn_payment').setAttribute("onclick", "payment('trans',${total_price})")
+            document.getElementById('btn_payment').setAttribute("onclick", "payment('trans',${total_price},email)")
         } else if (pay_method === 'phone') {
-            document.getElementById('btn_payment').setAttribute("onclick", "payment('phone',${total_price})")
+            document.getElementById('btn_payment').setAttribute("onclick", "payment('phone',${total_price},email)")
         } else if (pay_method === 'tosspay') {
-            document.getElementById('btn_payment').setAttribute("onclick", "payment('tosspay',${total_price})")
+            document.getElementById('btn_payment').setAttribute("onclick", "payment('tosspay',${total_price},email)")
         } else if (pay_method === 'samsung') {
-            document.getElementById('btn_payment').setAttribute("onclick", "payment('samsung',${total_price})")
+            document.getElementById('btn_payment').setAttribute("onclick", "payment('samsung',${total_price},email)")
         }
     }
 </script>

@@ -163,16 +163,20 @@
 										</td>
 									</tr>
 									<tr>
-										<th>성별 <span class="star">*</span>
+										<th>구분 <span class="star">*</span>
 										</th>
 										<td>
 											<div class="row">
-												<div class="col-lg-3">
-													<label class="radio"> <input type="radio" id="gender" name="gender" value="F">여자
+												<div class="col-lg-2">
+													<label class="radio"> <input type="radio" id="gender" name="gender" value="T">강사
 													</label>
 												</div>
-												<div class="col-lg-3">
-													<label class="radio"> <input type="radio" id="gender" name="gender" value="M">남자
+												<div class="col-lg-2">
+													<label class="radio"> <input type="radio" id="gender" name="gender" value="S">초등학생
+													</label>
+												</div>
+												<div class="col-lg-2">
+													<label class="radio"> <input type="radio" id="gender" name="gender" value="S">중학생
 													</label>
 												</div>
 											</div>

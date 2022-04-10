@@ -56,5 +56,18 @@ public class CartServiceImpl implements CartService {
         cartDAO.deleteCart(cartItem);
     }
 
+    @Override
+    public List<Cart> getCarts(String username) throws Exception {
+        return cartDAO.selectCarts(username);
+    }
+
+    @Override
+    public void updateQty(String book_num, Object cart_count) throws Exception {
+        Map<String, Object> cartMap = new HashMap<>();
+        cartMap.put("book_num",book_num);
+        cartMap.put("cart_count",cart_count);
+        cartDAO.updateQty(cartMap);
+    }
+
 
 }

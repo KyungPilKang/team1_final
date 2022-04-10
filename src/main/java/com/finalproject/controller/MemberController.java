@@ -44,6 +44,13 @@ public class MemberController {
 		mav.setViewName("home");
 		return mav;
 	}
+	@GetMapping("modify")
+	public String modify() {
+		Object logData = session.getAttribute("login");
+		String loginData = (String)logData;
+		System.out.println(loginData);
+		return "/loginJoin/modifyForm";
+	}
 	
 	@PostMapping("updateMember")
 	public ModelAndView updateMember(@ModelAttribute Member member) {
@@ -123,6 +130,10 @@ public class MemberController {
 		return "/loginJoin/joinForm";
 	}
 	
+	@RequestMapping("/user/test")
+	public @ResponseBody String testpage() {
+		return "로그인한사람만 가능";
+	}
 	
 	
 	
@@ -147,17 +158,34 @@ public class MemberController {
 	return "/loginJoin/modifyPassword";	
 	}
 	
-	@GetMapping("modify")
-	public String modify() {
-		Object logData = session.getAttribute("login");
-		String loginData = (String)logData;
-		System.out.println(loginData);
-		return "/loginJoin/modifyForm";
+	
+	
+	@RequestMapping("a")
+	public String a() {
+		return "/admin/admin_deliveryInfoForm1";
 	}
 	
-	@RequestMapping("fail")
-	public @ResponseBody String fail() {
-		return "fail";
+	@RequestMapping("b")
+	public String b() {
+		return "/admin/admin_deliveryInfoForm2";
 	}
+
+	@RequestMapping("c")
+	public String c() {
+		return "/admin/admin_deliveryEditForm3";
+	}
+
+	@RequestMapping("d")
+	public String d() {
+		return "/admin/admin_deliveryInfoForm4";
+	}
+	
+	@RequestMapping("e")
+	public String e() {
+		return "/admin/admin_deliveryInfoForm5";
+	}
+
+
+
 	
 }

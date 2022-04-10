@@ -17,6 +17,12 @@
 		]]>
 	</delete>
 
+	<select id="selectCarts" resultType="Cart">
+	<![CDATA[
+		select * from cart where username=#{username}
+		]]>
+	</select>
+
 
 	<select id="selectItem" resultType="Cart" parameterType="Map">
 	<![CDATA[
@@ -40,6 +46,12 @@
 		]]>
 	</select>
 
+
+	<update id="updateQty" parameterType="Map">
+		<![CDATA[
+		update cart set cart_count = #{cart_count} where cart_bookNum = #{book_num}
+		]]>
+	</update>
 
 
 </mapper>
