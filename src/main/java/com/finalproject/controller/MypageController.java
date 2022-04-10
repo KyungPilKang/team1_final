@@ -21,21 +21,6 @@ public class MypageController {
     @Autowired
     private FreelanceService freelanceService;
 
-    @GetMapping("/freelancedefult")
-    public String freelancedefult() {
-        return "/mypage/freelanceDefult";
-    }
-
-    @GetMapping("/freelancepagemakemove")
-    public String freelancepagemakemove() {
-        return "/mypage/freelancepageMakeMove";
-    }
-
-    @GetMapping("/freelancepagereview")
-    public String freelancepagereview() {
-        return "/mypage/freelancepageReview";
-    }
-
     @GetMapping("/teachpagedefult")
     public String teachpagedefult() {
         return "/mypage/teachpageDefult";
@@ -64,6 +49,11 @@ public class MypageController {
     @GetMapping("/studentpagestudy")
     public String studentpagestudy() {
         return "/mypage/studentpageStudy";
+    }
+
+    @GetMapping("/studentmovedetail")
+    public String studentmovedetail() {
+        return "/mypage/studentMovedetail";
     }
 
 
