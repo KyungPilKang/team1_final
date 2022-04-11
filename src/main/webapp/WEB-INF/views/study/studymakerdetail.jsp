@@ -49,7 +49,6 @@
     display: flex;
 }
 
-
 </style>
 </head>
 <body>
@@ -145,7 +144,7 @@
 			</div>
 		</div>
 
-		<div class="parent" style="margin-bottom:150px;">	
+		<div id="contents_footer" class="parent" style="margin-bottom:150px;">	
 		<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s" style="width: 20%; margin-left:200px; ">
 				<div class="row g-3">
 					<div class="col-12">
@@ -184,22 +183,30 @@
 			<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.3s" style="width: 20%; margin-left:30px; ">
 				<div class="row g-3">
 					<div class="col-12">
-					    <div class="col-12 mt-4">											
+					    <div class="col-12 mt-4">	
+					    	<c:if test="${not empty studentList }">
 							 <select id="attendList" class="btn btn-outline-primary w-35 py-3"  style="float:left; height:70px;">
 							 	<c:forEach items="${studentList }" var="student">
 							 		<option value="${student.user_id}">${student.user_id}</option>
 							 	</c:forEach>
 			           		 </select>	
+					    	</c:if>										
 			           	</div>	           		
 						<div class="col-12 mt-4">
 							
 								<select id="attendResult" class="btn btn-outline-primary w-35 py-3"  style="float:left; height:70px;">
-									<option value="team_accept">참여수락</option>
-					                <option value="team_reject">수락취소</option>					                
+									<c:choose>
+									<c:when test="${not empty studentList }">
+										<option value="none" selected disabled hidden>선택하세요</opxtion>
+										<option value="team_accept">참여수락</option>
+						                <option value="team_reject">수락취소</option>
+					                </c:when>
+					                <c:otherwise>
+					                	<option value="none2" selected disabled hidden>신청자 없음</option>
+					                </c:otherwise>					                
+									</c:choose>
 				                </select>
 						</div>
-				
-
 					</div>
 				</div>
 			</div>
@@ -262,6 +269,10 @@
 	<script>
 	$(document).ready(function () {
 		$('#attendResult').on('change', function(e) {
+			if($("#attendResult option:selected").val()=='none'){
+				alert('상태를 선택하세요');
+				return false;
+			}
 			let studentName = $('#attendList').val();
 			let studentStatus = $("#attendResult option:selected").val();			
 			let studentStatusText = $("#attendResult option:selected").text();			
@@ -276,11 +287,8 @@
 						"studentName" : studentName
 			 		},
 			 		success: function(data) {
-			 			// study_no, studentName, studentStatus
 			 			console.log("성공");
-			 			if (data == "null") {
-						 	$('#attendResult').val("미참여중");
-						} 
+			 			window.location="/studymakerdetail/${studyPosted.study_no}";
 			 		}
 			    })
 			}

@@ -36,13 +36,7 @@
 </head>
 
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <!-- Spinner End -->
+
 
 
     <!-- Navbar Start -->
@@ -56,8 +50,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.html" class="nav-item nav-link">강사</a>
-                <a href="about.html" class="nav-item nav-link">교육업 종사자</a>
-                <a href="courses.html" class="nav-item nav-link active">학생/학부모</a>
+                <a href="courses.html" class="nav-item nav-link active">학생</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
@@ -94,11 +87,11 @@
         <div class="container">
 
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">강사 1:1문의 작성 </h6>
+                <h6 class="section-title bg-white text-center text-primary px-3">${reqReg.role} 1:1문의 작성 </h6>
             </div>
             
             <div class="col-lg-7 col-md-7 text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="pt-5 pb-0">사용자ID 문의내역</h6>
+                <h6 class="pt-5 pb-0">${reqReg.username} 문의내역</h6>
             </div>
 
             <div class="row g-1 justify-content-center">
@@ -111,7 +104,7 @@
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-left py-2 px-2">2020.01.22</small>
+                            <small class="flex-fill text-left py-2 px-2">${reqReg.request_date}</small>
                         </div>
                 </span>
             </div>
@@ -125,7 +118,7 @@
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-left py-2 px-2">회원 탈퇴</small>
+                            <small class="flex-fill text-left py-2 px-2">${reqReg.request_type}</small>
                         </div>
                 </span>
             </div>
@@ -139,7 +132,7 @@
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-left py-2 px-2">회원 탈퇴 문의</small>
+                            <small class="flex-fill text-left py-2 px-2">${reqReg.request_subject}</small>
                         </div>
                 </span>
             </div>
@@ -153,49 +146,64 @@
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top border-bottom">
-                            <small class="flex-fill text-left py-2 px-2">회원탈퇴를 하고 싶은데 어떻게 탈퇴를 하면 되나요? 회원 탈퇴 결로를 알려주세요.</small>
+                            <small class="flex-fill text-left py-2 px-2">${reqReg.request_content}</small>
                         </div>
                 </span>
             </div>
 
-            <div class="col-lg-7 col-md-7 text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="pt-5 pb-0">답변작성</h6>
-            </div>
-            
-            <!-- 라인 -->
-            <div class="row justify-content-center">
-                <div class="col-lg-7 col-md-7 d-flex border-bottom">
-                </div>
-            </div>
-
-            <!-- 답글창 -->
-            <div class="row justify-content-center py-2">
-                <div class="col-lg-6 col-md-6 text-center">
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
-                        <label for="message"></label>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 라인 -->
-            <div class="row justify-content-center">
-                <div class="col-lg-7 col-md-7 d-flex border-bottom">
-                </div>
-            </div>
 
 
-            <div class="row g-1 justify-content-center py-5">
-                <span class="col-lg-1 col-md-3">
-                    <button class="btn btn-primary w-100 py-1" type="submit">취소</button>
-                </span>
-                <span class="col-lg-1 col-md-3">
-                    <button class="btn btn-primary w-100 py-1" type="submit">답변등록</button>
-                </span>
-            </div>
+
+            <form id='form' action="qnareg" method="get">
+	            <div class="col-lg-7 col-md-7 text-center wow fadeInUp" data-wow-delay="0.1s">
+	                <h6 class="pt-5 pb-0">답변작성</h6>
+	            </div>
+	            <!-- 라인 -->
+	            <div class="row justify-content-center">
+	                <div class="col-lg-7 col-md-7 d-flex border-bottom">
+	                </div>
+	            </div>
+	
+	            <!-- 답글창 -->
+	            <div class="row justify-content-center py-2">
+	                <div class="col-lg-6 col-md-6 text-center">
+	                    <div class="form-floating">
+	                        <input type="text" class="form-control" placeholder="Leave a message here" style="height: 150px" id="answer_content" name="answer_content">
+	                    </div>
+	                </div>
+	            </div>
+	
+	            <!-- 라인 -->
+	            <div class="row justify-content-center">
+	                <div class="col-lg-7 col-md-7 d-flex border-bottom">
+	                </div>
+	            </div>
+	
+	
+	            <div class="row g-1 justify-content-center py-5">
+	                <span class="col-lg-1 col-md-3">
+	                    <input class="btn btn-primary w-100 py-1" type="submit" value='취소'>
+	                </span>
+	                <span class="col-lg-1 col-md-3">
+	                    <input class="btn btn-primary w-100 py-1" type="submit" id="submit" value='답변등록'>
+	                </span>
+	            </div>
+			</form>
 
         </div>
     </div>
+    
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+    $('#form').submit(function() {
+        let answer_content = $('#answer_content').val();
+        if(answer_content=='') {
+        	alert("내용을 입력하세요.");
+        	$('#answer_content').focus();
+        	return false;
+        }
+    });
+    </script>
     <!-- Courses End -->
 
 
