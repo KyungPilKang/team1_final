@@ -59,12 +59,6 @@
 			select * from final.member where nickname=#{nickname}
 		]]>
 		</select>
-		
-		<!-- <select id="getMemberByUsername" resultType="CustomUserDetails" parameterType="String">
-		<![CDATA[
-			select * from final.member where username=#{username}
-		]]>
-		</select> -->
 
 		<update id="update_login_count" parameterType="Member">
 		<![CDATA[
@@ -94,14 +88,6 @@
 			withdraw_contents=#{withdraw_contents}, withdraw_date=#{withdraw_date} where no = #{no}
 		]]>
 		</update>
-		
-		<select id="memberList" resultType="Member" >
-		<![CDATA[
-			SELECT * FROM final.member
-		]]>
-		</select>
-	
-		
 	
 </mapper>
 
