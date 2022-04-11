@@ -29,7 +29,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
 <!-- Libraries Stylesheet -->
@@ -55,26 +55,32 @@
 	<!-- Navbar Start -->
 	<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
 		<a href="/freereg1" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-			<h2 class="m-0 text-primary">
+			<h1 class="m-0 text-primary">
 				<i class="fa fa-book me-3"></i>NEESFULL
-			</h2>
+			</h1>
 		</a>
 		<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<div class="navbar-nav ms-auto p-4 p-lg-0">
-				<div class="nav-item dropdown">
+				<div class="nav-item dropdown me-3">
 					<a href="http://localhost:8090/studymain" class="nav-link" data-bs-toggle="dropdown">스터디</a>
 					<div class="dropdown-menu fade-down m-0">
-						<a href="http://localhost:8090/studyReg" class="dropdown-item">등록하기</a>
-						<a href="http://localhost:8090/studyfind" class="dropdown-item">매칭하기</a>
-						<a href="http://localhost:8090/studyclass" class="dropdown-item">참여현황</a>
+						<a href="http://localhost:8090/studyReg" style="font-size: 1.3em;" class="dropdown-item">등록하기</a>
+						<a href="http://localhost:8090/studyfind" style="font-size: 1.3em;" class="dropdown-item">매칭하기</a>
+						<a href="http://localhost:8090/studyclass" style="font-size: 1.3em;" class="dropdown-item">참여현황</a>
 					</div>
 				</div>
-				<a href="about.html" class="nav-item nav-link">마이페이지</a>
-				<a href="courses.html" class="nav-item nav-link">고객센터</a>
-				<a href=# class="nav-item nav-link">로그아웃</a>
+				<div class="me-3">
+					<a href="about.html" class="nav-item nav-link">마이페이지</a>
+				</div>
+				<div class="me-3">
+					<a href="courses.html" class="nav-item nav-link">고객센터</a>
+				</div>
+				<div class="me-3">
+					<a href=# class="nav-item nav-link">로그아웃</a>
+				</div>
 			</div>
 		</div>
 	</nav>
@@ -118,11 +124,11 @@
 
 				<!-- 입력2 : 학년 -->
 				<div id="regstudyform2" style="display: none;">
+					<h5 class="section-title bg-white text-center text-primary px-3">학년</h5>
+					<h1 class="mb-5 mt-2">몇학년의 스터디로 찾아볼까요?</h1>
 					<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 						<div class="row g-3">
 							<div class="col-12">
-								<h5 class="section-title bg-white text-center text-primary px-3">학년</h5>
-								<h1 class="mb-5 mt-2">몇학년의 스터디로 찾아볼까요?</h1>
 								<div style="align-items: center; margin-top: 20px;">
 									<input id="study_grade_1" type="radio" class="btn-check" name="study_grade" value="1학년" />
 									<label for="study_grade_1" class="btn btn-outline-primary w-100 py-3">1학년</label> <br> <br>
@@ -152,11 +158,11 @@
 
 				<!-- 입력3 : 과목 -->
 				<div id="regstudyform3" style="display: none;">
+					<h5 class="section-title bg-white text-center text-primary px-3">과목</h5>
+					<h1 class="mb-5 mt-2">어떤과목의 스터디가 필요해요?</h1>
 					<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 						<div class="row g-3">
 							<div class="col-12">
-								<h5 class="section-title bg-white text-center text-primary px-3">과목</h5>
-								<h1 class="mb-5 mt-2">어떤과목의 스터디가 필요해요?</h1>
 								<div style="align-items: center; margin-top: 20px;">
 									<input id="study_subject_kr" type="radio" class="btn-check" name="study_subject" value="국어" />
 									<label for="study_subject_kr" class="btn btn-outline-primary w-100 py-3">국어</label> <br> <br>
@@ -182,11 +188,11 @@
 
 				<!-- 입력4 : 유형 -->
 				<div id="regstudyform4" style="display: none;">
+					<h5 class="section-title bg-white text-center text-primary px-3">유형</h5>
+					<h1 class="mb-5 mt-2">어떤 준비를 하는지 알려주시겠어요?</h1>
 					<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 						<div class="row g-3">
 							<div class="col-12">
-								<h5 class="section-title bg-white text-center text-primary px-3">유형</h5>
-								<h1 class="mb-5 mt-2">어떤 준비를 하는지 알려주시겠어요?</h1>
 								<div style="align-items: center; margin-top: 20px;">
 									<input id="study_type_1" type="radio" class="btn-check" name="study_type" value="내신" />
 									<label for="study_type_1" class="btn btn-outline-primary w-100 py-3">내신</label> <br> <br>
@@ -209,11 +215,11 @@
 
 				<!-- 입력5 : 목표레벨 -->
 				<div id="regstudyform5" style="display: none;">
+					<h5 class="section-title bg-white text-center text-primary px-3">목표레벨</h5>
+					<h1 class="mb-5 mt-2">목표를 설정해 주시겠어요?</h1>
 					<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 						<div class="row g-3">
 							<div class="col-12">
-								<h5 class="section-title bg-white text-center text-primary px-3">목표레벨</h5>
-								<h1 class="mb-5 mt-2">목표를 설정해 주시겠어요?</h1>
 								<div style="align-items: center; margin-top: 20px;">
 									<input id="study_target_level1" type="radio" class="btn-check" name="study_target_level" value="최상" />
 									<label for="study_target_level1" class="btn btn-outline-primary w-100 py-3">최상</label> <br> <br>
@@ -232,9 +238,9 @@
 							</div>
 						</div>
 					</div>
+				</div>
 
-
-					<!-- 				<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
+				<!-- 				<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 					<div class="row g-3">
 						<div class="col-12">
 						<div class="col-12 mt-5" id="studyfindSubmitform" style="display: none;">
@@ -245,7 +251,6 @@
 				</div> -->
 			</form>
 		</div>
-	</div>
 	</div>
 
 	<!-- Contact End -->

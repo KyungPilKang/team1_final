@@ -43,42 +43,43 @@
 <link href="${pageContext.request.contextPath}/resources/freelance/css/style.css" rel="stylesheet">
 
 <style>
-.parent{
-    width: 70%;
-    margin: 10px auto;
-    display: flex;
+.parent {
+	width: 70%;
+	margin: 10px auto;
+	display: flex;
 }
 
 .first {
-    flex:1;
-     margin: 0px 5%;
-    width:20%;
-    box-sizing: border-box;
+	flex: 1;
+	margin: 0px 5%;
+	width: 20%;
+	box-sizing: border-box;
 }
 
-.second{
-    flex:1;
-    margin: 0px 5%;
-    width:20%;
-    box-sizing: border-box;
+.second {
+	flex: 1;
+	margin: 0px 5%;
+	width: 20%;
+	box-sizing: border-box;
 }
 
-.third{
-    flex:1;
-    margin: 0px 5%;
-    width:20%;
-    box-sizing: border-box;
+.third {
+	flex: 1;
+	margin: 0px 5%;
+	width: 20%;
+	box-sizing: border-box;
 }
-.fourth{
-    flex:1;
-    margin: 0px 5%;
-    width:20%;
-    box-sizing: border-box;
+
+.fourth {
+	flex: 1;
+	margin: 0px 5%;
+	width: 20%;
+	box-sizing: border-box;
 }
 </style>
 </head>
 <body>
-<!-- Spinner Start -->
+	<!-- Spinner Start -->
 	<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
 		<div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
 			<span class="sr-only">Loading...</span>
@@ -89,31 +90,37 @@
 	<!-- Navbar Start -->
 	<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
 		<a href="/freereg1" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-			<h2 class="m-0 text-primary">
+			<h1 class="m-0 text-primary">
 				<i class="fa fa-book me-3"></i>NEESFULL
-			</h2>
+			</h1>
 		</a>
 		<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<div class="navbar-nav ms-auto p-4 p-lg-0">
-				<div class="nav-item dropdown">
+				<div class="nav-item dropdown me-3">
 					<a href="http://localhost:8090/studymain" class="nav-link" data-bs-toggle="dropdown">스터디</a>
 					<div class="dropdown-menu fade-down m-0">
-						<a href="http://localhost:8090/studyReg" class="dropdown-item">등록하기</a>
-						<a href="http://localhost:8090/studyfind" class="dropdown-item">매칭하기</a>
-						<a href="http://localhost:8090/studyclass" class="dropdown-item">참여현황</a>
+						<a href="http://localhost:8090/studyReg" style="font-size: 1.3em;" class="dropdown-item">등록하기</a>
+						<a href="http://localhost:8090/studyfind" style="font-size: 1.3em;" class="dropdown-item">매칭하기</a>
+						<a href="http://localhost:8090/studyclass" style="font-size: 1.3em;" class="dropdown-item">참여현황</a>
 					</div>
 				</div>
-				<a href="about.html" class="nav-item nav-link">마이페이지</a>
-				<a href="courses.html" class="nav-item nav-link">고객센터</a>
-				<a href=# class="nav-item nav-link">로그아웃</a>
+				<div class="me-3">
+					<a href="about.html" class="nav-item nav-link">마이페이지</a>
+				</div>
+				<div class="me-3">
+					<a href="courses.html" class="nav-item nav-link">고객센터</a>
+				</div>
+				<div class="me-3">
+					<a href=# class="nav-item nav-link">로그아웃</a>
+				</div>
 			</div>
 		</div>
 	</nav>
 	<!-- Navbar End -->
-	
+
 	<!-- Header Start -->
 	<div class="container-fluid bg-primary py-5 mb-5 page-header">
 		<div class="container py-5">
@@ -125,69 +132,64 @@
 		</div>
 	</div>
 	<!-- Header End -->
-	
-	
-	
+
+
+
 	<!-- Content Start -->
-		<div class="container-xxl py-5">
-			<div class="container">
-                 			
-				<div class="text-center">
-					<h2 class="section-title bg-white text-center text-primary px-3">온라인 스터디 매칭</h2>
-				</div>
-				
-				<div class="row text-center col-lg-4 col-md-12" style="width: 45%; float: none; margin: 0 auto;">
-					<div class="row g-3">
-						<div class="col-12 mt-5 mb-5">
-							<div class="form-floating">
-								<h2>스터디 안내사항</h2>
-								<p style="text-align:left; background: rgba(6, 187, 204, 0.1); font-size: 1.5em; font-family:Stylish; margin-top:50px;">
-								<br>
-								&nbsp;&nbsp;&nbsp;1)각자 목표에 맞게 설정하여 신청해주세요.<br><br>
-								&nbsp;&nbsp;&nbsp;2)참여 신청후 참여상태 확인해주세요.<br><br>
-								&nbsp;&nbsp;&nbsp;3)참여 신청 승인후 오픈카톡링크 열람이 가능합니다. <br><br>
-								&nbsp;&nbsp;&nbsp;4)개설자는 개설자관리 페이지에서 관리 가능합니다. <br><br>
-								&nbsp;&nbsp;&nbsp;5)성실히 스터디를 수행하기로 약속합니다. <br><br>
-								</p>
-							</div>
-							<br> <br>
+	<div class="container-xxl py-5">
+		<div class="container">
+
+			<div class="text-center">
+				<h2 class="section-title bg-white text-center text-primary px-3">온라인 스터디 매칭</h2>
+			</div>
+
+			<div class="row text-center col-lg-4 col-md-12" style="width: 45%; float: none; margin: 0 auto;">
+				<div class="row g-3">
+					<div class="col-12 mt-5 mb-5">
+						<div class="form-floating">
+							<h2>스터디 안내사항</h2>
+							<p style="text-align: left; background: rgba(6, 187, 204, 0.1); font-size: 1.5em; font-family: Stylish; margin-top: 50px;">
+								<br> &nbsp;&nbsp;&nbsp;1)각자 목표에 맞게 설정하여 신청해주세요.<br> <br> &nbsp;&nbsp;&nbsp;2)참여 신청후 참여상태 확인해주세요.<br> <br> &nbsp;&nbsp;&nbsp;3)참여 신청 승인후 오픈카톡링크 열람이 가능합니다. <br> <br> &nbsp;&nbsp;&nbsp;4)개설자는 개설자관리 페이지에서 관리 가능합니다. <br> <br> &nbsp;&nbsp;&nbsp;5)성실히 스터디를 수행하기로 약속합니다. <br> <br>
+							</p>
 						</div>
+						<br> <br>
 					</div>
 				</div>
-					
-		
-				<div class="parent">
-					<div class="first mt-5 mb-5">
-					    <form action="studyReg" method="post">
-						<button type="submit" class="btn btn-primary w-100 py-3" >스터디등록</button>
-					    </form>
-					</div>
-					<div class="second mt-5 mb-5">
-					    <form action="studyfind" method="get">
-						<button type="submit" class="btn btn-primary w-100 py-3" >스터디매칭</button>
-						</form>
-					</div>
-					
-					<div class="third mt-5 mb-5">
-					    <form action="studyclass" method="get">
-						<button type="submit" class="btn btn-primary w-100 py-3" >스터디등교</button>
-						</form>
-					</div>
-					<div class="fourth mt-5 mb-5">
-					    <form action="studymakermain" method="post">
-						<button id="makerbtn" type="submit" class="btn btn-primary w-100 py-3" >개설자관리</button>
-						</form>
-					</div>
+			</div>
 
-				
+
+			<div class="parent">
+				<div class="first mt-5 mb-5">
+					<form action="studyReg" method="post">
+						<button type="submit" class="btn btn-primary w-100 py-3">스터디등록</button>
+					</form>
 				</div>
-	
+				<div class="second mt-5 mb-5">
+					<form action="studyfind" method="get">
+						<button type="submit" class="btn btn-primary w-100 py-3">스터디매칭</button>
+					</form>
+				</div>
 
-		</div>		
+				<div class="third mt-5 mb-5">
+					<form action="studyclass" method="get">
+						<button type="submit" class="btn btn-primary w-100 py-3">스터디등교</button>
+					</form>
+				</div>
+				<div class="fourth mt-5 mb-5">
+					<form action="studymakermain" method="post">
+						<button id="makerbtn" type="submit" class="btn btn-primary w-100 py-3">개설자관리</button>
+					</form>
+				</div>
+
+
+			</div>
+
+
+		</div>
 	</div>
-	
+
 	<!-- Content End -->
-<!-- Footer Start -->
+	<!-- Footer Start -->
 	<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
 		<div class="container">
 			<div class="copyright">
@@ -200,8 +202,7 @@
 						<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
 						Designed By
 						<a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-						<br>
-						<br> Distributed By
+						<br> <br> Distributed By
 						<a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
 					</div>
 					<!-- <div class="col-md-6 text-center text-md-end">
@@ -237,20 +238,19 @@
 
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-	<script> 
-	 let ismaker="<c:out value='${ismaker}'/>";
+	<script>
+		let ismaker = "<c:out value='${ismaker}'/>";
 
-	 if(ismaker=='yes'){
-		 //document.getElementById("#makerbtn").disabled = false; 
-		 $('#makerbtn').show();
-		 
-		 } else {
-		 //alert("스터디를 개설해주세요."); 
-		 //document.getElementById("#makerbtn").disabled = true; 
-		 $('#makerbtn').hide();
-		 
-		
-		 }
+		if (ismaker == 'yes') {
+			//document.getElementById("#makerbtn").disabled = false; 
+			$('#makerbtn').show();
+
+		} else {
+			//alert("스터디를 개설해주세요."); 
+			//document.getElementById("#makerbtn").disabled = true; 
+			$('#makerbtn').hide();
+
+		}
 	</script>
 </body>
 </html>
