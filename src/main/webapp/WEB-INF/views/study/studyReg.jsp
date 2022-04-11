@@ -136,15 +136,14 @@
 										<input id="study_grade_3" type="radio" class="btn-check" name="study_grade" value="3학년" />
 										<label for="study_grade_3" class="btn btn-outline-primary w-100 py-3">3학년</label> <br>
 										<br>
+										<div id="grade_detail" style="display: none;">
 										<input id="study_grade_4" type="radio" class="btn-check" name="study_grade" value="4학년" />
-										<label for="study_grade_4" class="btn btn-outline-primary w-100 py-3">4학년</label> <br>
-										<br>
+										<label for="study_grade_4" class="btn btn-outline-primary w-100 py-3">4학년</label> <br> <br>
 										<input id="study_grade_5" type="radio" class="btn-check" name="study_grade" value="5학년" />
-										<label for="study_grade_5" class="btn btn-outline-primary w-100 py-3">5학년</label> <br>
-										<br>
+										<label for="study_grade_5" class="btn btn-outline-primary w-100 py-3">5학년</label> <br> <br>
 										<input id="study_grade_6" type="radio" class="btn-check" name="study_grade" value="6학년" />
-										<label for="study_grade_6" class="btn btn-outline-primary w-100 py-3">6학년</label> <br>
-										<br>
+										<label for="study_grade_6" class="btn btn-outline-primary w-100 py-3">6학년</label> <br> <br>
+										</div>
 									</div>
 									<br>
 									<br>
