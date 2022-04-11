@@ -20,4 +20,5 @@ public interface MemberDAO {
 	public void update_login_count(Member member);
 	public void update_password(Member member);
 	public void modifyMember(Member member);
+	public void withdrawMember(Member member);
 }

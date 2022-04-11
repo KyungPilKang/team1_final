@@ -1,5 +1,7 @@
 package com.finalproject.service;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -185,6 +187,44 @@ public class MemberServiceImpl implements MemberService {
 		Member member = memberDAO.selectMemberByUsername(username);
 		
 		return member;
+	}
+
+
+	@Override
+	public void withdrawMember(Member member) throws Exception {
+		Member check = memberDAO.selectMemberByNo(member.getNo());
+		check.setUsername(null);
+		check.setPassword(null);
+		check.setName(null);
+		check.setNickname(null);
+		check.setEmail(null);
+		check.setPhone(null);
+		check.setZipcode(null);
+		check.setDoro_juso(null);
+		check.setProvider(null);
+		check.setProvider_id(null);
+		check.setWithdraw_status("Y");
+		check.setWithdraw_type(member.getWithdraw_type());
+		check.setWithdraw_contents(member.getWithdraw_contents());
+		check.setWithdraw_date(String.valueOf(LocalDate.now()));
+		memberDAO.withdrawMember(check);
+	}
+
+
+	@Override
+	public void createTestid(Member member) throws Exception {
+				String encodedPassword = bCryptPasswordEncoder.encode("1234");
+				member.setPassword(encodedPassword);
+				member.setUsername("test");
+				member.setEmail("aaa@bbb");
+				member.setName("아무개");
+				member.setNickname("12354");
+				member.setBirth("2000-01-01");
+				member.setAge("22");
+				member.setPhone("01012341111");
+				member.setRole("ROLE_USER");
+				memberDAO.insertMember(member);
+		
 	}
 
 
