@@ -94,14 +94,17 @@
 
                     <div class="container-fluid bg-dark">
                         <div class="row">
+                        	<div class="col-lg-1">
+                        		<h6 class="text-white my-4">순번</h6>
+                        	</div>
                             <div class="col-lg-5">
                                 <h6 class="text-white my-4">내용</h6>
                             </div>
 
                             <div class="col-lg-4">
-                                <h6 class="text-white my-4">탈퇴사유</h6>
+                                <h6 style="text-align:left;" class="text-white my-4">탈퇴사유</h6>
                             </div>
-        					<div class="col-lg-1"></div>
+        					
                             <div class="col-lg-2">
                                 <h6 class="text-white my-4">탈퇴일자</h6>
                             </div>
@@ -113,7 +116,11 @@
                         <div id="tab-1" class="tab-pane fade show p-0 active">
 							
 							<c:forEach items="${memList}" var="mem" varStatus="status">
+                            	<c:set var="i" value="${i+1 }"/>
                             <div class="row">
+                            		<div class="col-lg-1 mt-3">
+                            			<h6>${i }</h6>
+                            		</div>
                                      <div class="col-lg-5 mt-3">
                                         <div class="text-start ps-4">
                                             <h6 class="mb-3">${mem.withdraw_contents}</h6>
@@ -121,10 +128,9 @@
                                     </div>
                                     <div class="col-lg-4 mt-3">
                                         
-                                            <h6 class="mb-3">${mem.withdraw_type}</h6>
+                                            <h6 style="text-align:left;" class="mb-3">${mem.withdraw_type}</h6>
                                        
                                     </div>
-                                    <div class="col-lg-1 mt-3"></div>
                                     <div class="col-lg-2 mt-3">
                                          <h6>${mem.withdraw_date}</h6>
                                     </div>
@@ -135,7 +141,7 @@
 
 
 
-                            <a class="btn btn-primary py-3 px-5" href="">More List</a>
+                            
                         </div>
                     </div>
                 </div>
@@ -147,35 +153,7 @@
 
 
 
-        <!-- Footer Start -->
-        <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-            <div class="container">
-                <div class="copyright">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy;
-                            <a class="border-bottom" href="#">Your Site Name</a>
-                            , All Right Reserved.
-
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By
-                            <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-                            <br> <br> Distributed By
-                            <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
-                        </div>
-                        <div class="col-md-6 text-center text-md-end">
-                            <div class="footer-menu">
-                                <a href="">Home</a>
-                                <a href="">Cookies</a>
-                                <a href="">Help</a>
-                                <a href="">FQAs</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer End -->
+      
 
 
 
@@ -188,13 +166,13 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/administrator/lib/wow/wow.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/administrator/lib/easing/easing.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/administrator/lib/waypoints/waypoints.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/administrator/lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/administrator/js/main.js"></script>
 </body>
 
 </html>

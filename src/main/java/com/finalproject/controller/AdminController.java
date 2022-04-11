@@ -77,20 +77,7 @@ public class AdminController {
 		return "admin/admin_WithdrawMemList2";
 	}
 	
-	@RequestMapping("memberList")
-	public @ResponseBody List<Member> memberList() {
-		List<Member> memberList=new ArrayList<>();
-		try {
-			memberList=memberService.memberList();
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		for(int i=0; i<memberList.size(); i++) {
-			System.out.println(memberList.get(i).getUsername());
-		}
-		System.out.println(memberList.get(3).getUsername());
-		return memberList;
-	}
+	
 	
 	@GetMapping("/withdrawmemlistT")
 	public ModelAndView withdrawMemListT() {
@@ -102,8 +89,7 @@ public class AdminController {
 			List<Member> memList=adminService.getWithdrawListT();
 			mav.addObject("memList", memList);
 			
-			System.out.println(memList.get(0).getAge());
-			System.out.println(memList.get(1).getAge());
+			
 			
 			
 			mav.setViewName("/admin/admin_WithdrawMemListT");
@@ -132,10 +118,7 @@ public class AdminController {
 		try {
 			List<Member> memList=adminService.getWithdrawListS();
 			mav.addObject("memList", memList);
-			
-			System.out.println(memList.get(0).getAge());
-			System.out.println(memList.get(1).getAge());
-			
+			System.out.println(memList);
 			
 			mav.setViewName("/admin/admin_WithdrawMemListS");
 		} catch (Exception e) {

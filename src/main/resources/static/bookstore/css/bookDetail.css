@@ -52,8 +52,6 @@ div.product_detail div.detail_product div.detail_content {
     width: 750px;
     margin: 50px 0;
     padding: 0 0 70px 0;
-    z-index: 9999;
-    /*background-color: #e5e1e1;*/
     border: #6c757d 1px solid;
 }
 
@@ -310,9 +308,10 @@ div.product_detail div.detail_product div.detail_content div.product_detail_info
 }
 
 div.product_detail div.detail_product div.detail_content div.product_detail_info div.detail_information {
-    margin: 0 0 0 30px;
+    overflow-y: scroll;
+    margin-left:-100px;
     padding: 10px;
-    width: 384px;
+    width: 30vw;
     font-size: 11px;
     color: #fe6000;
     letter-spacing: -1px;
