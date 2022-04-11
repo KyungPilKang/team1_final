@@ -239,19 +239,22 @@
 
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-	<script>
-		let ismaker = "<c:out value='${ismaker}'/>";
-
-		if (ismaker == 'yes') {
-			//document.getElementById("#makerbtn").disabled = false; 
-			$('#makerbtn').show();
-
-		} else {
-			//alert("스터디를 개설해주세요."); 
-			//document.getElementById("#makerbtn").disabled = true; 
-			$('#makerbtn').hide();
-
-		}
+	<script>		
+		$(document).ready(function(){
+		let ismaker = "<c:out value='${ismaker}'/>";	
+		console.log("ismaker" + ismaker);
+		$('#makerbtn').on('click', function(){
+			if(ismaker=='yes'){
+				document.getElementById("#makerbtn").disabled = false; 
+				} else {
+				alert("스터디를 개설해 주세요");
+				document.getElementById("#makerbtn").disabled = true; 
+				
+			}
+		});
+		
+		});
+		
 	</script>
 </body>
 </html>
