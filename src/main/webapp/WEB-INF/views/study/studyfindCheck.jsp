@@ -103,8 +103,8 @@
 		<form action="studyfindcnf" method="get">
 			<div class="container">
 				<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-					<h5 class="section-title bg-white text-center text-primary px-3">등록 정보</h5>
-					<h1 class="mb-5 mt-2">입력하신 정보를 다시 확인해주세요</h1>
+					<h5 class="section-title bg-white text-center text-primary px-3">매칭 정보</h5>
+					<h1 class="mb-5 mt-2">선택한 매칭 조건을 다시 한 번 확인해주세요</h1>
 				</div>
 				<div class="row g-4">
 					<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
