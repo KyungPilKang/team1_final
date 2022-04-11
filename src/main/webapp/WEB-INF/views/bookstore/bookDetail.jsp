@@ -115,15 +115,14 @@
 
                     <div class="product_detail_bottom">
                         <div class="button_buy">
-                            <a class="btn_large btn_blue" onclick="putCart(${book.book_num})">장바구니 담기</a>
+                            <a class="btn_large btn_blue" onclick="putCart(${book.book_num})" style="cursor: pointer">장바구니
+                                담기</a>
                             <a class="btn_large"
                                href="/book-store/payment/now?book_num=${book.book_num}&book_price=${book.book_reprice}">바로
                                 구매하기</a>
                         </div>
                         <div class="detail_information">
                             ${book.book_content}
-                            <span style="display: flex; justify-content: center; align-items: center">
-                            <a href="/book-store" class="btn_large btn_blue" style="width:20vw;">돌아가기</a></span>
                         </div>
                     </div>
                 </div>
@@ -132,6 +131,8 @@
         </div>
 
     </div>
+    <span style="display: flex; justify-content: center; align-items: center">
+                            <a href="/book-store" class="btn_large btn_blue" style="width:20vw;">돌아가기</a></span>
 </div>
 
 <jsp:include page="/WEB-INF/views/bookstore/footer.jsp"/>

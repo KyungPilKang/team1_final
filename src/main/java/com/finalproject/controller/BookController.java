@@ -149,6 +149,18 @@ public class BookController {
         return mv;
     }
 
+    @GetMapping(value = "/delbook")
+    public ModelAndView delbook(@RequestParam(value = "book_num") int book_num){
+        ModelAndView mv = new ModelAndView();
+        try {
+            bookStoreService.removeBook(book_num);
+            mv.setViewName("redirect:/book-store");
+        } catch (Exception e) {
+            e.printStackTrace();
+            mv.addObject("err", e.getMessage());
+        }
+        return mv;
+    }
 
 
 
