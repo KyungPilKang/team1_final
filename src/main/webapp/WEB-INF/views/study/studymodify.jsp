@@ -121,11 +121,11 @@
 
 					<!-- 입력2 : 학년 -->
 					<div id="regstudyform2" style="display: none;">
+						<h5 class="section-title bg-white text-center text-primary px-3">학년</h5>
+						<h1 class="mb-5 mt-2">몇학년의 스터디가 필요한가요?</h1>
 						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 							<div class="row g-3">
 								<div class="col-12">
-									<h5 class="section-title bg-white text-center text-primary px-3">학년</h5>
-									<h1 class="mb-5 mt-2">몇학년의 스터디가 필요한가요?</h1>
 									<div style="align-items: center; margin-top: 20px;">
 										<input id="study_grade_1" type="radio" class="btn-check" name="study_grade" value="1학년" />
 										<label for="study_grade_1" class="btn btn-outline-primary w-100 py-3">1학년</label> <br>
@@ -160,11 +160,11 @@
 					
 					<!-- 입력3 : 과목 -->
 					<div id="regstudyform3" style="display: none;">
+						<h5 class="section-title bg-white text-center text-primary px-3">과목</h5>
+						<h1 class="mb-5 mt-2">어떤과목의 스터디를 만들어볼까요?</h1>
 						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 							<div class="row g-3">
 								<div class="col-12">
-									<h5 class="section-title bg-white text-center text-primary px-3">과목</h5>
-									<h1 class="mb-5 mt-2">어떤과목의 스터디를 만들어볼까요?</h1>
 									<div style="align-items: center; margin-top: 20px;">
 										<input id="study_subject_kr" type="radio" class="btn-check" name="study_subject" value="국어" />
 										<label for="study_subject_kr" class="btn btn-outline-primary w-100 py-3">국어</label> <br>
@@ -196,11 +196,11 @@
 					
 					<!-- 입력4 : 유형 -->
 					<div id="regstudyform4" style="display: none;">
+						<h5 class="section-title bg-white text-center text-primary px-3">유형</h5>
+						<h1 class="mb-5 mt-2">어떤 준비를 하는지 알려주시겠어요?</h1>
 						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 							<div class="row g-3">
 								<div class="col-12">
-									<h5 class="section-title bg-white text-center text-primary px-3">유형</h5>
-									<h1 class="mb-5 mt-2">어떤 준비를 하는지 알려주시겠어요?</h1>
 									<div style="align-items: center; margin-top: 20px;">
 										<input id="study_type_1" type="radio" class="btn-check" name="study_type" value="내신" />
 										<label for="study_type_1" class="btn btn-outline-primary w-100 py-3">내신</label> <br>
@@ -228,11 +228,11 @@
 					
 					<!-- 입력5 : 목표레벨 -->
 					<div id="regstudyform5" style="display: none;">
+						<h5 class="section-title bg-white text-center text-primary px-3">목표레벨</h5>
+						<h1 class="mb-5 mt-2">목표를 설정해 주시겠어요?</h1>
 						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 							<div class="row g-3">
 								<div class="col-12">
-									<h5 class="section-title bg-white text-center text-primary px-3">목표레벨</h5>
-									<h1 class="mb-5 mt-2">목표를 설정해 주시겠어요?</h1>
 									<div style="align-items: center; margin-top: 20px;">
 										<input id="study_target_level1" type="radio" class="btn-check" name="study_target_level" value="최상" />
 										<label for="study_target_level1" class="btn btn-outline-primary w-100 py-3">최상</label> <br>
@@ -259,14 +259,14 @@
 					</div>
 
 					<!-- 입력6 : 타이틀 -->
-					<div id="regstudyform6" style="display: none;">
+					<div id="regstudyform6" style="display: none; margin-bottom:300px;">
+						<h5 class="section-title bg-white text-center text-primary px-3">스터디타이틀</h5>
+						<h1 class="mb-5 mt-2">나만의 멋진 스터디 이름을 지어주세요</h1>
 						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 							<div class="row g-3">
 								<div class="col-12">
-									<h5 class="section-title bg-white text-center text-primary px-3">스터디타이틀</h5>
-									<h1 class="mb-5 mt-2">나만의 멋진 스터디 이름을 지어주세요</h1>
 									<div style="align-items: center; margin-top: 20px;">
-										<input type="text" name="study_title" id="study_title" placeholder ="스터디명을 입력하세요" style="border: 0 solid black; width=200px;">
+										<input style="font-size: 1.5em" type="text" class="form-control" name="study_title" id="study_title" placeholder ="스터디명을 입력하세요">
 									</div>
 									<br>
 									<br>
@@ -280,17 +280,17 @@
 					</div>
 					
 					<!-- 입력7 : 시작/마무리 날짜-->
-					<div id="regstudyform7" style="display: none;">
+					<div id="regstudyform7" style="display: none; margin-bottom:300px;">
+						<h5 class="section-title bg-white text-center text-primary px-3">스터디기간</h5>
+						<h1 class="mb-5 mt-2">스터디 기간을 설정해 주시겠어요?</h1>
 						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 							<div class="row g-3">
 								<div class="col-12">
-									<h5 class="section-title bg-white text-center text-primary px-3">스터디기간</h5>
-									<h1 class="mb-5 mt-2">스터디 기간을 설정해 주시겠어요?</h1>
 									<div style="align-items: center; margin-top: 20px;">
 										<span style="align-items: left; margin-left: 10px;">From</span>
-										<input class="datepicker" id="study_fdate" name="study_fdate" style="width: 100px; border: 0 solid black" autocomplete="off">
+										<input class="datepicker" id="study_fdate" name="study_fdate" style="font-size: 1.5em; width: 120px; border: 0 solid black;" autocomplete="off">
 										<span style="align-items: left; margin-left: 8px;">To</span>
-										<input class="datepicker" id="study_edate" name="study_edate" style="width: 100px; border: 0 solid black" autocomplete="off">
+										<input class="datepicker" id="study_edate" name="study_edate" style="font-size: 1.5em; width: 120px; border: 0 solid black;" autocomplete="off">
 									</div>
 									<br>
 									<br>
@@ -304,22 +304,21 @@
 					</div>
 					
 					<!-- 입력8 : 시작/마무리 시간 -->
-					<div id="regstudyform8" style="display: none;">
+					<div id="regstudyform8" style="display: none; margin-bottom:200px;">
+						<h5 class="section-title bg-white text-center text-primary px-3">스터디 시간</h5>
+						<h1 class="mb-5 mt-2">스터디 시간을 설정해 주시겠어요?</h1>
 						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 							<div class="row g-3">
 								<div class="col-12">
-									<h5 class="section-title bg-white text-center text-primary px-3">스터디 시간</h5>
-									<h1 class="mb-5 mt-2">스터디 시간을 설정해 주시겠어요?</h1>
 									<div style="align-items: center; margin-top: 20px;">
 										<span style="align-items: left; margin-left: 10px;">From</span>
-										<input type="text" id="study_ftime" name="study_ftime" style="width: 100px; border: 0 solid black">
+										<input type="text" id="study_ftime" name="study_ftime" style="width: 100px; border: 0 solid black;  font-size: 1.5em;">
 										<span style="align-items: left; margin-left: 8px;">To</span>
-										<input type="text" id="study_etime" name="study_etime" style="width: 100px; border: 0 solid black">
+										<input type="text" id="study_etime" name="study_etime" style="width: 100px; border: 0 solid black;  font-size: 1.5em;">
 									</div>
 									<br>
 									<br>
-								</div>
-									
+								</div>									
 								<div class="col-12 mt-5">
 									<button id="nextstudybtn8" class="btn btn-primary w-100 py-3" disabled>다음</button>
 								</div>
@@ -329,12 +328,13 @@
 					
 					<!-- 입력9 : 상세내용 -->
 					<div id="regstudyform9" style="display: none;">
+						<h5 class="section-title bg-white text-center text-primary px-3">상세내용</h5>
+						<h1 class="mb-5 mt-2">나만의 스터디를 어필해볼까요?</h1>
+						<h5>본인의 스터디를 설명해주세요(200자 제한)</h5>
 						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 							<div class="row g-3">
 								<div class="col-12">
-									<h5 class="section-title bg-white text-center text-primary px-3">상세내용</h5>
-									<h1 class="mb-5 mt-2">나만의 스터디를 어필해볼까요?</h1>
-									<h5>본인의 스터디를 설명해주세요(200자 제한)</h5>
+
 									<div style="align-items: center; margin-top: 20px;">
 										<textarea rows="10" cols="40" id="study_contents" name="study_contents" style="height: 200px" maxlength="200";/></textarea>
 									</div>
@@ -350,13 +350,13 @@
 					</div>
 					
 					<!-- 입력10 : 카톡링크 -->
-					<div id="regstudyform10" style="display: none;">
+					<div id="regstudyform10" style="display: none;  margin-bottom:200px;">
 						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 							<div class="row g-3">
 								<div class="col-12">
 									<h3 class="section-title bg-white text-center text-primary px-3">오픈카톡링크</h3>
 									<div style="align-items: center; margin-top: 20px;">
-										<input type="text" name="study_kakao" id="study_kakao" placeholder="오픈카톡링크를 입력하세요" style="border: 0 solid black;">
+										<input type="text" name="study_kakao" id="study_kakao" placeholder="오픈카톡링크를 입력하세요" style="border: 0 solid black; font-size: 1.5em;">
 									</div>
 									<br>
 									<br>
@@ -464,7 +464,7 @@
 				interval : 10,
 				minTime : '8',
 				maxTime : '11:59pm',
-				defaultTime : '9',
+				defaultTime : '8',
 				startTime : '08:00',
 				dynamic : false,
 				dropdown : true,
@@ -477,7 +477,7 @@
 				interval : 10,
 				minTime : '8',
 				maxTime : '11:59pm',
-				defaultTime : '9',
+				defaultTime : '8',
 				startTime : '08:00',
 				dynamic : false,
 				dropdown : true,

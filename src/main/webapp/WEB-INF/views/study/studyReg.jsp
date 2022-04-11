@@ -352,13 +352,13 @@
 					</div>
 					
 					<!-- 입력10 : 카톡링크 -->
-					<div id="regstudyform10" style="display: none;">
+					<div id="regstudyform10" style="display: none; margin-bottom:200px;">
 						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 							<div class="row g-3">
 								<div class="col-12">
 									<h3 class="section-title bg-white text-center text-primary px-3">오픈카톡링크</h3>
 									<div style="align-items: center; margin-top: 20px;">
-										<input type="text" name="study_kakao" id="study_kakao" placeholder="오픈카톡링크를 입력하세요" style="border: 0 solid black; margin-bottom:300px;">
+										<input type="text" name="study_kakao" id="study_kakao" placeholder="오픈카톡링크를 입력하세요" style=" font-size: 1.5em; border: 0 solid black; margin-bottom:300px;">
 									</div>
 									<br>
 									<br>
