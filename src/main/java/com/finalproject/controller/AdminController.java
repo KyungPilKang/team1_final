@@ -92,34 +92,65 @@ public class AdminController {
 		return memberList;
 	}
 	
-	@GetMapping("/withdrawmemlist")
-	public ModelAndView withdrawMemList() {
+	@GetMapping("/withdrawmemlistT")
+	public ModelAndView withdrawMemListT() {
 		ModelAndView mav=new ModelAndView();
-		Member mem = (Member) session.getAttribute("login");
+		//Member mem = (Member) session.getAttribute("login");
 		// String role = mem.getRole();
-		String role= "freelancer";
+		//String role= "freelancer";
 		try {
-			List<Member> memList=adminService.getMemberListByRole(role);
+			List<Member> memList=adminService.getWithdrawListT();
 			mav.addObject("memList", memList);
 			
 			System.out.println(memList.get(0).getAge());
 			System.out.println(memList.get(1).getAge());
 			
 			
-			mav.setViewName("/admin/admin_WithdrawMemList1");
+			mav.setViewName("/admin/admin_WithdrawMemListT");
 		} catch (Exception e) {
 			e.printStackTrace();
 			mav.addObject("err", e.getMessage());
 			mav.addObject("/admin/err");
 		}
-		switch(role) {
-		case "freelancer":
-			mav.setViewName("admin/admin_WithdrawMemList1");
-			break;
-		case "student":
-			mav.setViewName("admin/admin_WithdrawMemList2");
-			break;
+//		switch(role) {
+//		case "freelancer":
+//			mav.setViewName("admin/admin_WithdrawMemList1");
+//			break;
+//		case "student":
+//			mav.setViewName("admin/admin_WithdrawMemList2");
+//			break;
+//		}
+		return mav;
+	}
+	
+	@GetMapping("/withdrawmemlistS")
+	public ModelAndView withdrawMemListS() {
+		ModelAndView mav=new ModelAndView();
+		//Member mem = (Member) session.getAttribute("login");
+		// String role = mem.getRole();
+		//String role= "freelancer";
+		try {
+			List<Member> memList=adminService.getWithdrawListS();
+			mav.addObject("memList", memList);
+			
+			System.out.println(memList.get(0).getAge());
+			System.out.println(memList.get(1).getAge());
+			
+			
+			mav.setViewName("/admin/admin_WithdrawMemListS");
+		} catch (Exception e) {
+			e.printStackTrace();
+			mav.addObject("err", e.getMessage());
+			mav.addObject("/admin/err");
 		}
+//		switch(role) {
+//		case "freelancer":
+//			mav.setViewName("admin/admin_WithdrawMemList1");
+//			break;
+//		case "student":
+//			mav.setViewName("admin/admin_WithdrawMemList2");
+//			break;
+//		}
 		return mav;
 	}
 	

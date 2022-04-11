@@ -16,9 +16,15 @@
 		]]>
 	</select>
 	
-	<select id="withdrawMemList" resultType="Member">
+	<select id="getWithdrawListT" resultType="Member">
 		<![CDATA[
-			select * from member order by role
+			select * from final.member where withdraw_status = "Y" and gender = "T"
+		]]>
+	</select>
+	
+	<select id="getWithdrawListS" resultType="Member">
+		<![CDATA[
+			select * from final.member where withdraw_status = "Y" and gender = "S1" or "S2"
 		]]>
 	</select>
 	

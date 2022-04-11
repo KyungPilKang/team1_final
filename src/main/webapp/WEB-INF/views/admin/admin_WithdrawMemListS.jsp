@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>NEEDSFULL - 탈퇴회원관리 폼(강사)</title>
+    <title>NEEDSFULL - 탈퇴회원관리 폼(학생)</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -48,7 +48,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.html" class="nav-item nav-link">강사</a>
-                <a href="courses.html" class="nav-item nav-link active">학생</a>
+                <a href="courses.html" class="nav-item nav-link">학생</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
@@ -72,8 +72,8 @@
 
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb text-uppercase">
-                        <li class="breadcrumb-item"><a href="#freelancer">강사</a></li>
-                        <li class="breadcrumb-item"><a href="#worker">학생</a></li>
+                        <li class="breadcrumb-item"><a href="/withdrawmemlistT">강사</a></li>
+                        <li class="breadcrumb-item"><a href="/withdrawmemlistS">학생</a></li>
                     </ol>
                 </nav>
 
@@ -88,22 +88,22 @@
         <!-- 강사 Start -->
         <div class="container-xxl py-5" id="freelancer">
             <div class="container">
-                <h1 class="text-center mb-4 wow fadeInUp" data-wow-delay="0.1s">강사 탈퇴회원 리스트</h1>
+                <h1 class="text-center mb-4 wow fadeInUp" data-wow-delay="0.1s">학생 탈퇴회원 리스트</h1>
                 <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
 
 
                     <div class="container-fluid bg-dark">
                         <div class="row">
-                            <div class="col-sm-12 col-md-7 align-items-center">
+                            <div class="col-lg-5">
                                 <h6 class="text-white my-4">내용</h6>
                             </div>
 
-                            <div class="col-sm-12 col-md-1 align-items-center">
+                            <div class="col-lg-4">
                                 <h6 class="text-white my-4">탈퇴사유</h6>
                             </div>
-        
-                            <div class="col-sm-12 col-md-3 d-flex flex-row-reverse align-items-center">
-                                <h6 class="text-white my-4">상태</h6>
+        					<div class="col-lg-1"></div>
+                            <div class="col-lg-2">
+                                <h6 class="text-white my-4">탈퇴일자</h6>
                             </div>
                         </div>
                     </div>
@@ -113,27 +113,24 @@
                         <div id="tab-1" class="tab-pane fade show p-0 active">
 							
 							<c:forEach items="${memList}" var="mem" varStatus="status">
-                            <div class="job-item p-4 mb-4">
-                                <div class="row g-4">
-                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
+                            <div class="row">
+                                     <div class="col-lg-5 mt-3">
                                         <div class="text-start ps-4">
                                             <h6 class="mb-3">${mem.withdraw_contents}</h6>
-                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>${mem.username} | ${mem.gender} | ${mem.age}</span>
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
-                                        <div class="text-start ps-4">
+                                    <div class="col-lg-4 mt-3">
+                                        
                                             <h6 class="mb-3">${mem.withdraw_type}</h6>
-                                        </div>
+                                       
                                     </div>
-                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="">${mem.withdraw_status}</a>
-                                        </div>
-                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>탈퇴일 ${mem.withdraw_date}</small>
+                                    <div class="col-lg-1 mt-3"></div>
+                                    <div class="col-lg-2 mt-3">
+                                         <h6>${mem.withdraw_date}</h6>
                                     </div>
-                                </div>
+                               
                             </div>
+                            <hr>
                             </c:forEach>
 
 
@@ -144,7 +141,7 @@
                 </div>
             </div>
         </div>
-        <!-- 강사 End -->
+        <!-- 학생 End -->
 
         
 

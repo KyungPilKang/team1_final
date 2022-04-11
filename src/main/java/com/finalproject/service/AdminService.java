@@ -13,7 +13,8 @@ public interface AdminService {
 	List<Request> getRequestListByRole(String role) throws Exception;
 	List<Answer> getAnswerListByRole(String role) throws Exception;
 	
-	List<Member> getMemberListByRole(String role) throws Exception;
+	List<Member> getWithdrawListT() throws Exception;
+	List<Member> getWithdrawListS() throws Exception;
 	
 	Request getRequestInfoByRole(String role) throws Exception;
 	Answer getAnswerInfoByRole(String role) throws Exception;
