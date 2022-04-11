@@ -1,7 +1,5 @@
 package com.finalproject.dto;
 
-import java.sql.Date;
-
 public class Member {
 	
 	private int no;

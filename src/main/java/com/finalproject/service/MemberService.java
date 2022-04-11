@@ -25,5 +25,4 @@ public interface MemberService {
 	public void withdrawMember(Member member)throws Exception;
 	public void createTestid(Member member)throws Exception;
 	public void createTestid2(Member member)throws Exception;
-	public List<Member> memberList() throws Exception;
 }

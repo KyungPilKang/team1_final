@@ -67,45 +67,18 @@ public class AdminController {
 		
 	}
 	
-	@RequestMapping("withdrawlist")
-	public String withdrawlist() {
-		return "admin/admin_WithdrawMemList1";
-	}
-	
-	@RequestMapping("withdrawlist2")
-	public String withdrawlist2() {
-		return "admin/admin_WithdrawMemList2";
-	}
-	
-	
-	
 	@GetMapping("/withdrawmemlistT")
 	public ModelAndView withdrawMemListT() {
 		ModelAndView mav=new ModelAndView();
-		//Member mem = (Member) session.getAttribute("login");
-		// String role = mem.getRole();
-		//String role= "freelancer";
 		try {
 			List<Member> memList=adminService.getWithdrawListT();
 			mav.addObject("memList", memList);
-			
-			
-			
-			
 			mav.setViewName("/admin/admin_WithdrawMemListT");
 		} catch (Exception e) {
 			e.printStackTrace();
 			mav.addObject("err", e.getMessage());
 			mav.addObject("/admin/err");
 		}
-//		switch(role) {
-//		case "freelancer":
-//			mav.setViewName("admin/admin_WithdrawMemList1");
-//			break;
-//		case "student":
-//			mav.setViewName("admin/admin_WithdrawMemList2");
-//			break;
-//		}
 		return mav;
 	}
 	
@@ -126,17 +99,13 @@ public class AdminController {
 			mav.addObject("err", e.getMessage());
 			mav.addObject("/admin/err");
 		}
-//		switch(role) {
-//		case "freelancer":
-//			mav.setViewName("admin/admin_WithdrawMemList1");
-//			break;
-//		case "student":
-//			mav.setViewName("admin/admin_WithdrawMemList2");
-//			break;
-//		}
 		return mav;
 	}
 	
+	@RequestMapping("orderlist")
+	public String orderList() {
+		return "admin/admin_deliveryInfoForm5";
+	}
 	
 	
 //	@GetMapping("/orderlist")
