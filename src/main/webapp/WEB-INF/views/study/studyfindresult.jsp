@@ -32,6 +32,8 @@
 
 <!-- Template Stylesheet -->
 <link href="${pageContext.request.contextPath}/resources/freelance/css/style.css" rel="stylesheet">
+
+<link href="${pageContext.request.contextPath}/resources/freelance/css/myStyle.css" rel="stylesheet">
 </head>
 
 <body>
@@ -104,10 +106,10 @@
 											<i class="bi bi-brightness-high-fill text-primary me-2"></i>${study.study_sname}
 										</span>
 										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-eyeglasses text-primary me-2"></i>${study.study_grade}학년
+											<i class="bi bi-eyeglasses text-primary me-2"></i>${study.study_grade}
 										</span>
 										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-calendar2-date text-primary me-2"></i>${study.study_fdate}시작 날짜 
+											<i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜&nbsp;${study.study_fdate} 
 										</span>
 									</div>
 								</div>
@@ -323,7 +325,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<script>
 		if(performance.navigation.type==1){
-			window.location="/studyfindcnf?";
+			window.location="/studyfindcnf";
 		};
 	</script>
 	
