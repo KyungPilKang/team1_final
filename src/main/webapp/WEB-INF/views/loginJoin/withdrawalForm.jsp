@@ -127,23 +127,23 @@ int no = (Integer)session.getAttribute("no");
 										<td>
 											<div class="row">
 												<div class="col-lg-2">
-													<label class="radio"> <input type="radio" name="withdraw_type" value="1">
+													<label class="radio"> <input type="radio" name="withdraw_type" value="단순변심">
 													단순변심</label>
 												</div>
 												<div class="col-lg-3">
-													<label class="radio"> <input type="radio" name="withdraw_type" value="2">
+													<label class="radio"> <input type="radio" name="withdraw_type" value="타 서비스와의 차별성 부족">
 													타 서비스와의 차별성 부족</label>
 												</div>
 												<div class="col-lg-3">
-													<label class="radio"> <input type="radio" name="withdraw_type" value="3">
+													<label class="radio"> <input type="radio" name="withdraw_type" value="인터페이스 편의성 부족">
 													인터페이스 편의성 부족</label>
 												</div>
 												<div class="col-lg-2">
-													<label class="radio"> <input type="radio" name="withdraw_type" value="4">
+													<label class="radio"> <input type="radio" name="withdraw_type" value="고객응대 불편">
 													고객응대 불편</label>
 												</div>
 												<div class="col-lg-2">
-													<label class="radio"> <input type="radio" name="withdraw_type" value="5">
+													<label class="radio"> <input type="radio" name="withdraw_type" value="기타">
 													기타</label>
 												</div>
 											</div>

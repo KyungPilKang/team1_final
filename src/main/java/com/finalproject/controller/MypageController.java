@@ -1,14 +1,9 @@
 package com.finalproject.controller;
 
-import com.finalproject.dto.PageInfo;
 import com.finalproject.service.FreelanceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 
@@ -54,6 +49,11 @@ public class MypageController {
     @GetMapping("/studentmovedetail")
     public String studentmovedetail() {
         return "/mypage/studentMovedetail";
+    }
+
+    @GetMapping("/main")
+    public String main() {
+        return "/main/mainPage";
     }
 
 

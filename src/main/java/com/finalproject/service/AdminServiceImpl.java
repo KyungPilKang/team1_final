@@ -28,6 +28,7 @@ public class AdminServiceImpl implements AdminService {
 	
 	@Override
 	public List<Member> getMemberListByRole(String role) throws Exception {
+		System.out.println(adminDAO.withdrawMemList(role));
 		return adminDAO.withdrawMemList(role);
 	}
 	
