@@ -47,15 +47,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.anyRequest().permitAll()
         .and()
         .formLogin() // 하위에 내가 직접 구현한 로그인 폼, 로그인 성공시 이동 경로 설정 가능. , 로그인 폼의 아이디,패스워드는 username, password로 맞춰야 함
-        .loginPage("/loginForm") // customloginform
-        .failureUrl("/fail")
-        //로그인 성공할 경우@AuthenticationPrincipal CustomUserDetails details
-        .defaultSuccessUrl("/") // 로그인 성공 시 이동할.
-         .and()
-         .logout()
-             .permitAll()
-             .logoutUrl("/logout")
-             .logoutSuccessUrl("/");
+        .loginPage("/loginForm"); // customloginform
+       
+        
+        
 	}
 
 }

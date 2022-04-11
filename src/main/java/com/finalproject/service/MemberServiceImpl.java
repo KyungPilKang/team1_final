@@ -227,6 +227,24 @@ public class MemberServiceImpl implements MemberService {
 				memberDAO.insertMember(member);
 		
 	}
+	
+	@Override
+	public void createTestid2(Member member) throws Exception {
+				String[] type = new String[5];
+				type[0] = "단순변심";
+				type[1] = "타 서비스와의 차별성 부족";
+				type[2]	= "인터페이스 편의성 부족";	
+				type[3]	= "고객응대 불편";	
+				type[4]	= "기타";
+				int r=(int)((Math.random()*1000)%5);
+				String encodedPassword = bCryptPasswordEncoder.encode("1234");
+				member.setPassword(encodedPassword);
+				member.setWithdraw_status("Y");
+				member.setWithdraw_type(type[r]);
+				member.setWithdraw_date("2021-04-11");
+				memberDAO.insertMember(member);
+		
+	}
 
 
 	@Override

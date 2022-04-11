@@ -24,7 +24,7 @@
 	
 	<select id="getWithdrawListS" resultType="Member">
 		<![CDATA[
-			select * from final.member where withdraw_status = "Y" and gender = "S1" or "S2"
+			select * from final.member where withdraw_status = "Y" and gender = "S1" or gender = "S2"
 		]]>
 	</select>
 	
