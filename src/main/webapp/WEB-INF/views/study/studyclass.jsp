@@ -95,8 +95,8 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h5 class="section-title bg-white text-center text-primary px-3">스터디등교하기</h5>
-                <h1 class="mb-5">나의 스터디 현황</h1>
+                <h3 class="section-title bg-white text-center text-primary px-3">나의 스터디 현황</h3>
+                <h1 class="mb-5 mt-2">스터디 신청 상태를 확인하세요</h1>
 		       <label>
 		            <select id="studyStatus" class="btn-sm btn btn-primary select_cat"  style="float:left; height:55px; margin-bottom:30px;">
 		                <option value="team_apply">신청중</option>
@@ -125,6 +125,8 @@
 				</div>
 		        </c:forEach> 	
 
+            </div>
+            <div style="height:500px;">
             </div>
         </div>
     </div>
