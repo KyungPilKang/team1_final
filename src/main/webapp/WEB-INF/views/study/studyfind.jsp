@@ -67,6 +67,7 @@
 				<div class="nav-item dropdown me-3">
 					<a href="http://localhost:8090/studymain" class="nav-link" data-bs-toggle="dropdown">스터디</a>
 					<div class="dropdown-menu fade-down m-0">
+						<a href="http://localhost:8090/studymain" style="font-size: 1.3em;" class="dropdown-item">메인페이지</a>
 						<a href="http://localhost:8090/studyReg" style="font-size: 1.3em;" class="dropdown-item">등록하기</a>
 						<a href="http://localhost:8090/studyfind" style="font-size: 1.3em;" class="dropdown-item">매칭하기</a>
 						<a href="http://localhost:8090/studyclass" style="font-size: 1.3em;" class="dropdown-item">참여현황</a>
@@ -105,7 +106,7 @@
 
 				<!-- 초/중등 학교 study_sname -->
 				<div id="regstudyform1">
-					<h5 class="section-title bg-white text-center text-primary px-3">학교선택</h5>
+					<h3 class="section-title bg-white text-center text-primary px-3">학교선택</h3>
 					<h1 class="mb-5 mt-2">나에게 맞는 스터디 매칭해볼까요?</h1>
 					<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto">
 						<div class="row g-3">
@@ -124,7 +125,7 @@
 
 				<!-- 입력2 : 학년 -->
 				<div id="regstudyform2" style="display: none;">
-					<h5 class="section-title bg-white text-center text-primary px-3">학년</h5>
+					<h3 class="section-title bg-white text-center text-primary px-3">학년</h3>
 					<h1 class="mb-5 mt-2">몇학년의 스터디로 찾아볼까요?</h1>
 					<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 						<div class="row g-3">
@@ -158,7 +159,7 @@
 
 				<!-- 입력3 : 과목 -->
 				<div id="regstudyform3" style="display: none;">
-					<h5 class="section-title bg-white text-center text-primary px-3">과목</h5>
+					<h3 class="section-title bg-white text-center text-primary px-3">과목</h3>
 					<h1 class="mb-5 mt-2">어떤과목의 스터디가 필요해요?</h1>
 					<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 						<div class="row g-3">
@@ -188,7 +189,7 @@
 
 				<!-- 입력4 : 유형 -->
 				<div id="regstudyform4" style="display: none;">
-					<h5 class="section-title bg-white text-center text-primary px-3">유형</h5>
+					<h3 class="section-title bg-white text-center text-primary px-3">유형</h3>
 					<h1 class="mb-5 mt-2">어떤 준비를 하는지 알려주시겠어요?</h1>
 					<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 						<div class="row g-3">
@@ -215,7 +216,7 @@
 
 				<!-- 입력5 : 목표레벨 -->
 				<div id="regstudyform5" style="display: none;">
-					<h5 class="section-title bg-white text-center text-primary px-3">목표레벨</h5>
+					<h3 class="section-title bg-white text-center text-primary px-3">목표레벨</h3>
 					<h1 class="mb-5 mt-2">목표를 설정해 주시겠어요?</h1>
 					<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 						<div class="row g-3">

@@ -102,6 +102,7 @@
 				<div class="nav-item dropdown me-3">
 					<a href="http://localhost:8090/studymain" class="nav-link" data-bs-toggle="dropdown">스터디</a>
 					<div class="dropdown-menu fade-down m-0">
+						<a href="http://localhost:8090/studymain" style="font-size: 1.3em;" class="dropdown-item">메인페이지</a>
 						<a href="http://localhost:8090/studyReg" style="font-size: 1.3em;" class="dropdown-item">등록하기</a>
 						<a href="http://localhost:8090/studyfind" style="font-size: 1.3em;" class="dropdown-item">매칭하기</a>
 						<a href="http://localhost:8090/studyclass" style="font-size: 1.3em;" class="dropdown-item">참여현황</a>
@@ -126,7 +127,7 @@
 		<div class="container py-5">
 			<div class="row justify-content-center">
 				<div class="col-lg-10 text-center">
-					<h1 class="display-3 text-white animated slideInDown">스터디 매칭</h1>
+					<h1 class="display-3 text-white animated slideInDown">스터디 서비스</h1>
 				</div>
 			</div>
 		</div>
@@ -140,14 +141,14 @@
 		<div class="container">
 
 			<div class="text-center">
-				<h2 class="section-title bg-white text-center text-primary px-3">온라인 스터디 매칭</h2>
+				<h3 class="section-title bg-white text-center text-primary px-3">메인 페이지</h3>
+				<h1 class="mb-2 mt-2">스터디 안내사항</h1>
 			</div>
 
 			<div class="row text-center col-lg-4 col-md-12" style="width: 45%; float: none; margin: 0 auto;">
 				<div class="row g-3">
-					<div class="col-12 mt-5 mb-5">
+					<div class="col-12">
 						<div class="form-floating">
-							<h2>스터디 안내사항</h2>
 							<p style="text-align: left; background: rgba(6, 187, 204, 0.1); font-size: 1.5em; font-family: Stylish; margin-top: 50px;">
 								<br> &nbsp;&nbsp;&nbsp;1)각자 목표에 맞게 설정하여 신청해주세요.<br> <br> &nbsp;&nbsp;&nbsp;2)참여 신청후 참여상태 확인해주세요.<br> <br> &nbsp;&nbsp;&nbsp;3)참여 신청 승인후 오픈카톡링크 열람이 가능합니다. <br> <br> &nbsp;&nbsp;&nbsp;4)개설자는 개설자관리 페이지에서 관리 가능합니다. <br> <br> &nbsp;&nbsp;&nbsp;5)성실히 스터디를 수행하기로 약속합니다. <br> <br>
 							</p>
