@@ -19,4 +19,6 @@ public interface MemberService {
 	public boolean passwordCheck(int no, String password) throws Exception;
 	public void passwordChange(int no, String password) throws Exception;
 	public void createAdmin(Member member)throws Exception;
+	public void withdrawMember(Member member)throws Exception;
+	public void createTestid(Member member)throws Exception;
 }

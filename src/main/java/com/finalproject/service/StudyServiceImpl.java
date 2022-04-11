@@ -108,6 +108,7 @@ public class StudyServiceImpl implements StudyService {
 		
 		map.put("study_no", study_no);
 		map.put("student_name", user_id);
+		System.out.println(team_status + "입니다");
 		if(team_status.equals("team_accept")) {
 			System.out.println("b "+study_no);
 			System.out.println("b "+user_id);
@@ -118,6 +119,7 @@ public class StudyServiceImpl implements StudyService {
 		}else {
 			team_status = "team_reject";
 			map.put("team_status", team_status);
+			System.out.println(map.size());
 			studyDAO.changeApplyAceept(map);
 		}
 		
@@ -128,6 +130,11 @@ public class StudyServiceImpl implements StudyService {
 		//참여자정보리스트 가져오기 
 		return studyDAO.selectStudentApplyList(study_no);
 		
+	}
+
+	@Override
+	public List<Study> findInfoAll(Study study) throws Exception {
+		return studyDAO.serchListAll(study);
 	}
 
 

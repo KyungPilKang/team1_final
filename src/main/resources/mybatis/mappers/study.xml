@@ -86,10 +86,15 @@
 <!-- 개설자 참여 수락 버튼 -->
 	<update id="changeApplyAceept" parameterType="Map" >
 		<![CDATA[
-			update studyteam set team_status= 'team_accept' where study_no = #{study_no} and user_id = #{user_id};
+			update studyteam set team_status= #{team_status} where study_no = #{study_no} and user_id = #{student_name}
 		]]>
 	</update> 
-
+<!-- 전체게시물 검색기반 조회(전체) -->
+	<select id="searchListAll" resultType="Study" parameterType="map">
+		<![CDATA[
+			select * from study where study_sname like CONCAT('%',#{search},'%') and study_grade like CONCAT('%',#{search},'%') and study_subject like CONCAT('%',#{search},'%') and study_type like CONCAT('%',#{search},'%') and study_target_level like CONCAT('%',#{search},'%')
+		]]>
+	</select>  
 
 	
 </mapper>

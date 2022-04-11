@@ -32,6 +32,9 @@ public interface StudyDAO {
 	
 	//참여자 accept, reject 
 	public void changeApplyAceept(Map map) throws Exception;
+	
+	//검색정보 
+	public List<Study> serchListAll(Study study) throws Exception;
 
 
 }

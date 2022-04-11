@@ -109,8 +109,9 @@ public class StudyController {
 	// 스터디개설자 상세페이지 
 	// 참여자 리스트 가져오기
 	// 추후 get 방식에서 post 방식으로 변경 필요
+	
 	@GetMapping("/studymakerdetail/{study_no}")
-	public ModelAndView studymakerdetail(@PathVariable int study_no, @RequestParam(value = "studentStatus") String team_status,@RequestParam(value = "studentName") String user_id) {
+	public ModelAndView studymakerdetail(@PathVariable int study_no, HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("study/studymakerdetail");
 		try {
 			Study posted = studyservice.getStudydetail(study_no);
@@ -119,11 +120,8 @@ public class StudyController {
 				System.out.println(st.getUser_id());
 				System.out.println(st.getTeam_status());
 			}
-			// 김민정 \n team_apply \n 홍길동 \n team_reject
 			mav.addObject("studyPosted", posted);	
-			mav.addObject("studentList", studentList);	
-			studyservice.changeApplyAceept(study_no, user_id, team_status);
-			
+			mav.addObject("studentList", studentList);		
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -131,6 +129,18 @@ public class StudyController {
 		return mav;
 	}
 
+	@ResponseBody
+	@PostMapping("/studymakerdetail/check")
+	public String studymakerdetailcheck(@RequestParam int study_no, @RequestParam(value = "studentStatus", required=true) String team_status,@RequestParam(value = "studentName",required=true) String studentName,HttpServletRequest request) {
+		System.out.println("서버 테스트");
+		try {
+			studyservice.changeApplyAceept(study_no, studentName, team_status);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return team_status;
+	}
+	
 	
 	// (2)개설자가 상세글보기 클릭시 보여지는 페이지
 	// 추후 post 변경
@@ -167,6 +177,8 @@ public class StudyController {
 		try {
 			Study findstudycnf = (Study) session.getAttribute("findstudy");
 			System.out.println("매칭cnf 요청:" + findstudycnf.toString());
+			List<Study> serchedStudy = studyservice.findInfoAll(inputstudy);
+			mav.addObject("serchedStudy", serchedStudy);
 			session.removeAttribute("findstudy");
 			mav.setViewName("study/studyfindresult");
 		} catch (Exception e) {
@@ -179,7 +191,6 @@ public class StudyController {
 	@RequestMapping(value = "/studyfindresult", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView studyfindresult(@ModelAttribute Study inputstudy) {
 		ModelAndView mav = new ModelAndView("study/studyfindresult");
-
 		return mav;
 	}
 
@@ -260,8 +271,10 @@ public class StudyController {
 		ModelAndView mav = new ModelAndView();
 		// 임시 maker 설정
 		String maker = "김길동";
+//		String maker = session.getAttribute("username");
 		try {
 			Study cnfstudy = (Study) session.getAttribute("regstudy");
+			cnfstudy.setMaker(maker);
 			session.removeAttribute("regstudy");
 			System.out.println("등록확인후 등록요청:" + cnfstudy.toString());
 			studyservice.regStudy(cnfstudy);
