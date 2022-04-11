@@ -95,44 +95,44 @@ public class AdminController {
 	
 	
 	
-	@GetMapping("/orderlist")
-	public ModelAndView orderList() {
-		ModelAndView mav=new ModelAndView();
-		Member mem = (Member) session.getAttribute("login");
-		// String role = mem.getRole();
-		String role= "student";
-		try {
-			List<Member> memList=adminService.getMemberListByRole(role);
-			mav.addObject("memList", memList);
-			
-			System.out.println(memList.get(0).getAge());
-			System.out.println(memList.get(1).getAge());
-			
-			
-			mav.setViewName("/admin/admin_orderList1");
-		} catch (Exception e) {
-			e.printStackTrace();
-			mav.addObject("err", e.getMessage());
-			mav.addObject("/admin/err");
-		}
-		switch(role) {
-		case "payCompl":
-			mav.setViewName("admin/admin_orderList1");
-			break;
-		case "prodDeli":
-			mav.setViewName("admin/admin_orderList2");
-			break;
-		case "deliCompl":
-			mav.setViewName("admin/admin_orderList3");
-			break;
-		}
-		return mav;
-	}
+//	@GetMapping("/orderlist")
+//	public ModelAndView orderList() {
+//		ModelAndView mav=new ModelAndView();
+//		Member mem = (Member) session.getAttribute("login");
+//		// String role = mem.getRole();
+//		String role= "student";
+//		try {
+//			List<Member> memList=adminService.getMemberListByRole(role);
+//			mav.addObject("memList", memList);
+//			
+//			System.out.println(memList.get(0).getAge());
+//			System.out.println(memList.get(1).getAge());
+//			
+//			
+//			mav.setViewName("/admin/admin_orderList1");
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			mav.addObject("err", e.getMessage());
+//			mav.addObject("/admin/err");
+//		}
+//		switch(role) {
+//		case "payCompl":
+//			mav.setViewName("admin/admin_orderList1");
+//			break;
+//		case "prodDeli":
+//			mav.setViewName("admin/admin_orderList2");
+//			break;
+//		case "deliCompl":
+//			mav.setViewName("admin/admin_orderList3");
+//			break;
+//		}
+//		return mav;
+//	}
 	
 	
 	
 	@GetMapping(value="/qnainfo")
-	public ModelAndView adminqnainfo() {
+	public ModelAndView qnainfo() {
 		ModelAndView mav=new ModelAndView();
 		Member mem = (Member) session.getAttribute("login");
 		// String role = mem.getRole();
@@ -153,16 +153,83 @@ public class AdminController {
 		
 		switch(role) {
 		case "freelancer":
-			mav.setViewName("aadmin/admin_qnaInfoForm1");
+			mav.setViewName("admin/admin_qnaInfoForm1");
 			break;
 		case "student":
 			mav.setViewName("admin/admin_qnaInfoForm2");
 			break;
 		}
-		
 		return mav;
-		
 	}
+	
+	
+	@GetMapping(value="/qnareg")
+	public ModelAndView qnareg() {
+		ModelAndView mav=new ModelAndView();
+		Member mem = (Member) session.getAttribute("login");
+		// String role = mem.getRole();
+		String role= "freelancer";
+		try {
+			Request reqReg=adminService.getRequestRegByRole(role);
+			mav.addObject("reqReg", reqReg);
+			
+			Answer ansReg=adminService.getAnswerRegByRole(role);
+			mav.addObject("ansReg", ansReg);
+			
+			mav.setViewName("/admin/admin_qnaRegForm1");
+		} catch (Exception e) {
+			e.printStackTrace();
+			mav.addObject("err", e.getMessage());
+			mav.addObject("/admin/err");
+		}
+		
+		switch(role) {
+		case "freelancer":
+			mav.setViewName("admin/admin_qnaRegForm1");
+			break;
+		case "student":
+			mav.setViewName("admin/admin_qnaRegForm2");
+			break;
+		}
+		return mav;
+	}
+	
+	
+	
+	
+	
+	
+	
+//	@GetMapping(value="/qnareg")
+//	public ModelAndView qnareg() {
+//		ModelAndView mav=new ModelAndView();
+//		Member mem = (Member) session.getAttribute("login");
+//		// String role = mem.getRole();
+//		String role= "freelancer";
+//		try {
+//			List<Request> reqReg=adminService.getRequestRegByRole(role);
+//			mav.addObject("reqReg", reqReg);
+//			
+//			List<Answer> ansReg=adminService.getAnswerRegByRole(role);
+//			mav.addObject("ansReg", ansReg);
+//			
+//			mav.setViewName("/admin_qnaRegForm1");
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			mav.addObject("err", e.getMessage());
+//			mav.addObject("/admin/err");
+//		}
+//		
+//		switch(role) {
+//		case "freelancer":
+//			mav.setViewName("admin/admin_qnaRegForm1");
+//			break;
+//		case "student":
+//			mav.setViewName("admin/admin_qnaRegForm2");
+//			break;
+//		}
+//		return mav;
+//	}
 
 	
 ////	답변등록 컨트롤러
