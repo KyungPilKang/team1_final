@@ -108,10 +108,10 @@
 								<div class="form-floating">
 									<h3>대상학년</h3>
 									<c:choose>
-										<c:when test="${findstudy.study_sname eq '1' }">
+										<c:when test="${findstudy.study_sname eq '초등학생' }">
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="초등" readOnly>
 										</c:when>
-										<c:when test="${findstudy.study_sname eq '2' }">
+										<c:when test="${findstudy.study_sname eq '중학생' }">
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="중등" readOnly>
 										</c:when>
 									</c:choose>
@@ -120,19 +120,19 @@
 								<div class="form-floating">
 									<h3>대상 과목</h3>
 									<c:choose>
-										<c:when test="${findstudy.study_subject eq '1' }">
+										<c:when test="${findstudy.study_subject eq '국어' }">
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="국어" readOnly>
 										</c:when>
-										<c:when test="${findstudy.study_subject eq '2' }">
+										<c:when test="${findstudy.study_subject eq '영어' }">
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="영어" readOnly>
 										</c:when>
-										<c:when test="${findstudy.study_subject eq '3' }">
+										<c:when test="${findstudy.study_subject eq '수학' }">
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="수학" readOnly>
 										</c:when>
-										<c:when test="${findstudy.study_subject eq '4' }">
+										<c:when test="${findstudy.study_subject eq '사회' }">
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="사회" readOnly>
 										</c:when>
-										<c:when test="${findstudy.study_subject eq '5' }">
+										<c:when test="${findstudy.study_subject eq '과학' }">
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="과학" readOnly>
 										</c:when>
 									</c:choose>

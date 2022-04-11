@@ -178,6 +178,8 @@
 						<button type="submit" class="btn btn-primary w-100 py-3" >개설자관리</button>
 						</form>
 					</div>
+
+				
 				</div>
 	
 
