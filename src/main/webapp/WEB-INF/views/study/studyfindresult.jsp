@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -37,7 +36,7 @@
 </head>
 
 <body>
-<!-- Spinner Start -->
+	<!-- Spinner Start -->
 	<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
 		<div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
 			<span class="resfreespan sr-only">Loading...</span>
@@ -84,9 +83,9 @@
 		</div>
 	</div>
 	<!-- Header End -->
-	
+
 	<!-- 내용 Start -->
-		<div class="container-xxl py-5">
+	<div class="container-xxl py-5">
 		<div class="container">
 			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
 				<h5 class="section-title bg-white text-center text-primary px-3">매칭 완료</h5>
@@ -96,33 +95,28 @@
 				<div class="tab-content">
 					<div id="tab-1" class="tab-pane fade show p-0 active">
 						<c:forEach items="${serchedStudy }" var="study">
-						<div class="job-item p-4 mb-4">
-							<div class="row g-4">
-								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
-									<img class="flex-shrink-0 img-fluid border rounded" src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt="" style="width: 80px; height: 80px;">
-									<div class="text-start ps-4">
-										<h3 class="mb-3">${study.study_title }</h3>
-										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-brightness-high-fill text-primary me-2"></i>${study.study_sname}
-										</span>
-										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-eyeglasses text-primary me-2"></i>${study.study_grade}
-										</span>
-										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜&nbsp;${study.study_fdate} 
-										</span>
+							<div class="job-item p-4 mb-4">
+								<div class="row g-4">
+									<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
+										<img class="flex-shrink-0 img-fluid border rounded" src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt="" style="width: 80px; height: 80px;">
+										<div class="text-start ps-4">
+											<h3 class="mb-3">${study.study_title }</h3>
+											<span class="resfreespan text-truncate me-3"> <i class="bi bi-brightness-high-fill text-primary me-2"></i>${study.study_sname}
+											</span> <span class="resfreespan text-truncate me-3"> <i class="bi bi-eyeglasses text-primary me-2"></i>${study.study_grade}
+											</span> <span class="resfreespan text-truncate me-3"> <i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜&nbsp;${study.study_fdate}
+											</span>
+										</div>
 									</div>
-								</div>
-								<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-									<div class="d-flex mb-3">
-										<a class="btn btn-primary"  href="/studydetail/${study.study_no}">상세보기</a>
+									<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+										<div class="d-flex mb-3">
+											<a class="btn btn-primary" href="/studydetail/${study.study_no}">상세보기</a>
+										</div>
+										<!-- <span class="text-truncate"><i class="bi bi-cart-plus text-primary me-2"></i>참여여부</span> -->
 									</div>
-									<!-- <span class="text-truncate"><i class="bi bi-cart-plus text-primary me-2"></i>참여여부</span> -->
 								</div>
 							</div>
-						</div>
 						</c:forEach>
-<!--					<div class="job-item p-4 mb-4">
+						<!--					<div class="job-item p-4 mb-4">
 							<div class="row g-4">
 								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
 									<img class="flex-shrink-0 img-fluid border rounded" src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt="" style="width: 80px; height: 80px;">
@@ -222,8 +216,8 @@
 								</div>
 							</div>
 						</div> -->
-						
-						
+
+
 					</div>
 				</div>
 			</div>
@@ -232,7 +226,14 @@
 					<div class="row g-3">
 						<div class="col-12">
 							<div class="col-12 mt-4">
-								<button id="canclebtn" class="btn btn-outline-primary w-50 py-3">이전 목록</button>
+								<c:choose>
+									<c:when test="${pageInfo.page<=1}">
+										<button id="beforebtn1" class="btn btn-outline-primary w-50 py-3" disabled>첫 페이지</button>
+									</c:when>
+									<c:otherwise>
+										<button id="beforebtn2" class="btn btn-outline-primary w-50 py-3">이전 목록</button>
+									</c:otherwise>
+								</c:choose>
 							</div>
 						</div>
 					</div>
@@ -243,15 +244,18 @@
 							<div class="col-12 mt-4">
 								<button type="submit" class="btn btn-primary w-100 py-3 dropdown-toggle" data-bs-toggle="dropdown">페이지 이동하기</button>
 								<ul class="dropdown-menu dropdown-menu-end">
-									<li style="font-weight:bold; font-family: 'Stylish', sans-serif; text-align: center;">1 페이지(현재)</li>
+									<li style="font-weight: bold; font-family: 'Stylish', sans-serif; text-align: center;">${pageInfo.page }&nbsp;페이지(현재)</li>
 									<li><hr class="dropdown-divider"></li>
-									<li><a class="dropdown-item" href="#">Page 1</a></li>
+									<c:forEach var="i" begin="${pageInfo.startPage }" end="${pageInfo.endPage }">
+									<li><a class="dropdown-item" href="/studyfindcnf?page=${i}">Page&nbsp;${i }</a></li>
+									</c:forEach>
+									<!-- <li><a class="dropdown-item" href="#">Page 1</a></li>
 									<li><a class="dropdown-item" href="#">Page 2</a></li>
 									<li><a class="dropdown-item" href="#">Page 3</a></li>
 									<li><a class="dropdown-item" href="#">Page 4</a></li>
 									<li><a class="dropdown-item" href="#">Page 5</a></li>
 									<li><a class="dropdown-item" href="#">Page 6</a></li>
-									<li><a class="dropdown-item" href="#">Page 7</a></li>
+									<li><a class="dropdown-item" href="#">Page 7</a></li> -->
 								</ul>
 							</div>
 						</div>
@@ -261,7 +265,14 @@
 					<div class="row g-3">
 						<div class="col-12">
 							<div class="col-12 mt-4">
-								<button type="submit" class="btn btn-outline-primary w-50 py-3">다음 목록</button>
+								<c:choose>
+									<c:when test="${pageInfo.page>=pageInfo.maxPage }">
+										<button id="afterbtn1" class="btn btn-outline-primary w-50 py-3" disabled>마지막 페이지</button>
+	       							</c:when>
+									<c:otherwise>
+										<button id="afterbtn2" class="btn btn-outline-primary w-50 py-3">다음 목록</button>
+									</c:otherwise>
+								</c:choose>
 							</div>
 						</div>
 					</div>
@@ -269,10 +280,10 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- 내용 End -->
-	
-	
+
+
 	<!-- Footer Start -->
 	<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
 		<div class="container">
@@ -324,10 +335,18 @@
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<script>
-		if(performance.navigation.type==1){
-			window.location="/studyfindcnf";
+		let test = "<c:out value='${serchedStudy}'/>";
+		console.log(test);
+		if (performance.navigation.type == 1) {
+			window.location = "/studyfindcnf";
 		};
+		$('#beforebtn2').click(function() {
+			window.location = "/studyfindcnf?page=${pageInfo.page-1}";
+		});
+		$('#afterbtn2').click(function() {
+			window.location = "/studyfindcnf?page=${pageInfo.page+1}";
+		});
 	</script>
-	
+
 </body>
 </html>

@@ -231,7 +231,7 @@
 				<div class="col-12">
 					<div class="col-12 mt-4">
 						<button id="listbtn" class="btn btn-outline-primary w-50 py-3"
-							onclick="window.location='/studyfindresult'"
+							onclick="window.location='/studyfindcnf'"
 						>목록 으로</button>
 					</div>
 				</div>

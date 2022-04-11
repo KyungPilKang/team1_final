@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import com.finalproject.dto.Study;
@@ -38,6 +39,10 @@ public interface StudyDAO {
 	
 	//개설자가 개설했는지 여부 
 	public int makerReturn(String maker) throws Exception;
+	
+	//조회(페이지 기능)
+	int selectStudyCount() throws Exception;
+	List<Study> selectStudyList(@Param("startrow") int startrow, @Param("cond") Study study) throws Exception;
 
 
 }

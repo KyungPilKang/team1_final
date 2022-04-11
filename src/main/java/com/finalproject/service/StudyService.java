@@ -2,8 +2,7 @@ package com.finalproject.service;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
+import com.finalproject.dto.PageInfo;
 import com.finalproject.dto.Study;
 import com.finalproject.dto.StudyTeam;
 
@@ -37,7 +36,7 @@ public interface StudyService {
 	List<StudyTeam> attendInfo(int study_no) throws Exception;
 	
 	//검색 
-	List<Study> findInfoAll(Study study) throws Exception;
+	List<Study> findInfoAll(int page, PageInfo pageInfo, Study study) throws Exception;
 	
 	//개설자 존재 여부
 	public String makerReturn(String maker) throws Exception;

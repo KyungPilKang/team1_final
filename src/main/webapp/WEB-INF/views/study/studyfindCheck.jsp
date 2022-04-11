@@ -79,13 +79,13 @@
 		</div>
 	</nav>
 	<!-- Navbar End -->
-	
+
 	<!-- Header Start -->
 	<div class="container-fluid bg-primary py-5 mb-5 page-header">
 		<div class="container py-5">
 			<div class="row justify-content-center">
 				<div class="col-lg-10 text-center">
-					<h1 class="display-3 text-white animated slideInDown">스터디 수정</h1>
+					<h1 class="display-3 text-white animated slideInDown">스터디 매칭</h1>
 				</div>
 			</div>
 		</div>
@@ -136,85 +136,85 @@
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="과학" readOnly>
 										</c:when>
 									</c:choose>
-								<br> <br>
-								<div class="form-floating">
-									<h3>유형</h3>
-									<c:choose>
-										<c:when test="${findstudy.study_type eq '1' }">
-											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="내신" readOnly>
-										</c:when>
-										<c:when test="${findstudy.study_type eq '2' }">
-											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="시험" readOnly>
-										</c:when>
-										<c:when test="${findstudy.study_type eq '3' }">
-											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="경시대회준비" readOnly>
-										</c:when>
-										<c:otherwise>
-											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="북클럽" readOnly>
-										</c:otherwise>
-									</c:choose>
+									<br> <br>
+									<div class="form-floating">
+										<h3>유형</h3>
+										<c:choose>
+											<c:when test="${findstudy.study_type eq '1' }">
+												<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="내신" readOnly>
+											</c:when>
+											<c:when test="${findstudy.study_type eq '2' }">
+												<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="시험" readOnly>
+											</c:when>
+											<c:when test="${findstudy.study_type eq '3' }">
+												<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="경시대회준비" readOnly>
+											</c:when>
+											<c:otherwise>
+												<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="북클럽" readOnly>
+											</c:otherwise>
+										</c:choose>
+									</div>
+									<br> <br>
+									<div class="form-floating">
+										<h3>목표레벨</h3>
+										<c:choose>
+											<c:when test="${findstudy.study_target_level eq '1' }">
+												<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="최상" readOnly>
+											</c:when>
+											<c:when test="${findstudy.study_target_level eq '2' }">
+												<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="상" readOnly>
+											</c:when>
+											<c:when test="${findstudy.study_target_level eq '3' }">
+												<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="중상" readOnly>
+											</c:when>
+											<c:otherwise>
+												<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="중" readOnly>
+											</c:otherwise>
+										</c:choose>
+									</div>
+									<br> <br>
 								</div>
-								<br> <br>
-								<div class="form-floating">
-									<h3>목표레벨</h3>
-									<c:choose>
-										<c:when test="${findstudy.study_target_level eq '1' }">
-											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="최상" readOnly>
-										</c:when>										
-										<c:when test="${findstudy.study_target_level eq '2' }">
-											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="상" readOnly>
-										</c:when>										
-										<c:when test="${findstudy.study_target_level eq '3' }">
-											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="중상" readOnly>
-										</c:when>										
-										<c:otherwise>
-											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="중" readOnly>
-										</c:otherwise>
-									</c:choose>
-								</div>
-								<br> <br>
 							</div>
 						</div>
 					</div>
-					</div>
-					
 
-					
-					
 
-				
-				<div class="row g-4">
-					<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
-						<div class="row g-3">
-							<div class="col-12">
-								<div class="col-12 mt-5">
-									<button id="canclebtn" class="text-dark bg-white btn btn-primary w-100 py-3">취소 하기</button>
+
+
+
+
+					<div class="row g-4">
+						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
+							<div class="row g-3">
+								<div class="col-12">
+									<div class="col-12 mt-5">
+										<button id="canclebtn" class="text-dark bg-white btn btn-primary w-100 py-3">취소 하기</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
+							<div class="row g-3">
+								<div class="col-12">
+									<div class="col-12 mt-5">
+										<button type="submit" class="btn btn-primary w-100 py-3">매칭 하기</button>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
-						<div class="row g-3">
-							<div class="col-12">
-								<div class="col-12 mt-5">
-									<button type="submit" class="btn btn-primary w-100 py-3">매칭 하기</button>
-								</div>
-							</div>
-						</div>
-					</div>
+
+
 				</div>
-				
-				
 			</div>
-		 </div>
-	 </form>
- </div>
+		</form>
+	</div>
 	<!-- Contact End -->
-	
-	
 
 
-	
+
+
+
 
 	<!-- Footer Start -->
 	<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -229,8 +229,7 @@
 						<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
 						Designed By
 						<a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-						<br>
-						<br> Distributed By
+						<br> <br> Distributed By
 						<a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
 					</div>
 					<!-- <div class="col-md-6 text-center text-md-end">
@@ -266,8 +265,11 @@
 
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-	<script src="${pageContext.request.contextPath}/resources/study/js/mystudy1.js"></script>
-
+	<script>
+		if (performance.navigation.type == 1) {
+			window.location = "/restudyfindform";
+		};
+	</script>
 
 </body>
 </html>
