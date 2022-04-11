@@ -1,5 +1,6 @@
 package com.finalproject.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -7,18 +8,24 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.finalproject.dto.Answer;
 import com.finalproject.dto.Member;
 import com.finalproject.dto.Request;
 import com.finalproject.service.AdminService;
+import com.finalproject.service.MemberService;
 
 @Controller
 public class AdminController {
 	
 	@Autowired
 	private AdminService adminService;
+	
+	@Autowired
+	private MemberService memberService;
 	
 	@Autowired
 	private HttpSession session;
@@ -60,7 +67,30 @@ public class AdminController {
 		
 	}
 	
+	@RequestMapping("withdrawlist")
+	public String withdrawlist() {
+		return "admin/admin_WithdrawMemList1";
+	}
 	
+	@RequestMapping("withdrawlist2")
+	public String withdrawlist2() {
+		return "admin/admin_WithdrawMemList2";
+	}
+	
+	@RequestMapping("memberList")
+	public @ResponseBody List<Member> memberList() {
+		List<Member> memberList=new ArrayList<>();
+		try {
+			memberList=memberService.memberList();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		for(int i=0; i<memberList.size(); i++) {
+			System.out.println(memberList.get(i).getUsername());
+		}
+		System.out.println(memberList.get(3).getUsername());
+		return memberList;
+	}
 	
 	@GetMapping("/withdrawmemlist")
 	public ModelAndView withdrawMemList() {

@@ -95,6 +95,11 @@
 		]]>
 		</update>
 		
+		<select id="memberList" resultType="Member" >
+		<![CDATA[
+			SELECT * FROM final.member
+		]]>
+		</select>
 	
 		
 	

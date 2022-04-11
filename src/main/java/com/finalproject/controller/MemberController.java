@@ -2,7 +2,9 @@ package com.finalproject.controller;
 
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -20,7 +22,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.finalproject.dao.MemberDAO;
 import com.finalproject.dto.Member;
+import com.finalproject.dto.Request;
 import com.finalproject.service.MemberServiceImpl;
 
 @Controller
@@ -54,6 +58,8 @@ public class MemberController {
 		}
 		return "관리자 계정 생성완료";
 	}
+	
+	
 	
 	//joinForm 페이지에서 회원가입 버튼을 누를 경우 진행, home 페이지로 이동한다.
 	@PostMapping("join")

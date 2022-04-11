@@ -1,6 +1,7 @@
 package com.finalproject.service;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -225,6 +226,12 @@ public class MemberServiceImpl implements MemberService {
 				member.setRole("ROLE_USER");
 				memberDAO.insertMember(member);
 		
+	}
+
+
+	@Override
+	public List<Member> memberList() throws Exception {
+		return memberDAO.memberList();
 	}
 
 
