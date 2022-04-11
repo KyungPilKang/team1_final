@@ -32,6 +32,17 @@ public class MemberController {
 	@Autowired
 	HttpSession session;
 	
+	
+	//Test용 계정 만들기
+	@RequestMapping("testid")
+	public @ResponseBody String testid(Member member) {
+		try {
+			memberService.createTestid(member);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return "아이디 test, 비번 1234 생성완료";
+	}
 	//admin 계정 만들기
 	@RequestMapping("admin")
 	public @ResponseBody String admin(Member member) {
@@ -192,10 +203,24 @@ public class MemberController {
 	  }
 
 	  	//회원탈퇴 페이지 이동
-	@RequestMapping("withdrawal")
+	@RequestMapping("withdrawForm")
 	public String withdrawal() {
 		return "/loginJoin/withdrawalForm";
 	}	
+	
+	//joinForm 페이지에서 회원가입 버튼을 누를 경우 진행, home 페이지로 이동한다.
+		@PostMapping("withdraw")
+		public ModelAndView withdraw(@ModelAttribute Member member) {
+			ModelAndView mav = new ModelAndView();
+			try {
+				
+				memberService.withdrawMember(member);
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+			mav.setViewName("home");
+			return mav;
+		}
 	
 	//비밀번호 수정 페이지로 이동
 	@RequestMapping("password")
@@ -203,33 +228,14 @@ public class MemberController {
 	return "/loginJoin/modifyPassword";	
 	}
 	
-	
-	
-	@RequestMapping("a")
-	public String a() {
-		return "/admin/admin_deliveryInfoForm1";
+	@RequestMapping("/logout")
+	public String logout() {
+		session.invalidate();
+		return "/loginJoin/loginForm";
 	}
 	
-	@RequestMapping("b")
-	public String b() {
-		return "/admin/admin_deliveryInfoForm2";
-	}
-
-	@RequestMapping("c")
-	public String c() {
-		return "/admin/admin_deliveryEditForm3";
-	}
-
-	@RequestMapping("d")
-	public String d() {
-		return "/admin/admin_deliveryInfoForm4";
-	}
 	
-	@RequestMapping("e")
-	public String e() {
-		return "/admin/admin_deliveryInfoForm5";
-	}
-
+	
 
 
 	

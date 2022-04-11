@@ -85,6 +85,16 @@
 		]]>
 		</update>
 		
+		<update id="withdrawMember" parameterType="Member">
+		<![CDATA[
+			update final.member set username=#{username}, password=#{password}, name=#{name},
+			nickname=#{nickname}, email=#{email}, phone=#{phone}, zipcode=#{zipcode},
+			doro_juso=#{doro_juso}, sangse_juso=#{sangse_juso}, provider=#{provider}, provider_id=#{provider_id},
+			withdraw_status=#{withdraw_status}, withdraw_type=#{withdraw_type},
+			withdraw_contents=#{withdraw_contents}, withdraw_date=#{withdraw_date} where no = #{no}
+		]]>
+		</update>
+		
 	
 		
 	
