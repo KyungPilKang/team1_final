@@ -83,11 +83,11 @@
                     <dl class="basic">
                         <dt class="fixed_price">정가</dt>
                         <dd class="fixed_price">
-                            <del>${book.book_price}</del>
+                            <del>${book.book_price}원</del>
                         </dd>
                         <dt class="sales_price">판매가</dt>
                         <dd class="sales_price">
-                            <strong class="price">${book.book_reprice}</strong>
+                            <strong class="price">${book.book_reprice}원</strong>
                             <span>[<strong>${book.book_discount}</strong>%↓, <strong>${book.book_price-book.book_reprice}</strong>원 할인]</span>
                         </dd>
                     </dl>

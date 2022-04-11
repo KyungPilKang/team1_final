@@ -20,6 +20,7 @@ public class Book {
     private String book_publisher;
     private int book_discount;
     private int book_reprice;
+    private String book_keyword;
 
     public Book() {
     }
@@ -142,6 +143,14 @@ public class Book {
 
     public void setBook_reprice(int book_reprice) {
         this.book_reprice = book_reprice;
+    }
+
+    public String getBook_keyword() {
+        return book_keyword;
+    }
+
+    public void setBook_keyword(String book_keyword) {
+        this.book_keyword = book_keyword;
     }
 }
 
