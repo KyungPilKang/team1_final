@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -92,21 +93,21 @@
 			<div class="row g-4 justify-content-center wow fadeInUp">
 				<div class="tab-content">
 					<div id="tab-1" class="tab-pane fade show p-0 active">
+						<c:forEach items="${serchedStudy }" var="study">
 						<div class="job-item p-4 mb-4">
 							<div class="row g-4">
-							
 								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
 									<img class="flex-shrink-0 img-fluid border rounded" src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt="" style="width: 80px; height: 80px;">
 									<div class="text-start ps-4">
-										<h3 class="mb-3">스터디 등록 제목</h3>
+										<h3 class="mb-3">${study.study_title }</h3>
 										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-brightness-high-fill text-primary me-2"></i>${serchedStudy.study_sname}serchedStudy초등/중등
+											<i class="bi bi-brightness-high-fill text-primary me-2"></i>${study.study_sname}
 										</span>
 										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-eyeglasses text-primary me-2"></i>${serchedStudy.study_grade}학년
+											<i class="bi bi-eyeglasses text-primary me-2"></i>${study.study_grade}학년
 										</span>
 										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-calendar2-date text-primary me-2"></i>${serchedStudy.study_fdate}시작 날짜 
+											<i class="bi bi-calendar2-date text-primary me-2"></i>${study.study_fdate}시작 날짜 
 										</span>
 									</div>
 								</div>
@@ -114,10 +115,11 @@
 									<div class="d-flex mb-3">
 										<a class="btn btn-primary" href="">상세보기</a>
 									</div>
-									<span class="text-truncate"><i class="bi bi-cart-plus text-primary me-2"></i>참여여부</span>
+									<!-- <span class="text-truncate"><i class="bi bi-cart-plus text-primary me-2"></i>참여여부</span> -->
 								</div>
 							</div>
 						</div>
+						</c:forEach>
 <!--					<div class="job-item p-4 mb-4">
 							<div class="row g-4">
 								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
@@ -125,13 +127,13 @@
 									<div class="text-start ps-4">
 										<h3 class="mb-3">스터디 등록 제목</h3>
 										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등${serchedStudy.study_sname}
+											<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등${study.study_sname}
 										</span>
 										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-eyeglasses text-primary me-2"></i>학년 ${serchedStudy.study_grade}
+											<i class="bi bi-eyeglasses text-primary me-2"></i>학년 ${study.study_grade}
 										</span>
 										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜  ${serchedStudy.study_fdate}
+											<i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜  ${study.study_fdate}
 										</span>
 									</div>
 								</div>
@@ -150,10 +152,10 @@
 									<div class="text-start ps-4">
 										<h3 class="mb-3">스터디 등록 제목</h3>
 										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등 ${serchedStudy.study_sname}
+											<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등 ${study.study_sname}
 										</span>
 										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-eyeglasses text-primary me-2"></i>학년 ${serchedStudy.study_grade}
+											<i class="bi bi-eyeglasses text-primary me-2"></i>학년 ${study.study_grade}
 										</span>
 										<span class="resfreespan text-truncate me-3">
 											<i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜 
@@ -319,7 +321,11 @@
 
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-	
+	<script>
+		if(performance.navigation.type==1){
+			window.location="/studyfindcnf?";
+		};
+	</script>
 	
 </body>
 </html>
