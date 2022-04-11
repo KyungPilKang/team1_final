@@ -98,17 +98,17 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<div class="navbar-nav ms-auto p-4 p-lg-0">
-				<a href="index.html" class="nav-item nav-link">Home</a>
-				<a href="about.html" class="nav-item nav-link">About</a>
-				<a href="courses.html" class="nav-item nav-link">Courses</a>
 				<div class="nav-item dropdown">
-					<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+					<a href="#" class="nav-link" data-bs-toggle="dropdown">스터디</a>
 					<div class="dropdown-menu fade-down m-0">
-						<a href=# class="dropdown-item">Our Team</a>
-						<a href=# class="dropdown-item">Testimonial</a>
-						<a href=# class="dropdown-item">404 Page</a>
+						<a href=# class="dropdown-item">등록하기</a>
+						<a href=# class="dropdown-item">매칭하기</a>
+						<a href=# class="dropdown-item">참여현황</a>
 					</div>
 				</div>
+				<a href="about.html" class="nav-item nav-link">마이페이지</a>
+				<a href="courses.html" class="nav-item nav-link">고객센터</a>
+				<a href=# class="nav-item nav-link">로그아웃</a>
 			</div>
 		</div>
 	</nav>
@@ -133,20 +133,21 @@
 			<div class="container">
                  			
 				<div class="text-center">
-					<h1 class="section-title bg-white text-center text-primary px-3">온라인 스터디 매칭</h1>
+					<h2 class="section-title bg-white text-center text-primary px-3">온라인 스터디 매칭</h2>
 				</div>
 				
-				<div class="row text-center col-lg-4 col-md-12" style="width: 40%; float: none; margin: 0 auto;">
+				<div class="row text-center col-lg-4 col-md-12" style="width: 45%; float: none; margin: 0 auto;">
 					<div class="row g-3">
 						<div class="col-12 mt-5 mb-5">
 							<div class="form-floating">
-								<h3>스터디 안내사항</h3>
-								<p style="text-align:center; background: rgba(6, 187, 204, 0.1); font-size: 1.0em; font-family:Stylish">
-								1)각자 목표에 맞게 설정하여 신청해주세요.<br>
-								2)참여 신청후 시작전날까지 취소 가능합니다.<br>
-								3)참여 시작일부터는 참여취소, 수정, 삭제가 불가능합니다. <br>
-								4)참여 신청 승인후 오픈카톡링크 열람이 가능합니다. <br>
-								5)성실히 스터디를 수행하기로 약속합니다. <br>
+								<h2>스터디 안내사항</h2>
+								<p style="text-align:left; background: rgba(6, 187, 204, 0.1); font-size: 1.5em; font-family:Stylish; margin-top:50px;">
+								<br>
+								&nbsp;&nbsp;&nbsp;1)각자 목표에 맞게 설정하여 신청해주세요.<br><br>
+								&nbsp;&nbsp;&nbsp;2)참여 신청후 시작전날까지 취소 가능합니다.<br><br>
+								&nbsp;&nbsp;&nbsp;3)참여 시작일부터는 참여취소, 수정, 삭제가 불가능합니다. <br><br>
+								&nbsp;&nbsp;&nbsp;4)참여 신청 승인후 오픈카톡링크 열람이 가능합니다. <br><br>
+								&nbsp;&nbsp;&nbsp;5)성실히 스터디를 수행하기로 약속합니다. <br><br>
 								</p>
 							</div>
 							<br> <br>
