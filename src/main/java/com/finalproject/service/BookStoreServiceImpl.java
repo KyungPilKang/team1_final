@@ -40,5 +40,10 @@ public class BookStoreServiceImpl implements BookStoreService{
         return bookDAO.selectBook(book_num);
     }
 
+    @Override
+    public void removeBook(int book_num) throws Exception {
+        bookDAO.deleteBook(book_num);
+    }
+
 
 }

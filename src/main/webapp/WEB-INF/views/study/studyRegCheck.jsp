@@ -55,25 +55,32 @@
 	<!-- Navbar Start -->
 	<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
 		<a href="/freereg1" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-			<h2 class="m-0 text-primary">
+			<h1 class="m-0 text-primary">
 				<i class="fa fa-book me-3"></i>NEESFULL
-			</h2>
+			</h1>
 		</a>
 		<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<div class="navbar-nav ms-auto p-4 p-lg-0">
-				<a href="index.html" class="nav-item nav-link">Home</a>
-				<a href="about.html" class="nav-item nav-link">About</a>
-				<a href="courses.html" class="nav-item nav-link">Courses</a>
-				<div class="nav-item dropdown">
-					<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+				<div class="nav-item dropdown me-3">
+					<a href="http://localhost:8090/studymain" class="nav-link" data-bs-toggle="dropdown">스터디</a>
 					<div class="dropdown-menu fade-down m-0">
-						<a href=# class="dropdown-item">Our Team</a>
-						<a href=# class="dropdown-item">Testimonial</a>
-						<a href=# class="dropdown-item">404 Page</a>
+						<a href="http://localhost:8090/studymain" style="font-size: 1.3em;" class="dropdown-item">메인페이지</a>
+						<a href="http://localhost:8090/studyReg" style="font-size: 1.3em;" class="dropdown-item">등록하기</a>
+						<a href="http://localhost:8090/studyfind" style="font-size: 1.3em;" class="dropdown-item">매칭하기</a>
+						<a href="http://localhost:8090/studyclass" style="font-size: 1.3em;" class="dropdown-item">참여현황</a>
 					</div>
+				</div>
+				<div class="me-3">
+					<a href="about.html" class="nav-item nav-link">마이페이지</a>
+				</div>
+				<div class="me-3">
+					<a href="courses.html" class="nav-item nav-link">고객센터</a>
+				</div>
+				<div class="me-3">
+					<a href=# class="nav-item nav-link">로그아웃</a>
 				</div>
 			</div>
 		</div>
@@ -108,10 +115,10 @@
 								<div class="form-floating">
 									<h3>대상학년</h3>
 									<c:choose>
-										<c:when test="${regstudy.study_sname eq '1' }">
+										<c:when test="${regstudy.study_sname eq '초등학생' }">
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="초등" readOnly>
 										</c:when>
-										<c:when test="${regstudy.study_sname eq '2' }">
+										<c:when test="${regstudy.study_sname eq '중학생' }">
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="중등" readOnly>
 										</c:when>
 									</c:choose>
@@ -120,20 +127,19 @@
 								<div class="form-floating">
 									<h3>대상 과목</h3>
 									<c:choose>
-										<c:when test="${regstudy.study_subject eq '1' }">
-										
+										<c:when test="${regstudy.study_subject eq '국어' }">
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="국어" readOnly>
 										</c:when>
-										<c:when test="${regstudy.study_subject eq '2' }">
+										<c:when test="${regstudy.study_subject eq '영어' }">
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="영어" readOnly>
 										</c:when>
-										<c:when test="${regstudy.study_subject eq '3' }">
+										<c:when test="${regstudy.study_subject eq '수학' }">
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="수학" readOnly>
 										</c:when>
-										<c:when test="${regstudy.study_subject eq '4' }">
+										<c:when test="${regstudy.study_subject eq '사회' }">
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="사회" readOnly>
 										</c:when>
-										<c:when test="${regstudy.study_subject eq '5' }">
+										<c:when test="${regstudy.study_subject eq '과학' }">
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="과학" readOnly>
 										</c:when>
 									</c:choose>

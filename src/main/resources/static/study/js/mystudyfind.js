@@ -8,7 +8,7 @@ let sweetalert=(icon,title,contents)=>{
     };
 //F5 새로고침 제어
 if(performance.navigation.type==1){
-	window.location="/studyReg";
+	window.location="/studyfind";
 };
 
 //초중등 선택
@@ -16,6 +16,9 @@ if(performance.navigation.type==1){
 $('#nextstudybtn1').click(function(){
  	$('#regstudyform1').css("display", "none");
    	$('#regstudyform2').css("display", "block");
+   	if($('input:radio[name="study_sname"]:checked').val()=='초등학생'){
+		$('#grade_detail').css("display", "");
+	}
    	window.location="#containerform";
    	return false;
 });

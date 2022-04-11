@@ -65,7 +65,8 @@ public class PaymentController {
     }
 
     // BookStore > Payment
-    @PostMapping(value = "/now")
+//    @PostMapping(value = "/now")
+    @RequestMapping(value = "/now", method = {RequestMethod.GET, RequestMethod.POST})
     public ModelAndView now(@RequestParam(value = "book_num") int book_num,
                             @RequestParam(value = "book_price") int book_price) {
         ModelAndView mv = new ModelAndView();

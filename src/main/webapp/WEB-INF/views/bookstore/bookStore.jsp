@@ -163,7 +163,7 @@
                             </div>
                             <div class="detail">
                                 <div class="title">
-                                    <a href="#"><strong>${book.book_subject}</strong>
+                                    <a href="/book-store/bookdetail?book_num=${book.book_num}"><strong>${book.book_subject}</strong>
                                     </a>
                                 </div>
 
@@ -187,14 +187,25 @@
                                 <br>
                                 <br>
                                 <div class="button">
-                                    <a href="#" class="btn-sm btn-primary">
+                                    <a href="/book-store/bookdetail?book_num=${book.book_num}" class="btn-sm btn-primary">
                                         상세보기
                                     </a>
                                 </div>
                             </div>
                             <div class="book_add">
+                                    <%--                                <c:choose>--%>
+                                    <%--                                <c:when test="${username == admin}">--%>
                                 <a class="btn-sm btn-primary" onclick="putCart(${book.book_num})">장바구니 담기</a>
                                 <a class="btn-sm btn-primary" onclick="buyNow(${book.book_num},${book.book_reprice})">바로 구매하기</a>
+                                    <%--                                </c:when>--%>
+                                    <%--                                    <c:otherwise>--%>
+                                    <%--                                        <a class="btn-sm btn-primary" onclick="alert('로그인이 필요합니다')">장바구니 담기</a>--%>
+                                    <%--                                        <a class="btn-sm btn-primary" onclick="alert('로그인이 필요합니다.')">바로 구매하기</a>--%>
+                                    <%--                                    </c:otherwise>--%>
+                                    <%--                                </c:choose>--%>
+                                    <%--                                <c:if test = "${username == admin}">--%>
+                                <a class="btn-sm btn-primary" href="/book-store/delbook?book_num=${book.book_num}" style="background: red">교재 삭제</a>
+                                    <%--                                </c:if>--%>
                                 <form id="buyNow" method="post">
                                     <input type="hidden" id="book_num" name="book_num"/>
                                     <input type="hidden" id="book_price" name="book_price"/>
@@ -236,7 +247,7 @@
 <%-- sweetalert --%>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-<%-- bookStore putCart Javascript --%>
+<%-- bookStore Javascript --%>
 <script src="${pageContext.request.contextPath}/resources/bookstore/js/bookStore.js"></script>
 
 

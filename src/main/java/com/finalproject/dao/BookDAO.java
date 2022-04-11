@@ -14,4 +14,5 @@ public interface BookDAO {
     int selectBookCount() throws Exception;
     List<Book> selectBookList(int startrow) throws Exception;
     Book selectBook(int book_num) throws Exception;
+    public void deleteBook(int book_num) throws Exception;
 }

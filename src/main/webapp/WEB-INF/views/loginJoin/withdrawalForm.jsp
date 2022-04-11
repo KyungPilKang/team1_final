@@ -37,6 +37,9 @@
 </head>
 
 <body>
+<% 
+int no = (Integer)session.getAttribute("no");
+%>
 	<!-- Spinner Start -->
 	<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
 		<div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -111,7 +114,8 @@
 					</div>
 						<h5 class=mt-4>다음 설문을 통해 회원님의 탈퇴 사유를 파악하여 보다 좋은 서비스를 만들고자 합니다.<br>
 						불편하시겠지만 답변해주시면 감사하겠습니다.</h5>
-					<form>
+					<form action='withdraw' name="form" method='post'>
+						<input type="hidden" value="<%=no %>" name="no">
 						<div class=mt-2>
 						<table id="table1" class="table">
 								<colgroup>
@@ -123,23 +127,23 @@
 										<td>
 											<div class="row">
 												<div class="col-lg-2">
-													<label class="radio"> <input type="radio" name="withdrawal" value="1">
+													<label class="radio"> <input type="radio" name="withdraw_type" value="단순변심">
 													단순변심</label>
 												</div>
 												<div class="col-lg-3">
-													<label class="radio"> <input type="radio" name="withdrawal" value="2">
+													<label class="radio"> <input type="radio" name="withdraw_type" value="타 서비스와의 차별성 부족">
 													타 서비스와의 차별성 부족</label>
 												</div>
 												<div class="col-lg-3">
-													<label class="radio"> <input type="radio" name="withdrawal" value="3">
+													<label class="radio"> <input type="radio" name="withdraw_type" value="인터페이스 편의성 부족">
 													인터페이스 편의성 부족</label>
 												</div>
 												<div class="col-lg-2">
-													<label class="radio"> <input type="radio" name="withdrawal" value="4">
+													<label class="radio"> <input type="radio" name="withdraw_type" value="고객응대 불편">
 													고객응대 불편</label>
 												</div>
 												<div class="col-lg-2">
-													<label class="radio"> <input type="radio" name="withdrawal" value="5">
+													<label class="radio"> <input type="radio" name="withdraw_type" value="기타">
 													기타</label>
 												</div>
 											</div>
@@ -150,7 +154,7 @@
 										<td>
 											<div class="row">
 												<div class="col-lg-12">
-													<textarea name="content" rows="8" cols="100">
+													<textarea name="withdraw_contents" rows="8" cols="100">
 													</textarea>
 												</div>
 											</div>

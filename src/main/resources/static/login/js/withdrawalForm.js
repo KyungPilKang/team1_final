@@ -23,7 +23,8 @@ $(function() {
     			    }).then(result =>{
 						if (result.isConfirmed){
 						Swal.fire('탈퇴 완료','이용해주셔서 감사합니다.','success')
-						} location.href="home";
+						$("form[name=form]").submit();
+						} 
 				
 						})
     					

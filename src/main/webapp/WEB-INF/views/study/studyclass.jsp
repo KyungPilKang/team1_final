@@ -42,33 +42,34 @@
 	<!-- Spinner End -->
 	<!-- Navbar Start -->
 	<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-		<a href="/resfreeform" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+		<a href="/freereg1" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
 			<h1 class="m-0 text-primary">
-				<i class="fa fa-book me-3"></i>NEEDSFULL
+				<i class="fa fa-book me-3"></i>NEESFULL
 			</h1>
 		</a>
 		<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-			<span class="resfreespan navbar-toggler-icon"></span>
+			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<div class="navbar-nav ms-auto p-4 p-lg-0">
-				<div class="nav-item dropdown">
-					<a href="#" class="nav-link" data-bs-toggle="dropdown">프리랜서</a>
+				<div class="nav-item dropdown me-3">
+					<a href="http://localhost:8090/studymain" class="nav-link" data-bs-toggle="dropdown">스터디</a>
 					<div class="dropdown-menu fade-down m-0">
-						<a href=# class="dropdown-item">프리랜서 등록</a>
-						<a href=# class="dropdown-item">프리랜서 조회</a>
+						<a href="http://localhost:8090/studymain" style="font-size: 1.3em;" class="dropdown-item">메인페이지</a>
+						<a href="http://localhost:8090/studyReg" style="font-size: 1.3em;" class="dropdown-item">등록하기</a>
+						<a href="http://localhost:8090/studyfind" style="font-size: 1.3em;" class="dropdown-item">매칭하기</a>
+						<a href="http://localhost:8090/studyclass" style="font-size: 1.3em;" class="dropdown-item">참여현황</a>
 					</div>
 				</div>
-				<div class="nav-item dropdown">
-					<a href="#" class="nav-link" data-bs-toggle="dropdown">강의</a>
-					<div class="dropdown-menu fade-down m-0">
-						<a href=# class="dropdown-item">강의 등록</a>
-						<a href=# class="dropdown-item">강의 조회</a>
-					</div>
+				<div class="me-3">
+					<a href="about.html" class="nav-item nav-link">마이페이지</a>
 				</div>
-				<a href="about.html" class="nav-item nav-link">마이페이지</a>
-				<a href="courses.html" class="nav-item nav-link">고객센터</a>
-				<a href=# class="nav-item nav-link">로그아웃</a>
+				<div class="me-3">
+					<a href="courses.html" class="nav-item nav-link">고객센터</a>
+				</div>
+				<div class="me-3">
+					<a href=# class="nav-item nav-link">로그아웃</a>
+				</div>
 			</div>
 		</div>
 	</nav>
@@ -94,8 +95,8 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h5 class="section-title bg-white text-center text-primary px-3">스터디등교하기</h5>
-                <h1 class="mb-5">나의 스터디 현황</h1>
+                <h3 class="section-title bg-white text-center text-primary px-3">나의 스터디 현황</h3>
+                <h1 class="mb-5 mt-2">스터디 신청 상태를 확인하세요</h1>
 		       <label>
 		            <select id="studyStatus" class="btn-sm btn btn-primary select_cat"  style="float:left; height:55px; margin-bottom:30px;">
 		                <option value="team_apply">신청중</option>
@@ -118,12 +119,14 @@
 			                    <i class="bi bi-book-fill"><h5>니즈풀스터디${study.study_title}</h5></i>
 
 			               
-			               <a href="/studydetail/${study.study_no}"> 
+			               <a href="/studydetail1/${study.study_no}"> 
 			               		<button id="showdetail" class="btn btn-outline-primary w-30 py-3 showdetail" style="float:right; margin-left:3px;font-size: 1.0em; height:50px;">게시글보기</button>
 			              </a> 
 				</div>
 		        </c:forEach> 	
 
+            </div>
+            <div style="height:500px;">
             </div>
         </div>
     </div>

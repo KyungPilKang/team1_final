@@ -1,5 +1,8 @@
 package com.finalproject.service;
 
+import java.time.LocalDate;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -188,13 +191,59 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 
+	@Override
+	public void withdrawMember(Member member) throws Exception {
+		Member check = memberDAO.selectMemberByNo(member.getNo());
+		check.setUsername(null);
+		check.setPassword(null);
+		check.setName(null);
+		check.setNickname(null);
+		check.setEmail(null);
+		check.setPhone(null);
+		check.setZipcode(null);
+		check.setDoro_juso(null);
+		check.setProvider(null);
+		check.setProvider_id(null);
+		check.setWithdraw_status("Y");
+		check.setWithdraw_type(member.getWithdraw_type());
+		check.setWithdraw_contents(member.getWithdraw_contents());
+		check.setWithdraw_date(String.valueOf(LocalDate.now()));
+		memberDAO.withdrawMember(check);
+	}
+
+
+	@Override
+	public void createTestid(Member member) throws Exception {
+				String encodedPassword = bCryptPasswordEncoder.encode("1234");
+				member.setPassword(encodedPassword);
+				member.setUsername("test");
+				member.setEmail("aaa@bbb");
+				member.setName("아무개");
+				member.setNickname("12354");
+				member.setBirth("2000-01-01");
+				member.setAge("22");
+				member.setPhone("01012341111");
+				member.setRole("ROLE_USER");
+				memberDAO.insertMember(member);
+		
+	}
 	
-
-
-
-
-
-	
-	
+	@Override
+	public void createTestid2(Member member) throws Exception {
+				String[] type = new String[5];
+				type[0] = "단순변심";
+				type[1] = "타 서비스와의 차별성 부족";
+				type[2]	= "인터페이스 편의성 부족";	
+				type[3]	= "고객응대 불편";	
+				type[4]	= "기타";
+				int r=(int)((Math.random()*1000)%5);
+				String encodedPassword = bCryptPasswordEncoder.encode("1234");
+				member.setPassword(encodedPassword);
+				member.setWithdraw_status("Y");
+				member.setWithdraw_type(type[r]);
+				member.setWithdraw_date("2021-04-11");
+				memberDAO.insertMember(member);
+		
+	}
 
 }

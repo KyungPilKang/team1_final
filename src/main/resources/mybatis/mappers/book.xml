@@ -35,6 +35,12 @@
 		]]>
 	</select>
 
+	<delete id="deleteBook" parameterType="int">
+		<![CDATA[
+		delete from book where book_num=#{book_num}
+		]]>
+	</delete>
+
 
 </mapper>
 

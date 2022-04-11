@@ -135,6 +135,33 @@ public class BookController {
     }
 
 
+    @GetMapping(value = "/bookdetail")
+    public ModelAndView boardDetail(@RequestParam(value = "book_num") int book_num) {
+        ModelAndView mv = new ModelAndView();
+        try{
+            Book book = bookStoreService.selectBook(book_num);
+            mv.addObject("book",book);
+            mv.setViewName("bookstore/bookDetail");
+        } catch (Exception e){
+            e.printStackTrace();
+            mv.addObject("err", e.getMessage());
+        }
+        return mv;
+    }
+
+    @GetMapping(value = "/delbook")
+    public ModelAndView delbook(@RequestParam(value = "book_num") int book_num){
+        ModelAndView mv = new ModelAndView();
+        try {
+            bookStoreService.removeBook(book_num);
+            mv.setViewName("redirect:/book-store");
+        } catch (Exception e) {
+            e.printStackTrace();
+            mv.addObject("err", e.getMessage());
+        }
+        return mv;
+    }
+
 
 
 }

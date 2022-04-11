@@ -161,7 +161,7 @@
                             </th>
                             <td>
                                 <div class="col-lg-6 pt-2">
-                                    <input type="text" name="phone" maxlength="11" size="11" class="form-control">
+                                    <input type="text" id="phone" name="phone" maxlength="11" size="11" class="form-control">
                                 </div>
                         </tr>
 
@@ -184,7 +184,7 @@
 
         <div class="button_box">
             <div class="col-5 ">
-                <button id="return" onclick="location.href='/book-store/cart'" class="btn btn-outline-info w-100 py-3">돌아가기</button>
+                <button id="return" onclick="location.href='/book-store'" class="btn btn-outline-info w-100 py-3">돌아가기</button>
             </div>
             <div class="col-5 ">
                 <button id="next" class="btn btn-primary w-100 py-3">다음단계</button>
@@ -231,7 +231,7 @@
             </div>
             <div class="col-5 ">
                 <%--                <button onclick="location.href='payment/finished'" class="btn btn-primary w-100 py-3" type="submit">결제</button>--%>
-                <button class="btn btn-primary w-100 py-3" type="submit" id="btn_payment">결제</button>
+                <button class="btn btn-primary w-100 py-3" type="submit" id="btn_payment" disabled>결제</button>
             </div>
         </div>
     </div>
@@ -254,8 +254,13 @@
 <!-- iamport.payment.js -->
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
 
+<%-- sweetalert --%>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
 <script>
+
+
 
 
     /* 결제 방법 선택 */
@@ -263,16 +268,22 @@
         let pay_method = event.target.value;
         if (pay_method === 'card') {
             document.getElementById('btn_payment').setAttribute("onclick", "payment('card',${total_price},email)")
+            document.getElementById('btn_payment').disabled=false;
         } else if (pay_method === 'vbank') {
             document.getElementById('btn_payment').setAttribute("onclick", "payment('vbank',${total_price},email)")
+            document.getElementById('btn_payment').disabled=false;
         } else if (pay_method === 'trans') {
             document.getElementById('btn_payment').setAttribute("onclick", "payment('trans',${total_price},email)")
+            document.getElementById('btn_payment').disabled=false;
         } else if (pay_method === 'phone') {
             document.getElementById('btn_payment').setAttribute("onclick", "payment('phone',${total_price},email)")
+            document.getElementById('btn_payment').disabled=false;
         } else if (pay_method === 'tosspay') {
             document.getElementById('btn_payment').setAttribute("onclick", "payment('tosspay',${total_price},email)")
+            document.getElementById('btn_payment').disabled=false;
         } else if (pay_method === 'samsung') {
             document.getElementById('btn_payment').setAttribute("onclick", "payment('samsung',${total_price},email)")
+            document.getElementById('btn_payment').disabled=false;
         }
     }
 </script>

@@ -86,13 +86,13 @@
 
 
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">${role} 1:1문의 작성 </h6>
+                <h6 class="section-title bg-white text-center text-primary px-3">${reqReg.role} 1:1문의 작성 </h6>
             </div>
  
  
  
 	            <div class="col-lg-7 col-md-7 text-center wow fadeInUp" data-wow-delay="0.1s">
-	                <h6 class="pt-5 pb-0">${username} 문의내역</h6>
+	                <h6 class="pt-5 pb-0">${reqReg.username} 문의내역</h6>
 	            </div>
 	
 	            <div class="row g-1 justify-content-center">
@@ -105,7 +105,7 @@
 	                </span>
 	                <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
 	                        <div class="d-flex border-top">
-	                            <small class="flex-fill text-left py-2 px-2">${request_date}</small>
+	                            <small class="flex-fill text-left py-2 px-2">${reqReg.request_date}</small>
 	                        </div>
 	                </span>
 	            </div>
@@ -119,7 +119,7 @@
 	                </span>
 	                <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
 	                        <div class="d-flex border-top">
-	                            <small class="flex-fill text-left py-2 px-2">${request_type}</small>
+	                            <small class="flex-fill text-left py-2 px-2">${reqReg.request_type}</small>
 	                        </div>
 	                </span>
 	            </div>
@@ -133,7 +133,7 @@
 	                </span>
 	                <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
 	                        <div class="d-flex border-top">
-	                            <small class="flex-fill text-left py-2 px-2">${request_subject}</small>
+	                            <small class="flex-fill text-left py-2 px-2">${reqReg.request_subject}</small>
 	                        </div>
 	                </span>
 	            </div>
@@ -147,7 +147,7 @@
 	                </span>
 	                <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
 	                        <div class="d-flex border-top border-bottom">
-	                            <small class="flex-fill text-left py-2 px-2">${request_content}</small>
+	                            <small class="flex-fill text-left py-2 px-2">${reqReg.request_content}</small>
 	                        </div>
 	                </span>
 	            </div>
@@ -155,7 +155,7 @@
 
 
 			
-			<form id='form' action="qnareg" method="post">
+			<form id='form' action="qnareg" method="get">
 	            <div class="col-lg-7 col-md-7 text-center wow fadeInUp" data-wow-delay="0.1s">
 	                <h6 class="pt-5 pb-0">답변작성</h6>
 	            </div>
@@ -190,6 +190,7 @@
 	                </span>
 	            </div>
 			</form>
+			
         </div>
     </div>
     

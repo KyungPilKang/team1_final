@@ -1,9 +1,8 @@
 package com.finalproject.dao;
 
+import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
-
-import com.finalproject.dto.CustomUserDetails;
 import com.finalproject.dto.Member;
 
 @Mapper
@@ -20,4 +19,6 @@ public interface MemberDAO {
 	public void update_login_count(Member member);
 	public void update_password(Member member);
 	public void modifyMember(Member member);
+	public void withdrawMember(Member member);
+	public List<Member> memberList() throws Exception;
 }

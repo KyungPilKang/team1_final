@@ -6,10 +6,10 @@ let sweetalert=(icon,title,contents)=>{
             confirmButtonText: "확인"
         })
     };
-//F5 새로고침 제어
+/*//F5 새로고침 제어
 if(performance.navigation.type==1){
 	window.location="/freereg1";
-}
+}*/
 
 // 로그인 하지 않은 사용자에 대한 제어
 $(function () {
