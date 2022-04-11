@@ -144,9 +144,9 @@
 								<p style="text-align:left; background: rgba(6, 187, 204, 0.1); font-size: 1.5em; font-family:Stylish; margin-top:50px;">
 								<br>
 								&nbsp;&nbsp;&nbsp;1)각자 목표에 맞게 설정하여 신청해주세요.<br><br>
-								&nbsp;&nbsp;&nbsp;2)참여 신청후 시작전날까지 취소 가능합니다.<br><br>
-								&nbsp;&nbsp;&nbsp;3)참여 시작일부터는 참여취소, 수정, 삭제가 불가능합니다. <br><br>
-								&nbsp;&nbsp;&nbsp;4)참여 신청 승인후 오픈카톡링크 열람이 가능합니다. <br><br>
+								&nbsp;&nbsp;&nbsp;2)참여 신청후 참여상태 확인해주세요.<br><br>
+								&nbsp;&nbsp;&nbsp;3)참여 신청 승인후 오픈카톡링크 열람이 가능합니다. <br><br>
+								&nbsp;&nbsp;&nbsp;4)개설자는 개설자관리 페이지에서 관리 가능합니다. <br><br>
 								&nbsp;&nbsp;&nbsp;5)성실히 스터디를 수행하기로 약속합니다. <br><br>
 								</p>
 							</div>
