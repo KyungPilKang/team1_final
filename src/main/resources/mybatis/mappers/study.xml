@@ -73,7 +73,7 @@
 <!-- 참여 -->
 	<insert id="checkAttend" parameterType="Map" >
 		<![CDATA[
-			 update into studyteam (study_no, user_id, team_status) values(#{study_no},#{user_id},#{status})
+			 insert into studyteam (study_no, user_id, team_status) values(#{study_no},#{user_id},#{status})
 		]]>
 	</insert>
 	
