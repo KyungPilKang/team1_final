@@ -1,0 +1,158 @@
+
+/* heart 좋아요 찜 */
+
+.heart-flex {
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.heart-flex > i {
+    color: red;
+}
+
+
+/* 모달 */
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal_body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 600px;
+    padding: 40px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+
+.select_cat{
+    height:46px;
+    font-weight: lighter;
+}
+
+.inner_search{
+    padding-left: 15px;
+    width: 500px;
+    height: 46px;
+}
+
+.keyword_box{
+    margin:10px;
+}
+
+.keyword_box > a{
+    margin-left:5px;
+}
+
+
+.sort_box{
+    margin-top: 40px;
+    margin-bottom: -50px;
+    /*width: 1270px;*/
+    text-align: left;
+}
+
+
+.sort_box > button{
+    width: 100px;
+    font-weight: lighter;
+}
+
+.nav-pills .nav-item .active {
+    border-bottom: 2px solid var(--primary);
+}
+
+
+.cart-item {
+    border: 1px solid transparent;
+    border-radius: 2px;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    transition: .5s;
+}
+
+.cart-item:hover {
+    border-color: rgba(0, 0, 0, .08);
+    box-shadow: none;
+}
+
+
+.total-amount{
+    text-align: right;
+    margin: 30px;
+}
+
+.cart-btn{
+    text-align: right;
+}
+
+.bookstore_container{
+    /*background-color: #f8bcbc;*/
+    width: 50vw;
+}
+
+.list_box{
+    width: 50vw;
+}
+
+.book_add > a {
+    text-align: center;
+    color:white;
+}
+
+
+.book_list{list-style:none;}
+.book_list>li{padding:30px 0;border-bottom:1px solid #d7d7d7;*zoom:1;}
+.book_list>li:after {content:'';display:block;clear:both;}
+.book_list .cover{float:left;position:relative;width:125px;margin-right:20px;margin-left:34px;}
+.book_list .cover a{}
+.book_list .cover a img{width:123px;border:1px solid #888;vertical-align:middle;transition:all .3s;}
+.book_list .cover a:hover img {box-shadow:2px 2px 6px rgba(0,0,0,.3);border-color:#555;}
+.book_list .cover a .rank{display:block;position:absolute;top:0;left:0;min-width:25px;_width:25px;height:25px;background:#f04653;text-align:center;font-family:'Tahoma','Malgun Gothic','Apple SD Neo Gothic','Dotum','Sans-Serif';font-size:11px;color:#fff;line-height:25px;transition:all .2s;}
+.book_list .cover a:hover .rank {transform:translate(0,-3px);}
+.book_list .cover .check {position:absolute;left:-32px;top:0;width:32px;text-align:center;}
+.book_list .cover .check input{width:13px;height:13px;}
+.book_list .detail .button {}
+.book_list .detail .button a {display:inline-block;position:static;color:white;}
+.book_list .detail {float:left;width:30vw;padding-right:15px;border-right:1px solid #dadada;}
+.book_list .detail a:hover {text-decoration:underline;}
+.book_list .detail .title{line-height:16px;}
+.book_list .detail .title a{color: #029cb0;font-size:18px;line-height:22px;}
+.book_list .detail .title a:hover{text-decoration:underline;}
+.book_list .detail .author{margin-top:6px;font-size:11px;line-height:20px;color:#878787;}
+.book_list .detail .seller {color:#555;}
+.book_list .detail .info {margin-top:12px;color:#666;line-height:18px;}
+.book_list .detail .info img {vertical-align:middle;margin-top:-2px;}
+.book_list .detail .price{margin-top:15px;color:#666;line-height:18px;font-weight:bold;}
+.book_list .detail .org_price{}
+.book_list .detail .sell_price,
+.book_list .detail .line{margin:0 2px;font-weight:normal;color: #f54c4c;}
+.book_list .detail .dc_rate {color:#5e6b9f;font-weight:normal;}
+.book_list .book_add{float:right;width:118px;line-height:18px;}
+.book_list .book_add a{display:block;margin-bottom:3px;padding-left:3px;padding-right:3px;}
+
+
+
+#write_container{
+    width: 50vw;
+}
+
+#write_text{
+    overflow-y: scroll;
+}

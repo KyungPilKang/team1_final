@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+#naver{
+	background-color:#03C75A;
+	border-color:#03C75A;
+	color:#FFFFFF;
+	max-height:58px;
+	text-align:left;
+
+	
+}
+
+#naver:first-letter{
+	font-weight:bold;
+	
+
+padding:0px;
+font-size:30px;	
+}

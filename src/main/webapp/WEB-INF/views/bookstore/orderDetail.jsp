@@ -14,6 +14,9 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
 
+    <!-- Favicon -->
+    <link href="${pageContext.request.contextPath}/resources/asset/needsfull.ico" rel="icon">
+
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +25,6 @@
           rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
-    <link href="${pageContext.request.contextPath}/resources/bookstore/img/favicon.ico" rel="icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
           integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
@@ -43,9 +45,22 @@
 <body>
 <jsp:include page="/WEB-INF/views/bookstore/header.jsp"/>
 
-
+<div class="container-xxl py-5">
+    <div class="container">
+        <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">결제가 완료되었습니다.</h1>
+    </div>
+    <a class="btn btn-primary py-3 px-5" href="#" onclick="deliPopup()">배송 조회</a>
+</div>
 
 <jsp:include page="/WEB-INF/views/bookstore/footer.jsp"/>
+
+
+<script>
+    function deliPopup() {
+        window.open("https://tracker.delivery/#/kr.cjlogistics/561378343061", "pop", "width=769,height=800, scrollbars=yes, resizable=yes");
+    }
+</script>
+
 
 </body>
 </html>

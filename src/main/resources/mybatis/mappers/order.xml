@@ -1,22 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-			"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.finalproject.OrderDAO">
+<mapper namespace="com.finalproject.dao.OrderDAO">
+
+	<insert id="insertOrder" parameterType="Order">
+		<![CDATA[
+		insert into final.order
+		values (#{order_num}, #{username},now(), #{order_method}, #{order_deli_num}, #{order_state},
+				#{deli_address}, #{deli_name}, #{zipcode}, #{doro_juso}, #{sangse_juso},
+				#{phone}, #{email},#{total_price})
+		]]>
+	</insert>
 
 </mapper>
 
 
 
-<!--
-CREATE TABLE `order` (
-  `order_num` int NOT NULL,
-  `username` varchar(1000) DEFAULT NULL,
-  `order_date` datetime DEFAULT NULL,
-  `order_book_list` varchar(1000) DEFAULT NULL,
-  `order_method` varchar(1000) DEFAULT NULL,
-  `order_deli` varchar(1000) DEFAULT NULL,
-  `order_state` varchar(1000) DEFAULT NULL,
-  PRIMARY KEY (`order_num`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
--->
+		<!--
+        CREATE TABLE `order` (
+          `order_num` varchar(100) NOT NULL,
+          `username` varchar(1000) DEFAULT NULL,
+          `order_date` datetime DEFAULT NULL,
+          `order_method` varchar(1000) DEFAULT NULL,
+          `order_deli_num` varchar(1000) DEFAULT NULL,
+          `order_state` varchar(1000) DEFAULT NULL,
+          `deli_address` varchar(1000) DEFAULT NULL,
+          `deli_name` varchar(1000) DEFAULT NULL,
+          `zipcode` varchar(1000) DEFAULT NULL,
+          `doro_juso` varchar(1000) DEFAULT NULL,
+          `sangse_juso` varchar(1000) DEFAULT NULL,
+          `phone` varchar(100) DEFAULT NULL,
+          `email` varchar(100) DEFAULT NULL,
+          `total_price` int DEFAULT NULL,
+          PRIMARY KEY (`order_num`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+        -->

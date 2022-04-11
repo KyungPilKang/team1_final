@@ -104,9 +104,6 @@ $('#study_type_4').click(function(){
 //입력5 : 목표레벨
 $('#nextstudybtn5').click(function(){
    	$('#regstudyform5').css("display", "none");
-   	$('#studyfindSubmitform').css("display", "block");
-   	window.location="#containerform";
-   	return false;
 });
 
 $('#study_target_level1').click(function(){

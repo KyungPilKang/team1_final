@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.finalproject.RequestDAO">
+<mapper namespace="com.finalproject.dao.RequestDAO">
 
 </mapper>
 
@@ -12,12 +12,12 @@
 CREATE TABLE `request` (
   `request_num` int NOT NULL,
   `username` varchar(1000) DEFAULT NULL,
-  `request_client` varchar(1000) DEFAULT NULL,
   `request_type` varchar(1000) DEFAULT NULL,
   `request_subject` varchar(1000) DEFAULT NULL,
   `request_content` varchar(1000) DEFAULT NULL,
   `request_date` datetime DEFAULT NULL,
   `request_state` varchar(1000) DEFAULT NULL,
+  `role` VARCHAR(1000) NULL DEFAULT 'ROLE_USER',
   PRIMARY KEY (`request_num`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 -->

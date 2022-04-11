@@ -1,29 +1,29 @@
+@import "freelacepageMakeMove.css";
+@import "freelancepageReview.css";
+@import "teachpageDefult.css";
+@import "teachpageRequest.css";
+@import "studentDefult.css";
 :root {
     --main-color: #06BBCC;
     --sub-color: #F0FBFC;
     --black-color: #181d38;
 }
+
 .box {
     display: flex;
     justify-content: center;
 }
 
 .main {
-    background-color: var(--sub-color);
-    border: 5px solid red;
+    background-color: white;
     border-radius: 5px;
     width: 1800px;
 }
 
-.my-image {
-    border: 5px solid red;
+.my-subject {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.default {
-    display: flex;
 }
 
 .subject {
@@ -34,12 +34,27 @@
     padding: 10px;
 }
 
+.default {
+    display: flex;
+}
+
 .subnavbar {
-    border: 5px solid green;
+    background-color: var(--main-color);
+    border-radius: 10px;
 }
 
 .navbar-main {
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-name {
+    border: 5px solid white;
+    border-radius: 10px;
+    width: 350px;
+    background-color: rgba(0,0,0,0.1);
 }
 
 .navbar-bt {
@@ -50,26 +65,93 @@
     align-items: center;
 }
 
+.navbar-bt div button {
+    border: 5px solid white;
+    border-radius: 10px;
+    height: 135px;
+    width: 350px ;
+    color: black;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.navbar-bt div button:hover {
+    color: var(--sub-color);
+    background-color: var(--main-color);
+}
+
 .subnavbar div {
-    border: 5px solid yellowgreen;
-    font-size: 30px;
+    font-size: 40px;
     padding: 40px;
+    font-family: 'Stylish', sans-serif;
+    color: var(--black-color);
 }
 
 .default-intro {
-    border: 5px solid black;
+    border: 5px solid var(--main-color);
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin-left: 180px;
+    background: var(--main-color);
 }
 
 .intro {
-    border: 5px solid white;
-    height: 300px;
-    width: 1000px;
+    border-bottom: 5px solid var(--main-color);
+    display: flex;
+    position: relative;
+    background-color: white;
 }
 
 .intro ul li {
     font-size: 20px;
+    width: 850px;
+}
+
+.intro-bt {
+    font-size: 25px;
+    width: 100px;
+    height: 60px;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: var(--sub-color);
+    background-color: var(--main-color);
+    border: 5px solid var(--main-color);
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.intro-bt:hover {
+    color: var(--main-color);
+    background-color: var(--sub-color);
+    border: 5px solid var(--main-color);
+    border-radius: 10px;
+}
+
+.sub h1 {
+    margin: 0 425px;
+}
+
+.sub-content {
+    background-color: var(--main-color);
+    padding: 20px;
+}
+
+.sub-request {
+    background-color: white;
+}
+
+.sub-request ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.sub-request ul li {
+    margin: 10px 20px;
 }

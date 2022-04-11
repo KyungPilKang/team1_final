@@ -9,6 +9,9 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
 
+    <!-- Favicon -->
+    <link href="${pageContext.request.contextPath}/resources/asset/needsfull.ico" rel="icon">
+
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +20,6 @@
           rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
-    <link href="${pageContext.request.contextPath}/resources/bookstore/img/favicon.ico" rel="icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
           integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
@@ -120,7 +122,7 @@
             <span> > </span>
             <span class="now_process">결제완료</span>
         </div>
-
+        <button onclick="location.href='/book-store/order/detail'" style="float:right; margin:10px; border-radius: 10px;" class="btn btn-primary">주문 상세보기</button>
         <div class="item_box row text-center col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.5s"
              style="width: 55%; float:none; margin:40px auto 0 auto">
 

@@ -1,0 +1,14 @@
+.review-list {
+    width: 1020px !important;
+}
+
+.review-list ul {
+    border: 5px solid var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-list ul li {
+    margin: 7px;
+}

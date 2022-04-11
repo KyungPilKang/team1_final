@@ -9,6 +9,9 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
 
+    <!-- Favicon -->
+    <link href="${pageContext.request.contextPath}/resources/asset/needsfull.ico" rel="icon">
+
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +20,6 @@
           rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
-    <link href="${pageContext.request.contextPath}/resources/bookstore/img/favicon.ico" rel="icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
           integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
@@ -34,90 +36,7 @@
     <!-- Template Stylesheet -->
     <link href="${pageContext.request.contextPath}/resources/bookstore/css/style.css" rel="stylesheet">
     <title>Title</title>
-    <style>
-
-        #next:disabled{
-        }
-
-        .bg-primary {
-            background: none !important;
-        }
-
-        .ok {
-            display: flex;
-            justify-content: center;
-        }
-
-        .payment_container_step1 {
-            margin-top: -210px;
-            width: 60vw;
-            height: 840px;
-            background: rgb(243, 243, 243);
-            border-color: var(--primary);
-            margin-bottom: -20px;
-        }
-
-        .payment_container_step2{
-            margin-top: -210px;
-            width: 60vw;
-            height: 840px;
-            background: rgb(243, 243, 243);
-            border-color: var(--primary);
-            margin-bottom: -20px;
-            display: none;
-        }
-
-        .payment_probar {
-            width: 100%;
-            height: 100px;
-            background: rgb(6, 187, 204);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-
-        .now_process {
-            color: white !important;
-        }
-
-        .payment_probar > span {
-            color: rgba(255, 255, 255, 0.38);
-            font-size: 34px;
-            margin-left: 40px;
-        }
-
-        .info_table_step1 > tbody > tr > th {
-            width: 5vw;
-        }
-
-
-        #email::placeholder {
-            color: rgba(171, 171, 171, 0.42);
-        }
-
-        .search_address {
-            height: 39px;
-            width: 100px;
-            font-size: 20px;
-            margin-left: -20px;
-        }
-
-        .star {
-            color: red;
-        }
-
-        .item_box {
-            height: 200px;
-            border: 1px solid rgba(138, 138, 138, 0.58);
-        }
-
-
-        .button_box {
-            display: flex;
-            justify-content: center;
-        }
-    </style>
+    <link href="${pageContext.request.contextPath}/resources/bookstore/css/payment.css" rel="stylesheet">
 </head>
 
 
@@ -138,12 +57,41 @@
             <span>결제완료</span>
         </div>
         <div class="item_box row text-center col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.5s"
-             style="width: 55%; float:none; margin:40px auto 0 auto">
-            아아아
+             style="width: 80%; float:none; margin:40px auto 0 auto; overflow-y:scroll">
+
+            <table style="height: 100px; width: 85%">
+                <tr>
+                    <td>제목</td>
+                    <td>가격</td>
+                </tr>
+
+                <c:forEach var="cart" items="${orderList}">
+                    <tr>
+                        <td>${cart.book_subject}</td>
+                        <td>${cart.book_reprice}</td>
+                    </tr>
+                </c:forEach>
+            </table>
+
+            <table style="width: 15%; height: 100px;">
+
+                <tr>
+                    <td>수량</td>
+                </tr>
+                <c:forEach var="count" items="${qtyList}">
+                    <tr>
+                        <td>${count}</td>
+                    </tr>
+                </c:forEach>
+            </table>
+
         </div>
+        <h4 style="float:right;margin-right:130px; padding: 5px;">총 결제금액:${total_price}</h4>
+
+
         <div class="info_box row text-center col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.5s"
              style="width: 55%; float:none; margin:50px auto 30px auto">
-            <form name="form" id="form_step1" method="post">
+            <form name="form" id="form_step1" action="/book-store/payment/finished" method="post">
                 <div class="row g-3">
                     <table id="info_table_step1" class="info_table_step1">
                         <tbody>
@@ -153,7 +101,7 @@
                             </th>
                             <td>
                                 <div class="col-5">
-                                    <input type="text" id="address_name" name="address_name" class="form-control">
+                                    <input type="text" id="deli_address" name="deli_address" class="form-control">
                                 </div>
                             </td>
                         </tr>
@@ -165,7 +113,7 @@
                             </th>
                             <td>
                                 <div class="col-5">
-                                    <input type="text" id="name" name="name" class="form-control">
+                                    <input type="text" id="deli_name" name="deli_name" class="form-control">
                                 </div>
                             </td>
                         </tr>
@@ -182,12 +130,12 @@
                                                readonly="" class="form-control">
                                     </div>
                                     <div class="col-lg-2 pt-2">
-                                        <a href="javascript:void(0);" onclick="goPopup(this)"
+                                        <a href="javascript:void(0);" onclick="goPopup()"
                                            class="btn btn-sm btn-primary px-3 search_address">주소검색</a>
                                     </div>
                                     <div class="col-lg-8"></div>
                                     <div class="col-lg-8 pt-2">
-                                        <input type="text" id="dorojuso" name="dorojuso" value="" readonly=""
+                                        <input type="text" id="dorojuso" name="doro_juso" value="" readonly=""
                                                class="form-control">
                                     </div>
                                     <div class="col-lg-4 pt-2">
@@ -198,6 +146,10 @@
                                         <input type="text" id="sangsejuso2" name="sangsejuso2" value=""
                                                class="form-control">
                                     </div>
+                                    <input type="hidden" name="sangse_juso" id="sangse_juso">
+                                    <input type="hidden" name="order_method" id="order_method">
+                                    <input type="hidden" name="order_num" id="order_num">
+                                    <input type="hidden" name="total_price" id="total_price">
                                 </div>
                             </td>
                         </tr>
@@ -232,7 +184,7 @@
 
         <div class="button_box">
             <div class="col-5 ">
-                <button id="return" onclick="location.href='cart'" class="btn btn-outline-info w-100 py-3">돌아가기</button>
+                <button id="return" onclick="location.href='/book-store/cart'" class="btn btn-outline-info w-100 py-3">돌아가기</button>
             </div>
             <div class="col-5 ">
                 <button id="next" class="btn btn-primary w-100 py-3">다음단계</button>
@@ -251,71 +203,41 @@
             <span>결제완료</span>
         </div>
         <div class="row text-center col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.5s"
-             style="width: 55%; float:none; margin:40px auto 0 auto">
-            결제방법<br><br>
-            <input id="paymentMethod_card" type="radio" class="btn-check" name="paymentMethod" value="card" />
-            <label for="paymentMethod_card" class="btn btn-outline-primary w-100 py-3">카드</label> <br>
-            <br>
-            <input id="paymentMethod_vacc" type="radio" class="btn-check" name="paymentMethod" value="vacc" />
-            <label for="paymentMethod_vacc" class="btn btn-outline-primary w-100 py-3">가상계좌</label> <br>
+             style="width: 55%; float:none; margin:40px auto 0 auto; padding:20px;">
+            <input id="paymentMethod_card" type="radio" class="btn-check" name="paymentMethod" value="card"
+                   onclick="payMethod(event)"/>
+            <label for="paymentMethod_card" class="btn btn-outline-primary w-100 py-3">카드</label>
+            <input id="paymentMethod_vbank" type="radio" class="btn-check" name="paymentMethod" value="vbank"
+                   onclick="payMethod(event)"/>
+            <label for="paymentMethod_vbank" class="btn btn-outline-primary w-100 py-3">가상계좌</label>
+            <input id="paymentMethod_trans" type="radio" class="btn-check" name="paymentMethod" value="trans"
+                   onclick="payMethod(event)"/>
+            <label for="paymentMethod_trans" class="btn btn-outline-primary w-100 py-3">실시간계좌이체</label>
+            <input id="paymentMethod_phone" type="radio" class="btn-check" name="paymentMethod" value="phone"
+                   onclick="payMethod(event)"/>
+            <label for="paymentMethod_phone" class="btn btn-outline-primary w-100 py-3">휴대폰소액결제</label>
+            <input id="paymentMethod_tosspay" type="radio" class="btn-check" name="paymentMethod" value="tosspay"
+                   onclick="payMethod(event)"/>
+            <label for="paymentMethod_tosspay" class="btn btn-outline-primary w-100 py-3">토스페이</label>
+            <input id="paymentMethod_samsung" type="radio" class="btn-check" name="paymentMethod" value="samsung"
+                   onclick="payMethod(event)"/>
+            <label for="paymentMethod_samsung" class="btn btn-outline-primary w-100 py-3">삼성페이</label>
         </div>
-        <div class="info_box row text-center col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.5s"
-             style="width: 55%; float:none; margin:50px auto 30px auto">
-            <form name="form" id="form_step2" method="post">
-                <div class="row g-3">
-                    <table id="info_table_step2" class="info_table_step2">
-                        주문내역
-                        <tbody>
-                        <tr>
-                            <th>
-                                이메일
-                            </th>
-                            <td>
-                                책이름 1권 20,000원
-                            </td>
-                        </tr>
 
-
-                        <tr>
-                            <th>
-                                이메일
-                            </th>
-                            <td>
-                                책이름 1권 20,000원
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <th>
-                                이메일
-                            </th>
-                            <td>
-                                책이름 1권 20,000원
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </form>
-        </div>
 
         <div class="button_box">
             <div class="col-5 ">
                 <button id="previous" class="btn btn-outline-info w-100 py-3" type="">이전단계</button>
             </div>
             <div class="col-5 ">
-                <button onclick="location.href='payment/finished'" class="btn btn-primary w-100 py-3" type="submit">결제</button>
+                <%--                <button onclick="location.href='payment/finished'" class="btn btn-primary w-100 py-3" type="submit">결제</button>--%>
+                <button class="btn btn-primary w-100 py-3" type="submit" id="btn_payment">결제</button>
             </div>
         </div>
     </div>
     <!-- Payment Flow Step2 End -->
 
-
-
-
-
 </div>
-
 <!-- Payment End -->
 
 <jsp:include page="/WEB-INF/views/bookstore/footer.jsp"/>
@@ -324,20 +246,36 @@
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/login/lib/wow/wow.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/login/lib/easing/easing.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/login/lib/waypoints/waypoints.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/login/lib/owlcarousel/owl.carousel.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <!-- Template Javascript -->
-<script src="${pageContext.request.contextPath}/resources/login/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/resources/bookstore/js/main.js"></script>
 <!-- Payment Javascript -->
 <script src="${pageContext.request.contextPath}/resources/bookstore/js/payment.js"></script>
+<!-- iamport.payment.js -->
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+
 
 <script>
 
-</script>
 
+    /* 결제 방법 선택 */
+    const payMethod = function (event) {
+        let pay_method = event.target.value;
+        if (pay_method === 'card') {
+            document.getElementById('btn_payment').setAttribute("onclick", "payment('card',${total_price},email)")
+        } else if (pay_method === 'vbank') {
+            document.getElementById('btn_payment').setAttribute("onclick", "payment('vbank',${total_price},email)")
+        } else if (pay_method === 'trans') {
+            document.getElementById('btn_payment').setAttribute("onclick", "payment('trans',${total_price},email)")
+        } else if (pay_method === 'phone') {
+            document.getElementById('btn_payment').setAttribute("onclick", "payment('phone',${total_price},email)")
+        } else if (pay_method === 'tosspay') {
+            document.getElementById('btn_payment').setAttribute("onclick", "payment('tosspay',${total_price},email)")
+        } else if (pay_method === 'samsung') {
+            document.getElementById('btn_payment').setAttribute("onclick", "payment('samsung',${total_price},email)")
+        }
+    }
+</script>
 
 
 </body>

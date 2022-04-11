@@ -1,6 +1,25 @@
 /********** Template CSS **********/
+.btn-primary:hover{
+    color:rgb(0, 0, 0) !important;
+}
+
+.dropdown-menu{
+    text-align: center;
+}
+
+.dropdown-item{
+    width: 150px !important;
+    text-align: center;
+}
+
+.dropdown-item:hover{
+    background-color: #06BBCC;
+    color: white;
+}
+
+/********** Template CSS **********/
 :root {
-    --primary: rgb(0, 232, 255);
+    --primary: #06BBCC;
     --light: #F0FBFC;
     --dark: #181d38;
 }
@@ -39,7 +58,8 @@
 
 /*** Button ***/
 .btn {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Stylish', sans-serif;
+    font-size: 1.0em;
     font-weight: 600;
     transition: .5s;
 }
@@ -80,7 +100,7 @@
 .navbar .dropdown-toggle::after {
     border: none;
     content: "\f107";
-    font-family: "Font Awesome 5 Free";
+    font-family: 'Stylish', sans-serif;
     font-weight: 900;
     vertical-align: middle;
     margin-left: 8px;
@@ -90,7 +110,7 @@
     margin-right: 30px;
     padding: 25px 0;
     color: #FFFFFF;
-    font-size: 15px;
+    font-size: 25px;
     text-transform: uppercase;
     outline: none;
 }
@@ -401,7 +421,7 @@
 .footer .btn.btn-link::before {
     position: relative;
     content: "\f105";
-    font-family: "Font Awesome 5 Free";
+    font-family: 'Stylish', sans-serif;
     font-weight: 900;
     margin-right: 10px;
 }
@@ -431,4 +451,56 @@
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+
+h1{
+	font-family: 'Stylish', sans-serif;
+}
+
+h2{
+	font-family: 'Stylish', sans-serif;
+}
+
+h3{
+	font-family: 'Stylish', sans-serif;
+}
+
+h4{
+	font-family: 'Stylish', sans-serif;
+}
+
+h5{
+	font-family: 'Stylish', sans-serif;
+}
+
+h6{
+	font-family: 'Stylish', sans-serif;
+}
+
+a{
+	font-family: 'Stylish', sans-serif;
+}
+
+small{
+	font-family: 'Stylish', sans-serif;
+}
+span{
+	font-family: 'Stylish', sans-serif;
+	font-weight: bold;
+}
+.resfreespan{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+input{
+	font-family: 'Stylish', sans-serif;
+}
+
+label{
+	font-family: 'Stylish', sans-serif;
+}
+
+textarea{
+	font-family: 'Stylish', sans-serif;
 }

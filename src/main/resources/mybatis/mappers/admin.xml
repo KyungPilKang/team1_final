@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+			"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.finalproject.dao.AdminDAO">
+	
+	<select id="qnaReqList" resultType="Request" parameterType="String">
+		<![CDATA[
+			select * from request where role=#{role}
+		]]>
+	</select>
+	
+	<select id="qnaAnsList" resultType="Answer" parameterType="String">
+		<![CDATA[
+			select * from answer where role=#{role}
+		]]>
+	</select>
+	
+	<select id="withdrawMemList" resultType="Member" parameterType="String">
+		<![CDATA[
+			select * from member where role=#{role}
+		]]>
+	</select>
+	
+		<select id="queryReqInfo" resultType="Request" parameterType="String">
+		<![CDATA[
+			select * from request where role=#{role}
+		]]>
+	</select>
+	
+	<select id="queryAnsInfo" resultType="Answer" parameterType="String">
+		<![CDATA[
+			select * from answer where role=#{role}
+		]]>
+	</select>
+
+</mapper>

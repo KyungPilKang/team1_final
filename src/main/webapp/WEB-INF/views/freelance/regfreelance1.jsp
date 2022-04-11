@@ -4,13 +4,13 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>eLEARNING - eLearning HTML Template</title>
+<title>NEEDSFULL - 초중등 교육 매칭 플랫폼</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="" name="keywords">
 <meta content="" name="description">
 
 <!-- Favicon -->
-<link href="${pageContext.request.contextPath}/resources/freelance/img/favicon.ico" rel="icon">
+<link href="${pageContext.request.contextPath}/resources/asset/needsfull.ico" rel="icon">
 
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,7 +31,6 @@
 
 <!-- Template Stylesheet -->
 <link href="${pageContext.request.contextPath}/resources/freelance/css/style.css" rel="stylesheet">
-
 <body>
 	<!-- Spinner Start -->
 	<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -254,12 +253,12 @@
 									<input id="education_4" type="radio" class="btn-check" name="education" value="4" />
 									<label for="education_4" class="btn btn-outline-primary w-100 py-3">박사</label> <br> <br>
 									<div id="univform" class="form-floating" style="display: none;">
-										<input style="font-size: 1.5em" type="text" class="form-control" id="univ" name="univ" placeholder="졸업한 학교">
+										<input style="font-size: 1.5em" type="text" class="form-control" id="univ" name="univ" placeholder="졸업한 학교" onkeypress="if(event.keyCode=='13'){event.preventDefault(); searchEvt();}">
 										<label for="major">졸업한 학교를 입력해주세요</label>
 									</div>
 									<br>
 									<div id="majorform" class="form-floating" style="display: none;">
-										<input style="font-size: 1.5em" type="text" class="form-control" id="major" name="major" placeholder="전공">
+										<input style="font-size: 1.5em" type="text" class="form-control" id="major" name="major" placeholder="전공" onkeypress="if(event.keyCode=='13'){event.preventDefault(); searchEvt();}">
 										<label for="major">전공을 입력해주세요</label>
 									</div>
 									<br>

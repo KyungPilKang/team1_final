@@ -1,5 +1,7 @@
 package com.finalproject.dto;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import java.sql.Date;
 
 public class Book {
@@ -9,12 +11,18 @@ public class Book {
     private String book_subject;
     private String book_content;
     private String book_img;
+    MultipartFile file;
     private Date book_date;
     private Date book_modDate;
     private int book_count;
     private int book_sales;
-    private String book_heart;
-    private String book_heartState; // heart 눌렀는지
+    private String book_author;
+    private String book_publisher;
+    private int book_discount;
+    private int book_reprice;
+
+    public Book() {
+    }
 
     public int getBook_num() {
         return book_num;
@@ -64,6 +72,14 @@ public class Book {
         this.book_img = book_img;
     }
 
+    public MultipartFile getFile() {
+        return file;
+    }
+
+    public void setFile(MultipartFile file) {
+        this.file = file;
+    }
+
     public Date getBook_date() {
         return book_date;
     }
@@ -96,20 +112,36 @@ public class Book {
         this.book_sales = book_sales;
     }
 
-    public String getBook_heart() {
-        return book_heart;
+    public String getBook_author() {
+        return book_author;
     }
 
-    public void setBook_heart(String book_heart) {
-        this.book_heart = book_heart;
+    public void setBook_author(String book_author) {
+        this.book_author = book_author;
     }
 
-    public String getBook_heartState() {
-        return book_heartState;
+    public String getBook_publisher() {
+        return book_publisher;
     }
 
-    public void setBook_heartState(String book_heartState) {
-        this.book_heartState = book_heartState;
+    public void setBook_publisher(String book_publisher) {
+        this.book_publisher = book_publisher;
+    }
+
+    public int getBook_discount() {
+        return book_discount;
+    }
+
+    public void setBook_discount(int book_discount) {
+        this.book_discount = book_discount;
+    }
+
+    public int getBook_reprice() {
+        return book_reprice;
+    }
+
+    public void setBook_reprice(int book_reprice) {
+        this.book_reprice = book_reprice;
     }
 }
 
