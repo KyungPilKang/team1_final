@@ -1,3 +1,4 @@
+
 /* 주소 */
 function goPopup() {
     window.open("juso", "pop", "width=570,height=420, scrollbars=yes, resizable=yes");
@@ -12,8 +13,74 @@ function jusoCallBack(roadFullAddr, roadAddrPart1, addrDetail, roadAddrPart2, en
 }
 
 
-/* 다음단계 누르면 1->2 이동 */
+/* 다음단계 누르면 1->2 이동 및 유효성검사 */
 $('#next').click(function () {
+    let deli_address = $('#deli_address').val();
+    let deli_name = $('#deli_name').val();
+    let juso = $('#dorojuso').val();
+    let phone = $('#phone').val();
+    let email = $('#email').val();
+    let chkEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+    //배송지명 입력?
+    if (deli_address === "") {
+        swal({
+            title: "입력 오류",
+            text: "배송지명을 입력해주세요.",
+            icon: "error",
+            button: "확인"
+        });
+        $('#deli_address').focus()
+        return false;
+    }
+    if (deli_name === "") {
+        swal({
+            title: "입력 오류",
+            text: "수령인을 입력해주세요.",
+            icon: "error",
+            button: "확인"
+        });
+        $('#deli_name').focus()
+        return false;
+    }
+    if (juso === "") {
+        swal({
+            title: "입력 오류",
+            text: "주소를 입력해주세요.",
+            icon: "error",
+            button: "확인"
+        });
+        return false;
+    }
+    if (phone === "") {
+        swal({
+            title: "입력 오류",
+            text: "연락처를 입력해주세요.",
+            icon: "error",
+            button: "확인"
+        });
+        $('#phone').focus()
+        return false;
+    }
+    if (email === "") {
+        swal({
+            title: "입력 오류",
+            text: "이메일을 입력해주세요.",
+            icon: "error",
+            button: "확인"
+        });
+        $('#email').focus()
+        return false;
+    }
+    if (email.match(chkEmail) === null) {
+        swal({
+            title: "입력 오류",
+            text: "이메일 형식이 올바르지 않습니다.",
+            icon: "error",
+            button: "확인"
+        });
+        $('#email').focus()
+        return false;
+    }
     $('.payment_container_step1').css("display", "none");
     $('.payment_container_step2').css("display", "block");
 });
@@ -44,7 +111,7 @@ function payment(payMethod, totalPrice, email) {
         pg: "inicis", //PG사
         pay_method: payMethod,
         merchant_uid: uuid(), //주문 번호
-        name: '결제테스트', //상품명
+        name: '니즈풀 교재 결제', //상품명
         amount: totalPrice, //결제 가격
         buyer_email: email, //구매자 이메일
         buyer_name: '구매자', //구매자 이름

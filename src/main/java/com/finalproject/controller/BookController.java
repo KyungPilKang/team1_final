@@ -135,6 +135,21 @@ public class BookController {
     }
 
 
+    @GetMapping(value = "/bookdetail")
+    public ModelAndView boardDetail(@RequestParam(value = "book_num") int book_num) {
+        ModelAndView mv = new ModelAndView();
+        try{
+            Book book = bookStoreService.selectBook(book_num);
+            mv.addObject("book",book);
+            mv.setViewName("bookstore/bookDetail");
+        } catch (Exception e){
+            e.printStackTrace();
+            mv.addObject("err", e.getMessage());
+        }
+        return mv;
+    }
+
+
 
 
 }

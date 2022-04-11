@@ -126,7 +126,7 @@
         <div class="item_box row text-center col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.5s"
              style="width: 55%; float:none; margin:40px auto 0 auto">
 
-            결제가 완료되셨습니다.
+            <h2 style="margin-top: 5vh">결제가 완료되셨습니다.</h2>
 
         </div>
 

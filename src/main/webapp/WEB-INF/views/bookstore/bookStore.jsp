@@ -163,7 +163,7 @@
                             </div>
                             <div class="detail">
                                 <div class="title">
-                                    <a href="#"><strong>${book.book_subject}</strong>
+                                    <a href="/book-store/bookdetail?book_num=${book.book_num}"><strong>${book.book_subject}</strong>
                                     </a>
                                 </div>
 
@@ -187,7 +187,7 @@
                                 <br>
                                 <br>
                                 <div class="button">
-                                    <a href="#" class="btn-sm btn-primary">
+                                    <a href="/book-store/bookdetail?book_num=${book.book_num}" class="btn-sm btn-primary">
                                         상세보기
                                     </a>
                                 </div>
@@ -236,7 +236,7 @@
 <%-- sweetalert --%>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-<%-- bookStore putCart Javascript --%>
+<%-- bookStore Javascript --%>
 <script src="${pageContext.request.contextPath}/resources/bookstore/js/bookStore.js"></script>
 
 
