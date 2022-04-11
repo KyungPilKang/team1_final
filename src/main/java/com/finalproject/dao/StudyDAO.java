@@ -35,6 +35,9 @@ public interface StudyDAO {
 	
 	//검색정보 
 	public List<Study> serchListAll(Study study) throws Exception;
+	
+	//개설자가 개설했는지 여부 
+	public int makerReturn(String maker) throws Exception;
 
 
 }

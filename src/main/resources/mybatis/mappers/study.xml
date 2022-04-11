@@ -96,6 +96,12 @@
 		]]>
 	</select>  
 
+
+	<select id="makerReturn"  parameterType="String"  resultType="int">
+		<![CDATA[
+			select count(*) from study where maker=#{maker} 
+		]]>
+	</select>
 	
 </mapper>
 	

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,17 +40,17 @@ public class StudyController {
 
 	// 스터디메인
 	@GetMapping("studymain")
-	public String studymain() {
+	public String studymain(Model model) {
 		//String maker = session.getAttribute("username");
 		String maker ="김민정";		
 		try {
-			List<Study> studyList = studyservice.makerList(maker);
-			System.out.println(studyList);
+			String ismaker = studyservice.makerReturn(maker);
+			model.addAttribute("ismaker",ismaker);
+			System.out.println("가져오는거니?"+ismaker);
 		}catch (Exception e) {
 			e.printStackTrace();
 		}	
 		session.removeAttribute("findstudy");
-
 		return "study/studymain";
 	}
 
@@ -106,7 +107,20 @@ public class StudyController {
 	@GetMapping("/studydetail/{study_no}")
 	public ModelAndView studydetail(@PathVariable int study_no) {
 		ModelAndView mav = new ModelAndView("study/studydetail");
-		String user_id = (String) session.getAttribute("id");
+		//String username = session.getAttribute("username");
+		try {
+			Study posted = studyservice.getStudydetail(study_no);
+			mav.addObject("studyPosted", posted);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mav;
+	}
+	
+	//studyclass 등교페이지에서 게시글보기 이동시 컨트롤러
+	@GetMapping("/studydetail1/{study_no}")
+	public ModelAndView studydetail1(@PathVariable int study_no) {
+		ModelAndView mav = new ModelAndView("study/studydetail1");
 		try {
 			Study posted = studyservice.getStudydetail(study_no);
 			mav.addObject("studyPosted", posted);

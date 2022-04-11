@@ -175,7 +175,7 @@
 					</div>
 					<div class="fourth mt-5 mb-5">
 					    <form action="studymakermain" method="post">
-						<button type="submit" class="btn btn-primary w-100 py-3" >개설자관리</button>
+						<button id="makerbtn" type="submit" class="btn btn-primary w-100 py-3" >개설자관리</button>
 						</form>
 					</div>
 
@@ -237,6 +237,20 @@
 
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-	
+	<script> 
+	 let ismaker="<c:out value='${ismaker}'/>";
+
+	 if(ismaker=='yes'){
+		 //document.getElementById("#makerbtn").disabled = false; 
+		 $('#makerbtn').show();
+		 
+		 } else {
+		 //alert("스터디를 개설해주세요."); 
+		 //document.getElementById("#makerbtn").disabled = true; 
+		 $('#makerbtn').hide();
+		 
+		
+		 }
+	</script>
 </body>
 </html>

@@ -112,7 +112,7 @@
 			                    <i class="bi bi-book-fill"><h5>니즈풀스터디${study.study_title}</h5></i>
 
 			               
-			               <a href="/studydetail/${study.study_no}"> 
+			               <a href="/studydetail1/${study.study_no}"> 
 			               		<button id="showdetail" class="btn btn-outline-primary w-30 py-3 showdetail" style="float:right; margin-left:3px;font-size: 1.0em; height:50px;">게시글보기</button>
 			              </a> 
 				</div>

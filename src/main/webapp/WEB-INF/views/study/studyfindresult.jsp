@@ -115,7 +115,7 @@
 								</div>
 								<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
 									<div class="d-flex mb-3">
-										<a class="btn btn-primary" href="">상세보기</a>
+										<a class="btn btn-primary"  href="/studydetail/${study.study_no}">상세보기</a>
 									</div>
 									<!-- <span class="text-truncate"><i class="bi bi-cart-plus text-primary me-2"></i>참여여부</span> -->
 								</div>

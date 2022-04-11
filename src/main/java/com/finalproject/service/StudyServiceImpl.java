@@ -136,6 +136,21 @@ public class StudyServiceImpl implements StudyService {
 		return studyDAO.serchListAll(study);
 	}
 
+	@Override
+	public String makerReturn(String maker) throws Exception {
+		 int temp=studyDAO.makerReturn(maker);
+		 String tempResult = null;
+		 if(temp>0){
+			 tempResult  = "yes";
+			 System.out.println("yes 에서 "+tempResult);
+			 return tempResult;
+			 } else {
+			 tempResult  = "no";
+			 System.out.println("no 에서 "+tempResult);
+			 return tempResult;
+		}
+	}
+
 
 
 

@@ -39,6 +39,8 @@ public interface StudyService {
 	//검색 
 	List<Study> findInfoAll(Study study) throws Exception;
 	
+	//개설자 존재 여부
+	public String makerReturn(String maker) throws Exception;
 	
 	//step2 할일
 	//3-1. 스터디 조회,검색 
