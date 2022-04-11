@@ -121,7 +121,7 @@
 
 					<!-- 입력2 : 학년 -->
 					<div id="regstudyform2" style="display: none;">
-						<h5 class="section-title bg-white text-center text-primary px-3">학년</h5>
+						<h3 class="section-title bg-white text-center text-primary px-3">학년</h3>
 						<h1 class="mb-5 mt-2">몇학년의 스터디가 필요한가요?</h1>
 						<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto;">
 							<div class="row g-3">
@@ -136,15 +136,14 @@
 										<input id="study_grade_3" type="radio" class="btn-check" name="study_grade" value="3학년" />
 										<label for="study_grade_3" class="btn btn-outline-primary w-100 py-3">3학년</label> <br>
 										<br>
+										<div id="grade_detail" style="display: none;">
 										<input id="study_grade_4" type="radio" class="btn-check" name="study_grade" value="4학년" />
-										<label for="study_grade_4" class="btn btn-outline-primary w-100 py-3">4학년</label> <br>
-										<br>
+										<label for="study_grade_4" class="btn btn-outline-primary w-100 py-3">4학년</label> <br> <br>
 										<input id="study_grade_5" type="radio" class="btn-check" name="study_grade" value="5학년" />
-										<label for="study_grade_5" class="btn btn-outline-primary w-100 py-3">5학년</label> <br>
-										<br>
+										<label for="study_grade_5" class="btn btn-outline-primary w-100 py-3">5학년</label> <br> <br>
 										<input id="study_grade_6" type="radio" class="btn-check" name="study_grade" value="6학년" />
-										<label for="study_grade_6" class="btn btn-outline-primary w-100 py-3">6학년</label> <br>
-										<br>
+										<label for="study_grade_6" class="btn btn-outline-primary w-100 py-3">6학년</label> <br> <br>
+										</div>
 									</div>
 									<br>
 									<br>
