@@ -20,30 +20,41 @@ public class AdminServiceImpl implements AdminService {
 	public List<Request> getRequestListByRole(String role) throws Exception {
 		return adminDAO.qnaReqList(role);
 	}
-		
 	@Override
 	public List<Answer> getAnswerListByRole(String role) throws Exception {
 		return adminDAO.qnaAnsList(role);
 	}
+	
 	
 	@Override
 	public List<Member> getMemberListByRole(String role) throws Exception {
 		return adminDAO.withdrawMemList(role);
 	}
 	
-	@Override
-	public Request getRequestInfoByRole(String role) throws Exception {
-		Request reqInfo=adminDAO.queryReqInfo(role);
-		if(reqInfo==null) throw new Exception("오류");
-		return reqInfo;
-	}
 	
 	@Override
+	public Request getRequestInfoByRole(String role) throws Exception {
+		Request reqInfo = adminDAO.queryReqInfo(role);
+		return reqInfo;
+	}
+	@Override
 	public Answer getAnswerInfoByRole(String role) throws Exception {
-		Answer ansInfo=adminDAO.queryAnsInfo(role);
-		if(ansInfo==null) throw new Exception("오류");
+		Answer ansInfo = adminDAO.queryAnsInfo(role);
 		return ansInfo;
 	}
+	
+	
+	@Override
+	public Request getRequestRegByRole(String role) throws Exception {
+		Request reqReg = adminDAO.queryReqReg(role);
+		return reqReg;
+	}
+	@Override
+	public Answer getAnswerRegByRole(String role) throws Exception {
+		Answer ansReg = adminDAO.queryAnsReg(role);
+		return ansReg;
+	}
+	
 	
 //	@Override
 //	public void inputQna(Answer ans) throws Exception {
