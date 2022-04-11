@@ -40,13 +40,14 @@ public class StudyController {
 	// 스터디메인
 	@GetMapping("studymain")
 	public String studymain() {
+		session.removeAttribute("findstudy");
 		return "study/studymain";
 	}
 
 	//등교하기 페이지 
 	@GetMapping("studyclass")
 	public ModelAndView studyclassget(@RequestParam(value = "status", required = false) String status) {
-		
+		session.removeAttribute("findstudy");
 		if (status == null) {
 			status = "team_apply";
 		}
@@ -69,6 +70,7 @@ public class StudyController {
 	// (1)개설자메인 페이지
 	@RequestMapping(value="/studymakermain", method= {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView studymakermain() {
+		session.removeAttribute("findstudy");
 		ModelAndView mav = new ModelAndView("study/studymakermain");
 		String result = null;
 		//String user_id = (String) session.getAttribute("id");
@@ -132,7 +134,7 @@ public class StudyController {
 	@ResponseBody
 	@PostMapping("/studymakerdetail/check")
 	public String studymakerdetailcheck(@RequestParam int study_no, @RequestParam(value = "studentStatus", required=true) String team_status,@RequestParam(value = "studentName",required=true) String studentName,HttpServletRequest request) {
-		//System.out.println("서버 테스트");
+//		System.out.println("서버 테스트");
 		try {
 			studyservice.changeApplyAceept(study_no, studentName, team_status);
 		} catch (Exception e) {
@@ -171,16 +173,16 @@ public class StudyController {
 
 	// (3)검색값 확인후 result페이지 반환
 	@GetMapping("studyfindcnf")
-	public ModelAndView studyfindcnf(@ModelAttribute Study inputstudy) {
+	public ModelAndView studyfindcnf() {
 		ModelAndView mav = new ModelAndView();
 		// 검색값 등록
 		try {
 			Study findstudycnf = (Study) session.getAttribute("findstudy");
-			System.out.println("매칭cnf 요청:" + findstudycnf.toString());
-			List<Study> serchedStudy = studyservice.findInfoAll(inputstudy);
+			List<Study> serchedStudy = studyservice.findInfoAll(findstudycnf);
 			mav.addObject("serchedStudy", serchedStudy);
-			session.removeAttribute("findstudy");
+//			session.removeAttribute("findstudy");
 			mav.setViewName("study/studyfindresult");
+			System.out.println("테스트");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -248,6 +250,7 @@ public class StudyController {
 	// (1)등록페이지전환
 	@RequestMapping("/studyReg")
 	public String studyReg() {
+		session.removeAttribute("findstudy");
 		return "study/studyReg";
 	}
 

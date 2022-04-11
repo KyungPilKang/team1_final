@@ -90,9 +90,9 @@
 		]]>
 	</update> 
 <!-- 전체게시물 검색기반 조회(전체) -->
-	<select id="searchListAll" resultType="Study" parameterType="map">
+	<select id="serchListAll" resultType="Study" parameterType="Study">
 		<![CDATA[
-			select * from study where study_sname like CONCAT('%',#{search},'%') and study_grade like CONCAT('%',#{search},'%') and study_subject like CONCAT('%',#{search},'%') and study_type like CONCAT('%',#{search},'%') and study_target_level like CONCAT('%',#{search},'%')
+			select * from study where study_sname like CONCAT('%',#{study_sname},'%') and study_grade like CONCAT('%',#{study_grade},'%') and study_subject like CONCAT('%',#{study_subject},'%') and study_type like CONCAT('%',#{study_type},'%') and study_target_level like CONCAT('%',#{study_target_level},'%')
 		]]>
 	</select>  
 
