@@ -47,6 +47,16 @@ public class MemberController {
 		}
 		return "아이디 test, 비번 1234 생성완료";
 	}
+	
+	@RequestMapping("testid2")
+	public @ResponseBody String testid2(Member member) {
+		try {
+			memberService.createTestid(member);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return "탈퇴회원 리스트 작성위한 db생성";
+	}
 	//admin 계정 만들기
 	@RequestMapping("admin")
 	public @ResponseBody String admin(Member member) {
@@ -234,10 +244,14 @@ public class MemberController {
 	return "/loginJoin/modifyPassword";	
 	}
 	
-	@RequestMapping("/logout")
-	public String logout() {
-		session.invalidate();
-		return "/loginJoin/loginForm";
+	@GetMapping("logout")
+	public String logout() {	
+		try {	
+			session.invalidate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return "redirect:loginJoin/loginForm";
 	}
 	
 	
