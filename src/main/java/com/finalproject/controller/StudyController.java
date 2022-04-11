@@ -271,8 +271,10 @@ public class StudyController {
 		ModelAndView mav = new ModelAndView();
 		// 임시 maker 설정
 		String maker = "김길동";
+//		String maker = session.getAttribute("username");
 		try {
 			Study cnfstudy = (Study) session.getAttribute("regstudy");
+			cnfstudy.setMaker(maker);
 			session.removeAttribute("regstudy");
 			System.out.println("등록확인후 등록요청:" + cnfstudy.toString());
 			studyservice.regStudy(cnfstudy);
