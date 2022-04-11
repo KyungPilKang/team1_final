@@ -32,10 +32,12 @@ public interface StudyService {
 	public void changeApplyAceept(int study_no, String student_name, String team_status ) throws Exception;
 	//참여자 추가 제거
 	//public void rejectAttend(int study_no, String user_id) throws Exception;
-
+	
 	//참여자조회
 	List<StudyTeam> attendInfo(int study_no) throws Exception;
-
+	
+	//검색 
+	List<Study> findInfoAll(Study study) throws Exception;
 	
 	
 	//step2 할일

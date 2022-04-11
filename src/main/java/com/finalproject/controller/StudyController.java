@@ -109,8 +109,9 @@ public class StudyController {
 	// 스터디개설자 상세페이지 
 	// 참여자 리스트 가져오기
 	// 추후 get 방식에서 post 방식으로 변경 필요
+	
 	@GetMapping("/studymakerdetail/{study_no}")
-	public ModelAndView studymakerdetail(@PathVariable int study_no, @RequestParam(value = "studentStatus") String team_status,@RequestParam(value = "studentName") String user_id) {
+	public ModelAndView studymakerdetail(@PathVariable int study_no, @RequestParam(value = "studentStatus", required=true) String team_status,@RequestParam(value = "studentName",required=true) String user_id,HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("study/studymakerdetail");
 		try {
 			Study posted = studyservice.getStudydetail(study_no);
@@ -122,7 +123,7 @@ public class StudyController {
 			// 김민정 \n team_apply \n 홍길동 \n team_reject
 			mav.addObject("studyPosted", posted);	
 			mav.addObject("studentList", studentList);	
-			studyservice.changeApplyAceept(study_no, user_id, team_status);
+			//studyservice.changeApplyAceept(study_no, user_id, team_status);
 			
 
 		} catch (Exception e) {
@@ -131,6 +132,26 @@ public class StudyController {
 		return mav;
 	}
 
+	@ResponseBody
+	@PostMapping("/studymakerdetail/check")
+	public String studymakerdetailcheck(@PathVariable int study_no, @RequestParam(value = "studentStatus", required=true) String team_status,@RequestParam(value = "studentName",required=true) String user_id,HttpServletRequest request) {
+		System.out.println("서버 테스트");
+		System.out.println(team_status);
+		System.out.println(user_id);
+		/*
+		try {
+			//HttpSession session = request.getSession();
+			//String user_id = (String) session.getAttribute("id");
+			studyservice.changeApplyAceept(study_no, user_id, team_status);
+			System.out.println(study_no);
+			System.out.println(team_status);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		*/
+		return team_status;
+	}
+	
 	
 	// (2)개설자가 상세글보기 클릭시 보여지는 페이지
 	// 추후 post 변경
@@ -167,6 +188,8 @@ public class StudyController {
 		try {
 			Study findstudycnf = (Study) session.getAttribute("findstudy");
 			System.out.println("매칭cnf 요청:" + findstudycnf.toString());
+			List<Study> serchedStudy = studyservice.findInfoAll(inputstudy);
+			mav.addObject("serchedStudy", serchedStudy);
 			session.removeAttribute("findstudy");
 			mav.setViewName("study/studyfindresult");
 		} catch (Exception e) {
@@ -179,7 +202,6 @@ public class StudyController {
 	@RequestMapping(value = "/studyfindresult", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView studyfindresult(@ModelAttribute Study inputstudy) {
 		ModelAndView mav = new ModelAndView("study/studyfindresult");
-
 		return mav;
 	}
 

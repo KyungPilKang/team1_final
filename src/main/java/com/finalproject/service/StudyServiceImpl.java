@@ -130,6 +130,11 @@ public class StudyServiceImpl implements StudyService {
 		
 	}
 
+	@Override
+	public List<Study> findInfoAll(Study study) throws Exception {
+		return studyDAO.serchListAll(study);
+	}
+
 
 
 
