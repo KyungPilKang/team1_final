@@ -111,7 +111,7 @@ public class StudyController {
 	// 추후 get 방식에서 post 방식으로 변경 필요
 	
 	@GetMapping("/studymakerdetail/{study_no}")
-	public ModelAndView studymakerdetail(@PathVariable int study_no, @RequestParam(value = "studentStatus", required=true) String team_status,@RequestParam(value = "studentName",required=true) String user_id,HttpServletRequest request) {
+	public ModelAndView studymakerdetail(@PathVariable int study_no, HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("study/studymakerdetail");
 		try {
 			Study posted = studyservice.getStudydetail(study_no);
@@ -120,11 +120,8 @@ public class StudyController {
 				System.out.println(st.getUser_id());
 				System.out.println(st.getTeam_status());
 			}
-			// 김민정 \n team_apply \n 홍길동 \n team_reject
 			mav.addObject("studyPosted", posted);	
-			mav.addObject("studentList", studentList);	
-			//studyservice.changeApplyAceept(study_no, user_id, team_status);
-			
+			mav.addObject("studentList", studentList);		
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -134,21 +131,13 @@ public class StudyController {
 
 	@ResponseBody
 	@PostMapping("/studymakerdetail/check")
-	public String studymakerdetailcheck(@PathVariable int study_no, @RequestParam(value = "studentStatus", required=true) String team_status,@RequestParam(value = "studentName",required=true) String user_id,HttpServletRequest request) {
+	public String studymakerdetailcheck(@RequestParam int study_no, @RequestParam(value = "studentStatus", required=true) String team_status,@RequestParam(value = "studentName",required=true) String studentName,HttpServletRequest request) {
 		System.out.println("서버 테스트");
-		System.out.println(team_status);
-		System.out.println(user_id);
-		/*
 		try {
-			//HttpSession session = request.getSession();
-			//String user_id = (String) session.getAttribute("id");
-			studyservice.changeApplyAceept(study_no, user_id, team_status);
-			System.out.println(study_no);
-			System.out.println(team_status);
+			studyservice.changeApplyAceept(study_no, studentName, team_status);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		*/
 		return team_status;
 	}
 	

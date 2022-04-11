@@ -268,7 +268,7 @@
 			var result = confirm(studentName + '님의 상태를 ' + studentStatusText + '으로 변경하시겠습니까?');
 			if(result){
 			    $.ajax({
-			 		url: "http://localhost:8090//studymakerdetail/check",
+			 		url: "http://localhost:8090/studymakerdetail/check",
 			 		type: "post" ,
 			 		data: {
 			 			"study_no" : $('#study_no').val(),
@@ -278,12 +278,9 @@
 			 		success: function(data) {
 			 			// study_no, studentName, studentStatus
 			 			console.log("성공");
-			 			if (data == "team_accept") {
-						 	$('#attendResult').html("수락취소");
-						} else {
-							attend=true;
-							$('#attendResult').html("참여수락");
-						}
+			 			if (data == "null") {
+						 	$('#attendResult').val("미참여중");
+						} 
 			 		}
 			    })
 			}
