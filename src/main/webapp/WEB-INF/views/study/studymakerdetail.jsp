@@ -172,7 +172,7 @@
 				<div class="row g-3">
 					<div class="col-12">
 						<div class="col-12 mt-4">
-						<form action="/deletestudy" method="post">
+						<form action="/deletestudy" method="post" onsubmit="return checkit()">
 						<input name="study_no" id="study_no" type="hidden" value='${studyPosted.study_no}'>
 							<button id="contractbtn" class="btn btn-outline-primary w-35 py-3">삭제 하기</button>
 						</form>
@@ -294,22 +294,11 @@
 			}
 		})
 	});
-		/* //attendList(아이디)
-	   $("#attendList").val(`${isattend}`);
-	   $('#attendList').on('change',function(e) {
-		   let isattend = e.currentTarget.value;
-		   alert(isattend);
-		   window.location.href="/studymakerdetail?isattend="+isattend;
-	   }); 
-	   
-	   //attendResult(참여수락/탈락/취소)
-	   $("#attendResult").val(`${isresult}`);
-	   $('#attendResult').on('change',function(e) {
-		   let isresult = e.currentTarget.value;
-		   alert(isresult);
-		   window.location.href="/studymakerdetail?attendResult="+isresult;
-	   }); */
-	 
+	
+	function checkit(){
+		alert('게시글을 삭제 하시겠습니까?');
+		return true;
+	}
 	   
 	</script>
 </body>

@@ -158,13 +158,13 @@
 								<div class="form-floating">
 									<h3>목표레벨</h3>
 									<c:choose>
-										<c:when test="${findstudy.study_target_level eq '최상' }">
+										<c:when test="${findstudy.study_target_level eq '1' }">
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="최상" readOnly>
 										</c:when>										
-										<c:when test="${findstudy.study_target_level eq '상' }">
+										<c:when test="${findstudy.study_target_level eq '2' }">
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="상" readOnly>
 										</c:when>										
-										<c:when test="${findstudy.study_target_level eq '중상' }">
+										<c:when test="${findstudy.study_target_level eq '3' }">
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="중상" readOnly>
 										</c:when>										
 										<c:otherwise>
@@ -266,7 +266,7 @@
 
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-	<script src="${pageContext.request.contextPath}/resources/study/js/mystudyfind.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/study/js/mystudy1.js"></script>
 
 
 </body>

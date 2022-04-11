@@ -40,7 +40,16 @@ public class StudyController {
 	// 스터디메인
 	@GetMapping("studymain")
 	public String studymain() {
+		//String maker = session.getAttribute("username");
+		String maker ="김민정";		
+		try {
+			List<Study> studyList = studyservice.makerList(maker);
+			System.out.println(studyList);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}	
 		session.removeAttribute("findstudy");
+
 		return "study/studymain";
 	}
 
