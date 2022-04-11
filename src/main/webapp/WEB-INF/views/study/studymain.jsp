@@ -99,11 +99,11 @@
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<div class="navbar-nav ms-auto p-4 p-lg-0">
 				<div class="nav-item dropdown">
-					<a href="#" class="nav-link" data-bs-toggle="dropdown">스터디</a>
+					<a href="http://localhost:8090/studymain" class="nav-link" data-bs-toggle="dropdown">스터디</a>
 					<div class="dropdown-menu fade-down m-0">
-						<a href=# class="dropdown-item">등록하기</a>
-						<a href=# class="dropdown-item">매칭하기</a>
-						<a href=# class="dropdown-item">참여현황</a>
+						<a href="http://localhost:8090/studyReg" class="dropdown-item">등록하기</a>
+						<a href="http://localhost:8090/studyfind" class="dropdown-item">매칭하기</a>
+						<a href="http://localhost:8090/studyclass" class="dropdown-item">참여현황</a>
 					</div>
 				</div>
 				<a href="about.html" class="nav-item nav-link">마이페이지</a>

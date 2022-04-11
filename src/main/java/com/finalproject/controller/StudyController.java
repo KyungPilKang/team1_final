@@ -132,7 +132,7 @@ public class StudyController {
 	@ResponseBody
 	@PostMapping("/studymakerdetail/check")
 	public String studymakerdetailcheck(@RequestParam int study_no, @RequestParam(value = "studentStatus", required=true) String team_status,@RequestParam(value = "studentName",required=true) String studentName,HttpServletRequest request) {
-//		System.out.println("서버 테스트");
+		//System.out.println("서버 테스트");
 		try {
 			studyservice.changeApplyAceept(study_no, studentName, team_status);
 		} catch (Exception e) {

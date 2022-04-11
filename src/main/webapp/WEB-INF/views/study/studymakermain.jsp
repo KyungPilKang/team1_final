@@ -44,28 +44,22 @@
 	<!-- Spinner End -->
 	<!-- Navbar Start -->
 	<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-		<a href="/resfreeform" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-			<h1 class="m-0 text-primary">
-				<i class="fa fa-book me-3"></i>NEEDSFULL
-			</h1>
+		<a href="/freereg1" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+			<h2 class="m-0 text-primary">
+				<i class="fa fa-book me-3"></i>NEESFULL
+			</h2>
 		</a>
 		<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-			<span class="resfreespan navbar-toggler-icon"></span>
+			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<div class="navbar-nav ms-auto p-4 p-lg-0">
 				<div class="nav-item dropdown">
-					<a href="#" class="nav-link" data-bs-toggle="dropdown">프리랜서</a>
+					<a href="http://localhost:8090/studymain" class="nav-link" data-bs-toggle="dropdown">스터디</a>
 					<div class="dropdown-menu fade-down m-0">
-						<a href=# class="dropdown-item">프리랜서 등록</a>
-						<a href=# class="dropdown-item">프리랜서 조회</a>
-					</div>
-				</div>
-				<div class="nav-item dropdown">
-					<a href="#" class="nav-link" data-bs-toggle="dropdown">강의</a>
-					<div class="dropdown-menu fade-down m-0">
-						<a href=# class="dropdown-item">강의 등록</a>
-						<a href=# class="dropdown-item">강의 조회</a>
+						<a href="http://localhost:8090/studyReg" class="dropdown-item">등록하기</a>
+						<a href="http://localhost:8090/studyfind" class="dropdown-item">매칭하기</a>
+						<a href="http://localhost:8090/studyclass" class="dropdown-item">참여현황</a>
 					</div>
 				</div>
 				<a href="about.html" class="nav-item nav-link">마이페이지</a>
