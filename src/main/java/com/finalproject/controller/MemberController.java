@@ -165,20 +165,27 @@ public class MemberController {
 		System.out.println(username);
 		System.out.println(password);
 		try {
-			result = memberService.loginCheck(username,password);
-			if(result.equals("ok")) {
-				Member login = memberService.selectMemberByUsername(username);
-				session.setAttribute("no", login.getNo());
-				session.setAttribute("username", login.getUsername());
-				session.setAttribute("name", login.getName());
-				session.setAttribute("nickname", login.getNickname());
-				session.setAttribute("email", login.getEmail());
-				session.setAttribute("phone", login.getPhone());
-				session.setAttribute("zipcode", login.getZipcode());
-				session.setAttribute("doro_juso", login.getDoro_juso());
-				session.setAttribute("sangse_juso", login.getSangse_juso());
-				session.setAttribute("role", login.getRole());
+			if(username.equals("admin")) {
+				result = memberService.adminCheck(password);
+				return result;
 			}
+			else {
+				result = memberService.loginCheck(username,password);
+				if(result.equals("ok")) {
+					Member login = memberService.selectMemberByUsername(username);
+					session.setAttribute("no", login.getNo());
+					session.setAttribute("username", login.getUsername());
+					session.setAttribute("name", login.getName());
+					session.setAttribute("nickname", login.getNickname());
+					session.setAttribute("email", login.getEmail());
+					session.setAttribute("phone", login.getPhone());
+					session.setAttribute("zipcode", login.getZipcode());
+					session.setAttribute("doro_juso", login.getDoro_juso());
+					session.setAttribute("sangse_juso", login.getSangse_juso());
+					session.setAttribute("role", login.getRole());
+				}
+			}
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -231,13 +238,13 @@ public class MemberController {
 	}
 	
 	@GetMapping("logout")
-	public String logout() {	
+	public String logout(@RequestParam(value="mapping", required=true, defaultValue="home")String mapping) {
 		try {	
 			session.invalidate();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		return "redirect:loginJoin/loginForm";
+		return "redirect:/"+mapping;
 	}
 	
 	

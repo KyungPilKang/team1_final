@@ -75,7 +75,7 @@ public class FreelanceController {
 		mem.setNo(1);
 		mem.setName("강경필");
 		mem.setDoro_juso("서울시 성북구 화랑로40길 16");
-		mem.setGender("M");
+		
 		mem.setAge("30");
 		mem.setEmail("kangehowl@naver.com");
 		mem.setPhone("010-3292-3885");

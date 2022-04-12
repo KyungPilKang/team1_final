@@ -69,6 +69,10 @@ public class AdminController {
 		return mav;
 	}
 	
+	@RequestMapping("/adminHome")
+	public @ResponseBody String adminHome() {
+		return "testadminhome";
+	}
 	
 	@GetMapping("/withdrawmemlistS")
 	public ModelAndView withdrawMemListS() {
