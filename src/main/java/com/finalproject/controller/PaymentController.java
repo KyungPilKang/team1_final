@@ -38,7 +38,7 @@ public class PaymentController {
     // Cart > Payment
     @PostMapping(value = "/order")
     public ModelAndView order(@RequestParam String[] order_book_num, @RequestParam String[] order_qty,
-                              @RequestParam(value = "total_price") int total_price) {
+                              @RequestParam String[] order_book_subject, @RequestParam(value = "total_price") int total_price) {
         ModelAndView mv = new ModelAndView();
         // 임시 세션
         session.setAttribute("username", "jay");
@@ -48,11 +48,23 @@ public class PaymentController {
             System.out.println("order_qty : " + Arrays.toString(order_qty));
             System.out.println("total_price : " + total_price);
 
+
             List<Book> cartList = cartService.getCartList(username);
+            int total_bookCount = 0;
             for (int i = 0; i < order_book_num.length; i++) {
                 cartService.updateQty(order_book_num[i], order_qty[i]);
+                total_bookCount += Integer.parseInt(order_qty[i]);
             }
-
+            int bookNum = Integer.parseInt(order_book_num[0]);
+            Book book = bookStoreService.selectBook(bookNum);
+            System.out.println("북이미지:" + book.getBook_img());
+            String bookSubList = Arrays.toString(order_book_subject);
+            String bookSubjects = bookSubList.replace("[", "").replace("]", "");
+            System.out.println("order_book_subject : " + bookSubjects);
+            System.out.println("total_bookCount : " + total_bookCount);
+            mv.addObject("order_book_subject", bookSubjects);
+            mv.addObject("book_img", book.getBook_img());
+            mv.addObject("total_bookCount", total_bookCount);
             mv.addObject("orderList", cartList);
             mv.addObject("qtyList", order_qty);
             mv.addObject("total_price", total_price);
@@ -74,8 +86,12 @@ public class PaymentController {
         session.setAttribute("username", "jay");
         String username = (String) session.getAttribute("username");
         try {
-            List<Book> cartList = Collections.singletonList(bookStoreService.selectBook(book_num));
+            Book book = bookStoreService.selectBook(book_num);
+            List<Book> cartList = Collections.singletonList(book);
             List<String> qtyList = Collections.singletonList("1");
+            mv.addObject("order_book_subject", book.getBook_subject());
+            mv.addObject("book_img", book.getBook_img());
+            mv.addObject("total_bookCount", "1");
             mv.addObject("orderList", cartList);
             mv.addObject("qtyList", qtyList);
             mv.addObject("total_price", book_price);
@@ -109,7 +125,7 @@ public class PaymentController {
                 // order_book을 테이블에 insert
                 paymentService.insertOrderBook(orderNum, bookNum, bookCount);
                 // 3. 책 판매량 업데이트
-                bookStoreService.updateBookSales(Integer.parseInt(bookNum),bookCount);
+                bookStoreService.updateBookSales(Integer.parseInt(bookNum), bookCount);
             }
             // 4. 마지막으로 username에 해당하는 cart DB를 전부 제거한다
             cartService.deleteCartByUser(username);

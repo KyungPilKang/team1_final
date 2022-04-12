@@ -92,6 +92,7 @@
                                 </div>
                                 <input type="hidden" value="${cart.book_num}" name="order_book_num"/>
                                 <input type="hidden" value="${cart.book_reprice}" id="hidePrice${cart.book_num}"/>
+                                <input type="hidden" value="${cart.book_subject}" name="order_book_subject"/>
                                 <div class="col-md-2"
                                      style="display: flex; justify-content:center; align-items: center">
                                     <input class="form-control text-center me-3 order_qty"

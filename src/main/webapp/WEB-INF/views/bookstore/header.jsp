@@ -2,9 +2,6 @@
          pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<%-- header css --%>
-<%--<link href="${pageContext.request.contextPath}/resources/freelance/css/style.css" rel="stylesheet">--%>
-
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
     <a href="/freereg1" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
@@ -18,6 +15,7 @@
 
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
+
             <a href="/book-store/regform" class="nav-item nav-link" style="color:red">교재등록(관리자)</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link" data-bs-toggle="dropdown">프리랜서</a>
@@ -43,7 +41,7 @@
 
 
 <!-- Header Start -->
-<div class="container-fluid bg-primary py-5 mb-5" id="containerform">
+<div class="container-fluid bg-primary py-5 mb-5" id="containerform" style="background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7));">
     <div class="container py-5">
         <div class="row justify-content-center">
             <div class="col-lg-10 text-center">
