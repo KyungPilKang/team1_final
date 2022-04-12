@@ -19,7 +19,10 @@ public class Order {
     private String sangse_juso; // 상세주소
     private String phone; // 연락처
     private String email; // 이메일
-    private  int total_price; // 주문 총액
+    private int total_price; // 주문 총액
+    private int total_count; // 주문한 총 수량
+    private String book_img;  // 주문한 책 이미지
+    private String subjectList; // 주문한 책 제목들
 
     public String getOrder_num() {
         return order_num;
@@ -132,5 +135,29 @@ public class Order {
 
     public void setTotal_price(int total_price) {
         this.total_price = total_price;
+    }
+
+    public int getTotal_count() {
+        return total_count;
+    }
+
+    public void setTotal_count(int total_count) {
+        this.total_count = total_count;
+    }
+
+    public String getBook_img() {
+        return book_img;
+    }
+
+    public void setBook_img(String book_img) {
+        this.book_img = book_img;
+    }
+
+    public String getSubjectList() {
+        return subjectList;
+    }
+
+    public void setSubjectList(String subjectList) {
+        this.subjectList = subjectList;
     }
 }
