@@ -54,38 +54,18 @@
 		<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse" id="navbarCollapse">
-			<div class="navbar-nav ms-auto p-4 p-lg-0">
-				<div class="nav-item dropdown">
-					<a href="#" class="nav-link" data-bs-toggle="dropdown">프리랜서</a>
-					<div class="dropdown-menu fade-down m-0">
-						<a href=# class="dropdown-item">프리랜서 등록</a>
-						<a href=# class="dropdown-item">프리랜서 조회</a>
-					</div>
-				</div>
-				<div class="nav-item dropdown">
-					<a href="#" class="nav-link" data-bs-toggle="dropdown">강의</a>
-					<div class="dropdown-menu fade-down m-0">
-						<a href=# class="dropdown-item">강의 등록</a>
-						<a href=# class="dropdown-item">강의 조회</a>
-					</div>
-				</div>
-				<a href="about.html" class="nav-item nav-link">마이페이지</a>
-				<a href="courses.html" class="nav-item nav-link">고객센터</a>
-				<a href=# class="nav-item nav-link">로그아웃</a>
-			</div>
-		</div>
+		
 	</nav>
 	<!-- Navbar End -->
 
     <!-- Contact Start -->
  
-    <div class="container-xxl py-10 mt-3">
+    <div class="container-xxl py-10 mt-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">TERMSAGREE</h6>
-                <h1 class="mt-3 mb-3">약관 동의</h1>
-                <div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float:none; margin:0 auto">
+                <h1 class="mt-3 mt-3">약관 동의</h1>
+                <div class="row text-center col-lg-4 col-md-12 wow fadeInUp mt-3" data-wow-delay="0.5s" style="width: 30%; float:none; margin:0 auto">
                     <form>
                      	<div class="row">
             				<div class="col-11">
@@ -94,7 +74,7 @@
         					<div class="col-1">
             					<input id="checkAll" type="checkbox"  class="form-check-input">
         					</div>
-        			
+        					<hr>
                         	<!-- 이용약관 동의 체크박스 -->
             			<div class="col-11">
           					<h5 style="text-align:left;">이용약관 동의</h5>
@@ -102,6 +82,7 @@
        					<div class="col-1">
         					<input id="checkbox1" name="checkTmp" type="checkbox"  class="form-check-input">
     					</div>
+    					
     					<div class="col-12 form-floating">
       						<textarea readonly style="width:100%; height: 100px; resize:none;">
       						제1장 총 칙
