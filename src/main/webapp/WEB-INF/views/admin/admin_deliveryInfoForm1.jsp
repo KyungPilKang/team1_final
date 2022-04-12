@@ -48,8 +48,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.html" class="nav-item nav-link">강사</a>
-                <a href="about.html" class="nav-item nav-link">교육업 종사자</a>
-                <a href="courses.html" class="nav-item nav-link active">학생/학부모</a>
+                <a href="courses.html" class="nav-item nav-link active">학생</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
@@ -90,7 +89,7 @@
             </div>
             
             <div class="col-lg-7 col-md-7 text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="pt-5 pb-0">사용자ID 상품 배송현황</h6>
+                <h6 class="pt-5 pb-0">${orderInfo.username} 상품 배송현황</h6>
             </div>
 
             <div class="row g-1 justify-content-center">
@@ -146,7 +145,7 @@
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-left py-2 px-2">2022.02.30</small>
+                            <small class="flex-fill text-left py-2 px-2">${orderInfo.order_date}</small>
                         </div>
                 </span>
             </div>
@@ -160,7 +159,7 @@
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-left py-2 px-2">A234A3</small>
+                            <small class="flex-fill text-left py-2 px-2">${orderInfo.order_num}</small>
                         </div>
                 </span>
             </div>
@@ -188,7 +187,7 @@
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-left py-2 px-2">3 권</small>
+                            <small class="flex-fill text-left py-2 px-2">${orderBookInfo.order_book_count} 권</small>
                         </div>
                 </span>
             </div>
@@ -202,7 +201,7 @@
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top border-bottom">
-                            <small class="flex-fill text-left py-2 px-2">30,000 원</small>
+                            <small class="flex-fill text-left py-2 px-2">${orderInfo.total_price} 원</small>
                         </div>
                 </span>
             </div>

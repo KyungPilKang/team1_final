@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.finalproject.dto.Answer;
 import com.finalproject.dto.Member;
+import com.finalproject.dto.Order;
+import com.finalproject.dto.OrderBook;
 import com.finalproject.dto.Request;
 
 
@@ -15,11 +17,16 @@ public interface AdminService {
 	
 	List<Member> getMemberListByRole(String role) throws Exception;
 	
-	Request getRequestInfoByRole(String role) throws Exception;
-	Answer getAnswerInfoByRole(String role) throws Exception;
+	List<Order> getOrderListByState(String order_state) throws Exception;
+	List<OrderBook> getOrderBookByState(String order_state) throws Exception;
 	
-	Request getRequestRegByRole(String role) throws Exception;
-	Answer getAnswerRegByRole(String role) throws Exception;
+	Order getOrderInfoByNum(String order_num) throws Exception;
+	OrderBook getOrderBookInfoByNum(String order_num) throws Exception;
+
+	void insertAnsCont(Answer ansCont) throws Exception;
+	Request getRequestInfoByNum(int requestNum) throws Exception;
+	Answer getAnswerInfoByNum(int requestNum) throws Exception;
+	
 	
 //	void inputQna(Answer ans) throws Exception;
 //	List<Request> getRequestListByRole(String role);	

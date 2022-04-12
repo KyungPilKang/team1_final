@@ -48,8 +48,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.html" class="nav-item nav-link">강사</a>
-                <a href="about.html" class="nav-item nav-link">교육업 종사자</a>
-                <a href="courses.html" class="nav-item nav-link active">학생/학부모</a>
+                <a href="courses.html" class="nav-item nav-link active">학생</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">

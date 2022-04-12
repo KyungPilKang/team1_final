@@ -48,8 +48,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.html" class="nav-item nav-link">강사</a>
-                <a href="about.html" class="nav-item nav-link">교육업 종사자</a>
-                <a href="courses.html" class="nav-item nav-link active">학생/학부모</a>
+                <a href="courses.html" class="nav-item nav-link active">학생</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
@@ -112,55 +111,34 @@
                     
 
                     <div class="tab-content">
-                        <div id="tab-3" class="tab-pane fade show p-0 active">
-                            
-                            <div class="job-item p-4 mb-4">
-                                <div class="row g-4">
-                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
-                                        <div class="text-start ps-4">
-                                            <h5 class="mb-3">국어책, 수학책, 과학책 (40,000원 | 3권)</h5>
-                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>사용자 ID</span>
-                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>주문일 2021.06.03</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h6 class="mb-3">A22086560780780264</h6>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="">상품 배송완료</a>
-                                        </div>
-                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>배송완료일 2021.06.03</small>
-                                    </div>
-                                </div>
-                            </div>
+                        <div id="tab-1" class="tab-pane fade show p-0 active">
+                        
+							<c:forEach items="${orderList}" var="order" varStatus="status">
+	                            <div class="job-item p-4 mb-4">
+	                                <div class="row g-4">
+	                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
+	                                        <img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
+	                                        <div class="text-start ps-4">
+	                                            <h5 class="mb-3"><!-- 국어책, 수학책, 과학책 --> (${order.total_price} 원 | ${orderbook.order_book_count} 권)</h5>
+	                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>${order.username}</span>
+	                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>주문일 ${order.order_date}</small>
+	                                        </div>
+	                                    </div>
 
-                            <div class="job-item p-4 mb-4">
-                                <div class="row g-4">
-                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
-                                        <div class="text-start ps-4">
-                                            <h5 class="mb-3">국어책, 수학책, 과학책 (40,000원 | 3권)</h5>
-                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>사용자 ID</span>
-                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>주문일 2021.06.03</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h6 class="mb-3">A22086560780780264</h6>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="">상품 배송완료</a>
-                                        </div>
-                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>배송완료일 2021.06.03</small>
-                                    </div>
-                                </div>
-                            </div>
+	                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
+	                                        <div class="text-start ps-4">
+	                                            <h6 class="mb-3">${order.order_num}</h6>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+	                                        <div class="d-flex mb-3">
+	                                            <a class="btn btn-primary" href="">${order.order_state}</a>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+							</c:forEach>
+							
 
                             <a class="btn btn-primary py-3 px-5" href="">More List</a>
                         </div>

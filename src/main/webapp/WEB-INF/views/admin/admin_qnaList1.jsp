@@ -164,9 +164,16 @@
 									</div>
 									<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
 										<div class="d-flex mb-3">
-											<a class="btn btn-primary" href="">
-											${ansList[status.index].answer_content == null ? '답변대기' : ansList[status.index].answer_state}
-											</a>
+											<c:if test="${ansList[status.index].answer_content == null}">
+												<a class="btn btn-primary" href="/qnareg/${req.request_num }">
+													답변대기
+												</a>
+											</c:if>
+											<c:if test="${ansList[status.index].answer_content != null}">
+												<a class="btn btn-primary" href="/qnainfo/${req.request_num }">
+													${ansList[status.index].answer_state }
+												</a>
+											</c:if>
 										</div>
 										<small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>
 											${ansList[status.index].answer_date == null ? '답변대기' : ansList[status.index].answer_date}</small>

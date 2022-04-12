@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import com.finalproject.dao.AdminDAO;
 import com.finalproject.dto.Answer;
 import com.finalproject.dto.Member;
+import com.finalproject.dto.Order;
+import com.finalproject.dto.OrderBook;
 import com.finalproject.dto.Request;
 
 @Service
@@ -34,26 +36,36 @@ public class AdminServiceImpl implements AdminService {
 	
 	
 	@Override
-	public Request getRequestInfoByRole(String role) throws Exception {
-		Request reqInfo = adminDAO.queryReqInfo(role);
-		return reqInfo;
+	public List<Order> getOrderListByState(String order_state) throws Exception {
+		return adminDAO.orderList(order_state);
 	}
 	@Override
-	public Answer getAnswerInfoByRole(String role) throws Exception {
-		Answer ansInfo = adminDAO.queryAnsInfo(role);
-		return ansInfo;
+	public List<OrderBook> getOrderBookByState(String order_state) throws Exception {
+		return adminDAO.orderBook(order_state);
 	}
 	
 	
 	@Override
-	public Request getRequestRegByRole(String role) throws Exception {
-		Request reqReg = adminDAO.queryReqReg(role);
-		return reqReg;
+	public Order getOrderInfoByNum(String order_num) throws Exception {
+		return adminDAO.orderInfo(order_num);
 	}
 	@Override
-	public Answer getAnswerRegByRole(String role) throws Exception {
-		Answer ansReg = adminDAO.queryAnsReg(role);
-		return ansReg;
+	public OrderBook getOrderBookInfoByNum(String order_num) throws Exception {
+		return adminDAO.orderBookInfo(order_num);
+	}
+	
+
+	@Override
+	public void insertAnsCont(Answer ansCont) throws Exception {
+		adminDAO.insertAnswerCont(ansCont);
+	}
+	@Override
+	public Request getRequestInfoByNum(int requestNum) throws Exception {
+		return adminDAO.getRequestInfoByNum(requestNum);
+	}
+	@Override
+	public Answer getAnswerInfoByNum(int requestNum) throws Exception {
+		return adminDAO.getAnswerInfoByNum(requestNum);
 	}
 	
 	
