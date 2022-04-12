@@ -120,7 +120,7 @@
 
 			               
 			               <a href="/studydetail1/${study.study_no}"> 
-			               		<button id="showdetail" class="btn btn-outline-primary w-30 py-3 showdetail" style="float:right; margin-left:3px;font-size: 1.0em; height:50px;">게시글보기</button>
+			               		<button id="showdetail" class="btn btn-outline-primary w-30 py-2 showdetail" style="float:right; font-size: 1.0em;">상세보기</button>
 			              </a> 
 				</div>
 		        </c:forEach> 	

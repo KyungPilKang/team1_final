@@ -242,14 +242,15 @@
 	<script>
 		
 		$(document).ready(function(){
-		let ismaker = "<c:out value='${ismaker}'/>";	
+		let ismaker = "<c:out value='${ismaker}'/>";
 		console.log("ismaker" + ismaker);
 		$('#makerbtn').on('click', function(){
 			if(ismaker=='yes'){
-				document.getElementById("#makerbtn").disabled = false; 
+				$('#makerbtn').attr('disabled', false); 
 				} else {
 				alert("스터디를 개설해 주세요");
-				document.getElementById("#makerbtn").disabled = true; 
+				$('#makerbtn').attr('disabled', true); 
+				return false;
 				
 			}
 		});
