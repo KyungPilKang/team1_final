@@ -43,6 +43,7 @@ public class StudyController {
 	@GetMapping("studymain")
 	public String studymain(Model model) {
 		String maker = (String)session.getAttribute("username");
+		System.out.println("여기"+maker);
 		//String maker ="김민정";		
 		try {
 			String ismaker = studyservice.makerReturn(maker);
