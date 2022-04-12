@@ -118,7 +118,6 @@
 				<div class="nav-item dropdown me-3">
 					<a href="http://localhost:8090/studymain" class="nav-link" data-bs-toggle="dropdown">스터디</a>
 					<div class="dropdown-menu fade-down m-0">
-						<a href="http://localhost:8090/studymain" style="font-size: 1.3em;" class="dropdown-item">메인페이지</a>
 						<a href="http://localhost:8090/studyReg" style="font-size: 1.3em;" class="dropdown-item">등록하기</a>
 						<a href="http://localhost:8090/studyfind" style="font-size: 1.3em;" class="dropdown-item">매칭하기</a>
 						<a href="http://localhost:8090/studyclass" style="font-size: 1.3em;" class="dropdown-item">참여현황</a>
@@ -238,7 +237,7 @@
 				<div class="col-12">
 					<div class="col-12 mt-4">
 						<button id="listbtn" class="btn btn-outline-primary w-50 py-3"
-							onclick="window.location='/studyfindcnf'"
+							onclick="window.location='/studyclass'" 
 						>목록 으로</button>
 					</div>
 				</div>
@@ -247,7 +246,7 @@
 		<div class="row text-center col-lg-4 col-md-12 wow fadeInUp"
 			data-wow-delay="0.3s" style="width: 30%; float: none;"
 		>
-			<div class="row g-3">
+<!-- 			<div class="row g-3">
 				<div class="col-12">
 					<div class="col-12 mt-4">
 						<button id="attend" class="btn btn-outline-primary w-50 py-3">참여
@@ -255,7 +254,7 @@
 
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 

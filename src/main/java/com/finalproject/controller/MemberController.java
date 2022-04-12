@@ -1,19 +1,8 @@
 package com.finalproject.controller;
 
-
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,10 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.finalproject.dao.MemberDAO;
 import com.finalproject.dto.Member;
-import com.finalproject.dto.Request;
 import com.finalproject.service.MemberServiceImpl;
 
 @Controller
@@ -46,6 +32,16 @@ public class MemberController {
 			e.printStackTrace();
 		}
 		return "아이디 test, 비번 1234 생성완료";
+	}
+	
+	@RequestMapping("testid2")
+	public @ResponseBody String testid2(Member member) {
+		try {
+			memberService.createTestid(member);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return "탈퇴회원 리스트 작성위한 db생성";
 	}
 	//admin 계정 만들기
 	@RequestMapping("admin")
@@ -234,10 +230,14 @@ public class MemberController {
 	return "/loginJoin/modifyPassword";	
 	}
 	
-	@RequestMapping("/logout")
-	public String logout() {
-		session.invalidate();
-		return "/loginJoin/loginForm";
+	@GetMapping("logout")
+	public String logout() {	
+		try {	
+			session.invalidate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return "redirect:loginJoin/loginForm";
 	}
 	
 	

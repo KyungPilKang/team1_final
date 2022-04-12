@@ -59,35 +59,26 @@
 <!-- Book List Start -->
 <div class="bookstore_container container-xxl py-5">
     <div class="text-center">
-        <label>
-            <select class="btn-sm btn btn-primary select_cat" name="">
-                <option value="book">도서명</option>
-                <option value="tutor">강사명</option>
-                <option value="content">내용</option>
-            </select>
-        </label>
-        <label for="inner_search"></label>
-
-
-        <input type="text" id="inner_search" class="inner_search" placeholder="검색어를 입력"
-               onkeydown="javascript:if(event.keyCode===13){함수('');}"
-               onfocus="if(this.value===this.defaultValue) this.value='';"
-               onblur="if(this.value==='') this.value=this.defaultValue;" value="">
-        <button title="검색" type="submit" class="btn btn-sm btn-primary px-3" onclick="함수('');"
-                onmousedown="try{에러를 던질 수 있는 무언가를 함수로('이벤트','/검색버튼');}catch(e){}">
-            <i class="fas fa-search"></i>
-        </button>
+        <form action="/book-store/book-search" method="get" id="book_search">
+            <label>
+                <select class="btn-sm btn btn-primary select_cat" name="book_cat">
+                    <option value="book_subject">도서명</option>
+                    <option value="book_author">저자명</option>
+                    <option value="book_content">내용</option>
+                </select>
+            </label>
+            <label for="inner_search"></label>
+            <input type="text" id="inner_search" class="inner_search" placeholder="검색어를 입력" name="book_keyword">
+            <button title="검색" type="submit" class="btn btn-sm btn-primary px-3">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
         <%--            <input type="submit" id=""/>--%>
         <br>
         <div class="keyword_box">
-            ▲ 급상승
-            <a href="#">#키워드</a>&nbsp;
-            <a href="#">#키워드</a>&nbsp;
-            <a href="#">#키워드</a>&nbsp;
-            <a href="#">#키워드</a>&nbsp;
-            <a href="#">#키워드</a>&nbsp;
-            <a href="#">#키워드</a>&nbsp;
-            <a href="#">#키워드</a>&nbsp;
+            <c:if test="${!empty keyword}">
+                '${keyword}'을(를) 포함한 ${resultCount}건의 검색결과가 존재합니다.
+            </c:if>
         </div>
 
 
@@ -95,17 +86,17 @@
             <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
                 <li class="nav-item">
                     <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill"
-                       href="#">
+                       href="/book-store/sort/sales" onclick="location.href='/book-store/sort/sales'">
                         <h6 class="mt-n1 mb-0">판매량</h6>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="#">
+                    <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="/book-store/sort/newest">
                         <h6 class="mt-n1 mb-0">최신순</h6>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="#">
+                    <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="/book-store/sort/name">
                         <h6 class="mt-n1 mb-0">상품명</h6>
                     </a>
                 </li>
@@ -163,7 +154,7 @@
                             </div>
                             <div class="detail">
                                 <div class="title">
-                                    <a href="#"><strong>${book.book_subject}</strong>
+                                    <a href="/book-store/bookdetail?book_num=${book.book_num}"><strong>${book.book_subject}</strong>
                                     </a>
                                 </div>
 
@@ -187,14 +178,25 @@
                                 <br>
                                 <br>
                                 <div class="button">
-                                    <a href="#" class="btn-sm btn-primary">
+                                    <a href="/book-store/bookdetail?book_num=${book.book_num}" class="btn-sm btn-primary">
                                         상세보기
                                     </a>
                                 </div>
                             </div>
                             <div class="book_add">
+                                    <%--                                <c:choose>--%>
+                                    <%--                                <c:when test="${username == admin}">--%>
                                 <a class="btn-sm btn-primary" onclick="putCart(${book.book_num})">장바구니 담기</a>
                                 <a class="btn-sm btn-primary" onclick="buyNow(${book.book_num},${book.book_reprice})">바로 구매하기</a>
+                                    <%--                                </c:when>--%>
+                                    <%--                                    <c:otherwise>--%>
+                                    <%--                                        <a class="btn-sm btn-primary" onclick="alert('로그인이 필요합니다')">장바구니 담기</a>--%>
+                                    <%--                                        <a class="btn-sm btn-primary" onclick="alert('로그인이 필요합니다.')">바로 구매하기</a>--%>
+                                    <%--                                    </c:otherwise>--%>
+                                    <%--                                </c:choose>--%>
+                                    <%--                                <c:if test = "${username == admin}">--%>
+                                <a class="btn-sm btn-primary" href="/book-store/delbook?book_num=${book.book_num}" style="background: red">교재 삭제</a>
+                                    <%--                                </c:if>--%>
                                 <form id="buyNow" method="post">
                                     <input type="hidden" id="book_num" name="book_num"/>
                                     <input type="hidden" id="book_price" name="book_price"/>
@@ -236,7 +238,7 @@
 <%-- sweetalert --%>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-<%-- bookStore putCart Javascript --%>
+<%-- bookStore Javascript --%>
 <script src="${pageContext.request.contextPath}/resources/bookstore/js/bookStore.js"></script>
 
 

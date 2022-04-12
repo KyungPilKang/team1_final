@@ -59,12 +59,6 @@
 			select * from final.member where nickname=#{nickname}
 		]]>
 		</select>
-		
-		<!-- <select id="getMemberByUsername" resultType="CustomUserDetails" parameterType="String">
-		<![CDATA[
-			select * from final.member where username=#{username}
-		]]>
-		</select> -->
 
 		<update id="update_login_count" parameterType="Member">
 		<![CDATA[
@@ -94,42 +88,34 @@
 			withdraw_contents=#{withdraw_contents}, withdraw_date=#{withdraw_date} where no = #{no}
 		]]>
 		</update>
-		
-		<select id="memberList" resultType="Member" >
-		<![CDATA[
-			SELECT * FROM final.member
-		]]>
-		</select>
-	
-		
 	
 </mapper>
 
 <!-- 
 CREATE TABLE IF NOT EXISTS `final`.`member` (
   `no` INT(11) NOT NULL AUTO_INCREMENT,
-  `username` VARCHAR(1000) NULL DEFAULT 'NULL',
+  `username` VARCHAR(100) NULL DEFAULT 'NULL',
   `password` VARCHAR(1000) NULL DEFAULT NULL,
-  `name` VARCHAR(1000) NULL DEFAULT NULL,
-  `nickname` VARCHAR(1000) NULL DEFAULT NULL,
-  `email` VARCHAR(1000) NULL DEFAULT NULL,
-  `birth` DATE NULL DEFAULT NULL,
-  `age` VARCHAR(1000) NULL DEFAULT NULL,
-  `gender` VARCHAR(1000) NULL DEFAULT NULL,
-  `phone` VARCHAR(1000) NULL DEFAULT NULL,
-  `zipcode` VARCHAR(1000) NULL DEFAULT NULL,
-  `doro_juso` VARCHAR(1000) NULL DEFAULT NULL,
-  `sangse_juso` VARCHAR(1000) NULL DEFAULT NULL,
-  `role` VARCHAR(1000) NULL DEFAULT 'ROLE_USER',
-  `provider` VARCHAR(1000) NULL DEFAULT NULL,
-  `provider_id` VARCHAR(1000) NULL DEFAULT NULL,
-  `withdraw_status` varchar(100) DEFAULT NULL,
-  `withdraw_type` VARCHAR(1000) NULL DEFAULT NULL,
+  `name` VARCHAR(100) NULL DEFAULT NULL,
+  `nickname` VARCHAR(100) NULL DEFAULT NULL,
+  `email` VARCHAR(100) NULL DEFAULT NULL,
+  `birth` VARCHAR(100) DEFAULT NULL,
+  `age` VARCHAR(100) NULL DEFAULT NULL,
+  `type` VARCHAR(100) NULL DEFAULT NULL,
+  `phone` VARCHAR(100) NULL DEFAULT NULL,
+  `zipcode` VARCHAR(100) NULL DEFAULT NULL,
+  `doro_juso` VARCHAR(100) NULL DEFAULT NULL,
+  `sangse_juso` VARCHAR(100) NULL DEFAULT NULL,
+  `role` VARCHAR(100) NULL DEFAULT 'ROLE_USER',
+  `provider` VARCHAR(100) NULL DEFAULT NULL,
+  `provider_id` VARCHAR(100) NULL DEFAULT NULL,
+  `withdraw_status` VARCHAR(100) DEFAULT NULL,
+  `withdraw_type` VARCHAR(100) NULL DEFAULT NULL,
   `withdraw_contents` VARCHAR(1000) NULL DEFAULT NULL,
   `login_count` int(11) DEFAULT '0',
-  `withdraw_date` datetime DEFAULT NULL,
+  `withdraw_date` VARCHAR(100) DEFAULT NULL,
   PRIMARY KEY (`no`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci
+COLLATE = utf8mb4_0900_ai_cimember
  -->

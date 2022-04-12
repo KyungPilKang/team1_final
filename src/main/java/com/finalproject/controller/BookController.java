@@ -38,14 +38,6 @@ public class BookController {
     private ServletContext servletContext;
 
 
-//    @GetMapping("")
-//    public String mainpage() {
-//        return "/bookstore/bookStore";
-//    }
-
-
-
-
     @RequestMapping("/delivery")
     public String delivery() {
         return "/bookstore/delivery";
@@ -135,6 +127,75 @@ public class BookController {
     }
 
 
+    @GetMapping(value = "/bookdetail")
+    public ModelAndView boardDetail(@RequestParam(value = "book_num") int book_num) {
+        ModelAndView mv = new ModelAndView();
+        try{
+            Book book = bookStoreService.selectBook(book_num);
+            mv.addObject("book",book);
+            mv.setViewName("bookstore/bookDetail");
+        } catch (Exception e){
+            e.printStackTrace();
+            mv.addObject("err", e.getMessage());
+        }
+        return mv;
+    }
 
+    @GetMapping(value = "/delbook")
+    public ModelAndView delbook(@RequestParam(value = "book_num") int book_num){
+        ModelAndView mv = new ModelAndView();
+        try {
+            bookStoreService.removeBook(book_num);
+            mv.setViewName("redirect:/book-store");
+        } catch (Exception e) {
+            e.printStackTrace();
+            mv.addObject("err", e.getMessage());
+        }
+        return mv;
+    }
+
+
+    @GetMapping(value = "book-search")
+    public ModelAndView board_search(@ModelAttribute Book book, @RequestParam(value = "page", defaultValue = "1") int page) {
+
+        ModelAndView mv = new ModelAndView();
+        PageInfo pageInfo = new PageInfo();
+        try {
+            System.out.println("카테고리:"+book.getBook_cat());
+            System.out.println("검색어:"+book.getBook_keyword());
+            String category = book.getBook_cat();
+            String keyword = book.getBook_keyword();
+
+            List<Book> searchResults = bookStoreService.searchList(page,pageInfo,category,keyword);
+            int resultCount = searchResults.size();
+            mv.addObject("keyword",keyword);
+            mv.addObject("pageInfo", pageInfo);
+            mv.addObject("bookList",searchResults);
+            mv.addObject("resultCount",resultCount);
+            mv.setViewName("/bookstore/bookStore");
+        } catch (Exception e) {
+            e.printStackTrace();
+            mv.addObject("err", e.getMessage());
+        }
+        return mv;
+    }
+
+
+    @GetMapping(value = "/sort/{type}")
+    public ModelAndView sort(@PathVariable String type, @RequestParam(value = "page", defaultValue = "1") int page) {
+        ModelAndView mv = new ModelAndView();
+        PageInfo pageInfo = new PageInfo();
+        try {
+            System.out.println("값이 안오나?"+type);
+            List<Book> sortResults = bookStoreService.sortList(page,pageInfo,type);
+            mv.addObject("pageInfo", pageInfo);
+            mv.addObject("bookList",sortResults);
+            mv.setViewName("/bookstore/bookStore");
+        } catch (Exception e) {
+            e.printStackTrace();
+            mv.addObject("err", e.getMessage());
+        }
+        return mv;
+    }
 
 }

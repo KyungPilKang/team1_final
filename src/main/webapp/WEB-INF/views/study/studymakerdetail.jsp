@@ -63,25 +63,32 @@
 	<!-- Navbar Start -->
 	<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
 		<a href="/freereg1" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-			<h2 class="m-0 text-primary">
+			<h1 class="m-0 text-primary">
 				<i class="fa fa-book me-3"></i>NEESFULL
-			</h2>
+			</h1>
 		</a>
 		<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<div class="navbar-nav ms-auto p-4 p-lg-0">
-				<a href="index.html" class="nav-item nav-link">Home</a>
-				<a href="about.html" class="nav-item nav-link">About</a>
-				<a href="courses.html" class="nav-item nav-link">Courses</a>
-				<div class="nav-item dropdown">
-					<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+				<div class="nav-item dropdown me-3">
+					<a href="http://localhost:8090/studymain" class="nav-link" data-bs-toggle="dropdown">스터디</a>
 					<div class="dropdown-menu fade-down m-0">
-						<a href=# class="dropdown-item">Our Team</a>
-						<a href=# class="dropdown-item">Testimonial</a>
-						<a href=# class="dropdown-item">404 Page</a>
+						<a href="http://localhost:8090/studymain" style="font-size: 1.3em;" class="dropdown-item">메인페이지</a>
+						<a href="http://localhost:8090/studyReg" style="font-size: 1.3em;" class="dropdown-item">등록하기</a>
+						<a href="http://localhost:8090/studyfind" style="font-size: 1.3em;" class="dropdown-item">매칭하기</a>
+						<a href="http://localhost:8090/studyclass" style="font-size: 1.3em;" class="dropdown-item">참여현황</a>
 					</div>
+				</div>
+				<div class="me-3">
+					<a href="about.html" class="nav-item nav-link">마이페이지</a>
+				</div>
+				<div class="me-3">
+					<a href="courses.html" class="nav-item nav-link">고객센터</a>
+				</div>
+				<div class="me-3">
+					<a href=# class="nav-item nav-link">로그아웃</a>
 				</div>
 			</div>
 		</div>
@@ -172,7 +179,7 @@
 				<div class="row g-3">
 					<div class="col-12">
 						<div class="col-12 mt-4">
-						<form action="/deletestudy" method="post">
+						<form action="/deletestudy" method="post" onsubmit="return checkit()">
 						<input name="study_no" id="study_no" type="hidden" value='${studyPosted.study_no}'>
 							<button id="contractbtn" class="btn btn-outline-primary w-35 py-3">삭제 하기</button>
 						</form>
@@ -294,22 +301,11 @@
 			}
 		})
 	});
-		/* //attendList(아이디)
-	   $("#attendList").val(`${isattend}`);
-	   $('#attendList').on('change',function(e) {
-		   let isattend = e.currentTarget.value;
-		   alert(isattend);
-		   window.location.href="/studymakerdetail?isattend="+isattend;
-	   }); 
-	   
-	   //attendResult(참여수락/탈락/취소)
-	   $("#attendResult").val(`${isresult}`);
-	   $('#attendResult').on('change',function(e) {
-		   let isresult = e.currentTarget.value;
-		   alert(isresult);
-		   window.location.href="/studymakerdetail?attendResult="+isresult;
-	   }); */
-	 
+	
+	function checkit(){
+		alert('게시글을 삭제 하시겠습니까?');
+		return true;
+	}
 	   
 	</script>
 </body>

@@ -5,15 +5,16 @@
 
 
 <mapper namespace="com.finalproject.dao.StudyDAO">
-<!-- study 신청 상태(옵션에따른) 리스트 반환-->
- 	 <select id="searchStudyByStatus" resultType="Study" parameterType="Map">
+	<!-- study 신청 상태(옵션에따른) 리스트 반환 -->
+	<select id="searchStudyByStatus" resultType="Study"
+		parameterType="Map">
 		<![CDATA[
 			select * from study where study_no in (SELECT study_no from studyteam where user_id = #{user_id} and team_status=#{status})
 	  	]]>
-	 </select> 
+	</select>
 
-	
-<!-- 등록 -->
+
+	<!-- 등록 -->
 	<insert id="regStudy" parameterType="Study">
 		<![CDATA[
 			insert into study (maker,study_sname,study_grade,study_subject,study_type,study_target_level,study_title,study_fdate,study_edate,study_ftime,study_etime,study_contents,study_kakao)
@@ -21,124 +22,133 @@
         ]]>
 	</insert>
 
-<!--하나의 게시물 선택  -->
-	<select id="getStudydetail" resultType="Study" parameterType="int">
+	<!--하나의 게시물 선택 -->
+	<select id="getStudydetail" resultType="Study"
+		parameterType="int">
 		<![CDATA[
 			select * from study where study_no = #{study_no} 
 		 ]]>
 	</select>
 
-<!-- 개설자 목록 리스트 반환 -->
- 	 <select id="studymakerList" resultType="Study" parameterType="String">
+	<!-- 개설자 목록 리스트 반환 -->
+	<select id="studymakerList" resultType="Study"
+		parameterType="String">
 		<![CDATA[
 			select * from study where maker = #{maker}
 	  	]]>
-	 </select> 
+	</select>
 
-<!--개설자 수정-->
-	<update id="updateStudy" parameterType="study" >
+	<!--개설자 수정 -->
+	<update id="updateStudy" parameterType="study">
 		<![CDATA[
 			update study set maker=#{maker},study_sname=#{study_sname},study_grade=#{study_grade},study_subject=#{study_subject},study_type=#{study_type},study_target_level=#{study_target_level},study_title=#{study_title},study_fdate=#{study_fdate},study_edate=#{study_edate},study_ftime=#{study_ftime}, study_etime=#{study_etime}, study_contents= #{study_contents},study_kakao=#{study_kakao} 
 			where study_no=#{study_no}
 		]]>
 	</update>
-	
-<!-- 개설자 삭제-->
+
+	<!-- 개설자 삭제 -->
 	<delete id="removeStudy" parameterType="int">
 		<![CDATA[
 			delete from study where study_no=#{study_no}
 		]]>
 	</delete>
 
-<!-- 내가 쓴 글 리스트 반환-->
-	<select id="makerListCount" parameterType="String" resultType="int" >
+	<!-- 내가 쓴 글 리스트 반환 -->
+	<select id="makerListCount" parameterType="String"
+		resultType="int">
  		<![CDATA[
  			select count(*) from study where maker=#{maker}
  		]]>
- 	</select>
- 	
-	<select id="makerList"  parameterType="String"  resultType="Study">
+	</select>
+
+	<select id="makerList" parameterType="String" resultType="Study">
 		<![CDATA[
 			select * from study where maker=#{maker} 
 		]]>
 	</select>
 
-<!-- 내가 쓴 글 "스터디팀" 리스트 반환-->
-	<select id="selectStudentApplyList" parameterType="int" resultType="Studyteam">
+	<!-- 내가 쓴 글 "스터디팀" 리스트 반환 -->
+	<select id="selectStudentApplyList" parameterType="int"
+		resultType="Studyteam">
 		<![CDATA[
 			select * from studyteam where study_no=#{study_no} and team_status = 'team_apply'
 		]]>
 	</select>
-	
-<!-- 참여 -->
-	<insert id="checkAttend" parameterType="Map" >
+
+	<!-- 참여 -->
+	<insert id="checkAttend" parameterType="Map">
 		<![CDATA[
 			 insert into studyteam (study_no, user_id, team_status) values(#{study_no},#{user_id},#{status})
 		]]>
 	</insert>
-	
-<!-- 참여취소 -->
+
+	<!-- 참여취소 -->
 	<delete id="cancelAttend" parameterType="Map">
 		<![CDATA[
 			delete from studyteam where user_id=#{user_id} and study_no=#{study_no}
 		]]>
 	</delete>
-<!-- 개설자 참여 수락 버튼 -->
-	<update id="changeApplyAceept" parameterType="Map" >
+	<!-- 개설자 참여 수락 버튼 -->
+	<update id="changeApplyAceept" parameterType="Map">
 		<![CDATA[
 			update studyteam set team_status= #{team_status} where study_no = #{study_no} and user_id = #{student_name}
 		]]>
-	</update> 
-<!-- 전체게시물 검색기반 조회(전체) -->
-	<select id="searchListAll" resultType="Study" parameterType="map">
+	</update>
+	<!-- 전체게시물 검색기반 조회(전체) -->
+	<select id="serchListAll" resultType="Study"
+		parameterType="Study">
 		<![CDATA[
-			select * from study where study_sname like CONCAT('%',#{search},'%') and study_grade like CONCAT('%',#{search},'%') and study_subject like CONCAT('%',#{search},'%') and study_type like CONCAT('%',#{search},'%') and study_target_level like CONCAT('%',#{search},'%')
+			select * from study where study_sname like CONCAT('%',#{study_sname},'%') and study_grade like CONCAT('%',#{study_grade},'%') and study_subject like CONCAT('%',#{study_subject},'%') and study_type like CONCAT('%',#{study_type},'%') and study_target_level like CONCAT('%',#{study_target_level},'%')
 		]]>
-	</select>  
-
-	
-</mapper>
-	
+	</select>
 
 
+	<select id="makerReturn" parameterType="String" resultType="int">
+		<![CDATA[
+			select count(*) from study where maker=#{maker} 
+		]]>
+	</select>
 
-
- 
-<!-- 
-
-create table study(
-	study_no int PRIMARY key AUTO_INCREMENT,
-    maker varchar(1000),
-    study_sname varchar(1000),
-    study_grade varchar(1000),
-    study_subject varchar(1000),
-    study_type varchar(1000),
-    study_target_level varchar(1000),
-    study_title varchar(1000),
-    study_fdate date,
-    study_edate date,
-    study_ftime varchar(1000),
-    study_etime varchar(1000),
-    study_contents MEDIUMTEXT,
-    study_kakao varchar(1000),
-    study_regdate DATETIME DEFAULT CURRENT_TIMESTAMP
-); 
-
-
-select * from study where study_no in (SELECT study_no from studyteam where user_id = '김민정' and team_status='team_apply');
-insert into study (maker, study_sname, study_grade, study_subject, study_type, study_target_level, study_title, study_fdate, study_edate, study_ftime, study_etime, study_contents, study_kakao, study_regdate) values('김길동', '중학교','1학년','국어','모의고사','최상','비문학배우기','2022-04-01','2022-04-25','08:00', '10:00', '비문학뿌시기','http://alsdk','2022-04-01 16:00:00');
-update study set maker='홍길동', study_sname='초등학교',study_grade='1학년',study_subject='수학',study_type='모의고사',study_target_level='최상',study_title='비문학배우기',study_fdate='2022-04-01',study_edate='2022-04-25',study_ftime='08:00', study_etime='10:00', study_contents= '로그파헤치기',study_kakao='http://alsdk',study_regdate='2022-04-01 16:00:00' where study_no = 3;
-delete from study where study_no=3;
-
-	
-	전체게시글조회 
-	<select id="regstudylist" resultType="study">
-    	<![CDATA[
-			select * from study order by study_regdate desc
-    	]]>
+	<!-- 조회(페이징 기능) -->
+	<select id="selectStudyCount" resultType="int">
+		<![CDATA[
+		select count(*) from study
+		]]>
 	</select>
 	
-select user_id from studyteam where study_no = '1' and team_status = 'team_apply';
-update studyteam set team_status= 'team_reject' where study_no = '1' and user_id = '김민정';
-update studyteam set team_status= 'team_accept' where study_no = '1' and user_id = '김민정';
--->
+	<select id="selectStudyList" resultType="Study" parameterType="map">
+		<![CDATA[
+		select *
+		from (select @rownum:=@rownum+1 rnum, tot.*
+			  from (select * from study where study_sname like CONCAT('%',#{cond.study_sname},'%') and study_grade like CONCAT('%',#{cond.study_grade},'%') and study_subject like CONCAT('%',#{cond.study_subject},'%') and study_type like CONCAT('%',#{cond.study_type},'%') and study_target_level like CONCAT('%',#{cond.study_target_level},'%')) tot,
+				  (select @rownum:=0) temp) sub
+		where rnum between #{startrow} and #{startrow}+9
+		]]>
+	</select>
+
+</mapper>
+
+
+
+
+
+
+<!-- create table study( study_no int PRIMARY key AUTO_INCREMENT, maker varchar(1000), 
+	study_sname varchar(1000), study_grade varchar(1000), study_subject varchar(1000), 
+	study_type varchar(1000), study_target_level varchar(1000), study_title varchar(1000), 
+	study_fdate date, study_edate date, study_ftime varchar(1000), study_etime 
+	varchar(1000), study_contents MEDIUMTEXT, study_kakao varchar(1000), study_regdate 
+	DATETIME DEFAULT CURRENT_TIMESTAMP ); select * from study where study_no 
+	in (SELECT study_no from studyteam where user_id = '김민정' and team_status='team_apply'); 
+	insert into study (maker, study_sname, study_grade, study_subject, study_type, 
+	study_target_level, study_title, study_fdate, study_edate, study_ftime, study_etime, 
+	study_contents, study_kakao, study_regdate) values('김길동', '중학교','1학년','국어','모의고사','최상','비문학배우기','2022-04-01','2022-04-25','08:00', 
+	'10:00', '비문학뿌시기','http://alsdk','2022-04-01 16:00:00'); update study set 
+	maker='홍길동', study_sname='초등학교',study_grade='1학년',study_subject='수학',study_type='모의고사',study_target_level='최상',study_title='비문학배우기',study_fdate='2022-04-01',study_edate='2022-04-25',study_ftime='08:00', 
+	study_etime='10:00', study_contents= '로그파헤치기',study_kakao='http://alsdk',study_regdate='2022-04-01 
+	16:00:00' where study_no = 3; delete from study where study_no=3; 전체게시글조회 
+	<select id="regstudylist" resultType="study"> <![CDATA[ select * from study 
+	order by study_regdate desc ]]> </select> select user_id from studyteam where 
+	study_no = '1' and team_status = 'team_apply'; update studyteam set team_status= 
+	'team_reject' where study_no = '1' and user_id = '김민정'; update studyteam 
+	set team_status= 'team_accept' where study_no = '1' and user_id = '김민정'; -->

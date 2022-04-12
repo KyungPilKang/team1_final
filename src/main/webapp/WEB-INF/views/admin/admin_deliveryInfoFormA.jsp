@@ -48,7 +48,8 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.html" class="nav-item nav-link">강사</a>
-                <a href="courses.html" class="nav-item nav-link active">학생</a>
+                <a href="about.html" class="nav-item nav-link">교육업 종사자</a>
+                <a href="courses.html" class="nav-item nav-link active">학생/학부모</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
@@ -89,7 +90,7 @@
             </div>
             
             <div class="col-lg-7 col-md-7 text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="pt-5 pb-0">${orderInfo.username} 상품 배송현황</h6>
+                <h6 class="pt-5 pb-0">사용자ID 상품 배송현황</h6>
             </div>
 
             <div class="row g-1 justify-content-center">
@@ -118,9 +119,8 @@
                 <span class="col-lg-2 col-md-3 text-center py-3"><i class="fa fa-2x fa-map-marker-alt text-secondary me-2"></i>배송중 ▶</span>
 
                 <span class="col-lg-2 col-md-3 text-center py-3"><i class="fa fa-2x fa-home text-secondary mb-2"></i>배송완료</span>
-            </div>
-
-
+            </div>   
+     
             
 
 
@@ -145,7 +145,7 @@
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-left py-2 px-2">${orderInfo.order_date}</small>
+                            <small class="flex-fill text-left py-2 px-2">2022.02.30</small>
                         </div>
                 </span>
             </div>
@@ -159,7 +159,7 @@
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-left py-2 px-2">${orderInfo.order_num}</small>
+                            <small class="flex-fill text-left py-2 px-2">A234A3</small>
                         </div>
                 </span>
             </div>
@@ -187,7 +187,7 @@
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-left py-2 px-2">${orderBookInfo.order_book_count} 권</small>
+                            <small class="flex-fill text-left py-2 px-2">3 권</small>
                         </div>
                 </span>
             </div>
@@ -201,21 +201,21 @@
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top border-bottom">
-                            <small class="flex-fill text-left py-2 px-2">${orderInfo.total_price} 원</small>
+                            <small class="flex-fill text-left py-2 px-2">30,000 원</small>
                         </div>
                 </span>
             </div>
 
-            <div class="row g-1 justify-content-center py-5">
-                <span class="col-lg-1 col-md-3">
-                    <button class="btn btn-primary w-100 py-1" type="submit">수정</button>
-                </span>
-                <span class="col-lg-1 col-md-3">
-                    <button class="btn btn-primary w-100 py-1" type="submit">완료</button>
-                </span>
-                <span class="col-lg-1 col-md-3">
-                    <button class="btn btn-primary w-100 py-1" type="submit">목록으로</button>
-                </span>
+            <div class="row g-2 justify-content-center py-5">
+                <div class ="col-lg-2">
+                    <button class="btn btn-primary w-100 py-1" type="button">수정</button>
+                </div>
+                 <div class ="col-lg-2">
+                    <button class="btn btn-primary w-100 py-1" type="button">완료</button>
+                </div>
+                 <div class ="col-lg-2">
+                    <button class="btn btn-primary w-100 py-1" type="button">목록으로</button>
+                </div>
             </div>
 
         </div>
@@ -226,35 +226,7 @@
 
 
 
-    <!-- Footer Start -->
-	<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-		<div class="container">
-			<div class="copyright">
-				<div class="row">
-					<div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-						&copy;
-						<a class="border-bottom" href="#">Your Site Name</a>
-						, All Right Reserved.
-
-						<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-						Designed By
-						<a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-						<br> <br> Distributed By
-						<a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
-					</div>
-					<div class="col-md-6 text-center text-md-end">
-						<div class="footer-menu">
-							<a href="">Home</a>
-							<a href="">Cookies</a>
-							<a href="">Help</a>
-							<a href="">FQAs</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Footer End -->
+   
 
 
 

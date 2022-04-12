@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.finalproject.dto.PageInfo;
 import com.finalproject.dto.Study;
 import com.finalproject.dto.StudyTeam;
 import com.finalproject.service.MemberService;
@@ -39,14 +41,24 @@ public class StudyController {
 
 	// 스터디메인
 	@GetMapping("studymain")
-	public String studymain() {
+	public String studymain(Model model) {
+		//String maker = session.getAttribute("username");
+		String maker ="김민정";		
+		try {
+			String ismaker = studyservice.makerReturn(maker);
+			model.addAttribute("ismaker",ismaker);
+			System.out.println("가져오는거니?"+ismaker);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}	
+		session.removeAttribute("findstudy");
 		return "study/studymain";
 	}
 
 	//등교하기 페이지 
 	@GetMapping("studyclass")
 	public ModelAndView studyclassget(@RequestParam(value = "status", required = false) String status) {
-		
+		session.removeAttribute("findstudy");
 		if (status == null) {
 			status = "team_apply";
 		}
@@ -69,6 +81,7 @@ public class StudyController {
 	// (1)개설자메인 페이지
 	@RequestMapping(value="/studymakermain", method= {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView studymakermain() {
+		session.removeAttribute("findstudy");
 		ModelAndView mav = new ModelAndView("study/studymakermain");
 		String result = null;
 		//String user_id = (String) session.getAttribute("id");
@@ -95,7 +108,20 @@ public class StudyController {
 	@GetMapping("/studydetail/{study_no}")
 	public ModelAndView studydetail(@PathVariable int study_no) {
 		ModelAndView mav = new ModelAndView("study/studydetail");
-		String user_id = (String) session.getAttribute("id");
+		//String username = session.getAttribute("username");
+		try {
+			Study posted = studyservice.getStudydetail(study_no);
+			mav.addObject("studyPosted", posted);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mav;
+	}
+	
+	//studyclass 등교페이지에서 게시글보기 이동시 컨트롤러
+	@GetMapping("/studydetail1/{study_no}")
+	public ModelAndView studydetail1(@PathVariable int study_no) {
+		ModelAndView mav = new ModelAndView("study/studydetail1");
 		try {
 			Study posted = studyservice.getStudydetail(study_no);
 			mav.addObject("studyPosted", posted);
@@ -152,6 +178,7 @@ public class StudyController {
 	// (1)검색페이지전환
 	@GetMapping("/studyfind")
 	public String studyfind() {
+		session.removeAttribute("findstudy");
 		return "study/studyfind";
 	}
 
@@ -159,9 +186,20 @@ public class StudyController {
 	@GetMapping("studyfindform")
 	public ModelAndView studyfindform(@ModelAttribute Study inputstudy) {
 		ModelAndView mav = new ModelAndView();
-		System.out.println("매칭확인요청:" + inputstudy.toString());
+//		System.out.println("매칭확인요청:" + inputstudy.toString());
 		try {
 			session.setAttribute("findstudy", inputstudy);
+			mav.setViewName("study/studyfindCheck");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mav;
+	}
+	
+	@GetMapping("restudyfindform")
+	public ModelAndView restudyfindform() {
+		ModelAndView mav = new ModelAndView();
+		try {
 			mav.setViewName("study/studyfindCheck");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -171,16 +209,19 @@ public class StudyController {
 
 	// (3)검색값 확인후 result페이지 반환
 	@GetMapping("studyfindcnf")
-	public ModelAndView studyfindcnf(@ModelAttribute Study inputstudy) {
+	public ModelAndView studyfindcnf(@RequestParam(value = "page", defaultValue = "1") int page) {
 		ModelAndView mav = new ModelAndView();
+		PageInfo pageInfo = new PageInfo();
 		// 검색값 등록
 		try {
 			Study findstudycnf = (Study) session.getAttribute("findstudy");
-			System.out.println("매칭cnf 요청:" + findstudycnf.toString());
-			List<Study> serchedStudy = studyservice.findInfoAll(inputstudy);
+			List<Study> serchedStudy = studyservice.findInfoAll(page, pageInfo, findstudycnf);
+			System.out.println("컨트롤러 테스트");
 			mav.addObject("serchedStudy", serchedStudy);
-			session.removeAttribute("findstudy");
+			mav.addObject("pageInfo", pageInfo);
+//			session.removeAttribute("findstudy");
 			mav.setViewName("study/studyfindresult");
+//			System.out.println("테스트");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -188,11 +229,11 @@ public class StudyController {
 	}
 
 	// (4)검색결과페이지
-	@RequestMapping(value = "/studyfindresult", method = { RequestMethod.GET, RequestMethod.POST })
-	public ModelAndView studyfindresult(@ModelAttribute Study inputstudy) {
-		ModelAndView mav = new ModelAndView("study/studyfindresult");
-		return mav;
-	}
+//	@RequestMapping(value = "/studyfindresult", method = { RequestMethod.GET, RequestMethod.POST })
+//	public ModelAndView studyfindresult(@ModelAttribute Study inputstudy) {
+//		ModelAndView mav = new ModelAndView("study/studyfindresult");
+//		return mav;
+//	}
 
 	// (1)수정 다음버튼
 	@PostMapping("studymodify")
@@ -248,6 +289,7 @@ public class StudyController {
 	// (1)등록페이지전환
 	@RequestMapping("/studyReg")
 	public String studyReg() {
+		session.removeAttribute("findstudy");
 		return "study/studyReg";
 	}
 

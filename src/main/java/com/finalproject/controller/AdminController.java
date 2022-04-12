@@ -1,6 +1,6 @@
 package com.finalproject.controller;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+
 import org.springframework.web.servlet.ModelAndView;
 
 import com.finalproject.dto.Answer;
@@ -19,7 +19,7 @@ import com.finalproject.dto.Order;
 import com.finalproject.dto.OrderBook;
 import com.finalproject.dto.Request;
 import com.finalproject.service.AdminService;
-import com.finalproject.service.MemberService;
+
 
 @Controller
 public class AdminController {
@@ -27,8 +27,7 @@ public class AdminController {
 	@Autowired
 	private AdminService adminService;
 	
-	@Autowired
-	private MemberService memberService;
+
 	
 	@Autowired
 	private HttpSession session;
@@ -68,6 +67,7 @@ public class AdminController {
 		return mav;
 	}
 	
+<<<<<<< HEAD
 	@RequestMapping("withdrawlist")
 	public String withdrawlist() {
 		return "admin/admin_WithdrawMemList1";
@@ -97,35 +97,44 @@ public class AdminController {
 	
 	@GetMapping("/withdrawmemlist")
 	public ModelAndView withdrawMemList() {
+=======
+	@GetMapping("/withdrawmemlistT")
+	public ModelAndView withdrawMemListT() {
+>>>>>>> branch 'develop' of https://github.com/KyungPilKang/team1_final.git
 		ModelAndView mav=new ModelAndView();
-		Member mem = (Member) session.getAttribute("login");
-		// String role = mem.getRole();
-		String role= "freelancer";
 		try {
-			List<Member> memList=adminService.getMemberListByRole(role);
+			List<Member> memList=adminService.getWithdrawListT();
 			mav.addObject("memList", memList);
-			
-			System.out.println(memList.get(0).getAge());
-			System.out.println(memList.get(1).getAge());
-			
-			
-			mav.setViewName("/admin/admin_WithdrawMemList1");
+			mav.setViewName("/admin/admin_WithdrawMemListT");
 		} catch (Exception e) {
 			e.printStackTrace();
 			mav.addObject("err", e.getMessage());
 			mav.addObject("/admin/err");
 		}
-		switch(role) {
-		case "freelancer":
-			mav.setViewName("admin/admin_WithdrawMemList1");
-			break;
-		case "student":
-			mav.setViewName("admin/admin_WithdrawMemList2");
-			break;
+		return mav;
+	}
+	
+	@GetMapping("/withdrawmemlistS")
+	public ModelAndView withdrawMemListS() {
+		ModelAndView mav=new ModelAndView();
+		try {
+			List<Member> memList=adminService.getWithdrawListS();
+			mav.addObject("memList", memList);
+			System.out.println(memList);
+			
+			mav.setViewName("/admin/admin_WithdrawMemListS");
+		} catch (Exception e) {
+			e.printStackTrace();
+			mav.addObject("err", e.getMessage());
+			mav.addObject("/admin/err");
 		}
 		return mav;
 	}
 	
+	@RequestMapping("orderlist")
+	public String orderList() {
+		return "admin/admin_deliveryInfoFormA";
+	}
 	
 	
 	@GetMapping("/orderlist")

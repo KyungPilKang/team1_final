@@ -14,4 +14,8 @@ public interface BookDAO {
     int selectBookCount() throws Exception;
     List<Book> selectBookList(int startrow) throws Exception;
     Book selectBook(int book_num) throws Exception;
+    public void deleteBook(int book_num) throws Exception;
+    List<Book> selectSearchList(int startrow, String category, String keyword) throws Exception;
+    public void updateBookSales(int book_num, int book_sales) throws Exception;
+    List<Book> selectSortList(int startrow, String type) throws Exception;
 }

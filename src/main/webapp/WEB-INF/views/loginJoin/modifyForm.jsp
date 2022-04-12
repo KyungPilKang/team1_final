@@ -111,7 +111,7 @@ String sangse_juso = (String)session.getAttribute("sangse_juso");
 										</th>
 										<td>
 											<div class="row">
-												<div class="col-lg-1">
+												<div class="col-lg-3">
 													<h5><%=username %></h5>
 												</div>												
 											</div>
@@ -132,7 +132,7 @@ String sangse_juso = (String)session.getAttribute("sangse_juso");
 										</th>
 										<td>
 											<div class="row">
-												<div class="col-lg-2">
+												<div class="col-lg-3">
 													<h5><%=name %></h5>
 												</div>												
 											</div>

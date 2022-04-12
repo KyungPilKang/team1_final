@@ -1,11 +1,8 @@
 package com.finalproject.dao;
 
 import java.util.List;
-
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
-
-import com.finalproject.dto.CustomUserDetails;
 import com.finalproject.dto.Member;
 
 @Mapper

@@ -65,7 +65,8 @@ public class PaymentController {
     }
 
     // BookStore > Payment
-    @PostMapping(value = "/now")
+//    @PostMapping(value = "/now")
+    @RequestMapping(value = "/now", method = {RequestMethod.GET, RequestMethod.POST})
     public ModelAndView now(@RequestParam(value = "book_num") int book_num,
                             @RequestParam(value = "book_price") int book_price) {
         ModelAndView mv = new ModelAndView();
@@ -95,24 +96,7 @@ public class PaymentController {
         session.setAttribute("username", "jay");
         String username = (String) session.getAttribute("username");
         try {
-            System.out.println(order.getZipcode());
-            System.out.println(order.getDeli_address());
-            System.out.println(order.getDeli_name());
-            System.out.println(order.getSangse_juso());
-            System.out.println(order.getDoro_juso());
-            System.out.println(order.getPhone());
-            System.out.println(order.getEmail());
-            // 결제 수단도 받아오고, 주문번호도 총액도 받아와야한다.
-            // order_method / order_num / total_price (이 값을 db에 넣자)
-
-//            order.setOrder_method("tosspay");
-//            order.setOrder_num("123456789");
-            System.out.println("주문방법:" + order.getOrder_method());
-            System.out.println("주문번호" + order.getOrder_num());
-            System.out.println("주문총액" + order.getTotal_price());
-
-
-            // 1. 위 input 데이터들을 다 db에 넣어줘야한다.
+            // 1. input 데이터들을 다 db에 넣어준다
             paymentService.regOrder(order);
             // 2. username에 해당하는 order_book 테이블에 cart 테이블들의 정보+주문번호를 넘긴다
             // cart 객체를 가져와서
@@ -121,11 +105,13 @@ public class PaymentController {
             for (Cart cart : carts) {
                 String orderNum = order.getOrder_num();
                 String bookNum = cart.getCart_bookNum();
-                int BookCount = cart.getCart_count();
+                int bookCount = cart.getCart_count();
                 // order_book을 테이블에 insert
-                paymentService.insertOrderBook(orderNum, bookNum, BookCount);
+                paymentService.insertOrderBook(orderNum, bookNum, bookCount);
+                // 3. 책 판매량 업데이트
+                bookStoreService.updateBookSales(Integer.parseInt(bookNum),bookCount);
             }
-            // 3. 마지막으로 username에 해당하는 cart DB를 전부 제거한다
+            // 4. 마지막으로 username에 해당하는 cart DB를 전부 제거한다
             cartService.deleteCartByUser(username);
 
             mv.setViewName("/bookstore/paymentFinished");

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
 <!-- Libraries Stylesheet -->
@@ -31,10 +31,12 @@
 
 <!-- Template Stylesheet -->
 <link href="${pageContext.request.contextPath}/resources/freelance/css/style.css" rel="stylesheet">
+
+<link href="${pageContext.request.contextPath}/resources/freelance/css/myStyle.css" rel="stylesheet">
 </head>
 
 <body>
-<!-- Spinner Start -->
+	<!-- Spinner Start -->
 	<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
 		<div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
 			<span class="resfreespan sr-only">Loading...</span>
@@ -43,33 +45,34 @@
 	<!-- Spinner End -->
 	<!-- Navbar Start -->
 	<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-		<a href="/resfreeform" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+		<a href="/freereg1" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
 			<h1 class="m-0 text-primary">
-				<i class="fa fa-book me-3"></i>NEEDSFULL
+				<i class="fa fa-book me-3"></i>NEESFULL
 			</h1>
 		</a>
 		<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-			<span class="resfreespan navbar-toggler-icon"></span>
+			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<div class="navbar-nav ms-auto p-4 p-lg-0">
-				<div class="nav-item dropdown">
-					<a href="#" class="nav-link" data-bs-toggle="dropdown">프리랜서</a>
+				<div class="nav-item dropdown me-3">
+					<a href="http://localhost:8090/studymain" class="nav-link" data-bs-toggle="dropdown">스터디</a>
 					<div class="dropdown-menu fade-down m-0">
-						<a href=# class="dropdown-item">프리랜서 등록</a>
-						<a href=# class="dropdown-item">프리랜서 조회</a>
+						<a href="http://localhost:8090/studymain" style="font-size: 1.3em;" class="dropdown-item">메인페이지</a>
+						<a href="http://localhost:8090/studyReg" style="font-size: 1.3em;" class="dropdown-item">등록하기</a>
+						<a href="http://localhost:8090/studyfind" style="font-size: 1.3em;" class="dropdown-item">매칭하기</a>
+						<a href="http://localhost:8090/studyclass" style="font-size: 1.3em;" class="dropdown-item">참여현황</a>
 					</div>
 				</div>
-				<div class="nav-item dropdown">
-					<a href="#" class="nav-link" data-bs-toggle="dropdown">강의</a>
-					<div class="dropdown-menu fade-down m-0">
-						<a href=# class="dropdown-item">강의 등록</a>
-						<a href=# class="dropdown-item">강의 조회</a>
-					</div>
+				<div class="me-3">
+					<a href="about.html" class="nav-item nav-link">마이페이지</a>
 				</div>
-				<a href="about.html" class="nav-item nav-link">마이페이지</a>
-				<a href="courses.html" class="nav-item nav-link">고객센터</a>
-				<a href=# class="nav-item nav-link">로그아웃</a>
+				<div class="me-3">
+					<a href="courses.html" class="nav-item nav-link">고객센터</a>
+				</div>
+				<div class="me-3">
+					<a href=# class="nav-item nav-link">로그아웃</a>
+				</div>
 			</div>
 		</div>
 	</nav>
@@ -87,9 +90,9 @@
 		</div>
 	</div>
 	<!-- Header End -->
-	
+
 	<!-- 내용 Start -->
-		<div class="container-xxl py-5">
+	<div class="container-xxl py-5">
 		<div class="container">
 			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
 				<h5 class="section-title bg-white text-center text-primary px-3">매칭 완료</h5>
@@ -98,46 +101,42 @@
 			<div class="row g-4 justify-content-center wow fadeInUp">
 				<div class="tab-content">
 					<div id="tab-1" class="tab-pane fade show p-0 active">
-						<div class="job-item p-4 mb-4">
-							<div class="row g-4">
-							
-								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
-									<img class="flex-shrink-0 img-fluid border rounded" src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt="" style="width: 80px; height: 80px;">
-									<div class="text-start ps-4">
-										<h3 class="mb-3">스터디 등록 제목</h3>
-										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-brightness-high-fill text-primary me-2"></i>${serchedStudy.study_sname}serchedStudy초등/중등
-										</span>
-										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-eyeglasses text-primary me-2"></i>${serchedStudy.study_grade}학년
-										</span>
-										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-calendar2-date text-primary me-2"></i>${serchedStudy.study_fdate}시작 날짜 
-										</span>
+						<c:forEach items="${serchedStudy }" var="study">
+							<div class="job-item p-4 mb-4">
+								<div class="row g-4">
+									<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
+										<img class="flex-shrink-0 img-fluid border rounded" src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt="" style="width: 80px; height: 80px;">
+										<div class="text-start ps-4">
+											<h3 class="mb-3"><i class="fa-solid fa-people-group text-primary me-2"></i>${study.study_title }</h3>
+											<span class="resfreespan text-truncate me-3"> <i class="fa-solid fa-school text-primary me-2"></i>${study.study_sname}
+											</span> <span class="resfreespan text-truncate me-3"> <i class="fa-solid fa-graduation-cap text-primary me-2"></i>${study.study_grade}
+											</span> <span class="resfreespan text-truncate me-3"> <i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜&nbsp;${study.study_fdate}
+											</span>
+										</div>
 									</div>
-								</div>
-								<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-									<div class="d-flex mb-3">
-										<a class="btn btn-primary" href="">상세보기</a>
+									<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+										<div class="d-flex mb-3">
+											<a class="btn btn-primary" href="/studydetail/${study.study_no}">상세보기</a>
+										</div>
+										<!-- <span class="text-truncate"><i class="bi bi-cart-plus text-primary me-2"></i>참여여부</span> -->
 									</div>
-									<span class="text-truncate"><i class="bi bi-cart-plus text-primary me-2"></i>참여여부</span>
 								</div>
 							</div>
-						</div>
-<!--					<div class="job-item p-4 mb-4">
+						</c:forEach>
+						<!--					<div class="job-item p-4 mb-4">
 							<div class="row g-4">
 								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
 									<img class="flex-shrink-0 img-fluid border rounded" src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt="" style="width: 80px; height: 80px;">
 									<div class="text-start ps-4">
 										<h3 class="mb-3">스터디 등록 제목</h3>
 										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등${serchedStudy.study_sname}
+											<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등${study.study_sname}
 										</span>
 										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-eyeglasses text-primary me-2"></i>학년 ${serchedStudy.study_grade}
+											<i class="bi bi-eyeglasses text-primary me-2"></i>학년 ${study.study_grade}
 										</span>
 										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜  ${serchedStudy.study_fdate}
+											<i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜  ${study.study_fdate}
 										</span>
 									</div>
 								</div>
@@ -156,10 +155,10 @@
 									<div class="text-start ps-4">
 										<h3 class="mb-3">스터디 등록 제목</h3>
 										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등 ${serchedStudy.study_sname}
+											<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등 ${study.study_sname}
 										</span>
 										<span class="resfreespan text-truncate me-3">
-											<i class="bi bi-eyeglasses text-primary me-2"></i>학년 ${serchedStudy.study_grade}
+											<i class="bi bi-eyeglasses text-primary me-2"></i>학년 ${study.study_grade}
 										</span>
 										<span class="resfreespan text-truncate me-3">
 											<i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜 
@@ -224,8 +223,8 @@
 								</div>
 							</div>
 						</div> -->
-						
-						
+
+
 					</div>
 				</div>
 			</div>
@@ -234,7 +233,14 @@
 					<div class="row g-3">
 						<div class="col-12">
 							<div class="col-12 mt-4">
-								<button id="canclebtn" class="btn btn-outline-primary w-50 py-3">이전 목록</button>
+								<c:choose>
+									<c:when test="${pageInfo.page<=1}">
+										<button id="beforebtn1" class="btn btn-outline-primary w-50 py-3" disabled>첫 페이지</button>
+									</c:when>
+									<c:otherwise>
+										<button id="beforebtn2" class="btn btn-outline-primary w-50 py-3">이전 목록</button>
+									</c:otherwise>
+								</c:choose>
 							</div>
 						</div>
 					</div>
@@ -245,15 +251,18 @@
 							<div class="col-12 mt-4">
 								<button type="submit" class="btn btn-primary w-100 py-3 dropdown-toggle" data-bs-toggle="dropdown">페이지 이동하기</button>
 								<ul class="dropdown-menu dropdown-menu-end">
-									<li style="font-weight:bold; font-family: 'Stylish', sans-serif; text-align: center;">1 페이지(현재)</li>
+									<li style="font-weight: bold; font-family: 'Stylish', sans-serif; text-align: center;">${pageInfo.page }&nbsp;페이지(현재)</li>
 									<li><hr class="dropdown-divider"></li>
-									<li><a class="dropdown-item" href="#">Page 1</a></li>
+									<c:forEach var="i" begin="${pageInfo.startPage }" end="${pageInfo.endPage }">
+									<li><a class="dropdown-item" href="/studyfindcnf?page=${i}">Page&nbsp;${i }</a></li>
+									</c:forEach>
+									<!-- <li><a class="dropdown-item" href="#">Page 1</a></li>
 									<li><a class="dropdown-item" href="#">Page 2</a></li>
 									<li><a class="dropdown-item" href="#">Page 3</a></li>
 									<li><a class="dropdown-item" href="#">Page 4</a></li>
 									<li><a class="dropdown-item" href="#">Page 5</a></li>
 									<li><a class="dropdown-item" href="#">Page 6</a></li>
-									<li><a class="dropdown-item" href="#">Page 7</a></li>
+									<li><a class="dropdown-item" href="#">Page 7</a></li> -->
 								</ul>
 							</div>
 						</div>
@@ -263,7 +272,14 @@
 					<div class="row g-3">
 						<div class="col-12">
 							<div class="col-12 mt-4">
-								<button type="submit" class="btn btn-outline-primary w-50 py-3">다음 목록</button>
+								<c:choose>
+									<c:when test="${pageInfo.page>=pageInfo.maxPage }">
+										<button id="afterbtn1" class="btn btn-outline-primary w-50 py-3" disabled>마지막 페이지</button>
+	       							</c:when>
+									<c:otherwise>
+										<button id="afterbtn2" class="btn btn-outline-primary w-50 py-3">다음 목록</button>
+									</c:otherwise>
+								</c:choose>
 							</div>
 						</div>
 					</div>
@@ -271,10 +287,10 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- 내용 End -->
-	
-	
+
+
 	<!-- Footer Start -->
 	<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
 		<div class="container">
@@ -325,7 +341,19 @@
 
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-	
-	
+	<script>
+		let test = "<c:out value='${serchedStudy}'/>";
+		console.log(test);
+		if (performance.navigation.type == 1) {
+			window.location = "/studyfindcnf";
+		};
+		$('#beforebtn2').click(function() {
+			window.location = "/studyfindcnf?page=${pageInfo.page-1}";
+		});
+		$('#afterbtn2').click(function() {
+			window.location = "/studyfindcnf?page=${pageInfo.page+1}";
+		});
+	</script>
+
 </body>
 </html>
