@@ -39,9 +39,9 @@
     <link href="${pageContext.request.contextPath}/resources/bookstore/css/style.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/bookstore/css/bookStore.css" rel="stylesheet">
     <style>
-    *{
-    font-family: 'Stylish', sans-serif;
-    }
+        *{
+            font-family: 'Stylish', sans-serif;
+        }
     </style>
 </head>
 
@@ -90,18 +90,17 @@
         <div class="sort_box">
             <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
                 <li class="nav-item">
-                    <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill"
-                       href="/book-store/sort/sales" onclick="location.href='/book-store/sort/sales'">
+                    <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3" id="sort_sales" href="/book-store/sort/sales">
                         <h6 class="mt-n1 mb-0">판매량</h6>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="/book-store/sort/newest">
+                    <a class="d-flex align-items-center text-start mx-3 pb-3" id="sort_newest" href="/book-store/sort/newest">
                         <h6 class="mt-n1 mb-0">최신순</h6>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="/book-store/sort/name">
+                    <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" id="sort_name" href="/book-store/sort/name">
                         <h6 class="mt-n1 mb-0">상품명</h6>
                     </a>
                 </li>

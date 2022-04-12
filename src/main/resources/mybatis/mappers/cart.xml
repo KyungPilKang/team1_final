@@ -68,6 +68,7 @@
           `cart_num` int NOT NULL AUTO_INCREMENT,
           `username` varchar(1000) DEFAULT NULL,
           `cart_bookNum` varchar(1000) DEFAULT NULL,
+          `cart_count` varchar(1000) DEFAULT NULL,
           PRIMARY KEY (`cart_num`)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
         -->

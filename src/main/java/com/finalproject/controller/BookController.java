@@ -160,7 +160,13 @@ public class BookController {
 
         ModelAndView mv = new ModelAndView();
         PageInfo pageInfo = new PageInfo();
+
+        // 임시 세션
+        session.setAttribute("username", "jay");
+        String username = (String) session.getAttribute("username");
         try {
+            int cartCount = cartService.cartCount(username);
+            mv.addObject("cartCount",cartCount);
             System.out.println("카테고리:"+book.getBook_cat());
             System.out.println("검색어:"+book.getBook_keyword());
             String category = book.getBook_cat();
@@ -185,7 +191,13 @@ public class BookController {
     public ModelAndView sort(@PathVariable String type, @RequestParam(value = "page", defaultValue = "1") int page) {
         ModelAndView mv = new ModelAndView();
         PageInfo pageInfo = new PageInfo();
+
+        // 임시 세션
+        session.setAttribute("username", "jay");
+        String username = (String) session.getAttribute("username");
         try {
+            int cartCount = cartService.cartCount(username);
+            mv.addObject("cartCount",cartCount);
             System.out.println("값이 안오나?"+type);
             List<Book> sortResults = bookStoreService.sortList(page,pageInfo,type);
             mv.addObject("pageInfo", pageInfo);

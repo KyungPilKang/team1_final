@@ -44,6 +44,17 @@
 </head>
 
 <body>
+<%
+    int no = (Integer)session.getAttribute("no");
+    String username = (String)session.getAttribute("username");
+    String name = (String)session.getAttribute("name");
+    String nickname = (String)session.getAttribute("nickname");
+    String email = (String)session.getAttribute("email");
+    String phone = (String)session.getAttribute("phone");
+    String zipcode = (String)session.getAttribute("zipcode");
+    String doro_juso = (String)session.getAttribute("doro_juso");
+    String sangse_juso = (String)session.getAttribute("sangse_juso");
+%>
 <!-- Spinner Start -->
 <div id="spinner"
      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -119,10 +130,124 @@
                         <button type="button" onclick="location.href='/studentpagedefult'">홈</button>
                     </div>
                     <div>
-                        <button type="button" onclick="location.href='/studentpagequick'">배송 목록</button>
+                        <button type="button" onclick="location.href='/book-store/order/detail'">배송조회</button>
                     </div>
                     <div>
-                        <button type="button" onclick="location.href='/studentpagestudy'">스터디</button>
+                        <button type="button" onclick="location.href='/studentpagestudy'">스터디현황</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-xxl py-10 mt-5">
+                <div class="container">
+                    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+
+                        <div class="row text-center col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 55%; float: none; margin: 0 auto">
+                            <form name="form" id="form" action="updateMember" method="post" novalidate>
+                                <input type="hidden" value="<%=no %>" name="no">
+                                <div class="row g-3">
+                                    <table id="table1" class="table">
+                                        <colgroup>
+                                            <col width="27%">
+                                        </colgroup>
+                                        <tbody>
+                                        <tr class="trborder">
+                                            <th>아이디 <span class="star">*</span>
+                                            </th>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col-lg-3">
+                                                        <h5><%=username %></h5>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <th>비밀번호 <span class="star">*</span>
+                                            </th>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>이름 <span class="star">*</span>
+                                            </th>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col-lg-3">
+                                                        <h5><%=name %></h5>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>닉네임 <span class="star">*</span>
+                                            </th>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col-lg-3">
+                                                        <input type="text" id="nickname1" name="nickname1" value="<%=nickname %>" style="background-color:transparent; border:none;" class="form-control" readonly>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>이메일 <span class="star">*</span>
+                                            </th>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <input type="text" id="email" name="email" value="<%=email %>" style="background-color:transparent; border:none;" class="form-control" readonly>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>휴대전화 <span class="star">*</span>
+                                            </th>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <input type="text" id="phone" name="phone" maxlength="11" size="11" value="<%=phone %>" style="background-color:transparent; border:none;" class="form-control old" readonly>
+                                                    </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>주소 <span class="star">*</span>
+                                            </th>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col-lg-7">
+                                                        <input type="text" id="zipcode" name="zipcode" value="<%=zipcode %>" maxlength="6" readonly="" class="form-control">
+                                                    </div>
+                                                    <div class="col-lg-10 pt-2">
+                                                        <input type="text" id="doro_juso" name="doro_juso" value="<%=doro_juso %>" readonly="" class="form-control">
+                                                    </div>
+                                                    <div class="col-lg-2"></div>
+                                                    <div class="col-lg-6 pt-2">
+                                                        <input type="text" id="sangsejuso1" name="sangsejuso1" value="<%=sangse_juso %>" readonly="" class="form-control">
+                                                    </div>
+                                                    <div class="col-lg-6 pt-2">
+                                                        <input type="text" id="sangsejuso2" name="sangsejuso2" value="" class="form-control">
+                                                    </div>
+                                                    <div id=warning class="col-lg-10 pt-2">
+                                                        <span id=warning class="input-group-addon text-left">* 주소는 상세주소까지 정확하게 입력해주세요.주소가 정확하지 않을 경우, 배송이 원활하지 않을 수 있습니다.</span>
+                                                    </div>
+                                                    <input type="hidden" name="sangse_juso" id="sangse_juso">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </form>
+                            <div class="row pt-3 ">
+                                <div class="col-1"></div>
+                                <div class="col-5 ">
+                                    <button id="modify" onclick="location.href='/modify'" class="btn btn-primary w-100 py-3" type="button">수정하기</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -131,7 +256,6 @@
     </div>
 </div>
 <!-- Contact End -->
-
 
 <!-- Footer Start -->
 <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
