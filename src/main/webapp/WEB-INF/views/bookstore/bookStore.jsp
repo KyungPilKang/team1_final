@@ -39,9 +39,9 @@
     <link href="${pageContext.request.contextPath}/resources/bookstore/css/style.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/bookstore/css/bookStore.css" rel="stylesheet">
     <style>
-    *{
-    font-family: 'Stylish', sans-serif;
-    }
+        *{
+            font-family: 'Stylish', sans-serif;
+        }
     </style>
 </head>
 
@@ -50,11 +50,20 @@
 
 <jsp:include page="/WEB-INF/views/bookstore/header.jsp"/>
 
-
+<c:choose>
+    <c:when test="${not empty username}">
 <div style="float:right; margin-right:100px; cursor: pointer; " class="btn btn-primary"
      onclick="location.href='/book-store/cart'">
     <i class="fa-solid fa-cart-shopping"></i>
 </div>
+    </c:when>
+    <c:otherwise>
+        <div style="float:right; margin-right:100px; cursor: pointer; " class="btn btn-primary"
+             onclick="alert('로그인이 필요합니다.')">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+    </c:otherwise>
+</c:choose>
 <div style="float:right; margin-right:-43px; margin-top:8px;">
     <div id="cartCount"
          style="background: red; width: 12px; height: 12px; font-size: 10px; color:white; display: flex; justify-content: center; align-items: center; border-radius: 100px;">
@@ -90,18 +99,17 @@
         <div class="sort_box">
             <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
                 <li class="nav-item">
-                    <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill"
-                       href="/book-store/sort/sales" onclick="location.href='/book-store/sort/sales'">
+                    <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3" id="sort_sales" href="/book-store/sort/sales">
                         <h6 class="mt-n1 mb-0">판매량</h6>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="/book-store/sort/newest">
+                    <a class="d-flex align-items-center text-start mx-3 pb-3" id="sort_newest" href="/book-store/sort/newest">
                         <h6 class="mt-n1 mb-0">최신순</h6>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="/book-store/sort/name">
+                    <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" id="sort_name" href="/book-store/sort/name">
                         <h6 class="mt-n1 mb-0">상품명</h6>
                     </a>
                 </li>
@@ -189,19 +197,19 @@
                                 </div>
                             </div>
                             <div class="book_add">
-                                    <%--                                <c:choose>--%>
-                                    <%--                                <c:when test="${username == admin}">--%>
-                                <a class="btn-sm btn-primary" onclick="putCart(${book.book_num})">장바구니 담기</a>
-                                <a class="btn-sm btn-primary" onclick="buyNow(${book.book_num},${book.book_reprice})">바로 구매하기</a>
-                                    <%--                                </c:when>--%>
-                                    <%--                                    <c:otherwise>--%>
-                                    <%--                                        <a class="btn-sm btn-primary" onclick="alert('로그인이 필요합니다')">장바구니 담기</a>--%>
-                                    <%--                                        <a class="btn-sm btn-primary" onclick="alert('로그인이 필요합니다.')">바로 구매하기</a>--%>
-                                    <%--                                    </c:otherwise>--%>
-                                    <%--                                </c:choose>--%>
-                                    <%--                                <c:if test = "${username == admin}">--%>
-                                <a class="btn-sm btn-primary" href="/book-store/delbook?book_num=${book.book_num}" style="background: red">교재 삭제</a>
-                                    <%--                                </c:if>--%>
+                                <c:choose>
+                                    <c:when test="${not empty username}">
+                                        <a class="btn-sm btn-primary" onclick="putCart(${book.book_num})">장바구니 담기</a>
+                                        <a class="btn-sm btn-primary" onclick="buyNow(${book.book_num},${book.book_reprice})">바로 구매하기</a>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <a class="btn-sm btn-primary" onclick="alert('로그인이 필요합니다')">장바구니 담기</a>
+                                        <a class="btn-sm btn-primary" onclick="alert('로그인이 필요합니다.')">바로 구매하기</a>
+                                    </c:otherwise>
+                                </c:choose>
+                                <c:if test = "${role == 'admin'}">
+                                    <a class="btn-sm btn-primary" href="/book-store/delbook?book_num=${book.book_num}" style="background: red">교재 삭제</a>
+                                </c:if>
                                 <form id="buyNow" method="post">
                                     <input type="hidden" id="book_num" name="book_num"/>
                                     <input type="hidden" id="book_price" name="book_price"/>

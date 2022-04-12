@@ -284,9 +284,8 @@
 			let studentStatus = $("#attendResult option:selected").val();			
 			let studentStatusText = $("#attendResult option:selected").text();			
 			var result = confirm(studentName + '님의 상태를 ' + studentStatusText + '으로 변경하시겠습니까?');
-			
-			
-/*  			if(studentStatusText == '참여수락' ){
+		/*	
+			if(studentStatusText == '참여수락' ){
 				Swal.fire({
 					title: "수락",
 					text: "스터디에 참여를 수락 하시겠습니까?",
@@ -318,8 +317,8 @@
 						cancelButton: "swal_cancle"
 					}
 				})
-			};  */
-			
+			};  	
+			*/
 			
 			if(result){
 			    $.ajax({

@@ -9,7 +9,7 @@
 		insert into final.order
 		values (#{order_num}, #{username},now(), #{order_method}, #{order_deli_num}, #{order_state},
 				#{deli_address}, #{deli_name}, #{zipcode}, #{doro_juso}, #{sangse_juso},
-				#{phone}, #{email},#{total_price})
+				#{phone}, #{email},#{total_price},#{total_count},#{book_img},#{subjectList})
 		]]>
 	</insert>
 
@@ -18,21 +18,24 @@
 
 
 		<!--
-        CREATE TABLE `order` (
-          `order_num` varchar(100) NOT NULL,
-          `username` varchar(1000) DEFAULT NULL,
-          `order_date` datetime DEFAULT NULL,
-          `order_method` varchar(1000) DEFAULT NULL,
-          `order_deli_num` varchar(1000) DEFAULT NULL,
-          `order_state` varchar(1000) DEFAULT NULL,
-          `deli_address` varchar(1000) DEFAULT NULL,
-          `deli_name` varchar(1000) DEFAULT NULL,
-          `zipcode` varchar(1000) DEFAULT NULL,
-          `doro_juso` varchar(1000) DEFAULT NULL,
-          `sangse_juso` varchar(1000) DEFAULT NULL,
-          `phone` varchar(100) DEFAULT NULL,
-          `email` varchar(100) DEFAULT NULL,
-          `total_price` int DEFAULT NULL,
-          PRIMARY KEY (`order_num`)
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+          CREATE TABLE `order` (
+                  `order_num` varchar(100) NOT NULL,
+                  `username` varchar(1000) DEFAULT NULL,
+                  `order_date` datetime DEFAULT NULL,
+                  `order_method` varchar(1000) DEFAULT NULL,
+                  `order_deli_num` varchar(1000) DEFAULT NULL,
+                  `order_state` varchar(1000) DEFAULT NULL,
+                  `deli_address` varchar(1000) DEFAULT NULL,
+                  `deli_name` varchar(1000) DEFAULT NULL,
+                  `zipcode` varchar(1000) DEFAULT NULL,
+                  `doro_juso` varchar(1000) DEFAULT NULL,
+                  `sangse_juso` varchar(1000) DEFAULT NULL,
+                  `phone` varchar(100) DEFAULT NULL,
+                  `email` varchar(100) DEFAULT NULL,
+                  `total_price` int DEFAULT NULL,
+                  `total_count` int DEFAULT NULL,
+                  `book_img` varchar(1000) DEFAULT NULL,
+                  `subjectList` varchar(1000) DEFAULT NULL,
+                  PRIMARY KEY (`order_num`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
         -->

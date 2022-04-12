@@ -64,7 +64,7 @@ public class StudyController {
 			status = "team_apply";
 		}
 		ModelAndView mav = new ModelAndView("study/studyclass");
-		String user_id = (String) session.getAttribute("id");
+		String user_id = (String) session.getAttribute("username");
 		//String maker ="김민정";	
 		try {
 			List<Study> studyList = studyservice.searchStudyByStatus(user_id, status); // 서비스 만들고 db 값 가져오는지 확인해보기
@@ -86,7 +86,7 @@ public class StudyController {
 		session.removeAttribute("findstudy");
 		ModelAndView mav = new ModelAndView("study/studymakermain");
 		//String result = null;
-		String user_id = (String) session.getAttribute("id");
+		String user_id = (String) session.getAttribute("username");
 		//String user_id = "김민정";
 		try {			
 				List<Study> studyList = studyservice.makerList(user_id);
@@ -248,6 +248,7 @@ public class StudyController {
 	public ModelAndView studymodiform(@ModelAttribute Study inputstudy) {
 		ModelAndView mav = new ModelAndView();
 		System.out.println("수정확인요청:" + inputstudy.toString());
+	
 		try {
 			session.setAttribute("modistudy", inputstudy);
 			mav.setViewName("study/studymodiCheck");
@@ -261,14 +262,18 @@ public class StudyController {
 	@PostMapping("studymodicnf")
 	public ModelAndView studymodi(@ModelAttribute Study cnfstudy) {
 		ModelAndView mav = new ModelAndView();
+		String maker = (String)session.getAttribute("username");
 		try {
-			Study studymodicnf = (Study) session.getAttribute("modistudy");
+			Study studymodicnf = (Study) session.getAttribute("modistudy");			
+			studymodicnf.setMaker(maker);
 			System.out.println("수정확인후 수정 cnf :" + studymodicnf.toString());
 			studyservice.updateStudy(studymodicnf);
 			mav.setViewName("study/studymain");
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		session.removeAttribute("modistudy");
 		return mav;
 	}
 	
@@ -311,8 +316,8 @@ public class StudyController {
 	public ModelAndView regstudy() {
 		ModelAndView mav = new ModelAndView();
 		// 임시 maker 설정
-		String maker = "김길동";
-//		String maker = session.getAttribute("username");
+		//String maker = "김길동";
+		String maker = (String)session.getAttribute("username");
 		try {
 			Study cnfstudy = (Study) session.getAttribute("regstudy");
 			cnfstudy.setMaker(maker);
@@ -332,10 +337,10 @@ public class StudyController {
 	public String attendcheck(@RequestParam int study_no, @RequestParam(value = "status") String status,HttpServletRequest request) {
 		System.out.println("서버 테스트");
 		System.out.println(status);
-		String user_id ="김민정";
+		
 		try {
-			//HttpSession session = request.getSession();
-			//String user_id = (String) session.getAttribute("id");
+			HttpSession session = request.getSession();
+			String user_id = (String) session.getAttribute("username");
 			studyservice.changeAttend(user_id, study_no, status);
 			System.out.println(study_no);
 			System.out.println(status);

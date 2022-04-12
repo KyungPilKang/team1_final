@@ -47,7 +47,7 @@
 	</delete>
 
 
-	<select id="selectSearchList" resultType="Book" parameterType="Map">
+	<select id="selectSearchList" resultType="Book">
 		<![CDATA[
 		select *
 		from (select @rownum:=@rownum+1 rnum, tot.*
@@ -80,13 +80,38 @@
 	<!--        ]]>-->
 	<!--	</select>-->
 
-	<!-- 정렬 수정 필요 -->
-	<select id="selectSortList" resultType="Book">
+
+	<select id="selectSortSales" resultType="Book" parameterType="int">
 		<![CDATA[
 		select *
 		from (select @rownum:=@rownum+1 rnum, tot.*
 			  from (
 				  select * from book order by book_sales desc
+				  ) tot,
+				  (select @rownum := 0) temp) sub
+		where rnum between #{startrow} and #{startrow} + 9
+		]]>
+	</select>
+
+	<select id="selectSortNum" resultType="Book" parameterType="int">
+		<![CDATA[
+		select *
+		from (select @rownum:=@rownum+1 rnum, tot.*
+			  from (
+				  select * from book order by book_num desc
+				  ) tot,
+				  (select @rownum := 0) temp) sub
+		where rnum between #{startrow} and #{startrow} + 9
+		]]>
+	</select>
+
+
+	<select id="selectSortSubject" resultType="Book" parameterType="int">
+		<![CDATA[
+		select *
+		from (select @rownum:=@rownum+1 rnum, tot.*
+			  from (
+				  select * from book order by book_subject desc
 				  ) tot,
 				  (select @rownum := 0) temp) sub
 		where rnum between #{startrow} and #{startrow} + 9

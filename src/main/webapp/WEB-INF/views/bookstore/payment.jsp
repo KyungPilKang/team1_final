@@ -150,6 +150,9 @@
                                     <input type="hidden" name="order_method" id="order_method">
                                     <input type="hidden" name="order_num" id="order_num">
                                     <input type="hidden" name="total_price" id="total_price">
+                                    <input type="hidden" name="total_count" id="total_bookCount" value=${total_bookCount}>
+                                    <input type="hidden" name="book_img" id="book_img" value=${book_img}>
+                                    <input type="hidden" name="subjectList" id="subjectList" value=${order_book_subject}>
                                 </div>
                             </td>
                         </tr>

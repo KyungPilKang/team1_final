@@ -63,11 +63,11 @@
 	<!-- Header End -->
 
 	<!-- Contact Start -->
-	<div class="container-xxl py-10 mt-5">
+	<div class="container-xxl py-10 mt-3">
 		<div class="container">
 			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
 				<h6 class="section-title bg-white text-center text-primary px-3">LOG IN</h6>
-				<h1 class="mt-5 mb-3">회원/소셜 로그인</h1>
+				<h1 class="mt-3 mb-1">회원/소셜 로그인</h1>
 				<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto">
 				<!-- 	<form method="post" action="/login"> -->
 						<div class="row g-3">
@@ -109,13 +109,14 @@
 									</a>
 								</div>
 							
-					
-							<div class="col-12">
-								<button class="btn btn-primary" style="border-radius:5px; width:315px; height:50px;" onclick="login()" type="button">로그인 하기</button>
+							<div class="d-flex justify-content-center">
+							<div class="col-5">
+								<button style="border-radius:5px;" class="d-grid gap-2 btn col-12 btn-primary btn-lg"  onclick="login()" type="button">로그인</button>
 							</div>
-							<div class="col-12">
-								<a href="termsagree" style="border-radius:5px; width:315px; height:50px;" class="btn btn-primary py-3">회원가입하기</a>
-
+							<div class="col-1"></div>
+							<div class="col-5">
+								<a href="termsagree" style="border-radius:5px;"  class="d-grid gap-2 btn col-12 btn-primary btn-lg">회원가입</a>
+							</div>
 							</div>
 						</div>
 					<!-- </form> -->
