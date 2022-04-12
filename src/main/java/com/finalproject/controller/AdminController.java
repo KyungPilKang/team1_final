@@ -20,6 +20,7 @@ import com.finalproject.dto.Order;
 import com.finalproject.dto.OrderBook;
 import com.finalproject.dto.Request;
 import com.finalproject.service.AdminService;
+import com.finalproject.service.MemberService;
 
 
 @Controller
@@ -28,7 +29,8 @@ public class AdminController {
 	@Autowired
 	private AdminService adminService;
 	
-
+	@Autowired
+	private MemberService memberService;
 	
 	@Autowired
 	private HttpSession session;
@@ -68,7 +70,6 @@ public class AdminController {
 		return mav;
 	}
 	
-<<<<<<< HEAD
 	@RequestMapping("withdrawlist")
 	public String withdrawlist() {
 		return "admin/admin_WithdrawMemList1";
@@ -79,29 +80,23 @@ public class AdminController {
 		return "admin/admin_WithdrawMemList2";
 	}
 	
-	@RequestMapping("memberList")
-	public @ResponseBody List<Member> memberList() {
-		List<Member> memberList=new ArrayList<>();
-		try {
-			memberList=memberService.memberList();
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		for(int i=0; i<memberList.size(); i++) {
-			System.out.println(memberList.get(i).getUsername());
-		}
-		System.out.println(memberList.get(3).getUsername());
-		return memberList;
-	}
+//	@RequestMapping("memberList")
+//	public @ResponseBody List<Member> memberList() {
+//		List<Member> memberList=new ArrayList<>();
+//		try {
+//			memberList=memberService.memberList();
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//		}
+//		for(int i=0; i<memberList.size(); i++) {
+//			System.out.println(memberList.get(i).getUsername());
+//		}
+//		System.out.println(memberList.get(3).getUsername());
+//		return memberList;
+//	}
 	
-	
-	
-	@GetMapping("/withdrawmemlist")
-	public ModelAndView withdrawMemList() {
-=======
 	@GetMapping("/withdrawmemlistT")
 	public ModelAndView withdrawMemListT() {
->>>>>>> branch 'develop' of https://github.com/KyungPilKang/team1_final.git
 		ModelAndView mav=new ModelAndView();
 		try {
 			List<Member> memList=adminService.getWithdrawListT();
