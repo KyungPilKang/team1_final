@@ -146,10 +146,7 @@
 										</th>
 										<td>
 											<div class="row">
-												<div class="col-lg-3">
-													<label class="radio"> <input type="radio" id="gender" name="gender" value="T">강사
-													</label>
-												</div>
+												<div class="col-lg-2"></div>
 												<div class="col-lg-3">
 													<label class="radio"> <input type="radio" id="gender" name="gender" value="S1">초등학생
 													</label>

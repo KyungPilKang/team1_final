@@ -15,7 +15,7 @@ public interface AdminService {
 	List<Request> getRequestListByRole(String role) throws Exception;
 	List<Answer> getAnswerListByRole(String role) throws Exception;
 	
-	List<Member> getWithdrawListT() throws Exception;
+	
 	List<Member> getWithdrawListS() throws Exception;
 	
 	List<Order> getOrderListByState(String order_state) throws Exception;

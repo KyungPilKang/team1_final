@@ -29,8 +29,7 @@ public class AdminController {
 	@Autowired
 	private AdminService adminService;
 	
-	@Autowired
-	private MemberService memberService;
+	
 	
 	@Autowired
 	private HttpSession session;
@@ -70,45 +69,6 @@ public class AdminController {
 		return mav;
 	}
 	
-	@RequestMapping("withdrawlist")
-	public String withdrawlist() {
-		return "admin/admin_WithdrawMemList1";
-	}
-	
-	@RequestMapping("withdrawlist2")
-	public String withdrawlist2() {
-		return "admin/admin_WithdrawMemList2";
-	}
-	
-//	@RequestMapping("memberList")
-//	public @ResponseBody List<Member> memberList() {
-//		List<Member> memberList=new ArrayList<>();
-//		try {
-//			memberList=memberService.memberList();
-//		}catch(Exception e) {
-//			e.printStackTrace();
-//		}
-//		for(int i=0; i<memberList.size(); i++) {
-//			System.out.println(memberList.get(i).getUsername());
-//		}
-//		System.out.println(memberList.get(3).getUsername());
-//		return memberList;
-//	}
-	
-	@GetMapping("/withdrawmemlistT")
-	public ModelAndView withdrawMemListT() {
-		ModelAndView mav=new ModelAndView();
-		try {
-			List<Member> memList=adminService.getWithdrawListT();
-			mav.addObject("memList", memList);
-			mav.setViewName("/admin/admin_WithdrawMemListT");
-		} catch (Exception e) {
-			e.printStackTrace();
-			mav.addObject("err", e.getMessage());
-			mav.addObject("/admin/err");
-		}
-		return mav;
-	}
 	
 	@GetMapping("/withdrawmemlistS")
 	public ModelAndView withdrawMemListS() {
@@ -126,12 +86,7 @@ public class AdminController {
 		}
 		return mav;
 	}
-	
-//	@RequestMapping("orderlist")
-//	public String orderList() {
-//		return "admin/admin_deliveryInfoFormA";
-//	}
-	
+
 	
 	@GetMapping("/orderlist")
 	public ModelAndView orderList() {

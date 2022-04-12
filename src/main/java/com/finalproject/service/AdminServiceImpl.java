@@ -29,12 +29,6 @@ public class AdminServiceImpl implements AdminService {
 	
 	
 	@Override
-	public List<Member> getWithdrawListT() throws Exception {
-		
-		return adminDAO.getWithdrawListT();
-	}
-	
-	@Override
 	public List<Member> getWithdrawListS() throws Exception {
 		
 		return adminDAO.getWithdrawListS();
