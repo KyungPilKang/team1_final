@@ -119,7 +119,7 @@
 								<div class="col-12">
 									<a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=94fc26e459f927ce79257dc6c17527a7&redirect_uri=http://localhost:8090/auth/kakao/callback"
 										onclick="window.open(this.href, '_blank', 'width=800, height=600'); return false;">
-										<img src="${pageContext.request.contextPath}/resources/login/kakao2.png" style="width:100%; height:58px;">
+										<img src="${pageContext.request.contextPath}/resources/login/kakao.png" style="width:100%; height:58px;">
 									</a>
 								</div>
 							
@@ -127,16 +127,16 @@
 								<div class="col-12" style="max-height:58px;">
 									<a id="naverlogin" href="https://nid.naver.com/oauth2.0/authorize?client_id=24OF3VzEePL0jwU_gwRz&response_type=code&redirect_uri=http://localhost:8090/auth/naver/callback&state=oauth_state"
 									onclick="window.open(this.href, '_blank', 'width=800, height=600'); return false;">
-									<span id="naver" class="btn w-100">N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;네이버 로그인</span>
+									<img src="${pageContext.request.contextPath}/resources/login/naver.png" style="width:100%; height:58px;">
 									</a>
 								</div>
 							
 					
 							<div class="col-12">
-								<button class="btn btn-primary w-100 py-3" onclick="login()" type="button">로그인 하기</button>
+								<button class="btn btn-primary" style="border-radius:5px; width:315px; height:50px;" onclick="login()" type="button">로그인 하기</button>
 							</div>
 							<div class="col-12">
-								<a href="termsagree" class="btn btn-primary w-100 py-3">회원가입하기</a>
+								<a href="termsagree" style="border-radius:5px; width:315px; height:50px;" class="btn btn-primary py-3">회원가입하기</a>
 
 							</div>
 						</div>

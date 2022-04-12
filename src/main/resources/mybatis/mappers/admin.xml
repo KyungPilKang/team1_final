@@ -16,18 +16,6 @@
 	</select>
 	
 	
-	<select id="withdrawMemList" resultType="Member" parameterType="string">
-		<![CDATA[
-			select * from member where role = #{role}
-		]]>
-	</select>
-
-	<select id="getWithdrawListT" resultType="Member">
-		<![CDATA[
-			select * from order where order_state = #{order_state}
-		]]>
-	</select>
-	
 	<select id="orderBook" resultType="OrderBook" parameterType="string">
 		<![CDATA[
 			select * from order_book where order_state = #{order_state}
