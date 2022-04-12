@@ -76,6 +76,10 @@
 	width: 20%;
 	box-sizing: border-box;
 }
+
+* {
+	font-family: 'Stylish', sans-serif;
+}
 </style>
 </head>
 <body>
@@ -149,145 +153,152 @@
 
 	<!-- Content Start -->
 	<div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
-                            <h5 class="mb-3">Skilled Instructors</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-globe text-primary mb-4"></i>
-                            <h5 class="mb-3">Online Classes</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-home text-primary mb-4"></i>
-                            <h5 class="mb-3">Home Projects</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
-                            <h5 class="mb-3">Book Library</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Service End -->
+		<div class="container">
+			<div class="row g-4">
+				<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+					<div class="service-item text-center pt-3">
+						<div class="p-4">
+							<i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
+							<h5 class="mb-3">학생 맞춤형 스터디</h5>
+							<p>학생이 원하는 조건에 만족하는 최적의 스터디를 검색하고 가입해보세요</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+					<div class="service-item text-center pt-3">
+						<div class="p-4">
+							<i class="fa fa-3x fa-globe text-primary mb-4"></i>
+							<h5 class="mb-3">온라인 매칭 시스템</h5>
+							<p>온라인 환경에서 원클릭으로 스터디 매칭이 무료로 진행됩니다</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+					<div class="service-item text-center pt-3">
+						<div class="p-4">
+							<i class="fa fa-3x fa-home text-primary mb-4"></i>
+							<h5 class="mb-3">자기주도적 학습</h5>
+							<p>학생이 직접 스터디를 관리하고 주도적 참여형 스터디를 제공합니다</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+					<div class="service-item text-center pt-3">
+						<div class="p-4">
+							<i class="fa fa-3x fa-book-open text-primary mb-4"></i>
+							<h5 class="mb-3">합리적 교재 구매</h5>
+							<p>할인된 가격에 내신 교재부터 학년별 필독서까지 구매해보세요</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Service End -->
 
+	<!-- Categories Start -->
+	<div class="container-xxl py-5 category">
+		<div class="container">
+			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+				<h4 class="section-title bg-white text-center text-primary px-3">스터디 매칭</h4>
+				<h1 class="mb-5">지금 가입하시고 온라인으로 스터디를 참여해보세요</h1>
+			</div>
+			<div class="row g-3">
+				<div class="col-lg-7 col-md-6">
+					<div class="row g-3">
+						<div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
+							<a id="go_study1" class="position-relative d-block overflow-hidden" href="/studymain">
+								<img class="img-fluid" src="${pageContext.request.contextPath}/resources/freelance/img/cat-1.jpg" alt="">
+								<div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+									<h5 class="m-0">내신 준비</h5>
+									<small class="text-primary">13개 개설중</small>
+								</div>
+							</a>
+						</div>
+						<div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
+							<a id="go_study2" class="position-relative d-block overflow-hidden" href="/studymain">
+								<img class="img-fluid" src="${pageContext.request.contextPath}/resources/freelance/img/cat-2.jpg" alt="">
+								<div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+									<h5 class="m-0">자격증 시험</h5>
+									<small class="text-primary">16개 개설중</small>
+								</div>
+							</a>
+						</div>
+						<div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
+							<a id="go_study3" class="position-relative d-block overflow-hidden" href="/studymain">
+								<img class="img-fluid" src="${pageContext.request.contextPath}/resources/freelance/img/cat-3.jpg" alt="">
+								<div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+									<h5 class="m-0">경시대회 준비</h5>
+									<small class="text-primary">10개 개설중</small>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
+					<a id="go_study4" class="position-relative d-block h-100 overflow-hidden" href="/studymain">
+						<img class="img-fluid position-absolute w-100 h-100" src="${pageContext.request.contextPath}/resources/freelance/img/cat-4.jpg" alt="" style="object-fit: cover;">
+						<div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+							<h5 class="m-0">온라인 북클럽</h5>
+							<small class="text-primary">9개 개설중</small>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <!-- About Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
-                    <div class="position-relative h-100">
-                        <img class="img-fluid position-absolute w-100 h-100" src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt="" style="object-fit: cover;">
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
-                    <h1 class="mb-4">Welcome to eLEARNING</h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                    <div class="row gy-2 gx-4 mb-4">
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Skilled Instructors</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Online Classes</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Certificate</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Skilled Instructors</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Online Classes</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Certificate</p>
-                        </div>
-                    </div>
-                    <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
-
-
-    <!-- Categories Start -->
-    <div class="container-xxl py-5 category">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Categories</h6>
-                <h1 class="mb-5">Courses Categories</h1>
-            </div>
-            <div class="row g-3">
-                <div class="col-lg-7 col-md-6">
-                    <div class="row g-3">
-                        <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
-                            <a class="position-relative d-block overflow-hidden" href="">
-                                <img class="img-fluid" src="${pageContext.request.contextPath}/resources/freelance/img/cat-1.jpg" alt="">
-                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
-                                    <h5 class="m-0">Web Design</h5>
-                                    <small class="text-primary">49 Courses</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
-                            <a class="position-relative d-block overflow-hidden" href="">
-                                <img class="img-fluid" src="${pageContext.request.contextPath}/resources/freelance/img/cat-2.jpg" alt="">
-                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
-                                    <h5 class="m-0">Graphic Design</h5>
-                                    <small class="text-primary">49 Courses</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
-                            <a class="position-relative d-block overflow-hidden" href="">
-                                <img class="img-fluid" src="${pageContext.request.contextPath}/resources/freelance/img/cat-3.jpg" alt="">
-                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
-                                    <h5 class="m-0">Video Editing</h5>
-                                    <small class="text-primary">49 Courses</small>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
-                    <a class="position-relative d-block h-100 overflow-hidden" href="">
-                        <img class="img-fluid position-absolute w-100 h-100" src="${pageContext.request.contextPath}/resources/freelance/img/cat-4.jpg" alt="" style="object-fit: cover;">
-                        <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
-                            <h5 class="m-0">Online Marketing</h5>
-                            <small class="text-primary">49 Courses</small>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+	<!-- About Start -->
+	<div class="container-xxl py-5">
+		<div class="container">
+			<div class="row g-5">
+				<div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+					<div class="position-relative h-100">
+						<img class="img-fluid position-absolute w-100 h-100" src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt="" style="object-fit: cover;">
+					</div>
+				</div>
+				<div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+					<h4 class="section-title bg-white text-start text-primary pe-3">교재 장터</h4>
+					<h1 class="mb-5">합리적인 가격과 품질</h1>
+					<p class="mb-4" style="font-weight:bold;">초/중등 교육에 필요한 교재를 합리적인 가격에 구매하세요</p>
+					<p class="mb-5" style="font-weight:bold;">회원가입 후 이용하실 수 있습니다</p>
+					<div class="row gy-2 gx-4 mb-4" style="font-weight:bold;">
+						<div class="col-sm-6">
+							<p class="mb-0">
+								<i class="fa fa-arrow-right text-primary me-2"></i>초/중등 내신 참고서
+							</p>
+						</div>
+						<div class="col-sm-6">
+							<p class="mb-0">
+								<i class="fa fa-arrow-right text-primary me-2"></i>자격증 시험 교재
+							</p>
+						</div>
+						<div class="col-sm-6">
+							<p class="mb-0">
+								<i class="fa fa-arrow-right text-primary me-2"></i>경시대회 문제집
+							</p>
+						</div>
+						<div class="col-sm-6">
+							<p class="mb-0">
+								<i class="fa fa-arrow-right text-primary me-2"></i>온라인 강의 교재
+							</p>
+						</div>
+						<div class="col-sm-6">
+							<p class="mb-0">
+								<i class="fa fa-arrow-right text-primary me-2"></i>초/중등 필독서
+							</p>
+						</div>
+					</div>
+					<a id="go_store" class="btn btn-primary py-3 px-5 mt-2" href="/book-store">교재장터로 이동</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- About End -->
 
 	<!-- Content End -->
+
+
 	<!-- Footer Start -->
 	<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
 		<div class="container">
@@ -338,6 +349,93 @@
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<script>
+		let no="<c:out value='${no}'/>";
+		console.log(no);
+		$('#go_study1').click(function(e){
+			if(no==null||no==undefined||no==""){
+				Swal.fire({
+					title: "세션 오류",
+					text: "로그인 후 이용가능합니다",
+					icon: "warning",
+					confirmButtonText: "확인",
+					allowOutsideClick: false,
+					customClass: {
+						content: "swal_text",
+						confirmButton: "swal_confirm",
+						cancelButton: "swal_cancle"
+					}
+				})
+				e.preventDefault();
+			}
+		})
+		$('#go_study2').click(function(e){
+			if(no==null||no==undefined||no==""){
+				Swal.fire({
+					title: "세션 오류",
+					text: "로그인 후 이용가능합니다",
+					icon: "warning",
+					confirmButtonText: "확인",
+					allowOutsideClick: false,
+					customClass: {
+						content: "swal_text",
+						confirmButton: "swal_confirm",
+						cancelButton: "swal_cancle"
+					}
+				})
+				e.preventDefault();
+			}
+		})
+		$('#go_study3').click(function(e){
+			if(no==null||no==undefined||no==""){
+				Swal.fire({
+					title: "세션 오류",
+					text: "로그인 후 이용가능합니다",
+					icon: "warning",
+					confirmButtonText: "확인",
+					allowOutsideClick: false,
+					customClass: {
+						content: "swal_text",
+						confirmButton: "swal_confirm",
+						cancelButton: "swal_cancle"
+					}
+				})
+				e.preventDefault();
+			}
+		})
+		$('#go_study4').click(function(e){
+			if(no==null||no==undefined||no==""){
+				Swal.fire({
+					title: "세션 오류",
+					text: "로그인 후 이용가능합니다",
+					icon: "warning",
+					confirmButtonText: "확인",
+					allowOutsideClick: false,
+					customClass: {
+						content: "swal_text",
+						confirmButton: "swal_confirm",
+						cancelButton: "swal_cancle"
+					}
+				})
+				e.preventDefault();
+			}
+		})
+		$('#go_store').click(function(e){
+			if(no==null||no==undefined||no==""){
+				Swal.fire({
+					title: "세션 오류",
+					text: "로그인 후 이용가능합니다",
+					icon: "warning",
+					confirmButtonText: "확인",
+					allowOutsideClick: false,
+					customClass: {
+						content: "swal_text",
+						confirmButton: "swal_confirm",
+						cancelButton: "swal_cancle"
+					}
+				})
+				e.preventDefault();
+			}
+		})
 	</script>
 </body>
 </html>
