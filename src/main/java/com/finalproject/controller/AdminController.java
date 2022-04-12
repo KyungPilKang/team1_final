@@ -1,6 +1,7 @@
 package com.finalproject.controller;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.finalproject.dto.Answer;
@@ -131,10 +132,10 @@ public class AdminController {
 		return mav;
 	}
 	
-	@RequestMapping("orderlist")
-	public String orderList() {
-		return "admin/admin_deliveryInfoFormA";
-	}
+//	@RequestMapping("orderlist")
+//	public String orderList() {
+//		return "admin/admin_deliveryInfoFormA";
+//	}
 	
 	
 	@GetMapping("/orderlist")
