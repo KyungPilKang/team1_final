@@ -48,10 +48,10 @@ public class BookController {
     public ModelAndView boardlist(@RequestParam(value = "page", defaultValue = "1") int page) {
         ModelAndView mv = new ModelAndView();
         PageInfo pageInfo = new PageInfo();
-
-        // 임시 세션
-        session.setAttribute("username", "jay");
         String username = (String) session.getAttribute("username");
+        String role = (String) session.getAttribute("role");
+        System.out.println("username[BookCont]:"+username);
+        System.out.println("role[BookCont]:"+role);
         try {
             int cartCount = cartService.cartCount(username);
             mv.addObject("cartCount",cartCount);
@@ -161,8 +161,6 @@ public class BookController {
         ModelAndView mv = new ModelAndView();
         PageInfo pageInfo = new PageInfo();
 
-        // 임시 세션
-        session.setAttribute("username", "jay");
         String username = (String) session.getAttribute("username");
         try {
             int cartCount = cartService.cartCount(username);
