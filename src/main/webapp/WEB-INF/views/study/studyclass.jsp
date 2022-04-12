@@ -191,7 +191,8 @@
 	   
 	   $('#studyStatus').on('change',function(e) {
 		   let status = e.currentTarget.value;
-		   alert(status);
+		   //alert(status);
+		   //swal("신청접수", status+"상태입니다.",'success');
 		   window.location.href="/studyclass?status="+status;
 	   });
 	   

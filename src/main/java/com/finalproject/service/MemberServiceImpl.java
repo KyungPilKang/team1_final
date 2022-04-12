@@ -89,20 +89,34 @@ public class MemberServiceImpl implements MemberService {
 		
 	}
 	
-	
+	@Override
+	public String adminCheck(String password)throws Exception{
+		Member check = memberDAO.selectMemberByUsername("admin");
+		if(bCryptPasswordEncoder.matches(password, check.getPassword())){
+			return "admin";
+		}
+		return "passfail";
+	}
 	
 	@Override
 	public String loginCheck(String username, String password) throws Exception {
 		String res = "";
 		Member loginCheck=memberDAO.selectMemberByUsername(username);
+//		if(username=="admin"&&(bCryptPasswordEncoder.matches(password, loginCheck.getPassword()))) {
+//			res ="admin";
+//			return res;
+//		}
 		if(loginCheck==null) {
 			res = "idfail";
 			return res;
 		}
+		
 		if (bCryptPasswordEncoder.matches(password, loginCheck.getPassword())) {
-			loginCheck.setLogin_count(0);
-			memberDAO.update_login_count(loginCheck);
-			res = "ok";
+			
+				loginCheck.setLogin_count(0);
+				memberDAO.update_login_count(loginCheck);
+				res = "ok";
+			
 		} else {
 			loginCheck.setLogin_count(loginCheck.getLogin_count());
 			if(loginCheck.getLogin_count()>3) {

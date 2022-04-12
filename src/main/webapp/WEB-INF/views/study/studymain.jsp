@@ -115,7 +115,7 @@
 					<a href="courses.html" class="nav-item nav-link">고객센터</a>
 				</div>
 				<div class="me-3">
-					<a href=# class="nav-item nav-link">로그아웃</a>
+					<a href="logout" class="nav-item nav-link">로그아웃</a>
 				</div>
 			</div>
 		</div>
@@ -242,7 +242,8 @@
 	<script>
 		
 		$(document).ready(function(){
-		let ismaker = "<c:out value='${ismaker}'/>";
+		/* let ismaker = "<c:out value='${ismaker}'/>"; */
+		let ismaker="yes";
 		console.log("ismaker" + ismaker);
 		$('#makerbtn').on('click', function(){
 			if(ismaker=='yes'){
@@ -252,7 +253,6 @@
 				$('#makerbtn').attr('disabled', true); 
 				return false;
 				}
-			
 		});
 	});
 		

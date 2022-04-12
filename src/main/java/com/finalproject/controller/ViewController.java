@@ -22,9 +22,9 @@ public class ViewController {
 	}
 	
 	//nav바 상단 eLEARNING 글자, Home 버튼 클릭시 리턴
-	@RequestMapping("/home")
-	public @ResponseBody String home() {
-		return "test home";
+	@GetMapping("/home")
+	public String home() {
+		return "main/index";
 	}
 	
 	@RequestMapping("/")

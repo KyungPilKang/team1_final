@@ -20,7 +20,7 @@ public class FreelanceServiceImpl implements FreelanceService {
 		//멤버 객체 받아와서 프리랜서 객체에 set
 		free.setMember_no(String.valueOf(mem.getNo()));
 		free.setName(mem.getName());
-		free.setGender(mem.getGender());
+	
 		free.setAge(mem.getAge());
 		int tempAge=Integer.parseInt(free.getAge());
 		if(tempAge>=20&&tempAge<25) {

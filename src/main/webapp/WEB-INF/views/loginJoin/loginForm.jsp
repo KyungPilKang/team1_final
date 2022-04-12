@@ -56,28 +56,6 @@
 		<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse" id="navbarCollapse">
-			<div class="navbar-nav ms-auto p-4 p-lg-0">
-				<div class="nav-item dropdown me-3">
-					<a href="http://localhost:8090/studymain" class="nav-link" data-bs-toggle="dropdown">스터디</a>
-					<div class="dropdown-menu fade-down m-0">
-						<a href="http://localhost:8090/studymain" style="font-size: 1.3em;" class="dropdown-item">메인페이지</a>
-						<a href="http://localhost:8090/studyReg" style="font-size: 1.3em;" class="dropdown-item">등록하기</a>
-						<a href="http://localhost:8090/studyfind" style="font-size: 1.3em;" class="dropdown-item">매칭하기</a>
-						<a href="http://localhost:8090/studyclass" style="font-size: 1.3em;" class="dropdown-item">참여현황</a>
-					</div>
-				</div>
-				<div class="me-3">
-					<a href="about.html" class="nav-item nav-link">마이페이지</a>
-				</div>
-				<div class="me-3">
-					<a href="courses.html" class="nav-item nav-link">고객센터</a>
-				</div>
-				<div class="me-3">
-					<a href=# class="nav-item nav-link">로그인</a>
-				</div>
-			</div>
-		</div>
 	</nav>
 	<!-- Navbar End -->
 
@@ -89,7 +67,7 @@
 		<div class="container">
 			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
 				<h6 class="section-title bg-white text-center text-primary px-3">LOG IN</h6>
-				<h1 class="mt-5 mb-5">회원/소셜 로그인</h1>
+				<h1 class="mt-5 mb-3">회원/소셜 로그인</h1>
 				<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto">
 				<!-- 	<form method="post" action="/login"> -->
 						<div class="row g-3">
