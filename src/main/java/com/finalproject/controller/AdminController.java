@@ -1,6 +1,6 @@
 package com.finalproject.controller;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -9,14 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+
 import org.springframework.web.servlet.ModelAndView;
 
 import com.finalproject.dto.Answer;
 import com.finalproject.dto.Member;
 import com.finalproject.dto.Request;
 import com.finalproject.service.AdminService;
-import com.finalproject.service.MemberService;
+
 
 @Controller
 public class AdminController {
@@ -24,8 +24,7 @@ public class AdminController {
 	@Autowired
 	private AdminService adminService;
 	
-	@Autowired
-	private MemberService memberService;
+
 	
 	@Autowired
 	private HttpSession session;
@@ -85,9 +84,6 @@ public class AdminController {
 	@GetMapping("/withdrawmemlistS")
 	public ModelAndView withdrawMemListS() {
 		ModelAndView mav=new ModelAndView();
-		//Member mem = (Member) session.getAttribute("login");
-		// String role = mem.getRole();
-		//String role= "freelancer";
 		try {
 			List<Member> memList=adminService.getWithdrawListS();
 			mav.addObject("memList", memList);
@@ -104,7 +100,7 @@ public class AdminController {
 	
 	@RequestMapping("orderlist")
 	public String orderList() {
-		return "admin/admin_deliveryInfoForm5";
+		return "admin/admin_deliveryInfoFormA";
 	}
 	
 	
