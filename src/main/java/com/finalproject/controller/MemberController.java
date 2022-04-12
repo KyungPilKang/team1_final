@@ -231,13 +231,13 @@ public class MemberController {
 	}
 	
 	@GetMapping("logout")
-	public String logout() {	
+	public String logout(@RequestParam(value="mapping", required=true, defaultValue="home")String mapping) {
 		try {	
 			session.invalidate();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		return "redirect:loginJoin/loginForm";
+		return "redirect:/"+mapping;
 	}
 	
 	
