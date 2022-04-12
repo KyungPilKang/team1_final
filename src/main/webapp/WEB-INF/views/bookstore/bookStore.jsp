@@ -38,6 +38,11 @@
     <!-- Stylesheet -->
     <link href="${pageContext.request.contextPath}/resources/bookstore/css/style.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/bookstore/css/bookStore.css" rel="stylesheet">
+    <style>
+    *{
+    font-family: 'Stylish', sans-serif;
+    }
+    </style>
 </head>
 
 <body>
