@@ -74,7 +74,7 @@ public class AdminController {
 		return "testadminhome";
 	}
 	
-	@GetMapping("/withdrawmemlistS")
+	@GetMapping("/adminHome")
 	public ModelAndView withdrawMemListS() {
 		ModelAndView mav=new ModelAndView();
 		try {
