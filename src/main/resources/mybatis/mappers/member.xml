@@ -5,27 +5,27 @@
 <mapper namespace="com.finalproject.dao.MemberDAO">
 		<insert id="insertMember" parameterType="Member">
 		<![CDATA[
-			insert into final.member(username,password,name,nickname,email,birth,age,gender,phone,zipcode,doro_juso,sangse_juso,role,provider,
+			insert into final.member(username,password,name,nickname,email,birth,age,type,phone,zipcode,doro_juso,sangse_juso,role,provider,
 			provider_id,withdraw_status,withdraw_type,withdraw_contents,login_count)values(#{username},#{password},#{name},#{nickname},#{email},
-			#{birth},#{age},#{gender},#{phone},#{zipcode},#{doro_juso},#{sangse_juso},#{role},#{provider},#{provider_id},#{withdraw_status},#{withdraw_type},
+			#{birth},#{age},#{type},#{phone},#{zipcode},#{doro_juso},#{sangse_juso},#{role},#{provider},#{provider_id},#{withdraw_status},#{withdraw_type},
 			#{withdraw_contents},#{login_count})
 		]]>
 		</insert>
 		
 		<insert id="insertNaverMember" parameterType="Member">
 		<![CDATA[
-			insert into final.member(name,nickname,email,birth,age,gender,phone,zipcode,doro_juso,sangse_juso,role,provider,
+			insert into final.member(name,nickname,email,birth,age,type,phone,zipcode,doro_juso,sangse_juso,role,provider,
 			provider_id,withdraw_status,withdraw_type,withdraw_contents,login_count)values(#{name},#{nickname},#{email},
-			#{birth},#{age},#{gender},#{phone},#{zipcode},#{doro_juso},#{sangse_juso},#{role},#{provider},#{provider_id},#{withdraw_status},#{withdraw_type},
+			#{birth},#{age},#{type},#{phone},#{zipcode},#{doro_juso},#{sangse_juso},#{role},#{provider},#{provider_id},#{withdraw_status},#{withdraw_type},
 			#{withdraw_contents},#{login_count})
 		]]>
 		</insert>
 		
 		<insert id="insertKakaoMember" parameterType="Member">
 		<![CDATA[
-			insert into final.member(name,nickname,email,birth,age,gender,phone,zipcode,doro_juso,sangse_juso,role,provider,
+			insert into final.member(name,nickname,email,birth,age,type,phone,zipcode,doro_juso,sangse_juso,role,provider,
 			provider_id,withdraw_status,withdraw_type,withdraw_contents,login_count)values(#{name},#{nickname},#{email},
-			#{birth},#{age},#{gender},#{phone},#{zipcode},#{doro_juso},#{sangse_juso},#{role},#{provider},#{provider_id},#{withdraw_status},#{withdraw_type},
+			#{birth},#{age},#{type},#{phone},#{zipcode},#{doro_juso},#{sangse_juso},#{role},#{provider},#{provider_id},#{withdraw_status},#{withdraw_type},
 			#{withdraw_contents},#{login_count})
 		]]>
 		</insert>

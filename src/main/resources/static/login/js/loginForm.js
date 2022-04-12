@@ -22,8 +22,17 @@
 			data: {"username":$("#username").val(), "password":$("#password").val()},
 			dataType:"text",
 			success: function(data) { //컨트롤러에서 넘어온 data값을 받는다
+				if(data == "admin"){
+					Swal.fire({
+					icon: 'success',
+					title: '관리자 로그인 성공',
+					text: '확인을 누르면 관리자 페이지로 이동합니다.',
+					confirmButtonText: "확인"
+					}).then(result => {
+					location.href="http://localhost:8090/orderlist"
+					})
+				}
 			
-			console.log(data);
 				if (data == "ok") { //true인 경우 로그인 성공
 					Swal.fire({
 					icon: 'success',
@@ -40,7 +49,7 @@
 						text: '아이디 또는 비밀번호가 일치하지 않습니다.',
 						confirmButtonText: "확인"
 					})
-				} else{
+				} else if(data=="overfail"){
 
 				Swal.fire({
 				icon: 'warning',
