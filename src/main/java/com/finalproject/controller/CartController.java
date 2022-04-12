@@ -37,8 +37,6 @@ public class CartController {
     @RequestMapping(value = "/cart", method = {RequestMethod.GET, RequestMethod.POST})
     public ModelAndView cart() {
         ModelAndView mv = new ModelAndView();
-        // 임시 세션
-        session.setAttribute("username", "jay");
         String username = (String) session.getAttribute("username");
         try {
             List<Book> cartList = cartService.getCartList(username);
@@ -55,8 +53,6 @@ public class CartController {
     @PostMapping("/putcart")
     public ResponseEntity<?> putCart(@RequestBody String json) {
         ResponseEntity<?> result = null;
-        // 임시 세션
-        session.setAttribute("username", "jay");
         String username = (String) session.getAttribute("username");
         System.out.println("username : " + username);
         try {
@@ -81,15 +77,9 @@ public class CartController {
         return result;
     }
 
-    // 장바구니 화면에서 수량을 선택 후 '전체 상품 구매하기'를 누르면
-    // 카트의 정보를 전부 order_book에 복사하면서 수량(order_book_count)도 추가
-    // 주문 완료시 카트 날림
-
 
     @PostMapping("/delcart")
     public void delCart(@RequestBody String json) {
-        // 임시 세션
-        session.setAttribute("username", "jay");
         String username = (String) session.getAttribute("username");
         System.out.println("username : " + username);
         try{

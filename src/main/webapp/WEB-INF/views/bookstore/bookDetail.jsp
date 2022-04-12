@@ -115,11 +115,23 @@
 
                     <div class="product_detail_bottom">
                         <div class="button_buy">
-                            <a class="btn_large btn_blue" onclick="putCart(${book.book_num})" style="cursor: pointer">장바구니
-                                담기</a>
-                            <a class="btn_large"
-                               href="/book-store/payment/now?book_num=${book.book_num}&book_price=${book.book_reprice}">바로
-                                구매하기</a>
+                            <c:choose>
+                                <c:when test="${not empty username}">
+                                    <a class="btn_large btn_blue" onclick="putCart(${book.book_num})"
+                                       style="cursor: pointer">장바구니
+                                        담기</a>
+                                    <a class="btn_large"
+                                       href="/book-store/payment/now?book_num=${book.book_num}&book_price=${book.book_reprice}">바로
+                                        구매하기</a>
+                                </c:when>
+                                <c:otherwise>
+                                    <a class="btn_large btn_blue" onclick="alert('로그인이 필요합니다')" style="cursor: pointer">장바구니
+                                        담기</a>
+                                    <a class="btn_large"
+                                       onclick="alert('로그인이 필요합니다')" style="cursor: pointer">바로
+                                        구매하기</a>
+                                </c:otherwise>
+                            </c:choose>
                         </div>
                         <div class="detail_information">
                             ${book.book_content}

@@ -40,8 +40,6 @@ public class PaymentController {
     public ModelAndView order(@RequestParam String[] order_book_num, @RequestParam String[] order_qty,
                               @RequestParam String[] order_book_subject, @RequestParam(value = "total_price") int total_price) {
         ModelAndView mv = new ModelAndView();
-        // 임시 세션
-        session.setAttribute("username", "jay");
         String username = (String) session.getAttribute("username");
         try {
             System.out.println("order_book_num : " + Arrays.toString(order_book_num));
@@ -82,8 +80,6 @@ public class PaymentController {
     public ModelAndView now(@RequestParam(value = "book_num") int book_num,
                             @RequestParam(value = "book_price") int book_price) {
         ModelAndView mv = new ModelAndView();
-        // 임시 세션
-        session.setAttribute("username", "jay");
         String username = (String) session.getAttribute("username");
         try {
             Book book = bookStoreService.selectBook(book_num);
@@ -107,9 +103,6 @@ public class PaymentController {
     @PostMapping("/finished")
     public ModelAndView finished(@ModelAttribute Order order) {
         ModelAndView mv = new ModelAndView();
-
-        // 임시 세션
-        session.setAttribute("username", "jay");
         String username = (String) session.getAttribute("username");
         try {
             // 1. input 데이터들을 다 db에 넣어준다

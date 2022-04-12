@@ -50,11 +50,20 @@
 
 <jsp:include page="/WEB-INF/views/bookstore/header.jsp"/>
 
-
+<c:choose>
+    <c:when test="${not empty username}">
 <div style="float:right; margin-right:100px; cursor: pointer; " class="btn btn-primary"
      onclick="location.href='/book-store/cart'">
     <i class="fa-solid fa-cart-shopping"></i>
 </div>
+    </c:when>
+    <c:otherwise>
+        <div style="float:right; margin-right:100px; cursor: pointer; " class="btn btn-primary"
+             onclick="alert('로그인이 필요합니다.')">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+    </c:otherwise>
+</c:choose>
 <div style="float:right; margin-right:-43px; margin-top:8px;">
     <div id="cartCount"
          style="background: red; width: 12px; height: 12px; font-size: 10px; color:white; display: flex; justify-content: center; align-items: center; border-radius: 100px;">
@@ -198,7 +207,7 @@
                                         <a class="btn-sm btn-primary" onclick="alert('로그인이 필요합니다.')">바로 구매하기</a>
                                     </c:otherwise>
                                 </c:choose>
-                                <c:if test = "${username == 'admin'}">
+                                <c:if test = "${role == 'admin'}">
                                     <a class="btn-sm btn-primary" href="/book-store/delbook?book_num=${book.book_num}" style="background: red">교재 삭제</a>
                                 </c:if>
                                 <form id="buyNow" method="post">
