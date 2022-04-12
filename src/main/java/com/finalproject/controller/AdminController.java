@@ -164,7 +164,7 @@ public class AdminController {
 	
 	
 	@GetMapping("/deliveryinfo")
-	public ModelAndView deliveryInfo() {
+	public ModelAndView deliveryInfo(@PathVariable String order_num) {
 		ModelAndView mav=new ModelAndView();
 		Member mem = (Member) session.getAttribute("login");
 
