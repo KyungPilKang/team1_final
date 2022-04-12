@@ -67,7 +67,7 @@
 
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-    <a href="/mypage" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+    <a href="/home" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
         <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>NEESFULL</h2>
     </a>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -75,13 +75,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link" data-bs-toggle="dropdown">마이페이지</a>
-                <div class="dropdown-menu fade-down m-0">
-                    <a href=# class="dropdown-item">마이페이지</a>
-                    <a href=# class="dropdown-item">마이페이지</a>
-                </div>
-            </div>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link" data-bs-toggle="dropdown">강의</a>
                 <div class="dropdown-menu fade-down m-0">
@@ -127,7 +120,7 @@
                 </div>
                 <div class="navbar-bt">
                     <div>
-                        <button type="button" onclick="location.href='/studentpagedefult'">홈</button>
+                        <button type="button" onclick="location.href='/mypage'">홈</button>
                     </div>
                     <div>
                         <button type="button" onclick="location.href='/book-store/order/detail'">배송조회</button>
@@ -139,7 +132,7 @@
             </div>
 
             <div class="container-xxl py-10 mt-5">
-                <div class="container">
+                <div class="container user-info">
                     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
 
                         <div class="row text-center col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 55%; float: none; margin: 0 auto">
@@ -230,8 +223,8 @@
                                                     <div class="col-lg-6 pt-2">
                                                         <input type="text" id="sangsejuso2" name="sangsejuso2" value="" class="form-control">
                                                     </div>
-                                                    <div id=warning class="col-lg-10 pt-2">
-                                                        <span id=warning class="input-group-addon text-left">* 주소는 상세주소까지 정확하게 입력해주세요.주소가 정확하지 않을 경우, 배송이 원활하지 않을 수 있습니다.</span>
+                                                    <div id="warning" class="col-lg-10 pt-2">
+                                                        <span id="warning" class="input-group-addon text-left">* 주소는 상세주소까지 정확하게 입력해주세요.주소가 정확하지 않을 경우, 배송이 원활하지 않을 수 있습니다.</span>
                                                     </div>
                                                     <input type="hidden" name="sangse_juso" id="sangse_juso">
                                                 </div>
@@ -243,8 +236,11 @@
                             </form>
                             <div class="row pt-3 ">
                                 <div class="col-1"></div>
-                                <div class="col-5 ">
-                                    <button id="modify" onclick="location.href='/modify'" class="btn btn-primary w-100 py-3" type="button">수정하기</button>
+                                <div class="col-5">
+                                    <button id="modify" onclick="location.href='/modify'" class="btn btn-primary w-100 py-3 user-info-bt" type="button">수정하기</button>
+                                </div>
+                                <div class="col-5">
+                                    <button id="modify" onclick="location.href='/withdrawForm'" class="btn btn-primary w-100 py-3 user-info-bt" type="button">회원탈퇴</button>
                                 </div>
                             </div>
                         </div>
