@@ -58,6 +58,7 @@ public class BookStoreServiceImpl implements BookStoreService{
         pageInfo.setPage(page);
         pageInfo.setListCount(listCount);
         int startrow = (page-1)*10+1;
+        System.out.println(category);
         return bookDAO.selectSearchList(startrow,category,keyword);
     }
 

@@ -47,7 +47,7 @@
 	</delete>
 
 
-	<select id="selectSearchList" resultType="Book">
+	<select id="selectSearchList" resultType="Book" parameterType="Map">
 		<![CDATA[
 		select *
 		from (select @rownum:=@rownum+1 rnum, tot.*
