@@ -239,7 +239,8 @@
 
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-	<script>		
+	<script>
+		
 		$(document).ready(function(){
 		let ismaker = "<c:out value='${ismaker}'/>";	
 		console.log("ismaker" + ismaker);
@@ -253,8 +254,8 @@
 			}
 		});
 		
-		});
-		
+		})
+		}
 	</script>
 </body>
 </html>
