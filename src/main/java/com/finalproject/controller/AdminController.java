@@ -51,22 +51,22 @@ public class AdminController {
 			List<Answer> ansList=adminService.getAnswerListByRole(role);
 			mav.addObject("ansList", ansList);
 			
-			mav.setViewName("/admin/admin_qnaList1");
+			mav.setViewName("/admin/admin_qnaList");
 		} catch (Exception e) {
 			e.printStackTrace();
 			mav.addObject("err", e.getMessage());
 			mav.addObject("/admin/err");
 		}
 		
-		switch(role) {
-		case "freelancer":
-			mav.setViewName("admin/admin_qnaList1");
-			break;
-		case "student":
-			mav.setViewName("admin/admin_qnaList2");
-			break;
-		}
-		return mav;
+//		switch(role) {
+//		case "freelancer":
+//			mav.setViewName("admin/admin_qnaList1");
+//			break;
+//		case "student":
+//			mav.setViewName("admin/admin_qnaList2");
+//			break;
+//		}
+//		return mav;
 	}
 	
 	@RequestMapping("/adminHome")
@@ -99,6 +99,7 @@ public class AdminController {
 		// String role = mem.getRole();
 		String order_state= "payCompl";
 		try {
+			adminService.get
 			List<Order> orderList=adminService.getOrderListByState(order_state);
 			mav.addObject("orderList", orderList);
 			
@@ -113,7 +114,7 @@ public class AdminController {
 		}
 		switch(order_state) {
 		case "payCompl":
-			mav.setViewName("admin/admin_orderList1");
+			mav.setViewName("admin/admin_orderList");
 			break;
 		case "prodDeli":
 			mav.setViewName("admin/admin_orderList2");
