@@ -21,22 +21,16 @@
 			select * from member where role = #{role}
 		]]>
 	</select>
-	
-<<<<<<< HEAD
-	
-	<select id="orderList" resultType="Order" parameterType="string">
-=======
+
 	<select id="getWithdrawListT" resultType="Member">
->>>>>>> branch 'develop' of https://github.com/KyungPilKang/team1_final.git
 		<![CDATA[
-<<<<<<< HEAD
 			select * from order where order_state = #{order_state}
 		]]>
 	</select>
+	
 	<select id="orderBook" resultType="OrderBook" parameterType="string">
 		<![CDATA[
 			select * from order_book where order_state = #{order_state}
-=======
 			select * from final.member where withdraw_status = "Y" and gender = "T"
 		]]>
 	</select>
@@ -44,7 +38,6 @@
 	<select id="getWithdrawListS" resultType="Member">
 		<![CDATA[
 			select * from final.member where withdraw_status = "Y" and type = "S1" or type = "S2"
->>>>>>> branch 'develop' of https://github.com/KyungPilKang/team1_final.git
 		]]>
 	</select>
 	
