@@ -16,6 +16,13 @@
 	</select>
 	
 	
+	<select id="orderListByState" resultType="Order" parameterType="string">
+		<![CDATA[
+			select * from order where order_state = #{order_state}
+		]]>
+	</select>
+	
+	
 	<select id="orderBook" resultType="OrderBook" parameterType="string">
 		<![CDATA[
 			select * from order_book where order_state = #{order_state}
@@ -32,12 +39,7 @@
 	
 	<select id="orderInfo" resultType="Order" parameterType="string">
 		<![CDATA[
-			select * from order where order_num = #{order_num}
-		]]>
-	</select>
-	<select id="orderBookInfo" resultType="OrderBook" parameterType="string">
-		<![CDATA[
-			select * from order_book where order_num = #{order_num}
+			select * from order where order_num = #{orderNum}
 		]]>
 	</select>
 	

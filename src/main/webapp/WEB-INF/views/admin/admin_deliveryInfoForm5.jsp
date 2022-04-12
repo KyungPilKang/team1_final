@@ -80,7 +80,6 @@
 				<div class="nav-item dropdown me-3">
 					<a href="http://localhost:8090/studymain" class="nav-link" data-bs-toggle="dropdown">관리자</a>
 					<div class="dropdown-menu fade-down m-0">
-						<a href="http://localhost:8090/qnalist" style="font-size: 1.3em;" class="dropdown-item">1:1문의관리</a>
 						<a href="http://localhost:8090/orderlist" style="font-size: 1.3em;" class="dropdown-item">배송관리</a>
 						<a href="http://localhost:8090/withdrawmemlistS" style="font-size: 1.3em;" class="dropdown-item">탈퇴회원 관리</a>
 					</div>
@@ -153,7 +152,7 @@
 
 
 
-                   <!-- 라인 -->
+                    <!-- 라인 -->
             <div class="row justify-content-center">
                 <div class="col-lg-7 col-md-7 d-flex border-bottom">
                 </div>
@@ -173,7 +172,7 @@
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-left py-2 px-2">2022.02.30</small>
+                            <small class="flex-fill text-left py-2 px-2">${orderInfo.order_date}</small>
                         </div>
                 </span>
             </div>
@@ -187,7 +186,7 @@
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-left py-2 px-2">A234A3</small>
+                            <small class="flex-fill text-left py-2 px-2">${orderInfo.order_num}</small>
                         </div>
                 </span>
             </div>
@@ -201,7 +200,7 @@
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-left py-2 px-2">만능 데이터베이스 입문</small>
+                            <small class="flex-fill text-left py-2 px-2">{orderInfo.subjectList}</small>
                         </div>
                 </span>
             </div>
@@ -215,7 +214,7 @@
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-left py-2 px-2">3 권</small>
+                            <small class="flex-fill text-left py-2 px-2">${orderInfo.total_count} 권</small>
                         </div>
                 </span>
             </div>
@@ -229,7 +228,7 @@
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top border-bottom">
-                            <small class="flex-fill text-left py-2 px-2">30,000 원</small>
+                            <small class="flex-fill text-left py-2 px-2">${orderInfo.total_price} 원</small>
                         </div>
                 </span>
             </div>
@@ -242,7 +241,7 @@
                     <button class="btn btn-primary w-100 py-1" type="submit">완료</button>
                 </span>
                 <span class="col-lg-1 col-md-3">
-                    <button class="btn btn-primary w-100 py-1" type="submit">목록으로</button>
+                    <button class="btn btn-primary w-100 py-1" type="submit" href="http://localhost:8090/orderlist">목록으로</button>
                 </span>
             </div>
 

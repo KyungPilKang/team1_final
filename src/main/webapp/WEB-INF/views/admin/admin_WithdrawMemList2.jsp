@@ -80,7 +80,6 @@
 				<div class="nav-item dropdown me-3">
 					<a href="http://localhost:8090/studymain" class="nav-link" data-bs-toggle="dropdown">관리자</a>
 					<div class="dropdown-menu fade-down m-0">
-						<a href="http://localhost:8090/qnalist" style="font-size: 1.3em;" class="dropdown-item">1:1문의관리</a>
 						<a href="http://localhost:8090/orderlist" style="font-size: 1.3em;" class="dropdown-item">배송관리</a>
 						<a href="http://localhost:8090/withdrawmemlistS" style="font-size: 1.3em;" class="dropdown-item">탈퇴회원 관리</a>
 					</div>

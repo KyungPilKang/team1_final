@@ -37,22 +37,15 @@ public class AdminServiceImpl implements AdminService {
 	
 	@Override
 	public List<Order> getOrderListByState(String order_state) throws Exception {
-		return adminDAO.orderList(order_state);
-	}
-	@Override
-	public List<OrderBook> getOrderBookByState(String order_state) throws Exception {
-		return adminDAO.orderBook(order_state);
+		return adminDAO.orderListByState(order_state);
 	}
 	
 	
 	@Override
-	public Order getOrderInfoByNum(String order_num) throws Exception {
-		return adminDAO.orderInfo(order_num);
+	public Order getOrderInfoByNum(String orderNum) throws Exception {
+		return adminDAO.orderInfo(orderNum);
 	}
-	@Override
-	public OrderBook getOrderBookInfoByNum(String order_num) throws Exception {
-		return adminDAO.orderBookInfo(order_num);
-	}
+
 	
 
 	@Override

@@ -53,7 +53,6 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
-                        <a href="team.html" class="dropdown-item">1:1문의 관리</a>
                         <a href="testimonial.html" class="dropdown-item">배송 관리</a>
                         <a href="404.html" class="dropdown-item">탈퇴회원 관리</a>
                     </div>

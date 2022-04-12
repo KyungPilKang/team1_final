@@ -20,11 +20,9 @@ public interface AdminDAO {
 	public List<Member> getWithdrawListT() throws Exception;
 	public List<Member> getWithdrawListS() throws Exception;
 	
-	public List<Order> orderList(String order_state) throws Exception;
-	public List<OrderBook> orderBook(String order_state) throws Exception;
+	public List<Order> orderListByState(String order_state) throws Exception;
 	
-	public Order orderInfo(String order_num) throws Exception;
-	public OrderBook orderBookInfo(String order_num) throws Exception;
+	public Order orderInfo(String orderNum) throws Exception;
 	
 	public void insertAnswerCont(Answer ansCont) throws Exception;
 	public Request getRequestInfoByNum(int requestNum) throws Exception;

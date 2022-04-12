@@ -19,10 +19,8 @@ public interface AdminService {
 	List<Member> getWithdrawListS() throws Exception;
 	
 	List<Order> getOrderListByState(String order_state) throws Exception;
-	List<OrderBook> getOrderBookByState(String order_state) throws Exception;
 	
-	Order getOrderInfoByNum(String order_num) throws Exception;
-	OrderBook getOrderBookInfoByNum(String order_num) throws Exception;
+	Order getOrderInfoByNum(String orderNum) throws Exception;
 
 	void insertAnsCont(Answer ansCont) throws Exception;
 	Request getRequestInfoByNum(int requestNum) throws Exception;

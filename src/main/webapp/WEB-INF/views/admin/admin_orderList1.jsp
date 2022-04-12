@@ -80,7 +80,6 @@
 				<div class="nav-item dropdown me-3">
 					<a href="http://localhost:8090/studymain" class="nav-link" data-bs-toggle="dropdown">관리자</a>
 					<div class="dropdown-menu fade-down m-0">
-						<a href="http://localhost:8090/qnalist" style="font-size: 1.3em;" class="dropdown-item">1:1문의관리</a>
 						<a href="http://localhost:8090/orderlist" style="font-size: 1.3em;" class="dropdown-item">배송관리</a>
 						<a href="http://localhost:8090/withdrawmemlistS" style="font-size: 1.3em;" class="dropdown-item">탈퇴회원 관리</a>
 					</div>
@@ -143,15 +142,15 @@
                     
 
                     <div class="tab-content">
-                        <div id="tab-1" class="tab-pane fade show p-0 active">
+                        <div id="payCompl" class="tab-pane fade show p-0 active">
                         
-							<c:forEach items="${orderList}" var="order" varStatus="status">
+							<c:forEach items="${orderList}" var="order">
 	                            <div class="job-item p-4 mb-4">
 	                                <div class="row g-4">
 	                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
-	                                        <img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
+	                                        <img class="flex-shrink-0 img-fluid border rounded" src=${order.book_img} alt="" style="width: 80px; height: 80px;">
 	                                        <div class="text-start ps-4">
-	                                            <h5 class="mb-3"><!-- 국어책, 수학책, 과학책 --> (${order.total_price} 원 | ${orderbook.order_book_count} 권)</h5>
+	                                            <h5 class="mb-3">${order.subjectList} (${order.total_price} 원 | ${order.total_count} 권)</h5>
 	                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>${order.username}</span>
 	                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>주문일 ${order.order_date}</small>
 	                                        </div>
@@ -164,7 +163,7 @@
 	                                    </div>
 	                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
 	                                        <div class="d-flex mb-3">
-	                                            <a class="btn btn-primary" href="">${order.order_state}</a>
+	                                            <a class="btn btn-primary" href="http://localhost:8090/deliveryinfo">${order.order_state}</a>
 	                                        </div>
 	                                    </div>
 	                                </div>

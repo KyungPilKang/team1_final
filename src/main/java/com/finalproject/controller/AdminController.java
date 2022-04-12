@@ -1,7 +1,6 @@
 package com.finalproject.controller;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -20,7 +19,6 @@ import com.finalproject.dto.Order;
 import com.finalproject.dto.OrderBook;
 import com.finalproject.dto.Request;
 import com.finalproject.service.AdminService;
-import com.finalproject.service.MemberService;
 
 
 @Controller
@@ -66,7 +64,7 @@ public class AdminController {
 //			mav.setViewName("admin/admin_qnaList2");
 //			break;
 //		}
-//		return mav;
+		return mav;
 	}
 	
 	@RequestMapping("/adminHome")
@@ -99,14 +97,13 @@ public class AdminController {
 		// String role = mem.getRole();
 		String order_state= "payCompl";
 		try {
-			adminService.get
 			List<Order> orderList=adminService.getOrderListByState(order_state);
 			mav.addObject("orderList", orderList);
+		
+			System.out.println(orderList.get(0).getOrder_state());
+			System.out.println(orderList.get(1).getOrder_state());
 			
-			List<OrderBook> orderBookList=adminService.getOrderBookByState(order_state);
-			mav.addObject("orderBookList", orderBookList);
-			
-			mav.setViewName("/admin/admin_orderList1");
+//			mav.setViewName("/admin/admin_orderList1");
 		} catch (Exception e) {
 			e.printStackTrace();
 			mav.addObject("err", e.getMessage());
@@ -114,7 +111,7 @@ public class AdminController {
 		}
 		switch(order_state) {
 		case "payCompl":
-			mav.setViewName("admin/admin_orderList");
+			mav.setViewName("admin/admin_orderList1");
 			break;
 		case "prodDeli":
 			mav.setViewName("admin/admin_orderList2");
@@ -128,17 +125,14 @@ public class AdminController {
 	
 	
 	
-	@GetMapping("/deliveryinfo")
-	public ModelAndView deliveryInfo(@PathVariable String order_num) {
+	@GetMapping("/deliveryinfo{orderNum}")
+	public ModelAndView deliveryInfo(@PathVariable String orderNum) {
 		ModelAndView mav=new ModelAndView();
 		Member mem = (Member) session.getAttribute("login");
 
 		try {
-			Order orderInfo=adminService.getOrderInfoByNum(order_num);
+			Order orderInfo=adminService.getOrderInfoByNum(orderNum);
 			mav.addObject("orderInfo", orderInfo);
-			
-			OrderBook orderBookInfo=adminService.getOrderBookInfoByNum(order_num);
-			mav.addObject("orderBookInfo", orderBookInfo);
 			
 			mav.setViewName("/admin/admin_deliveryInfoForm1");
 		} catch (Exception e) {
