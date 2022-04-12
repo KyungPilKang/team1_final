@@ -252,7 +252,6 @@
 				$('#makerbtn').attr('disabled', true); 
 				return false;
 				}
-			
 		});
 	});
 		
