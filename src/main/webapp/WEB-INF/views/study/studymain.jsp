@@ -251,12 +251,11 @@
 				alert("스터디를 개설해 주세요");
 				$('#makerbtn').attr('disabled', true); 
 				return false;
-				
-			}
+				}
+			
 		});
+	});
 		
-		})
-		}
 	</script>
 </body>
 </html>
