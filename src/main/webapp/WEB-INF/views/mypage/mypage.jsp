@@ -35,6 +35,12 @@
 
     <!-- Template Stylesheet -->
     <link href="${pageContext.request.contextPath}/resources/mypage/css/style.css" rel="stylesheet">
+
+    <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet"/>
+    <script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
+    <link href="https://unpkg.com/@silvermine/videojs-quality-selector/dist/css/quality-selector.css" rel="stylesheet">
+    <script src="https://unpkg.com/@silvermine/videojs-quality-selector/dist/js/silvermine-videojs-quality-selector.min.js"></script>
+
 </head>
 
 <body>
@@ -99,73 +105,28 @@
     <div class="main">
         <div class="my-subject">
             <div class="subject">
-                <h1 class="section-title bg-white text-center text-primary px-3">= 강사 =</h1>
+                <h1 class="section-title bg-white text-center text-primary px-3">= 회원정보 =</h1>
             </div>
         </div>
 
         <div class="default">
             <div class="subnavbar">
                 <div class="navbar-main">
-                    <div class="navbar-name">- 강의 목록 -</div>
+                    <div class="navbar-name">- 홈 -</div>
                 </div>
                 <div class="navbar-bt">
                     <div>
-                        <button type="button" onclick="location.href='/teachpagedefult'">홈</button>
+                        <button type="button" onclick="location.href='/studentpagedefult'">홈</button>
                     </div>
                     <div>
-                        <button type="button" onclick="location.href='/teachpagemove'">강의 목록</button>
+                        <button type="button" onclick="location.href='/studentpagequick'">배송 목록</button>
                     </div>
                     <div>
-                        <button type="button" onclick="location.href='/teachpagerequest'">요청 목록</button>
+                        <button type="button" onclick="location.href='/studentpagestudy'">스터디</button>
                     </div>
                 </div>
             </div>
-            <div class="default-intro">
-                <div class="intro move-list">
-                    <h1 class="move-list_subject">- 강의 목록 -</h1>
-                    <div class="make-movelist">
-                        <div class="move">
-                            <img src="#" class="move-name"><br>
-                            <span class="move-subject">JAVA의 정석 /</span>
-                            <span class="move-producer">&nbsp김길동</span>
-                            <div class="star-point">★★★★★</div>
-                            <span class="freelane-type">프리랜서 종류 /</span>
-                            <span class="freelane-inpo">종류별 주요 정보</span>
-                            <form>
-                                <span>리뷰 /</span>
-                                <span>&nbsp근무형태 /</span>
-                                <span>&nbsp계약횟수</span>
-                            </form>
-                        </div>
-                        <div class="move">
-                            <img src="#" class="move-name"><br>
-                            <span class="move-subject">JAVA의 정석 /</span>
-                            <span class="move-producer">&nbsp김길동</span>
-                            <div class="star-point">★★★★★</div>
-                            <span class="freelane-type">프리랜서 종류 /</span>
-                            <span class="freelane-inpo">종류별 주요 정보</span>
-                            <form>
-                                <span>리뷰 /</span>
-                                <span>&nbsp근무형태 /</span>
-                                <span>&nbsp계약횟수</span>
-                            </form>
-                        </div>
-                        <div class="move">
-                            <img src="#" class="move-name"><br>
-                            <span class="move-subject">JAVA의 정석 /</span>
-                            <span class="move-producer">&nbsp김길동</span>
-                            <div class="star-point">★★★★★</div>
-                            <span class="freelane-type">프리랜서 종류 /</span>
-                            <span class="freelane-inpo">종류별 주요 정보</span>
-                            <form>
-                                <span>리뷰 /</span>
-                                <span>&nbsp근무형태 /</span>
-                                <span>&nbsp계약횟수</span>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
@@ -216,6 +177,8 @@
 
 <!-- DIY -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<script src="${pageContext.request.contextPath}/resources/mypage/js/mypage.js"></script>
+<script src="${pageContext.request.contextPath}/resources/mypage/js/myFage.js"></script>
+
+
 </body>
 </html>
