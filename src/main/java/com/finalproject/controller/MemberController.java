@@ -217,7 +217,7 @@ public class MemberController {
 		return "/loginJoin/withdrawalForm";
 	}	
 	
-	//joinForm 페이지에서 회원가입 버튼을 누를 경우 진행, home 페이지로 이동한다.
+	//withdraw 페이지에서 회원가입 버튼을 누를 경우 진행, home 페이지로 이동한다.
 		@PostMapping("withdraw")
 		public ModelAndView withdraw(@ModelAttribute Member member) {
 			ModelAndView mav = new ModelAndView();
