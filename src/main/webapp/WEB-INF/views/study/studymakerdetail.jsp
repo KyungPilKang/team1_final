@@ -285,8 +285,8 @@
 			let studentName = $('#attendList').val();
 			let studentStatus = $("#attendResult option:selected").val();			
 			let studentStatusText = $("#attendResult option:selected").text();			
-			var result = confirm(studentName + '님의 상태를 ' + studentStatusText + '으로 변경하시겠습니까?');
-		/*	
+			//var result = confirm(studentName + '님의 상태를 ' + studentStatusText + '으로 변경하시겠습니까?');
+			
 			if(studentStatusText == '참여수락' ){
 				Swal.fire({
 					title: "수락",
@@ -302,7 +302,24 @@
 						confirmButton: "swal_confirm",
 						cancelButton: "swal_cancle"
 					}
-				})
+				}).then((result) => {
+							if(result){
+						    $.ajax({
+						 		url: "http://localhost:8090/studymakerdetail/check",
+						 		type: "post" ,
+						 		data: {
+						 			"study_no" : $('#study_no').val(),
+									"studentStatus" : studentStatus,
+									"studentName" : studentName
+						 		},
+						 		success: function(data) {
+						 			console.log("성공");
+						 			window.location="/studymakerdetail/${studyPosted.study_no}";
+						 		}
+						    })
+						}
+					
+				});
 			}else {
 				Swal.fire({
 					title: "수락 취소",
@@ -318,25 +335,29 @@
 						confirmButton: "swal_confirm",
 						cancelButton: "swal_cancle"
 					}
-				})
+				}).then((result) => {
+					if(result){
+					    $.ajax({
+					 		url: "http://localhost:8090/studymakerdetail/check",
+					 		type: "post" ,
+					 		data: {
+					 			"study_no" : $('#study_no').val(),
+								"studentStatus" : studentStatus,
+								"studentName" : studentName
+					 		},
+					 		success: function(data) {
+					 			co
+					 			nsole.log("성공");
+					 			window.location="/studymakerdetail/${studyPosted.study_no}";
+					 		}
+					    })
+					}
+				
+			});
 			};  	
-			*/
+		
 			
-			if(result){
-			    $.ajax({
-			 		url: "http://localhost:8090/studymakerdetail/check",
-			 		type: "post" ,
-			 		data: {
-			 			"study_no" : $('#study_no').val(),
-						"studentStatus" : studentStatus,
-						"studentName" : studentName
-			 		},
-			 		success: function(data) {
-			 			console.log("성공");
-			 			window.location="/studymakerdetail/${studyPosted.study_no}";
-			 		}
-			    })
-			}
+
 		})
 	});
 	
@@ -345,6 +366,23 @@
 		return true;
 	}
 	   
+	
+	/* 			if(result){
+    $.ajax({
+ 		url: "http://localhost:8090/studymakerdetail/check",
+ 		type: "post" ,
+ 		data: {
+ 			"study_no" : $('#study_no').val(),
+			"studentStatus" : studentStatus,
+			"studentName" : studentName
+ 		},
+ 		success: function(data) {
+ 			console.log("성공");
+ 			window.location="/studymakerdetail/${studyPosted.study_no}";
+ 		}
+    })
+}
+}) */
 	</script>
 </body>
 </html>
