@@ -175,7 +175,7 @@ String sangse_juso = (String)session.getAttribute("sangse_juso");
 										      </div>
 										      <div class="modal-footer d-flex justify-content-center">
         										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-        										<button type="button" id="modifyemail"  data-bs-dismiss="modal" class="btn btn-primary">수정하기</button>
+        										<button type="button" id="modifynickname"  data-bs-dismiss="modal" class="btn btn-primary">수정하기</button>
       										</div>
 										    </div>
 										  </div>
@@ -244,7 +244,7 @@ String sangse_juso = (String)session.getAttribute("sangse_juso");
 										<td>
 											<div class="row">
 												<div class="col-lg-4">
-													<input type="text" id="phone" name="phone" maxlength="11" size="11" value="<%=phone %>" style="background-color:transparent; border:none;" class="form-control old" readonly>
+													<input type="text" id="oldphone" name="phone" maxlength="11" size="11" value="<%=phone %>" style="background-color:transparent; border:none;" class="form-control old" readonly>
 												</div>
 												
 												<div class="col-lg-2">
@@ -264,7 +264,7 @@ String sangse_juso = (String)session.getAttribute("sangse_juso");
       																	<h5 class="modal-title">수정할 휴대전화 번호를 입력해 주세요.</h5>
       																</div>
 																	<div class="col-lg-7">
-																		<input type="text" id="newphone" maxlength="11" size="11" placeholder="숫자만 입력하세요." class="form-control">
+																		<input type="text" id="phone" maxlength="11" size="11" placeholder="숫자만 입력하세요." class="form-control">
 																	</div>
 																	<div class="col-lg-4">
 																		<button type="button" id="reqnum" class="btn btn-primary w-90">인증번호 요청</button>
