@@ -39,7 +39,6 @@
     <link href="${pageContext.request.contextPath}/resources/bookstore/css/payment.css" rel="stylesheet">
 </head>
 
-
 <body>
 
 <jsp:include page="/WEB-INF/views/bookstore/header.jsp"/>

@@ -138,7 +138,39 @@
 	study_type varchar(1000), study_target_level varchar(1000), study_title varchar(1000), 
 	study_fdate date, study_edate date, study_ftime varchar(1000), study_etime 
 	varchar(1000), study_contents MEDIUMTEXT, study_kakao varchar(1000), study_regdate 
-	DATETIME DEFAULT CURRENT_TIMESTAMP ); select * from study where study_no 
+	DATETIME DEFAULT CURRENT_TIMESTAMP ); 
+	
+	
+	
+	스터디팀 
+	create table studyteam (
+	studyteam_no int PRIMARY key AUTO_INCREMENT,
+    study_no int,
+    user_id varchar(1000),
+    team_status varchar(1000)
+)
+	
+	create table study( 
+	study_no int PRIMARY key AUTO_INCREMENT, 
+	maker varchar(1000), 
+	study_sname varchar(1000), 
+    study_grade varchar(1000), 
+    study_subject varchar(1000), 
+	study_type varchar(1000),
+    study_target_level varchar(1000),
+    
+    study_title varchar(1000), 
+	study_fdate date,
+    study_edate date,
+    study_ftime varchar(1000),
+    study_etime varchar(1000),
+    study_contents MEDIUMTEXT,
+    study_kakao varchar(1000),
+    study_regdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP );
+	
+	
+	
+	select * from study where study_no 
 	in (SELECT study_no from studyteam where user_id = '김민정' and team_status='team_apply'); 
 	insert into study (maker, study_sname, study_grade, study_subject, study_type, 
 	study_target_level, study_title, study_fdate, study_edate, study_ftime, study_etime, 
