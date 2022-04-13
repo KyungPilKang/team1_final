@@ -97,7 +97,6 @@
 
         .item_box {
             height: 200px;
-            border: 1px solid rgba(138, 138, 138, 0.58);
         }
 
         .button_box {
@@ -122,14 +121,13 @@
             <span> > </span>
             <span class="now_process">결제완료</span>
         </div>
-        <button onclick="location.href='/book-store/order/detail'" style="float:right; margin:10px; border-radius: 10px;" class="btn btn-primary">주문 상세보기</button>
-        <div class="item_box row text-center col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.5s"
-             style="width: 55%; float:none; margin:40px auto 0 auto">
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 10vh;">
+        <div class="item_box row text-center col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 55%">
 
-            <h2 style="margin-top: 5vh">결제가 완료되셨습니다.</h2>
-
+            <h2 style="margin-top: 5vh">결제가 완료되었습니다.</h2>
         </div>
-
+        <button onclick="location.href='/book-store/order/detail'" style="border-radius: 10px;" class="btn btn-primary">주문 상세보기</button>
+        </div>
     </div>
 </div>
 

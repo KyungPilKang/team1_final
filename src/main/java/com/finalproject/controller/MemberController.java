@@ -166,7 +166,9 @@ public class MemberController {
 		System.out.println(password);
 		try {
 			if(username.equals("admin")) {
+				Member login = memberService.selectMemberByUsername(username);
 				result = memberService.adminCheck(password);
+				session.setAttribute("role", login.getRole());
 				return result;
 			}
 			else {
