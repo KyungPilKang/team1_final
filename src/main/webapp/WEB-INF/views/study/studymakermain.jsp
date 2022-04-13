@@ -166,7 +166,7 @@
 			               					<button id="showdetail" class="btn btn-outline-primary w-30 py-3 showdetail" style="float:right; margin-left:3px;font-size: 1.0em; height:50px;">게시글보기</button>
 			              				</a> 
 									</div>
-									<span class="text-truncate"><i class="bi bi-cart-plus text-primary me-2"></i>참여여부</span>
+									<!-- <span class="text-truncate"><i class="bi bi-cart-plus text-primary me-2"></i>참여여부</span> -->
 								</div>
 							</div>
 						</div>						

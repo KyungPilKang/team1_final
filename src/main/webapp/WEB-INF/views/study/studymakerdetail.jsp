@@ -119,13 +119,13 @@
 							<div class="text-start ps-4">
 								<h3 class="mb-3">스터디 등록 제목</h3>
 								<span class="resfreespan text-truncate me-3">
-									<i class="bi bi-brightness-high-fill text-primary me-2"></i>초등/중등
+									<i class="bi bi-brightness-high-fill text-primary me-2"></i>${studyPosted.study_sname}
 								</span>
 								<span class="resfreespan text-truncate me-3">
-									<i class="bi bi-eyeglasses text-primary me-2"></i>학년
+									<i class="bi bi-eyeglasses text-primary me-2"></i> ${studyPosted.study_grade}
 								</span>
 								<span class="resfreespan text-truncate me-3">
-									<i class="bi bi-calendar2-date text-primary me-2"></i>시작 날짜 
+									<i class="bi bi-calendar2-date text-primary me-2"></i>${studyPosted.study_fdate}
 								</span>
 							</div>
 					</div>
@@ -146,7 +146,7 @@
 						<%-- <p><i class="fa fa-angle-right text-primary me-2"></i>참여자정보 : ${studyteam.team_accept}</p> --%>
 						<br> <br>
 						<h3 class="mb-5">스터디상세내용</h3>
-						<p> ${studyPosted.study_contents}  이 스터디는 이번 1학기 중간고사를 목표로 개설되었습니다! 최상에 도전하는 친구들이 매주 2번 모여 문제풀이를 같이 할까요. 교재는 천재교육 --문제집 혹은 메가스터디 --교재 입니다. 추후 스터디 모집 완료후 오픈카톡으로 이야기 나누어 보아요.</p>
+						<p> ${studyPosted.study_contents}</p>
 					</div>
 				</div>
 			  </div>
