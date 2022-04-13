@@ -196,7 +196,6 @@ public class BookController {
         try {
             int cartCount = cartService.cartCount(username);
             mv.addObject("cartCount",cartCount);
-            System.out.println("값이 안오나?"+type);
             List<Book> sortResults = bookStoreService.sortList(page,pageInfo,type);
             mv.addObject("pageInfo", pageInfo);
             mv.addObject("bookList",sortResults);

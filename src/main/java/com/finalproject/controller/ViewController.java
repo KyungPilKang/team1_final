@@ -64,4 +64,15 @@ public class ViewController {
 	public String test1() {
 		return "admin/admin_qnaInfoForm";
 	}
+
+
+	@GetMapping("tt")
+	public String tt() {
+		return "/bookstore/paymentFinished";
+	}
+
+	@GetMapping("ttt")
+	public String ttt() {
+		return "/bookstore/orderDetail";
+	}
 }
