@@ -155,7 +155,7 @@ function emailChk() {
 						text: '사용 가능한 이메일 주소 입니다.',
 						confirmButtonText: "확인"
 					})
-					$("#email").val(newemail);
+					
 				}
 			}
 		});
