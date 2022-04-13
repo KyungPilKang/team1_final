@@ -7,10 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.finalproject.dto.Answer;
@@ -90,23 +87,26 @@ public class AdminController {
 
 	
 	@GetMapping("/orderlist")
-	public ModelAndView orderList(@RequestParam(value = "state", defaultValue = "null") String state) {
+	public ModelAndView orderList(@RequestParam(value = "state", defaultValue = "0") String state) {
 		ModelAndView mav=new ModelAndView();
 		try {
 			switch(state) {
 			case "0":
 				List<Order> orderList=adminService.getOrderListByState("결제완료");
 				mav.addObject("orderList", orderList);
+				mav.addObject("state","결제완료");
 				mav.setViewName("admin/admin_orderList1");
 				break;
 			case "1":
 				List<Order> orderList1=adminService.getOrderListByState("배송중");
 				mav.addObject("orderList", orderList1);
+				mav.addObject("state","배송중");
 				mav.setViewName("admin/admin_orderList1");
 				break;
 			case "2":
 				List<Order> orderList2=adminService.getOrderListByState("배송완료");
 				mav.addObject("orderList", orderList2);
+				mav.addObject("state","배송완료");
 				mav.setViewName("admin/admin_orderList1");
 				break;
 			}
