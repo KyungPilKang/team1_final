@@ -148,7 +148,8 @@
 	                            <div class="job-item p-4 mb-4">
 	                                <div class="row g-4">
 	                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
-	                                        <img class="flex-shrink-0 img-fluid border rounded" src=${order.book_img} alt="" style="width: 80px; height: 80px;">
+	                                        <img class="flex-shrink-0 img-fluid border rounded" src="/book-store/book-img/${order.book_img}"
+ alt="" style="width: 80px; height: 80px;">
 	                                        <div class="text-start ps-4">
 	                                            <h5 class="mb-3">${order.subjectList} (${order.total_price} 원 | ${order.total_count} 권)</h5>
 	                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>${order.username}</span>
