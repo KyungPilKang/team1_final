@@ -207,7 +207,7 @@
                                         <a class="btn-sm btn-primary" onclick="alert('로그인이 필요합니다.')">바로 구매하기</a>
                                     </c:otherwise>
                                 </c:choose>
-                                <c:if test = "${role == 'admin'}">
+                                <c:if test = "${role == 'ROLE_ADMIN'}">
                                     <a class="btn-sm btn-primary" href="/book-store/delbook?book_num=${book.book_num}" style="background: red">교재 삭제</a>
                                 </c:if>
                                 <form id="buyNow" method="post">

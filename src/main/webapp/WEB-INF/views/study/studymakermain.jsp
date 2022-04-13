@@ -43,7 +43,7 @@
 	</div>
 	<!-- Spinner End -->
 	<!-- Navbar Start -->
-	<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+<!-- 	<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
 		<a href="/freereg1" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
 			<h1 class="m-0 text-primary">
 				<i class="fa fa-book me-3"></i>NEESFULL
@@ -74,7 +74,9 @@
 				</div>
 			</div>
 		</div>
-	</nav>
+	</nav> -->
+	<jsp:include page="/WEB-INF/views/bookstore/header.jsp"/>
+	
 	<!-- Navbar End -->
 
 

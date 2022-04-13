@@ -48,7 +48,7 @@
 
 	<!-- Navbar Start -->
 	<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-		<a href="/freereg1" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+		<a href="/home" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
 			<h1 class="m-0 text-primary">
 				<i class="fa fa-book me-3"></i>NEESFULL
 			</h1>
@@ -60,14 +60,23 @@
 	<!-- Navbar End -->
 
 	<!-- Header Start -->
+		
+	<div class="container-fluid bg-primary py-5 mb-5 page-header">
+		<div class="container py-5">
+			<div class="row justify-content-center">
+				<div class="col-lg-10 text-center">
+					<h1 class="display-3 text-white animated slideInDown">로그인 페이지</h1>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- Header End -->
 
 	<!-- Contact Start -->
-	<div class="container-xxl py-10 mt-3">
+	<div class="container-xxl py-10 mt-5">
 		<div class="container">
 			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
 				<h6 class="section-title bg-white text-center text-primary px-3">LOG IN</h6>
-				<h1 class="mt-3 mb-1">회원/소셜 로그인</h1>
 				<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto">
 				<!-- 	<form method="post" action="/login"> -->
 						<div class="row g-3">

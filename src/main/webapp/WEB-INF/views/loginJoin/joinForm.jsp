@@ -148,11 +148,11 @@
 											<div class="row">
 												<div class="col-lg-2"></div>
 												<div class="col-lg-3">
-													<label class="radio"> <input type="radio" id="gender" name="gender" value="S1">초등학생
+													<label class="radio"> <input type="radio" id="gender" name="type" value="S1">초등학생
 													</label>
 												</div>
 												<div class="col-lg-3">
-													<label class="radio"> <input type="radio" id="gender" name="gender" value="S2">중학생
+													<label class="radio"> <input type="radio" id="gender" name="type" value="S2">중학생
 													</label>
 												</div>
 											</div>
@@ -261,7 +261,7 @@
 							<button class="btn btn-primary w-100 py-3" onclick="join()">회원가입</button>
 						</div>
 						<div class="col-3">
-							<a href="home" class="btn border w-100 py-3">취소하기</a>
+							<a href="/loginForm" class="btn border w-100 py-3">취소하기</a>
 						</div>
 					</div>
 					

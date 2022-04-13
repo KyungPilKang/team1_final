@@ -64,9 +64,9 @@
 </div>
 <!-- Spinner End -->
 
-
+<jsp:include page="/WEB-INF/views/bookstore/header.jsp"/>
 <!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+<%--<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
     <a href="/home" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
         <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>NEESFULL</h2>
     </a>
@@ -75,19 +75,12 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link" data-bs-toggle="dropdown">강의</a>
-                <div class="dropdown-menu fade-down m-0">
-                    <a href=# class="dropdown-item">강의 등록</a>
-                    <a href=# class="dropdown-item">강의 조회</a>
-                </div>
-            </div>
-            <a href="about.html" class="nav-item nav-link">마이페이지</a>
-            <a href="courses.html" class="nav-item nav-link">고객센터</a>
-            <a href=# class="nav-item nav-link">로그아웃</a>
+            <a href="/mypage" class="nav-item nav-link">마이페이지</a>
+            <a href="/request" class="nav-item nav-link">고객센터</a>
+            <a href="/log_out" class="nav-item nav-link">로그아웃</a>
         </div>
     </div>
-</nav>
+</nav>--%>
 <!-- Navbar End -->
 
 
@@ -126,7 +119,7 @@
                         <button type="button" onclick="location.href='/book-store/order/detail'">배송조회</button>
                     </div>
                     <div>
-                        <button type="button" onclick="location.href='/studentpagestudy'">스터디현황</button>
+                        <button type="button" onclick="location.href='/studyclass'">스터디현황</button>
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>eLEARNING - eLearning HTML Template</title>
+<title>NEEDSFULL - 초중등 교육 매칭 플랫폼</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="" name="keywords">
 <meta content="" name="description">
@@ -18,10 +18,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+<link href="${pageContext.request.contextPath}/resources/asset/needsfull.ico" rel="icon">
 
-<!-- Favicon -->
-<%-- <link href="${pageContext.request.contextPath}/resources/freelance/${pageContext.request.contextPath}/resources/freelance/img/favicon.ico" rel="icon">
- --%>
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -114,21 +112,21 @@
 						</div>
 					</div>
 					<div class="me-3">
-						<a href="about.html" class="nav-item nav-link">마이페이지</a>
+						<a href="mypage" class="nav-item nav-link">마이페이지</a>
 					</div>
 					<div class="me-3">
-						<a href="courses.html" class="nav-item nav-link">고객센터</a>
+						<a href="request" class="nav-item nav-link">고객센터</a>
 					</div>
 				</c:if>
 				<c:choose>
 					<c:when test="${empty no }">
 						<div class="me-3">
-							<a href=/loginForm class="nav-item nav-link">로그인</a>
+							<a href="/loginForm" class="nav-item nav-link">로그인</a>
 						</div>
 					</c:when>
 					<c:otherwise>
 						<div class="me-3">
-							<a href=/logout?mapping=home class="nav-item nav-link">로그아웃</a>
+							<a href="/log_out" class="nav-item nav-link">로그아웃</a>
 						</div>
 					</c:otherwise>
 				</c:choose>

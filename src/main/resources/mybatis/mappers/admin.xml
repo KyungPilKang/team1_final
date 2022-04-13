@@ -18,7 +18,14 @@
 	
 	<select id="orderListByState" resultType="Order" parameterType="string">
 		<![CDATA[
-			select * from order where order_state = #{order_state}
+			select * from final.order where order_state = #{order_state}
+		]]>
+	</select>
+	
+	
+	<select id="orderInfoByNum" resultType="Order" parameterType="string">
+		<![CDATA[
+			select * from final.order where order_num = #{order_num}
 		]]>
 	</select>
 	
@@ -33,13 +40,6 @@
 	<select id="getWithdrawListS" resultType="Member">
 		<![CDATA[
 			select * from final.member where withdraw_status = "Y" and type = "S1" or type = "S2"
-		]]>
-	</select>
-	
-	
-	<select id="orderInfo" resultType="Order" parameterType="string">
-		<![CDATA[
-			select * from order where order_num = #{orderNum}
 		]]>
 	</select>
 	

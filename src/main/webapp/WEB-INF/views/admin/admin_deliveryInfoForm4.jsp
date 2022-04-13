@@ -235,10 +235,10 @@
 
             <div class="row g-1 justify-content-center py-5">
                 <span class="col-lg-1 col-md-3">
-                    <button class="btn btn-primary w-100 py-1" type="submit">수정</button>
+                    <button class="btn btn-primary w-100 py-1" type="submit" href="http://localhost:8090/deliveryedite">이전</button>
                 </span>
                 <span class="col-lg-1 col-md-3">
-                    <button class="btn btn-primary w-100 py-1" type="submit">완료</button>
+                    <button class="btn btn-primary w-100 py-1" type="submit" href="http://localhost:8090/deliveryinfo5">다음</button>
                 </span>
                 <span class="col-lg-1 col-md-3">
                     <button class="btn btn-primary w-100 py-1" type="submit" href="http://localhost:8090/orderlist">목록으로</button>
