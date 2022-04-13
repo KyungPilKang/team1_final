@@ -169,7 +169,7 @@
 							</c:forEach>
  
 
-                            <a class="btn btn-primary py-3 px-5" href="">More List</a>
+                            <!-- <a class="btn btn-primary py-3 px-5" href="">More List</a> -->
                         </div>
                     </div>
                 </div>
