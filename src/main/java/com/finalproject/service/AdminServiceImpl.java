@@ -17,16 +17,7 @@ public class AdminServiceImpl implements AdminService {
 	@Autowired
 	private AdminDAO adminDAO;
 	
-	
-	@Override
-	public List<Request> getRequestListByRole(String role) throws Exception {
-		return adminDAO.qnaReqList(role);
-	}
-	@Override
-	public List<Answer> getAnswerListByRole(String role) throws Exception {
-		return adminDAO.qnaAnsList(role);
-	}
-	
+		
 	
 	@Override
 	public List<Member> getWithdrawListS() throws Exception {
@@ -47,6 +38,11 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	
+	@Override
+	public void insertOrderNum(Order delinum) throws Exception {
+		adminDAO.insertDeliNum(delinum);
+	}
+	
 
 	@Override
 	public void insertAnsCont(Answer ansCont) throws Exception {
@@ -60,6 +56,16 @@ public class AdminServiceImpl implements AdminService {
 	public Answer getAnswerInfoByNum(int requestNum) throws Exception {
 		return adminDAO.getAnswerInfoByNum(requestNum);
 	}
+	
+	
+//	@Override
+//	public List<Request> getRequestListByRole(String role) throws Exception {
+//		return adminDAO.qnaReqList(role);
+//	}
+//	@Override
+//	public List<Answer> getAnswerListByRole(String role) throws Exception {
+//		return adminDAO.qnaAnsList(role);
+//	}
 	
 	
 //	@Override

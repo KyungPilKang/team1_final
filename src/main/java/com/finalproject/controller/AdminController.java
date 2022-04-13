@@ -23,50 +23,16 @@ public class AdminController {
 	@Autowired
 	private AdminService adminService;
 	
-	
-	
 	@Autowired
 	private HttpSession session;
 
 	
-	@GetMapping("/qnalist")
-	public ModelAndView qnaList() {
-		ModelAndView mav=new ModelAndView();
-		Member mem = (Member) session.getAttribute("login");
-		// String role = mem.getRole();
-		String role= "freelancer";
-		try {
-			List<Request> reqList=adminService.getRequestListByRole(role);
-			mav.addObject("reqList", reqList);
-			
-			System.out.println(reqList.get(0).getRequest_subject());
-			System.out.println(reqList.get(1).getRequest_subject());
-			
-			List<Answer> ansList=adminService.getAnswerListByRole(role);
-			mav.addObject("ansList", ansList);
-			
-			mav.setViewName("/admin/admin_qnaList");
-		} catch (Exception e) {
-			e.printStackTrace();
-			mav.addObject("err", e.getMessage());
-			mav.addObject("/admin/err");
-		}
-		
-//		switch(role) {
-//		case "freelancer":
-//			mav.setViewName("admin/admin_qnaList1");
-//			break;
-//		case "student":
-//			mav.setViewName("admin/admin_qnaList2");
-//			break;
-//		}
-		return mav;
-	}
 	
 	@RequestMapping("/adminHome")
 	public @ResponseBody String adminHome() {
 		return "testadminhome";
 	}
+	
 	
 	@GetMapping("/adminHome")
 	public ModelAndView withdrawMemListS() {
@@ -120,9 +86,7 @@ public class AdminController {
 	}
 
 	
-	
-	
-	@GetMapping("/deliveryinfo/{order_num}")
+	@GetMapping("/deliveryinfo1/{order_num}")
 	public ModelAndView deliveryInfo1(@PathVariable String order_num) {
 		ModelAndView mav=new ModelAndView();
 		Member mem = (Member) session.getAttribute("login");
@@ -139,6 +103,83 @@ public class AdminController {
 		}
 		return mav;
 	}
+	
+	@GetMapping("/deliveryinfo2/{order_num}")
+	public ModelAndView deliveryInfo2(@PathVariable String order_num) {
+		ModelAndView mav=new ModelAndView();
+		Member mem = (Member) session.getAttribute("login");
+
+		try {
+			Order orderInfo=adminService.getOrderInfoByNum(order_num);
+			mav.addObject("orderInfo", orderInfo);
+			
+			mav.setViewName("/admin/admin_deliveryInfoForm2");
+		} catch (Exception e) {
+			e.printStackTrace();
+			mav.addObject("err", e.getMessage());
+			mav.addObject("/admin/err");
+		}
+		return mav;
+	}
+	
+	@GetMapping("/deliveryedite/{order_num}")
+	public ModelAndView deliveryEdite(@PathVariable String order_num) {
+		ModelAndView mav=new ModelAndView();
+		Member mem = (Member) session.getAttribute("login");
+
+		try {
+			Order orderInfo=adminService.getOrderInfoByNum(order_num);
+			mav.addObject("orderInfo", orderInfo);
+			
+//			adminService.insertOrderNum(delinum);
+			
+			mav.setViewName("/admin/admin_deliveryEditForm3");
+		} catch (Exception e) {
+			e.printStackTrace();
+			mav.addObject("err", e.getMessage());
+			mav.addObject("/admin/err");
+		}
+		return mav;
+	}
+	
+	
+	@GetMapping("/deliveryinfo4/{order_num}")
+	public ModelAndView deliveryInfo4(@PathVariable String order_num) {
+		ModelAndView mav=new ModelAndView();
+		Member mem = (Member) session.getAttribute("login");
+		
+		try {
+			Order orderInfo=adminService.getOrderInfoByNum(order_num);
+			mav.addObject("orderInfo", orderInfo);
+
+			mav.setViewName("/admin/admin_deliveryInfoForm4");
+		} catch (Exception e) {
+			e.printStackTrace();
+			mav.addObject("err", e.getMessage());
+			mav.addObject("/admin/err");
+		}
+		return mav;
+	}
+	
+	
+	@GetMapping("/deliveryinfo5/{order_num}")
+	public ModelAndView deliveryInfo5(@PathVariable String order_num) {
+		ModelAndView mav=new ModelAndView();
+		Member mem = (Member) session.getAttribute("login");
+
+		try {
+			Order orderInfo=adminService.getOrderInfoByNum(order_num);
+			mav.addObject("orderInfo", orderInfo);
+			
+			mav.setViewName("/admin/admin_deliveryInfoForm5");
+		} catch (Exception e) {
+			e.printStackTrace();
+			mav.addObject("err", e.getMessage());
+			mav.addObject("/admin/err");
+		}
+		return mav;
+	}
+	
 	
 	@GetMapping(value="/qnainfo/{requestNum}")
 	public ModelAndView qnaInfo(@PathVariable int requestNum) {
@@ -185,7 +226,45 @@ public class AdminController {
 	
 	
 	
+	
+	
+	
+//	@GetMapping("/qnalist")
+//	public ModelAndView qnaList() {
+//		ModelAndView mav=new ModelAndView();
+//		Member mem = (Member) session.getAttribute("login");
+//		// String role = mem.getRole();
+//		String role= "freelancer";
+//		try {
+//			List<Request> reqList=adminService.getRequestListByRole(role);
+//			mav.addObject("reqList", reqList);
+//			
+//			System.out.println(reqList.get(0).getRequest_subject());
+//			System.out.println(reqList.get(1).getRequest_subject());
+//			
+//			List<Answer> ansList=adminService.getAnswerListByRole(role);
+//			mav.addObject("ansList", ansList);
+//			
+//			mav.setViewName("/admin/admin_qnaList");
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			mav.addObject("err", e.getMessage());
+//			mav.addObject("/admin/err");
+//		}
+//		
+//		switch(role) {
+//		case "freelancer":
+//			mav.setViewName("admin/admin_qnaList1");
+//			break;
+//		case "student":
+//			mav.setViewName("admin/admin_qnaList2");
+//			break;
+//		}
+//		return mav;
+//	}
 
+	
+	
 	
 	
 }

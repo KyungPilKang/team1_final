@@ -180,13 +180,13 @@
                 <span class="col-lg-2 col-md-2 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="course-item bg-light">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-center py-2">주문 번호</small>
+                            <small class="flex-fill text-center py-2">결제 수단</small>
                         </div>
                     </div>
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-left py-2 px-2">${orderInfo.order_num}</small>
+                            <small class="flex-fill text-left py-2 px-2">${orderInfo.order_method}</small>
                         </div>
                 </span>
             </div>
@@ -200,7 +200,7 @@
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-left py-2 px-2">{orderInfo.subjectList}</small>
+                            <small class="flex-fill text-left py-2 px-2">${orderInfo.subjectList}</small>
                         </div>
                 </span>
             </div>
@@ -235,10 +235,10 @@
 
             <div class="row g-1 justify-content-center py-5">
                 <span class="col-lg-1 col-md-3">
-                    <button class="btn btn-primary w-100 py-1" type="submit" href="http://localhost:8090/deliveryinfo2">다음</button>
+                    <a class="btn btn-primary w-100 py-1" type="submit" href="http://localhost:8090/deliveryinfo2/${orderInfo.order_num}">다음</a>
                 </span>
                 <span class="col-lg-1 col-md-3">
-                    <button class="btn btn-primary w-100 py-1" type="submit" href="http://localhost:8090/orderlist">목록으로</button>
+                    <a class="btn btn-primary w-100 py-1" type="submit" href="http://localhost:8090/orderlist">목록으로</a>
                 </span>
             </div>
 
