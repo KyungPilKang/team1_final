@@ -107,9 +107,9 @@ int no = (Integer)session.getAttribute("no");
 						</div>
 						<div class="col-lg-2 mt-3"></div>
 						<div class="col-lg-8 mt-3" style="border: 1px solid black; text-align:left;" >
-							<h6>회원탈퇴 후에도 회원님의 아이디와 결제 이력은 [전자상거래 등에서의 소비자 보호에 관한 법률]에서 정한
-							일정기간 동안 보존되며 기존에 사용하셨던 아이디로 재가입은 불가능합니다.
-							(동의하지 않은 경우 탈퇴 ID에 대하여 향후 어떠한 지원도 받을 수 없습니다.)</h6>
+							<h6>회원탈퇴 후에는 회원님의 아이디와 결제 이력, 회원 식별정보가 모두 삭제되어
+							어떠한 경우에도 복구가 불가능하므로 신중하게 결정하시기 바랍니다.
+							위 사항에 동의하십니까?</h6>
 						</div>
 						<div class="col-lg-2 mt-3"></div>
 						<div class="col-lg-3 mt-3 mb-3" ></div>
