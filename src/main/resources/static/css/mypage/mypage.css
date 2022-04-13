@@ -86,7 +86,6 @@
 .user-info {
     border: 5px solid var(--main-color);
     border-radius: 10px;
-    width: 800px !important;
 }
 
 .user-info-bt {
