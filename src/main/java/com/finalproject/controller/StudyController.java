@@ -282,7 +282,6 @@ public class StudyController {
 	public String deletestudy(@RequestParam(value="study_no")int study_no) {
 		try {
 			studyservice.removeStudy(study_no);
-			
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
