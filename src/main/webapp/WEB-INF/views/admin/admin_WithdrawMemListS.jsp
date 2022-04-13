@@ -77,6 +77,7 @@
 				<div class="me-3">
 					<a href="courses.html" class="nav-item nav-link">고객센터</a>
 				</div>
+<<<<<<< Updated upstream
 				<div class="nav-item dropdown me-3">
 					<a href="http://localhost:8090/studymain" class="nav-link" data-bs-toggle="dropdown">관리자</a>
 					<div class="dropdown-menu fade-down m-0">
@@ -84,31 +85,17 @@
 						<a href="http://localhost:8090/withdrawmemlistS" style="font-size: 1.3em;" class="dropdown-item">탈퇴회원 관리</a>
 					</div>
 				</div>
+=======
+>>>>>>> Stashed changes
 				<div class="me-3">
-					<a href=# class="nav-item nav-link">로그아웃</a>
+					<a href="logout" class="nav-item nav-link">로그아웃</a>
 				</div>
 			</div>
 		</div>
 	</nav>
 	<!-- Navbar End -->
 
-	<!-- Header Start -->
-	<div class="container-fluid bg-primary py-5 mb-5 page-header">
-		<div class="container py-5">
-			<div class="row justify-content-center">
-				<div class="col-lg-10 text-center">
-					<h1 class="display-3 text-white animated slideInDown">탈퇴회원 리스트</h1>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Header End -->
-
-
-
-
-
-        <!-- 강사 Start -->
+        <!-- 학생 Start -->
         <div class="container-xxl py-5" id="freelancer">
             <div class="container">
                 <h1 class="text-center mb-4 wow fadeInUp" data-wow-delay="0.1s">학생 탈퇴회원 리스트</h1>
@@ -162,25 +149,12 @@
                             <hr>
                             </c:forEach>
 
-
-
-                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- 학생 End -->
-
-        
-
-
-
-      
-
-
-
-
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
