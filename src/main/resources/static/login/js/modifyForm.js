@@ -164,8 +164,8 @@ function emailChk() {
 
 $(function() {
 	$("#modifyemail").click(function(){
-		var email1 = $("#newemail1").val();
-		var email2 = $("#newemail2").val();
+		var email1 = $("#email1").val();
+		var email2 = $("#email2").val();
 		var email = email1+"@"+email2;
 		$("#email").val(email);
 	})
@@ -222,7 +222,7 @@ function nickcheck() {
 						text: '사용 가능한 닉네임 입니다.',
 						confirmButtonText: "확인"
 					})
-					$("#nickname1").val(nickname);
+					
 				}
 			}
 		});
