@@ -94,7 +94,7 @@ public class AdminController {
 		ModelAndView mav=new ModelAndView();
 		Member mem = (Member) session.getAttribute("login");
 		// String role = mem.getRole();
-		String order_state= "payCompl";
+		String order_state= "결제완료";
 		try {
 			List<Order> orderList=adminService.getOrderListByState(order_state);
 			mav.addObject("orderList", orderList);
@@ -109,13 +109,13 @@ public class AdminController {
 			mav.addObject("/admin/err");
 		}
 		switch(order_state) {
-		case "payCompl":
+		case "결제완료":
 			mav.setViewName("admin/admin_orderList1");
 			break;
-		case "prodDeli":
+		case "배송중":
 			mav.setViewName("admin/admin_orderList2");
 			break;
-		case "deliCompl":
+		case "배송완료":
 			mav.setViewName("admin/admin_orderList3");
 			break;
 		}
