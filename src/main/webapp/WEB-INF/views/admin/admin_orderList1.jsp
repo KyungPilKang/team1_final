@@ -101,9 +101,9 @@
 					
 					<nav aria-label="breadcrumb">
 	                    <ol class="breadcrumb text-uppercase">
-	                        <li class="breadcrumb-item"><a href="#payCompl">결제완료</a></li>
-	                        <li class="breadcrumb-item"><a href="#prodDeli">배송중</a></li>
-	                        <li class="breadcrumb-item"><a href="#deliCompl">배송완료</a></li>
+	                        <li class="breadcrumb-item"><a href="/orderlist?>결제완료</a></li>
+	                        <li class="breadcrumb-item"><a href="/orderlist?">배송중</a></li>
+	                        <li class="breadcrumb-item"><a href="/orderlist?">배송완료</a></li>
 	                    </ol>
                 	</nav>
 					
@@ -159,7 +159,7 @@
 
 	                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
 	                                        <div class="text-start ps-4">
-	                                            <h6 class="mb-3">${order.order_num}</h6>
+	                                            <h6 class="mb-3">${order.order_deli_num}</h6>
 	                                        </div>
 	                                    </div>
 	                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">

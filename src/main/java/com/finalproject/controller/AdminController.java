@@ -96,11 +96,7 @@ public class AdminController {
 		// String role = mem.getRole();
 		String order_state= "결제완료";
 		try {
-			List<Order> orderList=adminService.getOrderListByState(order_state);
-			mav.addObject("orderList", orderList);
-		
-			System.out.println(orderList.get(0).getOrder_state());
-			System.out.println(orderList.get(1).getOrder_state());
+			
 			
 //			mav.setViewName("/admin/admin_orderList1");
 		} catch (Exception e) {
@@ -110,13 +106,23 @@ public class AdminController {
 		}
 		switch(order_state) {
 		case "결제완료":
+			List<Order> orderList=adminService.getOrderListByState("결제완료");
+			mav.addObject("orderList", orderList);
+			
+			System.out.println(orderList.get(0).getOrder_state());
+			System.out.println(orderList.get(1).getOrder_state());
+			
 			mav.setViewName("admin/admin_orderList1");
 			break;
 		case "배송중":
-			mav.setViewName("admin/admin_orderList2");
+			List<Order> orderList=adminService.getOrderListByState("배송중");
+			mav.addObject("orderList", orderList);
+			mav.setViewName("admin/admin_orderList1");
 			break;
 		case "배송완료":
-			mav.setViewName("admin/admin_orderList3");
+			List<Order> orderList=adminService.getOrderListByState("배송완료");
+			mav.addObject("orderList", orderList);
+			mav.setViewName("admin/admin_orderList1");
 			break;
 		}
 		return mav;
