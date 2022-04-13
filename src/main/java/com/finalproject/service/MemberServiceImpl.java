@@ -102,10 +102,7 @@ public class MemberServiceImpl implements MemberService {
 	public String loginCheck(String username, String password) throws Exception {
 		String res = "";
 		Member loginCheck=memberDAO.selectMemberByUsername(username);
-//		if(username=="admin"&&(bCryptPasswordEncoder.matches(password, loginCheck.getPassword()))) {
-//			res ="admin";
-//			return res;
-//		}
+
 		if(loginCheck==null) {
 			res = "idfail";
 			return res;
@@ -121,7 +118,11 @@ public class MemberServiceImpl implements MemberService {
 			loginCheck.setLogin_count(loginCheck.getLogin_count());
 			if(loginCheck.getLogin_count()>3) {
 				res="overfail";
-			}else {res="passfail";}
+			}else {
+				loginCheck.setLogin_count(loginCheck.getLogin_count()+1);
+				memberDAO.update_login_count(loginCheck);
+				res="passfail";}
+			
 			}
 		return res;		
 	}

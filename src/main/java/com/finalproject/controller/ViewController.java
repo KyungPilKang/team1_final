@@ -22,18 +22,12 @@ public class ViewController {
 	}
 	
 	//nav바 상단 eLEARNING 글자, Home 버튼 클릭시 리턴
-	@GetMapping("/home")
+	@GetMapping({"/home","/"})
 	public String home() {
 		return "main/index";
 	}
 	
-	@RequestMapping("/")
-	public @ResponseBody String main() {
-		String result; 
-		Member mem = (Member) session.getAttribute("login");
-		result = mem.toString();
-		return result;
-	}
+
 	
 //	@RequestMapping("/freereg1")
 //	public String freeReg1() {
