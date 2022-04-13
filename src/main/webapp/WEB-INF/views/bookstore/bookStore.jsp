@@ -8,7 +8,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>NEEDSFULL</title>
+    <title>NEEDSFULL - 교재장터</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -42,6 +42,12 @@
         *{
             font-family: 'Stylish', sans-serif;
         }
+        .page-header {
+            background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7));
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
     </style>
 </head>
 
@@ -49,6 +55,19 @@
 
 
 <jsp:include page="/WEB-INF/views/bookstore/header.jsp"/>
+
+<!-- Header Start -->
+<div class="container-fluid bg-primary py-5 mb-5 page-header">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h1 class="display-3 text-white animated slideInDown">교재 장터</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+
 
 <c:choose>
     <c:when test="${not empty username}">

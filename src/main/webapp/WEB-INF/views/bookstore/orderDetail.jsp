@@ -45,6 +45,17 @@
 <body>
 <jsp:include page="/WEB-INF/views/bookstore/header.jsp"/>
 
+<!-- Header Start -->
+<div class="container-fluid bg-primary py-5 mb-5 page-header">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+
 <div class="container-xxl py-5">
     <div class="container">
         <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">결제가 완료되었습니다.</h1>
