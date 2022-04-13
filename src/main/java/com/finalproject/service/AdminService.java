@@ -20,7 +20,7 @@ public interface AdminService {
 	
 	List<Order> getOrderListByState(String order_state) throws Exception;
 	
-	Order getOrderInfoByNum(String orderNum) throws Exception;
+	Order getOrderInfoByNum(String order_num) throws Exception;
 
 	void insertAnsCont(Answer ansCont) throws Exception;
 	Request getRequestInfoByNum(int requestNum) throws Exception;

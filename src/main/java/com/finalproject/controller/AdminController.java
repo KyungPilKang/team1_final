@@ -16,7 +16,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.finalproject.dto.Answer;
 import com.finalproject.dto.Member;
 import com.finalproject.dto.Order;
-import com.finalproject.dto.OrderBook;
 import com.finalproject.dto.Request;
 import com.finalproject.service.AdminService;
 
@@ -125,13 +124,13 @@ public class AdminController {
 	
 	
 	
-	@GetMapping("/deliveryinfo{orderNum}")
-	public ModelAndView deliveryInfo(@PathVariable String orderNum) {
+	@GetMapping("/deliveryinfo/{order_num}")
+	public ModelAndView deliveryInfo1(@PathVariable String order_num) {
 		ModelAndView mav=new ModelAndView();
 		Member mem = (Member) session.getAttribute("login");
 
 		try {
-			Order orderInfo=adminService.getOrderInfoByNum(orderNum);
+			Order orderInfo=adminService.getOrderInfoByNum(order_num);
 			mav.addObject("orderInfo", orderInfo);
 			
 			mav.setViewName("/admin/admin_deliveryInfoForm1");
@@ -140,29 +139,8 @@ public class AdminController {
 			mav.addObject("err", e.getMessage());
 			mav.addObject("/admin/err");
 		}
-		
-//		switch(order_state) {
-//		case "payCompl":
-//			mav.setViewName("admin/admin_deliveryInfoForm1");
-//			break;
-//		case "prodDeli":
-//			mav.setViewName("admin/admin_deliveryInfoForm2");
-//			break;
-//		case "deliCompl":
-//			mav.setViewName("admin/admin_deliveryEditForm3");
-//			break;
-//		case "deliCompl":
-//			mav.setViewName("admin/admin_deliveryInfoForm4");
-//			break;
-//		case "deliCompl":
-//			mav.setViewName("admin/admin_deliveryInfoForm5");
-//			break;
-//		}
-		
 		return mav;
 	}
-	
-	
 	
 	@GetMapping(value="/qnainfo/{requestNum}")
 	public ModelAndView qnaInfo(@PathVariable int requestNum) {

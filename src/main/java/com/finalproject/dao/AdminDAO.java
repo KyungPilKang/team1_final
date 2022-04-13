@@ -22,7 +22,7 @@ public interface AdminDAO {
 	
 	public List<Order> orderListByState(String order_state) throws Exception;
 	
-	public Order orderInfo(String orderNum) throws Exception;
+	public Order orderInfoByNum(String order_num) throws Exception;
 	
 	public void insertAnswerCont(Answer ansCont) throws Exception;
 	public Request getRequestInfoByNum(int requestNum) throws Exception;
