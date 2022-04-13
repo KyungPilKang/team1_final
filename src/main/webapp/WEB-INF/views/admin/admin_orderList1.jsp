@@ -163,7 +163,7 @@
 	                                    </div>
 	                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
 	                                        <div class="d-flex mb-3">
-	                                            <a class="btn btn-primary" href="http://localhost:8090/deliveryinfo">${order.order_state}</a>
+	                                            <a class="btn btn-primary" href="http://localhost:8090/deliveryinfo/${order.order_num }">${order.order_state}</a>
 	                                        </div>
 	                                    </div>
 	                                </div>

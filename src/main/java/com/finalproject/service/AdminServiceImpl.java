@@ -42,8 +42,8 @@ public class AdminServiceImpl implements AdminService {
 	
 	
 	@Override
-	public Order getOrderInfoByNum(String orderNum) throws Exception {
-		return adminDAO.orderInfo(orderNum);
+	public Order getOrderInfoByNum(String order_num) throws Exception {
+		return adminDAO.orderInfoByNum(order_num);
 	}
 
 	
