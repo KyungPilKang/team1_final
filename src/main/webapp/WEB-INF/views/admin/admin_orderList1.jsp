@@ -101,9 +101,9 @@
 					
 					<nav aria-label="breadcrumb">
 	                    <ol class="breadcrumb text-uppercase">
-	                        <li class="breadcrumb-item"><a href="/orderlist?>결제완료</a></li>
-	                        <li class="breadcrumb-item"><a href="/orderlist?">배송중</a></li>
-	                        <li class="breadcrumb-item"><a href="/orderlist?">배송완료</a></li>
+	                        <li class="breadcrumb-item"><a href="/orderlist?state=0">결제완료</a></li>
+                            <li class="breadcrumb-item"><a href="/orderlist?state=1">배송중</a></li>
+                            <li class="breadcrumb-item"><a href="/orderlist?state=2">배송완료</a></li>
 	                    </ol>
                 	</nav>
 					
