@@ -41,7 +41,9 @@
 	</select>
 	
 	
-	<insert id="insertAnsCont" parameterType="Answer">
+	
+	
+<!-- 	<insert id="insertAnsCont" parameterType="Answer">
 		<![CDATA[
 			insert into answer values(#{ansCont})
 		]]>
@@ -57,7 +59,7 @@
 		<![CDATA[
 			select * from request where request_num = #{requestNum}
 		]]>
-	</select>
+	</select> -->
 	
 	
 <!-- 	<select id="qnaReqList" resultType="Request" parameterType="string">

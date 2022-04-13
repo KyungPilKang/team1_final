@@ -25,9 +25,11 @@ public interface AdminDAO {
 	
 	public void insertDeliNum(Order delinum) throws Exception;
 	
-	public void insertAnswerCont(Answer ansCont) throws Exception;
-	public Request getRequestInfoByNum(int requestNum) throws Exception;
-	public Answer getAnswerInfoByNum(int requestNum) throws Exception;
+	
+	
+//	public void insertAnswerCont(Answer ansCont) throws Exception;
+//	public Request getRequestInfoByNum(int requestNum) throws Exception;
+//	public Answer getAnswerInfoByNum(int requestNum) throws Exception;
 	
 //	public List<Request> qnaReqList(String role) throws Exception;
 //	public List<Answer> qnaAnsList(String role) throws Exception;

@@ -20,13 +20,14 @@ public interface AdminService {
 	
 	void insertOrderNum(Order delinum) throws Exception;
 
-	void insertAnsCont(Answer ansCont) throws Exception;
-	Request getRequestInfoByNum(int requestNum) throws Exception;
-	Answer getAnswerInfoByNum(int requestNum) throws Exception;
+	
+	
+//	void insertAnsCont(Answer ansCont) throws Exception;
+//	Request getRequestInfoByNum(int requestNum) throws Exception;
+//	Answer getAnswerInfoByNum(int requestNum) throws Exception;
 	
 //	List<Request> getRequestListByRole(String role) throws Exception;
 //	List<Answer> getAnswerListByRole(String role) throws Exception;
-	
 	
 //	void inputQna(Answer ans) throws Exception;
 //	List<Request> getRequestListByRole(String role);	

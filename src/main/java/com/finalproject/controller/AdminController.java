@@ -181,51 +181,50 @@ public class AdminController {
 	}
 	
 	
-	@GetMapping(value="/qnainfo/{requestNum}")
-	public ModelAndView qnaInfo(@PathVariable int requestNum) {
-		ModelAndView mav=new ModelAndView();
-		Member mem = (Member) session.getAttribute("login");
-		
-		try {
-			Request reqInfo=adminService.getRequestInfoByNum(requestNum);
-			mav.addObject("reqInfo", reqInfo);
-			
-			Answer ansInfo=adminService.getAnswerInfoByNum(requestNum);
-			mav.addObject("ansInfo", ansInfo);
-			
-			mav.setViewName("/admin/admin_qnaInfoForm1");
-		} catch (Exception e) {
-			e.printStackTrace();
-			mav.addObject("err", e.getMessage());
-			mav.addObject("/admin/err");
-		}
-		return mav;
-	}
 	
-	
-	@GetMapping(value="/qnareg/{requestNum}")
-	public ModelAndView qnaReg(@PathVariable int requestNum) {
-		ModelAndView mav=new ModelAndView();
-		Member mem = (Member) session.getAttribute("login");
-		
-		try {
-			Request reqReg=adminService.getRequestInfoByNum(requestNum);
-			mav.addObject("reqReg", reqReg);
-			
-			Answer ansReg=adminService.getAnswerInfoByNum(requestNum);
-			mav.addObject("ansReg", ansReg);
-			
-			mav.setViewName("/admin/admin_qnaRegForm1");
-		} catch (Exception e) {
-			e.printStackTrace();
-			mav.addObject("err", e.getMessage());
-			mav.addObject("/admin/err");
-		}
-		return mav;
-	}
+//	@GetMapping(value="/qnainfo/{requestNum}")
+//	public ModelAndView qnaInfo(@PathVariable int requestNum) {
+//		ModelAndView mav=new ModelAndView();
+//		Member mem = (Member) session.getAttribute("login");
+//		
+//		try {
+//			Request reqInfo=adminService.getRequestInfoByNum(requestNum);
+//			mav.addObject("reqInfo", reqInfo);
+//			
+//			Answer ansInfo=adminService.getAnswerInfoByNum(requestNum);
+//			mav.addObject("ansInfo", ansInfo);
+//			
+//			mav.setViewName("/admin/admin_qnaInfoForm1");
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			mav.addObject("err", e.getMessage());
+//			mav.addObject("/admin/err");
+//		}
+//		return mav;
+//	}
 	
 	
 	
+//	@GetMapping(value="/qnareg/{requestNum}")
+//	public ModelAndView qnaReg(@PathVariable int requestNum) {
+//		ModelAndView mav=new ModelAndView();
+//		Member mem = (Member) session.getAttribute("login");
+//		
+//		try {
+//			Request reqReg=adminService.getRequestInfoByNum(requestNum);
+//			mav.addObject("reqReg", reqReg);
+//			
+//			Answer ansReg=adminService.getAnswerInfoByNum(requestNum);
+//			mav.addObject("ansReg", ansReg);
+//			
+//			mav.setViewName("/admin/admin_qnaRegForm1");
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			mav.addObject("err", e.getMessage());
+//			mav.addObject("/admin/err");
+//		}
+//		return mav;
+//	}
 	
 	
 	
@@ -263,8 +262,6 @@ public class AdminController {
 //		return mav;
 //	}
 
-	
-	
 	
 	
 }
