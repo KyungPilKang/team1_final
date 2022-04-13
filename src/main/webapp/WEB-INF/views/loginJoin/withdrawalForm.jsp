@@ -51,9 +51,9 @@ int no = (Integer)session.getAttribute("no");
 
 	<!-- Navbar Start -->
 	<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-		<a href="/freereg2" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+		<a href="/freereg1" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
 			<h1 class="m-0 text-primary">
-				<i class="fa fa-book me-3"></i>NEEDSFULL
+				<i class="fa fa-book me-3"></i>NEESFULL
 			</h1>
 		</a>
 		<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -61,62 +61,78 @@ int no = (Integer)session.getAttribute("no");
 		</button>
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<div class="navbar-nav ms-auto p-4 p-lg-0">
-				<div class="nav-item dropdown">
-					<a href="#" class="nav-link" data-bs-toggle="dropdown">프리랜서</a>
+				<div class="nav-item dropdown me-3">
+					<a href="http://localhost:8090/studymain" class="nav-link" data-bs-toggle="dropdown">스터디</a>
 					<div class="dropdown-menu fade-down m-0">
-						<a href=# class="dropdown-item">프리랜서 등록</a>
-						<a href=# class="dropdown-item">프리랜서 조회</a>
+						<a href="http://localhost:8090/studymain" style="font-size: 1.3em;" class="dropdown-item">메인페이지</a>
+						<a href="http://localhost:8090/studyReg" style="font-size: 1.3em;" class="dropdown-item">등록하기</a>
+						<a href="http://localhost:8090/studyfind" style="font-size: 1.3em;" class="dropdown-item">매칭하기</a>
+						<a href="http://localhost:8090/studyclass" style="font-size: 1.3em;" class="dropdown-item">참여현황</a>
 					</div>
 				</div>
-				<div class="nav-item dropdown">
-					<a href="#" class="nav-link" data-bs-toggle="dropdown">강의</a>
-					<div class="dropdown-menu fade-down m-0">
-						<a href=# class="dropdown-item">강의 등록</a>
-						<a href=# class="dropdown-item">강의 조회</a>
-					</div>
+				<div class="me-3">
+					<a href="about.html" class="nav-item nav-link">마이페이지</a>
 				</div>
-				<a href="about.html" class="nav-item nav-link">마이페이지</a>
-				<a href="courses.html" class="nav-item nav-link">고객센터</a>
-				<a href=# class="nav-item nav-link">로그아웃</a>
+				<div class="me-3">
+					<a href="courses.html" class="nav-item nav-link">고객센터</a>
+				</div>
+				<div class="me-3">
+					<a href="log_out" class="nav-item nav-link">로그아웃</a>
+				</div>
 			</div>
 		</div>
 	</nav>
 	<!-- Navbar End -->
+	
+	<!-- Header Start -->
+	<div class="container-fluid bg-primary py-5 mb-5 page-header">
+		<div class="container py-5">
+			<div class="row justify-content-center">
+				<div class="col-lg-10 text-center">
+					<h1 class="display-3 text-white animated slideInDown">회원 탈퇴</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Header End -->
 
 	<!-- Contact Start -->
-	<div class="container-xxl py-10 mt-5">
+	<div class="container-xxl py-10 mt-2">
 		<div class="container">
 			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-				<h6 class="section-title bg-white text-center text-primary px-3">WITHDRAWAL</h6>
-				<h1 class="mt-3 mb-4">회원 탈퇴</h1>
 				<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 80%; float: none; margin: 0 auto">
 					<div class="row">		
-						<div class=col-lg-12>
-							<h2 style="color:red"><탈퇴 신청 전 동의></h2>
+						<div class="col-lg-12">
+							<h2 class="mt-1"style="color:red"><탈퇴 신청 전 동의></h2>
 						</div>
-						<div class=col-lg-2></div>
-						<div class=col-lg-8 style="border: 1px solid black;" >
-							<h6>회원탈퇴 후에도 회원님의 아이디와 결제 이력은 [전자상거래 등에서의 소비자 보호에 관한 법률]에서 정한
-							일정기간 동안 보존되며 기존에 사용하셨던 아이디로 재가입은 불가능합니다.
-							(동의하지 않은 경우 탈퇴 ID에 대하여 향후 어떠한 지원도 받을 수 없습니다.)</h6>
+						<div class="col-lg-2 mt-3"></div>
+						<div class="col-lg-8 mt-3" style="border: 1px solid black; text-align:left;" >
+							<h6>회원탈퇴 후에는 회원님의 아이디와 결제 이력, 회원 식별정보가 모두 삭제되어
+							어떠한 경우에도 복구가 불가능하므로 신중하게 결정하시기 바랍니다.
+							위 사항에 동의하십니까?</h6>
 						</div>
-						<div class=col-lg-3></div>
-						<div class=col-lg-3>
+						<div class="col-lg-2 mt-3"></div>
+						<div class="col-lg-3 mt-3 mb-3" ></div>
+						<div class="col-lg-3 mt-3 mb-3" >
 							<input id="checkbox1" name="agree" type="checkbox"  class="form-check-input">
 							<label for="agree" class="form-check-label text-black">동의합니다.
 							</label>
 						</div>
-						<div class=col-lg-3>
+						<div class="col-lg-3 mt-3 mb-3" >
 							<input id="checkbox2" name="disagree" type="checkbox"  class="form-check-input">
 							<label for="disagree"  class="form-check-label text-black">동의하지 않습니다.
 							</label>
 						</div>
 					</div>
-						<h5 class=mt-4>다음 설문을 통해 회원님의 탈퇴 사유를 파악하여 보다 좋은 서비스를 만들고자 합니다.<br>
+					<hr>
+					
+					<div class="col-lg-2 mt-2"></div>
+					<div class="col-lg-10 mt-2">
+						<h5 style="text-align:left;">다음 설문을 통해 회원님의 탈퇴 사유를 파악하여 보다 좋은 서비스를 만들고자 합니다.<br>
 						불편하시겠지만 답변해주시면 감사하겠습니다.</h5>
+					</div>
 					<form action='withdraw' name="form" method='post'>
-						<input type="hidden" value="<%=no %>" name="no">
-						<div class=mt-2>
+						<div class="container mt-3">
 						<table id="table1" class="table">
 								<colgroup>
 									<col width="10%">
@@ -165,15 +181,18 @@ int no = (Integer)session.getAttribute("no");
 					</div>			
 							
 					
-					<div class="row pt-3 g-1 ">
-						<div class="col-4"></div>
-						<div class="col-2">
-							<button id="withdrawal" class="btn btn-primary w-40 py-3" type="button">회원탈퇴</button>
+					<div class="row pt-3 g-2 ">
+						<div class="col-3"></div>
+						<div class="col-3">
+							<button id="withdrawal" class="btn btn-primary w-100 btn-lg" type="button">회원탈퇴</button>
 						</div>
-						<div class="col-2">
-							<a href="home" class="btn border w-40 py-3">취소하기</a>
+						<div class="col-1"></div>
+						<div class="col-3">
+							<a href="home" class="btn btn-secondary w-100 btn-lg">취소하기</a>
 						</div>
+						<div class="col-2"></div>
 					</div>
+					<input type="hidden" value="<%=no %>" name="no">
 					</form>
 				</div>
 			</div>

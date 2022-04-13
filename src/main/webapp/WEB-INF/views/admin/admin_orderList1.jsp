@@ -101,9 +101,9 @@
 					
 					<nav aria-label="breadcrumb">
 	                    <ol class="breadcrumb text-uppercase">
-	                        <li class="breadcrumb-item"><a href="#payCompl">결제완료</a></li>
-	                        <li class="breadcrumb-item"><a href="#prodDeli">배송중</a></li>
-	                        <li class="breadcrumb-item"><a href="#deliCompl">배송완료</a></li>
+	                        <li class="breadcrumb-item"><a href="/orderlist?state=0">결제완료</a></li>
+                            <li class="breadcrumb-item"><a href="/orderlist?state=1">배송중</a></li>
+                            <li class="breadcrumb-item"><a href="/orderlist?state=2">배송완료</a></li>
 	                    </ol>
                 	</nav>
 					
@@ -115,12 +115,10 @@
 
 
 
-        
-
         <!-- 상품 결제완료 리스트 Start -->
-        <div class="container-xxl py-5" id="payCompl">
+        <div class="container-xxl py-5" id="payComplete">
             <div class="container">
-                <h1 class="text-center mb-4 wow fadeInUp" data-wow-delay="0.1s">상품 결제완료 리스트</h1>
+                <h1 class="text-center mb-4 wow fadeInUp" data-wow-delay="0.1s">상품 ${state} 리스트</h1>
                 <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
 
 
@@ -148,7 +146,8 @@
 	                            <div class="job-item p-4 mb-4">
 	                                <div class="row g-4">
 	                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
-	                                        <img class="flex-shrink-0 img-fluid border rounded" src=${order.book_img} alt="" style="width: 80px; height: 80px;">
+	                                        <img class="flex-shrink-0 img-fluid border rounded" src="/book-store/book-img/${order.book_img}"
+ alt="" style="width: 80px; height: 80px;">
 	                                        <div class="text-start ps-4">
 	                                            <h5 class="mb-3">${order.subjectList} (${order.total_price} 원 | ${order.total_count} 권)</h5>
 	                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>${order.username}</span>
@@ -158,7 +157,7 @@
 
 	                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
 	                                        <div class="text-start ps-4">
-	                                            <h6 class="mb-3">${order.order_num}</h6>
+	                                            <h6 class="mb-3">${order.order_deli_num}</h6>
 	                                        </div>
 	                                    </div>
 	                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">

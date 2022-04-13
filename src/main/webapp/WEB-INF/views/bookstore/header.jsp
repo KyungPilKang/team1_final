@@ -25,9 +25,9 @@
 
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-    <a href="/freereg1" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+    <a href="/home" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
         <h1 class="m-0 text-primary">
-            <i class="fa fa-book me-3"></i>NEESFULL
+            <i class="fa fa-book me-3"></i>NEEDSFULL
         </h1>
     </a>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -36,7 +36,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
 
-            <c:if test="${role == 'admin'}">
+            <c:if test="${role == 'ROLE_ADMIN'}">
                 <a href="/book-store/regform" class="nav-item nav-link" style="color:red">교재등록(관리자)</a></c:if>
             <div class="nav-item dropdown me-3">
                 <a href="/studymain" class="nav-link" data-bs-toggle="dropdown">스터디</a>
@@ -59,7 +59,7 @@
             <c:choose>
                 <c:when test="${not empty username}">
                     <div class="me-3">
-                        <a href="/logout" class="nav-item nav-link">로그아웃</a>
+                        <a href="/log_out?mapping=home" class="nav-item nav-link">로그아웃</a>
                     </div>
                 </c:when>
                 <c:otherwise>
@@ -74,14 +74,14 @@
 </nav>
 <!-- Navbar End -->
 
-<!-- Header Start -->
-<div class="container-fluid bg-primary py-5 mb-5" id="containerform" style="background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7));">
-    <div class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-10 text-center">
-                <h1 class="display-3 text-white animated slideInDown"></h1>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Header End -->
+<%--<!-- Header Start -->--%>
+<%--<div class="container-fluid bg-primary py-5 mb-5" id="containerform" style="background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7));">--%>
+<%--    <div class="container py-5">--%>
+<%--        <div class="row justify-content-center">--%>
+<%--            <div class="col-lg-10 text-center">--%>
+<%--                <h1 class="display-3 text-white animated slideInDown"></h1>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</div>--%>
+<%--<!-- Header End -->--%>

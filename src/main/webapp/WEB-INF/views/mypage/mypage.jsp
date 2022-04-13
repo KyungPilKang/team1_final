@@ -64,9 +64,9 @@
 </div>
 <!-- Spinner End -->
 
-
+<jsp:include page="/WEB-INF/views/bookstore/header.jsp"/>
 <!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+<%--<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
     <a href="/home" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
         <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>NEESFULL</h2>
     </a>
@@ -76,11 +76,11 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
             <a href="/mypage" class="nav-item nav-link">마이페이지</a>
-            <a href="courses.html" class="nav-item nav-link">고객센터</a>
+            <a href="/request" class="nav-item nav-link">고객센터</a>
             <a href="/log_out" class="nav-item nav-link">로그아웃</a>
         </div>
     </div>
-</nav>
+</nav>--%>
 <!-- Navbar End -->
 
 
