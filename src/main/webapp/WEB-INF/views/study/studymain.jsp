@@ -245,8 +245,7 @@
 	<script>
 		
 		$(document).ready(function(){
-		/* let ismaker = "<c:out value='${ismaker}'/>"; */
-		let ismaker="yes";
+		let ismaker = "<c:out value='${ismaker}'/>";		
 		console.log("ismaker" + ismaker);
 		$('#makerbtn').on('click', function(){
 			if(ismaker=='yes'){
