@@ -150,7 +150,7 @@
 	<!-- Header End -->
 
 	<!-- Contact Start -->
-	<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+	<div class="container py-1 wow fadeInUp divalign" data-wow-delay="0.1s" style="float:center;">
 		<div class="container">
 			<div class="row gy-6 gx-6">
 				<div class="col-lg-12">
@@ -227,37 +227,16 @@
 		</div>
 	</div>
 
-
 	<div class="row g-3">
-		<div class="row text-center col-lg-4 col-md-12 wow fadeInUp"
-			data-wow-delay="0.3s"
-			style="width: 30%; float: none; margin-left: 430px;"
-		>
-			<div class="row g-3">
-				<div class="col-12">
-					<div class="col-12 mt-4">
-						<button id="listbtn" class="btn btn-outline-primary w-50 py-3"
-							onclick="window.location='/studyclass'" 
-						>목록 으로</button>
-					</div>
-				</div>
+		<div class="col-12">
+			<div class="col-12 mt-4" style="width: 30%; float: center; margin-left: 430px;">
+				<button id="listbtn" class="btn btn-outline-primary w-50 py-3"
+					onclick="window.location='/studyclass'" style="margin-left: 430px;"
+				>목록 으로</button>
 			</div>
 		</div>
-		<div class="row text-center col-lg-4 col-md-12 wow fadeInUp"
-			data-wow-delay="0.3s" style="width: 30%; float: none;"
-		>
-<!-- 			<div class="row g-3">
-				<div class="col-12">
-					<div class="col-12 mt-4">
-						<button id="attend" class="btn btn-outline-primary w-50 py-3">참여
-							하기</button>
-
-					</div>
-				</div>
-			</div> -->
-		</div>
 	</div>
-
+	
 	<!-- Contact End -->
 
 
@@ -326,106 +305,6 @@
 
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-	<script>
-		
-		let attend=true;
-		let attendCheck=null;
-		$('#attend').on('click', function(e) {
-		
-			
-			if (attend==true) {
-				Swal.fire({
-					title: "등록 확인",
-					text: "스터디에 참여 하시겠습니까?",
-					icon: "success",
-					showCancelButton: true,
-					confirmButtonText: "아니오",
-					cancelButtonText: "네",
-					cancelButtonColor: '#d33',
-					allowOutsideClick: false,
-					customClass: {
-						content: "swal_text",
-						confirmButton: "swal_confirm",
-						cancelButton: "swal_cancle"
-					}
-				}).then((result) => {
-					if(!result.isConfirmed){ //  스터디에 참여 하시겠습니까? yes 상황
-						attendCheck = "team_apply";
-						$.ajax({
-							type : "post",
-							dataType : "text",
-							async : false,
-							url : "http://localhost:8090/attend",
-							data : {
-								"study_no" : $('#study_no').val(),
-								"status" : attendCheck
-							},
-							success : function(data) {
-								console.log("ajax 테스트");
-								if (data == "team_apply") {
-								 	attend=false;
-								 	$('#attend').html("참여 취소");
-								} else {
-									attend=true;
-									$('#attend').html("참여 하기");
-								}
-							},
-							error : function(data, textStatus) {
-								alert("실패");
-							}
-						});
-					} else { // no 상황
-						return false;
-					}
-				})
-			} else {
-				Swal.fire({
-					title: "등록 취소",
-					text: "스터디에 참여를 취소 하시겠습니까?",
-					icon: "warning",
-					showCancelButton: true,
-					confirmButtonText: "아니오",
-					cancelButtonText: "네",
-					cancelButtonColor: '#d33',
-					allowOutsideClick: false,
-					customClass: {
-						content: "swal_text",
-						confirmButton: "swal_confirm",
-						cancelButton: "swal_cancle"
-					}
-				}).then((result) => {
-					if(!result.isConfirmed){  //  스터디에 참여를 취소 하시겠습니까? yes 상황
-						attendCheck = "notattend";
-						$.ajax({
-							type : "post",
-							dataType : "text",
-							async : false,
-							url : "http://localhost:8090/attend",
-							data : {
-								"study_no" : $('#study_no').val(),
-								"status" : attendCheck
-							},
-							success : function(data) {
-								console.log("ajax 테스트");
-								if (data == "team_apply") {
-								 	attend=false;
-								 	$('#attend').html("참여 취소");
-								} else {
-									attend=true;
-									$('#attend').html("참여 하기");
-								}
-							},
-							error : function(data, textStatus) {
-								alert("실패");
-							}
-						});
-					} else { // no 상황
-						return false;
-					}
-				})
-			}
 
-		});
-	</script>
 </body>
 </html>

@@ -15,38 +15,115 @@
 
 	<select id="selectBookCount" resultType="int">
 		<![CDATA[
-		select count(*) from book
+		select count(*)
+		from book
 		]]>
 	</select>
 
-	<select id="selectBookList" resultType="book" parameterType="int">
+	<select id="selectBookList" resultType="Book" parameterType="int">
 		<![CDATA[
 		select *
 		from (select @rownum:=@rownum+1 rnum, tot.*
-			  from (select * from book order by book_num desc) tot,
-				  (select @rownum:=0) temp) sub
-		where rnum between #{startrow} and #{startrow}+9
+			  from (select * from book order by book_sales desc) tot,
+				  (select @rownum := 0) temp) sub
+		where rnum between #{startrow} and #{startrow} + 9
 		]]>
 	</select>
 
 	<select id="selectBook" resultType="Book" parameterType="int">
 		<![CDATA[
-		select * from book where book_num=#{book_num}
+		select *
+		from book
+		where book_num = #{book_num}
 		]]>
 	</select>
 
 	<delete id="deleteBook" parameterType="int">
 		<![CDATA[
-		delete from book where book_num=#{book_num}
+		delete
+		from book
+		where book_num = #{book_num}
 		]]>
 	</delete>
+
+
+	<select id="selectSearchList" resultType="Book">
+		<![CDATA[
+		select *
+		from (select @rownum:=@rownum+1 rnum, tot.*
+			  from (select * from book where ${category} like CONCAT('%', #{keyword}, '%')) tot,
+				  (select @rownum := 0) temp) sub
+		where rnum between #{startrow} and #{startrow} + 9
+		]]>
+	</select>
+
+	<update id="updateBookSales" parameterType="int">
+		<![CDATA[
+		update book
+		set book_sales = book_sales + #{book_sales}
+		where book_num = #{book_num}
+		]]>
+	</update>
+
+
+	<!--    <select id="selectSortList" resultType="Book">-->
+	<!--		<![CDATA[-->
+	<!--        select *-->
+	<!--        from (select @rownum:=@rownum+1 rnum, tot.*-->
+	<!--              from ( <choose> < when test="${type == sales}">-->
+	<!--                  select * from book order by book_sales desc </ when > < when test="${type == newest}">-->
+	<!--                  select * from book order by book_num desc </ when > < when test="${type == name}">-->
+	<!--                  select * from book order by book_subject desc < when > <choose>-->
+	<!--                  ) tot,-->
+	<!--                  (select @rownum := 0) temp) sub-->
+	<!--        where rnum between #{startrow} and #{startrow} + 9-->
+	<!--        ]]>-->
+	<!--	</select>-->
+
+
+	<select id="selectSortSales" resultType="Book" parameterType="int">
+		<![CDATA[
+		select *
+		from (select @rownum:=@rownum+1 rnum, tot.*
+			  from (
+				  select * from book order by book_sales desc
+				  ) tot,
+				  (select @rownum := 0) temp) sub
+		where rnum between #{startrow} and #{startrow} + 9
+		]]>
+	</select>
+
+	<select id="selectSortNum" resultType="Book" parameterType="int">
+		<![CDATA[
+		select *
+		from (select @rownum:=@rownum+1 rnum, tot.*
+			  from (
+				  select * from book order by book_num desc
+				  ) tot,
+				  (select @rownum := 0) temp) sub
+		where rnum between #{startrow} and #{startrow} + 9
+		]]>
+	</select>
+
+
+	<select id="selectSortSubject" resultType="Book" parameterType="int">
+		<![CDATA[
+		select *
+		from (select @rownum:=@rownum+1 rnum, tot.*
+			  from (
+				  select * from book order by book_subject desc
+				  ) tot,
+				  (select @rownum := 0) temp) sub
+		where rnum between #{startrow} and #{startrow} + 9
+		]]>
+	</select>
 
 
 </mapper>
 
 
 		<!--
-   		  CREATE TABLE `book` (
+             CREATE TABLE `book` (
           `book_num` int NOT NULL AUTO_INCREMENT,
           `book_price` int DEFAULT NULL,
           `book_cat` varchar(1000) DEFAULT NULL,

@@ -147,13 +147,13 @@
 								<div class="form-floating">
 									<h3>유형</h3>
 									<c:choose>
-										<c:when test="${regstudy.study_type eq '1' }">
+										<c:when test="${regstudy.study_type eq '내신' }">
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="내신" readOnly>
 										</c:when>
-										<c:when test="${regstudy.study_type eq '2' }">
+										<c:when test="${regstudy.study_type eq '시험' }">
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="시험" readOnly>
 										</c:when>
-										<c:when test="${regstudy.study_type eq '3' }">
+										<c:when test="${regstudy.study_type eq '경시대회준비' }">
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="경시대회준비" readOnly>
 										</c:when>
 										<c:otherwise>
@@ -165,13 +165,13 @@
 								<div class="form-floating">
 									<h3>목표레벨</h3>
 									<c:choose>
-										<c:when test="${regstudy.study_target_level eq '1' }">
+										<c:when test="${regstudy.study_target_level eq '최상' }">
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="최상" readOnly>
 										</c:when>										
-										<c:when test="${regstudy.study_target_level eq '2' }">
+										<c:when test="${regstudy.study_target_level eq '상' }">
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="상" readOnly>
 										</c:when>										
-										<c:when test="${regstudy.study_target_level eq '3' }">
+										<c:when test="${regstudy.study_target_level eq '중상' }">
 											<input style="background: rgba(6, 187, 204, 0.3); font-size: 2.0em" type="text" class="form-control text-center" value="중상" readOnly>
 										</c:when>										
 										<c:otherwise>

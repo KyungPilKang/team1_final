@@ -115,7 +115,7 @@ public class StudyServiceImpl implements StudyService {
 			System.out.println("b "+study_no);
 			System.out.println("b "+user_id);
 			System.out.println("b "+team_status);
-			
+
 			studyDAO.changeApplyAceept(map);
 		}else {
 			team_status = "team_reject";

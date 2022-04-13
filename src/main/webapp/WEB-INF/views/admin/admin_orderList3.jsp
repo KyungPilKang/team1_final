@@ -33,55 +33,85 @@
 
     <!-- Template Stylesheet -->
     <link href="${pageContext.request.contextPath}/resources/administrator/css/style.css" rel="stylesheet">
+    <style>
+    *{
+    font-family: 'Stylish', sans-serif;
+    }
+    </style>
 </head>
 
 <body>
 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>NEEDSFULL</h2>
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link">강사</a>
-                <a href="about.html" class="nav-item nav-link">교육업 종사자</a>
-                <a href="courses.html" class="nav-item nav-link active">학생/학부모</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="team.html" class="dropdown-item">1:1문의 관리</a>
-                        <a href="testimonial.html" class="dropdown-item">배송 관리</a>
-                        <a href="404.html" class="dropdown-item">탈퇴회원 관리</a>
-                    </div>
-                </div>
-                
-            </div>
-            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Logout<i class="fa fa-arrow-right ms-3"></i></a>
-        </div>
-    </nav>
-    <!-- Navbar End -->
-        
+	<!-- Spinner Start -->
+	<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+		<div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+			<span class="sr-only">Loading...</span>
+		</div>
+	</div>
+	<!-- Spinner End -->
 
-        <!-- Header End -->
-        <div class="container-xxl py-2 bg-dark page-header mb-5">
-            <div class="container my-1 pt-5 pb-4">
-                <h4 class="display-3 text-white mb-3 animated slideInDown">학생 상품 배송처리 리스트</h4>
+	<!-- Navbar Start -->
+	<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+		<a href="/freereg1" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+			<h1 class="m-0 text-primary">
+				<i class="fa fa-book me-3"></i>NEESFULL
+			</h1>
+		</a>
+		<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<div class="navbar-nav ms-auto p-4 p-lg-0">
+				<div class="nav-item dropdown me-3">
+					<a href="http://localhost:8090/studymain" class="nav-link" data-bs-toggle="dropdown">스터디</a>
+					<div class="dropdown-menu fade-down m-0">
+						<a href="http://localhost:8090/studymain" style="font-size: 1.3em;" class="dropdown-item">메인페이지</a>
+						<a href="http://localhost:8090/studyReg" style="font-size: 1.3em;" class="dropdown-item">등록하기</a>
+						<a href="http://localhost:8090/studyfind" style="font-size: 1.3em;" class="dropdown-item">매칭하기</a>
+						<a href="http://localhost:8090/studyclass" style="font-size: 1.3em;" class="dropdown-item">참여현황</a>
+					</div>
+				</div>
+				<div class="me-3">
+					<a href="about.html" class="nav-item nav-link">마이페이지</a>
+				</div>
+				<div class="me-3">
+					<a href="courses.html" class="nav-item nav-link">고객센터</a>
+				</div>
+				<div class="nav-item dropdown me-3">
+					<a href="http://localhost:8090/studymain" class="nav-link" data-bs-toggle="dropdown">관리자</a>
+					<div class="dropdown-menu fade-down m-0">
+						<a href="http://localhost:8090/orderlist" style="font-size: 1.3em;" class="dropdown-item">배송관리</a>
+						<a href="http://localhost:8090/withdrawmemlistS" style="font-size: 1.3em;" class="dropdown-item">탈퇴회원 관리</a>
+					</div>
+				</div>
+				<div class="me-3">
+					<a href=# class="nav-item nav-link">로그아웃</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- Navbar End -->
 
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb text-uppercase">
-                        <li class="breadcrumb-item"><a href="#payCompl">결제완료</a></li>
-                        <li class="breadcrumb-item"><a href="#prodDeli">배송중</a></li>
-                        <li class="breadcrumb-item"><a href="#deliCompl">배송완료</a></li>
-                    </ol>
-                </nav>
-
-            </div>
-        </div>
-        <!-- Header End -->
+	<!-- Header Start -->
+	<div class="container-fluid bg-primary py-5 mb-5 page-header">
+		<div class="container py-5">
+			<div class="row justify-content-center">
+				<div class="col-lg-10 text-center">
+					<h1 class="display-3 text-white animated slideInDown">배송관리 리스트</h1>
+					
+					<nav aria-label="breadcrumb">
+	                    <ol class="breadcrumb text-uppercase">
+	                        <li class="breadcrumb-item"><a href="#payCompl">결제완료</a></li>
+	                        <li class="breadcrumb-item"><a href="#prodDeli">배송중</a></li>
+	                        <li class="breadcrumb-item"><a href="#deliCompl">배송완료</a></li>
+	                    </ol>
+                	</nav>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Header End -->
 
 
  
@@ -112,55 +142,34 @@
                     
 
                     <div class="tab-content">
-                        <div id="tab-3" class="tab-pane fade show p-0 active">
-                            
-                            <div class="job-item p-4 mb-4">
-                                <div class="row g-4">
-                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
-                                        <div class="text-start ps-4">
-                                            <h5 class="mb-3">국어책, 수학책, 과학책 (40,000원 | 3권)</h5>
-                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>사용자 ID</span>
-                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>주문일 2021.06.03</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h6 class="mb-3">A22086560780780264</h6>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="">상품 배송완료</a>
-                                        </div>
-                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>배송완료일 2021.06.03</small>
-                                    </div>
-                                </div>
-                            </div>
+                        <div id="deliCompl" class="tab-pane fade show p-0 active">
+                        
+							<c:forEach items="${orderList}" var="order">
+	                            <div class="job-item p-4 mb-4">
+	                                <div class="row g-4">
+	                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
+	                                        <img class="flex-shrink-0 img-fluid border rounded" src=${order.book_img} alt="" style="width: 80px; height: 80px;">
+	                                        <div class="text-start ps-4">
+	                                            <h5 class="mb-3">${order.subjectList} (${order.total_price} 원 | ${order.total_count} 권)</h5>
+	                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>${order.username}</span>
+	                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>주문일 ${order.order_date}</small>
+	                                        </div>
+	                                    </div>
 
-                            <div class="job-item p-4 mb-4">
-                                <div class="row g-4">
-                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
-                                        <div class="text-start ps-4">
-                                            <h5 class="mb-3">국어책, 수학책, 과학책 (40,000원 | 3권)</h5>
-                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>사용자 ID</span>
-                                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>주문일 2021.06.03</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
-                                        <div class="text-start ps-4">
-                                            <h6 class="mb-3">A22086560780780264</h6>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                        <div class="d-flex mb-3">
-                                            <a class="btn btn-primary" href="">상품 배송완료</a>
-                                        </div>
-                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>배송완료일 2021.06.03</small>
-                                    </div>
-                                </div>
-                            </div>
+	                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
+	                                        <div class="text-start ps-4">
+	                                            <h6 class="mb-3">${order.order_num}</h6>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+	                                        <div class="d-flex mb-3">
+	                                            <a class="btn btn-primary" href="http://localhost:8090/deliveryinfo">${order.order_state}</a>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+							</c:forEach>
+							
 
                             <a class="btn btn-primary py-3 px-5" href="">More List</a>
                         </div>
@@ -215,13 +224,13 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/administrator/lib/wow/wow.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/administrator/lib/easing/easing.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/administrator/lib/waypoints/waypoints.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/administrator/lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/administrator/js/main.js"></script>
 </body>
 
 </html>

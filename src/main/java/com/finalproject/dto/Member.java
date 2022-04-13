@@ -10,7 +10,7 @@ public class Member {
 	private String email;
 	private String birth;
 	private String age;
-	private String gender;
+	private String type;
 	private String phone;
 	private String zipcode;
 	private String doro_juso;
@@ -27,14 +27,14 @@ public class Member {
 	@Override
 	public String toString() {
 		return "Member [no=" + no + ", username=" + username + ", password=" + password + ", name=" + name
-				+ ", nickname=" + nickname + ", email=" + email + ", birth=" + birth + ", age=" + age + ", gender="
-				+ gender + ", phone=" + phone + ", zipcode=" + zipcode + ", doro_juso=" + doro_juso + ", sangse_juso="
+				+ ", nickname=" + nickname + ", email=" + email + ", birth=" + birth + ", age=" + age + ", type="
+				+ type + ", phone=" + phone + ", zipcode=" + zipcode + ", doro_juso=" + doro_juso + ", sangse_juso="
 				+ sangse_juso + ", role=" + role + ", provider=" + provider + ", provider_id=" + provider_id
 				+ ", withdraw_status=" + withdraw_status + ", withdraw_type=" + withdraw_type + ", withdraw_contents="
 				+ withdraw_contents + ", login_count=" + login_count + ", getNo()=" + getNo() + ", getUsername()="
 				+ getUsername() + ", getPassword()=" + getPassword() + ", getName()=" + getName() + ", getNickname()="
 				+ getNickname() + ", getEmail()=" + getEmail() + ", getBirth()=" + getBirth() + ", getAge()=" + getAge()
-				+ ", getGender()=" + getGender() + ", getPhone()=" + getPhone() + ", getZipcode()=" + getZipcode()
+				+ ", getType()=" + getType() + ", getPhone()=" + getPhone() + ", getZipcode()=" + getZipcode()
 				+ ", getDoro_juso()=" + getDoro_juso() + ", getSangse_juso()=" + getSangse_juso() + ", getRole()="
 				+ getRole() + ", getProvider()=" + getProvider() + ", getProvider_id()=" + getProvider_id()
 				+ ", getWithdraw_status()=" + getWithdraw_status() + ", getWithdraw_type()=" + getWithdraw_type()
@@ -129,14 +129,14 @@ public class Member {
 
 
 
-	public String getGender() {
-		return gender;
+	public String getType() {
+		return type;
 	}
 
 
 
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 

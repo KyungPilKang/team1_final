@@ -32,7 +32,7 @@
 
 <!-- Template Stylesheet -->
 <link href="${pageContext.request.contextPath}/resources/login/css/style.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/resources/login/css/loginForm.css" rel="stylesheet">\
+<link href="${pageContext.request.contextPath}/resources/login/css/loginForm.css" rel="stylesheet">
 
 </head>
 
@@ -48,20 +48,14 @@
 
 	<!-- Navbar Start -->
 	<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-		<a href="home" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-			<h2 class="m-0 text-primary">
-				<i class="fa fa-book me-3"></i>eLEARNING
-			</h2>
+		<a href="/freereg1" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+			<h1 class="m-0 text-primary">
+				<i class="fa fa-book me-3"></i>NEESFULL
+			</h1>
 		</a>
 		<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse" id="navbarCollapse">
-			<div class="navbar-nav ms-auto p-4 p-lg-0"></div>
-			<a href="home" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">
-				Home<i class="fa fa-arrow-right ms-3"></i>
-			</a>
-		</div>
 	</nav>
 	<!-- Navbar End -->
 
@@ -69,11 +63,11 @@
 	<!-- Header End -->
 
 	<!-- Contact Start -->
-	<div class="container-xxl py-10 mt-5">
+	<div class="container-xxl py-10 mt-3">
 		<div class="container">
 			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
 				<h6 class="section-title bg-white text-center text-primary px-3">LOG IN</h6>
-				<h1 class="mt-5 mb-5">회원/소셜 로그인</h1>
+				<h1 class="mt-3 mb-1">회원/소셜 로그인</h1>
 				<div class="row text-center col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 30%; float: none; margin: 0 auto">
 				<!-- 	<form method="post" action="/login"> -->
 						<div class="row g-3">
@@ -103,7 +97,7 @@
 								<div class="col-12">
 									<a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=94fc26e459f927ce79257dc6c17527a7&redirect_uri=http://localhost:8090/auth/kakao/callback"
 										onclick="window.open(this.href, '_blank', 'width=800, height=600'); return false;">
-										<img src="${pageContext.request.contextPath}/resources/login/kakao2.png" style="width:100%; height:58px;">
+										<img src="${pageContext.request.contextPath}/resources/login/kakao.png" style="width:100%; height:58px;">
 									</a>
 								</div>
 							
@@ -111,17 +105,18 @@
 								<div class="col-12" style="max-height:58px;">
 									<a id="naverlogin" href="https://nid.naver.com/oauth2.0/authorize?client_id=24OF3VzEePL0jwU_gwRz&response_type=code&redirect_uri=http://localhost:8090/auth/naver/callback&state=oauth_state"
 									onclick="window.open(this.href, '_blank', 'width=800, height=600'); return false;">
-									<span id="naver" class="btn w-100">N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;네이버 로그인</span>
+									<img src="${pageContext.request.contextPath}/resources/login/naver.png" style="width:100%; height:58px;">
 									</a>
 								</div>
 							
-					
-							<div class="col-12">
-								<button class="btn btn-primary w-100 py-3" onclick="login()" type="button">로그인 하기</button>
+							<div class="d-flex justify-content-center">
+							<div class="col-5">
+								<button style="border-radius:5px;" class="d-grid gap-2 btn col-12 btn-primary btn-lg"  onclick="login()" type="button">로그인</button>
 							</div>
-							<div class="col-12">
-								<a href="termsagree" class="btn btn-primary w-100 py-3">회원가입하기</a>
-
+							<div class="col-1"></div>
+							<div class="col-5">
+								<a href="termsagree" style="border-radius:5px;"  class="d-grid gap-2 btn col-12 btn-primary btn-lg">회원가입</a>
+							</div>
 							</div>
 						</div>
 					<!-- </form> -->

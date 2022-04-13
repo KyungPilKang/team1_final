@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import com.finalproject.dto.Answer;
 import com.finalproject.dto.Member;
+import com.finalproject.dto.Order;
+import com.finalproject.dto.OrderBook;
 import com.finalproject.dto.Request;
 
 @Mapper
@@ -18,11 +20,13 @@ public interface AdminDAO {
 	public List<Member> getWithdrawListT() throws Exception;
 	public List<Member> getWithdrawListS() throws Exception;
 	
-	public Request queryReqInfo(String role) throws Exception;
-	public Answer queryAnsInfo(String role) throws Exception;
+	public List<Order> orderListByState(String order_state) throws Exception;
 	
-	public Request queryReqReg(String role) throws Exception;
-	public Answer queryAnsReg(String role) throws Exception;
+	public Order orderInfo(String orderNum) throws Exception;
+	
+	public void insertAnswerCont(Answer ansCont) throws Exception;
+	public Request getRequestInfoByNum(int requestNum) throws Exception;
+	public Answer getAnswerInfoByNum(int requestNum) throws Exception;
 	
 //	public void insertAnswer(Answer ans) throws Exception;
 	

@@ -115,7 +115,7 @@
 					<a href="courses.html" class="nav-item nav-link">고객센터</a>
 				</div>
 				<div class="me-3">
-					<a href=# class="nav-item nav-link">로그아웃</a>
+					<a href="logout" class="nav-item nav-link">로그아웃</a>
 				</div>
 			</div>
 		</div>
@@ -240,18 +240,22 @@
 	<!-- DIY -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<script>
-		let ismaker = "<c:out value='${ismaker}'/>";
-
-		if (ismaker == 'yes') {
-			//document.getElementById("#makerbtn").disabled = false; 
-			$('#makerbtn').show();
-
-		} else {
-			//alert("스터디를 개설해주세요."); 
-			//document.getElementById("#makerbtn").disabled = true; 
-			$('#makerbtn').hide();
-
-		}
+		
+		$(document).ready(function(){
+		/* let ismaker = "<c:out value='${ismaker}'/>"; */
+		let ismaker="yes";
+		console.log("ismaker" + ismaker);
+		$('#makerbtn').on('click', function(){
+			if(ismaker=='yes'){
+				$('#makerbtn').attr('disabled', false); 
+				} else {
+				alert("스터디를 개설해 주세요");
+				$('#makerbtn').attr('disabled', true); 
+				return false;
+				}
+		});
+	});
+		
 	</script>
 </body>
 </html>

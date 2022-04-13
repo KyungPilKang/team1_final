@@ -4,20 +4,28 @@
 
 <mapper namespace="com.finalproject.dao.AdminDAO">
 	
-	<select id="qnaReqList" resultType="Request">
+	<select id="qnaReqList" resultType="Request" parameterType="string">
 		<![CDATA[
-			select * from request order by role
+			select * from request where role = #{role}
+		]]>
+	</select>
+	<select id="qnaAnsList" resultType="Answer" parameterType="string">
+		<![CDATA[
+			select * from answer where role = #{role}
 		]]>
 	</select>
 	
-	<select id="qnaAnsList" resultType="Answer">
+	
+	<select id="orderListByState" resultType="Order" parameterType="string">
 		<![CDATA[
-			select * from answer order by role
+			select * from order where order_state = #{order_state}
 		]]>
 	</select>
 	
-	<select id="getWithdrawListT" resultType="Member">
+	
+	<select id="orderBook" resultType="OrderBook" parameterType="string">
 		<![CDATA[
+			select * from order_book where order_state = #{order_state}
 			select * from final.member where withdraw_status = "Y" and gender = "T"
 		]]>
 	</select>
@@ -28,27 +36,29 @@
 		]]>
 	</select>
 	
-	<select id="queryReqInfo" resultType="Request">
+	
+	<select id="orderInfo" resultType="Order" parameterType="string">
 		<![CDATA[
-			select * from request order by role
+			select * from order where order_num = #{orderNum}
 		]]>
 	</select>
 	
-	<select id="queryAnsInfo" resultType="Answer">
+	
+	<insert id="insertAnsCont" parameterType="Answer">
 		<![CDATA[
-			select * from answer order by role
+			insert into answer values(#{ansCont})
+		]]>
+	</insert>
+
+	<select id="getRequestInfoByNum" resultType="Request" parameterType="int">
+		<![CDATA[
+			select * from request where request_num = #{requestNum}
 		]]>
 	</select>
 	
-	<select id="queryReqReg" resultType="Request">
+	<select id="getAnswerInfoByNum" resultType="Answer" parameterType="int">
 		<![CDATA[
-			select * from request order by role
-		]]>
-	</select>
-	
-	<select id="queryAnsReg" resultType="Answer">
-		<![CDATA[
-			select * from answer order by role
+			select * from request where request_num = #{requestNum}
 		]]>
 	</select>
 

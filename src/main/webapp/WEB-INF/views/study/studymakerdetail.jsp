@@ -284,6 +284,42 @@
 			let studentStatus = $("#attendResult option:selected").val();			
 			let studentStatusText = $("#attendResult option:selected").text();			
 			var result = confirm(studentName + '님의 상태를 ' + studentStatusText + '으로 변경하시겠습니까?');
+		/*	
+			if(studentStatusText == '참여수락' ){
+				Swal.fire({
+					title: "수락",
+					text: "스터디에 참여를 수락 하시겠습니까?",
+					icon: "info",
+					showCancelButton: true,
+					confirmButtonText: "아니오",
+					cancelButtonText: "네",
+					cancelButtonColor: '#d33',
+					allowOutsideClick: false,
+					customClass: {
+						content: "swal_text",
+						confirmButton: "swal_confirm",
+						cancelButton: "swal_cancle"
+					}
+				})
+			}else {
+				Swal.fire({
+					title: "수락 취소",
+					text: " 참여수락을 취소 하시겠습니까?",
+					icon: "warning",
+					showCancelButton: true,
+					confirmButtonText: "아니오",
+					cancelButtonText: "네",
+					cancelButtonColor: '#d33',
+					allowOutsideClick: false,
+					customClass: {
+						content: "swal_text",
+						confirmButton: "swal_confirm",
+						cancelButton: "swal_cancle"
+					}
+				})
+			};  	
+			*/
+			
 			if(result){
 			    $.ajax({
 			 		url: "http://localhost:8090/studymakerdetail/check",

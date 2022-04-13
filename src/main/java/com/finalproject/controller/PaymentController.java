@@ -38,21 +38,31 @@ public class PaymentController {
     // Cart > Payment
     @PostMapping(value = "/order")
     public ModelAndView order(@RequestParam String[] order_book_num, @RequestParam String[] order_qty,
-                              @RequestParam(value = "total_price") int total_price) {
+                              @RequestParam String[] order_book_subject, @RequestParam(value = "total_price") int total_price) {
         ModelAndView mv = new ModelAndView();
-        // 임시 세션
-        session.setAttribute("username", "jay");
         String username = (String) session.getAttribute("username");
         try {
             System.out.println("order_book_num : " + Arrays.toString(order_book_num));
             System.out.println("order_qty : " + Arrays.toString(order_qty));
             System.out.println("total_price : " + total_price);
 
+
             List<Book> cartList = cartService.getCartList(username);
+            int total_bookCount = 0;
             for (int i = 0; i < order_book_num.length; i++) {
                 cartService.updateQty(order_book_num[i], order_qty[i]);
+                total_bookCount += Integer.parseInt(order_qty[i]);
             }
-
+            int bookNum = Integer.parseInt(order_book_num[0]);
+            Book book = bookStoreService.selectBook(bookNum);
+            System.out.println("북이미지:" + book.getBook_img());
+            String bookSubList = Arrays.toString(order_book_subject);
+            String bookSubjects = bookSubList.replace("[", "").replace("]", "");
+            System.out.println("order_book_subject : " + bookSubjects);
+            System.out.println("total_bookCount : " + total_bookCount);
+            mv.addObject("order_book_subject", bookSubjects);
+            mv.addObject("book_img", book.getBook_img());
+            mv.addObject("total_bookCount", total_bookCount);
             mv.addObject("orderList", cartList);
             mv.addObject("qtyList", order_qty);
             mv.addObject("total_price", total_price);
@@ -70,12 +80,14 @@ public class PaymentController {
     public ModelAndView now(@RequestParam(value = "book_num") int book_num,
                             @RequestParam(value = "book_price") int book_price) {
         ModelAndView mv = new ModelAndView();
-        // 임시 세션
-        session.setAttribute("username", "jay");
         String username = (String) session.getAttribute("username");
         try {
-            List<Book> cartList = Collections.singletonList(bookStoreService.selectBook(book_num));
+            Book book = bookStoreService.selectBook(book_num);
+            List<Book> cartList = Collections.singletonList(book);
             List<String> qtyList = Collections.singletonList("1");
+            mv.addObject("order_book_subject", book.getBook_subject());
+            mv.addObject("book_img", book.getBook_img());
+            mv.addObject("total_bookCount", "1");
             mv.addObject("orderList", cartList);
             mv.addObject("qtyList", qtyList);
             mv.addObject("total_price", book_price);
@@ -91,29 +103,9 @@ public class PaymentController {
     @PostMapping("/finished")
     public ModelAndView finished(@ModelAttribute Order order) {
         ModelAndView mv = new ModelAndView();
-
-        // 임시 세션
-        session.setAttribute("username", "jay");
         String username = (String) session.getAttribute("username");
         try {
-            System.out.println(order.getZipcode());
-            System.out.println(order.getDeli_address());
-            System.out.println(order.getDeli_name());
-            System.out.println(order.getSangse_juso());
-            System.out.println(order.getDoro_juso());
-            System.out.println(order.getPhone());
-            System.out.println(order.getEmail());
-            // 결제 수단도 받아오고, 주문번호도 총액도 받아와야한다.
-            // order_method / order_num / total_price (이 값을 db에 넣자)
-
-//            order.setOrder_method("tosspay");
-//            order.setOrder_num("123456789");
-            System.out.println("주문방법:" + order.getOrder_method());
-            System.out.println("주문번호" + order.getOrder_num());
-            System.out.println("주문총액" + order.getTotal_price());
-
-
-            // 1. 위 input 데이터들을 다 db에 넣어줘야한다.
+            // 1. input 데이터들을 다 db에 넣어준다
             paymentService.regOrder(order);
             // 2. username에 해당하는 order_book 테이블에 cart 테이블들의 정보+주문번호를 넘긴다
             // cart 객체를 가져와서
@@ -122,11 +114,13 @@ public class PaymentController {
             for (Cart cart : carts) {
                 String orderNum = order.getOrder_num();
                 String bookNum = cart.getCart_bookNum();
-                int BookCount = cart.getCart_count();
+                int bookCount = cart.getCart_count();
                 // order_book을 테이블에 insert
-                paymentService.insertOrderBook(orderNum, bookNum, BookCount);
+                paymentService.insertOrderBook(orderNum, bookNum, bookCount);
+                // 3. 책 판매량 업데이트
+                bookStoreService.updateBookSales(Integer.parseInt(bookNum), bookCount);
             }
-            // 3. 마지막으로 username에 해당하는 cart DB를 전부 제거한다
+            // 4. 마지막으로 username에 해당하는 cart DB를 전부 제거한다
             cartService.deleteCartByUser(username);
 
             mv.setViewName("/bookstore/paymentFinished");
