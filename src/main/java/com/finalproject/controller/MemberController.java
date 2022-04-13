@@ -67,7 +67,7 @@ public class MemberController {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		mav.setViewName("home");
+		mav.setViewName("/loginJoin/loginForm");
 		return mav;
 	}
 	
@@ -227,7 +227,8 @@ public class MemberController {
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
-			mav.setViewName("home");
+			mav.setViewName("redirect:/home");
+			session.invalidate();
 			return mav;
 		}
 	
@@ -237,19 +238,16 @@ public class MemberController {
 	return "/loginJoin/modifyPassword";	
 	}
 	
-	@GetMapping("logout")
-	public String logout(@RequestParam(value="mapping", required=true, defaultValue="home")String mapping) {
+	@GetMapping("log_out")
+	public String logout() {
 		try {	
 			session.invalidate();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		return "redirect:/"+mapping;
+		return "redirect:/home";
 	}
 	
-	
-	
-
 
 	
 }

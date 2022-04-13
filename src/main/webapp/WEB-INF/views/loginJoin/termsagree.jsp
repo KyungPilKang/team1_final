@@ -386,7 +386,7 @@ OS : Windows 7 이상 (Windows 10 Home, Pro 등 가능)
     
 						<div class="d-flex justify-content-center mt-3">
     						<div class="col-4">
-    							<button  class="btn btn-lg btn-secondary w-100" type="button"  onclick = "location.href='home';">취소</button>
+    							<button  class="btn btn-lg btn-secondary w-100" type="button"  onclick = "location.href='/loginForm';">취소</button>
 							</div>
 							<div class="col-1"></div>
  							<div class="col-4">
