@@ -76,7 +76,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
             <a href="/mypage" class="nav-item nav-link">마이페이지</a>
-            <a href="courses.html" class="nav-item nav-link">고객센터</a>
+            <a href="/request" class="nav-item nav-link">고객센터</a>
             <a href="/log_out" class="nav-item nav-link">로그아웃</a>
         </div>
     </div>
