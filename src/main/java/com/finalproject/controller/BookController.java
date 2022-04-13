@@ -189,9 +189,6 @@ public class BookController {
     public ModelAndView sort(@PathVariable String type, @RequestParam(value = "page", defaultValue = "1") int page) {
         ModelAndView mv = new ModelAndView();
         PageInfo pageInfo = new PageInfo();
-
-        // 임시 세션
-        session.setAttribute("username", "jay");
         String username = (String) session.getAttribute("username");
         try {
             int cartCount = cartService.cartCount(username);
