@@ -163,7 +163,7 @@
 								<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
 									<div class="d-flex mb-3">
 										<a href="/studymakerdetail/${study.study_no}"> 
-			               					<button id="showdetail" class="btn btn-outline-primary w-30 py-3 showdetail" style="float:right; margin-left:3px;font-size: 1.0em; height:50px;">게시글보기</button>
+			               					<button id="showdetail" class="btn btn-outline-primary w-30 py-3 showdetail" style="float:right; margin-left:3px;font-size: 1.0em;">게시글보기</button>
 			              				</a> 
 									</div>
 									<!-- <span class="text-truncate"><i class="bi bi-cart-plus text-primary me-2"></i>참여여부</span> -->
