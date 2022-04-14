@@ -5,11 +5,8 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
-import com.finalproject.dto.Answer;
 import com.finalproject.dto.Member;
 import com.finalproject.dto.Order;
-import com.finalproject.dto.OrderBook;
-import com.finalproject.dto.Request;
 
 @Mapper
 @Repository
@@ -23,7 +20,11 @@ public interface AdminDAO {
 	
 	public Order orderInfoByNum(String order_num) throws Exception;
 	
-	public void insertDeliNum(Order delinum) throws Exception;
+	public void updateOrder(Order order) throws Exception;
+	
+	
+	
+
 	
 	
 	

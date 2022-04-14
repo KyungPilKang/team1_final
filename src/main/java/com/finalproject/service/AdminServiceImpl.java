@@ -6,11 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.finalproject.dao.AdminDAO;
-import com.finalproject.dto.Answer;
 import com.finalproject.dto.Member;
 import com.finalproject.dto.Order;
-import com.finalproject.dto.OrderBook;
-import com.finalproject.dto.Request;
 
 @Service
 public class AdminServiceImpl implements AdminService {
@@ -39,9 +36,10 @@ public class AdminServiceImpl implements AdminService {
 
 	
 	@Override
-	public void insertOrderNum(Order delinum) throws Exception {
-		adminDAO.insertDeliNum(delinum);
+	public void updateOrderState(Order order) throws Exception {
+		adminDAO.updateOrder(order);
 	}
+
 	
 
 	

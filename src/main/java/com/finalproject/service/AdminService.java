@@ -18,7 +18,8 @@ public interface AdminService {
 	
 	Order getOrderInfoByNum(String order_num) throws Exception;
 	
-	void insertOrderNum(Order delinum) throws Exception;
+	void updateOrderState(Order order) throws Exception;
+	
 
 	
 	

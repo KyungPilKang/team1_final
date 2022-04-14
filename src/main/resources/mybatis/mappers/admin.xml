@@ -20,11 +20,11 @@
 	</select>
 	
 	
-	<insert id="insertDeliNum" parameterType="Order">
+	<update id="updateOrder" parameterType="Order">
 		<![CDATA[
-			insert into order values(#{order_deli_num})
+			update final.order set order_state=#{order_state}, order_deli_num =#{order_deli_num} where order_num=#{order_num}
 		]]>
-	</insert>
+	</update>
 	
 	
 	<select id="orderBook" resultType="OrderBook" parameterType="string">
