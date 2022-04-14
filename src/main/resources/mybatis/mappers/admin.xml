@@ -4,18 +4,8 @@
 
 <mapper namespace="com.finalproject.dao.AdminDAO">
 	
-	<select id="qnaReqList" resultType="Request" parameterType="string">
-		<![CDATA[
-			select * from request where role = #{role}
-		]]>
-	</select>
-	<select id="qnaAnsList" resultType="Answer" parameterType="string">
-		<![CDATA[
-			select * from answer where role = #{role}
-		]]>
-	</select>
-	
-	
+
+		
 	<select id="orderListByState" resultType="Order" parameterType="string">
 		<![CDATA[
 			select * from final.order where order_state = #{order_state}
@@ -30,10 +20,16 @@
 	</select>
 	
 	
+	<insert id="insertDeliNum" parameterType="Order">
+		<![CDATA[
+			insert into order values(#{order_deli_num})
+		]]>
+	</insert>
+	
+	
 	<select id="orderBook" resultType="OrderBook" parameterType="string">
 		<![CDATA[
 			select * from order_book where order_state = #{order_state}
-			select * from final.member where withdraw_status = "Y" and gender = "T"
 		]]>
 	</select>
 	
@@ -44,7 +40,9 @@
 	</select>
 	
 	
-	<insert id="insertAnsCont" parameterType="Answer">
+	
+	
+<!-- 	<insert id="insertAnsCont" parameterType="Answer">
 		<![CDATA[
 			insert into answer values(#{ansCont})
 		]]>
@@ -60,6 +58,18 @@
 		<![CDATA[
 			select * from request where request_num = #{requestNum}
 		]]>
+	</select> -->
+	
+	
+<!-- 	<select id="qnaReqList" resultType="Request" parameterType="string">
+		<![CDATA[
+			select * from request where role = #{role}
+		]]>
 	</select>
+	<select id="qnaAnsList" resultType="Answer" parameterType="string">
+		<![CDATA[
+			select * from answer where role = #{role}
+		]]>
+	</select> -->
 
 </mapper>

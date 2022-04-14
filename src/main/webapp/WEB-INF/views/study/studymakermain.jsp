@@ -163,10 +163,10 @@
 								<div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
 									<div class="d-flex mb-3">
 										<a href="/studymakerdetail/${study.study_no}"> 
-			               					<button id="showdetail" class="btn btn-outline-primary w-30 py-3 showdetail" style="float:right; margin-left:3px;font-size: 1.0em; height:50px;">게시글보기</button>
+			               					<button id="showdetail" class="btn btn-outline-primary w-30 py-3 showdetail" style="float:right; margin-left:3px;font-size: 1.0em;">게시글보기</button>
 			              				</a> 
 									</div>
-									<span class="text-truncate"><i class="bi bi-cart-plus text-primary me-2"></i>참여여부</span>
+									<!-- <span class="text-truncate"><i class="bi bi-cart-plus text-primary me-2"></i>참여여부</span> -->
 								</div>
 							</div>
 						</div>						
@@ -180,7 +180,14 @@
 					<div class="row g-3">
 						<div class="col-12">
 							<div class="col-12 mt-4">
-								<button id="canclebtn" class="btn btn-outline-primary w-50 py-3">이전 목록</button>
+								<c:choose>
+									<c:when test="${pageInfo.page<=1}">
+										<button id="beforebtn1" class="btn btn-outline-primary w-50 py-3" disabled>첫 페이지</button>
+									</c:when>
+									<c:otherwise>
+										<button id="beforebtn2" class="btn btn-outline-primary w-50 py-3">이전 목록</button>
+									</c:otherwise>
+								</c:choose>
 							</div>
 						</div>
 					</div>
@@ -191,15 +198,18 @@
 							<div class="col-12 mt-4">
 								<button type="submit" class="btn btn-primary w-100 py-3 dropdown-toggle" data-bs-toggle="dropdown">페이지 이동하기</button>
 								<ul class="dropdown-menu dropdown-menu-end">
-									<li style="font-weight:bold; font-family: 'Stylish', sans-serif; text-align: center;">1 페이지(현재)</li>
+									<li style="font-weight: bold; font-family: 'Stylish', sans-serif; text-align: center;">${pageInfo.page }&nbsp;페이지(현재)</li>
 									<li><hr class="dropdown-divider"></li>
-									<li><a class="dropdown-item" href="#">Page 1</a></li>
+									<c:forEach var="i" begin="${pageInfo.startPage }" end="${pageInfo.endPage }">
+									<li><a class="dropdown-item" href="/studyfindcnf?page=${i}">Page&nbsp;${i }</a></li>
+									</c:forEach>
+									<!-- <li><a class="dropdown-item" href="#">Page 1</a></li>
 									<li><a class="dropdown-item" href="#">Page 2</a></li>
 									<li><a class="dropdown-item" href="#">Page 3</a></li>
 									<li><a class="dropdown-item" href="#">Page 4</a></li>
 									<li><a class="dropdown-item" href="#">Page 5</a></li>
 									<li><a class="dropdown-item" href="#">Page 6</a></li>
-									<li><a class="dropdown-item" href="#">Page 7</a></li>
+									<li><a class="dropdown-item" href="#">Page 7</a></li> -->
 								</ul>
 							</div>
 						</div>
@@ -209,7 +219,14 @@
 					<div class="row g-3">
 						<div class="col-12">
 							<div class="col-12 mt-4">
-								<button type="submit" class="btn btn-outline-primary w-50 py-3">다음 목록</button>
+								<c:choose>
+									<c:when test="${pageInfo.page>=pageInfo.maxPage }">
+										<button id="afterbtn1" class="btn btn-outline-primary w-50 py-3" disabled>마지막 페이지</button>
+	       							</c:when>
+									<c:otherwise>
+										<button id="afterbtn2" class="btn btn-outline-primary w-50 py-3">다음 목록</button>
+									</c:otherwise>
+								</c:choose>
 							</div>
 						</div>
 					</div>

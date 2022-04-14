@@ -31,12 +31,16 @@
 	</select>
 
 	<!-- 개설자 목록 리스트 반환 -->
-	<select id="studymakerList" resultType="Study"
+<!-- 	<select id="studymakerList" resultType="Study"
 		parameterType="String">
 		<![CDATA[
-			select * from study where maker = #{maker}
+			select *
+			from (select @rownum:=@rownum+1 rnum, tot.*
+			from (select * from study where maker = #{maker}) tot,
+			(select @rownum:=0) temp) sub where rnum between #{startrow} and #{startrow}+9
 	  	]]>
-	</select>
+	</select> -->
+<!-- 			select * from study where maker = #{maker} -->
 
 	<!--개설자 수정 -->
 	<update id="updateStudy" parameterType="study">
@@ -61,11 +65,15 @@
  		]]>
 	</select>
 
-	<select id="makerList" parameterType="String" resultType="Study">
+	<select id="makerList" parameterType="Map" resultType="Study">
 		<![CDATA[
-			select * from study where maker=#{maker} 
+			select *
+			from (select @rownum:=@rownum+1 rnum, tot.*
+			from (select * from study where maker = #{maker}) tot,
+			(select @rownum:=0) temp) sub where rnum between #{startrow} and #{startrow}+9
 		]]>
 	</select>
+<!-- 			select * from study where maker=#{maker}  -->
 
 	<!-- 내가 쓴 글 "스터디팀" 리스트 반환 -->
 	<select id="selectStudentApplyList" parameterType="int"
@@ -115,8 +123,9 @@
 		select count(*) from study
 		]]>
 	</select>
-	
-	<select id="selectStudyList" resultType="Study" parameterType="map">
+
+	<select id="selectStudyList" resultType="Study"
+		parameterType="map">
 		<![CDATA[
 		select *
 		from (select @rownum:=@rownum+1 rnum, tot.*
@@ -125,7 +134,7 @@
 		where rnum between #{startrow} and #{startrow}+9
 		]]>
 	</select>
-
+	
 </mapper>
 
 
@@ -138,11 +147,19 @@
 	study_type varchar(1000), study_target_level varchar(1000), study_title varchar(1000), 
 	study_fdate date, study_edate date, study_ftime varchar(1000), study_etime 
 	varchar(1000), study_contents MEDIUMTEXT, study_kakao varchar(1000), study_regdate 
-	DATETIME DEFAULT CURRENT_TIMESTAMP ); select * from study where study_no 
-	in (SELECT study_no from studyteam where user_id = '김민정' and team_status='team_apply'); 
-	insert into study (maker, study_sname, study_grade, study_subject, study_type, 
-	study_target_level, study_title, study_fdate, study_edate, study_ftime, study_etime, 
-	study_contents, study_kakao, study_regdate) values('김길동', '중학교','1학년','국어','모의고사','최상','비문학배우기','2022-04-01','2022-04-25','08:00', 
+	DATETIME DEFAULT CURRENT_TIMESTAMP ); 스터디팀 create table studyteam ( studyteam_no 
+	int PRIMARY key AUTO_INCREMENT, study_no int, user_id varchar(1000), team_status 
+	varchar(1000) ) create table study( study_no int PRIMARY key AUTO_INCREMENT, 
+	maker varchar(1000), study_sname varchar(1000), study_grade varchar(1000), 
+	study_subject varchar(1000), study_type varchar(1000), study_target_level 
+	varchar(1000), study_title varchar(1000), study_fdate date, study_edate date, 
+	study_ftime varchar(1000), study_etime varchar(1000), study_contents MEDIUMTEXT, 
+	study_kakao varchar(1000), study_regdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
+	); select * from study where study_no in (SELECT study_no from studyteam 
+	where user_id = '김민정' and team_status='team_apply'); insert into study (maker, 
+	study_sname, study_grade, study_subject, study_type, study_target_level, 
+	study_title, study_fdate, study_edate, study_ftime, study_etime, study_contents, 
+	study_kakao, study_regdate) values('김길동', '중학교','1학년','국어','모의고사','최상','비문학배우기','2022-04-01','2022-04-25','08:00', 
 	'10:00', '비문학뿌시기','http://alsdk','2022-04-01 16:00:00'); update study set 
 	maker='홍길동', study_sname='초등학교',study_grade='1학년',study_subject='수학',study_type='모의고사',study_target_level='최상',study_title='비문학배우기',study_fdate='2022-04-01',study_edate='2022-04-25',study_ftime='08:00', 
 	study_etime='10:00', study_contents= '로그파헤치기',study_kakao='http://alsdk',study_regdate='2022-04-01 

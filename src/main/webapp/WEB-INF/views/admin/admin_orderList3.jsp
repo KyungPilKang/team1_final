@@ -158,7 +158,7 @@
 
 	                                    <div class="col-sm-12 col-md-2 d-flex flex-row-reverse align-items-center">
 	                                        <div class="text-start ps-4">
-	                                            <h6 class="mb-3">${order.order_num}</h6>
+	                                            <h6 class="mb-3">${order.order_deli_num}</h6>
 	                                        </div>
 	                                    </div>
 	                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
@@ -171,7 +171,7 @@
 							</c:forEach>
 							
 
-                            <a class="btn btn-primary py-3 px-5" href="">More List</a>
+                            <!-- <a class="btn btn-primary py-3 px-5" href="">More List</a> -->
                         </div>
                     </div>
                 </div>

@@ -146,8 +146,7 @@
 	                            <div class="job-item p-4 mb-4">
 	                                <div class="row g-4">
 	                                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
-	                                        <img class="flex-shrink-0 img-fluid border rounded" src="/book-store/book-img/${order.book_img}"
- alt="" style="width: 80px; height: 80px;">
+	                                        <img class="flex-shrink-0 img-fluid border rounded" src="/book-store/book-img/${order.book_img}" alt="" style="width: 80px; height: 80px;">
 	                                        <div class="text-start ps-4">
 	                                            <h5 class="mb-3">${order.subjectList} (${order.total_price} 원 | ${order.total_count} 권)</h5>
 	                                            <span class="text-truncate me-3"><i class="fa fa-user-tie text-primary me-2"></i>${order.username}</span>
@@ -162,7 +161,7 @@
 	                                    </div>
 	                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
 	                                        <div class="d-flex mb-3">
-	                                            <a class="btn btn-primary" href="http://localhost:8090/deliveryinfo/${order.order_num }">${order.order_state}</a>
+	                                            <a class="btn btn-primary" href="http://localhost:8090/deliveryinfo1/${order.order_num}">${order.order_state}</a>
 	                                        </div>
 	                                    </div>
 	                                </div>
@@ -170,7 +169,7 @@
 							</c:forEach>
  
 
-                            <a class="btn btn-primary py-3 px-5" href="">More List</a>
+                            <!-- <a class="btn btn-primary py-3 px-5" href="">More List</a> -->
                         </div>
                     </div>
                 </div>

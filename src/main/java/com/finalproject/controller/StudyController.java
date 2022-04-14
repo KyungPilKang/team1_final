@@ -81,18 +81,20 @@ public class StudyController {
 	}
 
 	// (1)개설자메인 페이지
-	@RequestMapping(value="/studymakermain", method= {RequestMethod.GET, RequestMethod.POST})
-	public ModelAndView studymakermain() {
+	@GetMapping("/studymakermain")
+	public ModelAndView studymakermain(@RequestParam(value = "page", defaultValue = "1") int page) {
+		PageInfo pageInfo = new PageInfo();
 		session.removeAttribute("findstudy");
 		ModelAndView mav = new ModelAndView("study/studymakermain");
 		//String result = null;
 		String user_id = (String) session.getAttribute("username");
 		//String user_id = "김민정";
 		try {			
-				List<Study> studyList = studyservice.makerList(user_id);
+				List<Study> studyList = studyservice.makerList(page, pageInfo, user_id);
 				System.out.println(studyList.size());				
 				mav.addObject("studyList", studyList);
 				mav.addObject("username", user_id);
+				mav.addObject("pageInfo", pageInfo);
 				for (Study s : studyList) {
 					System.out.println(s.getStudy_title());
 				}			
@@ -102,7 +104,7 @@ public class StudyController {
 		}
 		return mav;
 	}
-
+	
 	// 스터디상세페이지 (검색 조회후 게시글선택시, 등교페이지에서 게시글보기연결)
 	// 추후 get 방식에서 post 방식으로 변경 필요
 	@GetMapping("/studydetail/{study_no}")
@@ -268,7 +270,7 @@ public class StudyController {
 			studymodicnf.setMaker(maker);
 			System.out.println("수정확인후 수정 cnf :" + studymodicnf.toString());
 			studyservice.updateStudy(studymodicnf);
-			mav.setViewName("study/studymain");
+			mav.setViewName("redirect:/studymain");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -282,11 +284,10 @@ public class StudyController {
 	public String deletestudy(@RequestParam(value="study_no")int study_no) {
 		try {
 			studyservice.removeStudy(study_no);
-			
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "study/studymain";
+		return "redirect:/studymain";
 	}
 	
 	
@@ -324,7 +325,7 @@ public class StudyController {
 			session.removeAttribute("regstudy");
 			System.out.println("등록확인후 등록요청:" + cnfstudy.toString());
 			studyservice.regStudy(cnfstudy);
-			mav.setViewName("study/studymain");
+			mav.setViewName("redirect:/studymain");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

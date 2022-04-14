@@ -39,10 +39,21 @@
     <link href="${pageContext.request.contextPath}/resources/bookstore/css/payment.css" rel="stylesheet">
 </head>
 
-
 <body>
 
 <jsp:include page="/WEB-INF/views/bookstore/header.jsp"/>
+
+<!-- Header Start -->
+<div class="container-fluid bg-primary py-5 mb-5 page-header">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+
 
 <!-- Payment Start -->
 <div class="container-xxl py-10 mt-5 ok">

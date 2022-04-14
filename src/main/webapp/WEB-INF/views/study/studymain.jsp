@@ -180,9 +180,7 @@
 					</form>
 				</div>
 				<div class="fourth mt-5 mb-5">
-					<form action="studymakermain" method="post">
-						<button id="makerbtn" type="submit" class="btn btn-primary w-100 py-3">개설자관리</button>
-					</form>
+					<button id="makerbtn" class="btn btn-primary w-100 py-3">개설자관리</button>
 				</div>
 
 
@@ -245,16 +243,16 @@
 	<script>
 		
 		$(document).ready(function(){
-		/* let ismaker = "<c:out value='${ismaker}'/>"; */
-		let ismaker="yes";
+		let ismaker = "<c:out value='${ismaker}'/>";		
 		console.log("ismaker" + ismaker);
 		$('#makerbtn').on('click', function(){
 			if(ismaker=='yes'){
-				$('#makerbtn').attr('disabled', false); 
+				$('#makerbtn').attr('disabled', false);
+					window.location="/studymakermain";
 				} else {
-				alert("스터디를 개설해 주세요");
-				$('#makerbtn').attr('disabled', true); 
-				return false;
+					alert("스터디를 개설해 주세요");
+					$('#makerbtn').attr('disabled', true); 
+					return false;
 				}
 		});
 	});

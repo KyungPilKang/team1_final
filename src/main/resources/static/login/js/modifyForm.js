@@ -81,7 +81,13 @@ $(function() {
 		resnum = "";
 	});
 });
-
+$(function() {
+$("#modifyphone").click(function() {
+		console.log($("#oldphone").val());
+		$("#oldphone").val($("#phone").val()); 
+		console.log($("#phone").val());
+	})
+});
 //이메일 셀렉트박스 제어 함수
 function selectEmail(ele) {
 	var $ele = $(ele);
@@ -149,13 +155,21 @@ function emailChk() {
 						text: '사용 가능한 이메일 주소 입니다.',
 						confirmButtonText: "확인"
 					})
-					$("#email").val(newemail);
+					
 				}
 			}
 		});
 	}
 }
 
+$(function() {
+	$("#modifyemail").click(function(){
+		var email1 = $("#email1").val();
+		var email2 = $("#email2").val();
+		var email = email1+"@"+email2;
+		$("#email").val(email);
+	})
+});
 
 //닉네임 db중복 체크
 let nickok = false;
@@ -208,27 +222,21 @@ function nickcheck() {
 						text: '사용 가능한 닉네임 입니다.',
 						confirmButtonText: "확인"
 					})
-					$("#nickname1").val(nickname);
+					
 				}
 			}
 		});
 	}
-
 }
 $(function() {
-	$("#modifyphone").click(function() {
-		console.log($("#phone").val());
-		$("#phone").val($("#newphone").val()); 
-		console.log($("#phone").val());
-	});
-	
-	$("#modifyemail").click(function(){
-		var email1 = $("#newemail1").val();
-		var email2 = $("#newemail2").val();
-		var email = email1+"@"+email2;
-		$("#email").val(email);
-	});
+	$("#modifynickname").click(function(){
+	var oknic = $("#nickname").val();
+	$("#nickname1").val(oknic);
 	})
+});
+	
+	
+	
 
 
 //수정버튼 버튼 클릭시

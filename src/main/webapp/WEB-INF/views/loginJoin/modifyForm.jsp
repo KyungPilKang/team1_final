@@ -57,39 +57,39 @@ String sangse_juso = (String)session.getAttribute("sangse_juso");
 	</div>
 	<!-- Spinner End -->
 
-
+<jsp:include page="/WEB-INF/views/bookstore/header.jsp"/>
 	<!-- Navbar Start -->
-	<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-		<a href="/freereg2" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-			<h1 class="m-0 text-primary">
-				<i class="fa fa-book me-3"></i>NEEDSFULL
-			</h1>
-		</a>
-		<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarCollapse">
-			<div class="navbar-nav ms-auto p-4 p-lg-0">
-				<div class="nav-item dropdown">
-					<a href="#" class="nav-link" data-bs-toggle="dropdown">프리랜서</a>
-					<div class="dropdown-menu fade-down m-0">
-						<a href=# class="dropdown-item">프리랜서 등록</a>
-						<a href=# class="dropdown-item">프리랜서 조회</a>
-					</div>
-				</div>
-				<div class="nav-item dropdown">
-					<a href="#" class="nav-link" data-bs-toggle="dropdown">강의</a>
-					<div class="dropdown-menu fade-down m-0">
-						<a href=# class="dropdown-item">강의 등록</a>
-						<a href=# class="dropdown-item">강의 조회</a>
-					</div>
-				</div>
-				<a href="about.html" class="nav-item nav-link">마이페이지</a>
-				<a href="courses.html" class="nav-item nav-link">고객센터</a>
-				<a href=# class="nav-item nav-link">로그아웃</a>
-			</div>
-		</div>
-	</nav>
+<%--	<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">--%>
+<%--		<a href="/freereg2" class="navbar-brand d-flex align-items-center px-4 px-lg-5">--%>
+<%--			<h1 class="m-0 text-primary">--%>
+<%--				<i class="fa fa-book me-3"></i>NEEDSFULL--%>
+<%--			</h1>--%>
+<%--		</a>--%>
+<%--		<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">--%>
+<%--			<span class="navbar-toggler-icon"></span>--%>
+<%--		</button>--%>
+<%--		<div class="collapse navbar-collapse" id="navbarCollapse">--%>
+<%--			<div class="navbar-nav ms-auto p-4 p-lg-0">--%>
+<%--				<div class="nav-item dropdown">--%>
+<%--					<a href="#" class="nav-link" data-bs-toggle="dropdown">프리랜서</a>--%>
+<%--					<div class="dropdown-menu fade-down m-0">--%>
+<%--						<a href=# class="dropdown-item">프리랜서 등록</a>--%>
+<%--						<a href=# class="dropdown-item">프리랜서 조회</a>--%>
+<%--					</div>--%>
+<%--				</div>--%>
+<%--				<div class="nav-item dropdown">--%>
+<%--					<a href="#" class="nav-link" data-bs-toggle="dropdown">강의</a>--%>
+<%--					<div class="dropdown-menu fade-down m-0">--%>
+<%--						<a href=# class="dropdown-item">강의 등록</a>--%>
+<%--						<a href=# class="dropdown-item">강의 조회</a>--%>
+<%--					</div>--%>
+<%--				</div>--%>
+<%--				<a href="about.html" class="nav-item nav-link">마이페이지</a>--%>
+<%--				<a href="courses.html" class="nav-item nav-link">고객센터</a>--%>
+<%--				<a href=# class="nav-item nav-link">로그아웃</a>--%>
+<%--			</div>--%>
+<%--		</div>--%>
+<%--	</nav>--%>
 	<!-- Navbar End -->
 
 	<!-- Contact Start -->
@@ -175,7 +175,7 @@ String sangse_juso = (String)session.getAttribute("sangse_juso");
 										      </div>
 										      <div class="modal-footer d-flex justify-content-center">
         										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-        										<button type="button" id="modifyemail"  data-bs-dismiss="modal" class="btn btn-primary">수정하기</button>
+        										<button type="button" id="modifynickname"  data-bs-dismiss="modal" class="btn btn-primary">수정하기</button>
       										</div>
 										    </div>
 										  </div>
@@ -244,7 +244,7 @@ String sangse_juso = (String)session.getAttribute("sangse_juso");
 										<td>
 											<div class="row">
 												<div class="col-lg-4">
-													<input type="text" id="phone" name="phone" maxlength="11" size="11" value="<%=phone %>" style="background-color:transparent; border:none;" class="form-control old" readonly>
+													<input type="text" id="oldphone" name="phone" maxlength="11" size="11" value="<%=phone %>" style="background-color:transparent; border:none;" class="form-control old" readonly>
 												</div>
 												
 												<div class="col-lg-2">
@@ -264,7 +264,7 @@ String sangse_juso = (String)session.getAttribute("sangse_juso");
       																	<h5 class="modal-title">수정할 휴대전화 번호를 입력해 주세요.</h5>
       																</div>
 																	<div class="col-lg-7">
-																		<input type="text" id="newphone" maxlength="11" size="11" placeholder="숫자만 입력하세요." class="form-control">
+																		<input type="text" id="phone" maxlength="11" size="11" placeholder="숫자만 입력하세요." class="form-control">
 																	</div>
 																	<div class="col-lg-4">
 																		<button type="button" id="reqnum" class="btn btn-primary w-90">인증번호 요청</button>

@@ -3,6 +3,8 @@ package com.finalproject.api.kakao;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -26,13 +28,16 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.finalproject.dto.Member;
-import com.finalproject.service.MemberServiceImpl;
+import com.finalproject.service.MemberService;
 
 @Controller
 public class KakaoController {
 	
 	@Autowired(required=false)
-	MemberServiceImpl memberService;
+	MemberService memberService;
+	
+	@Autowired
+	HttpSession session;
 	
 	//로그인 화면에서 버튼 클릭시 연결되는 주소, 로그인 code요청->발급, 토큰발급요청->발급, 정보요청->응답 하여 카카오id(번호)와, email정보 받
 	@GetMapping("auth/kakao/callback") 
@@ -124,6 +129,17 @@ public class KakaoController {
 						model.addAttribute("provider_id", kakaoInfo.getId());
 						return "/loginJoin/kakao";
 					}else {
+						Member login = memberService.selectMemberByProvider_id(kakaoId);
+						session.setAttribute("no", login.getNo());
+						session.setAttribute("name", login.getName());
+						session.setAttribute("nickname", login.getNickname());
+						session.setAttribute("type", login.getType());
+						session.setAttribute("email", login.getEmail());
+						session.setAttribute("phone", login.getPhone());
+						session.setAttribute("zipcode", login.getZipcode());
+						session.setAttribute("doro_juso", login.getDoro_juso());
+						session.setAttribute("sangse_juso", login.getSangse_juso());
+						session.setAttribute("role", login.getRole());
 						return "loginJoin/okkakao";
 					}
 				} catch(Exception e) {

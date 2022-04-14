@@ -44,10 +44,24 @@
 
 
     <title>Book Detail</title>
-
+    <style>
+        *{
+            font-family: 'Stylish', sans-serif;
+        }
+        .page-header {
+            background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7));
+            height: 50px;
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/bookstore/header.jsp"/>
+
+
+<!-- Header Start -->
+<div class="container-fluid bg-primary py-5 mb-5 page-header">
+</div>
+<!-- Header End -->
 
 
 <!-- product_detail -->

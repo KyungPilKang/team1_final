@@ -45,10 +45,21 @@ public class StudyServiceImpl implements StudyService {
 
 
 	@Override
-	public List<Study> makerList(String maker) throws Exception {
+	public List<Study> makerList(int page, PageInfo pageInfo, String maker) throws Exception {
 		// 내가 쓴 글 :  스터디 게시글 리스트 반환(개설자)
-		//int listCount = studyDAO.makerListCount(maker);	
-		return studyDAO.makerList(maker);
+		//int listCount = studyDAO.makerListCount(maker);
+		int listCount = studyDAO.makerReturn(maker);
+        int maxPage = (int)Math.ceil((double)listCount/10);
+        int startPage=((int)((double)page/10+0.9)-1)*10+1;
+        int endPage=startPage+10-1;
+        if(endPage>maxPage) endPage=maxPage;
+        pageInfo.setStartPage(startPage);
+        pageInfo.setEndPage(endPage);
+        pageInfo.setMaxPage(maxPage);
+        pageInfo.setPage(page);
+        pageInfo.setListCount(listCount);
+        int startrow = (page-1)*10+1;
+		return studyDAO.makerList(startrow, maker);
 	}
 	
 	@Override

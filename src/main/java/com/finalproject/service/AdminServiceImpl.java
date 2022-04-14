@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.finalproject.dao.AdminDAO;
-import com.finalproject.dto.Answer;
 import com.finalproject.dto.Member;
 import com.finalproject.dto.Order;
 import com.finalproject.dto.OrderBook;
@@ -17,16 +16,7 @@ public class AdminServiceImpl implements AdminService {
 	@Autowired
 	private AdminDAO adminDAO;
 	
-	
-	@Override
-	public List<Request> getRequestListByRole(String role) throws Exception {
-		return adminDAO.qnaReqList(role);
-	}
-	@Override
-	public List<Answer> getAnswerListByRole(String role) throws Exception {
-		return adminDAO.qnaAnsList(role);
-	}
-	
+		
 	
 	@Override
 	public List<Member> getWithdrawListS() throws Exception {
@@ -47,19 +37,42 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	
+	@Override
+	public void insertOrderNum(Order delinum) throws Exception {
+		adminDAO.insertDeliNum(delinum);
+	}
+	
 
-	@Override
-	public void insertAnsCont(Answer ansCont) throws Exception {
-		adminDAO.insertAnswerCont(ansCont);
-	}
-	@Override
-	public Request getRequestInfoByNum(int requestNum) throws Exception {
-		return adminDAO.getRequestInfoByNum(requestNum);
-	}
-	@Override
-	public Answer getAnswerInfoByNum(int requestNum) throws Exception {
-		return adminDAO.getAnswerInfoByNum(requestNum);
-	}
+	
+	
+//	@Override
+//	public void insertAnsCont(Answer ansCont) throws Exception {
+//		adminDAO.insertAnswerCont(ansCont);
+//	}
+	
+	
+//	@Override
+//	public Request getRequestInfoByNum(int requestNum) throws Exception {
+//		return adminDAO.getRequestInfoByNum(requestNum);
+//	}
+	
+	
+//	@Override
+//	public Answer getAnswerInfoByNum(int requestNum) throws Exception {
+//		return adminDAO.getAnswerInfoByNum(requestNum);
+//	}
+	
+	
+//	@Override
+//	public List<Request> getRequestListByRole(String role) throws Exception {
+//		return adminDAO.qnaReqList(role);
+//	}
+	
+	
+//	@Override
+//	public List<Answer> getAnswerListByRole(String role) throws Exception {
+//		return adminDAO.qnaAnsList(role);
+//	}
 	
 	
 //	@Override

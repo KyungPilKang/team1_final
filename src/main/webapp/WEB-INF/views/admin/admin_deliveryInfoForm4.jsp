@@ -116,7 +116,7 @@
             </div>
             
             <div class="col-lg-7 col-md-7 text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="pt-5 pb-0">사용자ID 상품 배송현황</h6>
+                <h6 class="pt-5 pb-0">${orderInfo.username} 상품 배송현황</h6>
             </div>
 
             <div class="row g-1 justify-content-center">
@@ -129,7 +129,7 @@
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top border-bottom">
-                            <small class="flex-fill text-left py-2 px-2">AS234234K</small>
+                            <small class="flex-fill text-left py-2 px-2">${orderInfo.order_deli_num}</small>
                         </div>
                 </span>
             </div>
@@ -138,11 +138,11 @@
 
 
             <div class="row justify-content-center py-5">
-                <span class="col-lg-2 col-md-3 text-center py-3"><i class="fa fa-2x fa-user text-primary me-2"></i>결제완료 ▶</span>
+                <span class="col-lg-2 col-md-3 text-center py-3"><i class="fa fa-2x fa-user text-secondary me-2"></i>결제완료 ▶</span>
  
                 <span class="col-lg-2 col-md-3 text-center py-3"><i class="fa fa-2x fa-clock text-secondary me-2"></i>상품준비중 ▶</span>
 
-                <span class="col-lg-2 col-md-3 text-center text-primary py-3"><i class="fa fa-2x fa-map-marker-alt text-secondary me-2"></i>배송중 ▶</span>
+                <span class="col-lg-2 col-md-3 text-center text-primary py-3"><i class="fa fa-2x fa-map-marker-alt text-primary me-2"></i>배송중 ▶</span>
 
                 <span class="col-lg-2 col-md-3 text-center py-3"><i class="fa fa-2x fa-home text-secondary mb-2"></i>배송완료</span>
             </div>
@@ -180,13 +180,13 @@
                 <span class="col-lg-2 col-md-2 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="course-item bg-light">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-center py-2">주문 번호</small>
+                            <small class="flex-fill text-center py-2">결제 수단</small>
                         </div>
                     </div>
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-left py-2 px-2">${orderInfo.order_num}</small>
+                            <small class="flex-fill text-left py-2 px-2">${orderInfo.order_method}</small>
                         </div>
                 </span>
             </div>
@@ -200,7 +200,7 @@
                 </span>
                 <span class="col-lg-5 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-flex border-top">
-                            <small class="flex-fill text-left py-2 px-2">{orderInfo.subjectList}</small>
+                            <small class="flex-fill text-left py-2 px-2">${orderInfo.subjectList}</small>
                         </div>
                 </span>
             </div>
@@ -235,13 +235,13 @@
 
             <div class="row g-1 justify-content-center py-5">
                 <span class="col-lg-1 col-md-3">
-                    <button class="btn btn-primary w-100 py-1" type="submit" href="http://localhost:8090/deliveryedite">이전</button>
+                    <a class="btn btn-primary w-100 py-1" type="submit" href="http://localhost:8090/deliveryedite/${orderInfo.order_num}">이전</a>
                 </span>
                 <span class="col-lg-1 col-md-3">
-                    <button class="btn btn-primary w-100 py-1" type="submit" href="http://localhost:8090/deliveryinfo5">다음</button>
+                    <a class="btn btn-primary w-100 py-1" type="submit" href="http://localhost:8090/deliveryinfo5/${orderInfo.order_num}">다음</a>
                 </span>
                 <span class="col-lg-1 col-md-3">
-                    <button class="btn btn-primary w-100 py-1" type="submit" href="http://localhost:8090/orderlist">목록으로</button>
+                    <a class="btn btn-primary w-100 py-1" type="submit" href="http://localhost:8090/orderlist/orderlist?state=1">목록으로</a>
                 </span>
             </div>
 
