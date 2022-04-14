@@ -287,7 +287,7 @@ public class StudyController {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "study/studymain";
+		return "redirect:/studymain";
 	}
 	
 	
