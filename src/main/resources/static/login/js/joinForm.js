@@ -390,6 +390,17 @@ function join() {
 			confirmButtonText: "확인"
 		})
 	} else {
-		$("form[name=form]").submit();
+		Swal.fire({
+			icon: 'success',
+			title: '회원가입 완료',
+			text: '확인을 누르면 메인페이지로 이동합니다.',
+			confirmButtonText: "확인"
+		}).then(result => {
+				if (result.isConfirmed) {
+					$("form[name=form]").submit();
+				}
+
+			})
+		
 	}
 }

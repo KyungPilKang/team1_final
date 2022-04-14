@@ -134,13 +134,13 @@
 		</div>
 	</div>
 	
-<form id="form1"name="form" method="POST" action="/joinFormKakao">
-	<input type="hidden" name="provider_id" id="provider_id">
-	<input type="hidden" name="email" id="email">
+<form id="form1"name="form1" method="POST" action="/joinFormKakao">
+	<input type="hidden" name="provider_id" id="provider_id1">
+	<input type="hidden" name="email" id="email1">
 </form>
-<form id="form2" name="form" method="POST" action="/joinFormNaver">
-	<input type="hidden" name="provider_id" id="provider_id">
-	<input type="hidden" name="email" id="email">
+<form id="form2" name="form2" method="POST" action="/joinFormNaver">
+	<input type="hidden" name="provider_id" id="provider_id2">
+	<input type="hidden" name="email" id="email2">
 </form>
 	
 	<!-- Contact End -->
@@ -160,12 +160,17 @@
 </body>
 <script>
 function join(provider_id, email, provider) {
-	$("#provider_id").val(provider_id);
-	$("#email").val(email); 	
+	
+	let from = provider;
+	
 	if(provider=="KAKAO"){
-		$("#form1").submit();
-	}else{
-		$("#form2").submit();
+		$("#provider_id1").val(provider_id);
+		$("#email1").val(email);
+		$("form[name=form1]").submit();
+	}else if(provider=="NAVER"){
+		$("#provider_id2").val(provider_id);
+		$("#email2").val(email);
+		$("form[name=form2]").submit();
 	}
 }
 </script>
