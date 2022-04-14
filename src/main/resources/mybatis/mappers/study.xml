@@ -134,7 +134,17 @@
 		where rnum between #{startrow} and #{startrow}+9
 		]]>
 	</select>
-	
+
+
+	<select id="getTypeCount" parameterType="String" resultType="int">
+		<![CDATA[
+		select count(*) from study where study_type=#{study_type}
+		]]>
+	</select>
+
+
+
+
 </mapper>
 
 

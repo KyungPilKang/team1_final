@@ -188,7 +188,7 @@
 										<input id="study_type_3" type="radio" class="btn-check" name="study_type" value="경시대회준비" />
 										<label for="study_type_3" class="btn btn-outline-primary w-100 py-3">경시대회준비</label> <br>
 										<br>
-										<input id="study_type_4" type="radio" class="btn-check" name="study_type" value="북클럽북클럽" />
+										<input id="study_type_4" type="radio" class="btn-check" name="study_type" value="북클럽" />
 										<label for="study_type_4" class="btn btn-outline-primary w-100 py-3">북클럽</label> <br>
 										<br>
 									</div>

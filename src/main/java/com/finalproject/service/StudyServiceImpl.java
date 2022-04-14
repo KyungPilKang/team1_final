@@ -217,8 +217,10 @@ public class StudyServiceImpl implements StudyService {
 		}
 	}
 
-
-
+	@Override
+	public int getTypeCount(String study_type) throws Exception {
+		return studyDAO.getTypeCount(study_type);
+	}
 
 
 }

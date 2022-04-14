@@ -44,6 +44,7 @@ public interface StudyDAO {
 	int selectStudyCount() throws Exception;
 	List<Study> selectStudyList(@Param("startrow") int startrow, @Param("cond") Study study) throws Exception;
 
+	int getTypeCount(String study_type) throws Exception;
 
 }
 
