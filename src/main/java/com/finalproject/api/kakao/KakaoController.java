@@ -166,6 +166,7 @@ public class KakaoController {
 		System.out.println("joinFormKakao:"+email);
 		model.addAttribute("email", email);
 		model.addAttribute("provider_id", provider_id);
+		model.addAttribute("provider", "KAKAO");
 		return "/loginJoin/joinFormKakao";
 	}
 	
@@ -178,7 +179,7 @@ public class KakaoController {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		mav.setViewName("home");
+		mav.setViewName("redirect:home");
 		return mav;
 	}
 

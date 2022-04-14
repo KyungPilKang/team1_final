@@ -34,7 +34,7 @@ let email = "${email}";
 			}).then(result => {
 				
 				
-				opener.join(data.provider_id,data.email);
+				opener.join(data.provider_id,data.email,"NAVER");
 				window.close()
 				});
 			

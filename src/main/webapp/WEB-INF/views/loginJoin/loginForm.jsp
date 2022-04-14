@@ -134,7 +134,11 @@
 		</div>
 	</div>
 	
-<form name="form" method="POST" action="/joinFormKakao">
+<form id="form1"name="form" method="POST" action="/joinFormKakao">
+	<input type="hidden" name="provider_id" id="provider_id">
+	<input type="hidden" name="email" id="email">
+</form>
+<form id="form2" name="form" method="POST" action="/joinFormNaver">
 	<input type="hidden" name="provider_id" id="provider_id">
 	<input type="hidden" name="email" id="email">
 </form>
@@ -155,10 +159,14 @@
 
 </body>
 <script>
-function join(provider_id, email) {
+function join(provider_id, email, provider) {
 	$("#provider_id").val(provider_id);
 	$("#email").val(email); 	
-	document.form.submit();
+	if(provider=="KAKAO"){
+		$("#form1").submit();
+	}else{
+		$("#form2").submit();
+	}
 }
 </script>
 </html>

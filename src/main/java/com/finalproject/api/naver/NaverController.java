@@ -180,7 +180,7 @@ public class NaverController {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		mav.setViewName("home");
+		mav.setViewName("redirect:home");
 		return mav;
 	}
 
