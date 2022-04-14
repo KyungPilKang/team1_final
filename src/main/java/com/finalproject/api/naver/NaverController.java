@@ -25,16 +25,15 @@ import org.springframework.web.servlet.ModelAndView;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.finalproject.api.kakao.KakaoInfo;
 import com.finalproject.api.kakao.OAuthToken;
 import com.finalproject.dto.Member;
-import com.finalproject.service.MemberServiceImpl;
+import com.finalproject.service.MemberService;
 
 @Controller
 public class NaverController {
 	
 	@Autowired(required=false)
-	MemberServiceImpl memberService;
+	MemberService memberService;
 	
 	@GetMapping("auth/naver/callback") 
 	public String naverCallback(String code, String state, Model model) { //Data를 리턴주는 컨트롤러 함수

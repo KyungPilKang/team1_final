@@ -26,13 +26,13 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.finalproject.dto.Member;
-import com.finalproject.service.MemberServiceImpl;
+import com.finalproject.service.MemberService;
 
 @Controller
 public class KakaoController {
 	
 	@Autowired(required=false)
-	MemberServiceImpl memberService;
+	MemberService memberService;
 	
 	//로그인 화면에서 버튼 클릭시 연결되는 주소, 로그인 code요청->발급, 토큰발급요청->발급, 정보요청->응답 하여 카카오id(번호)와, email정보 받
 	@GetMapping("auth/kakao/callback") 
