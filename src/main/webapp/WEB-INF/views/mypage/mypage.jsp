@@ -116,7 +116,7 @@
                         <button type="button" onclick="location.href='/mypage'">홈</button>
                     </div>
                     <div>
-                        <button type="button" onclick="location.href='/book-store/order/detail'">배송조회</button>
+                        <button type="button" onclick="location.href='/mypagedelivery'">배송조회</button>
                     </div>
                     <div>
                         <button type="button" onclick="location.href='/studyclass'">스터디현황</button>

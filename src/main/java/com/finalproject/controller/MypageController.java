@@ -21,4 +21,9 @@ public class MypageController {
         return "/mypage/mypage";
     }
 
+    @GetMapping("/mypagedelivery")
+    public String mypagedelivery() {
+        return "/mypage/mypageDelivery";
+    }
+
 }
