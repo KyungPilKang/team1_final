@@ -5,7 +5,6 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
-import com.finalproject.dto.Answer;
 import com.finalproject.dto.Member;
 import com.finalproject.dto.Order;
 import com.finalproject.dto.OrderBook;
