@@ -270,7 +270,7 @@ public class StudyController {
 			studymodicnf.setMaker(maker);
 			System.out.println("수정확인후 수정 cnf :" + studymodicnf.toString());
 			studyservice.updateStudy(studymodicnf);
-			mav.setViewName("study/studymain");
+			mav.setViewName("redirect:/studymain");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
