@@ -1,34 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+		"http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-<<<<<<< HEAD
 	<mappers>
 		<mapper resource="mybatis/mappers/admin.xml"/>
 		<mapper resource="mybatis/mappers/member.xml"/>
-		<!-- <mapper resource="mybatis/mappers/freelance.xml"/> -->
 		<mapper resource="mybatis/mappers/order.xml"/>
 		<mapper resource="mybatis/mappers/order_book.xml"/>
 		<mapper resource="mybatis/mappers/cart.xml"/>
 		<mapper resource="mybatis/mappers/book.xml"/>
-		<!-- <mapper resource="mybatis/mappers/request.xml"/> -->
-		<mapper resource="mybatis/mappers/answer.xml"/>
 		<mapper resource="mybatis/mappers/study.xml"/>
 	</mappers>
-=======
-    <mappers>
-        <mapper resource="mybatis/mappers/admin.xml"/>
-        <mapper resource="mybatis/mappers/member.xml"/>
-        <mapper resource="mybatis/mappers/order.xml"/>
-        <mapper resource="mybatis/mappers/order_book.xml"/>
-        <mapper resource="mybatis/mappers/cart.xml"/>
-        <mapper resource="mybatis/mappers/book.xml"/>
-        <mapper resource="mybatis/mappers/study.xml"/>
-    </mappers>
->>>>>>> branch 'develop' of https://github.com/KyungPilKang/team1_final.git
 </configuration>
 
-        <!--
+		<!--
         CREATE DATABASE `final` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
          -->
