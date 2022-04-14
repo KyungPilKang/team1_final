@@ -89,7 +89,7 @@
 			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
 				<h1 class="mt-2 mb-3">회원 가입</h1>
 				<div class="row text-center col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.5s" style="width: 60%; float: none; margin: 0 auto">
-					<form name="form"  action="joinKakao" method="post" novalidate>
+					<form name="form"  action="joinNaver" method="post" novalidate>
 						<div class="row g-3">
 							<table id="table1" class="table">
 								<colgroup>
@@ -125,15 +125,12 @@
 										</th>
 										<td>
 											<div class="row">
-												<div class="col-lg-2">
-													<label class="radio"> <input type="radio" id="gender" name="gender" value="T">강사
-													</label>
-												</div>
-												<div class="col-lg-2">
+												
+												<div class="col-lg-3">
 													<label class="radio"> <input type="radio" id="gender" name="gender" value="S">초등학생
 													</label>
 												</div>
-												<div class="col-lg-2">
+												<div class="col-lg-3">
 													<label class="radio"> <input type="radio" id="gender" name="gender" value="S">중학생
 													</label>
 												</div>
