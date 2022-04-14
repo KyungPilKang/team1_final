@@ -295,6 +295,10 @@
 <!-- DIY -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script>
+	response.setHeader("Cache-Control","no-cache); 
+	response.setHeader("Pragma","no-cache");
+
+	
     $(document).ready(function () {
         $('#attendResult').on('change', function (e) {
             if ($("#attendResult option:selected").val() == 'none') {

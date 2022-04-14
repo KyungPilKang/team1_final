@@ -81,7 +81,7 @@ public class StudyController {
 	}
 
 	// (1)개설자메인 페이지
-	@RequestMapping(value="/studymakermain", method= {RequestMethod.GET, RequestMethod.POST})
+	@GetMapping("/studymakermain")
 	public ModelAndView studymakermain(@RequestParam(value = "page", defaultValue = "1") int page) {
 		PageInfo pageInfo = new PageInfo();
 		session.removeAttribute("findstudy");
