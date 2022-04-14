@@ -56,6 +56,7 @@ public class KakaoController {
 		params.add("redirect_uri","http://localhost:8090/auth/kakao/callback");
 		params.add("code", code);
 		
+		System.out.println(code);
 		// HttpHeader와 HttpBody를 하나의 오브젝트에 담음
 		HttpEntity<MultiValueMap<String, String>> kakaoTokenRequest=
 				new HttpEntity<>(params,headers);
