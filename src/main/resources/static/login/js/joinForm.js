@@ -16,7 +16,7 @@ $(function() {
 			type: "post",
 			dataType: "text",
 			data: { phone: $("#phone").val() },
-			url: "http://localhost:8090/sendsms",
+			url: "/sendsms",
 			success: function(data, textStatus) {
 				phoneok1 = true;
 				Swal.fire({
