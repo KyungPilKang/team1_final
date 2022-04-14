@@ -123,7 +123,7 @@ public class AdminController {
 	}
 	
 	@GetMapping("/deliveryedite/{order_num}")
-	public ModelAndView deliveryEdite(@PathVariable String order_num) {
+	public ModelAndView deliveryEdite(@PathVariable String order_num, @ModelAttribute Order delinum) {
 		ModelAndView mav=new ModelAndView();
 		Member mem = (Member) session.getAttribute("login");
 
@@ -131,7 +131,7 @@ public class AdminController {
 			Order orderInfo=adminService.getOrderInfoByNum(order_num);
 			mav.addObject("orderInfo", orderInfo);
 			
-//			adminService.insertOrderNum(delinum);
+			adminService.insertOrderNum(delinum);
 			
 			mav.setViewName("/admin/admin_deliveryEditForm3");
 		} catch (Exception e) {

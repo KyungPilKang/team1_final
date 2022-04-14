@@ -129,10 +129,16 @@
                 </span>
 
                 <span class="col-lg-5 col-md-5">
-                    <div class="d-flex">
-                        <input type="text" class="form-control" id="name" placeholder="Billing Number">
-                        <label for="name"></label>
-                    </div>
+                
+                	<form id='form' action="deliveryedite" method="get">
+                	
+	                    <div class="d-flex">
+	                        <input type="text" class="form-control" id="name" placeholder="Billing Number">
+	                        <label for="name"></label>
+	                    </div>
+	                    
+                     </form>
+                     
                 </span>
 
             </div>
@@ -241,7 +247,7 @@
                     <a class="btn btn-primary w-100 py-1" type="submit" href="http://localhost:8090/deliveryinfo2/${orderInfo.order_num}">이전</a>
                 </span>
                 <span class="col-lg-1 col-md-3">
-                    <a class="btn btn-primary w-100 py-1" type="submit" href="http://localhost:8090/deliveryinfo4/${orderInfo.order_num}">입력완료</a>
+                    <a class="btn btn-primary w-100 py-1" type="submit" id="submit" href="http://localhost:8090/deliveryinfo4/${orderInfo.order_num}">입력완료</a>
                 </span>
                 <span class="col-lg-1 col-md-3">
                     <a class="btn btn-primary w-100 py-1" type="submit" href="http://localhost:8090/orderlist?state=1">목록으로</a>
