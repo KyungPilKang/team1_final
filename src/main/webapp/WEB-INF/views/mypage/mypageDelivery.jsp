@@ -116,7 +116,7 @@
                         <button type="button" onclick="location.href='/mypage'">홈</button>
                     </div>
                     <div>
-                        <button type="button" onclick="location.href='/book-store/order/detail'">배송조회</button>
+                        <button type="button" onclick="location.href='/mypagedelivery'">배송조회</button>
                     </div>
                     <div>
                         <button type="button" onclick="location.href='/studyclass'">스터디현황</button>
@@ -127,7 +127,26 @@
             <div class="container-xxl py-10 mt-5">
                 <div class="container user-info">
                     <div class="delivery-container">
-                        
+                        <c:forEach var="order" items="${orderList}">
+                            <div style="display: flex; justify-content: space-around">
+                        <img src="/book-store/book-img/${order.book_img}" style="width: 100px;height: 100px;">
+                            주문상태:${order.order_state}
+                            총권수:${order.total_count}
+                            총금액:${order.total_price}
+                                <c:choose>
+                                    <c:when test="${order.order_state == '결제완료'}">
+                        <a class="btn btn-primary py-3 px-5">결제 완료</a>
+                                    </c:when>
+                                    <c:when test="${order.order_state == '배송중'}">
+                        <a class="btn btn-primary py-3 px-5" href="#" onclick="deliPopup(${order.order_deli_num})">배송 조회</a>
+                                    </c:when>
+                                    <c:otherwise>
+                        <a class="btn btn-primary py-3 px-5" href="#" onclick="deliPopup(${order.order_deli_num})">배송 완료</a>
+                                    </c:otherwise>
+                                </c:choose>
+                            </div>
+                            <br>
+                        </c:forEach>
                     </div>
                 </div>
             </div>
@@ -182,6 +201,11 @@
 <!-- DIY -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="${pageContext.request.contextPath}/resources/mypage/js/myFage.js"></script>
+<script>
+    function deliPopup(deliNum) {
+        window.open("https://tracker.delivery/#/kr.cjlogistics/"+deliNum, "pop", "width=769,height=800, scrollbars=yes, resizable=yes");
+    }
+</script>
 
 
 </body>

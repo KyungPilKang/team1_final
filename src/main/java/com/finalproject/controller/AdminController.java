@@ -60,7 +60,8 @@ public class AdminController {
 	public ModelAndView orderList(@RequestParam(value = "state", defaultValue = "0") String state) {
 		ModelAndView mav=new ModelAndView();
 		Member mem = (Member) session.getAttribute("login"); // 작성 목적 : 관리자만 접근할 수 있도록
-
+		System.out.println("객체:"+mem);
+		System.out.println("관리자:"+mem.getRole());
 		if (mem.getRole().equals("ROLE_ADMIN")) {
 			try {
 				switch(state) {

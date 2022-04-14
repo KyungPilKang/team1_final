@@ -6,6 +6,8 @@ import com.finalproject.dto.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PaymentServiceImpl implements PaymentService{
 
@@ -24,4 +26,11 @@ public class PaymentServiceImpl implements PaymentService{
     public void insertOrderBook(String order_num, String order_book_bookNum, int order_book_count) throws Exception {
         orderBookDAO.insertOrderBook(order_num,order_book_bookNum,order_book_count);
     }
+
+    @Override
+    public List<Order> getOrderListByUser(String username) throws Exception {
+        return orderDAO.orderListByUser(username);
+    }
+
+
 }

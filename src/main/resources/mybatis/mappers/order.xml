@@ -13,6 +13,13 @@
 		]]>
 	</insert>
 
+	<select id="orderListByUser" resultType="Order" parameterType="string">
+		<![CDATA[
+		select * from final.order where username = #{username}
+		]]>
+	</select>
+
+
 </mapper>
 
 

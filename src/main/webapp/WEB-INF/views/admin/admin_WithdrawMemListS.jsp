@@ -128,16 +128,16 @@
 							<c:forEach items="${memList}" var="mem" varStatus="status">
                             <div class="row">
                             		<div class="col-lg-1 mt-3">
-                            			<h6>${i }</h6>
+                            			<h6>${mem.no}</h6>
                             		</div>
                                      <div class="col-lg-5 mt-3">
                                         <div class="text-start ps-4">
-                                            <h6 class="mb-3">${mem.withdraw_contents}</h6>
+                                            <h6 class="mb-3" style="text-align: center">${mem.withdraw_contents}</h6>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 mt-3">
+                                    <div class="col-lg-4 mt-3" >
                                         
-                                            <h6 style="text-align:left;" class="mb-3">${mem.withdraw_type}</h6>
+                                            <h6 style="text-align:left;" class="mb-3" >${mem.withdraw_type}</h6>
                                        
                                     </div>
                                     <div class="col-lg-2 mt-3">
