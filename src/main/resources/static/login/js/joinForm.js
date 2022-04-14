@@ -126,7 +126,7 @@ function usernameChk() {
 		})
 	} else {
 		$.ajax({
-			url: "http://localhost:8090/usernameCheck", //Controller에서 인식할 주소
+			url: "/usernameCheck", //Controller에서 인식할 주소
 			type: 'post', //POST 방식으로 전달
 
 			data: { username: username },
@@ -172,7 +172,7 @@ function emailChk() {
 		})
 	} else {
 		$.ajax({
-			url: "http://localhost:8090/emailCheck", //Controller에서 인식할 주소
+			url: "/emailCheck", //Controller에서 인식할 주소
 			type: 'post', //POST 방식으로 전달
 
 			data: { email: email },
@@ -245,7 +245,7 @@ function nickcheck() {
 		})
 	} else {
 		$.ajax({
-			url: "http://localhost:8090/nicknameCheck", //Controller에서 인식할 주소
+			url: "/nicknameCheck", //Controller에서 인식할 주소
 			type: 'post', //POST 방식으로 전달
 			data: { nickname: nickname },
 			success: function(data) { //컨트롤러에서 넘어온 data값을 받는다 

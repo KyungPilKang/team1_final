@@ -16,7 +16,7 @@
 	    })
 	} else { 
 		$.ajax({
-			url: "http://localhost:8090/loginCheck", //Controller에서 인식할 주소
+			url: "/loginCheck", //Controller에서 인식할 주소
 			type: 'post', //POST 방식으로 전달
 			
 			data: {"username":$("#username").val(), "password":$("#password").val()},
@@ -29,7 +29,7 @@
 					text: '확인을 누르면 관리자 페이지로 이동합니다.',
 					confirmButtonText: "확인"
 					}).then(result => {
-					location.href="http://localhost:8090/orderlist"
+					location.href="/orderlist"
 					})
 				}
 			
@@ -40,7 +40,7 @@
 					text: '확인을 누르면 메인페이지로 이동합니다.',
 					confirmButtonText: "확인"
 					}).then(result => {
-					location.href="http://localhost:8090/home"
+					location.href="/home"
 					})
 				} else if(data =="passfail" || data=="idfail") { // 로그인 실패
 					Swal.fire({
@@ -116,7 +116,7 @@ $('#captchavalid').click(function () {
 		type:"post",
 		dataType:"text",
 		async:false,
-		url:"http://localhost:8090/captchacheck",
+		url:"/captchacheck",
 		data:{userin:$('#userin').val()},
 		success: function(data, textStatus){
 			if(data=="false"){
