@@ -1,11 +1,6 @@
 package com.finalproject.service;
 
-
-
-import java.util.List;
-
 import com.finalproject.dto.Member;
-
 
 public interface MemberService {
 	public void insertNaverMember(Member member) throws Exception;
