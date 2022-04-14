@@ -28,6 +28,9 @@ public class AdminController {
 
 	@Autowired
 	private HttpSession session;
+	
+	
+	
 
 	@GetMapping("/adminHome")
 	public ModelAndView withdrawMemListS() {
@@ -36,7 +39,6 @@ public class AdminController {
 
 		System.out.println("객체:"+mem);
 		System.out.println("관리자:"+mem.getRole());
-
 
 		if (mem.getRole().equals("ROLE_ADMIN")) {
 			try {
@@ -51,7 +53,6 @@ public class AdminController {
 				mav.addObject("/admin/err");
 			}
 		}
-
 		return mav;
 	}
 
@@ -90,7 +91,6 @@ public class AdminController {
 				mav.addObject("/admin/err");
 			}
 		}
-
 		return mav;
 	}
 
@@ -114,6 +114,7 @@ public class AdminController {
 		return mav;
 	}
 
+	
 	@ResponseBody
 	@PostMapping("/deliveryChange")
 	public String deliveryChange(Order order) {
@@ -130,6 +131,9 @@ public class AdminController {
 		return "성공";
 	}
 
+	
+		
+	
 //	@GetMapping(value="/qnainfo/{requestNum}")
 //	public ModelAndView qnaInfo(@PathVariable int requestNum) {
 //		ModelAndView mav=new ModelAndView();
@@ -150,30 +154,6 @@ public class AdminController {
 //		}
 //		return mav;
 //	}
-
-
-
-//	@GetMapping(value="/qnareg/{requestNum}")
-//	public ModelAndView qnaReg(@PathVariable int requestNum) {
-//		ModelAndView mav=new ModelAndView();
-//		Member mem = (Member) session.getAttribute("login");
-//		
-//		try {
-//			Request reqReg=adminService.getRequestInfoByNum(requestNum);
-//			mav.addObject("reqReg", reqReg);
-//			
-//			Answer ansReg=adminService.getAnswerInfoByNum(requestNum);
-//			mav.addObject("ansReg", ansReg);
-//			
-//			mav.setViewName("/admin/admin_qnaRegForm1");
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			mav.addObject("err", e.getMessage());
-//			mav.addObject("/admin/err");
-//		}
-//		return mav;
-//	}
-
 
 
 //	@GetMapping("/qnalist")
@@ -209,7 +189,6 @@ public class AdminController {
 //		}
 //		return mav;
 //	}
-
 
 
 }

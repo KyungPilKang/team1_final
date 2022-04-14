@@ -13,7 +13,8 @@ import com.finalproject.dto.Order;
 public interface AdminDAO {
 
 	
-	public List<Member> getWithdrawListT() throws Exception;
+	
+	
 	public List<Member> getWithdrawListS() throws Exception;
 	
 	public List<Order> orderListByState(String order_state) throws Exception;
@@ -24,11 +25,9 @@ public interface AdminDAO {
 	
 	
 	
-
 	
+//	public List<Member> getWithdrawListT() throws Exception;
 	
-	
-//	public void insertAnswerCont(Answer ansCont) throws Exception;
 //	public Request getRequestInfoByNum(int requestNum) throws Exception;
 //	public Answer getAnswerInfoByNum(int requestNum) throws Exception;
 	

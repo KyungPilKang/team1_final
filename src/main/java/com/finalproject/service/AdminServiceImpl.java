@@ -16,6 +16,7 @@ public class AdminServiceImpl implements AdminService {
 	
 		
 	
+	
 	@Override
 	public List<Member> getWithdrawListS() throws Exception {
 		
@@ -43,7 +44,6 @@ public class AdminServiceImpl implements AdminService {
 	
 
 	
-	
 //	@Override
 //	public void insertAnsCont(Answer ansCont) throws Exception {
 //		adminDAO.insertAnswerCont(ansCont);
@@ -67,16 +67,17 @@ public class AdminServiceImpl implements AdminService {
 //		return adminDAO.qnaReqList(role);
 //	}
 	
-	
+
 //	@Override
 //	public List<Answer> getAnswerListByRole(String role) throws Exception {
 //		return adminDAO.qnaAnsList(role);
 //	}
-	
+
 	
 //	@Override
 //	public void inputQna(Answer ans) throws Exception {
 //		adminDAO.insertAnswer(ans);
 //	}
+	
 	
 }
