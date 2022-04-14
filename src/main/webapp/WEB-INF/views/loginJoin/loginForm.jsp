@@ -104,7 +104,7 @@
 							
 							
 								<div class="col-12">
-									<a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=94fc26e459f927ce79257dc6c17527a7&redirect_uri=http://localhost:8090/auth/kakao/callback"
+									<a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=94fc26e459f927ce79257dc6c17527a7&redirect_uri=/auth/kakao/callback"
 										onclick="window.open(this.href, '_blank', 'width=800, height=600'); return false;">
 										<img src="${pageContext.request.contextPath}/resources/login/kakao.png" style="width:100%; height:58px;">
 									</a>
@@ -112,7 +112,7 @@
 							
 							
 								<div class="col-12" style="max-height:58px;">
-									<a id="naverlogin" href="https://nid.naver.com/oauth2.0/authorize?client_id=24OF3VzEePL0jwU_gwRz&response_type=code&redirect_uri=http://localhost:8090/auth/naver/callback&state=oauth_state"
+									<a id="naverlogin" href="https://nid.naver.com/oauth2.0/authorize?client_id=24OF3VzEePL0jwU_gwRz&response_type=code&redirect_uri=/auth/naver/callback&state=oauth_state"
 									onclick="window.open(this.href, '_blank', 'width=800, height=600'); return false;">
 									<img src="${pageContext.request.contextPath}/resources/login/naver.png" style="width:100%; height:58px;">
 									</a>
@@ -134,7 +134,7 @@
 		</div>
 	</div>
 	
-<form name="form" method="POST" action="http://localhost:8090/joinFormKakao">
+<form name="form" method="POST" action="/joinFormKakao">
 	<input type="hidden" name="provider_id" id="provider_id">
 	<input type="hidden" name="email" id="email">
 </form>

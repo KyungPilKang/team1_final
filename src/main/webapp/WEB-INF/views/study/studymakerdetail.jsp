@@ -358,7 +358,7 @@
                 }).then((result) => {
                     if (result) {
                         $.ajax({
-                            url: "http://localhost:8090/studymakerdetail/check",
+                            url: "/studymakerdetail/check",
                             type: "post",
                             data: {
                                 "study_no": $('#study_no').val(),

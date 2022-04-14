@@ -8,22 +8,22 @@ const maxCount = function (maxNum, idNum) {
     }
 }
 
-// /* 장바구니 아이템 삭제 */
-// const delCart = function (bookNum) {
-//     event.preventDefault();
-//     fetch("http://localhost:8090/book-store/delcart", {
-//         method: "POST",
-//         header: {
-//             "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify({
-//             book_num: bookNum
-//         }),
-//     }).then((response) => response.json())
-//         .then(function (data) {
-//             location.reload()
-//         })
-// }
+/* 장바구니 아이템 삭제 */
+const delCart = function (bookNum) {
+    event.preventDefault();
+    fetch("/book-store/delcart", {
+        method: "POST",
+        header: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            book_num: bookNum
+        }),
+    }).then((response) => response.json())
+        .then(function (data) {
+            location.reload()
+        })
+}
 
 /* 전체 상품 구매하기 click */
 const buyAll = function (){

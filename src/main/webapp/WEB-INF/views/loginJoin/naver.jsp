@@ -24,7 +24,7 @@ let email = "${email}";
 			"email":email 
 			},
 		dataType: "json",
-		url: 'http://localhost:8090/joinFormNaverTemp',
+		url: '/joinFormNaverTemp',
 		success: function(data){
 			Swal.fire({
 				icon: 'success',

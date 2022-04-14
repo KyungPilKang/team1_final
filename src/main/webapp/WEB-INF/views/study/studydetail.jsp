@@ -403,7 +403,7 @@
 							type : "post",
 							dataType : "text",
 							async : false,
-							url : "http://localhost:8090/attend",
+							url : "/attend",
 							data : {
 								"study_no" : $('#study_no').val(),
 								"status" : attendCheck

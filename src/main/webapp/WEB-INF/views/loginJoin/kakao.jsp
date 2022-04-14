@@ -24,7 +24,7 @@ let email = "${email}";
 			"email":email 
 			},
 		dataType: "json",
-		url: 'http://localhost:8090/joinFormKakaoTemp',
+		url: '/joinFormKakaoTemp',
 		success: function(data){
 			Swal.fire({
 				icon: 'success',
