@@ -2,6 +2,7 @@ package com.finalproject.controller;
 
 
 import java.util.List;
+import java.util.Objects;
 
 import javax.servlet.http.HttpSession;
 
@@ -33,7 +34,7 @@ public class AdminController {
 	public ModelAndView withdrawMemListS() {
 		ModelAndView mav=new ModelAndView();
 		Member mem = (Member) session.getAttribute("login"); // 작성 목적 : 관리자만 접근할 수 있도록
-		if (mem != null && mem.getRole()  == "ROLE_ADMIN") {
+		if (mem != null && Objects.equals(mem.getRole(), "ROLE_ADMIN")) {
 			try {
 				List<Member> memList=adminService.getWithdrawListS();
 				mav.addObject("memList", memList);
@@ -55,7 +56,7 @@ public class AdminController {
 	public ModelAndView orderList(@RequestParam(value = "state", defaultValue = "0") String state) {
 		ModelAndView mav=new ModelAndView();
 		Member mem = (Member) session.getAttribute("login"); // 작성 목적 : 관리자만 접근할 수 있도록
-		if (mem != null && mem.getRole()  == "ROLE_ADMIN") {
+		if (mem != null && Objects.equals(mem.getRole(), "ROLE_ADMIN")) {
 			try {
 				switch(state) {
 				case "0":
@@ -93,7 +94,7 @@ public class AdminController {
 	public ModelAndView deliveryInfo1(@PathVariable String order_num) {
 		ModelAndView mav=new ModelAndView("/");
 		Member mem = (Member) session.getAttribute("login"); // 작성 목적 : 관리자만 접근할 수 있도록
-		if (mem != null && mem.getRole()  == "ROLE_ADMIN") {
+		if (mem != null && Objects.equals(mem.getRole(), "ROLE_ADMIN")) {
 			try {
 				Order orderInfo=adminService.getOrderInfoByNum(order_num);
 				mav.addObject("orderInfo", orderInfo);
