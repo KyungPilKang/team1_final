@@ -172,6 +172,7 @@
         document.getElementById('total').textContent = total.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
         document.getElementById('total_price').value = totalPrice;
     }
+
 </script>
 
 

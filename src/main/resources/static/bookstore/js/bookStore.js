@@ -1,6 +1,6 @@
 /* 장바구니 담기 */
 const putCart = function (bookNum) {
-    fetch("http://localhost:8090/book-store/putcart", {
+    fetch("/book-store/putcart", {
         method: "POST",
         header: {
             "Content-Type": "application/json",

@@ -23,7 +23,7 @@ public interface StudyDAO {
 	public Study getStudydetail(int study_no) throws Exception;
 	//내가 쓴 글 :  스터디 게시글 리스트 반환(개설자)
 	//public int makerListCount(String maker);
-	List<Study> makerList(String maker);	
+	List<Study> makerList(@Param("startrow") int startrow, @Param("maker") String maker);	
 	//참여, 참여취소
 	public void checkAttend(Map map)throws Exception;
 	public void cancelAttend(Map map) throws Exception;
@@ -44,6 +44,7 @@ public interface StudyDAO {
 	int selectStudyCount() throws Exception;
 	List<Study> selectStudyList(@Param("startrow") int startrow, @Param("cond") Study study) throws Exception;
 
+	int getTypeCount(String study_type) throws Exception;
 
 }
 

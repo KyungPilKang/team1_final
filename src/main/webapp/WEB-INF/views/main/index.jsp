@@ -90,51 +90,8 @@
 	<!-- Spinner End -->
 
 
-	<jsp:include page="/WEB-INF/views/bookstore/header.jsp"/>
 	<!-- Navbar Start -->
-<%--	<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">--%>
-<%--		<a href="/home" class="navbar-brand d-flex align-items-center px-4 px-lg-5">--%>
-<%--			<h1 class="m-0 text-primary">--%>
-<%--				<i class="fa fa-book me-3"></i>NEEDSFULL--%>
-<%--			</h1>--%>
-<%--		</a>--%>
-<%--		<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">--%>
-<%--			<span class="navbar-toggler-icon"></span>--%>
-<%--		</button>--%>
-<%--		<div class="collapse navbar-collapse" id="navbarCollapse">--%>
-<%--			<div class="navbar-nav ms-auto p-4 p-lg-0">--%>
-<%--				<c:if test="${not empty no }">--%>
-<%--					<div class="nav-item dropdown me-3">--%>
-<%--						<a href="http://localhost:8090/studymain" class="nav-link" data-bs-toggle="dropdown">스터디</a>--%>
-<%--						<div class="dropdown-menu fade-down m-0">--%>
-<%--							<a href="http://localhost:8090/studymain" style="font-size: 1.3em;" class="dropdown-item">메인페이지</a>--%>
-<%--							<a href="http://localhost:8090/studyReg" style="font-size: 1.3em;" class="dropdown-item">등록하기</a>--%>
-<%--							<a href="http://localhost:8090/studyfind" style="font-size: 1.3em;" class="dropdown-item">매칭하기</a>--%>
-<%--							<a href="http://localhost:8090/studyclass" style="font-size: 1.3em;" class="dropdown-item">참여현황</a>--%>
-<%--						</div>--%>
-<%--					</div>--%>
-<%--					<div class="me-3">--%>
-<%--						<a href="mypage" class="nav-item nav-link">마이페이지</a>--%>
-<%--					</div>--%>
-<%--					<div class="me-3">--%>
-<%--						<a href="request" class="nav-item nav-link">고객센터</a>--%>
-<%--					</div>--%>
-<%--				</c:if>--%>
-<%--				<c:choose>--%>
-<%--					<c:when test="${empty no }">--%>
-<%--						<div class="me-3">--%>
-<%--							<a href="/loginForm" class="nav-item nav-link">로그인</a>--%>
-<%--						</div>--%>
-<%--					</c:when>--%>
-<%--					<c:otherwise>--%>
-<%--						<div class="me-3">--%>
-<%--							<a href="/log_out" class="nav-item nav-link">로그아웃</a>--%>
-<%--						</div>--%>
-<%--					</c:otherwise>--%>
-<%--				</c:choose>--%>
-<%--			</div>--%>
-<%--		</div>--%>
-<%--	</nav>--%>
+	<jsp:include page="/WEB-INF/views/bookstore/header.jsp"/>
 	<!-- Navbar End -->
 
 	<!-- Header Start -->
@@ -211,7 +168,7 @@
 								<img class="img-fluid" src="${pageContext.request.contextPath}/resources/freelance/img/cat-1.jpg" alt="">
 								<div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
 									<h5 class="m-0">내신 준비</h5>
-									<small class="text-primary">13개 개설중</small>
+									<small class="text-primary">${ns}개 개설중</small>
 								</div>
 							</a>
 						</div>
@@ -219,8 +176,8 @@
 							<a id="go_study2" class="position-relative d-block overflow-hidden" href="/studymain">
 								<img class="img-fluid" src="${pageContext.request.contextPath}/resources/freelance/img/cat-2.jpg" alt="">
 								<div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
-									<h5 class="m-0">자격증 시험</h5>
-									<small class="text-primary">16개 개설중</small>
+									<h5 class="m-0">시험 준비</h5>
+									<small class="text-primary">${sh}개 개설중</small>
 								</div>
 							</a>
 						</div>
@@ -229,7 +186,7 @@
 								<img class="img-fluid" src="${pageContext.request.contextPath}/resources/freelance/img/cat-3.jpg" alt="">
 								<div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
 									<h5 class="m-0">경시대회 준비</h5>
-									<small class="text-primary">10개 개설중</small>
+									<small class="text-primary">${gs}개 개설중</small>
 								</div>
 							</a>
 						</div>
@@ -240,7 +197,7 @@
 						<img class="img-fluid position-absolute w-100 h-100" src="${pageContext.request.contextPath}/resources/freelance/img/cat-4.jpg" alt="" style="object-fit: cover;">
 						<div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
 							<h5 class="m-0">온라인 북클럽</h5>
-							<small class="text-primary">9개 개설중</small>
+							<small class="text-primary">${bk}개 개설중</small>
 						</div>
 					</a>
 				</div>

@@ -134,7 +134,7 @@
 		</div>
 	</div>
 	
-<form name="form" method="POST" action="http://localhost:8090/joinFormKakao">
+<form name="form" method="POST" action="/joinFormKakao">
 	<input type="hidden" name="provider_id" id="provider_id">
 	<input type="hidden" name="email" id="email">
 </form>

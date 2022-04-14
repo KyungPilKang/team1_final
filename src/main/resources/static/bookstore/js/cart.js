@@ -11,7 +11,7 @@ const maxCount = function (maxNum, idNum) {
 /* 장바구니 아이템 삭제 */
 const delCart = function (bookNum) {
     event.preventDefault();
-    fetch("http://localhost:8090/book-store/delcart", {
+    fetch("/book-store/delcart", {
         method: "POST",
         header: {
             "Content-Type": "application/json",

@@ -261,4 +261,12 @@ public class MemberServiceImpl implements MemberService {
 		
 	}
 
+
+	@Override
+	public Member selectMemberByProvider_id(String provider_id) throws Exception {
+Member member = memberDAO.selectMemberByProvider_id(provider_id);
+		
+		return member;
+	}
+
 }

@@ -3,6 +3,8 @@ package com.finalproject.api.naver;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -25,16 +27,18 @@ import org.springframework.web.servlet.ModelAndView;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.finalproject.api.kakao.KakaoInfo;
 import com.finalproject.api.kakao.OAuthToken;
 import com.finalproject.dto.Member;
-import com.finalproject.service.MemberServiceImpl;
+import com.finalproject.service.MemberService;
 
 @Controller
 public class NaverController {
 	
 	@Autowired(required=false)
-	MemberServiceImpl memberService;
+	MemberService memberService;
+	
+	@Autowired
+	HttpSession session;
 	
 	@GetMapping("auth/naver/callback") 
 	public String naverCallback(String code, String state, Model model) { //Data를 리턴주는 컨트롤러 함수
@@ -127,6 +131,17 @@ public class NaverController {
 						model.addAttribute("provider_id", naverInfo.getResponse().getId());
 						return "/loginJoin/naver";
 					}else {
+						Member login = memberService.selectMemberByProvider_id(naverId);
+						session.setAttribute("no", login.getNo());
+						session.setAttribute("name", login.getName());
+						session.setAttribute("nickname", login.getNickname());
+						session.setAttribute("type", login.getType());
+						session.setAttribute("email", login.getEmail());
+						session.setAttribute("phone", login.getPhone());
+						session.setAttribute("zipcode", login.getZipcode());
+						session.setAttribute("doro_juso", login.getDoro_juso());
+						session.setAttribute("sangse_juso", login.getSangse_juso());
+						session.setAttribute("role", login.getRole());
 						return "loginJoin/oknaver";
 					}
 				} catch(Exception e) {

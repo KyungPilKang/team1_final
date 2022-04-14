@@ -16,7 +16,7 @@ $(function() {
 			type: "post",
 			dataType: "text",
 			data: { phone: $("#phone").val() },
-			url: "http://localhost:8090/sendsms",
+			url: "/sendsms",
 			success: function(data, textStatus) {
 				phoneok1 = true;
 				Swal.fire({
@@ -145,7 +145,7 @@ function nickcheck() {
 		})
 	} else {
 		$.ajax({
-			url: "http://localhost:8090/nicknameCheck", //Controller에서 인식할 주소
+			url: "/nicknameCheck", //Controller에서 인식할 주소
 			type: 'post', //POST 방식으로 전달
 			data: { nickname: nickname },
 			success: function(data) { //컨트롤러에서 넘어온 data값을 받는다 

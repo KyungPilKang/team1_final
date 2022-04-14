@@ -19,7 +19,7 @@ public interface StudyService {
 	//team_accept(수락), team_apply(신청), team_reject(탈락) status 리스트 반환
 	List<Study> searchStudyByStatus(String user_id, String status) throws Exception; 
 	//내가 쓴 글
-	List<Study> makerList(String maker) throws Exception;
+	List<Study> makerList(int page, PageInfo pageInfo, String maker) throws Exception;
 	//참여 참여취소 
 	public void changeAttend(String user_id, int study_no, String status) throws Exception;
 	//참여자정보리스트 가져오기 
@@ -48,5 +48,7 @@ public interface StudyService {
 
 	//스터디 상세게시글리스트 반환(개설자)
 	//List<Study> studymakerList(String maker) throws Exception;
+
+	public int getTypeCount(String study_type) throws Exception;
 
 }
