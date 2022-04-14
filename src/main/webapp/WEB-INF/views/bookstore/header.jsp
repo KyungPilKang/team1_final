@@ -39,7 +39,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
             <c:if test="${role == 'ROLE_ADMIN'}">
-                <a href="/book-store/regform" class="nav-item nav-link" style="color:red">교재등록(관리자)</a>
+                <a href="/book-store/regform" class="nav-item nav-link" style="color:red">교재등록</a>
             </c:if>
             <c:if test="${not empty no }">
                 <div class="nav-item dropdown me-3">
@@ -55,12 +55,23 @@
                     <a href="/mypage" class="nav-item nav-link">마이페이지</a>
                 </div>
             </c:if>
-            <div class="me-3">
-                <a href="/book-store" class="nav-item nav-link">교재장터</a>
-            </div>
-            <div class="me-3">
-                <a href="/request" class="nav-item nav-link">고객센터</a>
-            </div>
+            <c:if test="${role == 'ROLE_ADMIN'}">
+                <div class="nav-item dropdown me-3">
+                    <a href="/studymain" class="nav-link" data-bs-toggle="dropdown">관리자</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="/orderlist" style="font-size: 1.3em;" class="dropdown-item">배송관리</a>
+                        <a href="/adminHome" style="font-size: 1.3em;" class="dropdown-item">탈퇴회원 관리</a>
+                    </div>
+                </div>
+            </c:if>
+            <c:if test="${role != 'ROLE_ADMIN'}">
+                <div class="me-3">
+                    <a href="/book-store" class="nav-item nav-link">교재장터</a>
+                </div>
+                <div class="me-3">
+                    <a href="/request" class="nav-item nav-link">고객센터</a>
+                </div>
+            </c:if>
             <c:choose>
                 <c:when test="${empty no }">
                     <div class="me-3">
