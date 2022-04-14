@@ -26,7 +26,7 @@ let email = "${email}";
 		dataType: "json",
 		url: '/joinFormNaverTemp',
 		success: function(data){
-			Swal.fire({
+            Swal.fire({
 				icon: 'success',
 				title: '네이버 로그인 성공',
 				text: '추가 정보를 입력하여 회원가입을 진행합니다.',
