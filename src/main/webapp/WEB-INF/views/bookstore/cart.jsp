@@ -172,6 +172,27 @@
         document.getElementById('total').textContent = total.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
         document.getElementById('total_price').value = totalPrice;
     }
+
+
+    /* 장바구니 아이템 삭제 */
+    const delCart = function (bookNum) {
+        event.preventDefault();
+        fetch("${pageContext.request.contextPath}/book-store/delcart", {
+            method: "POST",
+            header: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                book_num: bookNum
+            }),
+        }).then((response) => response.json())
+            .then(function (data) {
+                location.reload()
+            })
+    }
+
+
+
 </script>
 
 
