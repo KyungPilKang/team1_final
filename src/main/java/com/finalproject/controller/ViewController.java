@@ -2,6 +2,7 @@ package com.finalproject.controller;
 
 import javax.servlet.http.HttpSession;
 
+import com.finalproject.service.MemberService;
 import com.finalproject.service.StudyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,9 @@ public class ViewController {
     @Autowired
     private StudyService studyService;
 
+    @Autowired(required=false)
+    MemberService memberService;
+
     @Autowired
     HttpSession session;
 
@@ -31,6 +35,20 @@ public class ViewController {
     public ModelAndView home() {
         ModelAndView mv = new ModelAndView();
         try {
+            if(session.getAttribute("username") != null) {
+                Member login = memberService.selectMemberByUsername((String) session.getAttribute("username"));
+                session.invalidate();
+                session.setAttribute("no", login.getNo());
+                session.setAttribute("username", login.getUsername());
+                session.setAttribute("name", login.getName());
+                session.setAttribute("nickname", login.getNickname());
+                session.setAttribute("email", login.getEmail());
+                session.setAttribute("phone", login.getPhone());
+                session.setAttribute("zipcode", login.getZipcode());
+                session.setAttribute("doro_juso", login.getDoro_juso());
+                session.setAttribute("sangse_juso", login.getSangse_juso());
+                session.setAttribute("role", login.getRole());
+            }
             mv.addObject("ns",studyService.getTypeCount("내신"));
             mv.addObject("gs",studyService.getTypeCount("경시대회준비"));
             mv.addObject("sh", studyService.getTypeCount("시험"));
