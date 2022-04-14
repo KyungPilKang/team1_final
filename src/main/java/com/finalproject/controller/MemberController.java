@@ -171,6 +171,7 @@ public class MemberController {
 				Member login = memberService.selectMemberByUsername(username);
 				result = memberService.adminCheck(password);
 				session.setAttribute("role", login.getRole());
+				session.setAttribute("login", login);
 				return result;
 			}
 			else {
