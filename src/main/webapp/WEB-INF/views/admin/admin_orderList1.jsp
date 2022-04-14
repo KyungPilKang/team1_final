@@ -232,6 +232,16 @@
 
 <!-- Template Javascript -->
 <script src="${pageContext.request.contextPath}/resources/administrator/js/main.js"></script>
+
+
+<script>
+	function deliPopup() {
+		window.open("https://tracker.delivery/#/kr.cjlogistics/561378343061", "pop", "width=769,height=800, scrollbars=yes, resizable=yes");
+	}
+</script>
+
+
+
 </body>
 
 </html>

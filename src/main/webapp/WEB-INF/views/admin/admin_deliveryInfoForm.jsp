@@ -151,7 +151,7 @@
 
 			<div class="col-lg-7 col-md-7 text-center wow fadeInUp"
 				data-wow-delay="0.1s">
-				<h6 class="pt-5 pb-0">${orderInfo.username}상품배송현황</h6>
+				<h6 class="pt-5 pb-0">[${orderInfo.username}]고객님의 상품배송현황</h6>
 			</div>
 
 			<div class="row g-1 justify-content-center">
