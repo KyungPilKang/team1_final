@@ -39,7 +39,7 @@ public class MemberController {
 	@RequestMapping("testid2")
 	public @ResponseBody String testid2(Member member) {
 		try {
-			memberService.createTestid(member);
+			memberService.createTestid2(member);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
