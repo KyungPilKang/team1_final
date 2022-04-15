@@ -156,7 +156,6 @@
                                     <div class="col-lg-12 pt-2">
                                         <input type="text" id="sangsejuso2" name="sangsejuso2" value=""
                                                class="form-control">
-                                    <input type="text" name="subjectList" id="abcd" value=${order_book_subject}>
                                     </div>
                                     <input type="hidden" name="sangse_juso" id="sangse_juso">
                                     <input type="hidden" name="order_method" id="order_method">
