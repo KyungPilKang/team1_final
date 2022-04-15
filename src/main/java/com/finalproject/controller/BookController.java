@@ -76,8 +76,8 @@ public class BookController {
         ModelAndView mv = new ModelAndView();
         try {
             if (!book.getFile().isEmpty()) {
-                String path = servletContext.getRealPath("/book_upload/image/");
-//                String path = "/upload/";
+//                String path = servletContext.getRealPath("/book_upload/image/");
+                String path = "/upload/";
                 File destFile = new File(path + book.getFile().getOriginalFilename());
                 book.setBook_img(book.getFile().getOriginalFilename());
                 book.getFile().transferTo(destFile);
@@ -94,8 +94,8 @@ public class BookController {
 
     @GetMapping(value = "/book-img/{filename}")
     public void image(@PathVariable String filename, HttpServletRequest request, HttpServletResponse response) {
-        String path = servletContext.getRealPath("/book_upload/image/");
-//        String path = "/upload/";
+//        String path = servletContext.getRealPath("/book_upload/image/");
+        String path = "/upload/";
         File file = new File(path + filename);
         String sfilename = null;
         FileInputStream fis = null;
