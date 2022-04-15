@@ -16,7 +16,8 @@ public class Order {
     private String deli_name; // 수령인
     private String zipcode; // 우편번호
     private String doro_juso; // 도로명주소
-    private String sangse_juso; // 상세주소
+    private String sangse_juso1; // 상세주소
+    private String sangse_juso2; // 상세주소
     private String phone; // 연락처
     private String email; // 이메일
     private int total_price; // 주문 총액
@@ -105,12 +106,20 @@ public class Order {
         this.doro_juso = doro_juso;
     }
 
-    public String getSangse_juso() {
-        return sangse_juso;
+    public String getSangse_juso1() {
+        return sangse_juso1;
     }
 
-    public void setSangse_juso(String sangse_juso) {
-        this.sangse_juso = sangse_juso;
+    public void setSangse_juso1(String sangse_juso1) {
+        this.sangse_juso1 = sangse_juso1;
+    }
+
+    public String getSangse_juso2() {
+        return sangse_juso2;
+    }
+
+    public void setSangse_juso2(String sangse_juso2) {
+        this.sangse_juso2 = sangse_juso2;
     }
 
     public String getPhone() {
