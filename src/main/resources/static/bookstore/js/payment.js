@@ -1,15 +1,54 @@
 
+
+$(function() {
+	$("#modifyname").click(function(){
+		var newdeli_name = $("#newdeli_name").val();	 
+	$("#deli_name").val(newdeli_name);
+	alert($("#deli_name").val());
+	})
+	});
+
+	//이메일 셀렉트박스 제어 함수
+	function selectEmail(ele) {
+		var $ele = $(ele);
+		var $email2 = $('input[name=email2]');
+		// '1'인 경우 직접입력 
+		if ($ele.val() == "1") {
+			$email2.attr('readonly', false);
+			$email2.val('');
+		} else {
+			$email2.attr('readonly', true);
+			$email2.val($ele.val());
+		}
+	}
+
+
+	$(function() {
+	$("#modifyemail").click(function(){
+	var email1 = $("#email1").val();
+	var email2 = $("#email2").val();
+	var email = email1+"@"+email2;
+	$("#email").val(email);
+	})
+	});
+
+	$(function() {
+	$("#modifyphone").click(function() {
+	$("#oldphone").val($("#newphone").val());	
+	})
+	});
+	
 /* 주소 */
 function goPopup() {
     window.open("juso", "pop", "width=570,height=420, scrollbars=yes, resizable=yes");
 }
 
 function jusoCallBack(roadFullAddr, roadAddrPart1, addrDetail, roadAddrPart2, engAddr, jibunAddr, zipNo, admCd, rnMgtSn, bdMgtSn, detBdNmList, bdNm, bdKdcd, siNm, sggNm, emdNm, liNm, rn, udrtYn, buldMnnm, buldSlno, mtYn, lnbrMnnm, lnbrSlno, emdNo) {
-    document.form.dorojuso.value = roadAddrPart1;
-    document.form.sangsejuso1.value = roadAddrPart2;
-    document.form.sangsejuso2.value = addrDetail;
+    document.form.doro_juso.value = roadAddrPart1;
+    document.form.sangse_juso1.value = roadAddrPart2;
+    document.form.sangse_juso2.value = addrDetail;
     document.form.zipcode.value = zipNo;
-    document.form.sangse_juso.value = roadAddrPart2 + addrDetail;
+  
 }
 
 
@@ -17,7 +56,7 @@ function jusoCallBack(roadFullAddr, roadAddrPart1, addrDetail, roadAddrPart2, en
 $('#next').click(function () {
     let deli_address = $('#deli_address').val();
     let deli_name = $('#deli_name').val();
-    let juso = $('#dorojuso').val();
+    let juso = $('#doro_juso').val();
     let phone = $('#phone').val();
     let email = $('#email').val();
     let chkEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
@@ -42,7 +81,7 @@ $('#next').click(function () {
         $('#deli_name').focus()
         return false;
     }
-    if (juso === "") {
+    if (juso == "") {
         swal({
             title: "입력 오류",
             text: "주소를 입력해주세요.",
@@ -51,7 +90,7 @@ $('#next').click(function () {
         });
         return false;
     }
-    if (phone === "") {
+    if (phone == "") {
         swal({
             title: "입력 오류",
             text: "연락처를 입력해주세요.",
@@ -61,7 +100,7 @@ $('#next').click(function () {
         $('#phone').focus()
         return false;
     }
-    if (email === "") {
+    if (email == "") {
         swal({
             title: "입력 오류",
             text: "이메일을 입력해주세요.",
@@ -71,7 +110,7 @@ $('#next').click(function () {
         $('#email').focus()
         return false;
     }
-    if (email.match(chkEmail) === null) {
+    if (email.match(chkEmail) == null) {
         swal({
             title: "입력 오류",
             text: "이메일 형식이 올바르지 않습니다.",

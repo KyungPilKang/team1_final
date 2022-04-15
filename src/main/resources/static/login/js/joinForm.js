@@ -108,7 +108,6 @@ function jusoCallBack(roadFullAddr, roadAddrPart1, addrDetail, roadAddrPart2, en
 	document.form.sangsejuso1.value = roadAddrPart2;
 	document.form.sangsejuso2.value = addrDetail;
 	document.form.zipcode.value = zipNo;
-	document.form.sangse_juso.value = roadAddrPart2 + addrDetail;
 }
 //username db중복 체크
 let usernameok = false;
