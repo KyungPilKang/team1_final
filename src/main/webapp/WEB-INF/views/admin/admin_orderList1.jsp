@@ -37,6 +37,14 @@
 		*{
 			font-family: 'Stylish', sans-serif;
 		}
+
+		.page-header {
+			background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7));
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
 	</style>
 </head>
 
@@ -63,13 +71,7 @@
 			<div class="col-lg-10 text-center">
 				<h1 class="display-3 text-white animated slideInDown">배송관리 리스트</h1>
 
-				<nav aria-label="breadcrumb">
-					<ol class="breadcrumb text-uppercase">
-						<li class="breadcrumb-item"><a href="/orderlist?state=0">결제완료</a></li>
-						<li class="breadcrumb-item"><a href="/orderlist?state=1">배송중</a></li>
-						<li class="breadcrumb-item"><a href="/orderlist?state=2">배송완료</a></li>
-					</ol>
-				</nav>
+
 
 			</div>
 		</div>
@@ -83,6 +85,13 @@
 <div class="container-xxl py-5" id="payComplete">
 	<div class="container">
 		<h1 class="text-center mb-4 wow fadeInUp" data-wow-delay="0.1s">상품 ${state} 리스트</h1>
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb text-uppercase">
+				<li class="breadcrumb-item"><a href="/orderlist?state=0">결제완료</a></li>
+				<li class="breadcrumb-item"><a href="/orderlist?state=1">배송중</a></li>
+				<li class="breadcrumb-item"><a href="/orderlist?state=2">배송완료</a></li>
+			</ol>
+		</nav>
 		<div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
 
 

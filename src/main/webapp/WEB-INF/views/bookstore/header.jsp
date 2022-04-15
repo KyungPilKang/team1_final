@@ -38,9 +38,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <c:if test="${role == 'ROLE_ADMIN'}">
-                <a href="/book-store/regform" class="nav-item nav-link" style="color:red">교재등록</a>
-            </c:if>
+
             <c:if test="${not empty no }">
                 <div class="nav-item dropdown me-3">
                     <a href="/studymain" class="nav-link" data-bs-toggle="dropdown">스터디</a>
@@ -63,6 +61,7 @@
                         <a href="/adminHome" style="font-size: 1.3em;" class="dropdown-item">탈퇴회원 관리</a>
                     </div>
                 </div>
+                <a href="/book-store/regform" class="nav-item nav-link" style="color:red">교재등록</a>
             </c:if>
             <c:if test="${role != 'ROLE_ADMIN'}">
                 <div class="me-3">
@@ -71,19 +70,20 @@
                 <div class="me-3">
                     <a href="/request" class="nav-item nav-link">고객센터</a>
                 </div>
+
+                <c:choose>
+                    <c:when test="${empty no }">
+                        <div class="me-3">
+                            <a href="/loginForm" class="nav-item nav-link">로그인</a>
+                        </div>
+                    </c:when>
+                    <c:otherwise>
+                        <div class="me-3">
+                            <a href="/log_out" class="nav-item nav-link">로그아웃</a>
+                        </div>
+                    </c:otherwise>
+                </c:choose>
             </c:if>
-            <c:choose>
-                <c:when test="${empty no }">
-                    <div class="me-3">
-                        <a href="/loginForm" class="nav-item nav-link">로그인</a>
-                    </div>
-                </c:when>
-                <c:otherwise>
-                    <div class="me-3">
-                        <a href="/log_out" class="nav-item nav-link">로그아웃</a>
-                    </div>
-                </c:otherwise>
-            </c:choose>
         </div>
     </div>
 </nav>

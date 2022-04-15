@@ -37,6 +37,13 @@
     *{
     font-family: 'Stylish', sans-serif;
     }
+    .page-header {
+        background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7));
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
     </style>
 </head>
 

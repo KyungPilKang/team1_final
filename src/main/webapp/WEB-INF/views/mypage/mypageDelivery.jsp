@@ -126,8 +126,7 @@
 
             <div class="container-xxl py-10 mt-5">
                 <div class="container user-info" style="overflow-y: scroll;">
-                    <div class="delivery-container">
-
+                    <div class="delivery-container" style="width: 99% !important;">
                         <div class="container-fluid bg-dark delivery-status">
                             <div class="row">
                                 <div class="col-sm-12 col-md-7 align-items-center">
