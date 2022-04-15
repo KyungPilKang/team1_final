@@ -302,15 +302,15 @@
 					<c:choose>
 						<c:when test="${orderInfo.order_state == '배송중'}">
 							<a class="btn btn-primary w-100 py-1"
-								href="http://localhost:8090/orderlist?state=1">목록으로</a>
+								href="/orderlist?state=1">목록으로</a>
 						</c:when>
 						<c:when test="${orderInfo.order_state == '배송완료'}">
 							<a class="btn btn-primary w-100 py-1"
-								href="http://localhost:8090/orderlist?state=2">목록으로</a>
+								href="/orderlist?state=2">목록으로</a>
 						</c:when>
 						<c:otherwise>
 							<a class="btn btn-primary w-100 py-1"
-								href="http://localhost:8090/orderlist">목록으로</a>
+								href="/orderlist">목록으로</a>
 						</c:otherwise>
 					</c:choose>
 				</div>
