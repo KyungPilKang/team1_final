@@ -128,24 +128,24 @@
 			</div>
 
 
-			<div class="parent">
-				<div class="first mt-5 mb-5">
+			<div class="row justify-content-md-center">
+				<div class="col-2">
 					<form action="studyReg" method="post">
 						<button type="submit" class="btn btn-primary w-100 py-3">스터디등록</button>
 					</form>
 				</div>
-				<div class="second mt-5 mb-5">
+				<div class="col-2">
 					<form action="studyfind" method="get">
 						<button type="submit" class="btn btn-primary w-100 py-3">스터디매칭</button>
 					</form>
 				</div>
 
-				<div class="third mt-5 mb-5">
+				<div class="col-2">
 					<form action="studyclass" method="get">
 						<button type="submit" class="btn btn-primary w-100 py-3">스터디등교</button>
 					</form>
 				</div>
-				<div class="fourth mt-5 mb-5">
+				<div class="col-2">
 					<button id="makerbtn" class="btn btn-primary w-100 py-3">개설자관리</button>
 				</div>
 
