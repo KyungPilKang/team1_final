@@ -125,7 +125,7 @@
             </div>
 
             <div class="container-xxl py-10 mt-5">
-                <div class="container user-info">
+                <div class="container user-info" style="overflow-y: scroll;">
                     <div class="delivery-container">
 
                         <div class="container-fluid bg-dark delivery-status">
@@ -148,8 +148,8 @@
                             <div style="display: flex; justify-content: space-around">
                         <img src="/book-store/book-img/${order.book_img}" style="width: 100px;height: 100px;">
                                 <div class="book-status">
-                            주문상태:${order.order_state}
-                            총권수:${order.total_count}
+                            주문상태:${order.order_state}&nbsp;&nbsp;|&nbsp;&nbsp;
+                            총권수:${order.total_count}&nbsp;&nbsp;|&nbsp;&nbsp;
                             총금액:${order.total_price}
                                 </div>
                                 <div class="delivery-bt">
