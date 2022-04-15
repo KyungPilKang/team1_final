@@ -126,7 +126,7 @@
 
 
 			<div class="container-fluid bg-dark">
-				<div class="row">
+				<div class="row ">
 					<div class="col-sm-12 col-md-7 align-items-center">
 						<h6 class="text-white my-4">상품내용</h6>
 					</div>

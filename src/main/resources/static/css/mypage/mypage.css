@@ -86,9 +86,60 @@
 .user-info {
     border: 5px solid var(--main-color);
     border-radius: 10px;
+    height: 700px;
 }
 
 .user-info-bt {
     margin: 10px !important;
     border-radius: 10px !important;
+}
+
+.delivery-status {
+    width: 1310px !important;
+    padding: 0 50px !important;
+}
+
+.container, .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl{
+    padding-left: var(--bs-gutter-x,.0rem) !important;
+    padding-right: var(--bs-gutter-x,.0rem) !important;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.row > div > h6 {
+    font-family: "Nunito",sans-serif;
+    font-weight: 700;
+}
+
+.delivery-status-text1 {
+    position: absolute;
+    left: 150px;
+    top: 2px;
+}
+
+.delivery-status-text2 {
+    position: absolute;
+    left: 600px;
+    top: 2px;
+}
+
+.delivery-status-text3 {
+    margin-right: 130px;
+}
+
+.book-status {
+    font-family: "Nunito",sans-serif;
+    font-weight: 700;
+    margin: 40px;
+}
+
+.delivery-bt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

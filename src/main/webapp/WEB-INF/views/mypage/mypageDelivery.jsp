@@ -127,12 +127,32 @@
             <div class="container-xxl py-10 mt-5">
                 <div class="container user-info">
                     <div class="delivery-container">
+
+                        <div class="container-fluid bg-dark delivery-status">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-7 align-items-center">
+                                    <h6 class="text-white my-4 delivery-status-text1">상품내용</h6>
+                                </div>
+
+                                <div class="col-sm-12 col-md-1 align-items-center">
+                                    <h6 class="text-white my-4 delivery-status-text2">주문내용</h6>
+                                </div>
+
+                                <div class="col-sm-12 col-md-3 d-flex flex-row-reverse align-items-center">
+                                    <h6 class="text-white my-4 delivery-status-text3">상태</h6>
+                                </div>
+                            </div>
+                        </div>
+
                         <c:forEach var="order" items="${orderList}">
                             <div style="display: flex; justify-content: space-around">
                         <img src="/book-store/book-img/${order.book_img}" style="width: 100px;height: 100px;">
+                                <div class="book-status">
                             주문상태:${order.order_state}
                             총권수:${order.total_count}
                             총금액:${order.total_price}
+                                </div>
+                                <div class="delivery-bt">
                                 <c:choose>
                                     <c:when test="${order.order_state == '결제완료'}">
                         <a class="btn btn-primary py-3 px-5">결제 완료</a>
@@ -144,6 +164,7 @@
                         <a class="btn btn-primary py-3 px-5" href="#" onclick="deliPopup(${order.order_deli_num})">배송 완료</a>
                                     </c:otherwise>
                                 </c:choose>
+                                </div>
                             </div>
                             <br>
                         </c:forEach>
