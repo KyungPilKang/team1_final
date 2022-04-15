@@ -105,8 +105,8 @@ function jusoCallBack(roadFullAddr, roadAddrPart1, addrDetail, roadAddrPart2, en
 	// 팝업페이지에서 주소입력한 정보를 받아서, 현 페이지에 정보를 등록합니다.
 
 	document.form.doro_juso.value = roadAddrPart1;
-	document.form.sangsejuso1.value = roadAddrPart2;
-	document.form.sangsejuso2.value = addrDetail;
+	document.form.sangse_juso1.value = roadAddrPart2;
+	document.form.sangse_juso2.value = addrDetail;
 	document.form.zipcode.value = zipNo;
 }
 //username db중복 체크
