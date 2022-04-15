@@ -53,7 +53,8 @@
     String phone = (String)session.getAttribute("phone");
     String zipcode = (String)session.getAttribute("zipcode");
     String doro_juso = (String)session.getAttribute("doro_juso");
-    String sangse_juso = (String)session.getAttribute("sangse_juso");
+    String sangse_juso1 = (String)session.getAttribute("sangse_juso1");
+    String sangse_juso2 = (String)session.getAttribute("sangse_juso2");
 %>
 <!-- Spinner Start -->
 <div id="spinner"

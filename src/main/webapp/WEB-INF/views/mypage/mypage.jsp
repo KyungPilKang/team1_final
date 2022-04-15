@@ -53,7 +53,8 @@
     String phone = (String)session.getAttribute("phone");
     String zipcode = (String)session.getAttribute("zipcode");
     String doro_juso = (String)session.getAttribute("doro_juso");
-    String sangse_juso = (String)session.getAttribute("sangse_juso");
+    String sangse_juso1 = (String)session.getAttribute("sangse_juso1");
+    String sangse_juso2 = (String)session.getAttribute("sangse_juso2");
 %>
 <!-- Spinner Start -->
 <div id="spinner"
@@ -211,10 +212,10 @@
                                                     </div>
                                                     <div class="col-lg-2"></div>
                                                     <div class="col-lg-6 pt-2">
-                                                        <input type="text" id="sangsejuso1" name="sangsejuso1" value="<%=sangse_juso %>" readonly="" class="form-control">
+                                                        <input type="text" id="sangsejuso1" name="sangsejuso1" value="<%=sangse_juso1 %>" readonly="" class="form-control">
                                                     </div>
                                                     <div class="col-lg-6 pt-2">
-                                                        <input type="text" id="sangsejuso2" name="sangsejuso2" value="" class="form-control">
+                                                        <input type="text" id="sangsejuso2" name="sangsejuso2" value="<%=sangse_juso2 %>" class="form-control">
                                                     </div>
                                                     <div id="warning" class="col-lg-10 pt-2">
                                                         <span id="warning" class="input-group-addon text-left">* 주소는 상세주소까지 정확하게 입력해주세요.주소가 정확하지 않을 경우, 배송이 원활하지 않을 수 있습니다.</span>

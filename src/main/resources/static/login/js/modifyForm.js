@@ -114,9 +114,7 @@ function jusoCallBack(roadFullAddr, roadAddrPart1, addrDetail, roadAddrPart2, en
 	document.form.sangse_juso1.value = roadAddrPart2;
 	document.form.sangse_juso2.value = addrDetail;
 	document.form.zipcode.value = zipNo;
-	
 }
-
 
 //이메일 db중복 체크
 let emailok = false;
