@@ -79,7 +79,7 @@
 <div class="container-xxl py-10 mt-5 ok">
 
     <!-- Payment Flow Step1 Start -->
-    <div class="payment_container_step1">
+    <div class="payment_container_step1" style="height: 1200px;">
         <div class="payment_probar justify-content-md-center ">
             <span class="now_process">배송지 정보 입력</span>
             <span class="now_process"> > </span>
@@ -89,40 +89,35 @@
         </div>
         <div style="width:100%; overflow-y: scroll; overflow-x: hidden;">
 
-            <div class="">
-                <div style="display: flex; flex-direction: row; justify-content: space-around">
-                    <div style="border-bottom: 1px solid black;">
-                        <h1>제목</h1>
-                    </div>
-                    <div style="border-bottom: 1px solid black;">
-                        <h1>가격</h1>
-                    </div>
-                    <div style="border-bottom: 1px solid black;">
-                        <h1>수량</h1>
-                    </div>
-                </div>
+            <div class="item_box row text-center col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.5s"
+                 style="width: 80%; float:none; margin:40px auto 0 auto; overflow-y:scroll">
 
-            </div>
-            <!--  <div class="item_box row text-center col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.5s"
-                  style="width: 80%; float:none; margin:40px auto 0 auto; overflow-y:scroll"> -->
-            <div style="display: flex; flex-direction: row">
-                <c:forEach var="cart" items="${orderList}">
-                    <div style="display: flex; background: red; justify-content: space-around; width: 800px;">
-                        <div class="col-6" style="border-bottom: 1px solid black; ">
-                            <h4>${cart.book_subject}</h4>
-                        </div>
-                        <div class="col-6" style="border-bottom: 1px solid black;">
-                            <h4>${cart.book_reprice}</h4>
-                        </div>
-                    </div>
-                </c:forEach>
-                <c:forEach var="count" items="${qtyList}">
-                    <div style="display:flex; flex-direction: column; background: blue;">
-                    <div style="border-bottom: 1px solid black;">
-                        <h4>${count}</h4>
-                    </div>
-                    </div>
-                </c:forEach>
+                <table style="height: 100px; width: 85%">
+                    <tr>
+                        <td>제목</td>
+                        <td>가격</td>
+                    </tr>
+
+                    <c:forEach var="cart" items="${orderList}">
+                        <tr>
+                            <td>${cart.book_subject}</td>
+                            <td>${cart.book_reprice}</td>
+                        </tr>
+                    </c:forEach>
+                </table>
+
+                <table style="width: 15%; height: 100px;">
+
+                    <tr>
+                        <td>수량</td>
+                    </tr>
+                    <c:forEach var="count" items="${qtyList}">
+                        <tr>
+                            <td>${count}</td>
+                        </tr>
+                    </c:forEach>
+                </table>
+
             </div>
 
             <div class="row mt-3">
@@ -377,9 +372,11 @@
                                                 <input type="hidden" name="order_method" id="order_method">
                                                 <input type="hidden" name="order_num" id="order_num">
                                                 <input type="hidden" name="total_price" id="total_price">
-                                                <input type="hidden" name="total_count" id="total_bookCount" value=${total_bookCount}>
+                                                <input type="hidden" name="total_count" id="total_bookCount"
+                                                       value=${total_bookCount}>
                                                 <input type="hidden" name="book_img" id="book_img" value=${book_img}>
-                                                <input type="hidden" name="subjectList" id="subjectList" value=${order_book_subject}>
+                                                <input type="hidden" name="subjectList" id="subjectList"
+                                                       value=${order_book_subject}>
                                             </div>
                                         </td>
                                     </tr>
