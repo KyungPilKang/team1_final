@@ -76,7 +76,7 @@ public class BookController {
         ModelAndView mv = new ModelAndView();
         try {
             if (!book.getFile().isEmpty()) {
-//                String path = servletContext.getRealPath("/book_upload/image/");
+//                  String path = servletContext.getRealPath("/book_upload/image/");
                 String path = "/upload/";
                 File destFile = new File(path + book.getFile().getOriginalFilename());
                 book.setBook_img(book.getFile().getOriginalFilename());

@@ -57,7 +57,7 @@ public class PaymentController {
             Book book = bookStoreService.selectBook(bookNum);
             System.out.println("북이미지:" + book.getBook_img());
             String bookSubList = Arrays.toString(order_book_subject);
-            String bookSubjects = bookSubList.replace("[", "").replace("]", "");
+            String bookSubjects = bookSubList.replace("[", "").replace(" ", "").replace("]", "");
             System.out.println("order_book_subject : " + bookSubjects);
             System.out.println("total_bookCount : " + total_bookCount);
             mv.addObject("order_book_subject", bookSubjects);
