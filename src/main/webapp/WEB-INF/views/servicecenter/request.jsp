@@ -103,6 +103,65 @@
             </div>
         </div>
 
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    [결제] 전자세금계산서 발급이 가능한가요?
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong> 니즈풀은 PG사를 통한 가상 계좌 결제방식을 제공하고 있어 전자세금계산서 발행이 불가능해요.
+                        다만, 전자세금계산서와 법적 증빙 효력이 동일한 현금영수증을 발행 받아보실 수 있어요.
+                    </strong> <br><br> ※ 현금영수증은 가상 계좌 결제 화면에서 직접 신청이 가능해요.
+                    결제 후 신청한 현금영수증 내역을 확인하고 싶다면, 프로필 > 구매 내역 > 영수증을 클릭해 주세요.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    [할인] 현재 진행 중인 할인이 궁금해요.
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="collapseFive" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong> 상시로 진행 중인 할인 이벤트는 아래와 같아요. </strong> <br><br> 교재 구매시 할인율 적용
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    [결제] 현금영수증을 발행하고 싶어요
+                </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="collapseFive" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong> 현금영수증은 확인하실 수 없어요. </strong> <br><br> 결제를 완료하셨다면 마이페이지 > 회원정보 > 배송조회에서 구매내역을 확인하실 수 있습니다.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSeven">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                    [스터디] 게설한 스터디 정보를 수정하고 싶어요
+                </button>
+            </h2>
+            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="collapseFive" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong> 본인이 직접 개설한 스터디를 수정하는 방법은 다음과 같습니다. </strong> <br><br> 스터디 > 메인페이지 > 개설자관리 > 해당 '게시글보기' > 수정하기
+                </div>
+            </div>
+        </div>
+
+
+
+
+
     </div>
 </div>
 
