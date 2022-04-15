@@ -53,7 +53,7 @@ public class KakaoController {
 		MultiValueMap<String, String>params = new LinkedMultiValueMap<>();
 		params.add("grant_type", "authorization_code");
 		params.add("client_id", "94fc26e459f927ce79257dc6c17527a7");
-		params.add("redirect_uri","http://localhost:8090/auth/kakao/callback");
+		params.add("redirect_uri","http://101.101.218.164:8090/auth/kakao/callback");
 		params.add("code", code);
 		
 		System.out.println("code:"+code);
