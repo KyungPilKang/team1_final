@@ -95,7 +95,7 @@
                          src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt=""
                          style="width: 80px; height: 80px;">
                     <div class="text-start ps-4">
-                        <h3 class="mb-3">스터디 등록 제목</h3>
+                        <h3 class="mb-3">${studyPosted.study_title}</h3>
                         <span class="resfreespan text-truncate me-3">
 									<i class="bi bi-brightness-high-fill text-primary me-2"></i>${studyPosted.study_sname}
 								</span>

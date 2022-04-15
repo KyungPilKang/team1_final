@@ -114,7 +114,7 @@
 								<div class="col-sm-12 col-md-4 d-flex align-items-center" style="width: 45%; float: none; margin-left: 100px;">
 									<img class="flex-shrink-0 img-fluid border rounded" src="${pageContext.request.contextPath}/resources/freelance/img/about.jpg" alt="" style="width: 80px; height: 80px;">
 									<div class="text-start ps-4">
-										<h3 class="mb-3">스터디 등록 제목</h3>
+										<h3 class="mb-3">${study.study_title}</h3>
 										<span class="resfreespan text-truncate me-3">
 											<i class="bi bi-brightness-high-fill text-primary me-2"></i>${study.study_sname}
 										</span>
