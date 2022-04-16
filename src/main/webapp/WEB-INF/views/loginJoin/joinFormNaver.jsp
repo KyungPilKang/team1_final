@@ -97,17 +97,17 @@
 										</td>
 									</tr>
 									<tr>
-										<th>성별 <span class="star">*</span>
+										<th>구분 <span class="star">*</span>
 										</th>
 										<td>
 											<div class="row">
 												
 												<div class="col-lg-3">
-													<label class="radio"> <input type="radio" id="gender" name="type" value="S1">초등학생
+													<label class="radio"> <input type="radio" id="type" name="type" value="S1">초등학생
 													</label>
 												</div>
 												<div class="col-lg-3">
-													<label class="radio"> <input type="radio" id="gender" name="type" value="S2">중학생
+													<label class="radio"> <input type="radio" id="type" name="type" value="S2">중학생
 													</label>
 												</div>
 											</div>

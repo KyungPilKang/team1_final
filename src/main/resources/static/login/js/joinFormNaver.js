@@ -189,13 +189,6 @@ function join() {
 			text: '생년월일을 입력하세요.',
 			confirmButtonText: "확인"
 		})
-	} else if ($('input:radio[name=gender]').is(':checked') == false) {
-		Swal.fire({
-			icon: 'warning',
-			title: '선택 오류',
-			text: '성별을 선택하세요.',
-			confirmButtonText: "확인"
-		})
 	} else if (nickok == false) {
 		$("#nickname").focus();
 		Swal.fire({
