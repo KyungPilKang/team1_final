@@ -116,7 +116,7 @@ public class MemberServiceImpl implements MemberService {
 			
 		} else {
 			loginCheck.setLogin_count(loginCheck.getLogin_count());
-			if(loginCheck.getLogin_count()>3) {
+			if(loginCheck.getLogin_count()>2) {
 				res="overfail";
 			}else {
 				loginCheck.setLogin_count(loginCheck.getLogin_count()+1);
