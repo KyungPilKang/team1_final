@@ -165,10 +165,10 @@
 												</div>
 												<div class="col-lg-4"></div>
 												<div class="col-lg-4 pt-2">
-													<input type="text" id="sangsejuso1" name="sangsejuso1" readonly="" class="form-control">
+													<input type="text" id="sangse_juso1" name="sangse_juso1" readonly="" class="form-control">
 												</div>
 												<div class="col-lg-4 pt-2">
-													<input type="text" id="sangsejuso2" name="sangsejuso2" value="" class="form-control">
+													<input type="text" id="sangse_juso2" name="sangse_juso2" value="" class="form-control">
 												</div>
 												<div id=warning class="col-lg-8 pt-2">
 													<span id=warning class="input-group-addon text-left">* 주소는 상세주소까지 정확하게 입력해주세요.주소가 정확하지 않을 경우, 배송이 원활하지 않을 수 있습니다.</span>
