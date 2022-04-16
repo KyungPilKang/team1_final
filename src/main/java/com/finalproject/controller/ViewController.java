@@ -27,7 +27,7 @@ public class ViewController {
 
     @GetMapping("/test")
     public String test() {
-        return "test";
+        return "/mypage/mypage2";
     }
 
     //nav바 상단 eLEARNING 글자, Home 버튼 클릭시 리턴

@@ -25,39 +25,6 @@ public class MemberController {
 	HttpSession session;
 	
 	
-	//Test용 계정 만들기
-	@RequestMapping("testid")
-	public @ResponseBody String testid(Member member) {
-		try {
-			memberService.createTestid(member);
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		return "아이디 test, 비번 1234 생성완료";
-	}
-	
-	@RequestMapping("testid2")
-	public @ResponseBody String testid2(Member member) {
-		try {
-			memberService.createTestid2(member);
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		return "탈퇴회원 리스트 작성위한 db생성";
-	}
-	//admin 계정 만들기
-	@RequestMapping("admin")
-	public @ResponseBody String admin(Member member) {
-		try {
-			
-			memberService.createAdmin(member);
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		return "관리자 계정 생성완료";
-	}
-	
-	
 	
 	//joinForm 페이지에서 회원가입 버튼을 누를 경우 진행, home 페이지로 이동한다.
 	@PostMapping("join")
@@ -84,7 +51,7 @@ public class MemberController {
 	
 	//회원정보 수정페이지(modifyForm)에서 정보수정 버튼 클릭 누를 경우 수행, 회원정보 업데이트 완료한 뒤 "home"페이지로 이동
 	@PostMapping("updateMember")
-	public ModelAndView updateMember(@ModelAttribute Member member) {
+	public ModelAndView updateMember(@ModelAttribute Member member) throws Exception {
 		ModelAndView mav = new ModelAndView();
 		try {
 			
@@ -92,7 +59,19 @@ public class MemberController {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		mav.setViewName("redirect:/home");
+		Member login = memberService.selectMemberByUsername(member.getUsername());
+		session.setAttribute("no", login.getNo());
+		session.setAttribute("username", login.getUsername());
+		session.setAttribute("name", login.getName());
+		session.setAttribute("nickname", login.getNickname());
+		session.setAttribute("email", login.getEmail());
+		session.setAttribute("phone", login.getPhone());
+		session.setAttribute("zipcode", login.getZipcode());
+		session.setAttribute("doro_juso", login.getDoro_juso());
+		session.setAttribute("sangse_juso1", login.getSangse_juso1());
+		session.setAttribute("sangse_juso2", login.getSangse_juso2());
+		session.setAttribute("role", login.getRole());
+		mav.setViewName("redirect:/mypage");
 		return mav;
 	}
 	
