@@ -195,7 +195,7 @@
 										      </div>
 										      <div class="modal-footer d-flex justify-content-center">
         										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-        										<button type="button" onclick="location.href='/withdrawForm'"   data-bs-dismiss="modal" class="btn btn-primary">탈퇴하기</button>
+        										<button type="button" onclick="location.href='/withdrawForm'" id="modifynickname"  data-bs-dismiss="modal" class="btn btn-primary">수정하기</button>
       										</div>
 										    </div>
 										  </div>
@@ -328,7 +328,7 @@
 							<button id="modify" onclick="modify()" class="btn btn-primary w-100 py-3" type="button">수정하기</button>
 						</div>
 						<div class="col-5 ">
-							<a href="home" class="btn border w-100 py-3">취소하기</a>
+							<button  onclick="location.href='/withdrawForm'" class="btn btn-primary w-100 py-3" type="button">회원탈퇴</button>
 						</div>
 					</div>
 				</div>
