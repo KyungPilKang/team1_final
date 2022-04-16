@@ -145,8 +145,8 @@
                         </div>
 
                         <c:forEach var="order" items="${orderList}">
-                            <div style="display: flex; justify-content: space-around">
-                        <img src="/book-store/book-img/${order.book_img}" style="width: 100px;height: 100px;">
+                            <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+                        <img src="/book-store/book-img/${order.book_img}" style="width: 100px;height: 140px;">
                                 <div class="book-status">
                             주문상태:${order.order_state}&nbsp;&nbsp;|&nbsp;&nbsp;
                             총권수:${order.total_count}&nbsp;&nbsp;|&nbsp;&nbsp;
