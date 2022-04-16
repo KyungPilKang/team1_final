@@ -97,17 +97,17 @@
 										</td>
 									</tr>
 									<tr>
-										<th>성별 <span class="star">*</span>
+										<th>구분 <span class="star">*</span>
 										</th>
 										<td>
 											<div class="row">
 												
 												<div class="col-lg-3">
-													<label class="radio"> <input type="radio" id="gender" name="gender" value="S">초등학생
+													<label class="radio"> <input type="radio" id="gender" name="type" value="S1">초등학생
 													</label>
 												</div>
 												<div class="col-lg-3">
-													<label class="radio"> <input type="radio" id="gender" name="gender" value="S">중학생
+													<label class="radio"> <input type="radio" id="gender" name="type" value="S2">중학생
 													</label>
 												</div>
 											</div>
@@ -173,7 +173,7 @@
 												<div id=warning class="col-lg-8 pt-2">
 													<span id=warning class="input-group-addon text-left">* 주소는 상세주소까지 정확하게 입력해주세요.주소가 정확하지 않을 경우, 배송이 원활하지 않을 수 있습니다.</span>
 												</div>
-												<input type="hidden" name="sangse_juso" id="sangse_juso">
+												
 											</div>
 										</td>
 									</tr>

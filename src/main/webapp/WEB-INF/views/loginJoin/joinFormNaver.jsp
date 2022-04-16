@@ -103,11 +103,11 @@
 											<div class="row">
 												
 												<div class="col-lg-3">
-													<label class="radio"> <input type="radio" id="gender" name="gender" value="S">초등학생
+													<label class="radio"> <input type="radio" id="gender" name="type" value="S1">초등학생
 													</label>
 												</div>
 												<div class="col-lg-3">
-													<label class="radio"> <input type="radio" id="gender" name="gender" value="S">중학생
+													<label class="radio"> <input type="radio" id="gender" name="type" value="S2">중학생
 													</label>
 												</div>
 											</div>
