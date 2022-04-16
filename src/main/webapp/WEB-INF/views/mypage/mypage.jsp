@@ -195,7 +195,7 @@
 										      </div>
 										      <div class="modal-footer d-flex justify-content-center">
         										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-        										<button type="button" id="modifynickname"  data-bs-dismiss="modal" class="btn btn-primary">수정하기</button>
+        										<button type="button" onclick="location.href='/withdrawForm'"   data-bs-dismiss="modal" class="btn btn-primary">탈퇴하기</button>
       										</div>
 										    </div>
 										  </div>
