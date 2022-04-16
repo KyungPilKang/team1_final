@@ -35,7 +35,7 @@ function modify(){
                                         confirmButtonText: "확인"
                                     }).then(result => {
                                         if (result.isConfirmed) {
-                                            location.href="/main"
+                                            location.href="/home"
                                         }
                         
                                     })
