@@ -136,7 +136,6 @@
                     <div class="row text-center col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.5s"
                          style="width: 55%; float: none; margin: 0 auto">
                         <form name="form" id="form_step1" action="/book-store/payment/finished" method="post">
-                            <input type="hidden" value="<%=no %>" name="no">
                             <div class="row g-3">
                                 <table id="table1" class="table">
                                     <colgroup>
@@ -249,7 +248,7 @@
                                                                 </div>
                                                                 <div class="col-lg 4 input-group g-0">
                                                                     <span class="input-group-text">@</span>
-                                                                    <input type="email" id="email2" name="email2"
+                                                                    <input type="email" id="email2"
                                                                            class="form-control">
                                                                 </div>
                                                                 <div class="col-lg 3 g-0">
