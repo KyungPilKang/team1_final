@@ -8,8 +8,6 @@ import org.springframework.stereotype.Service;
 import com.finalproject.dao.AdminDAO;
 import com.finalproject.dto.Member;
 import com.finalproject.dto.Order;
-import com.finalproject.dto.OrderBook;
-import com.finalproject.dto.Request;
 
 @Service
 public class AdminServiceImpl implements AdminService {
@@ -17,6 +15,7 @@ public class AdminServiceImpl implements AdminService {
 	private AdminDAO adminDAO;
 	
 		
+	
 	
 	@Override
 	public List<Member> getWithdrawListS() throws Exception {
@@ -38,12 +37,12 @@ public class AdminServiceImpl implements AdminService {
 
 	
 	@Override
-	public void insertOrderNum(Order delinum) throws Exception {
-		adminDAO.insertDeliNum(delinum);
+	public void updateOrderState(Order order) throws Exception {
+		adminDAO.updateOrder(order);
 	}
-	
 
 	
+
 	
 //	@Override
 //	public void insertAnsCont(Answer ansCont) throws Exception {
@@ -68,16 +67,17 @@ public class AdminServiceImpl implements AdminService {
 //		return adminDAO.qnaReqList(role);
 //	}
 	
-	
+
 //	@Override
 //	public List<Answer> getAnswerListByRole(String role) throws Exception {
 //		return adminDAO.qnaAnsList(role);
 //	}
-	
+
 	
 //	@Override
 //	public void inputQna(Answer ans) throws Exception {
 //		adminDAO.insertAnswer(ans);
 //	}
+	
 	
 }

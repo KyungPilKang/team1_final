@@ -37,6 +37,13 @@
     *{
     font-family: 'Stylish', sans-serif;
     }
+    .page-header {
+        background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7));
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
     </style>
 </head>
 
@@ -50,49 +57,9 @@
 	</div>
 	<!-- Spinner End -->
 
+    <jsp:include page="/WEB-INF/views/bookstore/header.jsp"/>
 	<!-- Navbar Start -->
-	<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-		<a href="/freereg1" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-			<h1 class="m-0 text-primary">
-				<i class="fa fa-book me-3"></i>NEESFULL
-			</h1>
-		</a>
-		<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarCollapse">
-			<div class="navbar-nav ms-auto p-4 p-lg-0">
-				<div class="nav-item dropdown me-3">
-					<a href="http://localhost:8090/studymain" class="nav-link" data-bs-toggle="dropdown">스터디</a>
-					<div class="dropdown-menu fade-down m-0">
-						<a href="http://localhost:8090/studymain" style="font-size: 1.3em;" class="dropdown-item">메인페이지</a>
-						<a href="http://localhost:8090/studyReg" style="font-size: 1.3em;" class="dropdown-item">등록하기</a>
-						<a href="http://localhost:8090/studyfind" style="font-size: 1.3em;" class="dropdown-item">매칭하기</a>
-						<a href="http://localhost:8090/studyclass" style="font-size: 1.3em;" class="dropdown-item">참여현황</a>
-					</div>
-				</div>
-				<div class="me-3">
-					<a href="about.html" class="nav-item nav-link">마이페이지</a>
-				</div>
-				<div class="me-3">
-					<a href="courses.html" class="nav-item nav-link">고객센터</a>
-				</div>
-<<<<<<< Updated upstream
-				<div class="nav-item dropdown me-3">
-					<a href="http://localhost:8090/studymain" class="nav-link" data-bs-toggle="dropdown">관리자</a>
-					<div class="dropdown-menu fade-down m-0">
-						<a href="http://localhost:8090/orderlist" style="font-size: 1.3em;" class="dropdown-item">배송관리</a>
-						<a href="http://localhost:8090/withdrawmemlistS" style="font-size: 1.3em;" class="dropdown-item">탈퇴회원 관리</a>
-					</div>
-				</div>
-=======
->>>>>>> Stashed changes
-				<div class="me-3">
-					<a href="logout" class="nav-item nav-link">로그아웃</a>
-				</div>
-			</div>
-		</div>
-	</nav>
+
 	<!-- Navbar End -->
 
         <!-- 학생 Start -->
@@ -126,19 +93,18 @@
                         <div id="tab-1" class="tab-pane fade show p-0 active">
 							
 							<c:forEach items="${memList}" var="mem" varStatus="status">
-                            	<c:set var="i" value="${i+1 }"/>
                             <div class="row">
                             		<div class="col-lg-1 mt-3">
-                            			<h6>${i }</h6>
+                            			<h6>${mem.no}</h6>
                             		</div>
                                      <div class="col-lg-5 mt-3">
                                         <div class="text-start ps-4">
-                                            <h6 class="mb-3">${mem.withdraw_contents}</h6>
+                                            <h6 class="mb-3" style="text-align: center">${mem.withdraw_contents}</h6>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 mt-3">
+                                    <div class="col-lg-4 mt-3" >
                                         
-                                            <h6 style="text-align:left;" class="mb-3">${mem.withdraw_type}</h6>
+                                            <h6 style="text-align:left;" class="mb-3" >${mem.withdraw_type}</h6>
                                        
                                     </div>
                                     <div class="col-lg-2 mt-3">

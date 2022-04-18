@@ -5,6 +5,14 @@
 <mapper namespace="com.finalproject.dao.AdminDAO">
 	
 
+
+
+	<select id="getWithdrawListS" resultType="Member">
+		<![CDATA[
+			select * from final.member where withdraw_status = "Y" and type = "S1" or type = "S2"
+		]]>
+	</select>
+
 		
 	<select id="orderListByState" resultType="Order" parameterType="string">
 		<![CDATA[
@@ -20,27 +28,21 @@
 	</select>
 	
 	
-	<insert id="insertDeliNum" parameterType="Order">
+	<update id="updateOrder" parameterType="Order">
 		<![CDATA[
-			insert into order values(#{order_deli_num})
+			update final.order set order_state=#{order_state}, order_deli_num =#{order_deli_num} where order_num=#{order_num}
 		]]>
-	</insert>
+	</update>
 	
 	
-	<select id="orderBook" resultType="OrderBook" parameterType="string">
+	
+	
+	<!-- <select id="orderBook" resultType="OrderBook" parameterType="string">
 		<![CDATA[
 			select * from order_book where order_state = #{order_state}
 		]]>
-	</select>
-	
-	<select id="getWithdrawListS" resultType="Member">
-		<![CDATA[
-			select * from final.member where withdraw_status = "Y" and type = "S1" or type = "S2"
-		]]>
-	</select>
-	
-	
-	
+	</select> -->
+
 	
 <!-- 	<insert id="insertAnsCont" parameterType="Answer">
 		<![CDATA[
@@ -71,5 +73,6 @@
 			select * from answer where role = #{role}
 		]]>
 	</select> -->
+
 
 </mapper>

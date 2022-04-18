@@ -49,4 +49,6 @@ public interface StudyService {
 	//스터디 상세게시글리스트 반환(개설자)
 	//List<Study> studymakerList(String maker) throws Exception;
 
+	public int getTypeCount(String study_type) throws Exception;
+
 }

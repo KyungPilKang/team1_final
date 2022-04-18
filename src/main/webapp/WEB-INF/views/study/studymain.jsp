@@ -88,41 +88,7 @@
 	<!-- Spinner End -->
 
 	<!-- Navbar Start -->
-<!-- 	<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-		<a href="/freereg1" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-			<h1 class="m-0 text-primary">
-				<i class="fa fa-book me-3"></i>NEESFULL
-			</h1>
-		</a>
-		<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarCollapse">
-			<div class="navbar-nav ms-auto p-4 p-lg-0">
-				<div class="nav-item dropdown me-3">
-					<a href="http://localhost:8090/studymain" class="nav-link" data-bs-toggle="dropdown">스터디</a>
-					<div class="dropdown-menu fade-down m-0">
-						<a href="http://localhost:8090/studymain" style="font-size: 1.3em;" class="dropdown-item">메인페이지</a>
-						<a href="http://localhost:8090/studyReg" style="font-size: 1.3em;" class="dropdown-item">등록하기</a>
-						<a href="http://localhost:8090/studyfind" style="font-size: 1.3em;" class="dropdown-item">매칭하기</a>
-						<a href="http://localhost:8090/studyclass" style="font-size: 1.3em;" class="dropdown-item">참여현황</a>
-					</div>
-				</div>
-				<div class="me-3">
-					<a href="about.html" class="nav-item nav-link">마이페이지</a>
-				</div>
-				<div class="me-3">
-					<a href="courses.html" class="nav-item nav-link">고객센터</a>
-				</div>
-				<div class="me-3">
-					<a href="log_out" class="nav-item nav-link">로그아웃</a>
-				</div>
-			</div>
-		</div>
-	</nav> -->
-	
 	<jsp:include page="/WEB-INF/views/bookstore/header.jsp"/>
-	
 	<!-- Navbar End -->
 
 	<!-- Header Start -->
@@ -162,24 +128,24 @@
 			</div>
 
 
-			<div class="parent">
-				<div class="first mt-5 mb-5">
+			<div class="row justify-content-md-center">
+				<div class="col-2">
 					<form action="studyReg" method="post">
 						<button type="submit" class="btn btn-primary w-100 py-3">스터디등록</button>
 					</form>
 				</div>
-				<div class="second mt-5 mb-5">
+				<div class="col-2">
 					<form action="studyfind" method="get">
 						<button type="submit" class="btn btn-primary w-100 py-3">스터디매칭</button>
 					</form>
 				</div>
 
-				<div class="third mt-5 mb-5">
+				<div class="col-2">
 					<form action="studyclass" method="get">
 						<button type="submit" class="btn btn-primary w-100 py-3">스터디등교</button>
 					</form>
 				</div>
-				<div class="fourth mt-5 mb-5">
+				<div class="col-2">
 					<button id="makerbtn" class="btn btn-primary w-100 py-3">개설자관리</button>
 				</div>
 

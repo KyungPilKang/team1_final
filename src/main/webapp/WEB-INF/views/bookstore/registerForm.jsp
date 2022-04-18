@@ -78,9 +78,9 @@
                             <select name="book_cat" id="book_cat"
                                     style="border: 1px solid #d5d5d5; width: 10vw; height: 38px; padding-left:10px; margin-left: -5px;">
                                 <option value="none">== 카테고리 ==</option>
-                                <option value="1">교재1</option>
-                                <option value="2">교재2</option>
-                                <option value="3">교재3</option>
+                                <option value="1">초등학생</option>
+                                <option value="2">중학생</option>
+                                <option value="3">교양서적</option>
                             </select>
                         </div>
 

@@ -140,7 +140,8 @@ public class NaverController {
 						session.setAttribute("phone", login.getPhone());
 						session.setAttribute("zipcode", login.getZipcode());
 						session.setAttribute("doro_juso", login.getDoro_juso());
-						session.setAttribute("sangse_juso", login.getSangse_juso());
+						session.setAttribute("sangse_juso1", login.getSangse_juso1());
+						session.setAttribute("sangse_juso2", login.getSangse_juso2());
 						session.setAttribute("role", login.getRole());
 						return "loginJoin/oknaver";
 					}
@@ -180,7 +181,7 @@ public class NaverController {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		mav.setViewName("home");
+		mav.setViewName("redirect:home");
 		return mav;
 	}
 

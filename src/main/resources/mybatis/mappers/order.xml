@@ -8,10 +8,17 @@
 		<![CDATA[
 		insert into final.order
 		values (#{order_num}, #{username},now(), #{order_method}, #{order_deli_num}, #{order_state},
-				#{deli_address}, #{deli_name}, #{zipcode}, #{doro_juso}, #{sangse_juso},
+				#{deli_address}, #{deli_name}, #{zipcode}, #{doro_juso}, #{sangse_juso1}, #{sangse_juso2},
 				#{phone}, #{email},#{total_price},#{total_count},#{book_img},#{subjectList})
 		]]>
 	</insert>
+
+	<select id="orderListByUser" resultType="Order" parameterType="string">
+		<![CDATA[
+		select * from final.order where username = #{username}
+		]]>
+	</select>
+
 
 </mapper>
 
@@ -29,7 +36,8 @@
                   `deli_name` varchar(1000) DEFAULT NULL,
                   `zipcode` varchar(1000) DEFAULT NULL,
                   `doro_juso` varchar(1000) DEFAULT NULL,
-                  `sangse_juso` varchar(1000) DEFAULT NULL,
+                  `sangse_juso1` varchar(1000) DEFAULT NULL,
+                  `sangse_juso2` varchar(1000) DEFAULT NULL,
                   `phone` varchar(100) DEFAULT NULL,
                   `email` varchar(100) DEFAULT NULL,
                   `total_price` int DEFAULT NULL,

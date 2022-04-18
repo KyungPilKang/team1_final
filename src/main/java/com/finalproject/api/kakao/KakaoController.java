@@ -53,9 +53,10 @@ public class KakaoController {
 		MultiValueMap<String, String>params = new LinkedMultiValueMap<>();
 		params.add("grant_type", "authorization_code");
 		params.add("client_id", "94fc26e459f927ce79257dc6c17527a7");
-		params.add("redirect_uri","http://localhost:8090/auth/kakao/callback");
+		params.add("redirect_uri","http://101.101.218.164:8090/auth/kakao/callback");
 		params.add("code", code);
 		
+		System.out.println("code:"+code);
 		// HttpHeader와 HttpBody를 하나의 오브젝트에 담음
 		HttpEntity<MultiValueMap<String, String>> kakaoTokenRequest=
 				new HttpEntity<>(params,headers);
@@ -138,7 +139,8 @@ public class KakaoController {
 						session.setAttribute("phone", login.getPhone());
 						session.setAttribute("zipcode", login.getZipcode());
 						session.setAttribute("doro_juso", login.getDoro_juso());
-						session.setAttribute("sangse_juso", login.getSangse_juso());
+						session.setAttribute("sangse_juso1", login.getSangse_juso1());
+						session.setAttribute("sangse_juso2", login.getSangse_juso2());
 						session.setAttribute("role", login.getRole());
 						return "loginJoin/okkakao";
 					}
@@ -166,6 +168,7 @@ public class KakaoController {
 		System.out.println("joinFormKakao:"+email);
 		model.addAttribute("email", email);
 		model.addAttribute("provider_id", provider_id);
+		model.addAttribute("provider", "KAKAO");
 		return "/loginJoin/joinFormKakao";
 	}
 	
@@ -178,7 +181,7 @@ public class KakaoController {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		mav.setViewName("home");
+		mav.setViewName("redirect:home");
 		return mav;
 	}
 

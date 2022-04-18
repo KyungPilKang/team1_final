@@ -8,7 +8,7 @@ function modify(){
 	    })
     }else {
         $.ajax({
-			url: "http://localhost:8090/passwordCheck", //Controller에서 인식할 주소
+			url: "/passwordCheck", //Controller에서 인식할 주소
 			type: 'post', //POST 방식으로 전달
 			data: {"no":$("#no").val(), "password":$("#oldpassword").val()},
 			dataType:"text",
@@ -22,7 +22,7 @@ function modify(){
                         })
                     }else{
                         $.ajax({
-                            url: "http://localhost:8090/passChange", //Controller에서 인식할 주소
+                            url: "/passChange", //Controller에서 인식할 주소
                             type: 'post', //POST 방식으로 전달
                             data: {"no":$("#no").val(), "password":$("#password1").val()},
                             dataType:"text",
@@ -35,7 +35,7 @@ function modify(){
                                         confirmButtonText: "확인"
                                     }).then(result => {
                                         if (result.isConfirmed) {
-                                            location.href="http://localhost:8090/main"
+                                            location.href="/home"
                                         }
                         
                                     })

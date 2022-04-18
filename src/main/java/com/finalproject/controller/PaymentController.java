@@ -57,7 +57,7 @@ public class PaymentController {
             Book book = bookStoreService.selectBook(bookNum);
             System.out.println("북이미지:" + book.getBook_img());
             String bookSubList = Arrays.toString(order_book_subject);
-            String bookSubjects = bookSubList.replace("[", "").replace("]", "");
+            String bookSubjects = bookSubList.replace("[", "").replace(" ", "").replace("]", "");
             System.out.println("order_book_subject : " + bookSubjects);
             System.out.println("total_bookCount : " + total_bookCount);
             mv.addObject("order_book_subject", bookSubjects);
@@ -107,6 +107,8 @@ public class PaymentController {
         String username = (String) session.getAttribute("username");
         try {
             // 1. input 데이터들을 다 db에 넣어준다
+            order.setOrder_state("결제완료");
+            order.setUsername(username);
             paymentService.regOrder(order);
             // 2. username에 해당하는 order_book 테이블에 cart 테이블들의 정보+주문번호를 넘긴다
             // cart 객체를 가져와서

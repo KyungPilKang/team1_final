@@ -19,7 +19,7 @@ Swal.fire({
 }).then(result => {
 	
 	
-	opener.location.href="http://localhost:8090/home";
+	opener.location.href="/home";
 	window.close()
 	});
 })

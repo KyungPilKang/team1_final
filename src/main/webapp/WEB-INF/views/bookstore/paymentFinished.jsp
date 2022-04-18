@@ -137,7 +137,7 @@
 
             <h2 style="margin-top: 5vh">결제가 완료되었습니다.</h2>
         </div>
-        <button onclick="location.href='/book-store/order/detail'" style="border-radius: 10px;" class="btn btn-primary">주문 상세보기</button>
+        <button onclick="location.href='/mypagedelivery'" style="border-radius: 10px;" class="btn btn-primary">내 주문 상세보기</button>
         </div>
     </div>
 </div>

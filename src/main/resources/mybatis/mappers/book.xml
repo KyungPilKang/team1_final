@@ -111,7 +111,7 @@
 		select *
 		from (select @rownum:=@rownum+1 rnum, tot.*
 			  from (
-				  select * from book order by book_subject desc
+				  select * from book order by book_subject asc
 				  ) tot,
 				  (select @rownum := 0) temp) sub
 		where rnum between #{startrow} and #{startrow} + 9

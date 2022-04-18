@@ -24,9 +24,9 @@ let email = "${email}";
 			"email":email 
 			},
 		dataType: "json",
-		url: 'http://localhost:8090/joinFormNaverTemp',
+		url: '/joinFormNaverTemp',
 		success: function(data){
-			Swal.fire({
+            Swal.fire({
 				icon: 'success',
 				title: '네이버 로그인 성공',
 				text: '추가 정보를 입력하여 회원가입을 진행합니다.',
@@ -34,7 +34,7 @@ let email = "${email}";
 			}).then(result => {
 				
 				
-				opener.join(data.provider_id,data.email);
+				opener.join(data.provider_id,data.email,"NAVER");
 				window.close()
 				});
 			

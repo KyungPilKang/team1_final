@@ -14,7 +14,8 @@ public class Member {
 	private String phone;
 	private String zipcode;
 	private String doro_juso;
-	private String sangse_juso;
+	private String sangse_juso1;
+	private String sangse_juso2;
 	private String role;
 	private String provider;
 	private String provider_id;
@@ -24,18 +25,19 @@ public class Member {
 	private int login_count;
 	private String withdraw_date;
 	
-	@Override
+	
+	
 	public String toString() {
 		return "Member [no=" + no + ", username=" + username + ", password=" + password + ", name=" + name
 				+ ", nickname=" + nickname + ", email=" + email + ", birth=" + birth + ", age=" + age + ", type="
-				+ type + ", phone=" + phone + ", zipcode=" + zipcode + ", doro_juso=" + doro_juso + ", sangse_juso="
-				+ sangse_juso + ", role=" + role + ", provider=" + provider + ", provider_id=" + provider_id
+				+ type + ", phone=" + phone + ", zipcode=" + zipcode + ", doro_juso=" + doro_juso + ", sangse_juso1="
+				+ sangse_juso1 + ", sangse_juso2="+ sangse_juso2 + ", role=" + role + ", provider=" + provider + ", provider_id=" + provider_id
 				+ ", withdraw_status=" + withdraw_status + ", withdraw_type=" + withdraw_type + ", withdraw_contents="
 				+ withdraw_contents + ", login_count=" + login_count + ", getNo()=" + getNo() + ", getUsername()="
 				+ getUsername() + ", getPassword()=" + getPassword() + ", getName()=" + getName() + ", getNickname()="
 				+ getNickname() + ", getEmail()=" + getEmail() + ", getBirth()=" + getBirth() + ", getAge()=" + getAge()
 				+ ", getType()=" + getType() + ", getPhone()=" + getPhone() + ", getZipcode()=" + getZipcode()
-				+ ", getDoro_juso()=" + getDoro_juso() + ", getSangse_juso()=" + getSangse_juso() + ", getRole()="
+				+ ", getDoro_juso()=" + getDoro_juso() + ", getSangse_juso1()=" + getSangse_juso1() + ", getSangse_juso2()=" + getSangse_juso2() + ", getRole()="
 				+ getRole() + ", getProvider()=" + getProvider() + ", getProvider_id()=" + getProvider_id()
 				+ ", getWithdraw_status()=" + getWithdraw_status() + ", getWithdraw_type()=" + getWithdraw_type()
 				+ ", getWithdraw_contents()=" + getWithdraw_contents() + ", getLogin_count()=" + getLogin_count()
@@ -177,14 +179,20 @@ public class Member {
 
 
 
-	public String getSangse_juso() {
-		return sangse_juso;
+	public String getSangse_juso1() {
+		return sangse_juso1;
 	}
 
+	public void setSangse_juso1(String sangse_juso1) {
+		this.sangse_juso1 = sangse_juso1;
+	}
+	
+	public String getSangse_juso2() {
+		return sangse_juso2;
+	}
 
-
-	public void setSangse_juso(String sangse_juso) {
-		this.sangse_juso = sangse_juso;
+	public void setSangse_juso2(String sangse_juso2) {
+		this.sangse_juso2 = sangse_juso2;
 	}
 
 

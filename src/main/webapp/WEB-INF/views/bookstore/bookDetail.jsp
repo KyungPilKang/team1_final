@@ -88,7 +88,19 @@
                         <span class="title">${book.book_subject}</span>
                         <span class="info">
 								</span>
-                        <span>카테고리 : ${book.book_cat}</span>
+                        <span>
+                            <c:choose>
+                                <c:when test="${book.book_cat == '1'}">
+                                    초등학생
+                                </c:when>
+                                <c:when test="${book.book_cat == '2'}">
+                                    중학생
+                                </c:when>
+                                <c:otherwise>
+                                    교양서적
+                                </c:otherwise>
+                            </c:choose>
+                        </span>
                     </div>
                     <div class="issue">
                         저자 ${book.book_author} | 출판사 ${book.book_publisher}

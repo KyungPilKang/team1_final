@@ -16,7 +16,7 @@ $(function() {
 			type: "post",
 			dataType: "text",
 			data: { phone: $("#phone").val() },
-			url: "http://localhost:8090/sendsms",
+			url: "/sendsms",
 			success: function(data, textStatus) {
 				phoneok1 = true;
 				Swal.fire({
@@ -111,12 +111,10 @@ function jusoCallBack(roadFullAddr, roadAddrPart1, addrDetail, roadAddrPart2, en
 	// 팝업페이지에서 주소입력한 정보를 받아서, 현 페이지에 정보를 등록합니다.
 
 	document.form.doro_juso.value = roadAddrPart1;
-	document.form.sangsejuso1.value = roadAddrPart2;
-	document.form.sangsejuso2.value = addrDetail;
+	document.form.sangse_juso1.value = roadAddrPart2;
+	document.form.sangse_juso2.value = addrDetail;
 	document.form.zipcode.value = zipNo;
-	document.form.sangse_juso.value = roadAddrPart2 + addrDetail;
 }
-
 
 //이메일 db중복 체크
 let emailok = false;
@@ -134,7 +132,7 @@ function emailChk() {
 		})
 	} else {
 		$.ajax({
-			url: "http://localhost:8090/emailCheck", //Controller에서 인식할 주소
+			url: "/emailCheck", //Controller에서 인식할 주소
 			type: 'post', //POST 방식으로 전달
 
 			data: { email: newemail },
@@ -202,7 +200,7 @@ function nickcheck() {
 		})
 	} else {
 		$.ajax({
-			url: "http://localhost:8090/nicknameCheck", //Controller에서 인식할 주소
+			url: "/nicknameCheck", //Controller에서 인식할 주소
 			type: 'post', //POST 방식으로 전달
 			data: { nickname: nickname },
 			success: function(data) { //컨트롤러에서 넘어온 data값을 받는다 

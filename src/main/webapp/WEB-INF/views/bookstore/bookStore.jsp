@@ -39,9 +39,10 @@
     <link href="${pageContext.request.contextPath}/resources/bookstore/css/style.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/bookstore/css/bookStore.css" rel="stylesheet">
     <style>
-        *{
+        * {
             font-family: 'Stylish', sans-serif;
         }
+
         .page-header {
             background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7));
             background-position: center center;
@@ -71,10 +72,10 @@
 
 <c:choose>
     <c:when test="${not empty username}">
-<div style="float:right; margin-right:100px; cursor: pointer; " class="btn btn-primary"
-     onclick="location.href='/book-store/cart'">
-    <i class="fa-solid fa-cart-shopping"></i>
-</div>
+        <div style="float:right; margin-right:100px; cursor: pointer; " class="btn btn-primary"
+             onclick="location.href='/book-store/cart'">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </div>
     </c:when>
     <c:otherwise>
         <div style="float:right; margin-right:100px; cursor: pointer; " class="btn btn-primary"
@@ -118,17 +119,20 @@
         <div class="sort_box">
             <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
                 <li class="nav-item">
-                    <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3" id="sort_sales" href="/book-store/sort/sales">
+                    <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3" id="sort_sales"
+                       href="/book-store/sort/sales">
                         <h6 class="mt-n1 mb-0">판매량</h6>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="d-flex align-items-center text-start mx-3 pb-3" id="sort_newest" href="/book-store/sort/newest">
+                    <a class="d-flex align-items-center text-start mx-3 pb-3" id="sort_newest"
+                       href="/book-store/sort/newest">
                         <h6 class="mt-n1 mb-0">최신순</h6>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" id="sort_name" href="/book-store/sort/name">
+                    <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" id="sort_name"
+                       href="/book-store/sort/name">
                         <h6 class="mt-n1 mb-0">상품명</h6>
                     </a>
                 </li>
@@ -145,14 +149,16 @@
             <div class="container">
                 <div class="owl-carousel testimonial-carousel"
                      style="display: flex; flex-direction: column; justify-content: center; width: 56vw;">
-
                     <c:forEach var="book" items="${bookList}" begin="0" end="4">
                         <div class="testimonial-item rounded p-3">
-                            <img class="img-fluid flex-shrink-0 rounded" src="/book-store/book-img/${book.book_img}"
-                                 alt="${book.book_img}란 이미지를 찾을 수 없습니다">
+                            <a href="/book-store/bookdetail?book_num=${book.book_num}">
+                                <img class="img-fluid flex-shrink-0 rounded" src="/book-store/book-img/${book.book_img}"
+                                     alt="${book.book_img}란 이미지를 찾을 수 없습니다"></a>
                             <div class="d-flex align-items-center" style="flex-direction: column">
                                 <br>
+                                <a href="/book-store/bookdetail?book_num=${book.book_num}">
                                 <h5 class="mb-1">${book.book_subject}</h5>
+                                </a>
                                 <span class="mb-1"
                                       style="text-decoration: line-through;"><fmt:formatNumber
                                         value="${book.book_price}" pattern="#,###"/>원</span> → <strong
@@ -179,7 +185,7 @@
                     <c:forEach var="book" items="${bookList}">
                         <li>
                             <div class="cover">
-                                <a href="#">
+                                <a href="/book-store/bookdetail?book_num=${book.book_num}">
                                     <img src="/book-store/book-img/${book.book_img}"
                                          alt="${book.book_img}란 이미지를 찾을 수 없습니다"/>
                                 </a>
@@ -210,7 +216,8 @@
                                 <br>
                                 <br>
                                 <div class="button">
-                                    <a href="/book-store/bookdetail?book_num=${book.book_num}" class="btn-sm btn-primary">
+                                    <a href="/book-store/bookdetail?book_num=${book.book_num}"
+                                       class="btn-sm btn-primary">
                                         상세보기
                                     </a>
                                 </div>
@@ -219,15 +226,17 @@
                                 <c:choose>
                                     <c:when test="${not empty username}">
                                         <a class="btn-sm btn-primary" onclick="putCart(${book.book_num})">장바구니 담기</a>
-                                        <a class="btn-sm btn-primary" onclick="buyNow(${book.book_num},${book.book_reprice})">바로 구매하기</a>
+                                        <a class="btn-sm btn-primary"
+                                           onclick="buyNow(${book.book_num},${book.book_reprice})">바로 구매하기</a>
                                     </c:when>
                                     <c:otherwise>
                                         <a class="btn-sm btn-primary" onclick="alert('로그인이 필요합니다')">장바구니 담기</a>
                                         <a class="btn-sm btn-primary" onclick="alert('로그인이 필요합니다.')">바로 구매하기</a>
                                     </c:otherwise>
                                 </c:choose>
-                                <c:if test = "${role == 'ROLE_ADMIN'}">
-                                    <a class="btn-sm btn-primary" href="/book-store/delbook?book_num=${book.book_num}" style="background: red">교재 삭제</a>
+                                <c:if test="${role == 'ROLE_ADMIN'}">
+                                    <a class="btn-sm btn-primary" href="/book-store/delbook?book_num=${book.book_num}"
+                                       style="background: red">교재 삭제</a>
                                 </c:if>
                                 <form id="buyNow" method="post">
                                     <input type="hidden" id="book_num" name="book_num"/>

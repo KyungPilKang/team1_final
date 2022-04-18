@@ -21,10 +21,11 @@ let email = "${email}";
 		type: "post",
 		data: {
 			 "provider_id":provider_id,
-			"email":email 
+			"email":email, 
+			"provider":"KAKAO"
 			},
 		dataType: "json",
-		url: 'http://localhost:8090/joinFormKakaoTemp',
+		url: '/joinFormKakaoTemp',
 		success: function(data){
 			Swal.fire({
 				icon: 'success',
@@ -34,7 +35,7 @@ let email = "${email}";
 			}).then(result => {
 				
 				
-				opener.join(data.provider_id,data.email);
+				opener.join(data.provider_id,data.email,"KAKAO");
 				window.close()
 				});
 			
